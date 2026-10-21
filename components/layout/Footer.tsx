@@ -51,8 +51,8 @@ export function Footer() {
         <div>
           <Logo />
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-ardoise-light">
-            Sites internet et logiciel de gestion pour les artisans du bâtiment. Basés à {site.city}
-            , nous intervenons sur {site.zone}.
+            Sites internet, logiciel de gestion et IA pour les artisans du bâtiment. Basés à{" "}
+            {site.city}, nous intervenons sur {site.zone}.
           </p>
           {activeSocials.length > 0 && (
             <ul className="mt-6 flex gap-3">

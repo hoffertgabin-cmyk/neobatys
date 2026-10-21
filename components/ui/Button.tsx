@@ -2,16 +2,15 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-type Variant = "primary" | "secondary" | "ghost" | "outline-light";
+type Variant = "primary" | "ghost" | "light";
 type Size = "md" | "lg";
 
 const variants: Record<Variant, string> = {
-  // Texte bleu nuit sur orange : contraste AA (le blanc sur #F97316 ne passe pas)
   primary:
-    "bg-gradient-chantier text-nuit shadow-glow hover:shadow-[0_12px_40px_-8px_rgb(249_115_22/0.7)]",
-  secondary: "bg-nuit text-white shadow-soft hover:bg-acier",
+    "bg-nuit text-white shadow-[0_10px_24px_-12px_rgb(23_23_23/0.6),inset_0_1px_0_rgb(255_255_255/0.12)] hover:bg-acier",
   ghost: "bg-white text-nuit ring-1 ring-nuit/10 shadow-soft hover:ring-nuit/25",
-  "outline-light": "bg-white/5 text-white ring-1 ring-white/20 backdrop-blur hover:bg-white/10",
+  // Bouton principal posé sur une surface sombre
+  light: "bg-white text-nuit shadow-soft hover:bg-white/90",
 };
 
 const sizes: Record<Size, string> = {

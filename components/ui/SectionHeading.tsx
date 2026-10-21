@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/motion/Reveal";
-import { DimensionLine } from "./DimensionLine";
 
 type Props = {
   id?: string;
@@ -29,19 +28,17 @@ export function SectionHeading({
       {eyebrow && (
         <p
           className={cn(
-            "mb-4 inline-flex items-center gap-3 text-sm font-semibold tracking-wide uppercase",
-            dark ? "text-chantier-light" : "text-chantier-dark",
+            "mb-5 inline-flex items-center rounded-full px-3 py-1 text-xs font-medium",
+            dark ? "bg-white/10 text-ardoise-light" : "bg-nuit/5 text-ardoise-dark",
           )}
         >
-          <DimensionLine className="w-8" />
           {eyebrow}
-          {align === "center" && <DimensionLine className="w-8" />}
         </p>
       )}
       <Tag
         id={id}
         className={cn(
-          "font-display text-3xl leading-[1.1] font-bold sm:text-4xl lg:text-5xl",
+          "font-display text-[2rem] leading-[1.06] font-semibold tracking-[-0.04em] sm:text-[2.6rem] lg:text-[3.25rem]",
           dark ? "text-white" : "text-nuit",
         )}
       >

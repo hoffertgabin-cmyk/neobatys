@@ -32,24 +32,24 @@ export function Navbar() {
     <>
       <header
         className={cn(
-          "fixed inset-x-0 top-0 z-50 transition-[transform,translate,scale,background-color,box-shadow] duration-300 ease-out",
-          hidden ? "-translate-y-full" : "translate-y-0",
-          scrolled
-            ? "bg-nuit/80 shadow-[0_1px_0_rgb(255_255_255/0.06)] backdrop-blur-xl"
-            : "bg-transparent",
+          "fixed inset-x-0 top-3 z-50 transition-[transform,translate] duration-300 ease-out sm:top-4",
+          hidden ? "-translate-y-[150%]" : "translate-y-0",
         )}
       >
         <nav
           aria-label="Navigation principale"
-          className="container-site flex h-18 items-center justify-between gap-6"
+          className={cn(
+            "mx-3 flex h-16 items-center justify-between gap-6 rounded-2xl bg-white/80 pr-2.5 pl-4 ring-1 ring-nuit/5 backdrop-blur-xl transition-shadow duration-300 sm:mx-auto sm:max-w-[1160px] sm:pl-5",
+            scrolled ? "shadow-lift" : "shadow-soft",
+          )}
         >
-          <Logo />
+          <Logo theme="light" />
           <ul className="hidden items-center gap-1 lg:flex">
             {mainNav.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="rounded-full px-4 py-2 text-sm font-medium text-white/80 transition-colors hover:bg-white/5 hover:text-white"
+                  className="rounded-full px-3.5 py-2 text-sm font-medium text-nuit/70 transition-colors hover:bg-nuit/5 hover:text-nuit"
                 >
                   {item.label}
                 </Link>
@@ -65,7 +65,7 @@ export function Navbar() {
               onClick={() => setMenuOpen(true)}
               aria-expanded={menuOpen}
               aria-controls="menu-mobile"
-              className="grid size-11 place-items-center rounded-full text-white ring-1 ring-white/15 lg:hidden"
+              className="grid size-11 place-items-center rounded-xl bg-sable text-nuit ring-1 ring-nuit/5 lg:hidden"
             >
               <Menu aria-hidden="true" className="size-5" />
               <span className="sr-only">Ouvrir le menu</span>

@@ -1,11 +1,11 @@
 # NEOBATYS · Site vitrine
 
-Site vitrine de NEOBATYS (Metz) : création de sites internet et logiciel de gestion pour les artisans du bâtiment.
+Site vitrine de NEOBATYS (Metz) : création de sites internet, logiciel de gestion et mise en place de l'IA pour les artisans du bâtiment.
 
 - **Next.js 16** (App Router, Turbopack) + **TypeScript**
 - **Tailwind CSS 4** (design tokens dans `app/globals.css`)
 - **Motion** (ex-Framer Motion) pour les interactions, **Lenis** pour le défilement fluide
-- **lucide-react** pour les icônes, **Inter** + **Plus Jakarta Sans** via `next/font`
+- **lucide-react** pour les icônes, **Geist** via `next/font`
 - Formulaire **react-hook-form + zod**, envoi par route API avec **Resend** (optionnel)
 
 ## Lancer le projet
@@ -34,7 +34,7 @@ Tous les textes sont dans le dossier **`content/`** :
 | Fichier                   | Contenu                                                                            |
 | ------------------------- | ---------------------------------------------------------------------------------- |
 | `content/site.ts`         | nom, ville, **téléphone, e-mail, zone, SIRET**, adresse, horaires, réseaux sociaux |
-| `content/home.ts`         | accroche du hero, problèmes/solutions, étapes, CTA final, titres de sections       |
+| `content/home.ts`         | hero, avant/après, résultats, cas d'usage IA, étapes, CTA final, titres            |
 | `content/offers.ts`       | offre Sites internet, offre Logiciel, Pack combiné                                 |
 | `content/pricing.ts`      | les 3 formules et leurs prix (mensuel / annuel)                                    |
 | `content/faq.ts`          | questions fréquentes (aussi utilisées pour le SEO)                                 |
@@ -94,7 +94,7 @@ Chaque nouveau push sur la branche principale redéploie le site automatiquement
 app/            pages (accueil, sites-internet, logiciel, contact, pages légales), API, SEO
 components/
   ui/           Button, Section, Card, SpotlightCard, Accordion, Marquee, Counter…
-  motion/       Reveal/Stagger (CSS + IntersectionObserver), WordCascade, Float, SmoothScroll
+  motion/       Reveal/Stagger (CSS + IntersectionObserver), WordCascade, SmoothScroll
   layout/       Navbar, MobileMenu, Footer, CookieBanner, Logo
   mockups/      maquettes de site, tableau de bord et téléphone dessinées en code
   sections/     une section de page par fichier

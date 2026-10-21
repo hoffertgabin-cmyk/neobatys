@@ -16,7 +16,7 @@ export function LogoMark({ className }: { className?: string }) {
       <path
         d="M9 21.5 20 11l11 10.5"
         fill="none"
-        stroke="#0B1B2E"
+        stroke="#171717"
         strokeWidth="3.2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -24,12 +24,12 @@ export function LogoMark({ className }: { className?: string }) {
       <path
         d="M13.5 20v9.5h13V20"
         fill="none"
-        stroke="#0B1B2E"
+        stroke="#171717"
         strokeWidth="3.2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <path d="M18 29.5v-5h4v5" fill="#0B1B2E" />
+      <path d="M18 29.5v-5h4v5" fill="#171717" />
     </svg>
   );
 }

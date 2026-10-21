@@ -1,5 +1,6 @@
 export const mainNav = [
   { label: "Services", href: "/#services" },
+  { label: "IA", href: "/#ia" },
   { label: "Logiciel", href: "/#logiciel" },
   { label: "Réalisations", href: "/#realisations" },
   { label: "Tarifs", href: "/#tarifs" },
@@ -10,10 +11,12 @@ export const footerNav = {
   offres: [
     { label: "Sites internet", href: "/sites-internet" },
     { label: "Logiciel de gestion", href: "/logiciel" },
+    { label: "Intelligence artificielle", href: "/#ia" },
     { label: "Pack Site + Logiciel", href: "/#pack" },
     { label: "Tarifs", href: "/#tarifs" },
   ],
   entreprise: [
+    { label: "Résultats", href: "/#resultats" },
     { label: "Comment ça marche", href: "/#processus" },
     { label: "Réalisations", href: "/#realisations" },
     { label: "FAQ", href: "/#faq" },

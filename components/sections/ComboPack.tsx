@@ -34,7 +34,7 @@ export function ComboPack() {
                 ))}
               </ul>
               <div className="mt-10 flex flex-wrap items-center gap-4">
-                <Button href={comboPack.cta.href} size="lg" arrow>
+                <Button href={comboPack.cta.href} size="lg" variant="light" arrow>
                   {comboPack.cta.label}
                 </Button>
                 <span className="text-sm font-semibold text-chantier-light">{comboPack.badge}</span>

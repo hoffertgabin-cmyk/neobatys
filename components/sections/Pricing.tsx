@@ -138,7 +138,7 @@ export function Pricing() {
 
               <Button
                 href={plan.cta.href}
-                variant={featured ? "primary" : "secondary"}
+                variant={featured ? "light" : "primary"}
                 size="lg"
                 arrow
                 className="mt-8 w-full"

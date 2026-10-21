@@ -4,7 +4,7 @@
  */
 export const site = {
   name: "NEOBATYS",
-  tagline: "Sites internet et logiciels de gestion pour artisans du bâtiment",
+  tagline: "Sites internet, logiciel de gestion et IA pour artisans du bâtiment",
   city: "Metz",
   region: "Grand Est",
   // TODO: remplacer par l'URL définitive (sert au SEO, au sitemap et aux balises Open Graph)

@@ -4,6 +4,8 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Hero } from "@/components/sections/Hero";
 import { TradesMarquee } from "@/components/sections/TradesMarquee";
 import { PainPoints } from "@/components/sections/PainPoints";
+import { Results } from "@/components/sections/Results";
+import { AiServices } from "@/components/sections/AiServices";
 import { WebsiteOffer } from "@/components/sections/WebsiteOffer";
 import { SoftwareOffer } from "@/components/sections/SoftwareOffer";
 import { ComboPack } from "@/components/sections/ComboPack";
@@ -21,6 +23,8 @@ export default function HomePage() {
       <Hero />
       <TradesMarquee />
       <PainPoints />
+      <Results />
+      <AiServices />
       <WebsiteOffer />
       <SoftwareOffer />
       <ComboPack />

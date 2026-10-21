@@ -12,7 +12,7 @@ export default function NotFound() {
       <Button href="/" size="lg" arrow>
         Retour à l&apos;accueil
       </Button>
-      <Button href="/contact" size="lg" variant="outline-light">
+      <Button href="/contact" size="lg" variant="ghost">
         Nous contacter
       </Button>
     </PageHero>

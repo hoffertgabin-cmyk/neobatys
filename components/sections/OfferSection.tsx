@@ -51,7 +51,7 @@ export function OfferSection({ offer, theme, visual, reverse = false, showCta = 
           </Stagger>
           {showCta && (
             <Reveal className="mt-10">
-              <Button href={offer.cta.href} size="lg" arrow>
+              <Button href={offer.cta.href} size="lg" variant={dark ? "light" : "primary"} arrow>
                 {offer.cta.label}
               </Button>
             </Reveal>

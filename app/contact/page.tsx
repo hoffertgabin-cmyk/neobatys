@@ -63,7 +63,7 @@ export default function ContactPage() {
               </ul>
               <Button
                 href={telHref}
-                variant="primary"
+                variant="light"
                 size="lg"
                 className="mt-8 w-full"
                 icon={<Phone aria-hidden="true" className="size-4" />}

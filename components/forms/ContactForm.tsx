@@ -115,11 +115,7 @@ export function ContactForm() {
         <h2 className="mt-5 text-2xl font-bold">{contactPage.success.title}</h2>
         <p className="mx-auto mt-3 max-w-md text-ardoise-dark">{contactPage.success.text}</p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-          <Button
-            href={telHref}
-            variant="secondary"
-            icon={<Phone aria-hidden="true" className="size-4" />}
-          >
+          <Button href={telHref} icon={<Phone aria-hidden="true" className="size-4" />}>
             {site.phone}
           </Button>
           <Button type="button" variant="ghost" onClick={() => setStatus("idle")}>

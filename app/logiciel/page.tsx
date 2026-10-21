@@ -23,7 +23,7 @@ export default function LogicielPage() {
         <Button href="/contact?service=logiciel" size="lg" arrow>
           Demander une démo
         </Button>
-        <Button href="#tarifs" size="lg" variant="outline-light">
+        <Button href="#tarifs" size="lg" variant="ghost">
           Voir les tarifs
         </Button>
       </PageHero>

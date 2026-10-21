@@ -23,7 +23,7 @@ export default function SitesInternetPage() {
         <Button href="/contact?service=site" size="lg" arrow>
           Demander un devis
         </Button>
-        <Button href="#realisations" size="lg" variant="outline-light">
+        <Button href="#realisations" size="lg" variant="ghost">
           Voir des exemples
         </Button>
       </PageHero>

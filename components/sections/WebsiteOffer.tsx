@@ -7,7 +7,7 @@ export function WebsiteOffer({ showCta = true }: { showCta?: boolean }) {
   return (
     <OfferSection
       offer={websiteOffer}
-      theme="light"
+      theme="sand"
       showCta={showCta}
       visual={
         <div className="relative pb-8">

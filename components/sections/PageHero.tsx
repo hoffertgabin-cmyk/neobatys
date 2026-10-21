@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
-import { Blobs } from "./Hero";
 
 type Props = {
   eyebrow: string;
@@ -12,7 +11,7 @@ type Props = {
   compact?: boolean;
 };
 
-/** En-tête sombre des pages secondaires (H1 unique de la page). */
+/** En-tête pastel des pages secondaires (H1 unique de la page). */
 export function PageHero({
   eyebrow,
   title,
@@ -24,38 +23,36 @@ export function PageHero({
   return (
     <section
       className={
-        "relative isolate overflow-hidden bg-nuit text-white " +
-        (compact ? "pt-32 pb-14 sm:pt-36" : "pt-32 pb-20 sm:pt-40 sm:pb-24")
+        "relative isolate overflow-hidden bg-aurora text-nuit " +
+        (compact ? "pt-36 pb-14 sm:pt-40" : "pt-36 pb-20 sm:pt-44 sm:pb-24")
       }
     >
-      <Blobs />
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-blueprint-dark mask-fade" />
       <div className="container-site">
-        <nav aria-label="Fil d'Ariane" className="mb-8 text-sm text-ardoise-light">
+        <nav aria-label="Fil d'Ariane" className="mb-8 text-sm text-ardoise-dark">
           <ol className="flex items-center gap-1.5">
             <li>
-              <Link href="/" className="hover:text-white">
+              <Link href="/" className="hover:text-nuit">
                 Accueil
               </Link>
             </li>
             <li aria-hidden="true">
               <ChevronRight className="size-3.5" />
             </li>
-            <li aria-current="page" className="text-white">
+            <li aria-current="page" className="text-nuit">
               {breadcrumb}
             </li>
           </ol>
         </nav>
         <div className="max-w-3xl animate-fade-up">
-          <Badge tone="light">
+          <Badge tone="outline">
             <span className="size-1.5 rounded-full bg-chantier" aria-hidden="true" />
             {eyebrow}
           </Badge>
-          <h1 className="mt-6 text-4xl leading-[1.05] font-extrabold sm:text-5xl lg:text-6xl">
+          <h1 className="mt-6 text-4xl leading-[1.04] tracking-[-0.045em] sm:text-5xl lg:text-6xl">
             {title}
           </h1>
           {subtitle && (
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ardoise-light sm:text-xl">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ardoise-dark sm:text-xl">
               {subtitle}
             </p>
           )}

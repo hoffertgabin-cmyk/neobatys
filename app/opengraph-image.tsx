@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { site } from "@/content/site";
 
-export const alt = `${site.name} · Sites internet et logiciel de gestion pour artisans`;
+export const alt = `${site.name} · Sites internet, logiciel et IA pour artisans`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -16,8 +16,8 @@ export default function OpengraphImage() {
         flexDirection: "column",
         justifyContent: "space-between",
         padding: 72,
-        background: "linear-gradient(135deg, #0B1B2E 0%, #1E3A5F 100%)",
-        color: "white",
+        background: "linear-gradient(135deg, #FDE2EC 0%, #FFF3E8 45%, #D6E1FF 100%)",
+        color: "#171717",
         fontFamily: "sans-serif",
       }}
     >
@@ -33,22 +33,22 @@ export default function OpengraphImage() {
         <div style={{ fontSize: 40, fontWeight: 800, letterSpacing: 4 }}>{site.name}</div>
       </div>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        <div style={{ fontSize: 72, fontWeight: 800, lineHeight: 1.05 }}>
-          {"Votre métier, c'est le chantier."}
+        <div style={{ fontSize: 72, fontWeight: 700, lineHeight: 1.05 }}>
+          {"Plus de clients. Moins de coûts."}
         </div>
         <div
           style={{
             fontSize: 72,
-            fontWeight: 800,
+            fontWeight: 700,
             lineHeight: 1.05,
-            color: "#FB923C",
+            color: "#C2410C",
           }}
         >
-          {"Le reste, on s'en occupe."}
+          {"L'IA s'occupe du reste."}
         </div>
       </div>
-      <div style={{ fontSize: 30, color: "#94A3B8" }}>
-        {`Sites internet & logiciel de gestion pour artisans du bâtiment · ${site.city}`}
+      <div style={{ fontSize: 30, color: "#4D585F" }}>
+        {`Sites internet, logiciel et IA pour artisans du bâtiment · ${site.city}`}
       </div>
     </div>,
     size,

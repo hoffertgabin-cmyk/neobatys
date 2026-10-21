@@ -6,15 +6,12 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Counter } from "@/components/ui/Counter";
 import { PlaceholderBadge } from "@/components/ui/Badge";
 import { Stagger, StaggerItem } from "@/components/motion/Reveal";
-import { Blobs } from "./Hero";
 
 export function Stats() {
   return (
-    <Section theme="dark" pattern aria-labelledby="chiffres-titre">
-      <Blobs />
+    <Section theme="light" aria-labelledby="chiffres-titre">
       <SectionHeading
         id="chiffres-titre"
-        theme="dark"
         eyebrow={sectionsCopy.stats.eyebrow}
         title={sectionsCopy.stats.title}
       />
@@ -23,19 +20,15 @@ export function Stats() {
           <StaggerItem
             as="li"
             key={stat.label}
-            className="relative rounded-2xl glass p-6 text-center sm:p-8"
+            className="relative rounded-3xl bg-white p-6 text-center shadow-soft ring-1 ring-nuit/5 sm:p-8"
           >
             {site.showPlaceholderBadges && stat.placeholder && (
-              <PlaceholderBadge className="mb-3 text-ardoise-light" />
+              <PlaceholderBadge className="mb-3 text-ardoise" />
             )}
-            <p className="font-display text-4xl font-extrabold sm:text-5xl">
-              <span className="text-gradient">
-                <Counter value={stat.value} suffix={stat.suffix} />
-              </span>
+            <p className="font-display text-4xl font-semibold tracking-[-0.045em] sm:text-5xl">
+              <Counter value={stat.value} suffix={stat.suffix} />
             </p>
-            <p className="mt-3 text-sm leading-snug text-ardoise-light sm:text-base">
-              {stat.label}
-            </p>
+            <p className="mt-3 text-sm leading-snug text-ardoise-dark sm:text-base">{stat.label}</p>
           </StaggerItem>
         ))}
       </Stagger>

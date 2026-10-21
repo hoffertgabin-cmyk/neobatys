@@ -4,10 +4,13 @@ import { useRef } from "react";
 import * as m from "motion/react-m";
 import { useReducedMotion, useScroll, useSpring } from "motion/react";
 import { process } from "@/content/home";
+import { cn } from "@/lib/utils";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Icon } from "@/components/ui/Icon";
 import { Stagger, StaggerItem } from "@/components/motion/Reveal";
+
+const stepColors = ["bg-blue-600", "bg-violet-600", "bg-emerald-600", "bg-chantier-dark"];
 
 /** 4 étapes reliées par une ligne qui se dessine au fil du défilement. */
 export function Process() {
@@ -61,17 +64,22 @@ export function Process() {
               key={step.title}
               className="flex gap-5 md:flex-col md:items-center md:text-center"
             >
-              <span className="relative grid size-14 shrink-0 place-items-center rounded-2xl bg-nuit text-chantier-light shadow-soft ring-4 ring-white">
+              <span className="relative grid size-14 shrink-0 place-items-center rounded-2xl bg-white text-nuit shadow-soft ring-1 ring-nuit/8">
                 <Icon name={step.icon} className="size-6" />
-                <span className="absolute -top-2 -right-2 grid size-6 place-items-center rounded-full bg-gradient-chantier text-xs font-bold text-nuit">
+                <span
+                  className={cn(
+                    "absolute -top-2 -right-2 grid size-6 place-items-center rounded-full text-xs font-semibold text-white ring-4 ring-white",
+                    stepColors[i % stepColors.length],
+                  )}
+                >
                   {i + 1}
                 </span>
               </span>
               <div>
-                <p className="text-xs font-semibold tracking-wide text-chantier-dark uppercase">
+                <p className="inline-flex rounded-full bg-nuit/5 px-2.5 py-0.5 text-xs font-medium text-ardoise-dark">
                   {step.duration}
                 </p>
-                <h3 className="mt-1 text-xl font-bold">{step.title}</h3>
+                <h3 className="mt-3 text-xl tracking-[-0.03em]">{step.title}</h3>
                 <p className="mt-2 leading-relaxed text-ardoise">{step.text}</p>
               </div>
             </StaggerItem>

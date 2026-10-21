@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
 import { site } from "@/content/site";
 import { localBusinessJsonLd } from "@/lib/seo";
@@ -12,26 +12,20 @@ import { Footer } from "@/components/layout/Footer";
 import { CookieBanner } from "@/components/layout/CookieBanner";
 import { JsonLd } from "@/components/seo/JsonLd";
 
-const inter = Inter({
+const geist = Geist({
   subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-jakarta",
-  weight: ["600", "700", "800"],
+  variable: "--font-geist",
   display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} · Sites internet et logiciel de gestion pour artisans à ${site.city}`,
+    default: `${site.name} · Sites internet, logiciel et IA pour artisans à ${site.city}`,
     template: `%s · ${site.name}`,
   },
   description:
-    "Création de sites internet et logiciel de devis et factures pour artisans du bâtiment, à Metz et alentours. Moins de paperasse, plus de chantiers.",
+    "Sites internet, logiciel de devis et factures et assistants IA pour les artisans du bâtiment, à Metz et alentours. Plus de clients, moins de coûts, moins de paperasse.",
   applicationName: site.name,
   openGraph: { siteName: site.name, locale: "fr_FR", type: "website" },
   formatDetection: { telephone: false },
@@ -40,12 +34,12 @@ export const metadata: Metadata = {
 const bootScript = `(function(d){d.classList.add('js');try{var c=JSON.parse(localStorage.getItem('${CONSENT_KEY}'));if(c&&Date.now()-c.at<${CONSENT_MAX_AGE_MS})d.classList.add('consent-set')}catch(e){}})(document.documentElement)`;
 
 export const viewport: Viewport = {
-  themeColor: "#0B1B2E",
+  themeColor: "#ffffff",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="fr" className={`${inter.variable} ${jakarta.variable}`} suppressHydrationWarning>
+    <html lang="fr" className={geist.variable} suppressHydrationWarning>
       <body className="flex min-h-dvh flex-col">
         {/* Avant l'affichage : active les animations (JS dispo) et masque le bandeau cookies si un choix existe */}
         <script dangerouslySetInnerHTML={{ __html: bootScript }} />

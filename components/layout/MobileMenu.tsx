@@ -58,19 +58,15 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-nuit text-white lg:hidden"
+          className="fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-aurora text-nuit lg:hidden"
         >
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0 bg-blueprint-dark mask-fade"
-          />
-          <div className="relative container-site flex h-18 items-center justify-between">
-            <Logo />
+          <div className="relative container-site flex h-22 items-center justify-between">
+            <Logo theme="light" />
             <button
               ref={closeRef}
               type="button"
               onClick={onClose}
-              className="grid size-11 place-items-center rounded-full ring-1 ring-white/15"
+              className="grid size-11 place-items-center rounded-xl bg-white ring-1 ring-nuit/10"
             >
               <X aria-hidden="true" className="size-5" />
               <span className="sr-only">Fermer le menu</span>
@@ -95,7 +91,7 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
                   <Link
                     href={item.href}
                     onClick={onClose}
-                    className="block border-b border-white/10 py-4 font-display text-2xl font-semibold"
+                    className="block border-b border-nuit/8 py-4 font-display text-2xl font-semibold tracking-[-0.03em]"
                   >
                     {item.label}
                   </Link>
@@ -109,7 +105,7 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
               <Button
                 href={telHref}
                 size="lg"
-                variant="outline-light"
+                variant="ghost"
                 icon={<Phone aria-hidden="true" className="size-4" />}
               >
                 {site.phone}

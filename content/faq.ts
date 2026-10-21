@@ -31,6 +31,16 @@ export const faq = [
       "Oui. Un export compatible avec les principaux logiciels comptables se fait en un clic. Vous pouvez aussi donner un accès direct à votre comptable.",
   },
   {
+    question: "Concrètement, que fait l'IA pour mon entreprise ?",
+    answer:
+      "Elle prend en charge les tâches qui vous coûtent du temps : décrocher le téléphone quand vous êtes sur le chantier, répondre aux demandes de devis, préparer un devis à partir de votre description, relancer les impayés, demander des avis Google. On choisit ensemble ce qui vous rapporte le plus, on l'installe et on vous forme.",
+  },
+  {
+    question: "L'IA risque-t-elle de répondre n'importe quoi à mes clients ?",
+    answer:
+      "Non. Chaque assistant est réglé sur votre métier, vos tarifs et vos consignes, et vous décidez de ce qui part sans validation. Les réponses sont suivies et ajustées pendant l'accompagnement.",
+  },
+  {
     question: "Y a-t-il un engagement de durée ?",
     answer:
       "Non sur les formules mensuelles : vous pouvez arrêter quand vous voulez. Le paiement annuel vous fait simplement économiser deux mois.",
