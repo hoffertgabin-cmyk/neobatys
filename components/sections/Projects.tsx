@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import * as m from "motion/react-m";
+import { Maximize2, X } from "lucide-react";
 import { projects, type Project } from "@/content/projects";
 import { site } from "@/content/site";
 import { sectionsCopy } from "@/content/home";
@@ -10,39 +11,91 @@ import { cn } from "@/lib/utils";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PlaceholderBadge } from "@/components/ui/Badge";
+import { ScaledCanvas } from "@/components/mockups/ScaledCanvas";
+import { MOCKUP_HEIGHT, MOCKUP_WIDTH, TradeSiteMockup } from "@/components/mockups/TradeSiteMockup";
 
 const ALL = "Tous";
 
-/** Aperçu dessiné quand aucune capture n'est fournie. */
+/** Aperçu de la maquette dans la carte : le haut du site, coupé en bas. */
 function ProjectPreview({ project }: { project: Project }) {
   return (
-    <div aria-hidden="true" className="absolute inset-0 bg-sable-dark p-4">
-      <div className="h-full overflow-hidden rounded-lg bg-white shadow-soft ring-1 ring-nuit/5">
-        <div className="flex items-center justify-between px-3 py-2">
-          <span className="h-2 w-14 rounded-full" style={{ backgroundColor: project.accent }} />
-          <span className="h-2 w-8 rounded-full bg-nuit/10" />
-        </div>
-        <div className="mx-2 h-[45%] rounded-md bg-nuit p-3">
-          <span className="block h-2.5 w-2/3 rounded-full bg-white/80" />
-          <span className="mt-1.5 block h-2 w-1/2 rounded-full bg-white/30" />
-          <span
-            className="mt-3 block h-4 w-16 rounded-full"
-            style={{ backgroundColor: project.accent }}
-          />
-        </div>
-        <div className="grid grid-cols-3 gap-1.5 p-2">
-          {[0, 1, 2].map((i) => (
-            <span key={i} className="h-8 rounded bg-sable" />
-          ))}
-        </div>
+    <div className="absolute inset-0" style={{ backgroundColor: project.theme.soft }}>
+      <div className="absolute inset-x-5 top-5 overflow-hidden rounded-t-xl shadow-lift ring-1 ring-nuit/8">
+        <ScaledCanvas width={MOCKUP_WIDTH} height={MOCKUP_HEIGHT}>
+          <TradeSiteMockup project={project} />
+        </ScaledCanvas>
       </div>
     </div>
+  );
+}
+
+/** Fenêtre d'agrandissement d'une maquette. */
+function ProjectDialog({ project, onClose }: { project: Project | null; onClose: () => void }) {
+  const ref = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    const dialog = ref.current;
+    if (project && dialog && !dialog.open) dialog.showModal();
+  }, [project]);
+
+  return (
+    <dialog
+      ref={ref}
+      data-lenis-prevent
+      aria-labelledby="maquette-titre"
+      onClose={onClose}
+      onClick={(e) => e.target === e.currentTarget && ref.current?.close()}
+      className="m-auto w-[min(1040px,calc(100%-2rem))] max-w-none overflow-visible bg-transparent p-0 backdrop:bg-nuit/70 backdrop:backdrop-blur-sm"
+    >
+      {project && (
+        <div className="overflow-hidden rounded-3xl bg-white shadow-lift">
+          <div className="flex items-start justify-between gap-4 p-5 sm:p-6">
+            <div>
+              <p className="flex items-center gap-2 text-xs font-semibold tracking-wide text-ardoise-dark uppercase">
+                <span
+                  aria-hidden="true"
+                  className="size-2.5 rounded-full"
+                  style={{ backgroundColor: project.theme.primary }}
+                />
+                {project.trade} · {project.city}
+                {site.showPlaceholderBadges && project.placeholder && (
+                  <PlaceholderBadge className="text-ardoise-dark" />
+                )}
+              </p>
+              <h3 id="maquette-titre" className="mt-1.5 text-xl font-bold sm:text-2xl">
+                {project.title}
+              </h3>
+              <p className="mt-1 text-sm text-ardoise-dark">{project.description}</p>
+            </div>
+            <button
+              type="button"
+              onClick={() => ref.current?.close()}
+              className="grid size-11 shrink-0 place-items-center rounded-full bg-sable text-nuit ring-1 ring-nuit/5 transition-colors hover:bg-sable-dark"
+            >
+              <X aria-hidden="true" className="size-5" />
+              <span className="sr-only">Fermer</span>
+            </button>
+          </div>
+          <div
+            className="px-3 pb-3 sm:px-6 sm:pb-6"
+            style={{ backgroundColor: project.theme.soft }}
+          >
+            <div className="overflow-hidden rounded-2xl shadow-lift ring-1 ring-nuit/8 sm:mt-0">
+              <ScaledCanvas width={MOCKUP_WIDTH} height={MOCKUP_HEIGHT}>
+                <TradeSiteMockup project={project} />
+              </ScaledCanvas>
+            </div>
+          </div>
+        </div>
+      )}
+    </dialog>
   );
 }
 
 export function Projects() {
   const filters = [ALL, ...Array.from(new Set(projects.map((p) => p.trade)))];
   const [active, setActive] = useState(ALL);
+  const [selected, setSelected] = useState<Project | null>(null);
   const visible = active === ALL ? projects : projects.filter((p) => p.trade === active);
 
   return (
@@ -90,7 +143,12 @@ export function Projects() {
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="group overflow-hidden rounded-2xl bg-white shadow-soft ring-1 ring-nuit/5 transition-shadow hover:shadow-lift"
           >
-            <div className="relative aspect-[4/3] overflow-hidden">
+            <button
+              type="button"
+              onClick={() => setSelected(project)}
+              className="relative block aspect-[4/3] w-full overflow-hidden text-left"
+            >
+              <span className="sr-only">Agrandir la maquette : {project.title}</span>
               <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-[1.04]">
                 {project.image ? (
                   <Image
@@ -107,9 +165,20 @@ export function Projects() {
               {site.showPlaceholderBadges && project.placeholder && (
                 <PlaceholderBadge className="absolute top-3 right-3 bg-white text-ardoise-dark" />
               )}
-            </div>
+              <span
+                aria-hidden="true"
+                className="absolute bottom-3 left-1/2 inline-flex -translate-x-1/2 translate-y-2 items-center gap-1.5 rounded-full bg-nuit px-3.5 py-2 text-xs font-semibold whitespace-nowrap text-white opacity-0 shadow-lift transition-[opacity,translate] duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+              >
+                <Maximize2 className="size-3.5" /> Voir la maquette
+              </span>
+            </button>
             <div className="p-5">
-              <p className="text-xs font-semibold tracking-wide text-chantier-dark uppercase">
+              <p className="flex items-center gap-2 text-xs font-semibold tracking-wide text-ardoise-dark uppercase">
+                <span
+                  aria-hidden="true"
+                  className="size-2.5 rounded-full"
+                  style={{ backgroundColor: project.theme.primary }}
+                />
                 {project.trade} · {project.city}
               </p>
               <h3 className="mt-1.5 text-lg font-bold">{project.title}</h3>
@@ -128,6 +197,8 @@ export function Projects() {
           </m.li>
         ))}
       </ul>
+
+      <ProjectDialog project={selected} onClose={() => setSelected(null)} />
     </Section>
   );
 }

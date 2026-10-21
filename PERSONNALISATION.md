@@ -16,7 +16,7 @@ Cherchez `TODO` et `[` dans le dossier `content/` pour retrouver chaque point.
 ## Contenus d'exemple à remplacer
 
 - [ ] **Chiffres clés** (`content/stats.ts`) : les 4 valeurs sont fictives
-- [ ] **Réalisations** (`content/projects.ts`) : 6 projets d'exemple, à remplacer par de vrais clients (avec leur accord) et leurs captures d'écran
+- [ ] **Réalisations** (`content/projects.ts`) : 9 projets d'exemple (un par métier, chacun avec sa maquette et ses couleurs dans `theme`), à remplacer par de vrais clients (avec leur accord) et leurs captures d'écran
 - [ ] **Témoignages** (`content/testimonials.ts`) : 4 avis d'exemple, à remplacer par de vrais avis (avec accord écrit)
 - [ ] Passer `showPlaceholderBadges` à `false` une fois tout remplacé
 - [ ] « Économisez jusqu'à 20 % » et « Le plus choisi » (`content/offers.ts`, `content/pricing.ts`) : à confirmer
