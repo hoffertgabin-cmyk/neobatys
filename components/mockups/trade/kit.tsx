@@ -353,6 +353,7 @@ export function Choice<T extends string>({
   className,
   itemClassName,
   activeClassName = "bg-(--p) text-(--op) ring-(--p)",
+  inactiveClassName = "bg-white text-nuit/65 ring-nuit/10 hover:text-nuit",
 }: {
   options: readonly T[];
   value: T | T[];
@@ -360,6 +361,7 @@ export function Choice<T extends string>({
   className?: string;
   itemClassName?: string;
   activeClassName?: string;
+  inactiveClassName?: string;
 }) {
   const isOn = (o: T) => (Array.isArray(value) ? value.includes(o) : value === o);
   return (
@@ -372,7 +374,7 @@ export function Choice<T extends string>({
           onClick={() => onChange(o)}
           className={cn(
             "rounded-full px-3 py-1.5 text-[11px] font-semibold ring-1 transition-colors",
-            isOn(o) ? activeClassName : "bg-white text-nuit/65 ring-nuit/10 hover:text-nuit",
+            isOn(o) ? activeClassName : inactiveClassName,
             itemClassName,
           )}
         >

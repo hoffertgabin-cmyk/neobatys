@@ -155,7 +155,8 @@ function Home() {
               value={motif}
               onChange={setMotif}
               className="mt-2"
-              itemClassName="px-2.5 py-1 text-[10px] bg-white/10 text-white/80 ring-white/15"
+              itemClassName="px-2.5 py-1 text-[10px]"
+              inactiveClassName="bg-white/10 text-white/80 ring-white/15 hover:text-white"
               activeClassName="bg-(--a) text-(--d) ring-(--a)"
             />
           </div>
