@@ -12,7 +12,7 @@ export function WebsiteOffer({ showCta = true }: { showCta?: boolean }) {
       visual={
         <div className="relative pb-8">
           <SiteMockup />
-          <PhoneMockup className="absolute -right-2 -bottom-6 hidden w-[170px] sm:block lg:-right-6" />
+          <PhoneMockup className="absolute -right-2 -bottom-6 hidden w-[170px] sm:block xl:-right-6" />
         </div>
       }
     />

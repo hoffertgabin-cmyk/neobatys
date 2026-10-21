@@ -9,7 +9,7 @@ export function PainPoints() {
   return (
     <Section theme="light" aria-labelledby="galeres-titre">
       <SectionHeading id="galeres-titre" eyebrow={painPoints.eyebrow} title={painPoints.title} />
-      <div className="mt-14 grid gap-5 lg:grid-cols-2">
+      <div className="mt-14 grid gap-8 lg:grid-cols-2 lg:gap-5">
         <Reveal className="rounded-3xl bg-sable p-7 ring-1 ring-nuit/5 sm:p-9">
           <h3 className="flex items-center gap-2 text-base font-semibold text-ardoise-dark">
             <span aria-hidden="true" className="size-1.5 rounded-full bg-ardoise" />
@@ -19,7 +19,7 @@ export function PainPoints() {
             {painPoints.items.map((item) => (
               <li key={item.problem} className="flex items-start gap-3 text-ardoise-dark">
                 <X aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-red-600" />
-                <span className="line-through decoration-nuit/25">{item.problem}</span>
+                <span>{item.problem}</span>
               </li>
             ))}
           </ul>

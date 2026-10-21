@@ -10,7 +10,7 @@ export function ComboPack() {
   return (
     <Section id={comboPack.id} theme="sand" aria-labelledby="pack-titre">
       <Reveal>
-        <div className="relative overflow-hidden rounded-3xl bg-nuit p-8 text-white shadow-lift sm:p-12 lg:p-16">
+        <div className="relative overflow-hidden rounded-3xl bg-nuit p-6 text-white shadow-lift sm:p-12 lg:p-16">
           <div aria-hidden="true" className="absolute inset-0 bg-blueprint-dark opacity-80" />
           <div
             aria-hidden="true"
@@ -43,19 +43,23 @@ export function ComboPack() {
             {/* Schéma site + logiciel */}
             <div
               aria-hidden="true"
-              className="relative mx-auto flex w-full max-w-sm items-center justify-between gap-3"
+              className="relative mx-auto mb-12 flex w-full max-w-sm items-stretch justify-between gap-2 sm:gap-3 lg:mb-0"
             >
-              <div className="flex flex-1 flex-col items-center rounded-2xl glass p-6 text-center">
+              <div className="flex flex-1 flex-col items-center justify-center rounded-2xl glass px-3 py-5 text-center sm:p-6">
                 <Globe className="size-8 text-chantier-light" />
-                <p className="mt-3 font-display font-semibold">Site internet</p>
+                <p className="mt-3 font-display text-sm font-semibold whitespace-nowrap sm:text-base">
+                  Site internet
+                </p>
                 <p className="mt-1 text-xs text-ardoise-light">Trouve les clients</p>
               </div>
-              <span className="grid size-10 shrink-0 place-items-center rounded-full bg-gradient-chantier text-nuit shadow-glow">
+              <span className="grid size-10 shrink-0 place-items-center self-center rounded-full bg-gradient-chantier text-nuit shadow-glow">
                 <Plus className="size-5" />
               </span>
-              <div className="flex flex-1 flex-col items-center rounded-2xl glass p-6 text-center">
+              <div className="flex flex-1 flex-col items-center justify-center rounded-2xl glass px-3 py-5 text-center sm:p-6">
                 <Calculator className="size-8 text-chantier-light" />
-                <p className="mt-3 font-display font-semibold">Logiciel</p>
+                <p className="mt-3 font-display text-sm font-semibold whitespace-nowrap sm:text-base">
+                  Logiciel
+                </p>
                 <p className="mt-1 text-xs text-ardoise-light">Fait payer</p>
               </div>
               <DimensionLine

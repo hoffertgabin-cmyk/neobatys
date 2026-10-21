@@ -50,7 +50,10 @@ export function Testimonials() {
         onBlurCapture={() => setPaused(false)}
       >
         <div className="relative min-h-[300px] overflow-hidden rounded-3xl bg-sable p-8 ring-1 ring-nuit/5 sm:min-h-[260px] sm:p-12">
-          <Quote aria-hidden="true" className="absolute top-6 right-6 size-16 text-chantier/20" />
+          <Quote
+            aria-hidden="true"
+            className="absolute top-5 right-5 size-10 text-chantier/20 sm:top-6 sm:right-6 sm:size-16"
+          />
           <AnimatePresence mode="wait" custom={direction} initial={false}>
             <m.figure
               key={index}
@@ -62,7 +65,7 @@ export function Testimonials() {
               exit={{ opacity: 0, x: direction * -40 }}
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             >
-              <blockquote className="font-display text-xl leading-relaxed font-semibold text-nuit sm:text-2xl">
+              <blockquote className="pt-6 font-display text-xl leading-relaxed font-semibold text-nuit sm:pt-0 sm:pr-14 sm:text-2xl">
                 {t.quote}
               </blockquote>
               <figcaption className="mt-8 flex items-center gap-4">

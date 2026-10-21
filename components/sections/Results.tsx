@@ -63,25 +63,23 @@ function AiVisual() {
 
 function CostsVisual() {
   return (
-    <div className="flex items-center gap-3">
-      <ul className="flex-1 space-y-1.5 text-xs text-ardoise-dark">
+    <div className="space-y-3">
+      <ul className="flex flex-wrap gap-1.5 text-xs text-ardoise-dark">
         {["Logiciel de devis", "Standard téléphonique", "Agence web", "Relances à la main"].map(
           (t) => (
             <li
               key={t}
-              className="rounded-lg bg-white/70 px-2.5 py-1.5 line-through decoration-nuit/30"
+              className="rounded-lg bg-white/70 px-2.5 py-1.5 whitespace-nowrap line-through decoration-nuit/30"
             >
               {t}
             </li>
           ),
         )}
       </ul>
-      <ArrowRight className="size-4 shrink-0 text-ardoise" />
-      <span className="rounded-2xl bg-white px-3 py-4 text-center text-xs font-semibold ring-1 ring-nuit/8">
-        1 seul
-        <br />
+      <p className="flex w-fit items-center gap-2 rounded-xl bg-white px-3 py-2 text-xs font-semibold ring-1 ring-nuit/8">
+        <ArrowRight aria-hidden="true" className="size-3.5 shrink-0 text-ardoise" />1 seul
         interlocuteur
-      </span>
+      </p>
     </div>
   );
 }

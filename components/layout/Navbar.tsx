@@ -32,14 +32,14 @@ export function Navbar() {
     <>
       <header
         className={cn(
-          "fixed inset-x-0 top-3 z-50 transition-[transform,translate] duration-300 ease-out sm:top-4",
+          "fixed inset-x-0 top-3 z-50 px-3 transition-[transform,translate] duration-300 ease-out sm:top-4 sm:px-4",
           hidden ? "-translate-y-[150%]" : "translate-y-0",
         )}
       >
         <nav
           aria-label="Navigation principale"
           className={cn(
-            "mx-3 flex h-16 items-center justify-between gap-6 rounded-2xl bg-white/80 pr-2.5 pl-4 ring-1 ring-nuit/5 backdrop-blur-xl transition-shadow duration-300 sm:mx-auto sm:max-w-[1160px] sm:pl-5",
+            "mx-auto flex h-16 max-w-[1160px] items-center justify-between gap-6 rounded-2xl bg-white/80 pr-2.5 pl-4 ring-1 ring-nuit/5 backdrop-blur-xl transition-shadow duration-300 sm:pl-5",
             scrolled ? "shadow-lift" : "shadow-soft",
           )}
         >
