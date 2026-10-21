@@ -27,8 +27,8 @@ export const contactSchema = z.object({
   consent: z.literal(true, {
     error: "Votre accord est nécessaire pour vous recontacter.",
   }),
-  // Champ piège anti-spam : doit rester vide
-  company: z.string().max(0).optional(),
+  // Champ piège anti-spam : accepté ici pour que la route réponde OK au robot sans rien envoyer
+  company: z.string().max(200).optional(),
 });
 
 export type ContactInput = z.input<typeof contactSchema>;
