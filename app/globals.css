@@ -1,26 +1,231 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ------------------------------------------------------------------
+   Design tokens NEOBATYS
+   Chaque couleur devient une variable CSS (--color-*) et des classes
+   Tailwind (bg-nuit, text-chantier, border-acier…).
+------------------------------------------------------------------- */
+@theme {
+  --color-nuit: #0b1b2e;
+  --color-nuit-soft: #10233a;
+  --color-acier: #1e3a5f;
+  --color-chantier: #f97316;
+  --color-chantier-light: #fb923c;
+  /* Orange foncé : petits textes/liens orange sur fond clair (AA) */
+  --color-chantier-dark: #c2410c;
+  --color-sable: #f5f1ea;
+  --color-sable-dark: #ebe4d8;
+  --color-ardoise: #64748b;
+  /* Texte secondaire sur sable (AA) */
+  --color-ardoise-dark: #475569;
+  /* Texte secondaire sur bleu nuit (AA) */
+  --color-ardoise-light: #94a3b8;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-jakarta), var(--font-inter), ui-sans-serif, sans-serif;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --shadow-soft: 0 1px 2px rgb(11 27 46 / 0.04), 0 8px 24px -8px rgb(11 27 46 / 0.12);
+  --shadow-lift: 0 2px 4px rgb(11 27 46 / 0.06), 0 24px 48px -12px rgb(11 27 46 / 0.25);
+  --shadow-glow: 0 8px 32px -8px rgb(249 115 22 / 0.55);
+
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-blob: blob 22s ease-in-out infinite alternate;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-word: word-in 0.5s var(--ease-out-expo) both;
+  --animate-fade-up: fade-up 0.7s var(--ease-out-expo) both;
+
+  @keyframes marquee {
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+  @keyframes float {
+    50% {
+      transform: translate3d(0, var(--float-y, -10px), 0);
+    }
+  }
+  @keyframes word-in {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 0.4em, 0);
+    }
+  }
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 16px, 0);
+    }
+  }
+  @keyframes blob {
+    0% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+      transform: translate3d(8%, -6%, 0) scale(1.12);
+    }
+    100% {
+      transform: translate3d(-6%, 8%, 0) scale(0.94);
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-sable font-sans text-nuit antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-balance;
+    letter-spacing: -0.018em;
+    word-spacing: 0.06em;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-chantier;
+  }
+  ::selection {
+    @apply bg-chantier text-nuit;
+  }
+}
+
+@utility container-site {
+  @apply mx-auto w-full max-w-[1200px] px-5 sm:px-8;
+}
+
+/* Verre dépoli : à réserver aux fonds sombres */
+@utility glass {
+  background-color: rgb(255 255 255 / 0.06);
+  border: 1px solid rgb(255 255 255 / 0.1);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+@utility text-gradient {
+  background-image: linear-gradient(100deg, var(--color-chantier), var(--color-chantier-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-gradient-chantier {
+  background-image: linear-gradient(120deg, var(--color-chantier), var(--color-chantier-light));
+}
+
+/* Grille de plan d'architecte (petit et grand carreau) */
+@utility bg-blueprint {
+  --grid: rgb(30 58 95 / 0.08);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size:
+    120px 120px,
+    120px 120px,
+    24px 24px,
+    24px 24px;
+}
+
+@utility bg-blueprint-dark {
+  --grid: rgb(148 163 184 / 0.07);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+    linear-gradient(rgb(148 163 184 / 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(148 163 184 / 0.035) 1px, transparent 1px);
+  background-size:
+    120px 120px,
+    120px 120px,
+    24px 24px,
+    24px 24px;
+}
+
+/* Fondu des bords pour les motifs de fond */
+@utility mask-fade {
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 40%, transparent 100%);
+}
+
+@utility mask-fade-x {
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+
+/* Apparition au défilement (voir components/motion/RevealObserver.tsx).
+   La classe .js est posée avant l'affichage : sans JavaScript, tout reste visible. */
+.js [data-reveal]:not([data-visible]) {
+  opacity: 0;
+  transform: translate3d(0, var(--reveal-y, 24px), 0);
+}
+.js [data-reveal] {
+  transition:
+    opacity 0.6s var(--ease-out-expo) var(--reveal-delay, 0s),
+    transform 0.6s var(--ease-out-expo) var(--reveal-delay, 0s);
+}
+[data-stagger] > [data-reveal]:nth-child(2) {
+  --reveal-delay: 0.08s;
+}
+[data-stagger] > [data-reveal]:nth-child(3) {
+  --reveal-delay: 0.16s;
+}
+[data-stagger] > [data-reveal]:nth-child(4) {
+  --reveal-delay: 0.24s;
+}
+[data-stagger] > [data-reveal]:nth-child(5) {
+  --reveal-delay: 0.32s;
+}
+[data-stagger] > [data-reveal]:nth-child(6) {
+  --reveal-delay: 0.4s;
+}
+[data-stagger] > [data-reveal]:nth-child(n + 7) {
+  --reveal-delay: 0.48s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal]:not([data-visible]) {
+    transform: none;
+  }
+}
+
+/* Bandeau cookies : masqué sans JavaScript ou si un choix est déjà enregistré */
+html:not(.js) .cookie-banner,
+html.consent-set .cookie-banner {
+  display: none;
+}
+
+/* Blobs flous : calque GPU dédié, pas de re-rendu à chaque image */
+.animate-blob {
+  will-change: transform;
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  scroll-padding-top: 5rem;
 }
