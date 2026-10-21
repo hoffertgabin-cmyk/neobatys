@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
 import * as m from "motion/react-m";
 import { Maximize2, X } from "lucide-react";
@@ -29,9 +29,48 @@ function ProjectPreview({ project }: { project: Project }) {
   );
 }
 
-/** Fenêtre d'agrandissement d'une maquette. */
+type Viewport = { mode: "scale"; scale: number } | { mode: "fluid"; width: number; height: number };
+
+/**
+ * Taille de la maquette dans la fenêtre : mise à l'échelle sur grand écran,
+ * en pleine largeur (sans zoom, pour garder des boutons lisibles) sur mobile.
+ */
+function useViewport(open: boolean) {
+  const headerRef = useRef<HTMLDivElement>(null);
+  const boxRef = useRef<HTMLDivElement>(null);
+  const [viewport, setViewport] = useState<Viewport | null>(null);
+
+  useLayoutEffect(() => {
+    const box = boxRef.current;
+    if (!open || !box) return;
+    const measure = () => {
+      const width = box.clientWidth;
+      if (width === 0) return;
+      const free = window.innerHeight - (headerRef.current?.offsetHeight ?? 0);
+      if (width >= MOCKUP_WIDTH) {
+        const scale = Math.min(width / MOCKUP_WIDTH, Math.max(0.6, (free - 64) / MOCKUP_HEIGHT));
+        setViewport({ mode: "scale", scale });
+      } else {
+        setViewport({ mode: "fluid", width, height: Math.max(360, free - 28) });
+      }
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(box);
+    window.addEventListener("resize", measure);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", measure);
+    };
+  }, [open]);
+
+  return { headerRef, boxRef, viewport };
+}
+
+/** Fenêtre d'agrandissement : la maquette devient un site navigable. */
 function ProjectDialog({ project, onClose }: { project: Project | null; onClose: () => void }) {
   const ref = useRef<HTMLDialogElement>(null);
+  const { headerRef, boxRef, viewport } = useViewport(project !== null);
 
   useEffect(() => {
     const dialog = ref.current;
@@ -45,13 +84,13 @@ function ProjectDialog({ project, onClose }: { project: Project | null; onClose:
       aria-labelledby="maquette-titre"
       onClose={onClose}
       onClick={(e) => e.target === e.currentTarget && ref.current?.close()}
-      className="m-auto w-[min(1040px,calc(100%-2rem))] max-w-none overflow-visible bg-transparent p-0 backdrop:bg-nuit/70 backdrop:backdrop-blur-sm"
+      className="m-auto max-h-[calc(100dvh-1rem)] w-[min(1040px,calc(100%-1rem))] max-w-none overflow-auto bg-transparent p-0 backdrop:bg-nuit/70 backdrop:backdrop-blur-sm sm:w-[min(1040px,calc(100%-2rem))]"
     >
       {project && (
-        <div className="overflow-hidden rounded-3xl bg-white shadow-lift">
-          <div className="flex items-start justify-between gap-4 p-5 sm:p-6">
-            <div>
-              <p className="flex items-center gap-2 text-xs font-semibold tracking-wide text-ardoise-dark uppercase">
+        <div className="overflow-hidden rounded-2xl bg-white shadow-lift sm:rounded-3xl">
+          <div ref={headerRef} className="flex items-start justify-between gap-4 p-4 sm:p-6">
+            <div className="min-w-0">
+              <p className="flex flex-wrap items-center gap-2 text-xs font-semibold tracking-wide text-ardoise-dark uppercase">
                 <span
                   aria-hidden="true"
                   className="size-2.5 rounded-full"
@@ -62,10 +101,13 @@ function ProjectDialog({ project, onClose }: { project: Project | null; onClose:
                   <PlaceholderBadge className="text-ardoise-dark" />
                 )}
               </p>
-              <h3 id="maquette-titre" className="mt-1.5 text-xl font-bold sm:text-2xl">
+              <h3 id="maquette-titre" className="mt-1.5 text-lg font-bold sm:text-2xl">
                 {project.title}
               </h3>
-              <p className="mt-1 text-sm text-ardoise-dark">{project.description}</p>
+              <p className="mt-1 hidden text-sm text-ardoise-dark sm:block">
+                {project.description} Naviguez dans la maquette : menus, boutons et formulaires
+                fonctionnent (rien n&apos;est envoyé).
+              </p>
             </div>
             <button
               type="button"
@@ -77,13 +119,37 @@ function ProjectDialog({ project, onClose }: { project: Project | null; onClose:
             </button>
           </div>
           <div
-            className="px-3 pb-3 sm:px-6 sm:pb-6"
+            className="px-2 pb-2 sm:px-6 sm:pb-6"
             style={{ backgroundColor: project.theme.soft }}
           >
-            <div className="overflow-hidden rounded-2xl shadow-lift ring-1 ring-nuit/8 sm:mt-0">
-              <ScaledCanvas width={MOCKUP_WIDTH} height={MOCKUP_HEIGHT}>
-                <TradeSiteMockup project={project} />
-              </ScaledCanvas>
+            <div ref={boxRef}>
+              {viewport?.mode === "scale" && (
+                <div
+                  className="relative mx-auto overflow-hidden rounded-2xl shadow-lift ring-1 ring-nuit/8"
+                  style={{
+                    width: MOCKUP_WIDTH * viewport.scale,
+                    height: MOCKUP_HEIGHT * viewport.scale,
+                  }}
+                >
+                  <div
+                    className="absolute top-0 left-0 origin-top-left"
+                    style={{ transform: `scale(${viewport.scale})` }}
+                  >
+                    <TradeSiteMockup key={project.title} project={project} interactive />
+                  </div>
+                </div>
+              )}
+              {viewport?.mode === "fluid" && (
+                <div className="overflow-hidden rounded-xl shadow-lift ring-1 ring-nuit/8">
+                  <TradeSiteMockup
+                    key={project.title}
+                    project={project}
+                    interactive
+                    width={viewport.width}
+                    height={viewport.height}
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -143,12 +209,7 @@ export function Projects() {
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="group overflow-hidden rounded-2xl bg-white shadow-soft ring-1 ring-nuit/5 transition-shadow hover:shadow-lift"
           >
-            <button
-              type="button"
-              onClick={() => setSelected(project)}
-              className="relative block aspect-[4/3] w-full overflow-hidden text-left"
-            >
-              <span className="sr-only">Agrandir la maquette : {project.title}</span>
+            <div className="relative aspect-[4/3] w-full overflow-hidden">
               <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-[1.04]">
                 {project.image ? (
                   <Image
@@ -167,11 +228,19 @@ export function Projects() {
               )}
               <span
                 aria-hidden="true"
-                className="absolute bottom-3 left-1/2 inline-flex -translate-x-1/2 translate-y-2 items-center gap-1.5 rounded-full bg-nuit px-3.5 py-2 text-xs font-semibold whitespace-nowrap text-white opacity-0 shadow-lift transition-[opacity,translate] duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                className="absolute bottom-3 left-1/2 inline-flex -translate-x-1/2 translate-y-2 items-center gap-1.5 rounded-full bg-nuit px-3.5 py-2 text-xs font-semibold whitespace-nowrap text-white opacity-0 shadow-lift transition-[opacity,translate] duration-300 group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:translate-y-0 group-hover:opacity-100"
               >
-                <Maximize2 className="size-3.5" /> Voir la maquette
+                <Maximize2 className="size-3.5" /> Naviguer dans la maquette
               </span>
-            </button>
+              {/* Bouton posé par-dessus : la maquette contient elle-même des boutons. */}
+              <button
+                type="button"
+                onClick={() => setSelected(project)}
+                className="absolute inset-0 z-10 rounded-t-2xl focus-visible:outline-3 focus-visible:-outline-offset-3 focus-visible:outline-chantier"
+              >
+                <span className="sr-only">Agrandir la maquette : {project.title}</span>
+              </button>
+            </div>
             <div className="p-5">
               <p className="flex items-center gap-2 text-xs font-semibold tracking-wide text-ardoise-dark uppercase">
                 <span

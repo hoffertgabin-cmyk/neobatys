@@ -51,12 +51,12 @@ export const projects: Project[] = [
   {
     title: "Projet exemple · Plomberie",
     trade: "Plombier",
-    city: "[Ville]",
+    city: "Thionville",
     description: "Site vitrine + formulaire de dépannage urgent.",
     tags: ["Site vitrine", "SEO local"],
     mockup: "plombier",
     brand: "Votre Plomberie",
-    domain: "plomberie-votre-ville.fr",
+    domain: "exemple-plomberie-thionville.fr",
     theme: {
       primary: "#0369a1",
       onPrimary: "#ffffff",
@@ -70,12 +70,12 @@ export const projects: Project[] = [
   {
     title: "Projet exemple · Électricité",
     trade: "Électricien",
-    city: "[Ville]",
+    city: "Montigny-lès-Metz",
     description: "Site + logiciel de devis relié au formulaire.",
     tags: ["Pack complet"],
     mockup: "electricien",
     brand: "Votre Électricité",
-    domain: "electricien-votre-ville.fr",
+    domain: "exemple-electricite-montigny.fr",
     theme: {
       primary: "#facc15",
       onPrimary: "#111827",
@@ -89,12 +89,12 @@ export const projects: Project[] = [
   {
     title: "Projet exemple · Maçonnerie",
     trade: "Maçon",
-    city: "[Ville]",
+    city: "Pont-à-Mousson",
     description: "Galerie avant / après de rénovations.",
     tags: ["Site vitrine", "Galerie"],
     mockup: "macon",
     brand: "Votre Maçonnerie",
-    domain: "maconnerie-votre-ville.fr",
+    domain: "exemple-maconnerie-pontamousson.fr",
     theme: {
       primary: "#57534e",
       onPrimary: "#ffffff",
@@ -108,12 +108,12 @@ export const projects: Project[] = [
   {
     title: "Projet exemple · Menuiserie",
     trade: "Menuisier",
-    city: "[Ville]",
+    city: "Boulay-Moselle",
     description: "Catalogue de réalisations sur mesure.",
     tags: ["Site vitrine"],
     mockup: "menuisier",
     brand: "Votre Menuiserie",
-    domain: "menuiserie-votre-ville.fr",
+    domain: "exemple-menuiserie-boulay.fr",
     theme: {
       primary: "#92400e",
       onPrimary: "#ffffff",
@@ -127,12 +127,12 @@ export const projects: Project[] = [
   {
     title: "Projet exemple · Couverture",
     trade: "Couvreur",
-    city: "[Ville]",
+    city: "Hayange",
     description: "Logiciel de devis et relances automatiques.",
     tags: ["Logiciel"],
     mockup: "couvreur",
     brand: "Votre Couverture",
-    domain: "app.couverture-votre-ville.fr",
+    domain: "app.exemple-couverture-hayange.fr",
     theme: {
       primary: "#334155",
       onPrimary: "#ffffff",
@@ -146,12 +146,12 @@ export const projects: Project[] = [
   {
     title: "Projet exemple · Peinture",
     trade: "Peintre",
-    city: "[Ville]",
+    city: "Woippy",
     description: "Site one-page et fiche Google Business.",
     tags: ["Site vitrine", "Google Business"],
     mockup: "peintre",
     brand: "Votre Peinture",
-    domain: "peinture-votre-ville.fr",
+    domain: "exemple-peinture-woippy.fr",
     theme: {
       primary: "#7c3aed",
       onPrimary: "#ffffff",
@@ -165,12 +165,12 @@ export const projects: Project[] = [
   {
     title: "Projet exemple · Chauffage",
     trade: "Chauffagiste",
-    city: "[Ville]",
+    city: "Saint-Avold",
     description: "Prise de rendez-vous d'entretien et rappels annuels.",
     tags: ["Site vitrine", "Rendez-vous en ligne"],
     mockup: "chauffagiste",
     brand: "Votre Chauffage",
-    domain: "chauffage-votre-ville.fr",
+    domain: "exemple-chauffage-saint-avold.fr",
     theme: {
       primary: "#dc2626",
       onPrimary: "#ffffff",
@@ -184,12 +184,12 @@ export const projects: Project[] = [
   {
     title: "Projet exemple · Carrelage",
     trade: "Carreleur",
-    city: "[Ville]",
+    city: "Amnéville",
     description: "Site avec estimation de devis au m².",
     tags: ["Site vitrine", "Devis en ligne"],
     mockup: "carreleur",
     brand: "Votre Carrelage",
-    domain: "carrelage-votre-ville.fr",
+    domain: "exemple-carrelage-amneville.fr",
     theme: {
       primary: "#0f766e",
       onPrimary: "#ffffff",
@@ -203,12 +203,12 @@ export const projects: Project[] = [
   {
     title: "Projet exemple · Charpente",
     trade: "Charpentier",
-    city: "[Ville]",
+    city: "Faulquemont",
     description: "Site, logiciel et assistant IA qui répond aux demandes.",
     tags: ["Pack complet", "IA"],
     mockup: "charpentier",
     brand: "Votre Charpente",
-    domain: "charpente-votre-ville.fr",
+    domain: "exemple-charpente-faulquemont.fr",
     theme: {
       primary: "#166534",
       onPrimary: "#ffffff",
