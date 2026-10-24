@@ -5,6 +5,8 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Button } from "@/components/ui/Button";
 import { PageHero } from "@/components/sections/PageHero";
 import { SoftwareOffer } from "@/components/sections/SoftwareOffer";
+import { SoftwareTour } from "@/components/sections/SoftwareTour";
+import { SoftwareOnboarding, SoftwareWeek } from "@/components/sections/SoftwareWeek";
 import { Included } from "@/components/sections/Included";
 import { Stats } from "@/components/sections/Stats";
 import { Pricing } from "@/components/sections/Pricing";
@@ -23,11 +25,14 @@ export default function LogicielPage() {
         <Button href="/contact?service=logiciel" size="lg" arrow>
           Demander une démo
         </Button>
-        <Button href="#tarifs" size="lg" variant="ghost">
-          Voir les tarifs
+        <Button href="#demo" size="lg" variant="ghost">
+          Essayer la démo en ligne
         </Button>
       </PageHero>
+      <SoftwareTour />
+      <SoftwareWeek />
       <SoftwareOffer showCta={false} />
+      <SoftwareOnboarding />
       <Included {...logicielPage.included} />
       <Stats />
       <Pricing />

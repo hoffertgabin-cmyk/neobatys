@@ -89,7 +89,7 @@ export const softwareOffer = {
       text: "Conforme à la réforme et à ses échéances 2026–2027.",
     },
   ],
-  cta: { label: "Découvrir le logiciel", href: "/logiciel" },
+  cta: { label: "Voir le logiciel en action", href: "/logiciel#demo" },
 };
 
 export const comboPack = {

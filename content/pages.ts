@@ -119,6 +119,21 @@ export const logicielPage = {
         "Les entreprises doivent progressivement recevoir puis émettre leurs factures dans un format électronique normé, via une plateforme agréée. Le logiciel s'en charge pour vous : vous continuez à facturer comme d'habitude.",
     },
     {
+      question: "Je peux faire mes devis depuis mon téléphone ?",
+      answer:
+        "Oui. Le logiciel marche sur téléphone, tablette et ordinateur : vous faites le devis chez le client et il le signe sur place ou chez lui.",
+    },
+    {
+      question: "Je ne suis pas à l'aise avec l'informatique, c'est pour moi ?",
+      answer:
+        "Oui, c'est fait pour ça. Les écrans sont simples, on vous forme pendant une heure et on reste joignable ensuite si vous bloquez.",
+    },
+    {
+      question: "Mes clients doivent-ils installer quelque chose pour signer ?",
+      answer:
+        "Non. Ils reçoivent un lien par e-mail ou SMS, ouvrent le devis et signent du doigt, sans compte ni application.",
+    },
+    {
       question: "Y a-t-il une démo avant de m'engager ?",
       answer:
         "Oui, on vous montre le logiciel en 20 minutes, en visio ou sur place, avec vos propres exemples de devis.",
