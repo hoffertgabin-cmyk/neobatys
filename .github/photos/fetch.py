@@ -71,8 +71,11 @@ def search(q, n=12):
 def sheets():
     queries = json.load(open(f"{ROOT}/queries.json"))
     os.makedirs(f"{ROOT}/sheets", exist_ok=True)
-    meta = {}
+    mp = f"{ROOT}/sheets/meta.json"
+    meta = json.load(open(mp)) if os.path.exists(mp) else {}
     for key, q in queries.items():
+        if key in meta:
+            continue
         print("search", key, q)
         res = search(q)
         thumbs = []
