@@ -10,26 +10,31 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 UA = {"User-Agent": "neobatys-maquettes/1.0 (photos libres pour maquettes)"}
 
 
-def get(url, tries=3):
+def get(url, tries=4):
     for i in range(tries):
         try:
             with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=40) as r:
                 return r.read()
         except Exception as e:  # noqa: BLE001
             print("  retry", url[:90], e)
-            time.sleep(3 + i * 4)
+            time.sleep(30 if "429" in str(e) or "401" in str(e) else 3)
     return None
 
 
 def search(q, n=12):
-    params = urllib.parse.urlencode(
-        {"q": q, "license": "cc0,pdm", "page_size": 40, "mature": "false", "size": "large"}
-    )
-    raw = get(f"https://api.openverse.org/v1/images/?{params}")
-    if not raw:
-        return []
+    found = []
+    for source in ("stocksnap", None):
+        p = {"q": q, "license": "cc0,pdm", "page_size": 30, "mature": "false"}
+        if source:
+            p["source"] = source
+        raw = get(f"https://api.openverse.org/v1/images/?{urllib.parse.urlencode(p)}")
+        time.sleep(6)
+        if raw:
+            found += json.loads(raw).get("results", [])
+        if len(found) >= n:
+            break
     out = []
-    for r in json.loads(raw).get("results", []):
+    for r in found:
         w, h = r.get("width") or 0, r.get("height") or 0
         if w and h and w < h * 1.15:
             continue
@@ -48,7 +53,7 @@ def sheets():
         res = search(q)
         thumbs = []
         for r in res:
-            raw = get(r.get("thumbnail") or r["url"])
+            raw = get(r["url"], tries=1)
             if not raw:
                 continue
             try:
