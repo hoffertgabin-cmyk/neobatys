@@ -1,18 +1,21 @@
+import { useId } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { site } from "@/content/site";
 
 /** Logo provisoire NEOBATYS (pictogramme toit + équerre). TODO: remplacer par votre logo définitif si besoin. */
 export function LogoMark({ className }: { className?: string }) {
+  // Le logo apparaît deux fois (menu et pied de page) : l'id du dégradé doit être unique
+  const gradientId = useId();
   return (
     <svg viewBox="0 0 40 40" aria-hidden="true" className={cn("size-9", className)}>
       <defs>
-        <linearGradient id="logo-g" x1="0" y1="0" x2="1" y2="1">
+        <linearGradient id={gradientId} x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stopColor="#F97316" />
           <stop offset="1" stopColor="#FB923C" />
         </linearGradient>
       </defs>
-      <rect width="40" height="40" rx="11" fill="url(#logo-g)" />
+      <rect width="40" height="40" rx="11" fill={`url(#${gradientId})`} />
       <path
         d="M9 21.5 20 11l11 10.5"
         fill="none"

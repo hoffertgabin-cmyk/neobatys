@@ -7,6 +7,14 @@ type PageSeo = {
   path: string;
 };
 
+// Un openGraph défini par une page remplace celui du layout : l'image doit être redonnée ici
+const ogImage = {
+  url: "/opengraph-image",
+  width: 1200,
+  height: 630,
+  alt: `${site.name} · ${site.tagline}`,
+};
+
 /** Métadonnées d'une page : titre, description, canonical et Open Graph. */
 export function pageMetadata({ title, description, path }: PageSeo): Metadata {
   const url = new URL(path, site.url).toString();
@@ -21,8 +29,9 @@ export function pageMetadata({ title, description, path }: PageSeo): Metadata {
       siteName: site.name,
       locale: "fr_FR",
       type: "website",
+      images: [ogImage],
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: { card: "summary_large_image", title, description, images: [ogImage.url] },
   };
 }
 
@@ -30,6 +39,10 @@ export function pageMetadata({ title, description, path }: PageSeo): Metadata {
 export function serializeJsonLd(data: unknown) {
   return JSON.stringify(data).replace(/</g, "\\u003c");
 }
+
+/** Valeur encore à remplacer dans content/site.ts, ex. « [TÉLÉPHONE] ». */
+const isPlaceholder = (v: string) => v.includes("[");
+const filled = (v: string) => (isPlaceholder(v) ? undefined : v);
 
 export function localBusinessJsonLd() {
   return {
@@ -39,18 +52,19 @@ export function localBusinessJsonLd() {
     name: site.name,
     description: site.tagline,
     url: site.url,
-    telephone: site.phone,
-    email: site.email,
+    // Les champs non renseignés sont omis (JSON.stringify ignore undefined)
+    telephone: filled(site.phone),
+    email: filled(site.email),
     image: `${site.url}/opengraph-image`,
     address: {
       "@type": "PostalAddress",
-      streetAddress: site.address.street,
-      postalCode: site.address.postalCode,
+      streetAddress: filled(site.address.street),
+      postalCode: filled(site.address.postalCode),
       addressLocality: site.address.city,
       addressRegion: site.region,
       addressCountry: site.address.country,
     },
-    areaServed: site.zone,
+    areaServed: filled(site.zone),
     priceRange: "€€",
   };
 }
@@ -64,7 +78,7 @@ export function serviceJsonLd(name: string, description: string, path: string) {
     url: new URL(path, site.url).toString(),
     serviceType: name,
     provider: { "@id": `${site.url}/#entreprise` },
-    areaServed: site.zone,
+    areaServed: filled(site.zone),
     audience: {
       "@type": "BusinessAudience",
       audienceType: "Artisans du bâtiment",

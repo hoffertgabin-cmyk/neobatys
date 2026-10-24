@@ -34,8 +34,8 @@ export const pricing = {
       description: "Site + logiciel reliés : le plus de temps gagné.",
       setup: "790 €", // TODO
       setupLabel: "mise en place, puis",
-      monthly: 69, // TODO
-      yearly: 57, // TODO
+      monthly: 59, // TODO
+      yearly: 49, // TODO
       unit: "€ / mois",
       unitSub: "site + logiciel + accompagnement",
       features: [
