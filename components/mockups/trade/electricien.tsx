@@ -36,7 +36,7 @@ import {
   TrustStrip,
   ZoneMap,
 } from "./blocks";
-import { ChargerScene, LivingScene, PanelScene } from "./scenes";
+import { ArticlesSection, Gallery } from "./extras";
 
 const grid = {
   backgroundImage:
@@ -74,7 +74,7 @@ function Services() {
   const [tab, setTab] = useState(Number(param ?? 0));
   const s = services[tab];
   return (
-    <SubPage eyebrow="Nos services" title="Ce qu'on fait pour vous" visual={<PanelScene />}>
+    <SubPage eyebrow="Nos services" title="Ce qu'on fait pour vous" visual="tableau">
       <div className="flex flex-wrap gap-1.5">
         {services.map((x, i) => (
           <button
@@ -115,12 +115,17 @@ function Services() {
 }
 
 const works = [
-  { t: "Tableau neuf, maison de 1975", k: "Rénovation", c: "Montigny-lès-Metz" },
-  { t: "Borne 7 kW en garage", k: "Borne", c: "Marly" },
-  { t: "Volets et chauffage connectés", k: "Domotique", c: "Moulins-lès-Metz" },
-  { t: "Mise aux normes d'un local", k: "Rénovation", c: "Metz" },
-  { t: "2 bornes en copropriété", k: "Borne", c: "Ars-sur-Moselle" },
-  { t: "Éclairage LED extérieur", k: "Domotique", c: "Augny" },
+  { t: "Tableau neuf, maison de 1975", k: "Rénovation", c: "Montigny-lès-Metz", img: "tableau" },
+  { t: "Borne 7 kW en garage", k: "Borne", c: "Marly", img: "borne" },
+  { t: "Éclairage d'un séjour", k: "Domotique", c: "Moulins-lès-Metz", img: "eclairage" },
+  { t: "Mise aux normes d'un local", k: "Rénovation", c: "Metz", img: "electricien-chantier" },
+  {
+    t: "Recâblage complet d'une longère",
+    k: "Rénovation",
+    c: "Ars-sur-Moselle",
+    img: "electricien-hero",
+  },
+  { t: "Spots et variateurs connectés", k: "Domotique", c: "Augny", img: "salon2" },
 ] as const;
 
 const info: SiteInfo = {
@@ -140,13 +145,46 @@ const info: SiteInfo = {
     { label: "Réalisations", page: "realisations" },
     { label: "Devis en ligne", page: "devis" },
   ],
+  contactPage: "devis",
+  articles: [
+    {
+      t: "Ma maison a 30 ans : faut-il refaire l'électricité ?",
+      d: "Les signes qui doivent alerter et ce que coûte une mise en sécurité.",
+      cat: "Rénovation",
+      read: 4,
+      img: "tableau",
+      body: [
+        "Des disjoncteurs qui sautent, des prises sans terre ou un tableau à fusibles sont les signes les plus fréquents d'une installation à reprendre.",
+        "Une simple mise en sécurité (tableau neuf, différentiels, terre) coûte souvent entre 1 000 et 2 500 €.",
+        "Une rénovation complète, avec reprise des circuits, se chiffre plutôt à partir de 90 € par m².",
+      ],
+    },
+    {
+      t: "Borne de recharge : les aides en 2026",
+      d: "Crédit d'impôt, prime Advenir en copropriété : ce que vous pouvez récupérer.",
+      cat: "Borne",
+      read: 3,
+      img: "borne",
+      body: [
+        "Le crédit d'impôt couvre 75 % du prix de la borne et de sa pose, dans la limite de 500 € par borne.",
+        "En copropriété, la prime Advenir peut financer une partie de l'installation collective.",
+        "Seul un installateur qualifié IRVE peut poser une borne de plus de 3,7 kW ouvrant droit aux aides.",
+      ],
+    },
+    {
+      t: "Éclairage LED : bien choisir ses spots",
+      d: "Température de couleur, puissance, variation : les bons réglages pièce par pièce.",
+      cat: "Éclairage",
+      read: 3,
+      img: "eclairage",
+      body: [
+        "Préférez un blanc chaud (2 700 à 3 000 K) dans le salon et les chambres, et un blanc neutre (4 000 K) dans la cuisine et le bureau.",
+        "Comptez environ un spot pour 1,5 m² pour un éclairage d'ambiance homogène.",
+        "Des variateurs compatibles LED évitent le scintillement et permettent d'adapter la lumière au moment.",
+      ],
+    },
+  ],
   rating: { value: "4,8", count: 76 },
-};
-
-const thumbs = {
-  Rénovation: <PanelScene />,
-  Borne: <ChargerScene />,
-  Domotique: <LivingScene wall="#d7d2c8" spots />,
 };
 
 function Home() {
@@ -184,11 +222,10 @@ function Home() {
           </div>
           <div className="relative">
             <Photo
+              src="electricien-hero"
               className="h-[250px] rounded-2xl ring-1 ring-white/10"
-              caption="Éclairage LED · maison à Marly"
-            >
-              <LivingScene wall="#cfc6b8" spots />
-            </Photo>
+              caption="Câblage d'une rénovation · Marly"
+            />
             <div className="absolute -bottom-3 -left-3 hidden w-44 rounded-xl bg-white p-3 text-nuit shadow-2xl @min-[600px]:block">
               <p className="flex items-center gap-1 text-[9px] font-semibold tracking-wide text-nuit/50 uppercase">
                 <FileText className="size-3" /> Devis n° 2026-118
@@ -240,15 +277,11 @@ function Home() {
               tone="light"
               className="flex-col items-stretch gap-0 overflow-hidden rounded-xl p-0 text-left ring-nuit/8"
             >
-              <Photo className="h-28 rounded-none">
-                {
-                  [
-                    <PanelScene key="p" />,
-                    <ChargerScene key="c" />,
-                    <LivingScene key="l" wall="#bfc8c2" spots />,
-                  ][i]
-                }
-              </Photo>
+              <Photo
+                src={["tableau", "borne", "eclairage"][i]}
+                alt={s.t}
+                className="h-28 rounded-none"
+              />
               <span className="block p-3.5">
                 <span className="flex items-center gap-2 text-[13px] font-bold text-nuit">
                   <span className="grid size-6 place-items-center rounded-md bg-(--d) text-(--p)">
@@ -325,9 +358,7 @@ function Home() {
               tone="light"
               className="flex-col items-stretch gap-0 overflow-hidden rounded-xl p-0 text-left ring-nuit/8"
             >
-              <Photo className="h-20 rounded-none" caption={w.k}>
-                {thumbs[w.k]}
-              </Photo>
+              <Photo src={w.img} alt={w.t} className="h-20 rounded-none" caption={w.k} />
               <span className="block p-2.5">
                 <span className="block text-[10.5px] leading-snug font-bold text-nuit">{w.t}</span>
                 <span className="mt-0.5 block text-[9.5px] font-normal text-nuit/50">{w.c}</span>
@@ -423,6 +454,8 @@ function Home() {
         </div>
       </Section>
 
+      <ArticlesSection />
+
       <Section className="px-0 @min-[600px]:px-0">
         <CtaBand
           title="Un projet électrique ? Parlons-en."
@@ -446,22 +479,11 @@ function Realisations() {
         onChange={setK}
         activeClassName="bg-(--d) text-(--p) ring-(--d)"
       />
-      <div className="mt-3 grid grid-cols-2 gap-3 @min-[600px]:grid-cols-3">
-        {list.map((w) => (
-          <div key={w.t} className="overflow-hidden rounded-xl bg-white ring-1 ring-nuit/8">
-            <div className="relative h-20">
-              {thumbs[w.k]}
-              <span className="absolute top-2 left-2 rounded bg-(--p) px-1.5 py-0.5 text-[9px] font-bold text-(--op)">
-                {w.k}
-              </span>
-            </div>
-            <div className="p-2.5">
-              <p className="text-[11px] leading-snug font-bold text-nuit">{w.t}</p>
-              <p className="mt-0.5 text-[10px] text-nuit/50">{w.c}</p>
-            </div>
-          </div>
-        ))}
-      </div>
+      <Gallery
+        className="mt-3"
+        itemClassName="h-32"
+        items={list.map((w) => ({ src: w.img, t: `${w.t} · ${w.c}` }))}
+      />
     </SubPage>
   );
 }

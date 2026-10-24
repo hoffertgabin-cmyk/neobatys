@@ -39,7 +39,8 @@ import {
   TrustStrip,
   ZoneMap,
 } from "./blocks";
-import { BathroomScene, HouseScene, TileCloseUp } from "./scenes";
+import { ArticlesSection, Gallery, Pic, UploadField } from "./extras";
+import { TileCloseUp } from "./scenes";
 
 const types = ["Carrelage sol", "Faïence murale", "Grand format"] as const;
 const motifs = ["Droit", "Diagonale", "Chevron"] as const;
@@ -89,6 +90,45 @@ const info: SiteInfo = {
     { label: "Terrasses", page: "prestations" },
     { label: "Galerie", page: "galerie" },
     { label: "Estimer mon chantier", page: "home" },
+  ],
+  contactPage: "contact",
+  articles: [
+    {
+      t: "Grand format : les pièges à éviter",
+      d: "Planéité, colle, joints : ce qui change avec des carreaux de 120 cm.",
+      cat: "Pose",
+      read: 4,
+      img: "carrelage",
+      body: [
+        "Les grands formats exigent un support parfaitement plan : un ragréage est souvent nécessaire.",
+        "Le double encollage (sur le sol et sur le carreau) évite les creux et les casses.",
+        "Des joints fins de 2 mm mettent en valeur le grand format mais demandent une pose très précise.",
+      ],
+    },
+    {
+      t: "Faïence de salle de bain : bien choisir",
+      d: "Formats, finitions, entretien : nos conseils.",
+      cat: "Salle de bain",
+      read: 3,
+      img: "faience",
+      body: [
+        "Les carreaux zellige ou métro apportent du relief, les grands formats agrandissent la pièce.",
+        "Une finition mate glisse moins mais se nettoie un peu moins facilement que la brillante.",
+        "Un joint époxy dans la douche résiste aux moisissures bien mieux qu'un joint ciment.",
+      ],
+    },
+    {
+      t: "Carrelage extérieur : quelle classe d'antidérapant ?",
+      d: "R10, R11, R12 : comprendre les normes pour une terrasse sûre.",
+      cat: "Terrasses",
+      read: 3,
+      img: "terrasse-carrelage",
+      body: [
+        "Pour une terrasse, choisissez au minimum un carrelage classé R11.",
+        "Autour d'une piscine, privilégiez le classement A+B+C pour pieds nus.",
+        "Un carrelage ingélif est indispensable en Moselle, où les hivers sont rudes.",
+      ],
+    },
   ],
   rating: { value: "4,9", count: 89 },
 };
@@ -177,12 +217,11 @@ function Home() {
       {/* Hero : visuel + simulateur */}
       <div className="grid @min-[600px]:grid-cols-[1.05fr_1fr]">
         <div className="relative min-h-[300px] overflow-hidden bg-(--d)">
-          <BathroomScene
-            className="absolute inset-0"
-            wall="#cfdcd6"
-            floor="#3c4a47"
-            wood="#b48a62"
-            tile={[60, 60]}
+          <Pic
+            src="carreleur-hero"
+            alt="Salle d'eau carrelée du sol au plafond"
+            priority
+            sizes="60vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-(--d) via-(--d)/60 to-(--d)/10" />
           <div className="relative flex h-full flex-col justify-end p-4 text-white @min-[600px]:p-6">
@@ -232,16 +271,11 @@ function Home() {
               tone="light"
               className="flex-col items-stretch gap-0 overflow-hidden rounded-xl p-0 text-left ring-nuit/8"
             >
-              <Photo className="h-24 rounded-none">
-                {
-                  [
-                    <BathroomScene key="b" wall="#e4ebe7" floor="#6b7b76" tile={[40, 40]} />,
-                    <TileCloseUp key="p" color="#d8cfc2" joint="#efe9df" />,
-                    <HouseScene key="t" terrace="#cdbfae" facade="#f2ece3" roof="#4b5563" />,
-                    <TileCloseUp key="r" motif="chevron" color="#b7c9c1" />,
-                  ][i]
-                }
-              </Photo>
+              <Photo
+                src={["carreleur-hero", "carrelage", "terrasse-carrelage", "faience"][i]}
+                alt={t}
+                className="h-24 rounded-none"
+              />
               <span className="block p-3">
                 <span className="flex items-center gap-1.5 text-[12px] font-bold text-nuit">
                   <I className="size-3.5 text-(--p)" /> {t}
@@ -270,21 +304,12 @@ function Home() {
           <Photo
             className="col-span-2 h-40 @min-[600px]:col-span-1 @min-[600px]:row-span-2 @min-[600px]:h-auto"
             caption="Douche à l'italienne · Amnéville"
-          >
-            <BathroomScene wall="#d9e3de" floor="#2f3b38" wood="#8a5a35" tile={[30, 30]} />
-          </Photo>
-          <Photo className="h-28" caption="Terrasse 30 m² · Rombas">
-            <HouseScene terrace="#c9b8a3" facade="#efe7da" roof="#52525b" />
-          </Photo>
-          <Photo className="h-28" caption="Entrée en chevron · Talange">
-            <TileCloseUp motif="chevron" color="#cbb89f" joint="#f3ede4" />
-          </Photo>
-          <Photo className="h-28" caption="Crédence · Mondelange">
-            <TileCloseUp motif="hexagone" color="#5e8c80" joint="#f4f4f2" />
-          </Photo>
-          <Photo className="h-28" caption="Séjour grand format · Hagondange">
-            <TileCloseUp color="#e2ddd5" joint="#f6f4f0" />
-          </Photo>
+            src="plombier-sdb"
+          />
+          <Photo src="carrelage" className="h-28" caption="Pose d'un sol · Rombas" />
+          <Photo src="faience" className="h-28" caption="Parement effet brique · Talange" />
+          <Photo src="carreleur-sol" className="h-28" caption="Pierre naturelle · Mondelange" />
+          <Photo src="terrasse-carrelage" className="h-28" caption="Grand format · Hagondange" />
         </div>
       </Section>
 
@@ -366,6 +391,8 @@ function Home() {
         </div>
       </Section>
 
+      <ArticlesSection />
+
       <Section className="px-0 pt-0 @min-[600px]:px-0 @min-[600px]:pt-0">
         <CtaBand
           title="Votre prix en 30 secondes"
@@ -392,7 +419,7 @@ function Prestations() {
       eyebrow="Prestations"
       title="Ce que nous posons"
       intro="Fourniture conseillée ou posée avec votre carrelage."
-      visual={<BathroomScene wall="#e4ebe7" floor="#6b7b76" tile={[40, 40]} />}
+      visual="carreleur-hero"
     >
       <div className="space-y-2">
         {prestations.map(({ I, t, d }, i) => (
@@ -430,12 +457,48 @@ function Prestations() {
 }
 
 const realisations = [
-  { t: "Douche à l'italienne", c: "Amnéville", k: "Salle de bain", m: "Droit" as Motif },
-  { t: "Séjour 45 m² grand format", c: "Hagondange", k: "Pièces de vie", m: "Droit" as Motif },
-  { t: "Terrasse 30 m²", c: "Rombas", k: "Terrasses", m: "Diagonale" as Motif },
-  { t: "Entrée en chevron", c: "Talange", k: "Pièces de vie", m: "Chevron" as Motif },
-  { t: "Crédence de cuisine", c: "Mondelange", k: "Rénovation", m: "Chevron" as Motif },
-  { t: "Salle d'eau", c: "Moyeuvre-Grande", k: "Salle de bain", m: "Diagonale" as Motif },
+  {
+    t: "Douche à l'italienne",
+    c: "Amnéville",
+    k: "Salle de bain",
+    m: "Droit" as Motif,
+    img: "plombier-sdb",
+  },
+  {
+    t: "Séjour 45 m² grand format",
+    c: "Hagondange",
+    k: "Pièces de vie",
+    m: "Droit" as Motif,
+    img: "terrasse-carrelage",
+  },
+  {
+    t: "Terrasse 30 m²",
+    c: "Rombas",
+    k: "Terrasses",
+    m: "Diagonale" as Motif,
+    img: "carreleur-sol",
+  },
+  {
+    t: "Entrée en chevron",
+    c: "Talange",
+    k: "Pièces de vie",
+    m: "Chevron" as Motif,
+    img: "carrelage",
+  },
+  {
+    t: "Crédence de cuisine",
+    c: "Mondelange",
+    k: "Rénovation",
+    m: "Chevron" as Motif,
+    img: "faience",
+  },
+  {
+    t: "Salle d'eau",
+    c: "Moyeuvre-Grande",
+    k: "Salle de bain",
+    m: "Diagonale" as Motif,
+    img: "carreleur-hero",
+  },
 ];
 const filtres = ["Tout", "Salle de bain", "Pièces de vie", "Terrasses", "Rénovation"] as const;
 
@@ -445,17 +508,11 @@ function Galerie() {
   return (
     <SubPage eyebrow="Galerie" title="Chantiers récents">
       <Choice options={filtres} value={f} onChange={setF} />
-      <div className="mt-3 grid grid-cols-2 gap-2.5 @min-[600px]:grid-cols-3">
-        {list.map((r) => (
-          <div key={r.t} className="overflow-hidden rounded-xl bg-white ring-1 ring-nuit/8">
-            <Pattern motif={r.m} className="h-20" />
-            <p className="px-2.5 pt-2 text-[11px] font-bold text-nuit">{r.t}</p>
-            <p className="px-2.5 pb-2 text-[10px] text-nuit/50">
-              {r.c} · pose {r.m.toLowerCase()}
-            </p>
-          </div>
-        ))}
-      </div>
+      <Gallery
+        className="mt-3"
+        itemClassName="h-32"
+        items={list.map((r) => ({ src: r.img, t: `${r.t} · ${r.c} · pose ${r.m.toLowerCase()}` }))}
+      />
     </SubPage>
   );
 }
@@ -489,6 +546,9 @@ function Contact() {
                 defaultValue={param}
                 placeholder="Ex. : salle de bain 8 m²"
               />
+            </div>
+            <div className="mt-2.5">
+              <UploadField />
             </div>
           </DemoForm>
         </Card>

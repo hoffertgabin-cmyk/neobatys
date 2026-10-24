@@ -43,7 +43,7 @@ import {
   ZoneMap,
   type Review,
 } from "./blocks";
-import { BathroomScene, BoilerScene, PipesScene } from "./scenes";
+import { ArticlesSection, Pic } from "./extras";
 
 const problems = ["Fuite", "WC bouché", "Chauffe-eau", "Autre"] as const;
 
@@ -89,6 +89,45 @@ const info: SiteInfo = {
     { label: "Avis clients", page: "avis" },
     { label: "Urgence 7j/7", page: "urgence" },
   ],
+  contactPage: "urgence",
+  articles: [
+    {
+      t: "Fuite d'eau : les 5 bons réflexes avant l'arrivée du plombier",
+      d: "Couper l'eau, protéger l'électricité, photographier : ce qu'il faut faire dans les dix premières minutes.",
+      cat: "Dépannage",
+      read: 3,
+      img: "plombier-evier",
+      body: [
+        "Le premier geste est de fermer le robinet d'arrêt général, souvent situé près du compteur ou sous l'évier de la cuisine.",
+        "Si l'eau approche des prises ou du tableau électrique, coupez le disjoncteur général avant d'éponger.",
+        "Prenez des photos de la fuite et des dégâts : votre assureur vous les demandera, et elles aident le plombier à préparer son matériel.",
+      ],
+    },
+    {
+      t: "Douche à l'italienne : prix, délais et aides en 2026",
+      d: "Combien coûte vraiment une douche de plain-pied, et quelles aides pour les plus de 60 ans ?",
+      cat: "Salle de bain",
+      read: 4,
+      img: "sdb-italienne",
+      body: [
+        "Comptez entre 4 500 et 9 000 € pour remplacer une baignoire par une douche à l'italienne, selon la surface et le carrelage choisi.",
+        "Le chantier dure 5 à 8 jours : dépose, reprise des évacuations, étanchéité, carrelage puis paroi et robinetterie.",
+        "MaPrimeAdapt' peut financer jusqu'à 70 % des travaux pour les personnes de plus de 70 ans ou en perte d'autonomie.",
+      ],
+    },
+    {
+      t: "Chauffe-eau : réparer ou remplacer ?",
+      d: "Âge, entartrage, consommation : comment savoir s'il vaut mieux changer son ballon.",
+      cat: "Chauffe-eau",
+      read: 3,
+      img: "chauffe-eau",
+      body: [
+        "Un chauffe-eau électrique vit en moyenne 10 à 15 ans. Au-delà, une réparation coûteuse est rarement rentable.",
+        "Un ballon thermodynamique consomme jusqu'à trois fois moins qu'un modèle classique et peut être aidé par MaPrimeRénov'.",
+        "Un détartrage tous les 3 ans prolonge sa durée de vie, surtout en Moselle où l'eau est calcaire.",
+      ],
+    },
+  ],
   rating: { value: "4,9", count: 132 },
 };
 
@@ -119,7 +158,12 @@ function Home() {
     <>
       {/* Hero */}
       <div className="relative min-h-[360px] overflow-hidden bg-(--d)">
-        <BathroomScene className="absolute inset-0" />
+        <Pic
+          src="plombier-hero"
+          alt="Salle de bain rénovée avec douche vitrée"
+          priority
+          sizes="100vw"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-(--d)/95 via-(--d)/75 to-(--d)/5" />
         <div className="relative grid gap-5 px-4 py-7 @min-[600px]:grid-cols-[1.25fr_1fr] @min-[600px]:items-center @min-[600px]:px-8 @min-[600px]:py-9">
           <div className="text-white">
@@ -185,21 +229,21 @@ function Home() {
               t: "Dépannage et fuites",
               d: "Recherche de fuite, robinetterie, WC et canalisations débouchées.",
               to: "depannage",
-              v: <PipesScene />,
+              src: "plombier-evier",
               tag: "Sous 2 h",
             },
             {
               t: "Salle de bain",
               d: "Douche à l'italienne, PMR, meuble vasque : conception et pose.",
               to: "sdb",
-              v: <BathroomScene wall="#cfd8d2" floor="#4b5563" wood="#c79a6b" tile={[60, 60]} />,
+              src: "plombier-sdb2",
               tag: "Clé en main",
             },
             {
               t: "Chauffe-eau",
               d: "Remplacement, ballon thermodynamique, détartrage et entretien.",
               to: "depannage",
-              v: <BoilerScene accent="#0369a1" />,
+              src: "chauffe-eau",
               tag: "Pose en 24 h",
             },
           ].map((s) => (
@@ -209,9 +253,7 @@ function Home() {
               tone="light"
               className="group flex-col items-stretch gap-0 overflow-hidden rounded-xl p-0 text-left ring-nuit/8"
             >
-              <Photo className="h-28 rounded-none" caption={s.tag}>
-                {s.v}
-              </Photo>
+              <Photo src={s.src} alt={s.t} className="h-28 rounded-none" caption={s.tag} />
               <span className="block p-3.5">
                 <span className="block text-[13px] font-bold text-nuit">{s.t}</span>
                 <span className="mt-1 block text-[10.5px] leading-relaxed font-normal text-nuit/60">
@@ -228,9 +270,11 @@ function Home() {
 
       {/* Salle de bain */}
       <Section className="grid gap-6 @min-[600px]:grid-cols-2 @min-[600px]:items-center">
-        <Photo className="h-56" caption={`Douche à l'italienne · ${project.city}`}>
-          <BathroomScene wall="#e6e1d8" floor="#3f4448" wood="#8a5a35" tile={[60, 90]} />
-        </Photo>
+        <Photo
+          src="sdb-italienne"
+          className="h-56"
+          caption={`Douche à l'italienne · ${project.city}`}
+        />
         <div>
           <SectionHead
             kicker="Rénovation"
@@ -324,6 +368,8 @@ function Home() {
           />
         </div>
       </Section>
+
+      <ArticlesSection />
 
       <Section className="px-0 @min-[600px]:px-0">
         <CtaBand

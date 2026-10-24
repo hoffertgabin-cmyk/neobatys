@@ -38,6 +38,7 @@ import {
   TrustStrip,
   ZoneMap,
 } from "./blocks";
+import { ArticlesSection, Gallery, UploadField } from "./extras";
 import { HouseScene } from "./scenes";
 
 const chantiers = [
@@ -46,6 +47,7 @@ const chantiers = [
     t: "Ravalement de façade",
     k: "Façades",
     c: "Pont-à-Mousson",
+    img: "facade",
     before: <HouseScene cracked facade="#cdc2b3" roof="#6f5e55" />,
     after: <HouseScene facade="#efe2cc" roof="#8b4a35" />,
   },
@@ -54,6 +56,7 @@ const chantiers = [
     t: "Muret en pierre",
     k: "Murets",
     c: "Dieulouard",
+    img: "muret",
     before: <HouseScene cracked facade="#e6dccd" roof="#7c4a3a" />,
     after: <HouseScene stoneWall facade="#e9dfcf" roof="#7c4a3a" />,
   },
@@ -62,6 +65,7 @@ const chantiers = [
     t: "Terrasse béton désactivé",
     k: "Terrasses",
     c: "Pagny-sur-Moselle",
+    img: "terrasse",
     before: <HouseScene facade="#ddd5c8" roof="#5f5f5f" />,
     after: <HouseScene terrace="#cfc6b6" facade="#ece6dc" roof="#5f5f5f" />,
   },
@@ -70,6 +74,7 @@ const chantiers = [
     t: "Extension 20 m²",
     k: "Extensions",
     c: "Blénod-lès-PàM",
+    img: "maison",
     before: <HouseScene facade="#d9cfbf" roof="#8b4a35" />,
     after: <HouseScene timber facade="#efe5d6" roof="#8b4a35" />,
   },
@@ -93,6 +98,45 @@ const info: SiteInfo = {
     { label: "Terrasses", page: "prestations" },
     { label: "Extensions", page: "prestations" },
     { label: "Galerie avant / après", page: "galerie" },
+  ],
+  contactPage: "contact",
+  articles: [
+    {
+      t: "Ravalement de façade : quand et comment ?",
+      d: "Fissures, salissures, enduit qui se décolle : les bons moments pour intervenir.",
+      cat: "Façades",
+      read: 4,
+      img: "facade",
+      body: [
+        "Un ravalement est conseillé tous les 10 à 15 ans, ou plus tôt si des fissures laissent passer l'eau.",
+        "Sur les maisons anciennes, un enduit à la chaux laisse respirer les murs et évite l'humidité.",
+        "Une déclaration préalable en mairie est souvent nécessaire, surtout si la couleur change.",
+      ],
+    },
+    {
+      t: "Muret en pierre : sèche ou maçonnée ?",
+      d: "Avantages, prix et durée de vie des deux techniques.",
+      cat: "Extérieurs",
+      read: 3,
+      img: "muret",
+      body: [
+        "La pierre sèche, sans mortier, draine naturellement l'eau et convient aux murets de soutènement bas.",
+        "La pierre maçonnée est plus solide pour les clôtures hautes et les murets en limite de propriété.",
+        "Comptez de 250 à 450 € par m² selon la pierre et les fondations.",
+      ],
+    },
+    {
+      t: "Terrasse béton : désactivé, imprimé ou dalles ?",
+      d: "Trois finitions, trois budgets : comparez avant de choisir.",
+      cat: "Terrasses",
+      read: 3,
+      img: "terrasse",
+      body: [
+        "Le béton désactivé laisse apparaître les graviers : antidérapant et très résistant, il convient aux allées et plages de piscine.",
+        "Le béton imprimé imite la pierre ou le bois pour un prix plus bas qu'un dallage.",
+        "Les dalles sur plots s'installent sans béton et restent démontables.",
+      ],
+    },
   ],
   rating: { value: "4,9", count: 58 },
 };
@@ -215,7 +259,7 @@ function Home() {
               tone="light"
               className="flex-col items-stretch gap-0 overflow-hidden rounded-lg p-0 text-left ring-nuit/8"
             >
-              <Photo className="h-24 rounded-none">{x.after}</Photo>
+              <Photo src={x.img} alt={x.t} className="h-24 rounded-none" />
               <span className="block p-3">
                 <span className="block text-[12px] font-bold text-nuit">{prestations[i].t}</span>
                 <span className="mt-1 block text-[10px] leading-relaxed font-normal text-nuit/55">
@@ -230,9 +274,11 @@ function Home() {
       {/* Entreprise */}
       <Section className="bg-(--d)">
         <div className="grid gap-6 @min-[600px]:grid-cols-2 @min-[600px]:items-center">
-          <Photo className="h-48" caption="Chantier en cours · Dieulouard">
-            <HouseScene scaffold facade="#e7dccb" roof="#7c4a3a" sky="evening" />
-          </Photo>
+          <Photo
+            src="macon-hero"
+            className="h-48"
+            caption="Montage d'un mur en parpaings · Dieulouard"
+          />
           <div>
             <SectionHead
               light
@@ -320,6 +366,8 @@ function Home() {
         </div>
       </Section>
 
+      <ArticlesSection />
+
       <Section className="px-0 pt-0 @min-[600px]:px-0 @min-[600px]:pt-0">
         <CtaBand
           title="Un projet de maçonnerie ?"
@@ -350,7 +398,7 @@ function Prestations() {
     <SubPage
       eyebrow="Prestations"
       title="Du petit muret à l'extension"
-      visual={<HouseScene scaffold facade="#e7dccb" roof="#7c4a3a" />}
+      visual="macon-chantier"
       intro="Chaque chantier commence par une visite gratuite et un devis détaillé."
     >
       <div className="grid gap-2.5 @min-[600px]:grid-cols-2">
@@ -411,6 +459,21 @@ function Galerie() {
           </button>
         ))}
       </div>
+      <p className="mt-6 text-[13px] font-bold text-nuit">Photos de chantier</p>
+      <p className="mt-0.5 text-[10.5px] text-nuit/55">
+        Cliquez sur une photo pour l&apos;agrandir.
+      </p>
+      <Gallery
+        className="mt-3"
+        items={[
+          { src: "facade", t: "Ravalement terminé · Pont-à-Mousson" },
+          { src: "macon-hero", t: "Mur en parpaings · Dieulouard" },
+          { src: "muret", t: "Muret en pierre sèche · Dieulouard" },
+          { src: "terrasse", t: "Terrasse et allée · Pagny-sur-Moselle" },
+          { src: "macon-mur", t: "Rejointoiement de briques · Metz" },
+          { src: "macon-chantier", t: "Fondations d'une extension · Blénod" },
+        ]}
+      />
     </SubPage>
   );
 }
@@ -447,6 +510,9 @@ function Contact() {
             </div>
             <div className="mt-2.5">
               <Field label="Votre projet" textarea placeholder="Ex. : muret de 12 m en pierre" />
+            </div>
+            <div className="mt-2.5">
+              <UploadField />
             </div>
           </DemoForm>
         </Card>

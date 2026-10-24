@@ -21,7 +21,9 @@ import {
 } from "lucide-react";
 import type { Project } from "@/content/projects";
 import { cn } from "@/lib/utils";
+import { createPortal } from "react-dom";
 import { displayFonts, type DisplayFont } from "./fonts";
+import { extraPages, OpenNow, Pic, SiteOverlays, SocialLinks } from "./extras";
 
 /**
  * Socle des mini-sites d'exemple : navigation entre pages, barre d'adresse,
@@ -61,6 +63,22 @@ export type SiteInfo = {
   /** Liens « Nos prestations » du pied de page. */
   links: { label: string; page: string; param?: string }[];
   rating?: { value: string; count: number };
+  /** Page du formulaire de devis (par défaut : l'accueil). */
+  contactPage?: string;
+  /** Articles de la page Conseils. */
+  articles?: Article[];
+};
+
+export type Article = {
+  t: string;
+  /** Chapeau. */
+  d: string;
+  cat: string;
+  /** Minutes de lecture. */
+  read: number;
+  /** Photo de public/images/maquettes, sans extension. */
+  img: string;
+  body: string[];
 };
 
 type MiniCtx = {
@@ -73,6 +91,8 @@ type MiniCtx = {
   info?: SiteInfo;
   /** Page d'accueil du site. */
   home: string;
+  /** Affiche un calque (visionneuse…) par-dessus la fenêtre du site. */
+  overlayRoot?: (children: ReactNode) => ReactNode;
 };
 
 type Entry = { id: string; param?: string };
@@ -101,7 +121,6 @@ export function themeVars(project: Project) {
 
 export function MiniSite({
   project,
-  pages,
   cta,
   icon: Icon,
   interactive,
@@ -114,6 +133,7 @@ export function MiniSite({
   navStyle = "pill",
   darkHeader = false,
   font = "sans",
+  pages: sitePages,
 }: {
   project: Project;
   pages: PageDef[];
@@ -137,7 +157,9 @@ export function MiniSite({
   /** Police des titres. */
   font?: DisplayFont;
 }) {
+  const pages = app ? sitePages : [...sitePages, ...extraPages(info)];
   const [history, setHistory] = useState<Entry[]>([{ id: pages[0].id }]);
+  const [overlayEl, setOverlayEl] = useState<HTMLDivElement | null>(null);
   const { id: page, param } = history[history.length - 1];
   const bodyRef = useRef<HTMLDivElement>(null);
   const current = pages.find((p) => p.id === page) ?? pages[0];
@@ -150,22 +172,29 @@ export function MiniSite({
   const back = () => setHistory((h) => (h.length > 1 ? h.slice(0, -1) : h));
 
   const body = (
-    <div
-      ref={bodyRef}
-      data-mini-body
-      className={cn(
-        "relative min-h-0 flex-1",
-        interactive ? "overflow-y-auto overscroll-contain" : "overflow-hidden",
-      )}
-    >
-      <div key={`${page}-${param ?? ""}`} className="min-h-full">
-        {current.render()}
+    <div ref={setOverlayEl} className="relative flex min-h-0 flex-1 flex-col">
+      <div
+        ref={bodyRef}
+        data-mini-body
+        className={cn(
+          "relative min-h-0 flex-1",
+          interactive ? "overflow-y-auto overscroll-contain" : "overflow-hidden",
+        )}
+      >
+        <div key={`${page}-${param ?? ""}`} className="min-h-full">
+          {current.render()}
+        </div>
       </div>
+      {info && !app && <SiteOverlays info={info} />}
     </div>
   );
+  const overlayRoot = (children: ReactNode) =>
+    overlayEl ? createPortal(children, overlayEl) : null;
 
   return (
-    <Ctx.Provider value={{ page, param, go, interactive, project, info, home: pages[0].id }}>
+    <Ctx.Provider
+      value={{ page, param, go, interactive, project, info, home: pages[0].id, overlayRoot }}
+    >
       <div
         aria-hidden={interactive ? undefined : true}
         inert={!interactive}
@@ -662,13 +691,30 @@ export function MiniFooter() {
         </div>
         <div>
           <p className="text-[10px] font-bold tracking-wide text-white uppercase">Horaires</p>
-          <p className="mt-2.5 leading-relaxed">{info.hours}</p>
+          <OpenNow className="mt-2.5" />
+          <p className="mt-1.5 leading-relaxed">{info.hours}</p>
           <p className="mt-2 leading-relaxed">Intervention : {info.zone}</p>
+          <div className="mt-3">
+            <SocialLinks />
+          </div>
         </div>
       </div>
       <div className="flex flex-wrap items-center justify-between gap-2 border-t border-white/10 px-4 py-3 text-[9px] @min-[600px]:px-8">
-        <span>
-          © {year} {project.brand} · Mentions légales · Confidentialité · Cookies
+        <span className="flex flex-wrap gap-x-2">
+          <span>
+            © {year} {project.brand}
+          </span>
+          {info.articles?.length ? (
+            <button type="button" onClick={() => go("conseils")} className="hover:text-white">
+              Conseils
+            </button>
+          ) : null}
+          <button type="button" onClick={() => go("mentions")} className="hover:text-white">
+            Mentions légales
+          </button>
+          <button type="button" onClick={() => go("mentions")} className="hover:text-white">
+            Confidentialité et cookies
+          </button>
         </span>
         <span>Site d&apos;exemple réalisé par NEOBATYS</span>
       </div>
@@ -687,7 +733,7 @@ export function SubPage({
   eyebrow: string;
   title: ReactNode;
   intro?: string;
-  /** Illustration affichée à droite du titre sur grand écran. */
+  /** Photo (nom dans public/images/maquettes) ou illustration à droite du titre. */
   visual?: ReactNode;
   children: ReactNode;
 }) {
@@ -715,7 +761,7 @@ export function SubPage({
         </div>
         {visual && (
           <div className="absolute inset-y-0 right-0 hidden w-[42%] @min-[600px]:block">
-            {visual}
+            {typeof visual === "string" ? <Pic src={visual} alt="" sizes="320px" /> : visual}
             <div className="absolute inset-0 bg-gradient-to-r from-white via-white/0 to-transparent" />
           </div>
         )}

@@ -28,7 +28,7 @@ import {
   TrustStrip,
   ZoneMap,
 } from "./blocks";
-import { KitchenScene, StairScene, WorkshopScene } from "./scenes";
+import { ArticlesSection, Gallery, Pic, UploadField } from "./extras";
 
 const essences = {
   Chêne: "#b7793f",
@@ -173,6 +173,45 @@ const info: SiteInfo = {
     "Atelier de menuiserie fondé en 2004. Escaliers, cuisines, dressings et bibliothèques dessinés, fabriqués et posés par la même équipe.",
   labels: ["Bois PEFC", "Artisan d'art", "Garantie décennale"],
   links: items.slice(0, 5).map((it) => ({ label: it.t, page: "catalogue", param: it.id })),
+  contactPage: "contact",
+  articles: [
+    {
+      t: "Chêne, hêtre ou noyer : quel bois pour votre escalier ?",
+      d: "Dureté, teinte et budget : notre comparatif d'atelier.",
+      cat: "Escaliers",
+      read: 4,
+      img: "escalier",
+      body: [
+        "Le chêne est le bois roi des escaliers : très dur, il résiste aux chocs et se patine joliment.",
+        "Le hêtre, plus clair et moins cher, convient bien aux escaliers peints ou vernis.",
+        "Le noyer, plus rare, apporte une teinte chaude et profonde pour un escalier qui se remarque.",
+      ],
+    },
+    {
+      t: "Cuisine sur mesure : les étapes d'un projet réussi",
+      d: "De la prise de mesures à la pose, combien de temps prévoir.",
+      cat: "Cuisines",
+      read: 4,
+      img: "cuisine-bois",
+      body: [
+        "Tout commence par une visite pour relever les cotes, les arrivées d'eau et d'électricité.",
+        "Les plans 3D permettent de valider les volumes et les finitions avant la fabrication.",
+        "Comptez 6 à 8 semaines entre la validation et la pose.",
+      ],
+    },
+    {
+      t: "Entretenir un meuble en bois huilé",
+      d: "Les bons gestes pour garder un bois beau pendant des années.",
+      cat: "Entretien",
+      read: 2,
+      img: "atelier",
+      body: [
+        "Dépoussiérez avec un chiffon sec, sans produit ménager agressif.",
+        "Une fois par an, passez une fine couche d'huile d'entretien et essuyez l'excédent.",
+        "Les petites rayures s'effacent avec un léger ponçage au grain fin, suivi d'une couche d'huile.",
+      ],
+    },
+  ],
   rating: { value: "5,0", count: 41 },
 };
 
@@ -182,7 +221,7 @@ function Home() {
     <>
       {/* Hero */}
       <div className="relative h-[340px] overflow-hidden bg-(--d)">
-        <KitchenScene className="absolute inset-0" />
+        <Pic src="cuisine-bois" alt="Cuisine en bois massif sur mesure" priority sizes="100vw" />
         <div className="absolute inset-y-0 left-0 w-full bg-gradient-to-r from-(--s) via-(--s)/90 to-transparent @min-[600px]:w-[70%]" />
         <div className="relative flex h-full max-w-[360px] flex-col justify-center px-4 @min-[600px]:px-8">
           <p className="text-[10px] font-semibold tracking-[0.2em] text-(--p) uppercase">
@@ -251,17 +290,13 @@ function Home() {
             Visiter l&apos;atelier <ArrowRight className="size-3.5" />
           </Btn>
         </div>
-        <Photo className="h-56 rounded-none" caption="Notre atelier de Boulay">
-          <WorkshopScene />
-        </Photo>
+        <Photo src="atelier" className="h-56 rounded-none" caption="Notre atelier de Boulay" />
       </Section>
 
       {/* Réalisation à la une */}
       <Section className="bg-(--d)">
         <div className="grid gap-6 @min-[600px]:grid-cols-[1.1fr_1fr] @min-[600px]:items-center">
-          <Photo className="h-56 rounded-none" caption="Escalier chêne et verre · Créhange">
-            <StairScene />
-          </Photo>
+          <Photo src="escalier" className="h-56 rounded-none" caption="Escalier chêne · Créhange" />
           <div>
             <SectionHead
               light
@@ -359,6 +394,8 @@ function Home() {
           />
         </div>
       </Section>
+
+      <ArticlesSection />
 
       <Section className="px-0 pt-0 @min-[600px]:px-0 @min-[600px]:pt-0">
         <CtaBand
@@ -497,7 +534,7 @@ function Atelier() {
       eyebrow="L'atelier"
       title="De la mesure à la pose"
       intro="Quatre étapes, un seul interlocuteur du début à la fin."
-      visual={<WorkshopScene />}
+      visual="menuisier-outils"
     >
       <div className="grid grid-cols-4 gap-1.5">
         {steps.map((s, i) => (
@@ -537,6 +574,18 @@ function Atelier() {
           Suivante <ArrowRight className="size-3.5" />
         </Btn>
       </div>
+      <p className="mt-6 text-[13px] font-bold text-nuit">L&apos;atelier en images</p>
+      <Gallery
+        className="mt-3"
+        items={[
+          { src: "atelier", t: "L'atelier de Boulay" },
+          { src: "menuisier-hero", t: "Ponçage d'un plan de travail" },
+          { src: "menuisier-outils", t: "Rabots et outils à main" },
+          { src: "escalier", t: "Escalier chêne · Créhange" },
+          { src: "cuisine-bois", t: "Cuisine bois massif · Boulay" },
+          { src: "cuisine-moderne", t: "Agencement de cuisine · Metz" },
+        ]}
+      />
     </SubPage>
   );
 }
@@ -570,6 +619,9 @@ function Contact() {
               defaultValue={param}
               placeholder="Ex. : dressing sous pente de 2,40 m"
             />
+          </div>
+          <div className="mt-2.5">
+            <UploadField />
           </div>
         </DemoForm>
       </Card>

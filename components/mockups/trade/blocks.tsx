@@ -3,6 +3,7 @@
 import { useState, type ReactNode } from "react";
 import { ChevronDown, Phone, type LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Pic } from "./extras";
 import { Btn, Stars, useMini } from "./kit";
 
 /**
@@ -79,16 +80,21 @@ export function SectionHead({
 /** Image pleine de son cadre, avec légende facultative en bas à gauche. */
 export function Photo({
   children,
+  src,
+  alt,
   caption,
   className,
 }: {
-  children: ReactNode;
+  children?: ReactNode;
+  /** Photo de public/images/maquettes ; à défaut, l'illustration passée en enfant. */
+  src?: string;
+  alt?: string;
   caption?: ReactNode;
   className?: string;
 }) {
   return (
     <div className={cn("relative overflow-hidden rounded-xl bg-nuit/5", className)}>
-      {children}
+      {src ? <Pic src={src} alt={alt ?? (typeof caption === "string" ? caption : "")} /> : children}
       {caption && (
         <span className="absolute bottom-2 left-2 rounded-md bg-black/55 px-2 py-1 text-[9.5px] font-medium text-white backdrop-blur-sm">
           {caption}

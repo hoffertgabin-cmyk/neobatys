@@ -39,7 +39,8 @@ import {
   TrustStrip,
   ZoneMap,
 } from "./blocks";
-import { BoilerScene, HouseScene, VanScene } from "./scenes";
+import { ArticlesSection, Pic, UploadField } from "./extras";
+import { VanScene } from "./scenes";
 
 const days = [
   { d: "Lun", n: 14 },
@@ -191,6 +192,45 @@ const info: SiteInfo = {
     { label: "Prendre rendez-vous", page: "rdv" },
     { label: "Contact", page: "contact" },
   ],
+  contactPage: "rdv",
+  articles: [
+    {
+      t: "Entretien de chaudière : ce que dit la loi",
+      d: "Obligation, fréquence, attestation : tout ce qu'il faut savoir.",
+      cat: "Entretien",
+      read: 3,
+      img: "chaudiere",
+      body: [
+        "L'entretien annuel est obligatoire pour toutes les chaudières de 4 à 400 kW, gaz, fioul ou bois.",
+        "Le technicien vous remet une attestation dans les 15 jours, à conserver deux ans.",
+        "En cas de sinistre, l'assureur peut la demander avant toute indemnisation.",
+      ],
+    },
+    {
+      t: "Pompe à chaleur : est-ce rentable chez vous ?",
+      d: "Isolation, émetteurs, budget : les vraies questions à se poser.",
+      cat: "Pompe à chaleur",
+      read: 5,
+      img: "pac",
+      body: [
+        "Une pompe à chaleur air-eau divise souvent la facture de chauffage par deux ou trois par rapport au fioul.",
+        "Elle est plus efficace avec des radiateurs basse température ou un plancher chauffant.",
+        "MaPrimeRénov' et les primes CEE peuvent couvrir une grande partie de l'installation.",
+      ],
+    },
+    {
+      t: "Radiateurs qui chauffent mal : les solutions",
+      d: "Purge, désembouage, équilibrage : par où commencer.",
+      cat: "Dépannage",
+      read: 3,
+      img: "chauffagiste",
+      body: [
+        "Un radiateur froid en haut et chaud en bas a souvent besoin d'être purgé.",
+        "Un radiateur froid en bas indique plutôt des boues : un désembouage du circuit s'impose.",
+        "Si certaines pièces chauffent plus que d'autres, l'équilibrage des radiateurs règle le problème.",
+      ],
+    },
+  ],
   rating: { value: "4,8", count: 203 },
 };
 
@@ -200,12 +240,11 @@ function Home() {
     <>
       {/* Hero */}
       <div className="relative overflow-hidden bg-(--d)">
-        <HouseScene
-          className="absolute inset-0"
-          heatPump
-          sky="evening"
-          facade="#efe4d4"
-          roof="#5b4a45"
+        <Pic
+          src="chauffage-hero"
+          alt="Pompe à chaleur posée contre une maison"
+          priority
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-(--d) via-(--d)/85 to-(--d)/20" />
         <div className="relative grid gap-5 px-4 py-7 @min-[600px]:grid-cols-[1fr_1.05fr] @min-[600px]:items-center @min-[600px]:px-8">
@@ -266,21 +305,21 @@ function Home() {
               t: "Entretien annuel",
               d: "Chaudière gaz, fioul, poêle à granulés. Attestation remise le jour même.",
               to: "entretien",
-              v: <BoilerScene />,
+              v: "chaudiere",
               tag: "Dès 129 €",
             },
             {
               t: "Pompe à chaleur",
               d: "Étude, pose et mise en service. Jusqu'à 60 % d'économies sur la facture.",
               to: "installation",
-              v: <HouseScene heatPump facade="#f1ebe1" roof="#5b4a45" />,
+              v: "pac",
               tag: "Aides déduites",
             },
             {
               t: "Contrats d'entretien",
               d: "Visite annuelle, dépannage prioritaire et pièces incluses selon la formule.",
               to: "contrats",
-              v: <BoilerScene accent="#ea580c" />,
+              v: "chauffagiste",
               tag: "Dès 12 €/mois",
             },
           ].map((x) => (
@@ -290,9 +329,7 @@ function Home() {
               tone="light"
               className="flex-col items-stretch gap-0 overflow-hidden rounded-xl p-0 text-left ring-nuit/8"
             >
-              <Photo className="h-28 rounded-none" caption={x.tag}>
-                {x.v}
-              </Photo>
+              <Photo src={x.v} alt={x.t} className="h-28 rounded-none" caption={x.tag} />
               <span className="block p-3.5">
                 <span className="block text-[13px] font-bold text-nuit">{x.t}</span>
                 <span className="mt-1 block text-[10.5px] leading-relaxed font-normal text-nuit/60">
@@ -424,6 +461,8 @@ function Home() {
         </div>
       </Section>
 
+      <ArticlesSection />
+
       <Section className="px-0 pt-0 @min-[600px]:px-0 @min-[600px]:pt-0">
         <CtaBand
           title="Votre entretien en 1 minute"
@@ -476,7 +515,7 @@ function Entretien() {
       eyebrow="Entretien annuel"
       title="Quel équipement avez-vous ?"
       intro="L'entretien annuel est obligatoire pour les chaudières. Choisissez votre équipement pour voir ce qui est fait."
-      visual={<BoilerScene />}
+      visual="chaudiere"
     >
       <Choice options={equipements} value={eq} onChange={setEq} />
       <div className="mt-4 grid gap-3 @min-[600px]:grid-cols-[1.3fr_1fr]">
@@ -559,7 +598,7 @@ function Installation() {
       eyebrow="Installation"
       title="Comparer les solutions"
       intro="Touchez une solution pour voir le détail."
-      visual={<HouseScene heatPump facade="#f1ebe1" roof="#5b4a45" />}
+      visual="pac"
     >
       <div className="grid gap-2.5 @min-[600px]:grid-cols-3">
         {solutions.map(({ id, t, I, cout, eco, aides }) => (
@@ -739,6 +778,9 @@ function Contact() {
                 defaultValue={param ? `Étude pour : ${param}` : undefined}
                 placeholder="Décrivez votre besoin"
               />
+            </div>
+            <div className="mt-2.5">
+              <UploadField />
             </div>
           </DemoForm>
         </Card>

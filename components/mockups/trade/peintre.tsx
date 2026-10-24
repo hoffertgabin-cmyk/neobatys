@@ -31,7 +31,8 @@ import {
   type SiteProps,
 } from "./kit";
 import { GoogleG, Photo, Section, SectionHead, TrustStrip, ZoneMap } from "./blocks";
-import { HouseScene, LivingScene } from "./scenes";
+import { ArticlesSection, Gallery } from "./extras";
+import { LivingScene } from "./scenes";
 
 const swatches = [
   { n: "Lin", c: "#f5efe6" },
@@ -61,6 +62,44 @@ const info: SiteInfo = {
     { label: "Papier peint", page: "home" },
     { label: "Enduits décoratifs", page: "home" },
   ],
+  articles: [
+    {
+      t: "Bien choisir sa couleur de salon",
+      d: "Lumière, surface, ambiance : nos conseils de coloriste.",
+      cat: "Couleurs",
+      read: 3,
+      img: "salon",
+      body: [
+        "Une pièce orientée nord gagne à recevoir des teintes chaudes, une pièce plein sud supporte des tons plus froids.",
+        "Testez toujours un échantillon sur un mètre carré et regardez-le à différents moments de la journée.",
+        "Un mur foncé derrière le canapé agrandit visuellement la pièce plutôt que de l'assombrir.",
+      ],
+    },
+    {
+      t: "Peinture velours, satinée ou mate ?",
+      d: "À chaque pièce sa finition : le guide pour ne pas se tromper.",
+      cat: "Finitions",
+      read: 2,
+      img: "peintre",
+      body: [
+        "Le mat masque les défauts du mur, idéal pour les plafonds et les chambres.",
+        "Le velours est le bon compromis pour les pièces de vie : lessivable sans trop briller.",
+        "Le satiné résiste à l'humidité et aux taches : cuisine, salle de bain et boiseries.",
+      ],
+    },
+    {
+      t: "Repeindre sa façade : tous les combien ?",
+      d: "Signes d'usure et choix de la peinture adaptée.",
+      cat: "Façades",
+      read: 3,
+      img: "facade",
+      body: [
+        "Une façade se repeint en moyenne tous les 10 ans, plus souvent si elle est exposée aux pluies.",
+        "Les peintures siloxane laissent respirer le support tout en restant hydrofuges.",
+        "Un nettoyage et un traitement anti-mousse sont indispensables avant la peinture.",
+      ],
+    },
+  ],
   rating: { value: "4,9", count: 64 },
 };
 
@@ -69,25 +108,25 @@ const services = [
     I: PaintRoller,
     t: "Peinture intérieure",
     d: "Murs, plafonds, boiseries. Protection complète des sols et meubles.",
-    v: <LivingScene wall="#c7d2c0" />,
+    v: "peintre",
   },
   {
     I: Sun,
     t: "Façades",
     d: "Nettoyage, traitement anti-mousse, peinture pliolite ou siloxane.",
-    v: <HouseScene facade="#f1e4d0" roof="#6b4c3b" scaffold />,
+    v: "facade",
   },
   {
     I: Brush,
     t: "Papier peint",
     d: "Pose de papiers intissés, panoramiques et toiles de verre.",
-    v: <LivingScene wall="#e8d5c4" />,
+    v: "salon",
   },
   {
     I: Sparkles,
     t: "Enduits décoratifs",
     d: "Béton ciré, tadelakt, chaux : des murs à la texture unique.",
-    v: <LivingScene wall="#b9ab9a" />,
+    v: "peintre-mur",
   },
 ];
 
@@ -184,7 +223,7 @@ function Home() {
         <div className="grid grid-cols-2 gap-3 @min-[600px]:grid-cols-4">
           {services.map(({ I, t, d, v }) => (
             <div key={t} className="overflow-hidden rounded-2xl bg-white ring-1 ring-nuit/8">
-              <Photo className="h-24 rounded-none">{v}</Photo>
+              <Photo src={v} alt={t} className="h-24 rounded-none" />
               <div className="p-3">
                 <p className="flex items-center gap-1.5 text-[12px] font-bold text-nuit">
                   <I className="size-3.5 text-(--p)" /> {t}
@@ -204,17 +243,17 @@ function Home() {
           intro="Quelques chantiers récents à Woippy et autour."
           className="mb-5"
         />
-        <div className="grid gap-3 @min-[600px]:grid-cols-3">
-          {[
-            { t: "Salon · Woippy", v: <LivingScene wall="#9fb4c7" oldWall="#e9e2d6" ladder /> },
-            { t: "Chambre · Maizières", v: <LivingScene wall="#e8d5c4" oldWall="#d9d4c7" /> },
-            { t: "Façade · Saint-Julien", v: <HouseScene facade="#f5efe6" roof="#5f4b3d" /> },
-          ].map((r) => (
-            <Photo key={r.t} className="h-32" caption={r.t}>
-              {r.v}
-            </Photo>
-          ))}
-        </div>
+        <Gallery
+          itemClassName="h-32"
+          items={[
+            { src: "salon", t: "Séjour blanc cassé · Woippy" },
+            { src: "salon2", t: "Pièce de vie lumineuse · Maizières" },
+            { src: "facade", t: "Façade enduit taloché · Saint-Julien" },
+            { src: "eclairage", t: "Salon ocre et gris · Metz" },
+            { src: "peintre-mur", t: "Mur brique repeint · Woippy" },
+            { src: "salon3", t: "Plafond bois lasuré · Norroy" },
+          ]}
+        />
       </Section>
 
       <Section className="bg-(--s)">
@@ -290,6 +329,8 @@ function Home() {
           </div>
         </div>
       </Section>
+
+      <ArticlesSection />
 
       <Section className="grid gap-5 @min-[600px]:grid-cols-[1fr_1.3fr]">
         <div data-section="Contact">

@@ -39,7 +39,7 @@ import {
   TrustStrip,
   ZoneMap,
 } from "./blocks";
-import { HouseScene, RoofScene, TimberFrameScene } from "./scenes";
+import { ArticlesSection, Gallery, Pic, UploadField } from "./extras";
 
 type Msg = { from: "bot" | "me"; text: string };
 
@@ -214,6 +214,45 @@ const info: SiteInfo = {
     { label: "Carports et préaux", page: "ossature" },
     { label: "Contact", page: "contact" },
   ],
+  contactPage: "contact",
+  articles: [
+    {
+      t: "Extension bois : permis ou déclaration ?",
+      d: "Les règles d'urbanisme selon la surface de votre projet.",
+      cat: "Ossature bois",
+      read: 3,
+      img: "ossature",
+      body: [
+        "Jusqu'à 20 m², une déclaration préalable suffit, et jusqu'à 40 m² en zone urbaine couverte par un PLU.",
+        "Au-delà, ou si la surface totale dépasse 150 m², un permis de construire et un architecte sont nécessaires.",
+        "Nous préparons les plans et vous accompagnons dans les démarches.",
+      ],
+    },
+    {
+      t: "Traiter sa charpente : quand faut-il intervenir ?",
+      d: "Insectes, champignons, humidité : les signes qui doivent alerter.",
+      cat: "Charpente",
+      read: 4,
+      img: "charpente",
+      body: [
+        "De la sciure au pied des poutres ou des petits trous ronds signalent souvent des insectes xylophages.",
+        "Un bois qui s'effrite ou sent le moisi peut être attaqué par la mérule : il faut agir vite.",
+        "Un diagnostic gratuit permet de savoir s'il suffit de traiter ou s'il faut remplacer des pièces.",
+      ],
+    },
+    {
+      t: "Refaire sa toiture : tuiles, ardoises ou bac acier ?",
+      d: "Durée de vie, poids, budget : comparatif des couvertures.",
+      cat: "Couverture",
+      read: 3,
+      img: "toiture",
+      body: [
+        "La tuile terre cuite, la plus courante en Lorraine, dure plus de 50 ans.",
+        "L'ardoise naturelle est très durable mais demande une charpente adaptée à son poids.",
+        "Le bac acier est léger et économique, idéal pour les annexes, carports et bâtiments agricoles.",
+      ],
+    },
+  ],
   rating: { value: "4,9", count: 47 },
 };
 
@@ -223,7 +262,7 @@ function Home() {
     <>
       {/* Hero */}
       <div className="relative overflow-hidden bg-(--d)">
-        <TimberFrameScene className="absolute inset-0" />
+        <Pic src="charpente-hero" alt="Ossature bois en cours de montage" priority sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-r from-(--d) via-(--d)/80 to-(--d)/10" />
         <div className="relative grid gap-5 px-4 py-7 @min-[600px]:grid-cols-[1fr_0.95fr] @min-[600px]:items-center @min-[600px]:px-8">
           <div className="text-white">
@@ -277,19 +316,19 @@ function Home() {
               t: "Charpente traditionnelle",
               d: "Neuve ou en rénovation, taillée à l'atelier, combles aménageables.",
               to: "charpente",
-              v: <TimberFrameScene />,
+              v: "charpente",
             },
             {
               t: "Extensions ossature bois",
               d: "Pièce en plus, étage, garage : chantier sec et rapide.",
               to: "ossature",
-              v: <HouseScene timber facade="#efe6d8" roof="#3f3f46" />,
+              v: "ossature",
             },
             {
               t: "Couverture et zinguerie",
               d: "Tuiles, ardoises, bac acier et gouttières, posés par nos couvreurs.",
               to: "charpente",
-              v: <RoofScene tile="#7a3b2a" />,
+              v: "toiture",
             },
           ].map((x) => (
             <Btn
@@ -298,7 +337,7 @@ function Home() {
               tone="light"
               className="flex-col items-stretch gap-0 overflow-hidden rounded-lg p-0 text-left ring-nuit/8"
             >
-              <Photo className="h-28 rounded-none">{x.v}</Photo>
+              <Photo src={x.v} alt={x.t} className="h-28 rounded-none" />
               <span className="block p-3.5">
                 <span className="block text-[13px] font-bold text-nuit">{x.t}</span>
                 <span className="mt-1 block text-[10.5px] leading-relaxed font-normal text-nuit/60">
@@ -353,20 +392,17 @@ function Home() {
 
       <Section className="bg-(--d)">
         <SectionHead light kicker="Réalisations" title="Chantiers récents" className="mb-5" />
-        <div className="grid grid-cols-2 gap-3 @min-[600px]:grid-cols-3">
-          <Photo className="h-32" caption="Charpente chêne · Créhange">
-            <TimberFrameScene wood="#b98a5a" />
-          </Photo>
-          <Photo className="h-32" caption="Extension 25 m² · Faulquemont">
-            <HouseScene timber facade="#f1e9dc" roof="#4b5563" sky="evening" />
-          </Photo>
-          <Photo
-            className="col-span-2 h-32 @min-[600px]:col-span-1"
-            caption="Toiture neuve · Boulay"
-          >
-            <RoofScene tile="#8a4532" />
-          </Photo>
-        </div>
+        <Gallery
+          itemClassName="h-32"
+          items={[
+            { src: "charpente", t: "Charpente traditionnelle · Créhange" },
+            { src: "ossature", t: "Maison ossature bois · Faulquemont" },
+            { src: "toiture", t: "Couverture en tuiles · Boulay" },
+            { src: "charpente-hero", t: "Levage d'une ossature · Bouzonville" },
+            { src: "charpente-atelier", t: "Taille à l'atelier" },
+            { src: "atelier", t: "Préparation des assemblages" },
+          ]}
+        />
       </Section>
 
       <Section>
@@ -418,6 +454,8 @@ function Home() {
           <Faq className="mt-4" items={faq} />
         </div>
       </Section>
+
+      <ArticlesSection />
 
       <Section className="px-0 pt-8 @min-[600px]:px-0">
         <CtaBand
@@ -483,7 +521,7 @@ function Charpente() {
   const [i, setI] = useState(0);
   const c = charpentes[i];
   return (
-    <SubPage eyebrow="Charpente" title="Trois façons de couvrir" visual={<TimberFrameScene />}>
+    <SubPage eyebrow="Charpente" title="Trois façons de couvrir" visual="charpente-atelier">
       <div className="flex gap-1.5">
         {charpentes.map((x, j) => (
           <button
@@ -557,7 +595,7 @@ function Ossature() {
       eyebrow="Ossature bois"
       title="Agrandir avec le bois"
       intro="Choisissez un type de projet et une surface."
-      visual={<HouseScene timber facade="#efe6d8" roof="#3f3f46" />}
+      visual="ossature"
     >
       <div className="grid gap-2.5 @min-[600px]:grid-cols-3">
         {ossatures.map(({ id, I, t, d }) => (
@@ -633,6 +671,9 @@ function Contact() {
                 defaultValue={param}
                 placeholder="Décrivez votre projet"
               />
+            </div>
+            <div className="mt-2.5">
+              <UploadField />
             </div>
           </DemoForm>
         </Card>
