@@ -10,6 +10,11 @@ const MAX_HITS = 5;
 
 function rateLimited(ip: string) {
   const now = Date.now();
+  // Purge des IP inactives pour que la table ne grossisse pas indéfiniment
+  if (hits.size > 1000) {
+    for (const [key, times] of hits)
+      if (now - times[times.length - 1] >= WINDOW_MS) hits.delete(key);
+  }
   const recent = (hits.get(ip) ?? []).filter((t) => now - t < WINDOW_MS);
   recent.push(now);
   hits.set(ip, recent);
@@ -60,6 +65,10 @@ export async function POST(request: Request) {
       "[contact] RESEND_API_KEY ou CONTACT_TO_EMAIL absent : demande non envoyée par e-mail.",
       Object.fromEntries(lines),
     );
+    // Sur le site en ligne, on ne confirme pas au visiteur une demande que personne ne recevra
+    if (process.env.VERCEL_ENV === "production") {
+      return NextResponse.json({ ok: false, error: "Envoi non configuré." }, { status: 503 });
+    }
     return NextResponse.json({ ok: true, mode: "placeholder" });
   }
 

@@ -1,5 +1,8 @@
+import type { Metadata } from "next";
 import { Button } from "@/components/ui/Button";
 import { PageHero } from "@/components/sections/PageHero";
+
+export const metadata: Metadata = { title: "Page introuvable" };
 
 export default function NotFound() {
   return (

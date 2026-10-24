@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { faq } from "@/content/faq";
 import { faqJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -16,6 +17,9 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { Pricing } from "@/components/sections/Pricing";
 import { Faq } from "@/components/sections/Faq";
 import { FinalCta } from "@/components/sections/FinalCta";
+
+// Titre et description viennent du layout
+export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 export default function HomePage() {
   return (
