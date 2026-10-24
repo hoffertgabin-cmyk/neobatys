@@ -26,9 +26,10 @@ Audit du 24/10/2026 sur tout le dépôt, plus un passage dans un navigateur sur 
 6. **404** : la page d'erreur gardait le titre de l'accueil. Elle s'appelle maintenant « Page introuvable ».
 7. **HTML invalide** : le dégradé du logo utilisait le même `id` deux fois (menu et pied de page). Chaque logo a maintenant un id unique.
 
+8. **Tarifs incohérents** : le Pack Complet (69 €/mois, 57 € en annuel) coûtait plus cher que Site + Logiciel pris séparément (68 €, 56 €), alors que la page annonçait « jusqu'à 20 % » d'économie. Il passe à 59 €/mois (49 € en annuel), soit environ 17 % d'économie la première année, et le badge annonce maintenant « Économisez jusqu'à 15 % ».
+
 ## Points à trancher (non corrigés)
 
-- **Tarifs incohérents** : le Pack Complet coûte 69 €/mois, plus que Site (29 €) et Logiciel (39 €) pris séparément (68 €), en annuel aussi (57 € contre 56 €). La page annonce pourtant un « tarif préférentiel » et « jusqu'à 20 % » d'économie, alors que sur la première année l'économie réelle est d'environ 10 %.
 - **Informations à remplir** : téléphone, e-mail, SIRET, adresse, zone et directeur de publication sont encore entre crochets (voir `PERSONNALISATION.md`). Les mentions légales sont obligatoires avant la mise en ligne.
 - **Resend en production** : vérifier que `RESEND_API_KEY` et `CONTACT_TO_EMAIL` sont bien définies dans Vercel, sinon le formulaire affichera une erreur.
 - **Limiteur en mémoire** : sur Vercel, chaque instance a sa propre mémoire, donc la limite de 5 envois est approximative. C'est suffisant contre un spam basique ; pour aller plus loin, il faudrait un stockage partagé (Upstash, par exemple).

@@ -105,6 +105,6 @@ export const comboPack = {
     "Tarif préférentiel par rapport aux deux offres séparées",
   ],
   // TODO: ajuster l'avantage tarifaire réel
-  badge: "Économisez jusqu'à 20 %",
+  badge: "Économisez jusqu'à 15 %",
   cta: { label: "Je veux le pack", href: "/contact?service=pack" },
 };
