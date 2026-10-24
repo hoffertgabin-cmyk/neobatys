@@ -9,7 +9,7 @@ permissions:
 jobs:
   photos:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -25,5 +25,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A .github/photos
           [ -d public/images/maquettes ] && git add -A public/images/maquettes
-          git commit -m "Photos des maquettes (Openverse, CC0 / domaine public)" || exit 0
+          git commit -m "Photos des maquettes (Wikimedia Commons, licences libres)" || exit 0
           git push

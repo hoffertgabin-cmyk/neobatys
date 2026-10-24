@@ -3,11 +3,11 @@
 Étape « sheets » : pour chaque requête de queries.json, planches contact numérotées.
 Étape « pick » : télécharge les photos retenues dans picks.json vers public/images/maquettes.
 """
-import io, json, os, sys, time, urllib.parse, urllib.request
+import io, json, os, re, sys, time, urllib.parse, urllib.request
 from PIL import Image, ImageDraw
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-UA = {"User-Agent": "neobatys-maquettes/1.0 (photos libres pour maquettes)"}
+UA = {"User-Agent": "neobatys-maquettes/1.0 (https://github.com/hoffertgabin-cmyk/neobatys)"}
 
 
 def get(url, tries=4):
@@ -21,27 +21,51 @@ def get(url, tries=4):
     return None
 
 
+FREE = ("cc0", "public domain", "pd", "cc-zero")
+
+
 def search(q, n=12):
-    found = []
-    for source in ("stocksnap", None):
-        p = {"q": q, "license": "cc0,pdm", "page_size": 30, "mature": "false"}
-        if source:
-            p["source"] = source
-        raw = get(f"https://api.openverse.org/v1/images/?{urllib.parse.urlencode(p)}")
-        time.sleep(6)
-        if raw:
-            found += json.loads(raw).get("results", [])
-        if len(found) >= n:
-            break
-    out = []
-    for r in found:
-        w, h = r.get("width") or 0, r.get("height") or 0
-        if w and h and w < h * 1.15:
+    """Photos Wikimedia Commons en paysage, licences libres (CC0 / domaine public en tête)."""
+    p = {
+        "action": "query",
+        "format": "json",
+        "generator": "search",
+        "gsrsearch": f"filetype:bitmap {q}",
+        "gsrnamespace": 6,
+        "gsrlimit": 50,
+        "prop": "imageinfo",
+        "iiprop": "url|size|extmetadata",
+        "iiurlwidth": 1400,
+    }
+    raw = get(f"https://commons.wikimedia.org/w/api.php?{urllib.parse.urlencode(p)}")
+    if not raw:
+        return []
+    pages = sorted(json.loads(raw).get("query", {}).get("pages", {}).values(), key=lambda x: x.get("index", 0))
+    free, other = [], []
+    for pg in pages:
+        ii = (pg.get("imageinfo") or [{}])[0]
+        w, h = ii.get("width", 0), ii.get("height", 0)
+        if w < 1200 or w < h * 1.2 or not ii.get("thumburl"):
             continue
-        out.append(r)
-        if len(out) >= n:
-            break
-    return out
+        md = ii.get("extmetadata", {})
+        lic = (md.get("LicenseShortName", {}).get("value") or "").strip()
+        r = {
+            "id": pg["pageid"],
+            "url": ii["thumburl"],
+            "thumb": ii["thumburl"].replace("/1400px-", "/330px-"),
+            "license": lic,
+            "creator": re.sub("<[^>]+>", "", md.get("Artist", {}).get("value") or "").strip(),
+            "foreign_landing_url": ii.get("descriptionurl"),
+            "title": pg["title"],
+            "width": w,
+            "height": h,
+        }
+        low = lic.lower()
+        if any(f in low for f in FREE):
+            free.append(r)
+        elif low.startswith("cc by"):
+            other.append(r)
+    return (free + other)[:n]
 
 
 def sheets():
@@ -53,7 +77,7 @@ def sheets():
         res = search(q)
         thumbs = []
         for r in res:
-            raw = get(r["url"], tries=1)
+            raw = get(r["thumb"], tries=2)
             if not raw:
                 continue
             try:
@@ -73,9 +97,10 @@ def sheets():
             sheet.paste(im, (x + 5, y + 5))
             d.rectangle([x + 5, y + 5, x + 35, y + 30], fill="black")
             d.text((x + 12, y + 10), str(i), fill="white")
+            d.text((x + 8, y + 208), thumbs[i][1]["license"][:40], fill="black")
         d.text((5, 3 * 230 - 14), f"{key}: {q}", fill="black")
         sheet.save(f"{ROOT}/sheets/{key}.jpg", quality=60)
-        time.sleep(1.5)
+        time.sleep(0.5)
     json.dump(meta, open(f"{ROOT}/sheets/meta.json", "w"), indent=1, ensure_ascii=False)
 
 
