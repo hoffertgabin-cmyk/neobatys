@@ -3,12 +3,16 @@
 import { useRef, useState } from "react";
 import {
   ArrowRight,
+  Award,
   Brush,
+  CalendarCheck,
   Globe,
+  Leaf,
   MapPin,
   PaintRoller,
   Phone,
   Send,
+  ShieldCheck,
   Sparkles,
   Sun,
 } from "lucide-react";
@@ -17,15 +21,18 @@ import {
   Btn,
   Card,
   DemoForm,
-  Eyebrow,
   Field,
   MiniFooter,
   MiniSite,
   Stars,
   scrollToSection,
   useMini,
+  type SiteInfo,
   type SiteProps,
 } from "./kit";
+import { GoogleG, Photo, Section, SectionHead, TrustStrip, ZoneMap } from "./blocks";
+import { ArticlesSection, Gallery } from "./extras";
+import { LivingScene } from "./scenes";
 
 const swatches = [
   { n: "Lin", c: "#f5efe6" },
@@ -36,56 +43,116 @@ const swatches = [
   { n: "Orage", c: "#2f3e46" },
 ];
 
-const sections = ["Prestations", "Nuancier", "Réalisations", "Avis", "Contact"] as const;
-type Section = (typeof sections)[number];
+const sections = ["Accueil", "Prestations", "Réalisations", "Avis", "Contact"] as const;
+type Anchor = (typeof sections)[number];
 
-/** Pièce dessinée dont le mur prend la couleur choisie. */
-function Room({ wall }: { wall: string }) {
-  return (
-    <div
-      className="relative h-40 overflow-hidden rounded-2xl ring-1 ring-nuit/10 transition-colors duration-500"
-      style={{ backgroundColor: wall }}
-    >
-      <div
-        className="absolute inset-x-0 bottom-0 h-10 bg-[#c8a27a]"
-        style={{
-          backgroundImage: "linear-gradient(90deg, rgb(0 0 0/0.08) 1px, transparent 1px)",
-          backgroundSize: "40px 100%",
-        }}
-      />
-      <span className="absolute top-6 left-8 h-16 w-12 rounded-sm bg-white/80 ring-4 ring-white" />
-      <span className="absolute right-10 bottom-10 h-9 w-28 rounded-t-2xl bg-[#3f3f46]" />
-      <span className="absolute right-6 bottom-10 h-14 w-4 rounded-t-full bg-[#3f3f46]" />
-      <span className="absolute right-[8.5rem] bottom-10 h-14 w-4 rounded-t-full bg-[#3f3f46]" />
-      <span className="absolute top-4 right-16 h-12 w-px bg-nuit/30" />
-      <span className="absolute top-16 right-[3.6rem] size-4 rounded-full bg-amber-200 shadow-[0_0_20px_6px_rgb(253_230_138/0.6)]" />
-    </div>
-  );
-}
+const info: SiteInfo = {
+  baseline: "Peinture · Décoration · Façades",
+  phone: "06 39 98 14 52",
+  email: "bonjour@exemple-peinture-woippy.fr",
+  address: "21 route de Thionville, 57140 Woippy",
+  hours: "Lun–ven 8h–18h · Devis le samedi matin",
+  zone: "Metz Nord, Woippy, Maizières",
+  about:
+    "Peintres en bâtiment depuis 2012 : intérieurs, façades, papiers peints et enduits décoratifs. Conseil couleur offert à chaque devis.",
+  labels: ["Qualibat", "Garantie décennale", "Peintures Ecolabel"],
+  links: [
+    { label: "Peinture intérieure", page: "home" },
+    { label: "Ravalement extérieur", page: "home" },
+    { label: "Papier peint", page: "home" },
+    { label: "Enduits décoratifs", page: "home" },
+  ],
+  articles: [
+    {
+      t: "Bien choisir sa couleur de salon",
+      d: "Lumière, surface, ambiance : nos conseils de coloriste.",
+      cat: "Couleurs",
+      read: 3,
+      img: "salon",
+      body: [
+        "Une pièce orientée nord gagne à recevoir des teintes chaudes, une pièce plein sud supporte des tons plus froids.",
+        "Testez toujours un échantillon sur un mètre carré et regardez-le à différents moments de la journée.",
+        "Un mur foncé derrière le canapé agrandit visuellement la pièce plutôt que de l'assombrir.",
+      ],
+    },
+    {
+      t: "Peinture velours, satinée ou mate ?",
+      d: "À chaque pièce sa finition : le guide pour ne pas se tromper.",
+      cat: "Finitions",
+      read: 2,
+      img: "peintre",
+      body: [
+        "Le mat masque les défauts du mur, idéal pour les plafonds et les chambres.",
+        "Le velours est le bon compromis pour les pièces de vie : lessivable sans trop briller.",
+        "Le satiné résiste à l'humidité et aux taches : cuisine, salle de bain et boiseries.",
+      ],
+    },
+    {
+      t: "Repeindre sa façade : tous les combien ?",
+      d: "Signes d'usure et choix de la peinture adaptée.",
+      cat: "Façades",
+      read: 3,
+      img: "facade",
+      body: [
+        "Une façade se repeint en moyenne tous les 10 ans, plus souvent si elle est exposée aux pluies.",
+        "Les peintures siloxane laissent respirer le support tout en restant hydrofuges.",
+        "Un nettoyage et un traitement anti-mousse sont indispensables avant la peinture.",
+      ],
+    },
+  ],
+  rating: { value: "4,9", count: 64 },
+};
+
+const services = [
+  {
+    I: PaintRoller,
+    t: "Peinture intérieure",
+    d: "Murs, plafonds, boiseries. Protection complète des sols et meubles.",
+    v: "peintre",
+  },
+  {
+    I: Sun,
+    t: "Façades",
+    d: "Nettoyage, traitement anti-mousse, peinture pliolite ou siloxane.",
+    v: "facade",
+  },
+  {
+    I: Brush,
+    t: "Papier peint",
+    d: "Pose de papiers intissés, panoramiques et toiles de verre.",
+    v: "salon",
+  },
+  {
+    I: Sparkles,
+    t: "Enduits décoratifs",
+    d: "Béton ciré, tadelakt, chaux : des murs à la texture unique.",
+    v: "peintre-mur",
+  },
+];
 
 function Home() {
   const { project } = useMini();
-  const [active, setActive] = useState<Section>("Nuancier");
-  const [color, setColor] = useState(swatches[3]);
+  const [active, setActive] = useState<Anchor>("Accueil");
+  const [color, setColor] = useState(swatches[2]);
   const rootRef = useRef<HTMLDivElement>(null);
-  const goTo = (s: Section) => {
+  const goTo = (s: Anchor) => {
     setActive(s);
     scrollToSection(rootRef.current?.querySelector<HTMLElement>(`[data-section="${s}"]`) ?? null);
   };
 
   return (
     <div ref={rootRef}>
-      <div className="sticky top-0 z-10 flex overflow-x-auto bg-white">
+      <div className="sticky top-0 z-10 flex justify-center gap-1 overflow-x-auto border-b border-nuit/8 bg-white/95 px-4 backdrop-blur">
         {sections.map((t) => (
           <button
             key={t}
             type="button"
             onClick={() => goTo(t)}
             className={cn(
-              "min-w-[90px] flex-1 border-b-2 py-2 text-center text-[10px] font-semibold transition-colors",
+              "shrink-0 border-b-2 px-3 py-2.5 text-[10.5px] font-semibold transition-colors",
               active === t
                 ? "border-(--p) text-(--p)"
-                : "border-nuit/8 text-nuit/45 hover:text-nuit/70",
+                : "border-transparent text-nuit/50 hover:text-nuit/80",
             )}
           >
             {t}
@@ -93,27 +160,25 @@ function Home() {
         ))}
       </div>
 
-      {/* Hero + nuancier */}
-      <section
-        data-section="Nuancier"
-        className="grid gap-5 px-4 pt-6 @min-[600px]:grid-cols-[1.1fr_1fr] @min-[600px]:px-8"
-      >
-        <div>
-          <Eyebrow className="bg-(--s) text-(--p)">Peintre en bâtiment · {project.city}</Eyebrow>
-          <p className="mt-3 font-display text-[30px] leading-[1.05] font-bold tracking-tight text-(--d)">
-            Intérieur, extérieur,
-            <br />
+      {/* Hero : le mur du visuel prend la teinte choisie */}
+      <section data-section="Accueil" className="relative h-[350px] overflow-hidden">
+        <LivingScene className="absolute inset-0" wall={color.c} ladder />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent" />
+        <div className="relative flex h-full max-w-[350px] flex-col justify-center px-4 @min-[600px]:px-8">
+          <p className="text-[10px] font-bold tracking-[0.16em] text-(--p) uppercase">
+            Peintre en bâtiment · {project.city}
+          </p>
+          <p className="mt-3 font-display text-[32px] leading-[1.03] font-bold tracking-tight text-(--d)">
+            Des murs qui vous{" "}
             <span className="bg-linear-to-r from-(--p) to-(--a) bg-clip-text text-transparent">
-              finitions soignées
+              ressemblent
             </span>
           </p>
-          <p className="mt-3 text-[12px] leading-relaxed text-nuit/60">
-            Testez une teinte sur le mur ci-contre, puis demandez votre devis.
+          <p className="mt-3 text-[12px] leading-relaxed text-nuit/65">
+            Intérieurs, façades et décoration. Essayez une teinte sur le salon, on vous conseille
+            gratuitement.
           </p>
-          <p className="mt-4 text-[10px] font-semibold tracking-wide text-nuit/50 uppercase">
-            Le nuancier de la saison
-          </p>
-          <div className="mt-2 flex gap-2">
+          <div className="mt-4 flex gap-1.5">
             {swatches.map((s) => (
               <button
                 key={s.n}
@@ -122,142 +187,180 @@ function Home() {
                 aria-label={`Teinte ${s.n}`}
                 aria-pressed={color.n === s.n}
                 className={cn(
-                  "h-14 flex-1 rounded-lg ring-1 ring-nuit/10 transition-transform hover:-translate-y-0.5",
+                  "size-8 rounded-full ring-1 ring-nuit/15 transition-transform hover:-translate-y-0.5",
                   color.n === s.n && "ring-2 ring-(--p) ring-offset-2",
                 )}
                 style={{ backgroundColor: s.c }}
               />
             ))}
           </div>
-          <Btn onClick={() => goTo("Contact")} className="mt-4">
-            Devis pour la teinte « {color.n} » <ArrowRight className="size-3.5" />
+          <p className="mt-1.5 text-[10px] text-nuit/50">
+            Teinte : <span className="font-semibold text-nuit/80">{color.n}</span>
+          </p>
+          <Btn onClick={() => goTo("Contact")} className="mt-4 self-start px-5 py-2.5">
+            Devis gratuit <ArrowRight className="size-3.5" />
           </Btn>
         </div>
-        <div>
-          <Room wall={color.c} />
-          <p className="mt-2 text-center text-[10px] text-nuit/50">
-            Aperçu : salon en teinte <span className="font-semibold text-nuit/75">{color.n}</span>
-          </p>
-        </div>
       </section>
 
-      <section data-section="Prestations" className="px-4 pt-8 @min-[600px]:px-8">
-        <p className="font-display text-[18px] font-bold text-(--d)">Prestations</p>
-        <div className="mt-3 grid grid-cols-2 gap-2.5 @min-[600px]:grid-cols-4">
-          {[
-            { I: PaintRoller, t: "Peinture intérieure" },
-            { I: Sun, t: "Ravalement extérieur" },
-            { I: Brush, t: "Papier peint" },
-            { I: Sparkles, t: "Enduits décoratifs" },
-          ].map(({ I, t }) => (
-            <Card key={t} className="p-3">
-              <span className="grid size-8 place-items-center rounded-lg bg-(--s) text-(--p)">
-                <I className="size-4" />
-              </span>
-              <p className="mt-2 text-[11px] font-bold text-nuit">{t}</p>
-            </Card>
-          ))}
-        </div>
-      </section>
+      <TrustStrip
+        items={[
+          { I: CalendarCheck, t: "Devis sous 72 h", d: "Visite et conseil couleur offerts" },
+          { I: ShieldCheck, t: "Sols protégés", d: "Chantier rendu propre" },
+          { I: Leaf, t: "Peintures Ecolabel", d: "Sans odeur, pièces vite habitables" },
+          { I: Award, t: "Décennale", d: "Qualibat, travaux garantis" },
+        ]}
+      />
 
-      <section data-section="Réalisations" className="px-4 pt-8 @min-[600px]:px-8">
-        <p className="font-display text-[18px] font-bold text-(--d)">Réalisations (exemples)</p>
-        <div className="mt-3 grid grid-cols-3 gap-2.5">
-          {[
-            ["Chambre · Woippy", "#e8d5c4", "#c7d2c0"],
-            ["Cuisine · Maizières", "#f5efe6", "#9fb4c7"],
-            ["Façade · Saint-Julien", "#d6d3d1", "#f5efe6"],
-          ].map(([t, a, b]) => (
-            <div key={t} className="overflow-hidden rounded-xl ring-1 ring-nuit/8">
-              <div className="flex h-16">
-                <span className="flex-1" style={{ backgroundColor: a }} />
-                <span className="flex-1" style={{ backgroundColor: b }} />
+      <Section className="bg-(--s)">
+        <div data-section="Prestations" />
+        <SectionHead
+          kicker="Prestations"
+          title="Du sol au plafond, du salon à la façade"
+          center
+          className="mb-6"
+        />
+        <div className="grid grid-cols-2 gap-3 @min-[600px]:grid-cols-4">
+          {services.map(({ I, t, d, v }) => (
+            <div key={t} className="overflow-hidden rounded-2xl bg-white ring-1 ring-nuit/8">
+              <Photo src={v} alt={t} className="h-24 rounded-none" />
+              <div className="p-3">
+                <p className="flex items-center gap-1.5 text-[12px] font-bold text-nuit">
+                  <I className="size-3.5 text-(--p)" /> {t}
+                </p>
+                <p className="mt-1 text-[10px] leading-relaxed text-nuit/60">{d}</p>
               </div>
-              <p className="bg-white px-2 py-1.5 text-[10px] font-semibold text-nuit">{t}</p>
             </div>
           ))}
         </div>
-      </section>
+      </Section>
 
-      <section
-        data-section="Avis"
-        className="grid gap-3 px-4 pt-8 @min-[600px]:grid-cols-[1fr_1.1fr] @min-[600px]:px-8"
-      >
-        <div className="overflow-hidden rounded-2xl bg-white shadow-[0_20px_40px_-16px_rgb(46_16_101/0.35)] ring-1 ring-nuit/8">
-          <div
-            className="relative h-20 bg-[#e8eef3]"
-            style={{
-              backgroundImage:
-                "linear-gradient(90deg, rgb(255 255 255/0.9) 2px, transparent 2px), linear-gradient(rgb(255 255 255/0.9) 2px, transparent 2px)",
-              backgroundSize: "34px 34px",
-            }}
-          >
-            <span className="absolute top-1/2 left-1/2 grid size-8 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-(--p) text-white shadow-lg">
-              <PaintRoller className="size-4" />
-            </span>
-          </div>
-          <div className="p-3.5">
-            <p className="flex items-center gap-1.5 text-[10px] font-semibold text-nuit/50">
-              <Globe className="size-3" /> Fiche Google Business
-            </p>
-            <p className="mt-1 text-[14px] font-bold text-nuit">{project.brand}</p>
-            <div className="mt-0.5 flex items-center gap-1.5">
-              <span className="text-[11px] font-semibold">4,9</span>
-              <Stars />
-            </div>
-            <p className="mt-0.5 text-[10px] text-nuit/55">
-              Peintre en bâtiment · {project.city} · Ouvert
-            </p>
-            <div className="mt-2.5 grid grid-cols-3 gap-1.5">
-              {[
-                { I: MapPin, t: "Itinéraire" },
-                { I: Phone, t: "Appeler" },
-                { I: Globe, t: "Site web" },
-              ].map(({ I, t }) => (
-                <span
-                  key={t}
-                  className="flex flex-col items-center gap-1 rounded-lg bg-(--s) py-1.5 text-[9px] font-semibold text-(--p)"
-                >
-                  <I className="size-3.5" />
-                  {t}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-        <div className="space-y-2">
-          {[
-            ["C. T.", "Travail soigné, chantier laissé impeccable."],
-            ["J. B.", "De très bons conseils sur les couleurs, rendu superbe."],
-            ["N. F.", "Façade refaite en une semaine, équipe agréable."],
-          ].map(([n, t]) => (
-            <Card key={n} className="p-3">
-              <div className="flex items-center justify-between">
-                <span className="text-[11px] font-bold text-nuit">{n}</span>
+      <Section>
+        <div data-section="Réalisations" />
+        <SectionHead
+          kicker="Réalisations"
+          title="Avant, pendant, après"
+          intro="Quelques chantiers récents à Woippy et autour."
+          className="mb-5"
+        />
+        <Gallery
+          itemClassName="h-32"
+          items={[
+            { src: "salon", t: "Séjour blanc cassé · Woippy" },
+            { src: "salon2", t: "Pièce de vie lumineuse · Maizières" },
+            { src: "facade", t: "Façade enduit taloché · Saint-Julien" },
+            { src: "eclairage", t: "Salon ocre et gris · Metz" },
+            { src: "peintre-mur", t: "Mur brique repeint · Woippy" },
+            { src: "salon3", t: "Plafond bois lasuré · Norroy" },
+          ]}
+        />
+      </Section>
+
+      <Section className="bg-(--s)">
+        <div data-section="Avis" />
+        <SectionHead kicker="Avis" title="4,9/5 sur Google" className="mb-5" />
+        <div className="grid gap-3 @min-[600px]:grid-cols-[1fr_1.6fr]">
+          <div className="overflow-hidden rounded-2xl bg-white shadow-[0_20px_40px_-16px_rgb(46_16_101/0.35)] ring-1 ring-nuit/8">
+            <ZoneMap className="h-24 rounded-none ring-0" towns={[project.city]} />
+            <div className="p-3.5">
+              <p className="flex items-center gap-1.5 text-[10px] font-semibold text-nuit/50">
+                <GoogleG className="size-3" /> Fiche Google Business
+              </p>
+              <p className="mt-1 text-[14px] font-bold text-nuit">{project.brand}</p>
+              <div className="mt-0.5 flex items-center gap-1.5">
+                <span className="text-[11px] font-semibold">4,9</span>
                 <Stars />
+                <span className="text-[10px] text-nuit/50">(64)</span>
               </div>
-              <p className="mt-1 text-[11px] text-nuit/65">« {t} »</p>
-            </Card>
-          ))}
-          <p className="text-[9px] text-nuit/40">Avis d&apos;exemple</p>
+              <p className="mt-0.5 text-[10px] text-nuit/55">
+                Peintre en bâtiment · {project.city} ·{" "}
+                <span className="font-semibold text-emerald-700">Ouvert</span>
+              </p>
+              <div className="mt-2.5 grid grid-cols-3 gap-1.5">
+                {[
+                  { I: MapPin, t: "Itinéraire" },
+                  { I: Phone, t: "Appeler" },
+                  { I: Globe, t: "Site web" },
+                ].map(({ I, t }) => (
+                  <span
+                    key={t}
+                    className="flex flex-col items-center gap-1 rounded-lg bg-(--s) py-1.5 text-[9px] font-semibold text-(--p)"
+                  >
+                    <I className="size-3.5" />
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="space-y-2">
+            {[
+              [
+                "Caroline T.",
+                "il y a 1 semaine",
+                "Travail soigné, chantier laissé impeccable. Le conseil couleur nous a vraiment aidés pour le salon.",
+              ],
+              [
+                "Julien B.",
+                "il y a 1 mois",
+                "Trois chambres repeintes en 4 jours, rien à redire. Peinture sans odeur, on a pu dormir dedans le soir même.",
+              ],
+              [
+                "Nathalie F.",
+                "il y a 3 mois",
+                "Façade refaite en une semaine, équipe agréable et ponctuelle.",
+              ],
+            ].map(([n, w, t], i) => (
+              <Card key={n} className="p-3">
+                <div className="flex items-center gap-2">
+                  <span
+                    className="grid size-7 place-items-center rounded-full text-[11px] font-bold text-white"
+                    style={{ backgroundColor: ["#7c3aed", "#db2777", "#0891b2"][i] }}
+                  >
+                    {n[0]}
+                  </span>
+                  <span className="text-[11px] font-bold text-nuit">{n}</span>
+                  <span className="text-[9.5px] text-nuit/45">{w}</span>
+                  <Stars className="ml-auto" />
+                </div>
+                <p className="mt-1.5 text-[11px] leading-relaxed text-nuit/65">{t}</p>
+              </Card>
+            ))}
+          </div>
         </div>
-      </section>
+      </Section>
 
-      <section data-section="Contact" className="px-4 pt-8 @min-[600px]:px-8">
+      <ArticlesSection />
+
+      <Section className="grid gap-5 @min-[600px]:grid-cols-[1fr_1.3fr]">
+        <div data-section="Contact">
+          <SectionHead
+            kicker="Contact"
+            title="Parlons couleurs"
+            intro="Visite, conseil couleur et devis gratuits. Réponse sous 24 h."
+          />
+          <ul className="mt-4 space-y-2 text-[11px] text-nuit/70">
+            <li className="flex items-center gap-2">
+              <Phone className="size-3.5 text-(--p)" /> {info.phone}
+            </li>
+            <li className="flex items-center gap-2">
+              <MapPin className="size-3.5 text-(--p)" /> {info.address}
+            </li>
+          </ul>
+        </div>
         <Card>
-          <p className="text-[14px] font-bold text-nuit">Devis gratuit</p>
           <DemoForm
             key={color.n}
             submitLabel={
               <>
-                <Send className="size-3.5" /> Envoyer
+                <Send className="size-3.5" /> Demander mon devis
               </>
             }
             success={{
               title: "Demande envoyée",
               text: `Teinte choisie : ${color.n}. On vous rappelle pour une visite.`,
             }}
-            className="mt-2 min-h-[200px]"
+            className="min-h-[200px]"
           >
             <div className="grid gap-2.5 @min-[600px]:grid-cols-3">
               <Field label="Nom" placeholder="Votre nom" />
@@ -269,7 +372,7 @@ function Home() {
             </div>
           </DemoForm>
         </Card>
-      </section>
+      </Section>
       <MiniFooter />
     </div>
   );
@@ -280,6 +383,7 @@ export function PeintreSite(props: SiteProps) {
     <MiniSite
       {...props}
       icon={PaintRoller}
+      info={info}
       pages={[{ id: "home", label: "Accueil", path: "/", render: () => <Home /> }]}
     />
   );

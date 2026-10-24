@@ -17,6 +17,8 @@ export type TradeTheme = {
   soft: string;
   /** Couleur d'appoint. */
   accent: string;
+  /** Petits textes colorés sur fond clair, si la couleur principale y est peu lisible. */
+  ink?: string;
 };
 
 export type TradeMockup =
@@ -38,7 +40,7 @@ export type Project = {
   tags: string[];
   image?: string;
   mockup: TradeMockup;
-  /** Nom fictif affiché dans la maquette. */
+  /** Nom d'entreprise fictif affiché dans la maquette. */
   brand: string;
   /** Adresse fictive affichée dans la barre du navigateur. */
   domain: string;
@@ -55,7 +57,7 @@ export const projects: Project[] = [
     description: "Site vitrine + formulaire de dépannage urgent.",
     tags: ["Site vitrine", "SEO local"],
     mockup: "plombier",
-    brand: "Votre Plomberie",
+    brand: "Hydrélia",
     domain: "exemple-plomberie-thionville.fr",
     theme: {
       primary: "#0369a1",
@@ -74,11 +76,12 @@ export const projects: Project[] = [
     description: "Site + logiciel de devis relié au formulaire.",
     tags: ["Pack complet"],
     mockup: "electricien",
-    brand: "Votre Électricité",
+    brand: "Volténa",
     domain: "exemple-electricite-montigny.fr",
     theme: {
       primary: "#facc15",
       onPrimary: "#111827",
+      ink: "#a16207",
       dark: "#0f172a",
       soft: "#fefce8",
       accent: "#fde047",
@@ -93,7 +96,7 @@ export const projects: Project[] = [
     description: "Galerie avant / après de rénovations.",
     tags: ["Site vitrine", "Galerie"],
     mockup: "macon",
-    brand: "Votre Maçonnerie",
+    brand: "Pierre & Taloche",
     domain: "exemple-maconnerie-pontamousson.fr",
     theme: {
       primary: "#57534e",
@@ -112,7 +115,7 @@ export const projects: Project[] = [
     description: "Catalogue de réalisations sur mesure.",
     tags: ["Site vitrine"],
     mockup: "menuisier",
-    brand: "Votre Menuiserie",
+    brand: "Atelier Chêne & Fil",
     domain: "exemple-menuiserie-boulay.fr",
     theme: {
       primary: "#92400e",
@@ -131,7 +134,7 @@ export const projects: Project[] = [
     description: "Logiciel de devis et relances automatiques.",
     tags: ["Logiciel"],
     mockup: "couvreur",
-    brand: "Votre Couverture",
+    brand: "Toitures Horizon",
     domain: "app.exemple-couverture-hayange.fr",
     theme: {
       primary: "#334155",
@@ -150,7 +153,7 @@ export const projects: Project[] = [
     description: "Site one-page et fiche Google Business.",
     tags: ["Site vitrine", "Google Business"],
     mockup: "peintre",
-    brand: "Votre Peinture",
+    brand: "Nuances & Murs",
     domain: "exemple-peinture-woippy.fr",
     theme: {
       primary: "#7c3aed",
@@ -169,7 +172,7 @@ export const projects: Project[] = [
     description: "Prise de rendez-vous d'entretien et rappels annuels.",
     tags: ["Site vitrine", "Rendez-vous en ligne"],
     mockup: "chauffagiste",
-    brand: "Votre Chauffage",
+    brand: "Thermalis",
     domain: "exemple-chauffage-saint-avold.fr",
     theme: {
       primary: "#dc2626",
@@ -188,7 +191,7 @@ export const projects: Project[] = [
     description: "Site avec estimation de devis au m².",
     tags: ["Site vitrine", "Devis en ligne"],
     mockup: "carreleur",
-    brand: "Votre Carrelage",
+    brand: "Atelier Calepin",
     domain: "exemple-carrelage-amneville.fr",
     theme: {
       primary: "#0f766e",
@@ -207,7 +210,7 @@ export const projects: Project[] = [
     description: "Site, logiciel et assistant IA qui répond aux demandes.",
     tags: ["Pack complet", "IA"],
     mockup: "charpentier",
-    brand: "Votre Charpente",
+    brand: "Futaie Charpente",
     domain: "exemple-charpente-faulquemont.fr",
     theme: {
       primary: "#166534",
