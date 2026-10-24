@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import {
+  ArrowRight,
   Bell,
   CalendarCheck,
   Check,
@@ -17,15 +18,28 @@ import {
   Card,
   Choice,
   DemoForm,
-  Eyebrow,
   Field,
   MiniFooter,
   MiniSite,
+  Stars,
   SubPage,
-  Title,
   useMini,
+  type SiteInfo,
   type SiteProps,
 } from "./kit";
+import {
+  CtaBand,
+  Faq,
+  GoogleG,
+  Photo,
+  Reviews,
+  Section,
+  SectionHead,
+  Stats,
+  TrustStrip,
+  ZoneMap,
+} from "./blocks";
+import { BoilerScene, HouseScene, VanScene } from "./scenes";
 
 const days = [
   { d: "Lun", n: 14 },
@@ -102,7 +116,7 @@ function Booking({ compact = false }: { compact?: boolean }) {
           itemClassName="px-2.5 py-1 text-[10px]"
         />
       )}
-      <p className="mt-3 text-[10px] font-semibold text-nuit/55">Septembre (exemple)</p>
+      <p className="mt-3 text-[10px] font-semibold text-nuit/55">Septembre</p>
       <div className="mt-1.5 grid grid-cols-5 gap-1.5">
         {days.map((x) => (
           <button
@@ -160,46 +174,263 @@ function Booking({ compact = false }: { compact?: boolean }) {
   );
 }
 
+const info: SiteInfo = {
+  baseline: "Chauffage · PAC · Entretien",
+  phone: "03 53 48 75 64",
+  email: "rdv@exemple-chauffage-saint-avold.fr",
+  address: "5 rue du Général Hirschauer, 57500 Saint-Avold",
+  hours: "Lun–ven 8h–18h · Dépannage chauffage 6j/7",
+  zone: "Saint-Avold, Forbach, Creutzwald",
+  about:
+    "Chauffagistes RGE depuis 2008 : entretien de chaudières, pompes à chaleur et poêles à granulés, avec rappel automatique chaque année.",
+  labels: ["RGE QualiPAC", "Qualigaz", "Garantie décennale"],
+  links: [
+    { label: "Entretien de chaudière", page: "entretien" },
+    { label: "Pompe à chaleur", page: "installation" },
+    { label: "Contrats d'entretien", page: "contrats" },
+    { label: "Prendre rendez-vous", page: "rdv" },
+    { label: "Contact", page: "contact" },
+  ],
+  rating: { value: "4,8", count: 203 },
+};
+
 function Home() {
   const { project } = useMini();
   return (
     <>
-      <div className="grid gap-5 bg-linear-to-b from-(--s) to-white px-4 pt-5 pb-2 @min-[600px]:grid-cols-[1fr_1.05fr] @min-[600px]:px-8 @min-[600px]:pt-7">
-        <div>
-          <Eyebrow className="bg-white text-(--p) ring-1 ring-nuit/8">
-            <Flame className="size-3" /> Chauffagiste · {project.city}
-          </Eyebrow>
-          <Title className="mt-3">
-            Entretien de chaudière,
-            <br />
-            réservé en 1 minute
-          </Title>
-          <p className="mt-3 text-[12px] leading-relaxed text-nuit/60">
-            Choisissez un créneau libre, recevez la confirmation et un rappel chaque année.
-          </p>
-          <div className="mt-4 rounded-2xl bg-(--d) p-3.5 text-white">
-            <p className="flex items-center gap-1.5 text-[11px] font-bold">
-              <Bell className="size-3.5 text-(--a)" /> Rappel annuel automatique
+      {/* Hero */}
+      <div className="relative overflow-hidden bg-(--d)">
+        <HouseScene
+          className="absolute inset-0"
+          heatPump
+          sky="evening"
+          facade="#efe4d4"
+          roof="#5b4a45"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-(--d) via-(--d)/85 to-(--d)/20" />
+        <div className="relative grid gap-5 px-4 py-7 @min-[600px]:grid-cols-[1fr_1.05fr] @min-[600px]:items-center @min-[600px]:px-8">
+          <div className="text-white">
+            <p className="inline-flex items-center gap-1.5 rounded-full bg-(--p) px-2.5 py-1 text-[10px] font-semibold">
+              <Flame className="size-3" /> Chauffagiste RGE à {project.city}
             </p>
-            <p className="mt-1 text-[10px] leading-relaxed text-white/65">
-              « Bonjour, l&apos;entretien de votre chaudière arrive à échéance. Un créneau vous
-              attend. »
+            <p className="mt-4 font-display text-[30px] leading-[1.05] font-bold tracking-tight">
+              Entretien de chaudière, réservé en 1 minute
             </p>
+            <p className="mt-3 max-w-[300px] text-[12px] leading-relaxed text-white/70">
+              Choisissez un créneau libre, recevez la confirmation par SMS et un rappel chaque
+              année. Installation de pompes à chaleur avec MaPrimeRénov&apos;.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              <Btn to="installation" tone="light" className="ring-0">
+                Pompe à chaleur
+              </Btn>
+              <Btn
+                to="contrats"
+                tone="light"
+                className="bg-white/10 text-white ring-white/20 hover:bg-white/20"
+              >
+                Contrats dès 12 €/mois
+              </Btn>
+            </div>
+            <div className="mt-5 flex items-center gap-2 text-[10.5px] text-white/70">
+              <GoogleG className="size-4" /> <Stars />
+              <span>
+                <b className="text-white">4,8/5</b> · 203 avis
+              </span>
+            </div>
           </div>
-          <div className="mt-3 flex flex-wrap gap-1.5">
-            <Btn to="entretien" tone="ghost" className="px-3 py-1.5 text-[11px]">
-              Entretien
+          <div className="hidden @min-[600px]:block">
+            <Booking compact />
+          </div>
+        </div>
+      </div>
+
+      <TrustStrip
+        items={[
+          { I: CalendarCheck, t: "RDV en ligne", d: "Créneaux en temps réel" },
+          { I: Bell, t: "Rappel annuel", d: "On vous prévient chaque année" },
+          { I: Leaf, t: "RGE QualiPAC", d: "Aides MaPrimeRénov' déduites" },
+          { I: Wrench, t: "Dépannage 6j/7", d: "Sous 24 h pour les contrats" },
+        ]}
+      />
+
+      <Section>
+        <SectionHead
+          kicker="Nos services"
+          title="Votre chauffage entre de bonnes mains"
+          intro="Entretien obligatoire, remplacement de chaudière ou passage à la pompe à chaleur : on vous accompagne de A à Z."
+        />
+        <div className="mt-5 grid gap-3 @min-[600px]:grid-cols-3">
+          {[
+            {
+              t: "Entretien annuel",
+              d: "Chaudière gaz, fioul, poêle à granulés. Attestation remise le jour même.",
+              to: "entretien",
+              v: <BoilerScene />,
+              tag: "Dès 129 €",
+            },
+            {
+              t: "Pompe à chaleur",
+              d: "Étude, pose et mise en service. Jusqu'à 60 % d'économies sur la facture.",
+              to: "installation",
+              v: <HouseScene heatPump facade="#f1ebe1" roof="#5b4a45" />,
+              tag: "Aides déduites",
+            },
+            {
+              t: "Contrats d'entretien",
+              d: "Visite annuelle, dépannage prioritaire et pièces incluses selon la formule.",
+              to: "contrats",
+              v: <BoilerScene accent="#ea580c" />,
+              tag: "Dès 12 €/mois",
+            },
+          ].map((x) => (
+            <Btn
+              key={x.t}
+              to={x.to}
+              tone="light"
+              className="flex-col items-stretch gap-0 overflow-hidden rounded-xl p-0 text-left ring-nuit/8"
+            >
+              <Photo className="h-28 rounded-none" caption={x.tag}>
+                {x.v}
+              </Photo>
+              <span className="block p-3.5">
+                <span className="block text-[13px] font-bold text-nuit">{x.t}</span>
+                <span className="mt-1 block text-[10.5px] leading-relaxed font-normal text-nuit/60">
+                  {x.d}
+                </span>
+              </span>
             </Btn>
-            <Btn to="installation" tone="ghost" className="px-3 py-1.5 text-[11px]">
-              Installation
-            </Btn>
-            <Btn to="contrats" tone="ghost" className="px-3 py-1.5 text-[11px]">
-              Contrats
+          ))}
+        </div>
+      </Section>
+
+      {/* Rappel annuel */}
+      <Section className="bg-(--s)">
+        <div className="grid gap-6 @min-[600px]:grid-cols-2 @min-[600px]:items-center">
+          <div>
+            <SectionHead
+              kicker="Zéro oubli"
+              title="On vous rappelle avant la date d'entretien"
+              intro="Une fois votre premier rendez-vous pris, on vous envoie un SMS un mois avant l'échéance avec un lien pour choisir le créneau suivant."
+            />
+            <Stats
+              className="mt-5 @min-[600px]:grid-cols-3"
+              items={[
+                { v: "3 800", l: "chaudières suivies" },
+                { v: "98 %", l: "de clients fidèles" },
+                { v: "24 h", l: "dépannage contrat" },
+              ]}
+            />
+          </div>
+          <div className="space-y-2.5">
+            <div className="ml-auto max-w-[260px] rounded-2xl rounded-br-sm bg-(--d) p-3.5 text-white shadow-xl">
+              <p className="flex items-center gap-1.5 text-[10px] font-semibold text-white/60">
+                <Bell className="size-3 text-(--a)" /> SMS · {project.brand}
+              </p>
+              <p className="mt-1.5 text-[11px] leading-relaxed">
+                Bonjour, l&apos;entretien de votre chaudière arrive à échéance le 12 novembre.
+                Choisissez votre créneau : rdv.exemple.fr/2026
+              </p>
+            </div>
+            <div className="max-w-[220px] rounded-2xl rounded-bl-sm bg-white p-3 text-[11px] text-nuit/75 ring-1 ring-nuit/8">
+              Merci, c&apos;est réservé pour mardi 10 h !
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section>
+        <div className="grid gap-6 @min-[600px]:grid-cols-[1fr_1.1fr] @min-[600px]:items-center">
+          <Photo className="h-48" caption="Nos techniciens sur la route">
+            <VanScene brand={project.brand} phone={info.phone} baseline="Chauffage · PAC" />
+          </Photo>
+          <div>
+            <SectionHead
+              kicker="L'équipe"
+              title="7 techniciens formés chaque année"
+              intro="Des véhicules équipés de pièces d'origine pour réparer dès le premier passage. Interventions sur toutes les grandes marques de chaudières et de pompes à chaleur."
+            />
+            <Btn to="contact" tone="dark" className="mt-5">
+              Nous contacter <ArrowRight className="size-3.5" />
             </Btn>
           </div>
         </div>
-        <Booking compact />
-      </div>
+      </Section>
+
+      <Section className="bg-(--s)">
+        <SectionHead kicker="Avis clients" title="4,8/5 sur 203 avis" className="mb-5" />
+        <Reviews
+          rating="4,8"
+          count={203}
+          reviews={[
+            {
+              n: "Gérard S.",
+              c: "Saint-Avold",
+              when: "il y a 1 semaine",
+              t: "Rendez-vous pris en ligne en 2 minutes, technicien à l'heure et très pro. Le rappel par SMS est bien pratique.",
+            },
+            {
+              n: "Laura M.",
+              c: "Forbach",
+              when: "il y a 1 mois",
+              t: "Pompe à chaleur installée en 3 jours, ils se sont occupés de tout le dossier MaPrimeRénov'.",
+            },
+            {
+              n: "Didier K.",
+              c: "Creutzwald",
+              when: "il y a 3 mois",
+              t: "Panne de chaudière un samedi, dépanné dans la matinée grâce au contrat. Au top.",
+            },
+          ]}
+        />
+      </Section>
+
+      <Section className="grid gap-6 @min-[600px]:grid-cols-2">
+        <div>
+          <SectionHead kicker="Zone d'intervention" title="Saint-Avold et 30 km autour" />
+          <ZoneMap
+            className="mt-4 h-44"
+            towns={[
+              project.city,
+              "Forbach",
+              "Creutzwald",
+              "Faulquemont",
+              "Freyming",
+              "Hombourg-Haut",
+              "Carling",
+              "Longeville",
+            ]}
+          />
+        </div>
+        <div>
+          <SectionHead kicker="Questions fréquentes" title="Bon à savoir" />
+          <Faq
+            className="mt-4"
+            items={[
+              {
+                q: "L'entretien de chaudière est-il obligatoire ?",
+                a: "Oui, une fois par an pour les chaudières de 4 à 400 kW. L'attestation vous est remise le jour de la visite.",
+              },
+              {
+                q: "Combien coûte une pompe à chaleur ?",
+                a: "Entre 9 000 et 16 000 € avant aides selon la maison. MaPrimeRénov' et les CEE peuvent en financer une grande partie.",
+              },
+              {
+                q: "Que comprend le contrat d'entretien ?",
+                a: "La visite annuelle, le dépannage prioritaire et, selon la formule, le déplacement et les pièces.",
+              },
+            ]}
+          />
+        </div>
+      </Section>
+
+      <Section className="px-0 pt-0 @min-[600px]:px-0 @min-[600px]:pt-0">
+        <CtaBand
+          title="Votre entretien en 1 minute"
+          text="Choisissez un créneau libre, on s'occupe du reste."
+          cta={{ label: "Prendre rendez-vous", to: "rdv" }}
+        />
+      </Section>
       <MiniFooter />
     </>
   );
@@ -245,6 +476,7 @@ function Entretien() {
       eyebrow="Entretien annuel"
       title="Quel équipement avez-vous ?"
       intro="L'entretien annuel est obligatoire pour les chaudières. Choisissez votre équipement pour voir ce qui est fait."
+      visual={<BoilerScene />}
     >
       <Choice options={equipements} value={eq} onChange={setEq} />
       <div className="mt-4 grid gap-3 @min-[600px]:grid-cols-[1.3fr_1fr]">
@@ -260,7 +492,7 @@ function Entretien() {
         </Card>
         <div className="flex flex-col justify-between rounded-2xl bg-(--d) p-4 text-white">
           <div>
-            <p className="text-[10px] text-white/55">À partir de (exemple)</p>
+            <p className="text-[10px] text-white/55">À partir de</p>
             <p className="font-display text-[32px] font-bold">{prix[eq]} €</p>
             <p className="text-[10px] text-white/55">TTC, déplacement inclus</p>
           </div>
@@ -327,6 +559,7 @@ function Installation() {
       eyebrow="Installation"
       title="Comparer les solutions"
       intro="Touchez une solution pour voir le détail."
+      visual={<HouseScene heatPump facade="#f1ebe1" roof="#5b4a45" />}
     >
       <div className="grid gap-2.5 @min-[600px]:grid-cols-3">
         {solutions.map(({ id, t, I, cout, eco, aides }) => (
@@ -529,6 +762,7 @@ export function ChauffagisteSite(props: SiteProps) {
     <MiniSite
       {...props}
       icon={Flame}
+      info={info}
       cta={{ label: "Prendre rendez-vous", page: "rdv" }}
       pages={[
         { id: "home", label: "Accueil", path: "/", render: () => <Home /> },

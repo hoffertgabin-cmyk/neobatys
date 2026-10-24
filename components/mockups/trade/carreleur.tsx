@@ -1,21 +1,45 @@
 "use client";
 
 import { useState } from "react";
-import { Bath, Calculator, Grid3x3, Home as HomeIcon, Layers, Send, Sun } from "lucide-react";
+import {
+  ArrowRight,
+  Bath,
+  Calculator,
+  Grid3x3,
+  Home as HomeIcon,
+  Layers,
+  Ruler,
+  Send,
+  ShieldCheck,
+  Store,
+  Sun,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   Btn,
   Card,
   Choice,
   DemoForm,
-  Eyebrow,
   Field,
   MiniFooter,
   MiniSite,
   SubPage,
   useMini,
+  type SiteInfo,
   type SiteProps,
 } from "./kit";
+import {
+  CtaBand,
+  Faq,
+  Photo,
+  Reviews,
+  Section,
+  SectionHead,
+  Steps,
+  TrustStrip,
+  ZoneMap,
+} from "./blocks";
+import { BathroomScene, HouseScene, TileCloseUp } from "./scenes";
 
 const types = ["Carrelage sol", "Faïence murale", "Grand format"] as const;
 const motifs = ["Droit", "Diagonale", "Chevron"] as const;
@@ -30,31 +54,44 @@ const tarif: Record<Type, number> = {
 };
 const surcout: Record<Motif, number> = { Droit: 0, Diagonale: 8, Chevron: 14 };
 
-/** Calepinage dessiné selon le motif. */
-function Pattern({ motif, className }: { motif: Motif; className?: string }) {
-  const line = "rgb(255 255 255 / 0.55)";
-  const style =
-    motif === "Droit"
-      ? {
-          backgroundImage: `linear-gradient(90deg, ${line} 2px, transparent 2px), linear-gradient(${line} 2px, transparent 2px)`,
-          backgroundSize: "44px 44px",
-        }
-      : motif === "Diagonale"
-        ? {
-            backgroundImage: `repeating-linear-gradient(45deg, ${line} 0 2px, transparent 2px 32px), repeating-linear-gradient(-45deg, ${line} 0 2px, transparent 2px 32px)`,
-          }
-        : {
-            backgroundImage: `url("data:image/svg+xml,${encodeURIComponent(
-              "<svg xmlns='http://www.w3.org/2000/svg' width='40' height='22'><path d='M0 21 L20 1 L40 21 M20 1 V22' stroke='rgba(255,255,255,0.6)' stroke-width='2' fill='none'/></svg>",
-            )}")`,
-            backgroundSize: "40px 22px",
-          };
+const tileMotif = { Droit: "droit", Diagonale: "diagonale", Chevron: "chevron" } as const;
+
+/** Calepinage selon le motif, en gros plan. */
+function Pattern({
+  motif,
+  className,
+  color = "#c9d6cf",
+}: {
+  motif: Motif;
+  className?: string;
+  color?: string;
+}) {
   return (
-    <div className={cn("relative overflow-hidden bg-linear-to-br from-(--p) to-(--d)", className)}>
-      <div className="absolute inset-0" style={style} />
+    <div className={cn("relative overflow-hidden", className)}>
+      <TileCloseUp motif={tileMotif[motif]} color={color} />
     </div>
   );
 }
+
+const info: SiteInfo = {
+  baseline: "Carrelage · Faïence · Terrasses",
+  phone: "03 53 48 58 26",
+  email: "devis@exemple-carrelage-amneville.fr",
+  address: "40 rue de Metz, 57360 Amnéville",
+  hours: "Lun–ven 8h–18h · Showroom sam. 9h–12h",
+  zone: "Amnéville, Thionville et Metz",
+  about:
+    "Carreleurs depuis 2013 : salles de bain, grands formats et terrasses. Calepinage dessiné avant la pose, joints réguliers, chantier rendu propre.",
+  labels: ["Qualibat", "Garantie décennale", "Pose certifiée SPEC"],
+  links: [
+    { label: "Salle de bain", page: "prestations" },
+    { label: "Pièces de vie", page: "prestations" },
+    { label: "Terrasses", page: "prestations" },
+    { label: "Galerie", page: "galerie" },
+    { label: "Estimer mon chantier", page: "home" },
+  ],
+  rating: { value: "4,9", count: 89 },
+};
 
 function Simulator({ motif, setMotif }: { motif: Motif; setMotif: (m: Motif) => void }) {
   const [surface, setSurface] = useState(24);
@@ -137,34 +174,205 @@ function Home() {
   const [motif, setMotif] = useState<Motif>("Droit");
   return (
     <>
-      <div className="grid @min-[600px]:grid-cols-[1fr_1.05fr]">
-        <div className="relative min-h-[220px] overflow-hidden">
-          <Pattern motif={motif} className="absolute inset-0" />
-          <div className="relative m-4 rounded-2xl bg-(--d)/90 p-4 text-white @min-[600px]:m-6 @min-[600px]:p-5">
-            <Eyebrow className="bg-white/10 text-(--a)">Carreleur · {project.city}</Eyebrow>
-            <p className="mt-3 font-display text-[24px] leading-[1.08] font-bold @min-[600px]:text-[26px]">
-              Sols et murs,
-              <br />
-              posés au millimètre
+      {/* Hero : visuel + simulateur */}
+      <div className="grid @min-[600px]:grid-cols-[1.05fr_1fr]">
+        <div className="relative min-h-[300px] overflow-hidden bg-(--d)">
+          <BathroomScene
+            className="absolute inset-0"
+            wall="#cfdcd6"
+            floor="#3c4a47"
+            wood="#b48a62"
+            tile={[60, 60]}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-(--d) via-(--d)/60 to-(--d)/10" />
+          <div className="relative flex h-full flex-col justify-end p-4 text-white @min-[600px]:p-6">
+            <p className="text-[10px] font-bold tracking-[0.16em] text-(--a) uppercase">
+              Carreleur à {project.city}
             </p>
-            <p className="mt-2 text-[11px] text-white/65">
-              Pose « {motif.toLowerCase()} » affichée. Changez-la :
+            <p className="mt-2 font-display text-[30px] leading-[1.04] font-bold tracking-tight">
+              Sols et murs, posés au millimètre
             </p>
-            <Choice
-              options={motifs}
-              value={motif}
-              onChange={setMotif}
-              className="mt-2"
-              itemClassName="px-2.5 py-1 text-[10px]"
-              inactiveClassName="bg-white/10 text-white/80 ring-white/15 hover:text-white"
-              activeClassName="bg-(--a) text-(--d) ring-(--a)"
-            />
+            <p className="mt-2 max-w-[300px] text-[11.5px] leading-relaxed text-white/70">
+              Salles de bain, grands formats et terrasses. Calepinage dessiné avant la pose.
+            </p>
+            <div className="mt-4 flex items-center gap-2.5 rounded-xl bg-white/10 p-2 ring-1 ring-white/15 backdrop-blur">
+              <Pattern motif={motif} className="size-10 shrink-0 rounded-lg" />
+              <span className="min-w-0 text-[10.5px] leading-tight">
+                <span className="block font-semibold">Pose « {motif.toLowerCase()} »</span>
+                <span className="block text-white/60">Changez le motif dans l&apos;estimation</span>
+              </span>
+            </div>
           </div>
         </div>
-        <div className="bg-(--s) p-4 @min-[600px]:p-6">
+        <div className="bg-(--s) p-4 @min-[600px]:p-5">
           <Simulator motif={motif} setMotif={setMotif} />
         </div>
       </div>
+
+      <TrustStrip
+        items={[
+          { I: Calculator, t: "Prix en 30 s", d: "Estimation fourni-posé" },
+          { I: Ruler, t: "Calepinage", d: "Plan de pose avant chantier" },
+          { I: Store, t: "Showroom", d: "200 références à Amnéville" },
+          { I: ShieldCheck, t: "Décennale", d: "Étanchéité garantie 10 ans" },
+        ]}
+      />
+
+      <Section>
+        <SectionHead
+          kicker="Prestations"
+          title="Tout ce qui se pose, de la douche à la terrasse"
+          intro="Fourniture conseillée dans notre showroom ou pose de votre carrelage."
+        />
+        <div className="mt-5 grid grid-cols-2 gap-3 @min-[600px]:grid-cols-4">
+          {prestations.map(({ I, t, d }, i) => (
+            <Btn
+              key={t}
+              to="prestations"
+              tone="light"
+              className="flex-col items-stretch gap-0 overflow-hidden rounded-xl p-0 text-left ring-nuit/8"
+            >
+              <Photo className="h-24 rounded-none">
+                {
+                  [
+                    <BathroomScene key="b" wall="#e4ebe7" floor="#6b7b76" tile={[40, 40]} />,
+                    <TileCloseUp key="p" color="#d8cfc2" joint="#efe9df" />,
+                    <HouseScene key="t" terrace="#cdbfae" facade="#f2ece3" roof="#4b5563" />,
+                    <TileCloseUp key="r" motif="chevron" color="#b7c9c1" />,
+                  ][i]
+                }
+              </Photo>
+              <span className="block p-3">
+                <span className="flex items-center gap-1.5 text-[12px] font-bold text-nuit">
+                  <I className="size-3.5 text-(--p)" /> {t}
+                </span>
+                <span className="mt-1 block text-[10px] leading-relaxed font-normal text-nuit/55">
+                  {d}
+                </span>
+              </span>
+            </Btn>
+          ))}
+        </div>
+      </Section>
+
+      <Section className="bg-(--d)">
+        <div className="flex flex-wrap items-end justify-between gap-3">
+          <SectionHead light kicker="Galerie" title="Nos derniers chantiers" />
+          <Btn
+            to="galerie"
+            tone="light"
+            className="bg-white/10 text-white ring-white/20 hover:bg-white/20"
+          >
+            Toute la galerie <ArrowRight className="size-3.5" />
+          </Btn>
+        </div>
+        <div className="mt-5 grid grid-cols-2 gap-3 @min-[600px]:grid-cols-[1.4fr_1fr_1fr]">
+          <Photo
+            className="col-span-2 h-40 @min-[600px]:col-span-1 @min-[600px]:row-span-2 @min-[600px]:h-auto"
+            caption="Douche à l'italienne · Amnéville"
+          >
+            <BathroomScene wall="#d9e3de" floor="#2f3b38" wood="#8a5a35" tile={[30, 30]} />
+          </Photo>
+          <Photo className="h-28" caption="Terrasse 30 m² · Rombas">
+            <HouseScene terrace="#c9b8a3" facade="#efe7da" roof="#52525b" />
+          </Photo>
+          <Photo className="h-28" caption="Entrée en chevron · Talange">
+            <TileCloseUp motif="chevron" color="#cbb89f" joint="#f3ede4" />
+          </Photo>
+          <Photo className="h-28" caption="Crédence · Mondelange">
+            <TileCloseUp motif="hexagone" color="#5e8c80" joint="#f4f4f2" />
+          </Photo>
+          <Photo className="h-28" caption="Séjour grand format · Hagondange">
+            <TileCloseUp color="#e2ddd5" joint="#f6f4f0" />
+          </Photo>
+        </div>
+      </Section>
+
+      <Section>
+        <SectionHead kicker="Notre méthode" title="Une pose sans surprise" className="mb-6" />
+        <Steps
+          items={[
+            { t: "Estimation", d: "En ligne en 30 secondes, puis visite gratuite." },
+            { t: "Calepinage", d: "Plan de pose dessiné : coupes, joints, seuils." },
+            { t: "Préparation", d: "Dépose, ragréage et étanchéité si nécessaire." },
+            { t: "Pose et joints", d: "Nettoyage complet avant la remise des clés." },
+          ]}
+        />
+      </Section>
+
+      <Section className="bg-(--s)">
+        <SectionHead kicker="Avis clients" title="4,9/5 sur 89 avis" className="mb-5" />
+        <Reviews
+          count={89}
+          reviews={[
+            {
+              n: "Émilie V.",
+              c: "Amnéville",
+              when: "il y a 2 semaines",
+              t: "Douche à l'italienne parfaite, joints impeccables. L'estimation en ligne était juste à 50 € près.",
+            },
+            {
+              n: "Thomas R.",
+              c: "Hagondange",
+              when: "il y a 1 mois",
+              t: "45 m² de grand format 120 × 60 posés en 4 jours, pas un défaut de planéité. Très pro.",
+            },
+            {
+              n: "Sophie L.",
+              c: "Rombas",
+              when: "il y a 3 mois",
+              t: "Terrasse sur plots superbe, bons conseils pour le choix du carrelage antidérapant.",
+            },
+          ]}
+        />
+      </Section>
+
+      <Section className="grid gap-6 @min-[600px]:grid-cols-2">
+        <div>
+          <SectionHead kicker="Zone d'intervention" title="Entre Thionville et Metz" />
+          <ZoneMap
+            className="mt-4 h-44"
+            towns={[
+              project.city,
+              "Hagondange",
+              "Rombas",
+              "Talange",
+              "Mondelange",
+              "Maizières",
+              "Moyeuvre",
+              "Thionville",
+            ]}
+          />
+        </div>
+        <div>
+          <SectionHead kicker="Questions fréquentes" title="Avant de carreler" />
+          <Faq
+            className="mt-4"
+            items={[
+              {
+                q: "Peut-on poser sur l'ancien carrelage ?",
+                a: "Souvent oui, si l'ancien est bien adhérent et plan. On le vérifie lors de la visite.",
+              },
+              {
+                q: "Combien de temps pour une salle de bain ?",
+                a: "Comptez 4 à 6 jours pour une salle de bain de 6 m² avec douche à l'italienne.",
+              },
+              {
+                q: "Fournissez-vous le carrelage ?",
+                a: "Oui, notre showroom propose 200 références. Vous pouvez aussi fournir le vôtre.",
+              },
+            ]}
+          />
+        </div>
+      </Section>
+
+      <Section className="px-0 pt-0 @min-[600px]:px-0 @min-[600px]:pt-0">
+        <CtaBand
+          title="Votre prix en 30 secondes"
+          text="Estimation en ligne, puis visite et devis détaillé gratuits."
+          cta={{ label: "Estimer mon chantier", to: "home" }}
+        />
+      </Section>
       <MiniFooter />
     </>
   );
@@ -184,6 +392,7 @@ function Prestations() {
       eyebrow="Prestations"
       title="Ce que nous posons"
       intro="Fourniture conseillée ou posée avec votre carrelage."
+      visual={<BathroomScene wall="#e4ebe7" floor="#6b7b76" tile={[40, 40]} />}
     >
       <div className="space-y-2">
         {prestations.map(({ I, t, d }, i) => (
@@ -234,7 +443,7 @@ function Galerie() {
   const [f, setF] = useState<(typeof filtres)[number]>("Tout");
   const list = realisations.filter((r) => f === "Tout" || r.k === f);
   return (
-    <SubPage eyebrow="Galerie (exemples)" title="Chantiers récents">
+    <SubPage eyebrow="Galerie" title="Chantiers récents">
       <Choice options={filtres} value={f} onChange={setF} />
       <div className="mt-3 grid grid-cols-2 gap-2.5 @min-[600px]:grid-cols-3">
         {list.map((r) => (
@@ -301,6 +510,8 @@ export function CarreleurSite(props: SiteProps) {
     <MiniSite
       {...props}
       icon={Grid3x3}
+      info={info}
+      navStyle="underline"
       cta={{ label: "Estimer mon chantier", page: "home" }}
       pages={[
         { id: "home", label: "Accueil", path: "/", render: () => <Home /> },
