@@ -1,25 +1,34 @@
-import { useId } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { site } from "@/content/site";
 
-/** Logo provisoire NEOBATYS (pictogramme toit + équerre). TODO: remplacer par votre logo définitif si besoin. */
-export function LogoMark({ className }: { className?: string }) {
-  // Le logo apparaît deux fois (menu et pied de page) : l'id du dégradé doit être unique
-  const gradientId = useId();
+/**
+ * Pictogramme NEOBATYS : maison blanche au toit orange sur fond nuit.
+ * Sur fond sombre (pied de page), le carré passe en acier avec un liseré pour rester visible.
+ */
+export function LogoMark({
+  theme = "light",
+  className,
+}: {
+  theme?: "light" | "dark";
+  className?: string;
+}) {
+  const dark = theme === "dark";
   return (
     <svg viewBox="0 0 40 40" aria-hidden="true" className={cn("size-9", className)}>
-      <defs>
-        <linearGradient id={gradientId} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#F97316" />
-          <stop offset="1" stopColor="#FB923C" />
-        </linearGradient>
-      </defs>
-      <rect width="40" height="40" rx="11" fill={`url(#${gradientId})`} />
+      <rect
+        x="0.5"
+        y="0.5"
+        width="39"
+        height="39"
+        rx="10.5"
+        fill={dark ? "#2E2E2E" : "#171717"}
+        stroke={dark ? "rgba(255,255,255,0.12)" : "#171717"}
+      />
       <path
         d="M9 21.5 20 11l11 10.5"
         fill="none"
-        stroke="#171717"
+        stroke={dark ? "#FB923C" : "#F97316"}
         strokeWidth="3.2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -27,12 +36,12 @@ export function LogoMark({ className }: { className?: string }) {
       <path
         d="M13.5 20v9.5h13V20"
         fill="none"
-        stroke="#171717"
+        stroke="#FFFFFF"
         strokeWidth="3.2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <path d="M18 29.5v-5h4v5" fill="#171717" />
+      <path d="M18 29.5v-5h4v5" fill="#FFFFFF" />
     </svg>
   );
 }
@@ -50,7 +59,7 @@ export function Logo({
       aria-label={`${site.name}, retour à l'accueil`}
       className={cn("inline-flex items-center gap-2.5 rounded-lg", className)}
     >
-      <LogoMark />
+      <LogoMark theme={theme} />
       <span
         className={cn(
           "font-display text-lg font-extrabold tracking-[0.08em]",
