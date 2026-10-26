@@ -22,14 +22,26 @@ export default function OpengraphImage() {
       }}
     >
       <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
-        <div
-          style={{
-            width: 64,
-            height: 64,
-            borderRadius: 18,
-            background: "linear-gradient(135deg, #F97316, #FB923C)",
-          }}
-        />
+        <svg width="64" height="64" viewBox="0 0 40 40">
+          <rect width="40" height="40" rx="11" fill="#171717" />
+          <path
+            d="M9 21.5 20 11l11 10.5"
+            fill="none"
+            stroke="#F97316"
+            strokeWidth="3.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M13.5 20v9.5h13V20"
+            fill="none"
+            stroke="#FFFFFF"
+            strokeWidth="3.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path d="M18 29.5v-5h4v5" fill="#FFFFFF" />
+        </svg>
         <div style={{ fontSize: 40, fontWeight: 800, letterSpacing: 4 }}>{site.name}</div>
       </div>
       <div style={{ display: "flex", flexDirection: "column" }}>
