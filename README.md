@@ -79,11 +79,27 @@ Pour ajouter un outil de mesure d'audience plus tard, chargez-le uniquement si `
 - Données structurées JSON-LD : `ProfessionalService` (LocalBusiness), `Service`, `FAQPage`
 - `sitemap.xml` et `robots.txt` générés depuis `NEXT_PUBLIC_SITE_URL`
 
+## Assistant IA de la FAQ
+
+Sous les questions fréquentes, un champ permet au visiteur de poser sa propre question. La réponse est rédigée par Claude (Anthropic) via la route serveur `app/api/faq-assistant/route.ts` : **la clé API reste sur le serveur** et n'est jamais envoyée au navigateur.
+
+- **Ce que sait l'assistant** : uniquement les textes du dossier `content/` (offres, tarifs, FAQ, zone, horaires). Modifiez ces fichiers, l'assistant suit. Les consignes sont dans `lib/faq-assistant.ts`.
+- **Honnêteté** : il répond oui seulement si les contenus le disent, non s'ils disent le contraire, et « à confirmer avec nous » + lien contact dans tous les autres cas. Il ne promet ni prix sur mesure, ni délai, ni résultat, et ignore les valeurs entre crochets pas encore remplies.
+- **Anti-abus** : 10 questions / 10 min par IP, 500 caractères maximum, champ piège anti-robots.
+- **Sans configuration** : le champ reste visible mais renvoie vers la page contact.
+
+Pour l'activer :
+
+1. Créez un compte sur [console.anthropic.com](https://console.anthropic.com), ajoutez un moyen de paiement (facturation à l'usage) et fixez une limite de dépense mensuelle dans **Settings → Limits**.
+2. Créez une clé dans **API Keys**.
+3. Ajoutez-la dans Vercel (**Settings → Environment Variables**) sous le nom `ANTHROPIC_API_KEY`, puis redéployez. En local, mettez-la dans `.env.local`.
+4. Facultatif : `FAQ_ASSISTANT_MODEL` pour changer de modèle (par défaut `claude-opus-5-5`).
+
 ## Déployer sur Vercel
 
 1. Poussez le projet sur GitHub (ou GitLab / Bitbucket).
 2. Sur [vercel.com/new](https://vercel.com/new), importez le dépôt : Next.js est détecté automatiquement.
-3. Dans **Settings → Environment Variables**, ajoutez `NEXT_PUBLIC_SITE_URL`, et si besoin `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`.
+3. Dans **Settings → Environment Variables**, ajoutez `NEXT_PUBLIC_SITE_URL`, et si besoin `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`, `ANTHROPIC_API_KEY`.
 4. Déployez, puis branchez votre nom de domaine dans **Settings → Domains**.
 
 Chaque nouveau push sur la branche principale redéploie le site automatiquement.

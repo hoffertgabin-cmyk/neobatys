@@ -33,3 +33,16 @@ export const contactSchema = z.object({
 
 export type ContactInput = z.input<typeof contactSchema>;
 export type ContactData = z.output<typeof contactSchema>;
+
+/** Question posée à l'assistant IA de la FAQ. */
+export const QUESTION_MAX = 500;
+
+export const faqAssistantSchema = z.object({
+  question: z
+    .string()
+    .trim()
+    .min(5, "Posez votre question en quelques mots.")
+    .max(QUESTION_MAX, `${QUESTION_MAX} caractères maximum.`),
+  // Champ piège anti-spam (invisible pour un humain)
+  company: z.string().max(200).optional(),
+});

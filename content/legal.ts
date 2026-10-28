@@ -78,6 +78,7 @@ export const politiqueConfidentialite: LegalSection[] = [
     title: "Données collectées",
     paragraphs: [
       "Via le formulaire de contact : nom, métier, téléphone, adresse e-mail, service souhaité et contenu de votre message.",
+      "Via l'assistant IA de la FAQ : uniquement le texte de la question posée. Elle n'est pas enregistrée par le site ; merci de ne pas y indiquer de données personnelles.",
       "Aucune donnée n'est collectée à votre insu. Aucun outil de mesure d'audience ni cookie publicitaire n'est déposé sans votre consentement.",
     ],
   },
@@ -91,7 +92,7 @@ export const politiqueConfidentialite: LegalSection[] = [
   {
     title: "Destinataires",
     paragraphs: [
-      `Vos données sont destinées uniquement à ${legalInfo.companyName}. Elles transitent par notre prestataire d'envoi d'e-mails [NOM DU PRESTATAIRE — ex. Resend] et notre hébergeur, qui agissent comme sous-traitants. Elles ne sont jamais vendues.`,
+      `Vos données sont destinées uniquement à ${legalInfo.companyName}. Elles transitent par notre prestataire d'envoi d'e-mails [NOM DU PRESTATAIRE — ex. Resend] et notre hébergeur, qui agissent comme sous-traitants. Les questions posées à l'assistant IA de la FAQ sont transmises à Anthropic (fournisseur du modèle d'IA Claude) pour générer la réponse. [À VÉRIFIER : transfert hors UE et conditions de conservation d'Anthropic] Elles ne sont jamais vendues.`,
     ],
   },
   {
