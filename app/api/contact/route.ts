@@ -2,24 +2,10 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { contactSchema, services } from "@/lib/schemas";
 import { site } from "@/content/site";
+import { clientIp, createRateLimiter } from "@/lib/rate-limit";
 
-// Limite simple anti-abus : 5 envois / 10 min par adresse IP (mémoire du serveur)
-const hits = new Map<string, number[]>();
-const WINDOW_MS = 10 * 60 * 1000;
-const MAX_HITS = 5;
-
-function rateLimited(ip: string) {
-  const now = Date.now();
-  // Purge des IP inactives pour que la table ne grossisse pas indéfiniment
-  if (hits.size > 1000) {
-    for (const [key, times] of hits)
-      if (now - times[times.length - 1] >= WINDOW_MS) hits.delete(key);
-  }
-  const recent = (hits.get(ip) ?? []).filter((t) => now - t < WINDOW_MS);
-  recent.push(now);
-  hits.set(ip, recent);
-  return recent.length > MAX_HITS;
-}
+// Limite simple anti-abus : 5 envois / 10 min par adresse IP
+const rateLimited = createRateLimiter({ max: 5, windowMs: 10 * 60 * 1000 });
 
 const escape = (s: string) =>
   s.replace(
@@ -28,8 +14,7 @@ const escape = (s: string) =>
   );
 
 export async function POST(request: Request) {
-  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "inconnue";
-  if (rateLimited(ip)) {
+  if (rateLimited(clientIp(request))) {
     return NextResponse.json(
       { ok: false, error: "Trop de demandes, réessayez plus tard." },
       { status: 429 },

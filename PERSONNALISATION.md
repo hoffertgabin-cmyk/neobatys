@@ -46,6 +46,7 @@ Cherchez `TODO` et `[` dans le dossier `content/` pour retrouver chaque point.
 
 ## Mise en ligne
 
+- [ ] Assistant IA de la FAQ : clé `ANTHROPIC_API_KEY` à ajouter dans Vercel (voir README, section « Assistant IA de la FAQ »)
 - [ ] Compte Resend + variables d'environnement pour recevoir les demandes par e-mail
 - [ ] Nom de domaine branché sur Vercel
 - [ ] Fiche Google Business pointant vers le site

@@ -4,6 +4,7 @@ import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Accordion } from "@/components/ui/Accordion";
 import { Reveal } from "@/components/motion/Reveal";
+import { FaqAssistant } from "@/components/sections/FaqAssistant";
 
 export function Faq({ items = faq }: { items?: { question: string; answer: string }[] }) {
   return (
@@ -17,6 +18,7 @@ export function Faq({ items = faq }: { items?: { question: string; answer: strin
         />
         <Reveal delay={0.1}>
           <Accordion items={items} />
+          <FaqAssistant />
         </Reveal>
       </div>
     </Section>
