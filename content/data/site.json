@@ -6,9 +6,9 @@
     "phoneHref": "[TÉLÉPHONE]",
     "email": "contact@neobatys.com",
     "address": {
-      "street": "[ADRESSE DU SIÈGE]",
-      "postalCode": "[CODE POSTAL — ex. L-1234]",
-      "city": "[VILLE]",
+      "street": "44, rue de l'Industrie",
+      "postalCode": "L-8069",
+      "city": "Strassen",
       "country": "LU"
     },
     "socials": {
