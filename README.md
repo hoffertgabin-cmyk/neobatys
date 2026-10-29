@@ -27,6 +27,8 @@ npm run dev                  # http://localhost:3000
 | `npm run typecheck` | vérification TypeScript      |
 | `npm run format`    | mise en forme Prettier       |
 
+À chaque pull request et à chaque push sur `main`, GitHub Actions (`.github/workflows/ci.yml`) lance typecheck, lint et build.
+
 ## Modifier les contenus (sans toucher au code)
 
 Tous les textes sont dans le dossier **`content/`** :
