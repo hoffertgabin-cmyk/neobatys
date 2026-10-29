@@ -25,7 +25,7 @@ const initialQuotes: Quote[] = [
   { n: "2026-088", c: "SCI Les Tilleuls", t: "Remplacement gouttières", a: 2350, s: "Relance J+3" },
   { n: "2026-089", c: "Mme D.", t: "Démoussage et hydrofuge", a: 1680, s: "Envoyé" },
   { n: "2026-090", c: "M. K.", t: "Pose de 2 fenêtres de toit", a: 3900, s: "Relance J+7" },
-  { n: "2026-091", c: "Mairie (exemple)", t: "Réparation faîtage", a: 960, s: "Signé" },
+  { n: "2026-091", c: "Mairie de Florange", t: "Réparation faîtage", a: 960, s: "Signé" },
   { n: "2026-092", c: "M. L.", t: "Isolation des combles", a: 6200, s: "Envoyé" },
   { n: "2026-093", c: "Mme P.", t: "Zinguerie et noues", a: 2780, s: "Relance J+3" },
 ];
@@ -124,9 +124,62 @@ function Dashboard() {
           </Card>
         </div>
       </div>
+      <div className="mt-3 grid gap-3 @min-[600px]:grid-cols-[1.4fr_1fr]">
+        <Card className="p-3.5">
+          <p className="flex items-center justify-between text-[11px] font-bold text-nuit">
+            CA signé, 6 derniers mois
+            <span className="text-[10px] font-semibold text-emerald-700">+18 %</span>
+          </p>
+          <div className="mt-3 flex h-24 items-end gap-2">
+            {months.map(([m, v], i) => (
+              <span key={m} className="flex h-full flex-1 flex-col items-center justify-end gap-1">
+                <span
+                  className={cn(
+                    "w-full rounded-t-md",
+                    i === months.length - 1 ? "bg-(--a)" : "bg-(--d)/15",
+                  )}
+                  style={{ height: `${v}%` }}
+                />
+                <span className="text-[9px] text-nuit/45">{m}</span>
+              </span>
+            ))}
+          </div>
+        </Card>
+        <Card className="p-0">
+          <p className="px-3 pt-3 text-[11px] font-bold text-nuit">Chantiers à venir</p>
+          {planning.map(([d, t, c]) => (
+            <div
+              key={t}
+              className="mt-2 flex items-center gap-2.5 border-t border-nuit/6 px-3 py-2"
+            >
+              <span className="w-9 shrink-0 rounded-md bg-(--s) py-1 text-center text-[9px] leading-tight font-bold text-(--d)">
+                {d}
+              </span>
+              <span className="min-w-0 leading-tight">
+                <span className="block truncate text-[10.5px] font-semibold text-nuit">{t}</span>
+                <span className="block text-[9.5px] text-nuit/50">{c}</span>
+              </span>
+            </div>
+          ))}
+        </Card>
+      </div>
     </div>
   );
 }
+
+const months = [
+  ["mai", 42],
+  ["juin", 58],
+  ["juil.", 51],
+  ["août", 30],
+  ["sept.", 72],
+  ["oct.", 88],
+] as const;
+
+const planning = [
+  ["28 oct.", "Réfection toiture 120 m²", "M. et Mme B. · Hayange"],
+  ["4 nov.", "Réparation faîtage", "Mairie de Florange"],
+] as const;
 
 function Devis() {
   const [quotes, setQuotes] = useState(initialQuotes);

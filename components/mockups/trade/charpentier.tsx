@@ -2,12 +2,15 @@
 
 import { useEffect, useRef, useState } from "react";
 import {
+  ArrowRight,
+  Award,
   Bot,
   Check,
   FileText,
   Hammer,
   Home as HomeIcon,
   Send,
+  ShieldCheck,
   Sparkles,
   Trees,
   Warehouse,
@@ -17,15 +20,26 @@ import {
   Btn,
   Card,
   DemoForm,
-  Eyebrow,
   Field,
   MiniFooter,
   MiniSite,
   SubPage,
-  Title,
   useMini,
+  type SiteInfo,
   type SiteProps,
 } from "./kit";
+import {
+  CtaBand,
+  Faq,
+  Photo,
+  Reviews,
+  Section,
+  SectionHead,
+  Stats,
+  TrustStrip,
+  ZoneMap,
+} from "./blocks";
+import { ArticlesSection, Gallery, Pic, UploadField } from "./extras";
 
 type Msg = { from: "bot" | "me"; text: string };
 
@@ -54,7 +68,7 @@ const intents: { k: RegExp; q: string; a: string }[] = [
   {
     k: /d[ée]lai|quand|disponib/i,
     q: "Quels délais ?",
-    a: "En ce moment, les visites se font sous une semaine et les chantiers démarrent sous 4 à 6 semaines (exemple).",
+    a: "En ce moment, les visites se font sous une semaine et les chantiers démarrent sous 4 à 6 semaines.",
   },
   {
     k: /0\d|\+33|num[ée]ro|t[ée]l/i,
@@ -184,52 +198,291 @@ const pipeline = [
   { I: Check, t: "Vous validez et envoyez" },
 ];
 
+const info: SiteInfo = {
+  baseline: "Charpente · Ossature bois",
+  phone: "03 53 48 93 15",
+  email: "atelier@exemple-charpente-faulquemont.fr",
+  address: "Lieu-dit La Scierie, 57380 Faulquemont",
+  hours: "Lun–ven 7h30–17h30 · Assistant en ligne 24h/24",
+  zone: "Moselle et nord Meurthe-et-Moselle",
+  about:
+    "Charpentiers depuis 1996 : charpentes traditionnelles taillées à l'atelier, extensions à ossature bois, carports et couverture.",
+  labels: ["Qualibat", "Bois PEFC", "Garantie décennale"],
+  links: [
+    { label: "Charpente traditionnelle", page: "charpente" },
+    { label: "Extensions bois", page: "ossature" },
+    { label: "Carports et préaux", page: "ossature" },
+    { label: "Contact", page: "contact" },
+  ],
+  contactPage: "contact",
+  articles: [
+    {
+      t: "Extension bois : permis ou déclaration ?",
+      d: "Les règles d'urbanisme selon la surface de votre projet.",
+      cat: "Ossature bois",
+      read: 3,
+      img: "ossature",
+      body: [
+        "Jusqu'à 20 m², une déclaration préalable suffit, et jusqu'à 40 m² en zone urbaine couverte par un PLU.",
+        "Au-delà, ou si la surface totale dépasse 150 m², un permis de construire et un architecte sont nécessaires.",
+        "Nous préparons les plans et vous accompagnons dans les démarches.",
+      ],
+    },
+    {
+      t: "Traiter sa charpente : quand faut-il intervenir ?",
+      d: "Insectes, champignons, humidité : les signes qui doivent alerter.",
+      cat: "Charpente",
+      read: 4,
+      img: "charpente",
+      body: [
+        "De la sciure au pied des poutres ou des petits trous ronds signalent souvent des insectes xylophages.",
+        "Un bois qui s'effrite ou sent le moisi peut être attaqué par la mérule : il faut agir vite.",
+        "Un diagnostic gratuit permet de savoir s'il suffit de traiter ou s'il faut remplacer des pièces.",
+      ],
+    },
+    {
+      t: "Refaire sa toiture : tuiles, ardoises ou bac acier ?",
+      d: "Durée de vie, poids, budget : comparatif des couvertures.",
+      cat: "Couverture",
+      read: 3,
+      img: "toiture",
+      body: [
+        "La tuile terre cuite, la plus courante en Lorraine, dure plus de 50 ans.",
+        "L'ardoise naturelle est très durable mais demande une charpente adaptée à son poids.",
+        "Le bac acier est léger et économique, idéal pour les annexes, carports et bâtiments agricoles.",
+      ],
+    },
+  ],
+  rating: { value: "4,9", count: 47 },
+};
+
 function Home() {
   const { project } = useMini();
   return (
     <>
-      <div className="grid gap-5 px-4 pt-5 @min-[600px]:grid-cols-[1fr_1.1fr] @min-[600px]:px-8 @min-[600px]:pt-7">
-        <div>
-          <Eyebrow className="bg-(--s) text-(--p)">
-            <Trees className="size-3" /> Charpente et ossature bois · {project.city}
-          </Eyebrow>
-          <Title className="mt-3">
-            Votre projet bois,
-            <br />
-            une réponse tout de suite
-          </Title>
-          <p className="mt-3 text-[12px] leading-relaxed text-nuit/60">
-            Posez votre question à l&apos;assistant : il répond, qualifie la demande et la transmet
-            à l&apos;atelier avec un brouillon de devis.
-          </p>
-          <ol className="mt-4 space-y-2">
-            {pipeline.map(({ I, t }, i) => (
-              <li
-                key={t}
-                className="flex items-center gap-2.5 text-[11px] font-semibold text-nuit/80"
+      {/* Hero */}
+      <div className="relative overflow-hidden bg-(--d)">
+        <Pic src="charpente-hero" alt="Ossature bois en cours de montage" priority sizes="100vw" />
+        <div className="absolute inset-0 bg-gradient-to-r from-(--d) via-(--d)/80 to-(--d)/10" />
+        <div className="relative grid gap-5 px-4 py-7 @min-[600px]:grid-cols-[1fr_0.95fr] @min-[600px]:items-center @min-[600px]:px-8">
+          <div className="text-white">
+            <p className="text-[10px] font-bold tracking-[0.18em] text-(--a) uppercase">
+              Charpentier · {project.city}
+            </p>
+            <p className="mt-3 font-display text-[40px] leading-[0.95] font-bold tracking-tight uppercase">
+              Charpente, ossature bois et extensions
+            </p>
+            <p className="mt-3 max-w-[290px] text-[12px] leading-relaxed text-white/70">
+              Taillé dans notre atelier, monté par nos compagnons. Posez votre question à
+              l&apos;assistant : il vous répond tout de suite, jour et nuit.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              <Btn to="contact" className="bg-(--a) px-5 py-2.5 text-(--d)">
+                Demander un devis
+              </Btn>
+              <Btn
+                to="ossature"
+                tone="light"
+                className="bg-white/10 px-5 py-2.5 text-white ring-white/20 hover:bg-white/20"
               >
-                <span className="grid size-7 place-items-center rounded-lg bg-(--d) text-(--a)">
-                  <I className="size-3.5" />
-                </span>
-                <span className="text-nuit/35">0{i + 1}</span> {t}
-              </li>
-            ))}
-          </ol>
-          <div className="mt-4 flex gap-2">
-            <Btn to="charpente" tone="ghost" className="px-3 py-1.5 text-[11px]">
-              Charpente
-            </Btn>
-            <Btn to="ossature" tone="ghost" className="px-3 py-1.5 text-[11px]">
-              Ossature bois
-            </Btn>
+                Extensions bois
+              </Btn>
+            </div>
+          </div>
+          <div className="hidden @min-[600px]:block">
+            <Chat />
           </div>
         </div>
-        <Chat />
       </div>
+
+      <TrustStrip
+        items={[
+          { I: Trees, t: "Bois local", d: "Sapin et chêne des Vosges" },
+          { I: Warehouse, t: "Atelier de taille", d: "800 m² à Faulquemont" },
+          { I: Award, t: "Qualibat", d: "Charpente et ossature" },
+          { I: ShieldCheck, t: "Décennale", d: "Structure garantie 10 ans" },
+        ]}
+      />
+
+      <Section>
+        <SectionHead
+          kicker="Savoir-faire"
+          title="Du toit à l'extension, tout en bois"
+          intro="Nous concevons, taillons et posons. Un seul interlocuteur pour la charpente, l'ossature et la couverture."
+        />
+        <div className="mt-5 grid gap-3 @min-[600px]:grid-cols-3">
+          {[
+            {
+              t: "Charpente traditionnelle",
+              d: "Neuve ou en rénovation, taillée à l'atelier, combles aménageables.",
+              to: "charpente",
+              v: "charpente",
+            },
+            {
+              t: "Extensions ossature bois",
+              d: "Pièce en plus, étage, garage : chantier sec et rapide.",
+              to: "ossature",
+              v: "ossature",
+            },
+            {
+              t: "Couverture et zinguerie",
+              d: "Tuiles, ardoises, bac acier et gouttières, posés par nos couvreurs.",
+              to: "charpente",
+              v: "toiture",
+            },
+          ].map((x) => (
+            <Btn
+              key={x.t}
+              to={x.to}
+              tone="light"
+              className="flex-col items-stretch gap-0 overflow-hidden rounded-lg p-0 text-left ring-nuit/8"
+            >
+              <Photo src={x.v} alt={x.t} className="h-28 rounded-none" />
+              <span className="block p-3.5">
+                <span className="block text-[13px] font-bold text-nuit">{x.t}</span>
+                <span className="mt-1 block text-[10.5px] leading-relaxed font-normal text-nuit/60">
+                  {x.d}
+                </span>
+                <span className="mt-2.5 flex items-center gap-1 text-[10.5px] text-(--p)">
+                  Découvrir <ArrowRight className="size-3" />
+                </span>
+              </span>
+            </Btn>
+          ))}
+        </div>
+      </Section>
+
+      {/* Assistant */}
+      <Section className="bg-(--s)">
+        <div className="grid gap-6 @min-[600px]:grid-cols-[1fr_1fr] @min-[600px]:items-center">
+          <div>
+            <SectionHead
+              kicker="Réponse immédiate"
+              title="Une question à 22 h ? L'assistant répond."
+              intro="Il connaît nos prestations, nos délais et nos fourchettes de prix. Il qualifie votre projet et le transmet à l'atelier avec un brouillon de devis."
+            />
+            <ol className="mt-4 space-y-2">
+              {pipeline.map(({ I, t }, i) => (
+                <li
+                  key={t}
+                  className="flex items-center gap-2.5 text-[11px] font-semibold text-nuit/80"
+                >
+                  <span className="grid size-7 place-items-center rounded-lg bg-(--d) text-(--a)">
+                    <I className="size-3.5" />
+                  </span>
+                  <span className="text-nuit/35">0{i + 1}</span> {t}
+                </li>
+              ))}
+            </ol>
+          </div>
+          <div className="@min-[600px]:hidden">
+            <Chat />
+          </div>
+          <Stats
+            className="hidden @min-[600px]:grid @min-[600px]:grid-cols-2"
+            items={[
+              { v: "30 ans", l: "de charpente en Moselle" },
+              { v: "12", l: "charpentiers et couvreurs" },
+              { v: "48 h", l: "pour recevoir un devis" },
+              { v: "1 200+", l: "toitures et extensions" },
+            ]}
+          />
+        </div>
+      </Section>
+
+      <Section className="bg-(--d)">
+        <SectionHead light kicker="Réalisations" title="Chantiers récents" className="mb-5" />
+        <Gallery
+          itemClassName="h-32"
+          items={[
+            { src: "charpente", t: "Charpente traditionnelle · Créhange" },
+            { src: "ossature", t: "Maison ossature bois · Faulquemont" },
+            { src: "toiture", t: "Couverture en tuiles · Boulay" },
+            { src: "charpente-hero", t: "Levage d'une ossature · Bouzonville" },
+            { src: "charpente-atelier", t: "Taille à l'atelier" },
+            { src: "atelier", t: "Préparation des assemblages" },
+          ]}
+        />
+      </Section>
+
+      <Section>
+        <SectionHead kicker="Avis clients" title="4,9/5 sur 47 avis" className="mb-5" />
+        <Reviews
+          count={47}
+          reviews={[
+            {
+              n: "François M.",
+              c: "Faulquemont",
+              when: "il y a 3 semaines",
+              t: "Extension bois de 25 m² montée en 3 semaines. Équipe sérieuse, finitions au top, devis respecté.",
+            },
+            {
+              n: "Céline A.",
+              c: "Créhange",
+              when: "il y a 2 mois",
+              t: "J'ai posé ma question à l'assistant un dimanche soir, rappelée le lundi matin avec une estimation. Bluffant.",
+            },
+            {
+              n: "Bernard H.",
+              c: "Boulay-Moselle",
+              when: "il y a 5 mois",
+              t: "Charpente refaite à neuf sur une maison de 1920. Un vrai travail de compagnons.",
+            },
+          ]}
+        />
+      </Section>
+
+      <Section className="grid gap-6 bg-(--s) @min-[600px]:grid-cols-2">
+        <div>
+          <SectionHead kicker="Zone d'intervention" title="Toute la Moselle" />
+          <ZoneMap
+            className="mt-4 h-44"
+            towns={[
+              project.city,
+              "Metz",
+              "Saint-Avold",
+              "Boulay",
+              "Créhange",
+              "Rémilly",
+              "Morhange",
+              "Pange",
+            ]}
+          />
+        </div>
+        <div>
+          <SectionHead kicker="Questions fréquentes" title="Bon à savoir" />
+          <Faq className="mt-4" items={faq} />
+        </div>
+      </Section>
+
+      <ArticlesSection />
+
+      <Section className="px-0 pt-8 @min-[600px]:px-0">
+        <CtaBand
+          title="Un projet bois ?"
+          text="Visite gratuite sous une semaine, devis sous 48 h."
+          cta={{ label: "Demander un devis", to: "contact" }}
+        />
+      </Section>
       <MiniFooter />
     </>
   );
 }
+
+const faq = [
+  {
+    q: "Faut-il un permis pour une extension bois ?",
+    a: "Une déclaration préalable suffit jusqu'à 40 m² en zone urbaine (20 m² ailleurs). Au-delà, un permis de construire est nécessaire.",
+  },
+  {
+    q: "Le bois résiste-t-il aussi bien que le parpaing ?",
+    a: "Oui : une ossature bois bien conçue dure aussi longtemps, isole mieux et se construit plus vite.",
+  },
+  {
+    q: "Quels sont vos délais ?",
+    a: "Visite sous une semaine, démarrage des chantiers sous 4 à 6 semaines selon la saison.",
+  },
+];
 
 const charpentes = [
   {
@@ -268,7 +521,7 @@ function Charpente() {
   const [i, setI] = useState(0);
   const c = charpentes[i];
   return (
-    <SubPage eyebrow="Charpente" title="Trois façons de couvrir">
+    <SubPage eyebrow="Charpente" title="Trois façons de couvrir" visual="charpente-atelier">
       <div className="flex gap-1.5">
         {charpentes.map((x, j) => (
           <button
@@ -342,6 +595,7 @@ function Ossature() {
       eyebrow="Ossature bois"
       title="Agrandir avec le bois"
       intro="Choisissez un type de projet et une surface."
+      visual="ossature"
     >
       <div className="grid gap-2.5 @min-[600px]:grid-cols-3">
         {ossatures.map(({ id, I, t, d }) => (
@@ -418,6 +672,9 @@ function Contact() {
                 placeholder="Décrivez votre projet"
               />
             </div>
+            <div className="mt-2.5">
+              <UploadField />
+            </div>
           </DemoForm>
         </Card>
         <div className="rounded-2xl bg-(--d) p-4 text-white">
@@ -436,7 +693,10 @@ export function CharpentierSite(props: SiteProps) {
     <MiniSite
       {...props}
       icon={Trees}
-      cta={{ label: "Parler à l'assistant", page: "home" }}
+      info={info}
+      font="condensed"
+      navStyle="caps"
+      cta={{ label: "Demander un devis", page: "contact" }}
       pages={[
         { id: "home", label: "Accueil", path: "/", render: () => <Home /> },
         { id: "charpente", label: "Charpente", path: "/charpente", render: () => <Charpente /> },

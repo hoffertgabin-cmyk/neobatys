@@ -8,15 +8,28 @@ import {
   type CSSProperties,
   type ReactNode,
 } from "react";
-import { ArrowLeft, Check, RotateCw, Star, type LucideIcon } from "lucide-react";
+import {
+  ArrowLeft,
+  Check,
+  Clock,
+  Mail,
+  MapPin,
+  Phone,
+  RotateCw,
+  Star,
+  type LucideIcon,
+} from "lucide-react";
 import type { Project } from "@/content/projects";
 import { cn } from "@/lib/utils";
+import { createPortal } from "react-dom";
+import { displayFonts, type DisplayFont } from "./fonts";
+import { extraPages, OpenNow, Pic, SiteOverlays, SocialLinks } from "./extras";
 
 /**
  * Socle des mini-sites d'exemple : navigation entre pages, barre d'adresse,
  * boutons, champs et formulaires. Les couleurs viennent du `theme` du projet
  * via des variables CSS : --p (principale), --op (texte sur principale),
- * --d (sombre), --s (clair), --a (appoint).
+ * --d (sombre), --s (clair), --a (appoint), --ink (texte coloré sur fond clair).
  *
  * Sous 600 px de large (fenêtre agrandie sur mobile), les mises en page
  * passent sur une colonne grâce aux requêtes de conteneur (@min-[600px]:…).
@@ -34,6 +47,40 @@ export type PageDef = {
 
 export type SiteProps = { project: Project; interactive: boolean; width: number; height: number };
 
+/** Coordonnées et repères affichés dans le bandeau du haut et le pied de page. */
+export type SiteInfo = {
+  /** Sous le nom, dans le logo (ex. « Plomberie · Chauffage »). */
+  baseline: string;
+  phone: string;
+  email: string;
+  address: string;
+  hours: string;
+  zone: string;
+  /** Présentation courte du pied de page. */
+  about: string;
+  /** Labels et garanties (RGE, Qualibat, décennale…). */
+  labels: string[];
+  /** Liens « Nos prestations » du pied de page. */
+  links: { label: string; page: string; param?: string }[];
+  rating?: { value: string; count: number };
+  /** Page du formulaire de devis (par défaut : l'accueil). */
+  contactPage?: string;
+  /** Articles de la page Conseils. */
+  articles?: Article[];
+};
+
+export type Article = {
+  t: string;
+  /** Chapeau. */
+  d: string;
+  cat: string;
+  /** Minutes de lecture. */
+  read: number;
+  /** Photo de public/images/maquettes, sans extension. */
+  img: string;
+  body: string[];
+};
+
 type MiniCtx = {
   page: string;
   /** Paramètre facultatif passé à la page (onglet, élément choisi…). */
@@ -41,6 +88,11 @@ type MiniCtx = {
   go: (id: string, param?: string) => void;
   interactive: boolean;
   project: Project;
+  info?: SiteInfo;
+  /** Page d'accueil du site. */
+  home: string;
+  /** Affiche un calque (visionneuse…) par-dessus la fenêtre du site. */
+  overlayRoot?: (children: ReactNode) => ReactNode;
 };
 
 type Entry = { id: string; param?: string };
@@ -61,6 +113,7 @@ export function themeVars(project: Project) {
     "--d": t.dark,
     "--s": t.soft,
     "--a": t.accent,
+    "--ink": t.ink ?? t.primary,
   } as CSSProperties;
 }
 
@@ -68,13 +121,19 @@ export function themeVars(project: Project) {
 
 export function MiniSite({
   project,
-  pages,
   cta,
   icon: Icon,
   interactive,
   width,
   height,
   app = false,
+  info,
+  logo,
+  topbar = true,
+  navStyle = "pill",
+  darkHeader = false,
+  font = "sans",
+  pages: sitePages,
 }: {
   project: Project;
   pages: PageDef[];
@@ -86,8 +145,21 @@ export function MiniSite({
   height: number;
   /** Logiciel (barre latérale) plutôt que site vitrine. */
   app?: boolean;
+  info?: SiteInfo;
+  /** Logo propre au site (par défaut : pictogramme + nom + baseline). */
+  logo?: ReactNode;
+  /** Bandeau d'infos au-dessus de l'en-tête (téléphone, horaires, zone). */
+  topbar?: boolean;
+  /** Style du menu : pastilles, souligné ou capitales. */
+  navStyle?: "pill" | "underline" | "caps";
+  /** En-tête sombre (couleur --d) plutôt que blanc. */
+  darkHeader?: boolean;
+  /** Police des titres. */
+  font?: DisplayFont;
 }) {
+  const pages = app ? sitePages : [...sitePages, ...extraPages(info)];
   const [history, setHistory] = useState<Entry[]>([{ id: pages[0].id }]);
+  const [overlayEl, setOverlayEl] = useState<HTMLDivElement | null>(null);
   const { id: page, param } = history[history.length - 1];
   const bodyRef = useRef<HTMLDivElement>(null);
   const current = pages.find((p) => p.id === page) ?? pages[0];
@@ -100,26 +172,38 @@ export function MiniSite({
   const back = () => setHistory((h) => (h.length > 1 ? h.slice(0, -1) : h));
 
   const body = (
-    <div
-      ref={bodyRef}
-      data-mini-body
-      className={cn(
-        "relative min-h-0 flex-1",
-        interactive ? "overflow-y-auto overscroll-contain" : "overflow-hidden",
-      )}
-    >
-      <div key={`${page}-${param ?? ""}`} className="min-h-full">
-        {current.render()}
+    <div ref={setOverlayEl} className="relative flex min-h-0 flex-1 flex-col">
+      <div
+        ref={bodyRef}
+        data-mini-body
+        className={cn(
+          "relative min-h-0 flex-1",
+          interactive ? "overflow-y-auto overscroll-contain" : "overflow-hidden",
+        )}
+      >
+        <div key={`${page}-${param ?? ""}`} className="min-h-full">
+          {current.render()}
+        </div>
       </div>
+      {info && !app && <SiteOverlays info={info} />}
     </div>
   );
+  const overlayRoot = (children: ReactNode) =>
+    overlayEl ? createPortal(children, overlayEl) : null;
 
   return (
-    <Ctx.Provider value={{ page, param, go, interactive, project }}>
+    <Ctx.Provider
+      value={{ page, param, go, interactive, project, info, home: pages[0].id, overlayRoot }}
+    >
       <div
         aria-hidden={interactive ? undefined : true}
         inert={!interactive}
-        style={{ ...themeVars(project), width, height }}
+        style={{
+          ...themeVars(project),
+          ...(displayFonts[font] && { "--font-display": displayFonts[font] }),
+          width,
+          height,
+        }}
         className="@container flex flex-col overflow-hidden bg-white font-sans text-nuit"
       >
         {/* Barre du navigateur */}
@@ -192,18 +276,73 @@ export function MiniSite({
           </div>
         ) : (
           <>
-            <div className="flex h-14 shrink-0 items-center justify-between gap-3 px-4 @min-[600px]:px-8">
+            {topbar && info && (
+              <div className="flex h-7 shrink-0 items-center justify-between gap-4 border-b border-white/10 bg-(--d) px-4 text-[10px] text-white/75 @min-[600px]:px-8">
+                <span className="flex items-center gap-4">
+                  <span className="flex items-center gap-1.5 font-semibold text-white">
+                    <Phone className="size-3 text-(--a)" /> {info.phone}
+                  </span>
+                  <span className="hidden items-center gap-1.5 @min-[600px]:flex">
+                    <Clock className="size-3 text-(--a)" /> {info.hours}
+                  </span>
+                </span>
+                <span className="flex items-center gap-4">
+                  <span className="hidden items-center gap-1.5 @min-[600px]:flex">
+                    <MapPin className="size-3 text-(--a)" /> {info.zone}
+                  </span>
+                  {info.rating && (
+                    <span className="flex items-center gap-1">
+                      <Star className="size-3 fill-amber-400 text-amber-400" />
+                      <span className="font-semibold text-white">{info.rating.value}</span>
+                      <span className="hidden @min-[480px]:inline">
+                        ({info.rating.count} avis Google)
+                      </span>
+                    </span>
+                  )}
+                </span>
+              </div>
+            )}
+            <div
+              className={cn(
+                "relative z-10 flex h-14 shrink-0 items-center justify-between gap-3 px-4 @min-[600px]:px-8",
+                darkHeader
+                  ? "bg-(--d) text-white"
+                  : "bg-white shadow-[0_1px_0_rgb(0_0_0/0.06),0_6px_16px_-10px_rgb(0_0_0/0.18)]",
+              )}
+            >
               <button
                 type="button"
                 onClick={() => go(pages[0].id)}
-                className="flex items-center gap-2"
+                className="flex min-w-0 items-center gap-2 text-left"
+                aria-label={`${project.brand}, accueil`}
               >
-                <span className="grid size-8 place-items-center rounded-lg bg-(--p) text-(--op)">
-                  <Icon className="size-4.5" />
-                </span>
-                <span className="font-display text-[14px] font-bold text-(--d)">
-                  {project.brand}
-                </span>
+                {logo ?? (
+                  <>
+                    <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-(--p) text-(--op)">
+                      <Icon className="size-4.5" />
+                    </span>
+                    <span className="min-w-0 leading-none">
+                      <span
+                        className={cn(
+                          "block truncate font-display text-[14px] font-bold",
+                          darkHeader ? "text-white" : "text-(--d)",
+                        )}
+                      >
+                        {project.brand}
+                      </span>
+                      {info && (
+                        <span
+                          className={cn(
+                            "mt-1 block truncate text-[8.5px] font-semibold tracking-[0.14em] uppercase",
+                            darkHeader ? "text-white/55" : "text-nuit/45",
+                          )}
+                        >
+                          {info.baseline}
+                        </span>
+                      )}
+                    </span>
+                  </>
+                )}
               </button>
               <span className="flex items-center gap-1">
                 {nav.map((p) => (
@@ -213,8 +352,26 @@ export function MiniSite({
                     onClick={() => go(p.id)}
                     aria-current={p.id === page ? "page" : undefined}
                     className={cn(
-                      "hidden rounded-full px-3 py-1.5 text-[11px] font-medium transition-colors @min-[600px]:inline",
-                      p.id === page ? "bg-(--s) text-(--d)" : "text-nuit/60 hover:text-nuit",
+                      "hidden text-[11px] font-medium whitespace-nowrap transition-colors @min-[600px]:inline",
+                      navStyle === "pill" && "rounded-full px-3 py-1.5",
+                      navStyle === "pill" &&
+                        (p.id === page
+                          ? darkHeader
+                            ? "bg-white/12 text-white"
+                            : "bg-(--s) text-(--d)"
+                          : darkHeader
+                            ? "text-white/65 hover:text-white"
+                            : "text-nuit/60 hover:text-nuit"),
+                      navStyle !== "pill" &&
+                        "relative px-2.5 py-1.5 after:absolute after:inset-x-2.5 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-(--p) after:opacity-0 after:transition-opacity",
+                      navStyle === "caps" &&
+                        "text-[10px] font-semibold tracking-[0.12em] uppercase",
+                      navStyle !== "pill" &&
+                        (p.id === page
+                          ? cn("after:opacity-100", darkHeader ? "text-white" : "text-(--d)")
+                          : darkHeader
+                            ? "text-white/65 hover:text-white"
+                            : "text-nuit/60 hover:text-nuit"),
                     )}
                   >
                     {p.label}
@@ -224,7 +381,10 @@ export function MiniSite({
                   <button
                     type="button"
                     onClick={() => go(cta.page)}
-                    className="ml-2 rounded-full bg-(--d) px-3.5 py-1.5 text-[11px] font-semibold whitespace-nowrap text-white transition-opacity hover:opacity-90"
+                    className={cn(
+                      "ml-2 rounded-full px-3.5 py-2 text-[11px] font-semibold whitespace-nowrap transition-[filter,opacity] hover:brightness-110",
+                      darkHeader ? "bg-(--p) text-(--op)" : "bg-(--d) text-white",
+                    )}
                   >
                     {cta.label}
                   </button>
@@ -232,7 +392,7 @@ export function MiniSite({
               </span>
             </div>
             {/* Menu en onglets sur petit écran */}
-            <div className="flex shrink-0 gap-1 overflow-x-auto px-4 pb-2 @min-[600px]:hidden">
+            <div className="flex shrink-0 gap-1 overflow-x-auto px-4 py-2 @min-[600px]:hidden">
               {nav.map((p) => (
                 <button
                   key={p.id}
@@ -270,19 +430,6 @@ export function Stars({ value = 5, className }: { value?: number; className?: st
         <Star key={i} className={cn("size-3", i < value ? "fill-current" : "text-nuit/15")} />
       ))}
     </span>
-  );
-}
-
-export function Eyebrow({ children, className }: { children: ReactNode; className?: string }) {
-  return (
-    <p
-      className={cn(
-        "inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-semibold",
-        className,
-      )}
-    >
-      {children}
-    </p>
   );
 }
 
@@ -478,41 +625,148 @@ export function Card({ children, className }: { children: ReactNode; className?:
   );
 }
 
-/** Pied de page commun : rappelle qu'il s'agit d'un site d'exemple. */
+/** Pied de page : coordonnées, prestations, horaires et mentions, comme sur un vrai site. */
 export function MiniFooter() {
-  const { project } = useMini();
+  const { project, info, go } = useMini();
+  const year = 2026;
+  if (!info) {
+    return (
+      <div className="mt-6 flex flex-wrap items-center justify-between gap-2 bg-(--d) px-4 py-3 text-[10px] text-white/60 @min-[600px]:px-8">
+        <span className="font-semibold text-white">
+          {project.brand} · {project.city}
+        </span>
+        <span>Site d&apos;exemple réalisé par NEOBATYS</span>
+      </div>
+    );
+  }
   return (
-    <div className="mt-6 flex flex-wrap items-center justify-between gap-2 bg-(--d) px-4 py-3 text-[10px] text-white/60 @min-[600px]:px-8">
-      <span className="font-semibold text-white">
-        {project.brand} · {project.city}
-      </span>
-      <span>Site d&apos;exemple réalisé par NEOBATYS</span>
-    </div>
+    <footer className="mt-8 bg-(--d) text-[10px] text-white/60">
+      <div className="grid gap-6 px-4 pt-7 pb-6 @min-[600px]:grid-cols-[1.4fr_1fr_1.1fr_1fr] @min-[600px]:px-8">
+        <div>
+          <p className="font-display text-[15px] font-bold text-white">{project.brand}</p>
+          <p className="mt-0.5 text-[8.5px] font-semibold tracking-[0.14em] text-white/45 uppercase">
+            {info.baseline}
+          </p>
+          <p className="mt-3 leading-relaxed">{info.about}</p>
+          <ul className="mt-3 flex flex-wrap gap-1.5">
+            {info.labels.map((l) => (
+              <li
+                key={l}
+                className="rounded border border-white/15 px-1.5 py-0.5 text-[8.5px] font-semibold tracking-wide text-white/75 uppercase"
+              >
+                {l}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <p className="text-[10px] font-bold tracking-wide text-white uppercase">Prestations</p>
+          <ul className="mt-2.5 space-y-1.5">
+            {info.links.map((l) => (
+              <li key={l.label}>
+                <button
+                  type="button"
+                  onClick={() => go(l.page, l.param)}
+                  className="text-left hover:text-white"
+                >
+                  {l.label}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <p className="text-[10px] font-bold tracking-wide text-white uppercase">Contact</p>
+          <ul className="mt-2.5 space-y-1.5">
+            <li className="flex gap-1.5">
+              <MapPin className="mt-px size-3 shrink-0 text-(--a)" /> {info.address}
+            </li>
+            <li className="flex gap-1.5 font-semibold text-white">
+              <Phone className="mt-px size-3 shrink-0 text-(--a)" /> {info.phone}
+            </li>
+            <li className="flex gap-1.5">
+              <Mail className="mt-px size-3 shrink-0 text-(--a)" /> {info.email}
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p className="text-[10px] font-bold tracking-wide text-white uppercase">Horaires</p>
+          <OpenNow className="mt-2.5" />
+          <p className="mt-1.5 leading-relaxed">{info.hours}</p>
+          <p className="mt-2 leading-relaxed">Intervention : {info.zone}</p>
+          <div className="mt-3">
+            <SocialLinks />
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-wrap items-center justify-between gap-2 border-t border-white/10 px-4 py-3 text-[9px] @min-[600px]:px-8">
+        <span className="flex flex-wrap gap-x-2">
+          <span>
+            © {year} {project.brand}
+          </span>
+          {info.articles?.length ? (
+            <button type="button" onClick={() => go("conseils")} className="hover:text-white">
+              Conseils
+            </button>
+          ) : null}
+          <button type="button" onClick={() => go("mentions")} className="hover:text-white">
+            Mentions légales
+          </button>
+          <button type="button" onClick={() => go("mentions")} className="hover:text-white">
+            Confidentialité et cookies
+          </button>
+        </span>
+        <span>Site d&apos;exemple réalisé par NEOBATYS</span>
+      </div>
+    </footer>
   );
 }
 
-/** Page secondaire : en-tête titré + contenu. */
+/** Page secondaire : bandeau avec fil d'Ariane, titre, visuel facultatif, puis contenu. */
 export function SubPage({
   eyebrow,
   title,
   intro,
+  visual,
   children,
 }: {
   eyebrow: string;
   title: ReactNode;
   intro?: string;
+  /** Photo (nom dans public/images/maquettes) ou illustration à droite du titre. */
+  visual?: ReactNode;
   children: ReactNode;
 }) {
+  const { go, home } = useMini();
   return (
     <div className="min-h-full bg-(--s)">
-      <div className="px-4 pt-5 @min-[600px]:px-8 @min-[600px]:pt-6">
-        <Eyebrow className="bg-white text-(--p) ring-1 ring-nuit/8">{eyebrow}</Eyebrow>
-        <Title className="mt-3">{title}</Title>
-        {intro && (
-          <p className="mt-2 max-w-[460px] text-[12px] leading-relaxed text-nuit/60">{intro}</p>
+      <div className="relative overflow-hidden border-b border-nuit/6 bg-white">
+        <div
+          className={cn(
+            "px-4 pt-4 pb-5 @min-[600px]:px-8 @min-[600px]:pt-5 @min-[600px]:pb-6",
+            visual && "@min-[600px]:w-[58%]",
+          )}
+        >
+          <p className="flex items-center gap-1.5 text-[9.5px] text-nuit/45">
+            <button type="button" onClick={() => go(home)} className="hover:text-nuit">
+              Accueil
+            </button>
+            <span>/</span>
+            <span className="font-medium text-nuit/70">{eyebrow}</span>
+          </p>
+          <Title className="mt-2.5">{title}</Title>
+          {intro && (
+            <p className="mt-2 max-w-[460px] text-[12px] leading-relaxed text-nuit/60">{intro}</p>
+          )}
+        </div>
+        {visual && (
+          <div className="absolute inset-y-0 right-0 hidden w-[42%] @min-[600px]:block">
+            {typeof visual === "string" ? <Pic src={visual} alt="" sizes="320px" /> : visual}
+            <div className="absolute inset-0 bg-gradient-to-r from-white via-white/0 to-transparent" />
+          </div>
         )}
       </div>
-      <div className="px-4 pt-4 @min-[600px]:px-8">{children}</div>
+      <div className="px-4 pt-5 @min-[600px]:px-8">{children}</div>
       <MiniFooter />
     </div>
   );
