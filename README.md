@@ -69,6 +69,15 @@ CONTACT_TO_EMAIL=contact@neobatys.com         # plusieurs adresses séparées pa
 CONTACT_FROM_EMAIL="NEOBATYS <contact@neobatys.com>"
 ```
 
+- **Copie dans le CRM** de l'outil d'administration NEOBATYS : une fois la réponse envoyée au visiteur (après la tentative d'envoi Resend), chaque demande valide est aussi transmise à `POST /api/leads` de l'admin (`lib/admin-leads.ts`). Il faut définir :
+
+```bash
+ADMIN_LEADS_URL=https://admin.neobatys.com/api/leads
+ADMIN_LEADS_SECRET=xxx   # identique à LEADS_SECRET dans le projet Vercel de l'admin
+```
+
+Sans ces deux variables, rien n'est envoyé. Les demandes de robots (champ piège rempli) ne sont jamais transmises. L'appel est limité à 3 secondes ; en cas d'échec, une ligne est écrite dans les logs (sans données personnelles) et le visiteur reçoit la même réponse : l'e-mail Resend reste la référence.
+
 Le lien `/contact?service=site|logiciel|pack` pré-sélectionne le service demandé.
 
 ## Cookies et RGPD
@@ -103,7 +112,7 @@ Pour l'activer :
 
 1. Poussez le projet sur GitHub (ou GitLab / Bitbucket).
 2. Sur [vercel.com/new](https://vercel.com/new), importez le dépôt : Next.js est détecté automatiquement.
-3. Dans **Settings → Environment Variables**, ajoutez `NEXT_PUBLIC_SITE_URL`, et si besoin `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`, `ANTHROPIC_API_KEY`.
+3. Dans **Settings → Environment Variables**, ajoutez `NEXT_PUBLIC_SITE_URL`, et si besoin `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`, `ADMIN_LEADS_URL`, `ADMIN_LEADS_SECRET`, `ANTHROPIC_API_KEY`.
 4. Déployez, puis branchez votre nom de domaine dans **Settings → Domains**.
 
 Chaque nouveau push sur la branche principale redéploie le site automatiquement.
