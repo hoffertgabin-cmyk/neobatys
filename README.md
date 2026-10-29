@@ -37,7 +37,7 @@ Tous les textes sont dans le dossier **`content/data/`** (un fichier JSON par su
 
 | Fichier                          | Contenu                                                                            |
 | -------------------------------- | ---------------------------------------------------------------------------------- |
-| `content/data/site.json`         | nom, ville, **téléphone, e-mail, zone, SIRET**, adresse, horaires, réseaux sociaux |
+| `content/data/site.json`         | nom, ville, **téléphone, e-mail, zone, SIRET**, adresse, réseaux sociaux |
 | `content/data/home.json`         | hero, avant/après, résultats, cas d'usage IA, étapes, CTA final, titres            |
 | `content/data/offers.json`       | offre Sites internet, offre Logiciel, Pack combiné                                 |
 | `content/data/pricing.json`      | les 3 formules et leurs prix (mensuel / annuel)                                    |
@@ -96,7 +96,7 @@ Pour ajouter un outil de mesure d'audience plus tard, chargez-le uniquement si `
 
 Sous les questions fréquentes, un champ permet au visiteur de poser sa propre question. La réponse est rédigée par Claude (Anthropic) via la route serveur `app/api/faq-assistant/route.ts` : **la clé API reste sur le serveur** et n'est jamais envoyée au navigateur.
 
-- **Ce que sait l'assistant** : uniquement les textes du dossier `content/` (offres, tarifs, FAQ, zone, horaires). Modifiez ces fichiers, l'assistant suit. Les consignes sont dans `lib/faq-assistant.ts`.
+- **Ce que sait l'assistant** : uniquement les textes du dossier `content/` (offres, tarifs, FAQ, zone). Modifiez ces fichiers, l'assistant suit. Les consignes sont dans `lib/faq-assistant.ts`.
 - **Honnêteté** : il répond oui seulement si les contenus le disent, non s'ils disent le contraire, et « à confirmer avec nous » + lien contact dans tous les autres cas. Il ne promet ni prix sur mesure, ni délai, ni résultat, et ignore les valeurs entre crochets pas encore remplies.
 - **Anti-abus** : 10 questions / 10 min par IP, 500 caractères maximum, champ piège anti-robots.
 - **Sans configuration** : le champ reste visible mais renvoie vers la page contact.
