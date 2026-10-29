@@ -4,7 +4,8 @@ import { trades, otherTrade } from "@/content/trades";
 export const services = [
   { value: "site", label: "Création de site internet" },
   { value: "logiciel", label: "Logiciel de gestion (devis, factures)" },
-  { value: "pack", label: "Pack Site + Logiciel" },
+  { value: "pack", label: "Pack Gestion (site + logiciel)" },
+  { value: "ia", label: "Pack IA ou Transformation complète" },
   { value: "autre", label: "Je ne sais pas encore" },
 ] as const;
 

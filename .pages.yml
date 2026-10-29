@@ -607,14 +607,14 @@ content:
     label: Tarifs
     type: object
     fields:
-    - name: yearlyDiscountLabel
-      label: Texte de la remise annuelle
+    - name: maintenance
+      label: Texte sous le prix (maintenance)
       type: string
     - name: note
       label: Note sous les tarifs
       type: string
     - name: plans
-      label: Formules
+      label: Offres
       type: object
       list:
         collapsible:
@@ -631,25 +631,10 @@ content:
       - name: description
         label: Description
         type: string
-      - name: setup
-        label: Frais de création
+      - name: price
+        label: Prix unique HT
         type: string
         description: Ex. 990 €
-      - name: setupLabel
-        label: Texte après les frais
-        type: string
-      - name: monthly
-        label: Prix mensuel (€ HT)
-        type: number
-      - name: yearly
-        label: Prix mensuel en paiement annuel (€ HT)
-        type: number
-      - name: unit
-        label: Unité
-        type: string
-      - name: unitSub
-        label: Texte sous le prix
-        type: string
       - name: features
         label: Inclus
         type: string
@@ -668,7 +653,7 @@ content:
         label: Mise en avant
         type: boolean
       - name: badge
-        label: Badge (formule mise en avant)
+        label: Badge (offre mise en avant)
         type: string
 - name: projects
   label: Réalisations

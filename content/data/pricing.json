@@ -1,25 +1,20 @@
 {
   "pricing": {
-    "yearlyDiscountLabel": "2 mois offerts",
-    "note": "Prix indiqués hors taxes. Sans engagement sur les formules mensuelles.",
+    "maintenance": "puis 200 € HT / mois de maintenance",
+    "note": "Prix hors taxes, payés une fois. La maintenance (200 € HT par mois, sans engagement) couvre l'hébergement, le nom de domaine, la licence du logiciel, les coûts de l'IA, les mises à jour et les modifications sur simple demande.",
     "plans": [
       {
         "id": "site",
         "name": "Site Artisan",
         "description": "Pour être trouvé sur Google et recevoir des demandes de devis.",
-        "setup": "990 €",
-        "setupLabel": "création, puis",
-        "monthly": 29,
-        "yearly": 24,
-        "unit": "€ / mois",
-        "unitSub": "hébergement, maintenance et mises à jour",
+        "price": "990 €",
         "features": [
           "Site 5 pages sur mesure",
           "Optimisé mobile et SEO local",
           "Formulaire de demande de devis",
           "Galerie de chantiers avant / après",
           "Fiche Google Business optimisée",
-          "Nom de domaine et hébergement inclus"
+          "En ligne en 2 à 3 semaines"
         ],
         "cta": {
           "label": "Créer mon site",
@@ -29,20 +24,15 @@
       },
       {
         "id": "pack",
-        "name": "Pack Complet",
-        "description": "Site + logiciel reliés : le plus de temps gagné.",
-        "setup": "790 €",
-        "setupLabel": "mise en place, puis",
-        "monthly": 59,
-        "yearly": 49,
-        "unit": "€ / mois",
-        "unitSub": "site + logiciel + accompagnement",
+        "name": "Pack Gestion",
+        "description": "Site + logiciel reliés : trouver des clients et être payé à temps.",
+        "price": "2 990 €",
         "features": [
           "Tout le contenu de Site Artisan",
-          "Tout le contenu de Logiciel Gestion",
+          "Logiciel de devis et factures paramétré",
+          "Import de vos clients et de vos prix",
           "Demandes du site reliées au logiciel",
-          "Formation personnalisée incluse",
-          "Interlocuteur unique et prioritaire"
+          "Formation sur place incluse"
         ],
         "cta": {
           "label": "Choisir le pack",
@@ -52,26 +42,36 @@
         "badge": "Le plus choisi"
       },
       {
-        "id": "logiciel",
-        "name": "Logiciel Gestion",
-        "description": "Pour faire devis et factures en quelques minutes.",
-        "setup": "0 €",
-        "setupLabel": "de frais d'installation",
-        "monthly": 39,
-        "yearly": 32,
-        "unit": "€ / mois",
-        "unitSub": "utilisateurs et documents illimités",
+        "id": "ia",
+        "name": "Pack IA",
+        "description": "Le Pack Gestion, plus deux assistants IA qui travaillent pour vous.",
+        "price": "5 990 €",
         "features": [
-          "Devis et factures illimités",
-          "Transformation devis → facture",
-          "Relances automatiques des impayés",
-          "Tableau de bord du chiffre d'affaires",
-          "Export pour l'expert-comptable",
-          "Conforme facturation électronique"
+          "Tout le contenu du Pack Gestion",
+          "2 assistants IA au choix : standard téléphonique, devis dictés, réponse aux demandes, avis Google",
+          "Réglés sur votre métier et vos tarifs",
+          "Suivi et ajustements pendant 3 mois"
         ],
         "cta": {
-          "label": "Demander une démo",
-          "href": "/contact?service=logiciel"
+          "label": "Choisir le Pack IA",
+          "href": "/contact?service=ia"
+        },
+        "featured": false
+      },
+      {
+        "id": "transformation",
+        "name": "Transformation complète",
+        "description": "Toute l'entreprise équipée : site, logiciel et tous les assistants IA.",
+        "price": "9 900 €",
+        "features": [
+          "Tout le contenu du Pack IA",
+          "Tous les assistants IA, dont la lecture des factures fournisseurs et le suivi de rentabilité",
+          "Site jusqu'à 10 pages",
+          "Accompagnement pendant 6 mois"
+        ],
+        "cta": {
+          "label": "En parler",
+          "href": "/contact?service=ia"
         },
         "featured": false
       }

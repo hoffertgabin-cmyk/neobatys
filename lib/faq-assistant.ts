@@ -16,7 +16,7 @@ function knowledge() {
   const plans = pricing.plans
     .map(
       (p) =>
-        `${p.name} : ${p.description} Mise en place ${p.setup} (${p.setupLabel}) ${p.monthly} ${p.unit} HT sans engagement, ou ${p.yearly} ${p.unit} HT en paiement annuel (${pricing.yearlyDiscountLabel}). ${p.unitSub}.\n${list(p.features)}`,
+        `${p.name} : ${p.description} ${p.price} HT, ${pricing.maintenance}.\n${list(p.features)}`,
     )
     .join("\n\n");
 
@@ -34,7 +34,7 @@ ${softwareOffer.subtitle}
 ${list(softwareOffer.features.map((f) => `${f.title} : ${f.text}`))}
 ${logicielPage.included.groups.map((g) => `${g.title} :\n${list(g.items)}`).join("\n")}
 
-# Pack site + logiciel
+# Pack Gestion (site + logiciel)
 ${comboPack.subtitle}
 ${list(comboPack.points)}
 
