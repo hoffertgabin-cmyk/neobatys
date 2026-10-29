@@ -1,8 +1,9 @@
-import { NextResponse } from "next/server";
+import { after, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { contactSchema, services } from "@/lib/schemas";
 import { site } from "@/content/site";
 import { clientIp, createRateLimiter } from "@/lib/rate-limit";
+import { sendLeadToAdmin } from "@/lib/admin-leads";
 
 // Limite simple anti-abus : 5 envois / 10 min par adresse IP
 const rateLimited = createRateLimiter({ max: 5, windowMs: 10 * 60 * 1000 });
@@ -32,6 +33,10 @@ export async function POST(request: Request) {
   if (data.company) return NextResponse.json({ ok: true });
 
   const serviceLabel = services.find((s) => s.value === data.service)?.label ?? data.service;
+  // Copie dans le CRM de l'outil d'administration, une fois la réponse envoyée (donc après
+  // la tentative Resend, quel qu'en soit le résultat). Sans effet sur la réponse au visiteur.
+  after(() => sendLeadToAdmin(data, serviceLabel));
+
   const lines = [
     ["Nom", data.name],
     ["Métier", data.trade],
