@@ -1,0 +1,116 @@
+{
+  "legalInfo": {
+    "companyName": "TAG Delme SARL",
+    "legalForm": "société à responsabilité limitée de droit luxembourgeois",
+    "capital": "[CAPITAL SOCIAL — ex. 12 000 €]",
+    "rcs": "[N° RCS LUXEMBOURG — ex. B123456]",
+    "vat": "[N° TVA — ex. LU12345678]",
+    "businessPermit": "[N° D'AUTORISATION D'ÉTABLISSEMENT — à vérifier si applicable]",
+    "director": "[NOM DU DIRECTEUR DE LA PUBLICATION — en général le gérant]",
+    "host": {
+      "name": "Vercel Inc.",
+      "address": "440 N Barranca Ave #4133, Covina, CA 91723, États-Unis",
+      "website": "https://vercel.com"
+    },
+    "lastUpdate": "[DATE DE MISE À JOUR]"
+  },
+  "mentionsLegales": [
+    {
+      "title": "Éditeur du site",
+      "paragraphs": [
+        "Ce site est édité par {entreprise}, {forme_juridique}. {nom_commercial} est un nom commercial de {entreprise}.",
+        "Capital social : {capital}.",
+        "Siège social : {adresse}.",
+        "Immatriculée au Registre de commerce et des sociétés de Luxembourg sous le numéro {rcs}.",
+        "N° d'identification TVA : {tva}.",
+        "Autorisation d'établissement : {autorisation}.",
+        "Téléphone : {telephone}.",
+        "E-mail : {email}."
+      ]
+    },
+    {
+      "title": "Directeur de la publication",
+      "paragraphs": [
+        "{directeur}."
+      ]
+    },
+    {
+      "title": "Hébergement",
+      "paragraphs": [
+        "{hebergeur}, {hebergeur_adresse} ({hebergeur_site})."
+      ]
+    },
+    {
+      "title": "Propriété intellectuelle",
+      "paragraphs": [
+        "L'ensemble des contenus de ce site (textes, visuels, logo, mise en page) est la propriété de {entreprise}, sauf mention contraire. Toute reproduction sans autorisation écrite est interdite.",
+        "Les maquettes de sites présentées comme exemples sont fictives : les noms d'entreprises, adresses et coordonnées qui y figurent sont inventés. Les visuels de réalisations clients sont publiés avec l'accord des clients concernés."
+      ]
+    },
+    {
+      "title": "Responsabilité",
+      "paragraphs": [
+        "{entreprise} s'efforce de fournir des informations exactes et à jour, mais ne peut garantir l'absence d'erreurs. Les tarifs affichés sont indicatifs ; seul le devis signé fait foi."
+      ]
+    },
+    {
+      "title": "Données personnelles et cookies",
+      "paragraphs": [
+        "Le traitement de vos données personnelles est détaillé dans notre politique de confidentialité."
+      ]
+    }
+  ],
+  "politiqueConfidentialite": [
+    {
+      "title": "Responsable du traitement",
+      "paragraphs": [
+        "{entreprise} (nom commercial {nom_commercial}). Contact : {email}.",
+        "Siège social : {adresse}.",
+        "RCS Luxembourg : {rcs}."
+      ]
+    },
+    {
+      "title": "Données collectées",
+      "paragraphs": [
+        "Via le formulaire de contact : nom, métier, téléphone, adresse e-mail, service souhaité et contenu de votre message.",
+        "Via l'assistant IA de la FAQ : uniquement le texte de la question posée. Elle n'est pas enregistrée par le site ; merci de ne pas y indiquer de données personnelles.",
+        "Aucune donnée n'est collectée à votre insu. Aucun outil de mesure d'audience ni cookie publicitaire n'est déposé sans votre consentement."
+      ]
+    },
+    {
+      "title": "Finalités et base légale",
+      "paragraphs": [
+        "Répondre à votre demande de contact, de devis ou de démonstration (mesures précontractuelles, art. 6.1.b du RGPD).",
+        "Mesure d'audience éventuelle, uniquement si vous l'acceptez (consentement, art. 6.1.a du RGPD)."
+      ]
+    },
+    {
+      "title": "Destinataires",
+      "paragraphs": [
+        "Vos données sont destinées uniquement à {entreprise}. Elles ne sont jamais vendues.",
+        "Pour fonctionner, le site fait appel à des prestataires qui agissent comme sous-traitants : {hebergeur} (hébergement du site), Resend (envoi par e-mail des messages du formulaire de contact) et OVH (hébergement de notre boîte mail). Les questions posées à l'assistant IA de la FAQ sont transmises à Anthropic (fournisseur du modèle d'IA Claude) pour générer la réponse.",
+        "Vercel, Resend et Anthropic sont des sociétés établies aux États-Unis : les données qui leur sont transmises peuvent donc être traitées hors de l'Union européenne. [À COMPLÉTER : préciser les garanties applicables (clauses contractuelles types ou Data Privacy Framework).]"
+      ]
+    },
+    {
+      "title": "Durée de conservation",
+      "paragraphs": [
+        "Les demandes de contact sont conservées 3 ans à compter du dernier échange, puis supprimées. [À ADAPTER]"
+      ]
+    },
+    {
+      "title": "Vos droits",
+      "paragraphs": [
+        "Vous pouvez accéder à vos données, les rectifier, les effacer, limiter ou vous opposer à leur traitement, et demander leur portabilité, en écrivant à {email}.",
+        "Vous pouvez également introduire une réclamation auprès de la Commission nationale pour la protection des données (CNPD, Luxembourg, cnpd.public.lu) ou de l'autorité de protection des données de votre pays de résidence (en France : la CNIL, www.cnil.fr)."
+      ]
+    },
+    {
+      "title": "Cookies",
+      "paragraphs": [
+        "Le site enregistre uniquement votre choix de consentement dans votre navigateur (stockage local, 6 mois). Il ne dépose aucun cookie de mesure d'audience ou publicitaire sans votre accord.",
+        "Vous pouvez modifier votre choix à tout moment via le lien « Gérer les cookies » en bas de page."
+      ]
+    }
+  ]
+}

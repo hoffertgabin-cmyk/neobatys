@@ -1,6 +1,6 @@
 import { Phone } from "lucide-react";
 import { finalCta } from "@/content/home";
-import { site, telHref } from "@/content/site";
+import { hasPhone, site, telHref } from "@/content/site";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/motion/Reveal";
 
@@ -26,14 +26,16 @@ export function FinalCta() {
             <Button href={finalCta.primaryCta.href} size="lg" arrow>
               {finalCta.primaryCta.label}
             </Button>
-            <Button
-              href={telHref}
-              size="lg"
-              variant="ghost"
-              icon={<Phone aria-hidden="true" className="size-4" />}
-            >
-              {finalCta.secondaryCta.label} {site.phone}
-            </Button>
+            {hasPhone && (
+              <Button
+                href={telHref}
+                size="lg"
+                variant="ghost"
+                icon={<Phone aria-hidden="true" className="size-4" />}
+              >
+                {finalCta.secondaryCta.label} {site.phone}
+              </Button>
+            )}
           </div>
         </Reveal>
       </div>

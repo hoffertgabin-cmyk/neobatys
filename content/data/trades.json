@@ -1,0 +1,17 @@
+{
+  "otherTrade": "Autre métier du bâtiment",
+  "trades": [
+    "Plombier",
+    "Électricien",
+    "Maçon",
+    "Menuisier",
+    "Couvreur",
+    "Peintre",
+    "Chauffagiste",
+    "Carreleur",
+    "Plaquiste",
+    "Charpentier",
+    "Serrurier",
+    "Paysagiste"
+  ]
+}

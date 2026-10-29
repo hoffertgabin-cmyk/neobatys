@@ -8,7 +8,7 @@ import { ChevronDown, CircleAlert, CircleCheck, LoaderCircle, Phone, Send } from
 import { contactSchema, services, type ContactData, type ContactInput } from "@/lib/schemas";
 import { trades, otherTrade } from "@/content/trades";
 import { contactPage } from "@/content/pages";
-import { site, telHref } from "@/content/site";
+import { hasPhone, site, telHref } from "@/content/site";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 
@@ -115,9 +115,11 @@ export function ContactForm() {
         <h2 className="mt-5 text-2xl font-bold">{contactPage.success.title}</h2>
         <p className="mx-auto mt-3 max-w-md text-ardoise-dark">{contactPage.success.text}</p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-          <Button href={telHref} icon={<Phone aria-hidden="true" className="size-4" />}>
-            {site.phone}
-          </Button>
+          {hasPhone && (
+            <Button href={telHref} icon={<Phone aria-hidden="true" className="size-4" />}>
+              {site.phone}
+            </Button>
+          )}
           <Button type="button" variant="ghost" onClick={() => setStatus("idle")}>
             Envoyer une autre demande
           </Button>
@@ -263,8 +265,17 @@ export function ContactForm() {
           className="mt-6 flex items-start gap-2 rounded-xl bg-red-50 p-4 text-sm text-red-800"
         >
           <CircleAlert aria-hidden="true" className="mt-0.5 size-4 shrink-0" />
-          L&apos;envoi n&apos;a pas fonctionné. Réessayez dans un instant ou appelez-nous au{" "}
-          {site.phone}.
+          {hasPhone ? (
+            <>
+              L&apos;envoi n&apos;a pas fonctionné. Réessayez dans un instant ou appelez-nous au{" "}
+              {site.phone}.
+            </>
+          ) : (
+            <>
+              L&apos;envoi n&apos;a pas fonctionné. Réessayez dans un instant ou écrivez-nous à{" "}
+              {site.email}.
+            </>
+          )}
         </p>
       )}
 

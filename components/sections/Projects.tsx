@@ -4,8 +4,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
 import * as m from "motion/react-m";
 import { Maximize2, X } from "lucide-react";
-import { projects, type Project } from "@/content/projects";
-import { site } from "@/content/site";
+import { mockupsOnly, projects, type Project } from "@/content/projects";
 import { sectionsCopy } from "@/content/home";
 import { cn } from "@/lib/utils";
 import { Section } from "@/components/ui/Section";
@@ -15,6 +14,9 @@ import { ScaledCanvas } from "@/components/mockups/ScaledCanvas";
 import { MOCKUP_HEIGHT, MOCKUP_WIDTH, TradeSiteMockup } from "@/components/mockups/TradeSiteMockup";
 
 const ALL = "Tous";
+
+/** Métier et ville ; la ville d'une maquette fictive n'est pas affichée. */
+const projectMeta = (p: Project) => (p.placeholder ? p.trade : `${p.trade} · ${p.city}`);
 
 /** Aperçu de la maquette dans la carte : le haut du site, coupé en bas. */
 function ProjectPreview({ project }: { project: Project }) {
@@ -96,9 +98,9 @@ function ProjectDialog({ project, onClose }: { project: Project | null; onClose:
                   className="size-2.5 rounded-full"
                   style={{ backgroundColor: project.theme.primary }}
                 />
-                {project.trade} · {project.city}
-                {site.showPlaceholderBadges && project.placeholder && (
-                  <PlaceholderBadge className="text-ardoise-dark" />
+                {projectMeta(project)}
+                {project.placeholder && (
+                  <PlaceholderBadge label="Maquette" className="text-ardoise-dark" />
                 )}
               </p>
               <h3 id="maquette-titre" className="mt-1.5 text-lg font-bold sm:text-2xl">
@@ -163,14 +165,16 @@ export function Projects() {
   const [active, setActive] = useState(ALL);
   const [selected, setSelected] = useState<Project | null>(null);
   const visible = active === ALL ? projects : projects.filter((p) => p.trade === active);
+  const copy = mockupsOnly ? sectionsCopy.projects.mockups : sectionsCopy.projects;
+  const noun = mockupsOnly ? "maquette" : "réalisation";
 
   return (
     <Section id="realisations" theme="sand" aria-labelledby="realisations-titre">
       <SectionHeading
         id="realisations-titre"
-        eyebrow={sectionsCopy.projects.eyebrow}
-        title={sectionsCopy.projects.title}
-        subtitle={sectionsCopy.projects.subtitle}
+        eyebrow={copy.eyebrow}
+        title={copy.title}
+        subtitle={copy.subtitle}
       />
 
       <div
@@ -196,8 +200,8 @@ export function Projects() {
         ))}
       </div>
       <p className="sr-only" aria-live="polite">
-        {visible.length} réalisation{visible.length > 1 ? "s" : ""} affichée
-        {visible.length > 1 ? "s" : ""}
+        {visible.length} {noun}
+        {visible.length > 1 ? "s" : ""} affichée{visible.length > 1 ? "s" : ""}
       </p>
 
       <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -223,8 +227,11 @@ export function Projects() {
                   <ProjectPreview project={project} />
                 )}
               </div>
-              {site.showPlaceholderBadges && project.placeholder && (
-                <PlaceholderBadge className="absolute top-3 right-3 bg-white text-ardoise-dark" />
+              {project.placeholder && (
+                <PlaceholderBadge
+                  label="Maquette"
+                  className="absolute top-3 right-3 bg-white text-ardoise-dark"
+                />
               )}
               <span
                 aria-hidden="true"
@@ -248,7 +255,7 @@ export function Projects() {
                   className="size-2.5 rounded-full"
                   style={{ backgroundColor: project.theme.primary }}
                 />
-                {project.trade} · {project.city}
+                {projectMeta(project)}
               </p>
               <h3 className="mt-1.5 text-lg font-bold">{project.title}</h3>
               <p className="mt-1 text-sm text-ardoise">{project.description}</p>

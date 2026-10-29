@@ -60,7 +60,7 @@ export default function OpengraphImage() {
         </div>
       </div>
       <div style={{ fontSize: 30, color: "#4D585F" }}>
-        {`Sites internet, logiciel et IA pour artisans du bâtiment · ${site.city}`}
+        {"Sites internet, logiciel et IA pour artisans du bâtiment"}
       </div>
     </div>,
     size,

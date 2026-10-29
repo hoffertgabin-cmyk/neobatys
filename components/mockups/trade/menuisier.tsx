@@ -1,21 +1,34 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowLeft, ArrowRight, Hammer, Ruler, Send } from "lucide-react";
+import { ArrowLeft, ArrowRight, Hammer, Ruler, Send, ShieldCheck, Trees } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   Btn,
   Card,
   Choice,
   DemoForm,
-  Eyebrow,
   Field,
   MiniFooter,
   MiniSite,
   SubPage,
   useMini,
+  type SiteInfo,
   type SiteProps,
 } from "./kit";
+import {
+  CtaBand,
+  Faq,
+  Photo,
+  Reviews,
+  Section,
+  SectionHead,
+  Stats,
+  Steps,
+  TrustStrip,
+  ZoneMap,
+} from "./blocks";
+import { ArticlesSection, Gallery, Pic, UploadField } from "./extras";
 
 const essences = {
   Chêne: "#b7793f",
@@ -149,34 +162,249 @@ function Grid() {
   );
 }
 
+const info: SiteInfo = {
+  baseline: "Menuiserie d'agencement · Sur mesure",
+  phone: "03 53 48 62 30",
+  email: "atelier@exemple-menuiserie-boulay.fr",
+  address: "3 chemin du Moulin, 57220 Boulay-Moselle",
+  hours: "Atelier ouvert lun–ven 8h–18h · Sam sur rendez-vous",
+  zone: "Moselle-Est, Metz et Saint-Avold",
+  about:
+    "Atelier de menuiserie fondé en 2004. Escaliers, cuisines, dressings et bibliothèques dessinés, fabriqués et posés par la même équipe.",
+  labels: ["Bois PEFC", "Artisan d'art", "Garantie décennale"],
+  links: items.slice(0, 5).map((it) => ({ label: it.t, page: "catalogue", param: it.id })),
+  contactPage: "contact",
+  articles: [
+    {
+      t: "Chêne, hêtre ou noyer : quel bois pour votre escalier ?",
+      d: "Dureté, teinte et budget : notre comparatif d'atelier.",
+      cat: "Escaliers",
+      read: 4,
+      img: "escalier",
+      body: [
+        "Le chêne est le bois roi des escaliers : très dur, il résiste aux chocs et se patine joliment.",
+        "Le hêtre, plus clair et moins cher, convient bien aux escaliers peints ou vernis.",
+        "Le noyer, plus rare, apporte une teinte chaude et profonde pour un escalier qui se remarque.",
+      ],
+    },
+    {
+      t: "Cuisine sur mesure : les étapes d'un projet réussi",
+      d: "De la prise de mesures à la pose, combien de temps prévoir.",
+      cat: "Cuisines",
+      read: 4,
+      img: "cuisine-bois",
+      body: [
+        "Tout commence par une visite pour relever les cotes, les arrivées d'eau et d'électricité.",
+        "Les plans 3D permettent de valider les volumes et les finitions avant la fabrication.",
+        "Comptez 6 à 8 semaines entre la validation et la pose.",
+      ],
+    },
+    {
+      t: "Entretenir un meuble en bois huilé",
+      d: "Les bons gestes pour garder un bois beau pendant des années.",
+      cat: "Entretien",
+      read: 2,
+      img: "atelier",
+      body: [
+        "Dépoussiérez avec un chiffon sec, sans produit ménager agressif.",
+        "Une fois par an, passez une fine couche d'huile d'entretien et essuyez l'excédent.",
+        "Les petites rayures s'effacent avec un léger ponçage au grain fin, suivi d'une couche d'huile.",
+      ],
+    },
+  ],
+  rating: { value: "5,0", count: 41 },
+};
+
 function Home() {
   const { project } = useMini();
   return (
     <>
-      <div className="bg-(--s) px-4 pt-5 pb-5 @min-[600px]:px-8">
-        <div className="grid items-end gap-3 @min-[600px]:grid-cols-[1fr_auto] @min-[600px]:gap-6">
-          <div>
-            <Eyebrow className="bg-(--p)/10 text-(--p)">
-              Atelier de menuiserie · {project.city}
-            </Eyebrow>
-            <p className="mt-3 font-display text-[27px] leading-[1.05] font-bold tracking-tight text-(--d)">
-              Sur mesure, de l&apos;atelier à chez vous
-            </p>
-          </div>
-          <p className="max-w-[190px] text-[11px] leading-relaxed text-nuit/60 @min-[600px]:text-right">
-            Bois massif, finitions à la main, pose comprise.
+      {/* Hero */}
+      <div className="relative h-[340px] overflow-hidden bg-(--d)">
+        <Pic src="cuisine-bois" alt="Cuisine en bois massif sur mesure" priority sizes="100vw" />
+        <div className="absolute inset-y-0 left-0 w-full bg-gradient-to-r from-(--s) via-(--s)/90 to-transparent @min-[600px]:w-[70%]" />
+        <div className="relative flex h-full max-w-[360px] flex-col justify-center px-4 @min-[600px]:px-8">
+          <p className="text-[10px] font-semibold tracking-[0.2em] text-(--p) uppercase">
+            Atelier de menuiserie · {project.city}
           </p>
-        </div>
-        <div className="mt-4">
-          <Grid />
-        </div>
-        <div className="mt-3 flex flex-wrap items-center justify-between gap-2 rounded-xl bg-(--d) px-4 py-2.5 text-white">
-          <span className="text-[12px] font-semibold">Un projet sur mesure ? Parlons-en.</span>
-          <Btn to="contact" className="bg-(--a) py-1.5 text-(--d)">
-            Demander un devis
-          </Btn>
+          <p className="mt-3 font-display text-[34px] leading-[1.02] font-semibold tracking-tight text-(--d)">
+            Le bois, façonné à la main, <em className="text-(--p)">posé chez vous.</em>
+          </p>
+          <p className="mt-3 text-[12px] leading-relaxed text-nuit/65">
+            Escaliers, cuisines, dressings et bibliothèques en bois massif, dessinés et fabriqués
+            dans notre atelier.
+          </p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            <Btn to="contact" className="rounded-none px-5 py-2.5">
+              Parler de mon projet
+            </Btn>
+            <Btn
+              to="catalogue"
+              tone="light"
+              className="rounded-none bg-transparent px-5 py-2.5 ring-(--d)/25"
+            >
+              Nos créations <ArrowRight className="size-3.5" />
+            </Btn>
+          </div>
         </div>
       </div>
+
+      <TrustStrip
+        items={[
+          { I: Trees, t: "Bois français", d: "Chêne et hêtre PEFC" },
+          { I: Hammer, t: "Fait à l'atelier", d: "À Boulay, rien n'est sous-traité" },
+          { I: Ruler, t: "Plans 3D offerts", d: "Avant toute commande" },
+          { I: ShieldCheck, t: "Pose comprise", d: "Garantie décennale" },
+        ]}
+      />
+
+      <Section className="bg-(--s)">
+        <div className="flex flex-wrap items-end justify-between gap-3">
+          <SectionHead kicker="Nos créations" title="Tout ce que l'on fabrique" />
+          <p className="max-w-[200px] text-[11px] leading-relaxed text-nuit/60">
+            Choisissez une création pour configurer l&apos;essence et la finition.
+          </p>
+        </div>
+        <div className="mt-5">
+          <Grid />
+        </div>
+      </Section>
+
+      {/* L'atelier */}
+      <Section className="grid gap-6 @min-[600px]:grid-cols-2 @min-[600px]:items-center">
+        <div>
+          <SectionHead
+            kicker="L'atelier"
+            title="400 m² d'atelier, quatre menuisiers"
+            intro="On débite, on assemble et on ponce chaque pièce à Boulay. Les finitions à l'huile sont passées à la main, la pose est faite par ceux qui ont fabriqué."
+          />
+          <Stats
+            className="mt-5 @min-[600px]:grid-cols-3"
+            items={[
+              { v: "20 ans", l: "de métier" },
+              { v: "4", l: "menuisiers" },
+              { v: "100 %", l: "fabriqué ici" },
+            ]}
+          />
+          <Btn to="atelier" tone="dark" className="mt-5 rounded-none">
+            Visiter l&apos;atelier <ArrowRight className="size-3.5" />
+          </Btn>
+        </div>
+        <Photo src="atelier" className="h-56 rounded-none" caption="Notre atelier de Boulay" />
+      </Section>
+
+      {/* Réalisation à la une */}
+      <Section className="bg-(--d)">
+        <div className="grid gap-6 @min-[600px]:grid-cols-[1.1fr_1fr] @min-[600px]:items-center">
+          <Photo src="escalier" className="h-56 rounded-none" caption="Escalier chêne · Créhange" />
+          <div>
+            <SectionHead
+              light
+              kicker="Réalisation à la une"
+              title="Un escalier qui devient la pièce maîtresse"
+            />
+            <p className="mt-4 font-display text-[15px] leading-snug text-white/85 italic">
+              « On voulait de la lumière et du bois. Ils ont dessiné un escalier suspendu avec un
+              garde-corps en verre : c&apos;est la première chose qu&apos;on regarde en entrant. »
+            </p>
+            <p className="mt-3 text-[10.5px] text-white/55">Claire et Mathieu, Créhange</p>
+          </div>
+        </div>
+      </Section>
+
+      <Section>
+        <SectionHead
+          kicker="Comment on travaille"
+          title="De l'esquisse à la pose"
+          className="mb-6"
+        />
+        <Steps
+          items={[
+            { t: "Rencontre", d: "Chez vous ou à l'atelier, on prend les mesures et vos envies." },
+            { t: "Plans 3D", d: "Vous validez les volumes, l'essence et la finition." },
+            { t: "Fabrication", d: "4 à 8 semaines dans notre atelier selon le projet." },
+            { t: "Pose", d: "Par l'équipe qui a fabriqué, chantier laissé propre." },
+          ]}
+        />
+      </Section>
+
+      <Section className="bg-(--s)">
+        <SectionHead kicker="Avis clients" title="5,0 sur 41 avis" className="mb-5" />
+        <Reviews
+          rating="5,0"
+          count={41}
+          reviews={[
+            {
+              n: "Hélène W.",
+              c: "Boulay-Moselle",
+              when: "il y a 1 mois",
+              t: "Dressing sous pente parfaitement ajusté, finitions superbes. On sent le travail d'artisan.",
+            },
+            {
+              n: "Marc D.",
+              c: "Metz",
+              when: "il y a 2 mois",
+              t: "Cuisine en chêne massif livrée et posée dans les temps. Les plans 3D nous ont beaucoup aidés à choisir.",
+            },
+            {
+              n: "Isabelle F.",
+              c: "Saint-Avold",
+              when: "il y a 5 mois",
+              t: "Bibliothèque sur tout un mur avec banquette. Magnifique, et un vrai conseil sur le choix du bois.",
+            },
+          ]}
+        />
+      </Section>
+
+      <Section className="grid gap-6 @min-[600px]:grid-cols-2">
+        <div>
+          <SectionHead kicker="Zone d'intervention" title="Moselle-Est et Metz" />
+          <ZoneMap
+            className="mt-4 h-44"
+            towns={[
+              project.city,
+              "Metz",
+              "Saint-Avold",
+              "Créhange",
+              "Bouzonville",
+              "Faulquemont",
+              "Courcelles",
+              "Falck",
+            ]}
+          />
+        </div>
+        <div>
+          <SectionHead kicker="Questions fréquentes" title="Bon à savoir" />
+          <Faq
+            className="mt-4"
+            items={[
+              {
+                q: "Quel délai pour une cuisine sur mesure ?",
+                a: "Comptez 6 à 8 semaines entre la validation des plans et la pose.",
+              },
+              {
+                q: "Peut-on venir voir l'atelier ?",
+                a: "Oui, sur rendez-vous du lundi au samedi. Vous verrez les essences et les finitions en vrai.",
+              },
+              {
+                q: "Travaillez-vous avec d'autres corps de métier ?",
+                a: "Pour une cuisine, on coordonne le plombier et l'électricien si vous le souhaitez.",
+              },
+            ]}
+          />
+        </div>
+      </Section>
+
+      <ArticlesSection />
+
+      <Section className="px-0 pt-0 @min-[600px]:px-0 @min-[600px]:pt-0">
+        <CtaBand
+          className="rounded-none"
+          title="Un projet sur mesure ?"
+          text="Rendez-vous à l'atelier ou chez vous, plans 3D offerts."
+          cta={{ label: "Parler de mon projet", to: "contact" }}
+        />
+      </Section>
       <MiniFooter />
     </>
   );
@@ -306,6 +534,7 @@ function Atelier() {
       eyebrow="L'atelier"
       title="De la mesure à la pose"
       intro="Quatre étapes, un seul interlocuteur du début à la fin."
+      visual="menuisier-outils"
     >
       <div className="grid grid-cols-4 gap-1.5">
         {steps.map((s, i) => (
@@ -345,6 +574,18 @@ function Atelier() {
           Suivante <ArrowRight className="size-3.5" />
         </Btn>
       </div>
+      <p className="mt-6 text-[13px] font-bold text-nuit">L&apos;atelier en images</p>
+      <Gallery
+        className="mt-3"
+        items={[
+          { src: "atelier", t: "L'atelier de Boulay" },
+          { src: "menuisier-hero", t: "Ponçage d'un plan de travail" },
+          { src: "menuisier-outils", t: "Rabots et outils à main" },
+          { src: "escalier", t: "Escalier chêne · Créhange" },
+          { src: "cuisine-bois", t: "Cuisine bois massif · Boulay" },
+          { src: "cuisine-moderne", t: "Agencement de cuisine · Metz" },
+        ]}
+      />
     </SubPage>
   );
 }
@@ -379,6 +620,9 @@ function Contact() {
               placeholder="Ex. : dressing sous pente de 2,40 m"
             />
           </div>
+          <div className="mt-2.5">
+            <UploadField />
+          </div>
         </DemoForm>
       </Card>
     </SubPage>
@@ -390,6 +634,9 @@ export function MenuisierSite(props: SiteProps) {
     <MiniSite
       {...props}
       icon={Hammer}
+      info={info}
+      font="serif"
+      navStyle="underline"
       cta={{ label: "Votre projet", page: "contact" }}
       pages={[
         { id: "home", label: "Accueil", path: "/", render: () => <Home /> },

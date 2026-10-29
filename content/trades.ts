@@ -1,17 +1,9 @@
-/** Métiers ciblés : bandeau défilant + liste déroulante du formulaire. */
-export const trades = [
-  "Plombier",
-  "Électricien",
-  "Maçon",
-  "Menuisier",
-  "Couvreur",
-  "Peintre",
-  "Chauffagiste",
-  "Carreleur",
-  "Plaquiste",
-  "Charpentier",
-  "Serrurier",
-  "Paysagiste",
-] as const;
+/**
+ * Métiers ciblés : bandeau défilant + liste déroulante du formulaire.
+ * La liste est dans data/trades.json, modifiable depuis Pages CMS (voir EDITION.md).
+ */
+import data from "./data/trades.json";
 
-export const otherTrade = "Autre métier du bâtiment";
+export const trades = data.trades;
+
+export const otherTrade = data.otherTrade;

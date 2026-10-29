@@ -1,0 +1,22 @@
+{
+  "site": {
+    "name": "NEOBATYS",
+    "tagline": "Sites internet, logiciel de gestion et IA pour artisans du bâtiment",
+    "phone": "[TÉLÉPHONE]",
+    "phoneHref": "[TÉLÉPHONE]",
+    "email": "contact@neobatys.com",
+    "address": {
+      "street": "[ADRESSE DU SIÈGE]",
+      "postalCode": "[CODE POSTAL — ex. L-1234]",
+      "city": "[VILLE]",
+      "country": "LU"
+    },
+    "hours": "Du lundi au vendredi, 8h – 18h",
+    "socials": {
+      "facebook": "",
+      "instagram": "",
+      "linkedin": ""
+    },
+    "showSampleContent": false
+  }
+}

@@ -2,14 +2,17 @@
 
 import { useState } from "react";
 import {
-  Bath,
+  ArrowRight,
+  Award,
+  BadgeEuro,
+  Check,
   ChevronDown,
+  Clock,
   Droplets,
-  MapPin,
   Phone,
   Send,
+  ShieldCheck,
   Siren,
-  Thermometer,
   Wrench,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -18,15 +21,29 @@ import {
   Card,
   Choice,
   DemoForm,
-  Eyebrow,
   Field,
   MiniFooter,
   MiniSite,
   Stars,
   SubPage,
   useMini,
+  type SiteInfo,
   type SiteProps,
 } from "./kit";
+import {
+  CtaBand,
+  Faq,
+  GoogleG,
+  Photo,
+  Reviews,
+  Section,
+  SectionHead,
+  Stats,
+  TrustStrip,
+  ZoneMap,
+  type Review,
+} from "./blocks";
+import { ArticlesSection, Pic } from "./extras";
 
 const problems = ["Fuite", "WC bouché", "Chauffe-eau", "Autre"] as const;
 
@@ -55,71 +72,312 @@ function UrgentForm({ compact = false }: { compact?: boolean }) {
   );
 }
 
+const info: SiteInfo = {
+  baseline: "Plomberie · Sanitaire · Dépannage",
+  phone: "03 53 48 21 07",
+  email: "contact@exemple-plomberie-thionville.fr",
+  address: "14 rue de la Paix, 57100 Thionville",
+  hours: "Lun–ven 7h30–19h · Sam 8h–12h · Urgences 7j/7",
+  zone: "Thionville et 30 km autour",
+  about:
+    "Entreprise familiale de plomberie depuis 2011 : dépannage, salles de bain clé en main et chauffe-eau, pour les particuliers et les syndics.",
+  labels: ["RGE", "Qualibat", "Garantie décennale", "Artisan"],
+  links: [
+    { label: "Dépannage et fuites", page: "depannage" },
+    { label: "Salle de bain", page: "sdb" },
+    { label: "Chauffe-eau", page: "depannage" },
+    { label: "Avis clients", page: "avis" },
+    { label: "Urgence 7j/7", page: "urgence" },
+  ],
+  contactPage: "urgence",
+  articles: [
+    {
+      t: "Fuite d'eau : les 5 bons réflexes avant l'arrivée du plombier",
+      d: "Couper l'eau, protéger l'électricité, photographier : ce qu'il faut faire dans les dix premières minutes.",
+      cat: "Dépannage",
+      read: 3,
+      img: "plombier-evier",
+      body: [
+        "Le premier geste est de fermer le robinet d'arrêt général, souvent situé près du compteur ou sous l'évier de la cuisine.",
+        "Si l'eau approche des prises ou du tableau électrique, coupez le disjoncteur général avant d'éponger.",
+        "Prenez des photos de la fuite et des dégâts : votre assureur vous les demandera, et elles aident le plombier à préparer son matériel.",
+      ],
+    },
+    {
+      t: "Douche à l'italienne : prix, délais et aides en 2026",
+      d: "Combien coûte vraiment une douche de plain-pied, et quelles aides pour les plus de 60 ans ?",
+      cat: "Salle de bain",
+      read: 4,
+      img: "sdb-italienne",
+      body: [
+        "Comptez entre 4 500 et 9 000 € pour remplacer une baignoire par une douche à l'italienne, selon la surface et le carrelage choisi.",
+        "Le chantier dure 5 à 8 jours : dépose, reprise des évacuations, étanchéité, carrelage puis paroi et robinetterie.",
+        "MaPrimeAdapt' peut financer jusqu'à 70 % des travaux pour les personnes de plus de 70 ans ou en perte d'autonomie.",
+      ],
+    },
+    {
+      t: "Chauffe-eau : réparer ou remplacer ?",
+      d: "Âge, entartrage, consommation : comment savoir s'il vaut mieux changer son ballon.",
+      cat: "Chauffe-eau",
+      read: 3,
+      img: "chauffe-eau",
+      body: [
+        "Un chauffe-eau électrique vit en moyenne 10 à 15 ans. Au-delà, une réparation coûteuse est rarement rentable.",
+        "Un ballon thermodynamique consomme jusqu'à trois fois moins qu'un modèle classique et peut être aidé par MaPrimeRénov'.",
+        "Un détartrage tous les 3 ans prolonge sa durée de vie, surtout en Moselle où l'eau est calcaire.",
+      ],
+    },
+  ],
+  rating: { value: "4,9", count: 132 },
+};
+
+const homeReviews: Review[] = [
+  {
+    n: "Amandine M.",
+    c: "Yutz",
+    when: "il y a 2 semaines",
+    t: "Fuite sous l'évier un dimanche matin : rappelée en 10 minutes, technicien sur place en moins d'une heure. Travail propre, prix annoncé respecté.",
+  },
+  {
+    n: "Stéphane K.",
+    c: "Thionville",
+    when: "il y a 1 mois",
+    t: "Salle de bain entièrement refaite en 9 jours. Douche à l'italienne superbe, chantier nettoyé chaque soir. Je recommande sans hésiter.",
+  },
+  {
+    n: "Patrick L.",
+    c: "Hayange",
+    when: "il y a 2 mois",
+    t: "Remplacement du ballon d'eau chaude dans la journée. Bonnes explications sur le choix du modèle thermodynamique.",
+  },
+];
+
 function Home() {
   const { project } = useMini();
   return (
     <>
-      <div className="flex items-center justify-center gap-2 bg-(--d) px-4 py-2 text-center text-[11px] font-medium text-white">
-        <Siren className="size-3.5 shrink-0 text-(--a)" />
-        Fuite, panne d&apos;eau chaude ? Intervention sous 2 h, 7j/7
-      </div>
-      <div className="grid gap-6 bg-(--s) px-4 pt-6 pb-5 @min-[600px]:grid-cols-[1.15fr_1fr] @min-[600px]:px-8">
-        <div>
-          <Eyebrow className="bg-white text-(--p) ring-1 ring-(--p)/15">
-            <MapPin className="size-3" /> Plombier à {project.city} et alentours
-          </Eyebrow>
-          <p className="mt-4 font-display text-[34px] leading-[1.05] font-bold tracking-tight text-(--d)">
-            Une fuite ?
-            <br />
-            On arrive vite.
-          </p>
-          <p className="mt-3 max-w-[300px] text-[12px] leading-relaxed text-nuit/65">
-            Dépannage, rénovation de salle de bain et chauffe-eau. Devis clair avant toute
-            intervention.
-          </p>
-          <div className="mt-5 flex flex-wrap gap-2">
-            <Btn to="depannage">
-              <Siren className="size-3.5" /> Dépannage urgent
-            </Btn>
-            <Btn tone="light" to="urgence">
-              <Phone className="size-3.5" /> 03 82 XX XX XX
-            </Btn>
+      {/* Hero */}
+      <div className="relative min-h-[360px] overflow-hidden bg-(--d)">
+        <Pic
+          src="plombier-hero"
+          alt="Salle de bain rénovée avec douche vitrée"
+          priority
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-(--d)/95 via-(--d)/75 to-(--d)/5" />
+        <div className="relative grid gap-5 px-4 py-7 @min-[600px]:grid-cols-[1.25fr_1fr] @min-[600px]:items-center @min-[600px]:px-8 @min-[600px]:py-9">
+          <div className="text-white">
+            <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-semibold ring-1 ring-white/15">
+              <span className="relative flex size-2">
+                <span className="absolute inset-0 animate-ping rounded-full bg-emerald-400/70" />
+                <span className="relative size-2 rounded-full bg-emerald-400" />
+              </span>
+              Disponible aujourd&apos;hui · intervention sous 2 h
+            </p>
+            <p className="mt-4 font-display text-[30px] leading-[1.05] font-bold tracking-tight @min-[600px]:text-[34px]">
+              Plombier à {project.city}, <span className="text-(--a)">dépannage 7j/7</span>
+            </p>
+            <p className="mt-3 max-w-[340px] text-[12px] leading-relaxed text-white/70">
+              Fuites, canalisations bouchées, chauffe-eau en panne ou salle de bain à refaire : un
+              artisan qualifié, un prix annoncé avant de commencer.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              <Btn to="urgence" className="px-5 py-2.5">
+                <Siren className="size-3.5" /> Demander un dépannage
+              </Btn>
+              <Btn tone="light" to="urgence" className="px-5 py-2.5 ring-0">
+                <Phone className="size-3.5" /> {info.phone}
+              </Btn>
+            </div>
+            <div className="mt-5 flex items-center gap-2 text-[10.5px] text-white/70">
+              <GoogleG className="size-4" />
+              <Stars />
+              <span>
+                <b className="text-white">4,9/5</b> · 132 avis Google
+              </span>
+            </div>
           </div>
-          <Btn tone="ghost" to="avis" className="mt-5 bg-transparent px-0 hover:bg-transparent">
-            <Stars />
-            <span className="text-[11px] font-semibold text-nuit">4,9/5</span>
-            <span className="text-[10px] font-normal text-nuit/55">· Voir les avis</span>
+          <Card className="hidden shadow-2xl @min-[600px]:block">
+            <p className="flex items-center gap-1.5 text-[13px] font-bold text-(--d)">
+              <Droplets className="size-4 text-(--p)" /> Être rappelé en 15 min
+            </p>
+            <p className="mt-0.5 mb-3 text-[10px] text-nuit/50">Gratuit et sans engagement</p>
+            <UrgentForm compact />
+          </Card>
+        </div>
+      </div>
+
+      <TrustStrip
+        items={[
+          { I: Clock, t: "Sous 2 h", d: "Urgences 7j/7, même le dimanche" },
+          { I: BadgeEuro, t: "Prix annoncé", d: "Devis gratuit avant intervention" },
+          { I: Award, t: "Artisan qualifié", d: "RGE et Qualibat" },
+          { I: ShieldCheck, t: "Garantie décennale", d: "Travaux assurés 10 ans" },
+        ]}
+      />
+
+      {/* Prestations */}
+      <Section className="bg-(--s)">
+        <SectionHead
+          kicker="Nos prestations"
+          title="Du dépannage urgent à la salle de bain clé en main"
+          intro="Une seule équipe pour tous vos travaux de plomberie, de la petite fuite au chantier complet."
+        />
+        <div className="mt-5 grid gap-3 @min-[600px]:grid-cols-3">
+          {[
+            {
+              t: "Dépannage et fuites",
+              d: "Recherche de fuite, robinetterie, WC et canalisations débouchées.",
+              to: "depannage",
+              src: "plombier-evier",
+              tag: "Sous 2 h",
+            },
+            {
+              t: "Salle de bain",
+              d: "Douche à l'italienne, PMR, meuble vasque : conception et pose.",
+              to: "sdb",
+              src: "plombier-sdb2",
+              tag: "Clé en main",
+            },
+            {
+              t: "Chauffe-eau",
+              d: "Remplacement, ballon thermodynamique, détartrage et entretien.",
+              to: "depannage",
+              src: "chauffe-eau",
+              tag: "Pose en 24 h",
+            },
+          ].map((s) => (
+            <Btn
+              key={s.t}
+              to={s.to}
+              tone="light"
+              className="group flex-col items-stretch gap-0 overflow-hidden rounded-xl p-0 text-left ring-nuit/8"
+            >
+              <Photo src={s.src} alt={s.t} className="h-28 rounded-none" caption={s.tag} />
+              <span className="block p-3.5">
+                <span className="block text-[13px] font-bold text-nuit">{s.t}</span>
+                <span className="mt-1 block text-[10.5px] leading-relaxed font-normal text-nuit/60">
+                  {s.d}
+                </span>
+                <span className="mt-2.5 flex items-center gap-1 text-[10.5px] text-(--p)">
+                  En savoir plus <ArrowRight className="size-3" />
+                </span>
+              </span>
+            </Btn>
+          ))}
+        </div>
+      </Section>
+
+      {/* Salle de bain */}
+      <Section className="grid gap-6 @min-[600px]:grid-cols-2 @min-[600px]:items-center">
+        <Photo
+          src="sdb-italienne"
+          className="h-56"
+          caption={`Douche à l'italienne · ${project.city}`}
+        />
+        <div>
+          <SectionHead
+            kicker="Rénovation"
+            title="Votre nouvelle salle de bain en 10 jours"
+            intro="Un seul interlocuteur, de la dépose au dernier joint : plomberie, carrelage, électricité et meubles."
+          />
+          <ul className="mt-4 space-y-2">
+            {[
+              "Visite et plan 3D offerts",
+              "Devis détaillé poste par poste",
+              "Chantier protégé et nettoyé chaque soir",
+              "Aides MaPrimeAdapt' pour les douches PMR",
+            ].map((l) => (
+              <li key={l} className="flex items-center gap-2 text-[11.5px] text-nuit/75">
+                <span className="grid size-4.5 shrink-0 place-items-center rounded-full bg-(--p) text-(--op)">
+                  <Check className="size-3" />
+                </span>
+                {l}
+              </li>
+            ))}
+          </ul>
+          <Btn to="sdb" tone="dark" className="mt-5">
+            Composer mon projet <ArrowRight className="size-3.5" />
           </Btn>
         </div>
-        <Card className="shadow-[0_20px_40px_-16px_rgb(3_105_161/0.35)]">
-          <p className="mb-3 flex items-center gap-1.5 text-[13px] font-bold text-(--d)">
-            <Droplets className="size-4 text-(--p)" /> Demande de dépannage
-          </p>
-          <UrgentForm compact />
-        </Card>
-      </div>
-      <div className="grid gap-3 px-4 py-4 @min-[600px]:grid-cols-3 @min-[600px]:px-8">
-        {[
-          { I: Droplets, t: "Dépannage", d: "Fuites, canalisations", to: "depannage" },
-          { I: Bath, t: "Salle de bain", d: "Rénovation complète", to: "sdb" },
-          { I: Thermometer, t: "Chauffe-eau", d: "Pose et entretien", to: "depannage" },
-        ].map(({ I, t, d, to }) => (
-          <Btn
-            key={t}
-            to={to}
-            tone="light"
-            className="justify-start gap-3 rounded-xl p-3 text-left ring-nuit/8"
-          >
-            <span className="grid size-9 place-items-center rounded-lg bg-(--s) text-(--p)">
-              <I className="size-4.5" />
-            </span>
-            <span>
-              <span className="block text-[12px] font-bold text-nuit">{t}</span>
-              <span className="block text-[10px] font-normal text-nuit/55">{d}</span>
-            </span>
-          </Btn>
-        ))}
-      </div>
+      </Section>
+
+      {/* Chiffres */}
+      <Section className="bg-(--d)">
+        <Stats
+          light
+          items={[
+            { v: "15 ans", l: "d'expérience à Thionville" },
+            { v: "2 400+", l: "interventions réalisées" },
+            { v: "1 h 10", l: "délai moyen en urgence" },
+            { v: "4,9/5", l: "note moyenne Google" },
+          ]}
+        />
+      </Section>
+
+      {/* Avis */}
+      <Section>
+        <SectionHead kicker="Avis clients" title="Ils nous ont fait confiance" className="mb-5" />
+        <Reviews reviews={homeReviews} count={132} />
+      </Section>
+
+      {/* Zone + FAQ */}
+      <Section className="grid gap-6 bg-(--s) @min-[600px]:grid-cols-2">
+        <div>
+          <SectionHead
+            kicker="Zone d'intervention"
+            title="Thionville et 30 km autour"
+            intro="Nos camionnettes sont équipées pour réparer dès le premier passage dans 9 cas sur 10."
+          />
+          <ZoneMap
+            className="mt-4 h-44"
+            towns={[
+              project.city,
+              "Yutz",
+              "Hayange",
+              "Florange",
+              "Hettange",
+              "Uckange",
+              "Fameck",
+              "Cattenom",
+            ]}
+          />
+        </div>
+        <div>
+          <SectionHead kicker="Questions fréquentes" title="Bon à savoir" />
+          <Faq
+            className="mt-4"
+            items={[
+              {
+                q: "Combien coûte un déplacement en urgence ?",
+                a: "Le déplacement est de 49 € en journée et de 89 € le soir et le week-end. Le prix de la réparation est toujours annoncé avant de commencer.",
+              },
+              {
+                q: "Intervenez-vous le dimanche ?",
+                a: "Oui, une astreinte tourne 7 jours sur 7, de 7 h à 22 h.",
+              },
+              {
+                q: "Mon assurance peut-elle prendre en charge la fuite ?",
+                a: "Souvent, oui. On vous remet un rapport de recherche de fuite avec photos pour votre assureur.",
+              },
+              {
+                q: "Proposez-vous le paiement en plusieurs fois ?",
+                a: "Pour les rénovations, le règlement se fait en 3 fois : à la commande, au démarrage et à la réception.",
+              },
+            ]}
+          />
+        </div>
+      </Section>
+
+      <ArticlesSection />
+
+      <Section className="px-0 @min-[600px]:px-0">
+        <CtaBand
+          title="Une fuite, une panne ? On arrive."
+          text="Décrivez votre problème, on vous rappelle dans les 15 minutes."
+          cta={{ label: "Demander un dépannage", to: "urgence" }}
+        />
+      </Section>
       <MiniFooter />
     </>
   );
@@ -325,7 +583,7 @@ function Avis() {
   const [mine, setMine] = useState(0);
   const shown = reviews.filter((r) => filter === "Tous" || r.s === Number(filter[0]));
   return (
-    <SubPage eyebrow="Avis clients (exemples)" title="Ils nous ont fait confiance">
+    <SubPage eyebrow="Avis clients" title="Ils nous ont fait confiance">
       <div className="grid gap-4 @min-[600px]:grid-cols-[1.3fr_1fr]">
         <div>
           <Choice
@@ -394,7 +652,7 @@ function Urgence() {
         <div className="rounded-2xl bg-(--d) p-5 text-white">
           <Phone className="size-6 text-(--a)" />
           <p className="mt-3 text-[11px] text-white/60">Ligne d&apos;urgence</p>
-          <p className="font-display text-[24px] font-bold">03 82 XX XX XX</p>
+          <p className="font-display text-[24px] font-bold">{info.phone}</p>
           <ul className="mt-4 space-y-1.5 text-[11px] text-white/80">
             <li>• Thionville et 30 km autour</li>
             <li>• Devis annoncé avant intervention</li>
@@ -414,6 +672,8 @@ export function PlombierSite(props: SiteProps) {
     <MiniSite
       {...props}
       icon={Wrench}
+      info={info}
+      navStyle="underline"
       cta={{ label: "Urgence 7j/7", page: "urgence" }}
       pages={[
         { id: "home", label: "Accueil", path: "/", render: () => <Home /> },

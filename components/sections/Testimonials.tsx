@@ -5,15 +5,20 @@ import { AnimatePresence, useReducedMotion } from "motion/react";
 import * as m from "motion/react-m";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { testimonials } from "@/content/testimonials";
-import { site } from "@/content/site";
 import { sectionsCopy } from "@/content/home";
 import { cn } from "@/lib/utils";
+import { isFilled } from "@/lib/placeholders";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PlaceholderBadge } from "@/components/ui/Badge";
 
-/** Carrousel de témoignages : flèches, points, défilement auto en pause au survol/focus. */
+/** Masquée tant qu'aucun avis réel n'est renseigné (les exemples sont filtrés dans content/testimonials.ts). */
 export function Testimonials() {
+  return testimonials.length > 0 ? <Carousel /> : null;
+}
+
+/** Carrousel de témoignages : flèches, points, défilement auto en pause au survol/focus. */
+function Carousel() {
   const [[index, direction], setState] = useState<[number, number]>([0, 1]);
   const [paused, setPaused] = useState(false);
   const reduce = useReducedMotion();
@@ -78,10 +83,10 @@ export function Testimonials() {
                 <span>
                   <span className="block font-semibold">{t.name}</span>
                   <span className="block text-sm text-ardoise-dark">
-                    {t.trade} · {t.city}
+                    {[t.trade, t.city].filter(isFilled).join(" · ")}
                   </span>
                 </span>
-                {site.showPlaceholderBadges && t.placeholder && (
+                {t.placeholder && (
                   <PlaceholderBadge className="ml-auto text-ardoise-dark" />
                 )}
               </figcaption>

@@ -21,11 +21,11 @@ const geist = Geist({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} · Sites internet, logiciel et IA pour artisans à ${site.city}`,
+    default: `${site.name} · Sites internet, logiciel et IA pour artisans du bâtiment`,
     template: `%s · ${site.name}`,
   },
   description:
-    "Sites internet, logiciel de devis et factures et assistants IA pour les artisans du bâtiment, à Metz et alentours. Plus de clients, moins de coûts, moins de paperasse.",
+    "Sites internet, logiciel de devis et factures et assistants IA pour les artisans du bâtiment. Plus de clients, moins de coûts, moins de paperasse.",
   applicationName: site.name,
   openGraph: { siteName: site.name, locale: "fr_FR", type: "website" },
   formatDetection: { telephone: false },

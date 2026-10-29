@@ -1,21 +1,11 @@
 /**
  * Chiffres clés affichés avec un compteur animé.
- * TODO: remplacer TOUS ces chiffres par vos vraies données avant la mise en ligne.
- * Ce sont des valeurs d'exemple, elles ne correspondent à aucun résultat réel.
+ * Les valeurs sont dans data/stats.json, modifiables depuis Pages CMS (voir EDITION.md).
+ * Les chiffres marqués « Exemple » ne s'affichent que si « Afficher les contenus d'exemple » est coché.
+ * TODO: remplacer TOUS ces chiffres par vos vraies données avant la mise en ligne :
+ * ce sont des valeurs d'exemple, elles ne correspondent à aucun résultat réel.
  */
-export const stats = [
-  {
-    value: 10,
-    suffix: " h",
-    label: "gagnées par mois sur l'administratif",
-    placeholder: true,
-  }, // TODO: vraie donnée
-  { value: 50, suffix: "+", label: "artisans accompagnés", placeholder: true }, // TODO: vraie donnée
-  { value: 2, suffix: " min", label: "pour faire un devis", placeholder: true }, // TODO: vraie donnée
-  {
-    value: 24,
-    suffix: " h",
-    label: "pour vous répondre, maximum",
-    placeholder: true,
-  }, // TODO: vraie donnée
-];
+import data from "./data/stats.json";
+import { visibleItems } from "./site";
+
+export const stats = visibleItems(data.stats);

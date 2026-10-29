@@ -1,6 +1,6 @@
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { Clock, Mail, Phone } from "lucide-react";
 import { contactPage } from "@/content/pages";
-import { mailHref, site, telHref } from "@/content/site";
+import { hasPhone, mailHref, site, telHref } from "@/content/site";
 import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -10,13 +10,8 @@ import { ContactForm } from "@/components/forms/ContactForm";
 export const metadata = pageMetadata({ ...contactPage.seo, path: "/contact" });
 
 const infos = [
-  { Icon: Phone, label: "Téléphone", value: site.phone, href: telHref },
+  ...(hasPhone ? [{ Icon: Phone, label: "Téléphone", value: site.phone, href: telHref }] : []),
   { Icon: Mail, label: "E-mail", value: site.email, href: mailHref },
-  {
-    Icon: MapPin,
-    label: "Zone d'intervention",
-    value: `${site.city} · ${site.zone}`,
-  },
   { Icon: Clock, label: "Horaires", value: site.hours },
 ];
 
@@ -25,14 +20,16 @@ export default function ContactPage() {
     <>
       <PageHero {...contactPage.hero} breadcrumb="Contact" compact>
         {/* Appel direct, mis en avant sur mobile */}
-        <Button
-          href={telHref}
-          size="lg"
-          icon={<Phone aria-hidden="true" className="size-4" />}
-          className="sm:hidden"
-        >
-          Appeler maintenant
-        </Button>
+        {hasPhone && (
+          <Button
+            href={telHref}
+            size="lg"
+            icon={<Phone aria-hidden="true" className="size-4" />}
+            className="sm:hidden"
+          >
+            Appeler maintenant
+          </Button>
+        )}
       </PageHero>
       <section className="bg-sable py-16 sm:py-24">
         <Container className="grid gap-10 lg:grid-cols-[1.6fr_1fr]">
@@ -61,15 +58,17 @@ export default function ContactPage() {
                   </li>
                 ))}
               </ul>
-              <Button
-                href={telHref}
-                variant="light"
-                size="lg"
-                className="mt-8 w-full"
-                icon={<Phone aria-hidden="true" className="size-4" />}
-              >
-                Appeler {site.phone}
-              </Button>
+              {hasPhone && (
+                <Button
+                  href={telHref}
+                  variant="light"
+                  size="lg"
+                  className="mt-8 w-full"
+                  icon={<Phone aria-hidden="true" className="size-4" />}
+                >
+                  Appeler {site.phone}
+                </Button>
+              )}
             </div>
             <div className="rounded-3xl bg-white p-7 shadow-soft ring-1 ring-nuit/5">
               <h2 className="font-bold">Et ensuite ?</h2>
