@@ -1,0 +1,28 @@
+{
+  "stats": [
+    {
+      "value": 10,
+      "suffix": " h",
+      "label": "gagnées par mois sur l'administratif",
+      "placeholder": true
+    },
+    {
+      "value": 50,
+      "suffix": "+",
+      "label": "artisans accompagnés",
+      "placeholder": true
+    },
+    {
+      "value": 2,
+      "suffix": " min",
+      "label": "pour faire un devis",
+      "placeholder": true
+    },
+    {
+      "value": 24,
+      "suffix": " h",
+      "label": "pour vous répondre, maximum",
+      "placeholder": true
+    }
+  ]
+}

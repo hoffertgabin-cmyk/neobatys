@@ -1,0 +1,1266 @@
+# Configuration de Pages CMS (https://app.pagescms.org) : l'interface qui permet
+# de modifier les textes du site sans toucher au code. Chaque bloc ci-dessous
+# correspond à un fichier de content/data/. Mode d'emploi : EDITION.md.
+
+
+media:
+  input: public/images
+  output: /images
+  extensions:
+  - png
+  - jpg
+  - jpeg
+  - webp
+  - svg
+content:
+- name: site
+  label: Infos de l'entreprise
+  type: file
+  path: content/data/site.json
+  format: json
+  fields:
+  - name: site
+    label: Entreprise
+    type: object
+    fields:
+    - name: name
+      label: Nom
+      type: string
+    - name: tagline
+      label: Slogan
+      type: string
+    - name: city
+      label: Ville
+      type: string
+    - name: region
+      label: Région
+      type: string
+    - name: phone
+      label: Téléphone (affiché)
+      type: string
+      description: Ex. 06 12 34 56 78
+    - name: phoneHref
+      label: Téléphone (format international)
+      type: string
+      description: Ex. +33612345678. Tant qu'il commence par [, les boutons « Appeler » renvoient vers la page contact.
+    - name: email
+      label: E-mail
+      type: string
+    - name: zone
+      label: Zone d'intervention
+      type: string
+      description: Ex. Metz, Thionville et toute la Moselle
+    - name: siret
+      label: SIRET
+      type: string
+    - name: address
+      label: Adresse
+      type: object
+      fields:
+      - name: street
+        label: Rue
+        type: string
+      - name: postalCode
+        label: Code postal
+        type: string
+      - name: city
+        label: Ville
+        type: string
+      - name: country
+        label: Pays (code)
+        type: string
+        readonly: true
+    - name: hours
+      label: Horaires
+      type: string
+    - name: socials
+      label: Réseaux sociaux
+      description: Laisser vide pour masquer l'icône.
+      type: object
+      fields:
+      - name: facebook
+        label: Facebook
+        type: string
+      - name: instagram
+        label: Instagram
+        type: string
+      - name: linkedin
+        label: LinkedIn
+        type: string
+    - name: showPlaceholderBadges
+      label: Afficher les badges « Exemple »
+      description: À décocher une fois les vrais avis, réalisations et chiffres en place.
+      type: boolean
+- name: home
+  label: Page d'accueil
+  type: file
+  path: content/data/home.json
+  format: json
+  fields:
+  - name: hero
+    label: Haut de page
+    type: object
+    fields:
+    - name: eyebrow
+      label: Surtitre
+      type: string
+    - name: titleLines
+      label: Lignes du titre
+      type: string
+      list: true
+    - name: highlight
+      label: Ligne en orange
+      type: string
+      description: Doit être identique à une des lignes du titre.
+    - name: subtitle
+      label: Sous-titre
+      type: text
+    - name: primaryCta
+      label: Bouton principal
+      type: object
+      fields:
+      - name: label
+        label: Texte
+        type: string
+      - name: href
+        label: Lien
+        type: string
+    - name: secondaryCta
+      label: Bouton secondaire
+      type: object
+      fields:
+      - name: label
+        label: Texte
+        type: string
+      - name: href
+        label: Lien
+        type: string
+    - name: reassurance
+      label: Points de réassurance
+      type: string
+      list: true
+    - name: modelsLabel
+      label: Texte au-dessus des modèles d'IA
+      type: string
+    - name: models
+      label: Modèles d'IA
+      type: string
+      list: true
+  - name: painPoints
+    label: Avant / après
+    type: object
+    fields:
+    - name: eyebrow
+      label: Surtitre
+      type: string
+    - name: title
+      label: Titre
+      type: string
+    - name: withoutLabel
+      label: Titre colonne « sans »
+      type: string
+    - name: withLabel
+      label: Titre colonne « avec »
+      type: string
+    - name: items
+      label: Lignes
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{problem}'
+      fields:
+      - name: problem
+        label: Problème
+        type: text
+      - name: solution
+        label: Solution
+        type: text
+    - name: proofs
+      label: Preuves
+      type: object
+      list: true
+      fields:
+      - name: title
+        label: Titre
+        type: string
+      - name: text
+        label: Texte
+        type: string
+  - name: results
+    label: Résultats
+    type: object
+    fields:
+    - name: eyebrow
+      label: Surtitre
+      type: string
+    - name: title
+      label: Titre
+      type: string
+    - name: subtitle
+      label: Sous-titre
+      type: text
+    - name: cards
+      label: Cartes
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{title}'
+      fields:
+      - name: id
+        label: Identifiant (ne pas modifier)
+        type: string
+        readonly: true
+      - name: title
+        label: Titre
+        type: string
+      - name: text
+        label: Texte
+        type: text
+  - name: ai
+    label: Intelligence artificielle
+    type: object
+    fields:
+    - name: eyebrow
+      label: Surtitre
+      type: string
+    - name: title
+      label: Titre
+      type: string
+    - name: subtitle
+      label: Sous-titre
+      type: text
+    - name: useCases
+      label: Cas d'usage
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{title}'
+      fields:
+      - name: icon
+        label: Icône
+        type: select
+        options:
+          values:
+          - bell
+          - chart
+          - download
+          - fileText
+          - handshake
+          - images
+          - mapPin
+          - message
+          - mic
+          - pencil
+          - phone
+          - receipt
+          - repeat
+          - rocket
+          - scan
+          - shield
+          - smartphone
+          - star
+          - store
+          - zap
+      - name: title
+        label: Titre
+        type: string
+      - name: text
+        label: Texte
+        type: text
+  - name: process
+    label: Comment ça marche
+    type: object
+    fields:
+    - name: eyebrow
+      label: Surtitre
+      type: string
+    - name: title
+      label: Titre
+      type: string
+    - name: subtitle
+      label: Sous-titre
+      type: text
+    - name: steps
+      label: Étapes
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{title}'
+      fields:
+      - name: icon
+        label: Icône
+        type: select
+        options:
+          values:
+          - bell
+          - chart
+          - download
+          - fileText
+          - handshake
+          - images
+          - mapPin
+          - message
+          - mic
+          - pencil
+          - phone
+          - receipt
+          - repeat
+          - rocket
+          - scan
+          - shield
+          - smartphone
+          - star
+          - store
+          - zap
+      - name: title
+        label: Titre
+        type: string
+      - name: duration
+        label: Durée
+        type: string
+      - name: text
+        label: Texte
+        type: text
+  - name: finalCta
+    label: Appel à l'action final
+    type: object
+    fields:
+    - name: title
+      label: Titre
+      type: string
+    - name: subtitle
+      label: Sous-titre
+      type: text
+    - name: primaryCta
+      label: Bouton principal
+      type: object
+      fields:
+      - name: label
+        label: Texte
+        type: string
+      - name: href
+        label: Lien
+        type: string
+    - name: secondaryCta
+      label: Bouton secondaire
+      type: object
+      fields:
+      - name: label
+        label: Texte
+        type: string
+      - name: href
+        label: Lien
+        type: string
+      description: « tel » = bouton d'appel vers le numéro de l'entreprise.
+  - name: sectionsCopy
+    label: Titres des autres sections
+    type: object
+    fields:
+    - name: marquee
+      label: Bandeau des métiers
+      type: string
+    - name: stats
+      label: Chiffres clés
+      type: object
+      fields:
+      - name: eyebrow
+        label: Surtitre
+        type: string
+      - name: title
+        label: Titre
+        type: string
+    - name: projects
+      label: Réalisations
+      type: object
+      fields:
+      - name: eyebrow
+        label: Surtitre
+        type: string
+      - name: title
+        label: Titre
+        type: string
+      - name: subtitle
+        label: Sous-titre
+        type: text
+    - name: testimonials
+      label: Témoignages
+      type: object
+      fields:
+      - name: eyebrow
+        label: Surtitre
+        type: string
+      - name: title
+        label: Titre
+        type: string
+    - name: pricing
+      label: Tarifs
+      type: object
+      fields:
+      - name: eyebrow
+        label: Surtitre
+        type: string
+      - name: title
+        label: Titre
+        type: string
+      - name: subtitle
+        label: Sous-titre
+        type: text
+    - name: faq
+      label: FAQ
+      type: object
+      fields:
+      - name: eyebrow
+        label: Surtitre
+        type: string
+      - name: title
+        label: Titre
+        type: string
+- name: offers
+  label: Offres (site, logiciel, pack)
+  type: file
+  path: content/data/offers.json
+  format: json
+  fields:
+  - name: websiteOffer
+    label: Offre sites internet
+    type: object
+    fields:
+    - name: id
+      label: Ancre (ne pas modifier)
+      type: string
+      readonly: true
+    - name: eyebrow
+      label: Surtitre
+      type: string
+    - name: title
+      label: Titre
+      type: string
+    - name: subtitle
+      label: Sous-titre
+      type: text
+    - name: benefits
+      label: Bénéfices
+      type: string
+      list: true
+    - name: features
+      label: Fonctionnalités
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{title}'
+      fields:
+      - name: icon
+        label: Icône
+        type: select
+        options:
+          values:
+          - bell
+          - chart
+          - download
+          - fileText
+          - handshake
+          - images
+          - mapPin
+          - message
+          - mic
+          - pencil
+          - phone
+          - receipt
+          - repeat
+          - rocket
+          - scan
+          - shield
+          - smartphone
+          - star
+          - store
+          - zap
+      - name: title
+        label: Titre
+        type: string
+      - name: text
+        label: Texte
+        type: text
+    - name: cta
+      label: Bouton
+      type: object
+      fields:
+      - name: label
+        label: Texte
+        type: string
+      - name: href
+        label: Lien
+        type: string
+  - name: softwareOffer
+    label: Offre logiciel
+    type: object
+    fields:
+    - name: id
+      label: Ancre (ne pas modifier)
+      type: string
+      readonly: true
+    - name: eyebrow
+      label: Surtitre
+      type: string
+    - name: title
+      label: Titre
+      type: string
+    - name: subtitle
+      label: Sous-titre
+      type: text
+    - name: benefits
+      label: Bénéfices
+      type: string
+      list: true
+    - name: features
+      label: Fonctionnalités
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{title}'
+      fields:
+      - name: icon
+        label: Icône
+        type: select
+        options:
+          values:
+          - bell
+          - chart
+          - download
+          - fileText
+          - handshake
+          - images
+          - mapPin
+          - message
+          - mic
+          - pencil
+          - phone
+          - receipt
+          - repeat
+          - rocket
+          - scan
+          - shield
+          - smartphone
+          - star
+          - store
+          - zap
+      - name: title
+        label: Titre
+        type: string
+      - name: text
+        label: Texte
+        type: text
+    - name: cta
+      label: Bouton
+      type: object
+      fields:
+      - name: label
+        label: Texte
+        type: string
+      - name: href
+        label: Lien
+        type: string
+  - name: comboPack
+    label: Pack site + logiciel
+    type: object
+    fields:
+    - name: id
+      label: Ancre (ne pas modifier)
+      type: string
+      readonly: true
+    - name: eyebrow
+      label: Surtitre
+      type: string
+    - name: title
+      label: Titre
+      type: string
+    - name: subtitle
+      label: Sous-titre
+      type: text
+    - name: points
+      label: Points
+      type: string
+      list: true
+    - name: badge
+      label: Badge
+      type: string
+    - name: cta
+      label: Bouton
+      type: object
+      fields:
+      - name: label
+        label: Texte
+        type: string
+      - name: href
+        label: Lien
+        type: string
+- name: pricing
+  label: Tarifs
+  type: file
+  path: content/data/pricing.json
+  format: json
+  fields:
+  - name: pricing
+    label: Tarifs
+    type: object
+    fields:
+    - name: yearlyDiscountLabel
+      label: Texte de la remise annuelle
+      type: string
+    - name: note
+      label: Note sous les tarifs
+      type: string
+    - name: plans
+      label: Formules
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{name}'
+      fields:
+      - name: id
+        label: Identifiant (ne pas modifier)
+        type: string
+        readonly: true
+      - name: name
+        label: Nom
+        type: string
+      - name: description
+        label: Description
+        type: string
+      - name: setup
+        label: Frais de création
+        type: string
+        description: Ex. 990 €
+      - name: setupLabel
+        label: Texte après les frais
+        type: string
+      - name: monthly
+        label: Prix mensuel (€ HT)
+        type: number
+      - name: yearly
+        label: Prix mensuel en paiement annuel (€ HT)
+        type: number
+      - name: unit
+        label: Unité
+        type: string
+      - name: unitSub
+        label: Texte sous le prix
+        type: string
+      - name: features
+        label: Inclus
+        type: string
+        list: true
+      - name: cta
+        label: Bouton
+        type: object
+        fields:
+        - name: label
+          label: Texte
+          type: string
+        - name: href
+          label: Lien
+          type: string
+      - name: featured
+        label: Mise en avant
+        type: boolean
+      - name: badge
+        label: Badge (formule mise en avant)
+        type: string
+- name: projects
+  label: Réalisations
+  type: file
+  path: content/data/projects.json
+  format: json
+  fields:
+  - name: projects
+    label: Réalisations
+    type: object
+    list:
+      collapsible:
+        collapsed: true
+        summary: '{title}'
+    fields:
+    - name: title
+      label: Titre
+      type: string
+    - name: trade
+      label: Métier
+      type: string
+    - name: city
+      label: Ville
+      type: string
+    - name: description
+      label: Description
+      type: text
+    - name: tags
+      label: Étiquettes
+      type: string
+      list: true
+    - name: image
+      label: Capture d'écran
+      description: Facultatif. Sans image, une maquette dessinée aux couleurs ci-dessous est affichée.
+      type: image
+    - name: mockup
+      label: Maquette
+      type: select
+      options:
+        values:
+        - plombier
+        - electricien
+        - macon
+        - menuisier
+        - couvreur
+        - peintre
+        - chauffagiste
+        - carreleur
+        - charpentier
+    - name: brand
+      label: Nom affiché dans la maquette
+      type: string
+    - name: domain
+      label: Adresse affichée dans la maquette
+      type: string
+    - name: theme
+      label: Couleurs
+      description: 'Codes couleur, ex. #0369a1'
+      type: object
+      fields:
+      - name: primary
+        label: Principale
+        type: string
+      - name: onPrimary
+        label: Texte sur la principale
+        type: string
+      - name: dark
+        label: Fond sombre
+        type: string
+      - name: soft
+        label: Fond clair
+        type: string
+      - name: accent
+        label: Appoint
+        type: string
+    - name: placeholder
+      label: Exemple (affiche le badge « Exemple »)
+      type: boolean
+- name: testimonials
+  label: Témoignages
+  type: file
+  path: content/data/testimonials.json
+  format: json
+  fields:
+  - name: testimonials
+    label: Témoignages
+    type: object
+    list:
+      collapsible:
+        collapsed: true
+        summary: '{name} · {trade}'
+    fields:
+    - name: quote
+      label: Avis
+      type: text
+    - name: name
+      label: Nom
+      type: string
+    - name: trade
+      label: Métier
+      type: string
+    - name: city
+      label: Ville
+      type: string
+    - name: placeholder
+      label: Exemple (affiche le badge « Exemple »)
+      type: boolean
+- name: stats
+  label: Chiffres clés
+  type: file
+  path: content/data/stats.json
+  format: json
+  fields:
+  - name: stats
+    label: Chiffres
+    type: object
+    list:
+      collapsible:
+        collapsed: true
+        summary: '{value}{suffix} {label}'
+    fields:
+    - name: value
+      label: Valeur
+      type: number
+    - name: suffix
+      label: Suffixe
+      type: string
+      description: Ex. « h », « + », « min » (avec l'espace si besoin)
+    - name: label
+      label: Texte
+      type: string
+    - name: placeholder
+      label: Exemple (affiche le badge « Exemple »)
+      type: boolean
+- name: faq
+  label: Questions fréquentes (accueil)
+  type: file
+  path: content/data/faq.json
+  format: json
+  fields:
+  - name: faq
+    label: Questions
+    type: object
+    list:
+      collapsible:
+        collapsed: true
+        summary: '{question}'
+    fields:
+    - name: question
+      label: Question
+      type: string
+    - name: answer
+      label: Réponse
+      type: text
+- name: trades
+  label: Métiers
+  type: file
+  path: content/data/trades.json
+  format: json
+  fields:
+  - name: trades
+    label: Métiers (bandeau et formulaire)
+    type: string
+    list: true
+  - name: otherTrade
+    label: Choix « autre » du formulaire
+    type: string
+- name: pages
+  label: Pages Sites, Logiciel et Contact
+  type: file
+  path: content/data/pages.json
+  format: json
+  fields:
+  - name: sitesPage
+    label: Page Sites internet
+    type: object
+    fields:
+    - name: seo
+      label: Référencement Google
+      type: object
+      fields:
+      - name: title
+        label: Titre de l'onglet
+        type: string
+      - name: description
+        label: Description Google
+        type: text
+    - name: hero
+      label: Haut de page
+      type: object
+      fields:
+      - name: eyebrow
+        label: Surtitre
+        type: string
+      - name: title
+        label: Titre
+        type: string
+      - name: subtitle
+        label: Sous-titre
+        type: text
+    - name: included
+      label: Ce qui est inclus
+      type: object
+      fields:
+      - name: title
+        label: Titre
+        type: string
+      - name: groups
+        label: Colonnes
+        type: object
+        list: true
+        fields:
+        - name: title
+          label: Titre
+          type: string
+        - name: items
+          label: Points
+          type: string
+          list: true
+    - name: faq
+      label: Questions
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{question}'
+      fields:
+      - name: question
+        label: Question
+        type: string
+      - name: answer
+        label: Réponse
+        type: text
+  - name: logicielPage
+    label: Page Logiciel
+    type: object
+    fields:
+    - name: seo
+      label: Référencement Google
+      type: object
+      fields:
+      - name: title
+        label: Titre de l'onglet
+        type: string
+      - name: description
+        label: Description Google
+        type: text
+    - name: hero
+      label: Haut de page
+      type: object
+      fields:
+      - name: eyebrow
+        label: Surtitre
+        type: string
+      - name: title
+        label: Titre
+        type: string
+      - name: subtitle
+        label: Sous-titre
+        type: text
+    - name: included
+      label: Ce qui est inclus
+      type: object
+      fields:
+      - name: title
+        label: Titre
+        type: string
+      - name: groups
+        label: Colonnes
+        type: object
+        list: true
+        fields:
+        - name: title
+          label: Titre
+          type: string
+        - name: items
+          label: Points
+          type: string
+          list: true
+    - name: faq
+      label: Questions
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{question}'
+      fields:
+      - name: question
+        label: Question
+        type: string
+      - name: answer
+        label: Réponse
+        type: text
+  - name: contactPage
+    label: Page Contact
+    type: object
+    fields:
+    - name: seo
+      label: Référencement Google
+      type: object
+      fields:
+      - name: title
+        label: Titre de l'onglet
+        type: string
+      - name: description
+        label: Description Google
+        type: text
+    - name: hero
+      label: Haut de page
+      type: object
+      fields:
+      - name: eyebrow
+        label: Surtitre
+        type: string
+      - name: title
+        label: Titre
+        type: string
+      - name: subtitle
+        label: Sous-titre
+        type: text
+    - name: success
+      label: Message après envoi du formulaire
+      type: object
+      fields:
+      - name: title
+        label: Titre
+        type: string
+      - name: text
+        label: Texte
+        type: text
+- name: software
+  label: Page Logiciel (démo et semaine type)
+  type: file
+  path: content/data/software.json
+  format: json
+  fields:
+  - name: softwareTour
+    label: Démo interactive
+    type: object
+    fields:
+    - name: eyebrow
+      label: Surtitre
+      type: string
+    - name: title
+      label: Titre
+      type: string
+    - name: subtitle
+      label: Sous-titre
+      type: text
+    - name: example
+      label: Exemple de chantier
+      type: string
+    - name: steps
+      label: Étapes
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{label}'
+        min: 6
+        max: 6
+      fields:
+      - name: id
+        label: Identifiant (ne pas modifier)
+        type: string
+        readonly: true
+      - name: label
+        label: Onglet
+        type: string
+      - name: title
+        label: Titre
+        type: string
+      - name: you
+        label: Ce que vous faites
+        type: text
+      - name: software
+        label: Ce que fait le logiciel
+        type: text
+      - name: gain
+        label: Gain
+        type: string
+  - name: softwareWeek
+    label: Semaine sans / avec le logiciel
+    type: object
+    fields:
+    - name: eyebrow
+      label: Surtitre
+      type: string
+    - name: title
+      label: Titre
+      type: string
+    - name: subtitle
+      label: Sous-titre
+      type: text
+    - name: note
+      label: Note
+      type: string
+    - name: without
+      label: Sans logiciel
+      type: object
+      fields:
+      - name: title
+        label: Titre
+        type: string
+      - name: items
+        label: Tâches
+        type: object
+        list: true
+        fields:
+        - name: task
+          label: Tâche
+          type: string
+        - name: time
+          label: Temps
+          type: string
+      - name: total
+        label: Total
+        type: string
+    - name: with
+      label: Avec le logiciel
+      type: object
+      fields:
+      - name: title
+        label: Titre
+        type: string
+      - name: items
+        label: Tâches
+        type: object
+        list: true
+        fields:
+        - name: task
+          label: Tâche
+          type: string
+        - name: time
+          label: Temps
+          type: string
+      - name: total
+        label: Total
+        type: string
+  - name: softwareOnboarding
+    label: Mise en place
+    type: object
+    fields:
+    - name: eyebrow
+      label: Surtitre
+      type: string
+    - name: title
+      label: Titre
+      type: string
+    - name: subtitle
+      label: Sous-titre
+      type: text
+    - name: steps
+      label: Étapes
+      type: object
+      list: true
+      fields:
+      - name: title
+        label: Titre
+        type: string
+      - name: text
+        label: Texte
+        type: text
+- name: navigation
+  label: Menus
+  type: file
+  path: content/data/navigation.json
+  format: json
+  fields:
+  - name: mainNav
+    label: Menu principal
+    type: object
+    list: true
+    fields:
+    - name: label
+      label: Texte
+      type: string
+    - name: href
+      label: Lien
+      type: string
+  - name: footerNav
+    label: Pied de page
+    type: object
+    fields:
+    - name: offres
+      label: Colonne « Nos offres »
+      type: object
+      list: true
+      fields:
+      - name: label
+        label: Texte
+        type: string
+      - name: href
+        label: Lien
+        type: string
+    - name: entreprise
+      label: Colonne « NEOBATYS »
+      type: object
+      list: true
+      fields:
+      - name: label
+        label: Texte
+        type: string
+      - name: href
+        label: Lien
+        type: string
+    - name: legal
+      label: Liens légaux
+      type: object
+      list: true
+      fields:
+      - name: label
+        label: Texte
+        type: string
+      - name: href
+        label: Lien
+        type: string
+- name: legal
+  label: Mentions légales et confidentialité
+  type: file
+  path: content/data/legal.json
+  format: json
+  fields:
+  - name: legalInfo
+    label: Informations légales
+    description: Nom, adresse, SIRET, téléphone et e-mail viennent de « Infos de l'entreprise ».
+    type: object
+    fields:
+    - name: legalForm
+      label: Forme juridique
+      type: string
+    - name: capital
+      label: Capital social
+      type: string
+    - name: rcs
+      label: RCS / RNE
+      type: string
+    - name: vat
+      label: N° TVA
+      type: string
+    - name: director
+      label: Directeur de la publication
+      type: string
+    - name: host
+      label: Hébergeur
+      type: object
+      fields:
+      - name: name
+        label: Nom
+        type: string
+      - name: address
+        label: Adresse
+        type: string
+      - name: website
+        label: Site
+        type: string
+    - name: lastUpdate
+      label: Date de mise à jour
+      type: string
+  - name: mentionsLegales
+    label: Mentions légales
+    description: 'Mots remplacés automatiquement : {entreprise}, {forme_juridique}, {capital}, {adresse}, {siret}, {rcs},
+      {tva}, {telephone}, {email}, {directeur}, {hebergeur}, {hebergeur_adresse}, {hebergeur_site}.'
+    type: object
+    list:
+      collapsible:
+        collapsed: true
+        summary: '{title}'
+    fields:
+    - name: title
+      label: Titre
+      type: string
+    - name: paragraphs
+      label: Paragraphes
+      type: text
+      list: true
+  - name: politiqueConfidentialite
+    label: Politique de confidentialité
+    description: 'Mots remplacés automatiquement : {entreprise}, {forme_juridique}, {capital}, {adresse}, {siret}, {rcs},
+      {tva}, {telephone}, {email}, {directeur}, {hebergeur}, {hebergeur_adresse}, {hebergeur_site}.'
+    type: object
+    list:
+      collapsible:
+        collapsed: true
+        summary: '{title}'
+    fields:
+    - name: title
+      label: Titre
+      type: string
+    - name: paragraphs
+      label: Paragraphes
+      type: text
+      list: true

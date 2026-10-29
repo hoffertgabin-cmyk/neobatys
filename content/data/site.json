@@ -1,0 +1,26 @@
+{
+  "site": {
+    "name": "NEOBATYS",
+    "tagline": "Sites internet, logiciel de gestion et IA pour artisans du bâtiment",
+    "city": "Metz",
+    "region": "Grand Est",
+    "phone": "[TÉLÉPHONE]",
+    "phoneHref": "[TÉLÉPHONE]",
+    "email": "[EMAIL]",
+    "zone": "[ZONE]",
+    "siret": "[SIRET]",
+    "address": {
+      "street": "[ADRESSE]",
+      "postalCode": "[CODE POSTAL]",
+      "city": "Metz",
+      "country": "FR"
+    },
+    "hours": "Du lundi au vendredi, 8h – 18h",
+    "socials": {
+      "facebook": "",
+      "instagram": "",
+      "linkedin": ""
+    },
+    "showPlaceholderBadges": true
+  }
+}
