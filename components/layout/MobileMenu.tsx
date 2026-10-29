@@ -6,7 +6,7 @@ import { AnimatePresence } from "motion/react";
 import * as m from "motion/react-m";
 import { Phone, X } from "lucide-react";
 import { mainNav } from "@/content/navigation";
-import { site, telHref } from "@/content/site";
+import { hasPhone, site, telHref } from "@/content/site";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "./Logo";
 
@@ -102,14 +102,16 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
               <Button href="/contact" size="lg" arrow onClick={onClose}>
                 Demander un devis
               </Button>
-              <Button
-                href={telHref}
-                size="lg"
-                variant="ghost"
-                icon={<Phone aria-hidden="true" className="size-4" />}
-              >
-                {site.phone}
-              </Button>
+              {hasPhone && (
+                <Button
+                  href={telHref}
+                  size="lg"
+                  variant="ghost"
+                  icon={<Phone aria-hidden="true" className="size-4" />}
+                >
+                  {site.phone}
+                </Button>
+              )}
             </div>
           </nav>
         </m.div>

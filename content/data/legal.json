@@ -18,12 +18,14 @@
     {
       "title": "Éditeur du site",
       "paragraphs": [
-        "Ce site est édité par {entreprise}, {forme_juridique}, au capital de {capital}. {nom_commercial} est un nom commercial de {entreprise}.",
+        "Ce site est édité par {entreprise}, {forme_juridique}. {nom_commercial} est un nom commercial de {entreprise}.",
+        "Capital social : {capital}.",
         "Siège social : {adresse}.",
         "Immatriculée au Registre de commerce et des sociétés de Luxembourg sous le numéro {rcs}.",
         "N° d'identification TVA : {tva}.",
         "Autorisation d'établissement : {autorisation}.",
-        "Téléphone : {telephone} · E-mail : {email}."
+        "Téléphone : {telephone}.",
+        "E-mail : {email}."
       ]
     },
     {
@@ -42,7 +44,7 @@
       "title": "Propriété intellectuelle",
       "paragraphs": [
         "L'ensemble des contenus de ce site (textes, visuels, logo, mise en page) est la propriété de {entreprise}, sauf mention contraire. Toute reproduction sans autorisation écrite est interdite.",
-        "Les visuels de réalisations sont publiés avec l'accord des clients concernés."
+        "Les maquettes de sites présentées comme exemples sont fictives : les noms d'entreprises, adresses et coordonnées qui y figurent sont inventés. Les visuels de réalisations clients sont publiés avec l'accord des clients concernés."
       ]
     },
     {
@@ -62,7 +64,9 @@
     {
       "title": "Responsable du traitement",
       "paragraphs": [
-        "{entreprise} (nom commercial {nom_commercial}), {adresse}, RCS Luxembourg {rcs}. Contact : {email}."
+        "{entreprise} (nom commercial {nom_commercial}). Contact : {email}.",
+        "Siège social : {adresse}.",
+        "RCS Luxembourg : {rcs}."
       ]
     },
     {
@@ -85,7 +89,7 @@
       "paragraphs": [
         "Vos données sont destinées uniquement à {entreprise}. Elles ne sont jamais vendues.",
         "Pour fonctionner, le site fait appel à des prestataires qui agissent comme sous-traitants : {hebergeur} (hébergement du site), Resend (envoi par e-mail des messages du formulaire de contact) et OVH (hébergement de notre boîte mail). Les questions posées à l'assistant IA de la FAQ sont transmises à Anthropic (fournisseur du modèle d'IA Claude) pour générer la réponse.",
-        "[À VÉRIFIER : Vercel, Resend et Anthropic sont des sociétés américaines. Préciser les transferts hors Union européenne et les garanties applicables (clauses contractuelles types ou Data Privacy Framework).]"
+        "Vercel, Resend et Anthropic sont des sociétés établies aux États-Unis : les données qui leur sont transmises peuvent donc être traitées hors de l'Union européenne. [À COMPLÉTER : préciser les garanties applicables (clauses contractuelles types ou Data Privacy Framework).]"
       ]
     },
     {

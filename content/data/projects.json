@@ -1,7 +1,7 @@
 {
   "projects": [
     {
-      "title": "Projet exemple · Plomberie",
+      "title": "Maquette · Plomberie",
       "trade": "Plombier",
       "city": "Thionville",
       "description": "Site vitrine + formulaire de dépannage urgent.",
@@ -19,7 +19,7 @@
       "placeholder": true
     },
     {
-      "title": "Projet exemple · Électricité",
+      "title": "Maquette · Électricité",
       "trade": "Électricien",
       "city": "Montigny-lès-Metz",
       "description": "Site + logiciel de devis relié au formulaire.",
@@ -38,7 +38,7 @@
       "placeholder": true
     },
     {
-      "title": "Projet exemple · Maçonnerie",
+      "title": "Maquette · Maçonnerie",
       "trade": "Maçon",
       "city": "Pont-à-Mousson",
       "description": "Galerie avant / après de rénovations.",
@@ -56,7 +56,7 @@
       "placeholder": true
     },
     {
-      "title": "Projet exemple · Menuiserie",
+      "title": "Maquette · Menuiserie",
       "trade": "Menuisier",
       "city": "Boulay-Moselle",
       "description": "Catalogue de réalisations sur mesure.",
@@ -74,7 +74,7 @@
       "placeholder": true
     },
     {
-      "title": "Projet exemple · Couverture",
+      "title": "Maquette · Couverture",
       "trade": "Couvreur",
       "city": "Hayange",
       "description": "Logiciel de devis et relances automatiques.",
@@ -92,7 +92,7 @@
       "placeholder": true
     },
     {
-      "title": "Projet exemple · Peinture",
+      "title": "Maquette · Peinture",
       "trade": "Peintre",
       "city": "Woippy",
       "description": "Site one-page et fiche Google Business.",
@@ -110,7 +110,7 @@
       "placeholder": true
     },
     {
-      "title": "Projet exemple · Chauffage",
+      "title": "Maquette · Chauffage",
       "trade": "Chauffagiste",
       "city": "Saint-Avold",
       "description": "Prise de rendez-vous d'entretien et rappels annuels.",
@@ -128,7 +128,7 @@
       "placeholder": true
     },
     {
-      "title": "Projet exemple · Carrelage",
+      "title": "Maquette · Carrelage",
       "trade": "Carreleur",
       "city": "Amnéville",
       "description": "Site avec estimation de devis au m².",
@@ -146,7 +146,7 @@
       "placeholder": true
     },
     {
-      "title": "Projet exemple · Charpente",
+      "title": "Maquette · Charpente",
       "trade": "Charpentier",
       "city": "Faulquemont",
       "description": "Site, logiciel et assistant IA qui répond aux demandes.",

@@ -4,7 +4,7 @@ Tout se modifie depuis Pages CMS (voir [EDITION.md](EDITION.md)), ou directement
 
 ## Informations de l'entreprise (`content/data/site.json`)
 
-- [ ] `[TÉLÉPHONE]` (affichage) et `phoneHref` au format `+33612345678` : tant qu'il n'est pas rempli, les boutons « Appeler » renvoient vers `/contact`
+- [ ] `[TÉLÉPHONE]` (affichage) et `phoneHref` au format `+33612345678` : tant qu'il n'est pas rempli, le numéro et les boutons « Appeler » sont masqués
 - [x] E-mail : `contact@neobatys.com` (boîte OVH)
 - [ ] Adresse du siège au Luxembourg : `[ADRESSE DU SIÈGE]`, `[CODE POSTAL]`, `[VILLE]`
 - [ ] Horaires
@@ -16,7 +16,7 @@ Tout se modifie depuis Pages CMS (voir [EDITION.md](EDITION.md)), ou directement
 - [ ] **Chiffres clés** (`content/data/stats.json`) : les 4 valeurs sont fictives
 - [ ] **Réalisations** (`content/data/projects.json`) : 9 projets d'exemple (un par métier, chacun avec sa maquette et ses couleurs dans `theme`), à remplacer par de vrais clients (avec leur accord) et leurs captures d'écran
 - [ ] **Témoignages** (`content/data/testimonials.json`) : 4 avis d'exemple, à remplacer par de vrais avis (avec accord écrit)
-- [ ] Passer `showPlaceholderBadges` à `false` une fois tout remplacé
+- [ ] Pour chaque vrai contenu, décocher « Exemple » : il s'affiche aussitôt. La case « Afficher les contenus d'exemple » (`showSampleContent`) reste décochée sur le site en ligne
 - [ ] « Économisez jusqu'à 20 % » et « Le plus choisi » (`content/data/offers.json`, `content/data/pricing.json`) : à confirmer
 
 ## Tarifs (`content/data/pricing.json`)

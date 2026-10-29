@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Clock, Mail, Phone } from "lucide-react";
 import { legalInfo } from "@/content/legal";
 import { footerNav } from "@/content/navigation";
-import { mailHref, site, telHref } from "@/content/site";
+import { hasPhone, mailHref, site, telHref } from "@/content/site";
 import { FacebookIcon, InstagramIcon, LinkedinIcon } from "@/components/ui/SocialIcons";
 import { Logo } from "./Logo";
 import { CookieSettingsLink } from "./CookieBanner";
@@ -77,12 +77,14 @@ export function Footer() {
         <div>
           <h2 className="text-sm font-semibold tracking-wide text-white uppercase">Contact</h2>
           <ul className="mt-4 space-y-3 text-sm text-ardoise-light">
-            <li>
-              <a href={telHref} className="inline-flex items-center gap-2.5 hover:text-white">
-                <Phone aria-hidden="true" className="size-4 text-chantier" />
-                {site.phone}
-              </a>
-            </li>
+            {hasPhone && (
+              <li>
+                <a href={telHref} className="inline-flex items-center gap-2.5 hover:text-white">
+                  <Phone aria-hidden="true" className="size-4 text-chantier" />
+                  {site.phone}
+                </a>
+              </li>
+            )}
             <li>
               <a href={mailHref} className="inline-flex items-center gap-2.5 hover:text-white">
                 <Mail aria-hidden="true" className="size-4 text-chantier" />

@@ -1,4 +1,4 @@
-import { site } from "@/content/site";
+import { hasPhone, site } from "@/content/site";
 import { faq } from "@/content/faq";
 import { pricing } from "@/content/pricing";
 import { websiteOffer, softwareOffer, comboPack } from "@/content/offers";
@@ -22,7 +22,7 @@ function knowledge() {
 
   return `# Entreprise
 ${site.name} : ${site.tagline}. Horaires : ${site.hours}.
-Contact : formulaire sur la page /contact (rappel sous 24 h ouvrées), téléphone ${site.phone}, e-mail ${site.email}.
+Contact : formulaire sur la page /contact (rappel sous 24 h ouvrées)${hasPhone ? `, téléphone ${site.phone}` : ""}, e-mail ${site.email}.
 
 # Offre sites internet
 ${websiteOffer.subtitle}

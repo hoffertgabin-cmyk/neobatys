@@ -27,8 +27,14 @@ export function Badge({ children, tone = "orange", className }: Props) {
   );
 }
 
-/** Badge signalant un contenu d'exemple à remplacer (désactivable dans content/site.ts). */
-export function PlaceholderBadge({ className }: { className?: string }) {
+/** Badge signalant un contenu d'exemple ou une maquette fictive. */
+export function PlaceholderBadge({
+  className,
+  label = "Exemple",
+}: {
+  className?: string;
+  label?: string;
+}) {
   return (
     <span
       className={cn(
@@ -36,7 +42,7 @@ export function PlaceholderBadge({ className }: { className?: string }) {
         className,
       )}
     >
-      Exemple
+      {label}
     </span>
   );
 }

@@ -185,7 +185,12 @@
     "projects": {
       "eyebrow": "Réalisations",
       "title": "Des sites qui ressemblent à ceux qui les font vivre",
-      "subtitle": "Filtrez par métier pour voir des exemples proches de votre activité."
+      "subtitle": "Filtrez par métier pour voir des exemples proches de votre activité.",
+      "mockups": {
+        "eyebrow": "Exemples de maquettes",
+        "title": "Un site qui ressemble à votre métier",
+        "subtitle": "Filtrez par métier et ouvrez une maquette pour la parcourir. Ce sont des exemples : les entreprises, adresses et numéros affichés sont fictifs."
+      }
     },
     "testimonials": {
       "eyebrow": "Témoignages",

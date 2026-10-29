@@ -50,7 +50,7 @@ Tous les textes sont dans le dossier **`content/data/`** (un fichier JSON par su
 
 Les icônes se choisissent par leur nom (`"phone"`, `"zap"`…) : la liste est dans `components/ui/Icon.tsx`.
 
-**Badges « Exemple »** : tant que `showPlaceholderBadges` vaut `true` dans `content/data/site.json` (case « Afficher les badges « Exemple » » dans Pages CMS), un badge s'affiche sur les chiffres, réalisations et témoignages d'exemple. Passez-le à `false` quand vos vraies données sont en place.
+**Contenus d'exemple** : les avis, chiffres et projets marqués « Exemple » (`placeholder: true`) sont masqués tant que la case « Afficher les contenus d'exemple » (`showSampleContent` dans `content/data/site.json`) est décochée. Les sections avis et chiffres disparaissent alors entièrement ; les 9 maquettes de métier restent visibles, présentées comme des « Exemples de maquettes », jusqu'à l'ajout d'un vrai projet client. Toute valeur entre crochets (`[TÉLÉPHONE]`, `[N° RCS…]`…) est considérée comme vide : la ligne ou le bouton correspondant n'est pas affiché (`lib/placeholders.ts`).
 
 **Images de réalisations** : déposez vos captures dans `public/images/realisations/` et renseignez `image: "/images/realisations/mon-projet.jpg"` dans `content/projects.ts`. Elles sont optimisées automatiquement par `next/image`.
 

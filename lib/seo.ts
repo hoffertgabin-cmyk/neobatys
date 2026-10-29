@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { site } from "@/content/site";
+import { isFilled } from "@/lib/placeholders";
 
 type PageSeo = {
   title: string;
@@ -40,9 +41,8 @@ export function serializeJsonLd(data: unknown) {
   return JSON.stringify(data).replace(/</g, "\\u003c");
 }
 
-/** Valeur encore à remplacer dans content/site.ts, ex. « [TÉLÉPHONE] ». */
-const isPlaceholder = (v: string) => v.includes("[");
-const filled = (v: string) => (isPlaceholder(v) ? undefined : v);
+/** Valeur encore à remplacer dans content/data/site.json, ex. « [TÉLÉPHONE] » : omise. */
+const filled = (v: string) => (isFilled(v) ? v : undefined);
 
 export function localBusinessJsonLd() {
   return {

@@ -32,11 +32,11 @@ content:
     - name: phone
       label: Téléphone (affiché)
       type: string
-      description: Ex. 06 12 34 56 78
+      description: Ex. 06 12 34 56 78. Vide ou entre crochets = masqué sur le site.
     - name: phoneHref
       label: Téléphone (format international)
       type: string
-      description: Ex. +33612345678. Tant qu'il commence par [, les boutons « Appeler » renvoient vers la page contact.
+      description: Ex. +33612345678. Tant que le téléphone est vide ou entre crochets, le numéro et les boutons « Appeler » sont masqués.
     - name: email
       label: E-mail
       type: string
@@ -74,9 +74,9 @@ content:
       - name: linkedin
         label: LinkedIn
         type: string
-    - name: showPlaceholderBadges
-      label: Afficher les badges « Exemple »
-      description: À décocher une fois les vrais avis, réalisations et chiffres en place.
+    - name: showSampleContent
+      label: Afficher les contenus d'exemple
+      description: "Décoché : les avis, chiffres et projets marqués « Exemple » sont masqués (les maquettes restent visibles, présentées comme des exemples). Coché : ils s'affichent avec un badge « Exemple ». À laisser décoché sur le site en ligne."
       type: boolean
 - name: home
   label: Page d'accueil
@@ -373,6 +373,20 @@ content:
       - name: subtitle
         label: Sous-titre
         type: text
+      - name: mockups
+        label: Textes quand seules les maquettes d'exemple sont affichées
+        description: Utilisés tant qu'aucun vrai projet client n'est en ligne.
+        type: object
+        fields:
+        - name: eyebrow
+          label: Surtitre
+          type: string
+        - name: title
+          label: Titre
+          type: string
+        - name: subtitle
+          label: Sous-titre
+          type: text
     - name: testimonials
       label: Témoignages
       type: object
@@ -737,7 +751,8 @@ content:
         label: Petits textes sur fond clair (facultatif)
         type: string
     - name: placeholder
-      label: Exemple (affiche le badge « Exemple »)
+      label: Maquette d'exemple (projet fictif)
+      description: Coché, le projet est présenté comme une maquette d'exemple, pas comme un client. Décochez-le pour un vrai projet client (avec son accord). Dès qu'un vrai projet existe, les maquettes sont masquées tant que « Afficher les contenus d'exemple » est décoché.
       type: boolean
 - name: testimonials
   label: Témoignages
@@ -766,7 +781,8 @@ content:
       label: Ville
       type: string
     - name: placeholder
-      label: Exemple (affiche le badge « Exemple »)
+      label: Exemple (contenu fictif)
+      description: Coché, cet élément est masqué tant que « Afficher les contenus d'exemple » est décoché (Infos de l'entreprise). Décochez-le pour un vrai contenu.
       type: boolean
 - name: stats
   label: Chiffres clés
@@ -793,7 +809,8 @@ content:
       label: Texte
       type: string
     - name: placeholder
-      label: Exemple (affiche le badge « Exemple »)
+      label: Exemple (contenu fictif)
+      description: Coché, cet élément est masqué tant que « Afficher les contenus d'exemple » est décoché (Infos de l'entreprise). Décochez-le pour un vrai contenu.
       type: boolean
 - name: faq
   label: Questions fréquentes (accueil)
