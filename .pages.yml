@@ -57,9 +57,6 @@ content:
         label: Pays (code)
         type: string
         readonly: true
-    - name: hours
-      label: Horaires
-      type: string
     - name: socials
       label: Réseaux sociaux
       description: Laisser vide pour masquer l'icône.

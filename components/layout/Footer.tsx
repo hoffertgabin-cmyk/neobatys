@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Clock, Mail, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { legalInfo } from "@/content/legal";
 import { footerNav } from "@/content/navigation";
 import { hasPhone, mailHref, site, telHref } from "@/content/site";
@@ -90,10 +90,6 @@ export function Footer() {
                 <Mail aria-hidden="true" className="size-4 text-chantier" />
                 {site.email}
               </a>
-            </li>
-            <li className="flex items-center gap-2.5">
-              <Clock aria-hidden="true" className="size-4 text-chantier" />
-              {site.hours}
             </li>
           </ul>
         </div>

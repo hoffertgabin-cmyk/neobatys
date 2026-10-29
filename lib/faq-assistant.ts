@@ -21,7 +21,7 @@ function knowledge() {
     .join("\n\n");
 
   return `# Entreprise
-${site.name} : ${site.tagline}. Horaires : ${site.hours}.
+${site.name} : ${site.tagline}.
 Contact : formulaire sur la page /contact (rappel sous 24 h ouvrées)${hasPhone ? `, téléphone ${site.phone}` : ""}, e-mail ${site.email}.
 
 # Offre sites internet
