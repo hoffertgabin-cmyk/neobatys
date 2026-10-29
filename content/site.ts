@@ -8,7 +8,7 @@ export const site = {
   city: "Metz",
   region: "Grand Est",
   // TODO: remplacer par l'URL définitive (sert au SEO, au sitemap et aux balises Open Graph)
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.neobatys.fr",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.neobatys.com",
   // TODO: remplacer les informations ci-dessous
   phone: "[TÉLÉPHONE]",
   // Format international pour les liens d'appel, ex. "+33612345678"
