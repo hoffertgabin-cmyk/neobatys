@@ -29,26 +29,28 @@ npm run dev                  # http://localhost:3000
 
 ## Modifier les contenus (sans toucher au code)
 
-Tous les textes sont dans le dossier **`content/`** :
+Le plus simple : l'interface **Pages CMS** (https://app.pagescms.org), mode d'emploi dans [EDITION.md](EDITION.md). Plusieurs personnes peuvent l'utiliser en même temps.
 
-| Fichier                   | Contenu                                                                            |
-| ------------------------- | ---------------------------------------------------------------------------------- |
-| `content/site.ts`         | nom, ville, **téléphone, e-mail, zone, SIRET**, adresse, horaires, réseaux sociaux |
-| `content/home.ts`         | hero, avant/après, résultats, cas d'usage IA, étapes, CTA final, titres            |
-| `content/offers.ts`       | offre Sites internet, offre Logiciel, Pack combiné                                 |
-| `content/pricing.ts`      | les 3 formules et leurs prix (mensuel / annuel)                                    |
-| `content/faq.ts`          | questions fréquentes (aussi utilisées pour le SEO)                                 |
-| `content/trades.ts`       | métiers du bandeau défilant et de la liste du formulaire                           |
-| `content/stats.ts`        | chiffres clés **(exemples à remplacer)**                                           |
-| `content/projects.ts`     | réalisations **(exemples à remplacer)**                                            |
-| `content/testimonials.ts` | témoignages **(exemples à remplacer)**                                             |
-| `content/pages.ts`        | textes des pages `/sites-internet`, `/logiciel`, `/contact`                        |
-| `content/legal.ts`        | mentions légales et politique de confidentialité                                   |
-| `content/navigation.ts`   | liens du menu et du pied de page                                                   |
+Tous les textes sont dans le dossier **`content/data/`** (un fichier JSON par sujet, repris par le fichier `content/*.ts` du même nom) :
+
+| Fichier                          | Contenu                                                                            |
+| -------------------------------- | ---------------------------------------------------------------------------------- |
+| `content/data/site.json`         | nom, ville, **téléphone, e-mail, zone, SIRET**, adresse, horaires, réseaux sociaux |
+| `content/data/home.json`         | hero, avant/après, résultats, cas d'usage IA, étapes, CTA final, titres            |
+| `content/data/offers.json`       | offre Sites internet, offre Logiciel, Pack combiné                                 |
+| `content/data/pricing.json`      | les 3 formules et leurs prix (mensuel / annuel)                                    |
+| `content/data/faq.json`          | questions fréquentes (aussi utilisées pour le SEO)                                 |
+| `content/data/trades.json`       | métiers du bandeau défilant et de la liste du formulaire                           |
+| `content/data/stats.json`        | chiffres clés **(exemples à remplacer)**                                           |
+| `content/data/projects.json`     | réalisations **(exemples à remplacer)**                                            |
+| `content/data/testimonials.json` | témoignages **(exemples à remplacer)**                                             |
+| `content/data/pages.json`        | textes des pages `/sites-internet`, `/logiciel`, `/contact`                        |
+| `content/data/legal.json`        | mentions légales et politique de confidentialité                                   |
+| `content/data/navigation.json`   | liens du menu et du pied de page                                                   |
 
 Les icônes se choisissent par leur nom (`"phone"`, `"zap"`…) : la liste est dans `components/ui/Icon.tsx`.
 
-**Badges « Exemple »** : tant que `showPlaceholderBadges` vaut `true` dans `content/site.ts`, un badge s'affiche sur les chiffres, réalisations et témoignages d'exemple. Passez-le à `false` quand vos vraies données sont en place.
+**Badges « Exemple »** : tant que `showPlaceholderBadges` vaut `true` dans `content/data/site.json` (case « Afficher les badges « Exemple » » dans Pages CMS), un badge s'affiche sur les chiffres, réalisations et témoignages d'exemple. Passez-le à `false` quand vos vraies données sont en place.
 
 **Images de réalisations** : déposez vos captures dans `public/images/realisations/` et renseignez `image: "/images/realisations/mon-projet.jpg"` dans `content/projects.ts`. Elles sont optimisées automatiquement par `next/image`.
 

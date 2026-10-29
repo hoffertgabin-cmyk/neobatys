@@ -1,32 +1,6 @@
-export const mainNav = [
-  { label: "Services", href: "/#services" },
-  { label: "IA", href: "/#ia" },
-  { label: "Logiciel", href: "/#logiciel" },
-  { label: "Réalisations", href: "/#realisations" },
-  { label: "Tarifs", href: "/#tarifs" },
-  { label: "FAQ", href: "/#faq" },
-] as const;
+/** Menus du site. Les liens sont dans data/navigation.json, modifiables depuis Pages CMS (voir EDITION.md). */
+import data from "./data/navigation.json";
 
-export const footerNav = {
-  offres: [
-    { label: "Sites internet", href: "/sites-internet" },
-    { label: "Logiciel de gestion", href: "/logiciel" },
-    { label: "Intelligence artificielle", href: "/#ia" },
-    { label: "Pack Site + Logiciel", href: "/#pack" },
-    { label: "Tarifs", href: "/#tarifs" },
-  ],
-  entreprise: [
-    { label: "Résultats", href: "/#resultats" },
-    { label: "Comment ça marche", href: "/#processus" },
-    { label: "Réalisations", href: "/#realisations" },
-    { label: "FAQ", href: "/#faq" },
-    { label: "Contact", href: "/contact" },
-  ],
-  legal: [
-    { label: "Mentions légales", href: "/mentions-legales" },
-    {
-      label: "Politique de confidentialité",
-      href: "/politique-de-confidentialite",
-    },
-  ],
-} as const;
+export const mainNav = data.mainNav;
+
+export const footerNav = data.footerNav;

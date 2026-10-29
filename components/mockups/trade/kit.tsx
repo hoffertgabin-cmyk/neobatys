@@ -113,7 +113,7 @@ export function themeVars(project: Project) {
     "--d": t.dark,
     "--s": t.soft,
     "--a": t.accent,
-    "--ink": t.ink ?? t.primary,
+    "--ink": t.ink || t.primary,
   } as CSSProperties;
 }
 

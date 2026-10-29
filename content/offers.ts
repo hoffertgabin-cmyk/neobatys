@@ -1,110 +1,12 @@
-/** Les deux offres + le pack combiné. */
+/**
+ * Les deux offres + le pack combiné.
+ * Les textes sont dans data/offers.json, modifiables depuis Pages CMS (voir EDITION.md).
+ * Les icônes sont désignées par leur nom (voir components/ui/Icon.tsx).
+ */
+import data from "./data/offers.json";
 
-export const websiteOffer = {
-  id: "services",
-  eyebrow: "Offre 1 · Sites internet",
-  title: "Un site qui travaille pour vous, même quand vous êtes sur le toit",
-  subtitle:
-    "Un site professionnel pensé pour votre métier et votre ville, qui transforme les visiteurs en demandes de devis.",
-  benefits: [
-    "Plus d'appels de clients près de chez vous",
-    "Une image sérieuse qui rassure avant même le premier contact",
-    "Zéro technique à gérer : on s'occupe de tout",
-  ],
-  features: [
-    {
-      icon: "smartphone",
-      title: "Parfait sur mobile",
-      text: "La plupart de vos clients vous cherchent depuis leur téléphone.",
-    },
-    {
-      icon: "mapPin",
-      title: "SEO local",
-      text: "Visible sur Google quand on cherche « plombier Metz » ou votre métier dans votre zone.",
-    },
-    {
-      icon: "images",
-      title: "Galerie avant / après",
-      text: "Vos plus beaux chantiers mis en valeur, faciles à ajouter.",
-    },
-    {
-      icon: "fileText",
-      title: "Formulaire de devis",
-      text: "Les demandes arrivent qualifiées : type de travaux, adresse, photos.",
-    },
-    {
-      icon: "star",
-      title: "Avis clients",
-      text: "Vos avis Google affichés pour rassurer les nouveaux visiteurs.",
-    },
-    {
-      icon: "store",
-      title: "Fiche Google Business",
-      text: "Création ou optimisation de votre fiche pour apparaître sur Maps.",
-    },
-  ],
-  cta: { label: "Créer mon site", href: "/sites-internet" },
-};
+export const websiteOffer = data.websiteOffer;
 
-export const softwareOffer = {
-  id: "logiciel",
-  eyebrow: "Offre 2 · Logiciel de gestion",
-  title: "Vos devis et factures, réglés avant le café",
-  subtitle:
-    "Un logiciel simple, fait pour les artisans, qui s'utilise aussi bien au bureau que sur le chantier.",
-  benefits: [
-    "Plusieurs heures gagnées chaque semaine",
-    "Vous êtes payé plus vite grâce aux relances automatiques",
-    "Prêt pour la facturation électronique obligatoire",
-  ],
-  features: [
-    {
-      icon: "zap",
-      title: "Devis en 2 minutes",
-      text: "Votre bibliothèque d'ouvrages et vos prix sont déjà là.",
-    },
-    {
-      icon: "repeat",
-      title: "Devis → facture en 1 clic",
-      text: "Acomptes, situations de travaux, factures finales.",
-    },
-    {
-      icon: "bell",
-      title: "Relances automatiques",
-      text: "Des rappels polis envoyés au bon moment, sans y penser.",
-    },
-    {
-      icon: "chart",
-      title: "Tableau de bord du CA",
-      text: "Chiffre d'affaires, encaissements et impayés en un coup d'œil.",
-    },
-    {
-      icon: "download",
-      title: "Export comptable",
-      text: "Votre expert-comptable reçoit tout, proprement, en un clic.",
-    },
-    {
-      icon: "shield",
-      title: "Facturation électronique",
-      text: "Conforme à la réforme et à ses échéances 2026–2027.",
-    },
-  ],
-  cta: { label: "Voir le logiciel en action", href: "/logiciel#demo" },
-};
+export const softwareOffer = data.softwareOffer;
 
-export const comboPack = {
-  id: "pack",
-  eyebrow: "Pack Site + Logiciel",
-  title: "Le duo complet pour trouver des clients et être payé à temps",
-  subtitle:
-    "Votre site reçoit la demande, le logiciel prépare le devis. Tout est relié, et vous ne parlez qu'à une seule personne.",
-  points: [
-    "Les demandes du site arrivent directement dans le logiciel",
-    "Un seul interlocuteur, une seule facture mensuelle",
-    "Mise en place et formation incluses",
-    "Tarif préférentiel par rapport aux deux offres séparées",
-  ],
-  // TODO: ajuster l'avantage tarifaire réel
-  badge: "Économisez jusqu'à 15 %",
-  cta: { label: "Je veux le pack", href: "/contact?service=pack" },
-};
+export const comboPack = data.comboPack;
