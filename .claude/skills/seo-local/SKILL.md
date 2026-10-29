@@ -120,4 +120,4 @@ Zone indiquée par l'utilisateur : <zone ou « aucune »>
 
 ## Après une modification
 
-Lancer `npm run typecheck` et `npm run build`, puis publier en suivant le skill `publier` (branche, PR, vérification sur l'aperçu Vercel). Après la mise en ligne, contrôler `https://www.neobatys.com/sitemap.xml` et le code source d'une page (balise `<title>`, bloc `application/ld+json`).
+Lancer `npm run typecheck` et `npm run build`, puis livrer avec le skill `/livrer` (branche, PR vérifiée, CI verte). Après la mise en ligne, contrôler `https://www.neobatys.com/sitemap.xml` et le code source d'une page (balise `<title>`, bloc `application/ld+json`).
