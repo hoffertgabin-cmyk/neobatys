@@ -1,10 +1,12 @@
 {
   "legalInfo": {
-    "legalForm": "[FORME JURIDIQUE — ex. EI, EURL, SASU]",
-    "capital": "[CAPITAL SOCIAL — si société]",
-    "rcs": "[RCS / RNE — ex. RCS Metz 000 000 000]",
-    "vat": "[N° TVA INTRACOMMUNAUTAIRE — ou « TVA non applicable, art. 293 B du CGI »]",
-    "director": "[NOM DU DIRECTEUR DE LA PUBLICATION]",
+    "companyName": "TAG Delme SARL",
+    "legalForm": "société à responsabilité limitée de droit luxembourgeois",
+    "capital": "[CAPITAL SOCIAL — ex. 12 000 €]",
+    "rcs": "[N° RCS LUXEMBOURG — ex. B123456]",
+    "vat": "[N° TVA — ex. LU12345678]",
+    "businessPermit": "[N° D'AUTORISATION D'ÉTABLISSEMENT — à vérifier si applicable]",
+    "director": "[NOM DU DIRECTEUR DE LA PUBLICATION — en général le gérant]",
     "host": {
       "name": "Vercel Inc.",
       "address": "440 N Barranca Ave #4133, Covina, CA 91723, États-Unis",
@@ -16,20 +18,25 @@
     {
       "title": "Éditeur du site",
       "paragraphs": [
-        "{entreprise}, {forme_juridique}, au capital de {capital}.",
-        "Siège : {adresse}.",
-        "SIRET : {siret} · {rcs}.",
-        "TVA : {tva}.",
+        "Ce site est édité par {entreprise}, {forme_juridique}, au capital de {capital}. {nom_commercial} est un nom commercial de {entreprise}.",
+        "Siège social : {adresse}.",
+        "Immatriculée au Registre de commerce et des sociétés de Luxembourg sous le numéro {rcs}.",
+        "N° d'identification TVA : {tva}.",
+        "Autorisation d'établissement : {autorisation}.",
         "Téléphone : {telephone} · E-mail : {email}."
       ]
     },
     {
       "title": "Directeur de la publication",
-      "paragraphs": ["{directeur}."]
+      "paragraphs": [
+        "{directeur}."
+      ]
     },
     {
       "title": "Hébergement",
-      "paragraphs": ["{hebergeur}, {hebergeur_adresse} ({hebergeur_site})."]
+      "paragraphs": [
+        "{hebergeur}, {hebergeur_adresse} ({hebergeur_site})."
+      ]
     },
     {
       "title": "Propriété intellectuelle",
@@ -54,7 +61,9 @@
   "politiqueConfidentialite": [
     {
       "title": "Responsable du traitement",
-      "paragraphs": ["{entreprise}, {adresse}, SIRET {siret}. Contact : {email}."]
+      "paragraphs": [
+        "{entreprise} (nom commercial {nom_commercial}), {adresse}, RCS Luxembourg {rcs}. Contact : {email}."
+      ]
     },
     {
       "title": "Données collectées",
@@ -74,7 +83,9 @@
     {
       "title": "Destinataires",
       "paragraphs": [
-        "Vos données sont destinées uniquement à {entreprise}. Elles transitent par notre prestataire d'envoi d'e-mails [NOM DU PRESTATAIRE — ex. Resend] et notre hébergeur, qui agissent comme sous-traitants. Les questions posées à l'assistant IA de la FAQ sont transmises à Anthropic (fournisseur du modèle d'IA Claude) pour générer la réponse. [À VÉRIFIER : transfert hors UE et conditions de conservation d'Anthropic] Elles ne sont jamais vendues."
+        "Vos données sont destinées uniquement à {entreprise}. Elles ne sont jamais vendues.",
+        "Pour fonctionner, le site fait appel à des prestataires qui agissent comme sous-traitants : {hebergeur} (hébergement du site), Resend (envoi par e-mail des messages du formulaire de contact) et OVH (hébergement de notre boîte mail). Les questions posées à l'assistant IA de la FAQ sont transmises à Anthropic (fournisseur du modèle d'IA Claude) pour générer la réponse.",
+        "[À VÉRIFIER : Vercel, Resend et Anthropic sont des sociétés américaines. Préciser les transferts hors Union européenne et les garanties applicables (clauses contractuelles types ou Data Privacy Framework).]"
       ]
     },
     {
@@ -87,7 +98,7 @@
       "title": "Vos droits",
       "paragraphs": [
         "Vous pouvez accéder à vos données, les rectifier, les effacer, limiter ou vous opposer à leur traitement, et demander leur portabilité, en écrivant à {email}.",
-        "Vous pouvez également introduire une réclamation auprès de la CNIL (www.cnil.fr)."
+        "Vous pouvez également introduire une réclamation auprès de la Commission nationale pour la protection des données (CNPD, Luxembourg, cnpd.public.lu) ou de l'autorité de protection des données de votre pays de résidence (en France : la CNIL, www.cnil.fr)."
       ]
     },
     {

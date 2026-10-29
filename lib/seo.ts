@@ -60,11 +60,9 @@ export function localBusinessJsonLd() {
       "@type": "PostalAddress",
       streetAddress: filled(site.address.street),
       postalCode: filled(site.address.postalCode),
-      addressLocality: site.address.city,
-      addressRegion: site.region,
+      addressLocality: filled(site.address.city),
       addressCountry: site.address.country,
     },
-    areaServed: filled(site.zone),
     priceRange: "€€",
   };
 }
@@ -78,7 +76,6 @@ export function serviceJsonLd(name: string, description: string, path: string) {
     url: new URL(path, site.url).toString(),
     serviceType: name,
     provider: { "@id": `${site.url}/#entreprise` },
-    areaServed: filled(site.zone),
     audience: {
       "@type": "BusinessAudience",
       audienceType: "Artisans du bâtiment",

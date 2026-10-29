@@ -29,12 +29,6 @@ content:
     - name: tagline
       label: Slogan
       type: string
-    - name: city
-      label: Ville
-      type: string
-    - name: region
-      label: Région
-      type: string
     - name: phone
       label: Téléphone (affiché)
       type: string
@@ -46,15 +40,8 @@ content:
     - name: email
       label: E-mail
       type: string
-    - name: zone
-      label: Zone d'intervention
-      type: string
-      description: Ex. Metz, Thionville et toute la Moselle
-    - name: siret
-      label: SIRET
-      type: string
     - name: address
-      label: Adresse
+      label: Adresse du siège
       type: object
       fields:
       - name: street
@@ -1199,9 +1186,12 @@ content:
   fields:
   - name: legalInfo
     label: Informations légales
-    description: Nom, adresse, SIRET, téléphone et e-mail viennent de « Infos de l'entreprise ».
+    description: Adresse, téléphone et e-mail viennent de « Infos de l'entreprise ».
     type: object
     fields:
+    - name: companyName
+      label: Société éditrice
+      type: string
     - name: legalForm
       label: Forme juridique
       type: string
@@ -1209,10 +1199,13 @@ content:
       label: Capital social
       type: string
     - name: rcs
-      label: RCS / RNE
+      label: N° RCS Luxembourg
       type: string
     - name: vat
       label: N° TVA
+      type: string
+    - name: businessPermit
+      label: Autorisation d'établissement
       type: string
     - name: director
       label: Directeur de la publication
@@ -1235,7 +1228,7 @@ content:
       type: string
   - name: mentionsLegales
     label: Mentions légales
-    description: 'Mots remplacés automatiquement : {entreprise}, {forme_juridique}, {capital}, {adresse}, {siret}, {rcs},
+    description: 'Mots remplacés automatiquement : {entreprise}, {nom_commercial}, {forme_juridique}, {capital}, {adresse}, {rcs}, {autorisation},
       {tva}, {telephone}, {email}, {directeur}, {hebergeur}, {hebergeur_adresse}, {hebergeur_site}.'
     type: object
     list:
@@ -1252,7 +1245,7 @@ content:
       list: true
   - name: politiqueConfidentialite
     label: Politique de confidentialité
-    description: 'Mots remplacés automatiquement : {entreprise}, {forme_juridique}, {capital}, {adresse}, {siret}, {rcs},
+    description: 'Mots remplacés automatiquement : {entreprise}, {nom_commercial}, {forme_juridique}, {capital}, {adresse}, {rcs}, {autorisation},
       {tva}, {telephone}, {email}, {directeur}, {hebergeur}, {hebergeur_adresse}, {hebergeur_site}.'
     type: object
     list:

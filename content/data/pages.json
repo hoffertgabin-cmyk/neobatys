@@ -2,7 +2,7 @@
   "contactPage": {
     "seo": {
       "title": "Contact et demande de devis",
-      "description": "Demandez un devis pour votre site internet ou une démo du logiciel de gestion. Réponse sous 24 h, sans engagement. NEOBATYS, Metz."
+      "description": "Demandez un devis pour votre site internet ou une démo du logiciel de gestion. Réponse sous 24 h, sans engagement."
     },
     "hero": {
       "eyebrow": "Contact",
@@ -85,8 +85,8 @@
   },
   "sitesPage": {
     "seo": {
-      "title": "Création de site internet pour artisans à Metz",
-      "description": "Site internet professionnel pour plombiers, électriciens, maçons et tous les artisans du bâtiment : SEO local, galerie de chantiers, formulaire de devis. Basés à Metz."
+      "title": "Création de site internet pour artisans du bâtiment",
+      "description": "Site internet professionnel pour plombiers, électriciens, maçons et tous les artisans du bâtiment : SEO local, galerie de chantiers, formulaire de devis."
     },
     "hero": {
       "eyebrow": "Sites internet pour artisans",

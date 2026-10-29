@@ -5,10 +5,8 @@ Tout se modifie depuis Pages CMS (voir [EDITION.md](EDITION.md)), ou directement
 ## Informations de l'entreprise (`content/data/site.json`)
 
 - [ ] `[TÉLÉPHONE]` (affichage) et `phoneHref` au format `+33612345678` : tant qu'il n'est pas rempli, les boutons « Appeler » renvoient vers `/contact`
-- [ ] `[EMAIL]`
-- [ ] `[ZONE]` (ex. « Metz, Thionville et toute la Moselle »)
-- [ ] `[SIRET]`
-- [ ] `[ADRESSE]` et `[CODE POSTAL]`
+- [x] E-mail : `contact@neobatys.com` (boîte OVH)
+- [ ] Adresse du siège au Luxembourg : `[ADRESSE DU SIÈGE]`, `[CODE POSTAL]`, `[VILLE]`
 - [ ] Horaires
 - [ ] Liens Facebook / Instagram / LinkedIn (les icônes apparaissent dès qu'un lien est renseigné)
 - [ ] URL définitive du site (`NEXT_PUBLIC_SITE_URL`)
@@ -32,10 +30,12 @@ Tout se modifie depuis Pages CMS (voir [EDITION.md](EDITION.md)), ou directement
 
 ## Pages légales (`content/data/legal.json`)
 
-- [ ] Forme juridique, capital, RCS/RNE, n° TVA (ou mention « TVA non applicable, art. 293 B du CGI »)
+- [x] Société éditrice : TAG Delme SARL, SARL de droit luxembourgeois (NEOBATYS est son nom commercial)
+- [ ] Capital social, n° RCS Luxembourg (B…), n° TVA (LU…)
+- [ ] N° d'autorisation d'établissement (si applicable)
 - [ ] Directeur de la publication
 - [ ] Hébergeur (pré-rempli avec Vercel, à vérifier)
-- [ ] Prestataire d'e-mails et durée de conservation dans la politique de confidentialité
+- [ ] Transferts hors UE (Vercel, Resend, Anthropic) et durée de conservation dans la politique de confidentialité
 - [ ] Date de mise à jour
 - [ ] Faire relire ces textes (ce sont des modèles, pas un conseil juridique)
 

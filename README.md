@@ -1,6 +1,6 @@
 # NEOBATYS · Site vitrine
 
-Site vitrine de NEOBATYS (Metz) : création de sites internet, logiciel de gestion et mise en place de l'IA pour les artisans du bâtiment.
+Site vitrine de NEOBATYS (nom commercial de TAG Delme SARL, Luxembourg) : création de sites internet, logiciel de gestion et mise en place de l'IA pour les artisans du bâtiment.
 
 - **Next.js 16** (App Router, Turbopack) + **TypeScript**
 - **Tailwind CSS 4** (design tokens dans `app/globals.css`)
@@ -63,7 +63,7 @@ Le formulaire envoie les demandes à `app/api/contact/route.ts` (validation zod,
 
 ```bash
 RESEND_API_KEY=re_xxx
-CONTACT_TO_EMAIL=vous@neobatys.com          # plusieurs adresses séparées par des virgules
+CONTACT_TO_EMAIL=contact@neobatys.com         # plusieurs adresses séparées par des virgules
 CONTACT_FROM_EMAIL="NEOBATYS <contact@neobatys.com>"
 ```
 

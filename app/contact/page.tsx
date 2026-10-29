@@ -1,4 +1,4 @@
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { Clock, Mail, Phone } from "lucide-react";
 import { contactPage } from "@/content/pages";
 import { mailHref, site, telHref } from "@/content/site";
 import { pageMetadata } from "@/lib/seo";
@@ -12,11 +12,6 @@ export const metadata = pageMetadata({ ...contactPage.seo, path: "/contact" });
 const infos = [
   { Icon: Phone, label: "Téléphone", value: site.phone, href: telHref },
   { Icon: Mail, label: "E-mail", value: site.email, href: mailHref },
-  {
-    Icon: MapPin,
-    label: "Zone d'intervention",
-    value: `${site.city} · ${site.zone}`,
-  },
   { Icon: Clock, label: "Horaires", value: site.hours },
 ];
 

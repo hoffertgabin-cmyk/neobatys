@@ -9,9 +9,8 @@ import { site } from "./site";
 
 export const legalInfo = {
   ...data.legalInfo,
-  companyName: site.name,
-  address: `${site.address.street}, ${site.address.postalCode} ${site.address.city}`,
-  siret: site.siret,
+  tradeName: site.name,
+  address: `${site.address.street}, ${site.address.postalCode} ${site.address.city}, Luxembourg`,
   phone: site.phone,
   email: site.email,
 };
@@ -21,12 +20,13 @@ export type LegalSection = { title: string; paragraphs: string[] };
 /** Remplace les mots entre accolades ({entreprise}, {email}…) par les infos de l'entreprise. */
 const values: Record<string, string> = {
   entreprise: legalInfo.companyName,
+  nom_commercial: legalInfo.tradeName,
   forme_juridique: legalInfo.legalForm,
   capital: legalInfo.capital,
   adresse: legalInfo.address,
-  siret: legalInfo.siret,
   rcs: legalInfo.rcs,
   tva: legalInfo.vat,
+  autorisation: legalInfo.businessPermit,
   telephone: legalInfo.phone,
   email: legalInfo.email,
   directeur: legalInfo.director,
