@@ -61,8 +61,8 @@ Le formulaire envoie les demandes à `app/api/contact/route.ts` (validation zod,
 
 ```bash
 RESEND_API_KEY=re_xxx
-CONTACT_TO_EMAIL=vous@neobatys.fr          # plusieurs adresses séparées par des virgules
-CONTACT_FROM_EMAIL="NEOBATYS <contact@neobatys.fr>"
+CONTACT_TO_EMAIL=vous@neobatys.com          # plusieurs adresses séparées par des virgules
+CONTACT_FROM_EMAIL="NEOBATYS <contact@neobatys.com>"
 ```
 
 Le lien `/contact?service=site|logiciel|pack` pré-sélectionne le service demandé.
