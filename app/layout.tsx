@@ -11,6 +11,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CookieBanner } from "@/components/layout/CookieBanner";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { PageViewPing } from "@/components/seo/PageViewPing";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -59,6 +60,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Footer />
           <CookieBanner />
         </MotionProvider>
+        <PageViewPing />
         <JsonLd data={localBusinessJsonLd()} />
       </body>
     </html>
