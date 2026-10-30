@@ -1,10 +1,15 @@
-import { Mic, PhoneCall, Receipt, Star } from "lucide-react";
+import { MessageSquare, Mic, Receipt, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 // Données fictives, uniquement pour illustrer l'interface
 const kpis = [
   { label: "Demandes de devis", value: "38", trend: "▲ ce mois-ci", accent: false },
-  { label: "Appels pris par l'IA", value: "126", trend: "pendant vos chantiers", accent: false },
+  {
+    label: "Demandes traitées par l'IA",
+    value: "64",
+    trend: "réponse en quelques minutes",
+    accent: false,
+  },
   { label: "Heures gagnées", value: "31 h", trend: "estimation mensuelle", accent: true },
   { label: "Impayés relancés", value: "9", trend: "▲ 7 réglés", accent: false },
 ];
@@ -18,9 +23,9 @@ const months = [
 ];
 const agents = [
   {
-    Icon: PhoneCall,
-    title: "Standard téléphonique",
-    text: "Appels → rendez-vous",
+    Icon: MessageSquare,
+    title: "Réponse aux demandes",
+    text: "Site, Google, réseaux",
     tone: "bg-lavande",
   },
   { Icon: Mic, title: "Devis à la voix", text: "Dicté → devis PDF", tone: "bg-peche" },

@@ -41,7 +41,7 @@ function ClientsVisual() {
 }
 
 const flow = [
-  { title: "Appel reçu", text: "Pendant le chantier" },
+  { title: "Demande reçue", text: "Site, Google, réseaux" },
   { title: "Analysé", text: "Besoin · urgence" },
   { title: "Devis préparé", text: "Avec vos tarifs" },
   { title: "Rendez-vous calé", text: "Validé par vous" },
@@ -65,16 +65,14 @@ function CostsVisual() {
   return (
     <div className="space-y-3">
       <ul className="flex flex-wrap gap-1.5 text-xs text-ardoise-dark">
-        {["Logiciel de devis", "Standard téléphonique", "Agence web", "Relances à la main"].map(
-          (t) => (
-            <li
-              key={t}
-              className="rounded-lg bg-white/70 px-2.5 py-1.5 whitespace-nowrap line-through decoration-nuit/30"
-            >
-              {t}
-            </li>
-          ),
-        )}
+        {["Logiciel de devis", "Agence web", "Relances à la main"].map((t) => (
+          <li
+            key={t}
+            className="rounded-lg bg-white/70 px-2.5 py-1.5 whitespace-nowrap line-through decoration-nuit/30"
+          >
+            {t}
+          </li>
+        ))}
       </ul>
       <p className="flex w-fit items-center gap-2 rounded-xl bg-white px-3 py-2 text-xs font-semibold ring-1 ring-nuit/8">
         <ArrowRight aria-hidden="true" className="size-3.5 shrink-0 text-ardoise" />1 seul
