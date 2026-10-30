@@ -5,11 +5,6 @@
     "subtitle": "Pas de gadget : des assistants qui font gagner du temps et de l'argent, réglés sur votre métier. On installe, on forme, on suit.",
     "useCases": [
       {
-        "icon": "phone",
-        "title": "Standard téléphonique IA",
-        "text": "Décroche quand vous êtes sur le chantier, répond aux questions, prend les rendez-vous et vous envoie un résumé."
-      },
-      {
         "icon": "mic",
         "title": "Devis dictés à la voix",
         "text": "Vous décrivez le chantier, l'IA prépare le devis avec vos tarifs. Vous vérifiez, vous envoyez."
@@ -82,8 +77,8 @@
     "withLabel": "Avec NEOBATYS",
     "items": [
       {
-        "problem": "Des appels manqués pendant le chantier, donc des clients perdus",
-        "solution": "Un assistant IA décroche, répond et vous transmet les demandes qualifiées"
+        "problem": "Des demandes de devis qui attendent des jours une réponse, donc des clients perdus",
+        "solution": "Un assistant IA répond en quelques minutes et vous transmet les demandes qualifiées"
       },
       {
         "problem": "Les devis faits le soir, après 10 heures de chantier",
@@ -157,7 +152,7 @@
       {
         "id": "ia",
         "title": "L'IA intégrée à votre quotidien",
-        "text": "Des assistants qui décrochent, préparent les devis et relancent, branchés sur vos outils. Vous gardez la main sur ce qui part."
+        "text": "Des assistants qui répondent aux demandes, préparent les devis et relancent, branchés sur vos outils. Vous gardez la main sur ce qui part."
       },
       {
         "id": "couts",
