@@ -607,6 +607,9 @@ content:
     label: Tarifs
     type: object
     fields:
+    - name: oneOffTitle
+      label: Titre des offres en une fois
+      type: string
     - name: maintenance
       label: Texte sous le prix (maintenance)
       type: string
@@ -614,7 +617,7 @@ content:
       label: Note sous les tarifs
       type: string
     - name: plans
-      label: Offres
+      label: Offres en une fois
       type: object
       list:
         collapsible:
@@ -635,6 +638,9 @@ content:
         label: Prix unique HT
         type: string
         description: Ex. 990 €
+      - name: maintenance
+        label: Texte sous le prix (si différent du texte commun)
+        type: string
       - name: features
         label: Inclus
         type: string
@@ -655,6 +661,61 @@ content:
       - name: badge
         label: Badge (offre mise en avant)
         type: string
+    - name: subscriptions
+      label: Abonnements
+      type: object
+      fields:
+      - name: title
+        label: Titre
+        type: string
+      - name: priceSuffix
+        label: Unité après le prix
+        type: string
+      - name: terms
+        label: Texte sous le prix
+        type: string
+      - name: plans
+        label: Formules
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{name}'
+        fields:
+        - name: id
+          label: Identifiant (ne pas modifier)
+          type: string
+          readonly: true
+        - name: name
+          label: Nom
+          type: string
+        - name: description
+          label: Description
+          type: string
+        - name: price
+          label: Prix mensuel HT
+          type: string
+          description: Ex. 990 €
+        - name: features
+          label: Inclus
+          type: string
+          list: true
+        - name: cta
+          label: Bouton
+          type: object
+          fields:
+          - name: label
+            label: Texte
+            type: string
+          - name: href
+            label: Lien
+            type: string
+        - name: featured
+          label: Mise en avant
+          type: boolean
+        - name: badge
+          label: Badge (offre mise en avant)
+          type: string
 - name: projects
   label: Réalisations
   type: file

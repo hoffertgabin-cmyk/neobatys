@@ -40,7 +40,7 @@ Tous les textes sont dans le dossier **`content/data/`** (un fichier JSON par su
 | `content/data/site.json`         | nom, ville, **téléphone, e-mail, zone, SIRET**, adresse, réseaux sociaux |
 | `content/data/home.json`         | hero, avant/après, résultats, cas d'usage IA, étapes, CTA final, titres            |
 | `content/data/offers.json`       | offre Sites internet, offre Logiciel, Pack combiné                                 |
-| `content/data/pricing.json`      | les 4 offres, leurs prix uniques et la maintenance mensuelle                       |
+| `content/data/pricing.json`      | les 4 offres en une fois, la maintenance et les 3 abonnements                      |
 | `content/data/faq.json`          | questions fréquentes (aussi utilisées pour le SEO)                                 |
 | `content/data/trades.json`       | métiers du bandeau défilant et de la liste du formulaire                           |
 | `content/data/stats.json`        | chiffres clés **(exemples à remplacer)**                                           |

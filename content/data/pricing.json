@@ -1,7 +1,7 @@
 {
   "pricing": {
+    "oneOffTitle": "En une fois",
     "maintenance": "puis 200 € HT / mois de maintenance",
-    "note": "Prix hors taxes, payés une fois. La maintenance (200 € HT par mois, sans engagement) couvre l'hébergement, le nom de domaine, la licence du logiciel, les coûts de l'IA, les mises à jour et les modifications sur simple demande.",
     "plans": [
       {
         "id": "site",
@@ -73,8 +73,69 @@
           "label": "En parler",
           "href": "/contact?service=ia"
         },
-        "featured": false
+        "featured": false,
+        "maintenance": "6 mois de maintenance offerts, puis 200 € HT / mois"
       }
-    ]
+    ],
+    "subscriptions": {
+      "title": "Par abonnement",
+      "priceSuffix": "HT / mois",
+      "terms": "sans frais de départ, maintenance comprise, engagement 12 mois",
+      "plans": [
+        {
+          "id": "abonnement-essentiel",
+          "name": "Essentiel",
+          "description": "Le site et le logiciel, sans rien avancer.",
+          "price": "490 €",
+          "features": [
+            "Site Artisan 5 pages",
+            "Logiciel de devis et factures paramétré",
+            "Formation incluse",
+            "Hébergement, maintenance et modifications sur demande"
+          ],
+          "cta": {
+            "label": "Choisir Essentiel",
+            "href": "/contact?service=abonnement"
+          },
+          "featured": false
+        },
+        {
+          "id": "abonnement-pro",
+          "name": "Pro",
+          "description": "Site, logiciel et deux assistants IA qui travaillent pour vous.",
+          "price": "990 €",
+          "features": [
+            "Tout le contenu d'Essentiel",
+            "2 assistants IA au choix : standard téléphonique, devis dictés, réponse aux demandes, avis Google",
+            "Réglés sur votre métier et vos tarifs",
+            "Suivi et ajustements chaque mois"
+          ],
+          "cta": {
+            "label": "Choisir Pro",
+            "href": "/contact?service=abonnement"
+          },
+          "featured": true,
+          "badge": "Le meilleur équilibre"
+        },
+        {
+          "id": "abonnement-premium",
+          "name": "Premium",
+          "description": "Toute l'entreprise équipée, avec un accompagnement continu.",
+          "price": "1 490 €",
+          "features": [
+            "Tout le contenu de Pro",
+            "Tous les assistants IA, dont la lecture des factures fournisseurs et le suivi de rentabilité",
+            "Site jusqu'à 10 pages",
+            "Accompagnement continu et interlocuteur prioritaire"
+          ],
+          "cta": {
+            "label": "Choisir Premium",
+            "href": "/contact?service=abonnement"
+          },
+          "featured": false
+        }
+      ]
+    },
+    "note": "Prix hors taxes. Offres en une fois : la maintenance (200 € HT par mois, sans engagement) couvre l'hébergement, le nom de domaine, la licence du logiciel, les coûts de l'IA, les mises à jour et les modifications sur simple demande. Abonnements : sans frais de départ, maintenance comprise, engagement 12 mois."
   }
 }

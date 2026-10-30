@@ -20,7 +20,7 @@ Tout se modifie depuis Pages CMS (voir [EDITION.md](EDITION.md)), ou directement
 
 ## Tarifs (`content/data/pricing.json`)
 
-- [ ] Prix uniques des 4 offres et prix de la maintenance mensuelle
+- [ ] Prix uniques des 4 offres, prix de la maintenance et prix des 3 abonnements
 
 ## Logiciel
 
