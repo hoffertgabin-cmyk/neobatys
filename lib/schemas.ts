@@ -6,6 +6,7 @@ export const services = [
   { value: "logiciel", label: "Logiciel de gestion (devis, factures)" },
   { value: "pack", label: "Pack Gestion (site + logiciel)" },
   { value: "ia", label: "Pack IA ou Transformation complète" },
+  { value: "abonnement", label: "Offre par abonnement" },
   { value: "autre", label: "Je ne sais pas encore" },
 ] as const;
 

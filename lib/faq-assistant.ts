@@ -16,7 +16,14 @@ function knowledge() {
   const plans = pricing.plans
     .map(
       (p) =>
-        `${p.name} : ${p.description} ${p.price} HT, ${pricing.maintenance}.\n${list(p.features)}`,
+        `${p.name} (en une fois) : ${p.description} ${p.price} HT, ${p.maintenance || pricing.maintenance}.\n${list(p.features)}`,
+    )
+    .join("\n\n");
+  const { subscriptions } = pricing;
+  const subscriptionPlans = subscriptions.plans
+    .map(
+      (p) =>
+        `Abonnement ${p.name} : ${p.description} ${p.price} ${subscriptions.priceSuffix}, ${subscriptions.terms}.\n${list(p.features)}`,
     )
     .join("\n\n");
 
@@ -41,6 +48,8 @@ ${list(comboPack.points)}
 # Tarifs
 ${pricing.note}
 ${plans}
+
+${subscriptionPlans}
 
 # Questions fréquentes déjà rédigées
 ${qa(faq)}
