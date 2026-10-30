@@ -1,16 +1,16 @@
 {
   "comboPack": {
     "id": "pack",
-    "eyebrow": "Pack Site + Logiciel",
+    "eyebrow": "Pack Gestion · Site + Logiciel",
     "title": "Le duo complet pour trouver des clients et être payé à temps",
     "subtitle": "Votre site reçoit la demande, le logiciel prépare le devis. Tout est relié, et vous ne parlez qu'à une seule personne.",
     "points": [
       "Les demandes du site arrivent directement dans le logiciel",
-      "Un seul interlocuteur, une seule facture mensuelle",
+      "Un seul interlocuteur, une seule maintenance",
       "Mise en place et formation incluses",
-      "Tarif préférentiel par rapport aux deux offres séparées"
+      "Vos clients et vos prix importés dans le logiciel"
     ],
-    "badge": "Économisez jusqu'à 15 %",
+    "badge": "2 990 € HT, site et logiciel compris",
     "cta": {
       "label": "Je veux le pack",
       "href": "/contact?service=pack"

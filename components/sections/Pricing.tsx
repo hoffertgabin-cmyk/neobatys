@@ -1,7 +1,3 @@
-"use client";
-
-import { useState } from "react";
-import * as m from "motion/react-m";
 import { Check } from "lucide-react";
 import { pricing } from "@/content/pricing";
 import { sectionsCopy } from "@/content/home";
@@ -11,51 +7,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { Stagger, StaggerItem } from "@/components/motion/Reveal";
 
-type Billing = "monthly" | "yearly";
-
-function BillingToggle({ value, onChange }: { value: Billing; onChange: (v: Billing) => void }) {
-  const options: { value: Billing; label: string }[] = [
-    { value: "monthly", label: "Mensuel" },
-    { value: "yearly", label: "Annuel" },
-  ];
-  return (
-    <div
-      role="radiogroup"
-      aria-label="Période de facturation"
-      className="inline-flex rounded-full bg-white p-1 shadow-soft ring-1 ring-nuit/5"
-    >
-      {options.map((opt) => {
-        const active = value === opt.value;
-        return (
-          <button
-            key={opt.value}
-            type="button"
-            role="radio"
-            aria-checked={active}
-            onClick={() => onChange(opt.value)}
-            className={cn(
-              "relative h-10 rounded-full px-5 text-sm font-semibold transition-colors",
-              active ? "text-white" : "text-ardoise-dark hover:text-nuit",
-            )}
-          >
-            {active && (
-              <m.span
-                layoutId="billing-pill"
-                className="absolute inset-0 rounded-full bg-nuit"
-                transition={{ type: "spring", stiffness: 400, damping: 32 }}
-              />
-            )}
-            <span className="relative">{opt.label}</span>
-          </button>
-        );
-      })}
-    </div>
-  );
-}
-
 export function Pricing() {
-  const [billing, setBilling] = useState<Billing>("monthly");
-
   return (
     <Section id="tarifs" theme="sand" pattern aria-labelledby="tarifs-titre">
       <SectionHeading
@@ -64,16 +16,8 @@ export function Pricing() {
         title={sectionsCopy.pricing.title}
         subtitle={sectionsCopy.pricing.subtitle}
       />
-      <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-        <BillingToggle value={billing} onChange={setBilling} />
-        <span className="rounded-full bg-chantier/15 px-3 py-1 text-xs font-semibold text-chantier-dark">
-          Annuel : {pricing.yearlyDiscountLabel}
-        </span>
-      </div>
-
-      <Stagger className="mt-12 grid items-stretch gap-6 lg:grid-cols-3">
+      <Stagger className="mt-14 grid items-stretch gap-6 sm:grid-cols-2 xl:grid-cols-4">
         {pricing.plans.map((plan) => {
-          const price = billing === "monthly" ? plan.monthly : plan.yearly;
           const featured = plan.featured;
           return (
             <StaggerItem
@@ -81,7 +25,7 @@ export function Pricing() {
               className={cn(
                 "relative flex flex-col rounded-3xl p-7 sm:p-8",
                 featured
-                  ? "bg-nuit text-white shadow-lift ring-2 ring-chantier lg:-my-4 lg:py-12"
+                  ? "bg-nuit text-white shadow-lift ring-2 ring-chantier xl:-my-4 xl:py-12"
                   : "bg-white text-nuit shadow-soft ring-1 ring-nuit/5",
               )}
             >
@@ -96,34 +40,21 @@ export function Pricing() {
               </p>
 
               <div className="mt-6">
-                <p className={cn("text-sm", featured ? "text-ardoise-light" : "text-ardoise")}>
-                  <span className={cn("font-semibold", featured ? "text-white" : "text-nuit")}>
-                    {plan.setup}
-                  </span>{" "}
-                  {plan.setupLabel}
-                </p>
-                <p className="mt-1 flex items-baseline gap-1.5">
-                  <m.span
-                    key={`${plan.id}-${billing}`}
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.25 }}
-                    className="font-display text-5xl font-extrabold tabular-nums"
-                  >
-                    {price}
-                  </m.span>
+                <p className="flex items-baseline gap-1.5">
+                  <span className="font-display text-4xl font-extrabold whitespace-nowrap tabular-nums">
+                    {plan.price}
+                  </span>
                   <span
                     className={cn(
                       "text-sm font-medium",
                       featured ? "text-ardoise-light" : "text-ardoise",
                     )}
                   >
-                    {plan.unit}
+                    HT
                   </span>
                 </p>
                 <p className={cn("mt-1 text-xs", featured ? "text-ardoise-light" : "text-ardoise")}>
-                  {billing === "yearly" ? "facturé annuellement, " : ""}
-                  {plan.unitSub}
+                  {pricing.maintenance}
                 </p>
               </div>
 
