@@ -3,6 +3,7 @@ import { Mail, Phone } from "lucide-react";
 import { legalInfo } from "@/content/legal";
 import { footerNav } from "@/content/navigation";
 import { hasPhone, mailHref, site, telHref } from "@/content/site";
+import { isFilled } from "@/lib/placeholders";
 import { FacebookIcon, InstagramIcon, LinkedinIcon } from "@/components/ui/SocialIcons";
 import { Logo } from "./Logo";
 import { CookieSettingsLink } from "./CookieBanner";
@@ -40,7 +41,7 @@ function FooterColumn({
 }
 
 export function Footer() {
-  const activeSocials = socials.filter((s) => site.socials[s.key]);
+  const activeSocials = socials.filter((s) => isFilled(site.socials[s.key]));
 
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-nuit text-white">
