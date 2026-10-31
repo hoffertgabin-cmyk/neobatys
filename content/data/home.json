@@ -161,8 +161,8 @@
       },
       {
         "id": "temps",
-        "title": "Du temps rendu",
-        "text": "Le devis se fait depuis le chantier, l'administratif ne déborde plus sur vos soirées."
+        "title": "Gagnez du temps",
+        "text": "Le devis se fait depuis le chantier et vos soirées restent à vous."
       },
       {
         "id": "tresorerie",
@@ -175,7 +175,7 @@
     "marquee": "Pensé pour les artisans du bâtiment",
     "stats": {
       "eyebrow": "En chiffres",
-      "title": "Du temps rendu aux artisans"
+      "title": "Du temps gagné pour les artisans"
     },
     "projects": {
       "eyebrow": "Réalisations",
