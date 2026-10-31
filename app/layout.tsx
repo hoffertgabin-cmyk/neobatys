@@ -19,16 +19,25 @@ const geist = Geist({
   display: "swap",
 });
 
+const defaultTitle = `${site.name} · Sites internet, logiciel et IA pour artisans du bâtiment`;
+const description =
+  "Sites internet, logiciel de devis et factures et assistants IA pour les artisans du bâtiment. Plus de clients, moins de coûts, moins de paperasse.";
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: {
-    default: `${site.name} · Sites internet, logiciel et IA pour artisans du bâtiment`,
-    template: `%s · ${site.name}`,
-  },
-  description:
-    "Sites internet, logiciel de devis et factures et assistants IA pour les artisans du bâtiment. Plus de clients, moins de coûts, moins de paperasse.",
+  title: { default: defaultTitle, template: `%s · ${site.name}` },
+  description,
   applicationName: site.name,
-  openGraph: { siteName: site.name, locale: "fr_FR", type: "website" },
+  // Hérités par l'accueil ; les autres pages les remplacent via pageMetadata (lib/seo.ts)
+  openGraph: {
+    title: defaultTitle,
+    description,
+    url: "/",
+    siteName: site.name,
+    locale: "fr_FR",
+    type: "website",
+  },
+  twitter: { card: "summary_large_image", title: defaultTitle, description, images: ["/opengraph-image"] },
   formatDetection: { telephone: false },
 };
 
