@@ -2,17 +2,17 @@
   "legalInfo": {
     "companyName": "TAG Delme SARL",
     "legalForm": "société à responsabilité limitée de droit luxembourgeois",
-    "capital": "[CAPITAL SOCIAL — ex. 12 000 €]",
-    "rcs": "[N° RCS LUXEMBOURG — ex. B123456]",
-    "vat": "[N° TVA — ex. LU12345678]",
+    "capital": "12 000 €",
+    "rcs": "B301874",
+    "vat": "LU37090845",
     "businessPermit": "[N° D'AUTORISATION D'ÉTABLISSEMENT — à vérifier si applicable]",
-    "director": "[NOM DU DIRECTEUR DE LA PUBLICATION — en général le gérant]",
+    "director": "Le gérant de TAG Delme SARL",
     "host": {
       "name": "Vercel Inc.",
       "address": "440 N Barranca Ave #4133, Covina, CA 91723, États-Unis",
       "website": "https://vercel.com"
     },
-    "lastUpdate": "[DATE DE MISE À JOUR]"
+    "lastUpdate": "29 octobre 2026"
   },
   "mentionsLegales": [
     {
