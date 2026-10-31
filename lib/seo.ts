@@ -45,6 +45,7 @@ export function serializeJsonLd(data: unknown) {
 const filled = (v: string) => (isFilled(v) ? v : undefined);
 
 export function localBusinessJsonLd() {
+  const socials = Object.values(site.socials).filter(isFilled);
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
@@ -64,6 +65,8 @@ export function localBusinessJsonLd() {
       addressCountry: site.address.country,
     },
     priceRange: "€€",
+    // Profils officiels sur les réseaux, omis tant qu'aucun n'est renseigné
+    sameAs: socials.length > 0 ? socials : undefined,
   };
 }
 
