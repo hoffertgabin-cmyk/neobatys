@@ -302,6 +302,300 @@
           "href": "https://entreprendre.service-public.gouv.fr/actualites/A18088"
         }
       ]
+    },
+    {
+      "slug": "couvreur",
+      "label": "Logiciel de devis pour couvreur",
+      "summary": "Devis préalable pour la toiture et le démoussage, TVA des tuiles et de l'isolation, acomptes et situations : les règles du métier et ce que fait le logiciel.",
+      "breadcrumb": "Couvreur",
+      "updated": "31 octobre 2026",
+      "seo": {
+        "title": "Logiciel de devis couvreur : devis de toiture et factures",
+        "description": "Devis de toiture conforme, détail au mètre carré, taux de TVA du métier expliqués, acomptes et situations de travaux : le logiciel de devis pensé pour les couvreurs, utilisable depuis le chantier."
+      },
+      "hero": {
+        "eyebrow": "Logiciel pour couvreur",
+        "title": "Le logiciel de devis et factures des couvreurs",
+        "subtitle": "Une fuite sous les tuiles, un démoussage, une réfection complète : prenez vos mesures, faites le devis au pied de la maison et faites-le signer avant de redescendre de l'échelle."
+      },
+      "sections": [
+        {
+          "title": "Le devis préalable pour les travaux de toiture",
+          "paragraphs": [
+            "La couverture et la toiture, y compris l'application d'hydrofuge et le démoussage, figurent dans la liste des travaux et dépannages pour lesquels l'arrêté du 24 janvier 2017 impose un devis préalable. L'étanchéité, dont la réparation des joints de terrasse, figure dans la même liste. Sans devis, le professionnel s'expose à une amende administrative pouvant aller jusqu'à 3 000 € pour une personne physique et 15 000 € pour une société.",
+            "Le devis détaille chaque prestation et chaque produit en quantité et en prix, avec l'unité à laquelle le prix s'applique : heure de main-d'œuvre, mètre linéaire ou mètre carré. Il indique aussi le taux horaire TTC, le mode de décompte du temps, les frais de déplacement s'il y en a, le total HT et TTC avec le taux de TVA, la durée de validité de l'offre et si le devis est gratuit ou payant. Le logiciel ajoute ces mentions automatiquement."
+          ],
+          "items": []
+        },
+        {
+          "title": "Tuiles, ardoises, isolation : le bon taux de TVA",
+          "paragraphs": [
+            "Dans un logement d'habitation achevé depuis plus de deux ans, les travaux d'amélioration et d'entretien sont en principe à 10 %, fournitures indispensables comprises : les tuiles et les ardoises sont citées parmi elles. L'isolation thermique des parois opaques relève du taux de 5,5 %.",
+            "Le taux réduit ne s'applique pas aux travaux qui aboutissent à un immeuble neuf, par exemple une surélévation ou une addition de construction, ou la remise à neuf de plus de la moitié du gros œuvre, charpentes comprises. Depuis le 1er mars 2025, le client certifie les conditions du taux réduit par une mention sur le devis ou la facture, qui remplace l'ancienne attestation."
+          ],
+          "items": []
+        },
+        {
+          "title": "Acomptes et situations sur une réfection de toiture",
+          "paragraphs": [
+            "Une réfection complète se paie rarement en une fois. Le logiciel prévoit l'acompte à la signature, puis des situations de travaux au fil du chantier : dépose, charpente, liteaunage, couverture, zinguerie. Si un poste change en cours de route, un avoir corrige la facture."
+          ],
+          "items": []
+        },
+        {
+          "title": "L'assurance professionnelle sur chaque devis",
+          "paragraphs": [
+            "Les artisans dont le métier impose une assurance professionnelle, comme l'assurance décennale, indiquent sur leurs devis et factures les coordonnées de l'assureur ou du garant et la couverture géographique du contrat. Une fois ces informations renseignées dans vos paramètres, le logiciel les ajoute à chaque document."
+          ],
+          "items": []
+        },
+        {
+          "title": "Ce que le logiciel fait pour un couvreur",
+          "paragraphs": [],
+          "items": [
+            "Votre bibliothèque d'ouvrages et de prix (tuiles, ardoises, zinguerie, main-d'œuvre, échafaudage) importée depuis Excel ou votre ancien logiciel.",
+            "Le devis fait sur téléphone sur le chantier, signé du doigt sur place ou par lien.",
+            "Acomptes et situations de travaux pour les réfections complètes.",
+            "Avoirs pour corriger une facture.",
+            "Relances automatiques des factures impayées.",
+            "Factures au format électronique, transmises via une plateforme agréée.",
+            "Export pour votre expert-comptable."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Faut-il un devis pour un simple démoussage de toiture ?",
+          "answer": "Oui. Le démoussage et l'application d'hydrofuge sont cités dans la liste des travaux de couverture et de toiture pour lesquels l'arrêté du 24 janvier 2017 impose un devis préalable."
+        },
+        {
+          "question": "Quel taux de TVA pour remplacer des tuiles sur une maison ancienne ?",
+          "answer": "Dans un logement d'habitation achevé depuis plus de deux ans, les travaux d'entretien et les fournitures indispensables comme les tuiles ou les ardoises relèvent en principe du taux de 10 %. Le client certifie les conditions par une mention sur le devis ou la facture."
+        },
+        {
+          "question": "Une surélévation peut-elle bénéficier de la TVA réduite ?",
+          "answer": "Non. Les travaux qui conduisent à une surélévation ou à une addition de construction sont considérés comme produisant un immeuble neuf : les taux réduits de 5,5 % et 10 % ne s'appliquent pas."
+        },
+        {
+          "question": "Comment facturer une réfection de toiture qui dure plusieurs semaines ?",
+          "answer": "Avec un acompte à la signature puis des situations de travaux au fil de l'avancement, que le logiciel prévoit."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Entreprendre.service-public.fr : devis obligatoire, activités concernées",
+          "href": "https://entreprendre.service-public.gouv.fr/vosdroits/F31144"
+        },
+        {
+          "label": "impots.gouv.fr : taux de TVA des travaux dans les logements",
+          "href": "https://www.impots.gouv.fr/professionnel/questions/quel-taux-de-tva-appliquer-pour-les-travaux-realises-dans-les-logements"
+        },
+        {
+          "label": "Entreprendre.service-public.fr : fin de l'attestation de TVA réduite",
+          "href": "https://entreprendre.service-public.gouv.fr/actualites/A18088"
+        },
+        {
+          "label": "Entreprendre.service-public.fr : documents commerciaux, assurance professionnelle",
+          "href": "https://entreprendre.service-public.gouv.fr/vosdroits/F37371"
+        }
+      ]
+    },
+    {
+      "slug": "carreleur",
+      "label": "Logiciel de devis pour carreleur",
+      "summary": "Devis au mètre carré, TVA du carrelage et de la pose, salle de bains en situations de travaux : les règles du métier et ce que fait le logiciel.",
+      "breadcrumb": "Carreleur",
+      "updated": "31 octobre 2026",
+      "seo": {
+        "title": "Logiciel de devis carrelage : devis et factures pour carreleur",
+        "description": "Devis de carrelage au mètre carré, taux de TVA de la fourniture et de la pose expliqués, acomptes et situations : le logiciel de devis pensé pour les carreleurs, utilisable depuis le chantier."
+      },
+      "hero": {
+        "eyebrow": "Logiciel pour carreleur",
+        "title": "Le logiciel de devis et factures des carreleurs",
+        "subtitle": "Un sol à refaire, une faïence de salle de bains, une terrasse : prenez les métrés, faites le devis au mètre carré chez le client et faites signer le devis sur place."
+      },
+      "sections": [
+        {
+          "title": "Le devis préalable pour les revêtements de sols et de murs",
+          "paragraphs": [
+            "Le revêtement de murs et de sols, en tous matériaux, figure dans la liste des travaux pour lesquels l'arrêté du 24 janvier 2017 impose un devis préalable. Sans devis, le professionnel s'expose à une amende administrative pouvant aller jusqu'à 3 000 € pour une personne physique et 15 000 € pour une société.",
+            "Le devis détaille chaque prestation et chaque produit en quantité et en prix, avec l'unité à laquelle le prix s'applique : le mètre carré pour la pose, le mètre linéaire pour les plinthes, l'heure pour la main-d'œuvre. Il indique aussi le taux horaire TTC, les frais de déplacement s'il y en a, le total HT et TTC avec le taux de TVA, la durée de validité de l'offre et si le devis est gratuit ou payant. Le logiciel ajoute ces mentions automatiquement."
+          ],
+          "items": []
+        },
+        {
+          "title": "Des ouvrages chiffrés une fois pour toutes",
+          "paragraphs": [
+            "Un devis de carrelage enchaîne souvent les mêmes ouvrages : dépose de l'ancien revêtement, ragréage, pose au sol, faïence murale, plinthes, joints. Avec votre bibliothèque d'ouvrages et de prix importée, vous les retrouvez à chaque devis au lieu de les ressaisir."
+          ],
+          "items": []
+        },
+        {
+          "title": "TVA : fourniture et pose",
+          "paragraphs": [
+            "Dans un logement d'habitation achevé depuis plus de deux ans, les travaux d'amélioration et d'entretien sont en principe à 10 %, fournitures indispensables comprises : le carrelage est cité parmi elles. Seuls les travaux et équipements réalisés et facturés par l'entreprise en bénéficient : lorsque le client achète lui-même ses équipements, cet achat reste au taux normal de 20 %, et seule votre prestation de pose peut alors relever du taux réduit.",
+            "Le taux réduit ne s'applique pas aux travaux qui aboutissent à un immeuble neuf, par exemple ceux qui augmentent la surface de plancher de plus de 10 %. Depuis le 1er mars 2025, le client certifie les conditions du taux réduit par une mention sur le devis ou la facture, qui remplace l'ancienne attestation."
+          ],
+          "items": []
+        },
+        {
+          "title": "L'assurance professionnelle sur chaque devis",
+          "paragraphs": [
+            "Les artisans dont le métier impose une assurance professionnelle, comme l'assurance décennale, indiquent sur leurs devis et factures les coordonnées de l'assureur ou du garant et la couverture géographique du contrat. Une fois ces informations renseignées dans vos paramètres, le logiciel les ajoute à chaque document."
+          ],
+          "items": []
+        },
+        {
+          "title": "Ce que le logiciel fait pour un carreleur",
+          "paragraphs": [],
+          "items": [
+            "Votre bibliothèque d'ouvrages et de prix (pose au mètre carré, plinthes au mètre linéaire, ragréage, fournitures) importée depuis Excel ou votre ancien logiciel.",
+            "Le devis fait sur téléphone chez le client, signé du doigt sur place ou par lien.",
+            "Acomptes et situations de travaux pour les rénovations de salle de bains ou de grandes surfaces.",
+            "Avoirs pour corriger une facture.",
+            "Relances automatiques des factures impayées.",
+            "Factures au format électronique, transmises via une plateforme agréée.",
+            "Export pour votre expert-comptable."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Le devis est-il obligatoire pour poser du carrelage ?",
+          "answer": "Oui : le revêtement de murs et de sols en tous matériaux figure dans la liste des travaux soumis au devis préalable (arrêté du 24 janvier 2017), avec le détail en quantité et en prix de chaque prestation."
+        },
+        {
+          "question": "Le client fournit son carrelage : quelle TVA sur mon devis ?",
+          "answer": "Lorsque le client achète lui-même ses équipements, cet achat reste au taux normal de 20 %. Seule votre prestation de pose peut alors relever du taux réduit, si le logement est achevé depuis plus de deux ans et si les autres conditions sont remplies."
+        },
+        {
+          "question": "Puis-je chiffrer au mètre carré ?",
+          "answer": "Oui, c'est même l'une des unités prévues par la réglementation : chaque prix unitaire indique à quoi il s'applique, heure de main-d'œuvre, mètre linéaire ou mètre carré."
+        },
+        {
+          "question": "Comment facturer une salle de bains en plusieurs fois ?",
+          "answer": "Avec un acompte à la signature puis des situations de travaux, que le logiciel prévoit."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Entreprendre.service-public.fr : devis obligatoire, activités concernées",
+          "href": "https://entreprendre.service-public.gouv.fr/vosdroits/F31144"
+        },
+        {
+          "label": "impots.gouv.fr : taux de TVA des travaux dans les logements",
+          "href": "https://www.impots.gouv.fr/professionnel/questions/quel-taux-de-tva-appliquer-pour-les-travaux-realises-dans-les-logements"
+        },
+        {
+          "label": "Entreprendre.service-public.fr : fin de l'attestation de TVA réduite",
+          "href": "https://entreprendre.service-public.gouv.fr/actualites/A18088"
+        },
+        {
+          "label": "Entreprendre.service-public.fr : documents commerciaux, assurance professionnelle",
+          "href": "https://entreprendre.service-public.gouv.fr/vosdroits/F37371"
+        }
+      ]
+    },
+    {
+      "slug": "chauffagiste",
+      "label": "Logiciel de devis pour chauffagiste",
+      "summary": "Devis préalable en génie climatique, TVA à 5,5, 10 ou 20 % selon l'équipement, fourniture et installation des chaudières gaz ou fioul à 20 % : les règles du métier et ce que fait le logiciel.",
+      "breadcrumb": "Chauffagiste",
+      "updated": "31 octobre 2026",
+      "seo": {
+        "title": "Logiciel de devis chauffagiste : devis et factures de chauffage",
+        "description": "Devis de chauffage conforme, taux de TVA du métier expliqués, fourniture et installation des chaudières gaz ou fioul à 20 %, acomptes et situations : le logiciel de devis pensé pour les chauffagistes."
+      },
+      "hero": {
+        "eyebrow": "Logiciel pour chauffagiste",
+        "title": "Le logiciel de devis et factures des chauffagistes",
+        "subtitle": "Un dépannage de chaudière, un entretien, une installation complète : faites le devis chez le client, faites-le signer sur place et facturez le soir même."
+      },
+      "sections": [
+        {
+          "title": "Le devis préalable en génie climatique",
+          "paragraphs": [
+            "La fumisterie et le génie climatique, y compris les énergies renouvelables, figurent dans la liste des travaux et dépannages pour lesquels l'arrêté du 24 janvier 2017 impose un devis préalable. L'obligation couvre aussi le remplacement ou l'ajout de pièces et d'appareils qui en découle. Sans devis, le professionnel s'expose à une amende administrative pouvant aller jusqu'à 3 000 € pour une personne physique et 15 000 € pour une société.",
+            "Le devis indique la nature exacte des réparations, le détail en quantité et en prix de chaque prestation et pièce, le taux horaire TTC, le mode de décompte du temps, les frais de déplacement s'il y en a, le total HT et TTC avec le taux de TVA, la durée de validité de l'offre et si le devis est gratuit ou payant. Le logiciel ajoute ces mentions automatiquement. Vous devez aussi informer le client qu'il peut, s'il le souhaite, conserver les pièces remplacées."
+          ],
+          "items": []
+        },
+        {
+          "title": "Trois taux de TVA dans le même métier",
+          "paragraphs": [
+            "Dans un logement d'habitation achevé depuis plus de deux ans, le taux dépend de l'équipement et de la prestation. Si le client achète lui-même l'équipement, cet achat reste à 20 % et seule votre prestation de pose peut relever du taux réduit, sauf pour une chaudière gaz ou fioul, dont l'installation reste à 20 %."
+          ],
+          "items": [
+            "5,5 % : pose, installation, adaptation ou entretien des équipements de chauffage et de production d'eau chaude utilisant une source d'énergie renouvelable, des appareils de régulation et de programmation du chauffage, le calorifugeage des installations, et l'entretien et la réparation des chaudières à très haute performance.",
+            "10 % : les autres équipements de chauffage, ainsi que l'entretien et la maintenance des chaudières fioul ou gaz.",
+            "20 % : depuis le 1er mars 2025, la fourniture et l'installation d'une chaudière susceptible d'utiliser un combustible fossile, par exemple gaz ou fioul."
+          ]
+        },
+        {
+          "title": "La mention qui remplace l'attestation",
+          "paragraphs": [
+            "Depuis le 1er mars 2025, le client certifie les conditions du taux réduit par une mention sur le devis ou la facture. L'attestation normale ou simplifiée n'est plus requise. Vous joignez une copie du devis ou de la facture à votre comptabilité."
+          ],
+          "items": []
+        },
+        {
+          "title": "L'assurance professionnelle sur chaque devis",
+          "paragraphs": [
+            "Les artisans dont le métier impose une assurance professionnelle, comme l'assurance décennale, indiquent sur leurs devis et factures les coordonnées de l'assureur ou du garant et la couverture géographique du contrat. Une fois ces informations renseignées dans vos paramètres, le logiciel les ajoute à chaque document."
+          ],
+          "items": []
+        },
+        {
+          "title": "Ce que le logiciel fait pour un chauffagiste",
+          "paragraphs": [],
+          "items": [
+            "Votre bibliothèque d'ouvrages et de prix (chaudières, pompes à chaleur, radiateurs, régulation, main-d'œuvre, déplacement) importée depuis Excel ou votre ancien logiciel.",
+            "Le devis fait sur téléphone chez le client, signé du doigt sur place ou par lien.",
+            "Acomptes et situations de travaux pour les installations complètes.",
+            "Avoirs pour corriger une facture.",
+            "Relances automatiques des factures impayées.",
+            "Factures au format électronique, transmises via une plateforme agréée.",
+            "Export pour votre expert-comptable."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Quel taux de TVA pour remplacer une chaudière gaz ?",
+          "answer": "Depuis le 1er mars 2025, la fourniture et l'installation d'une chaudière gaz ou fioul relèvent du taux normal de 20 %. L'entretien et la maintenance de ces chaudières restent en principe à 10 % dans un logement achevé depuis plus de deux ans."
+        },
+        {
+          "question": "Le devis est-il obligatoire pour un dépannage de chaudière ?",
+          "answer": "Oui : la fumisterie et le génie climatique figurent dans la liste des travaux et dépannages soumis au devis préalable (arrêté du 24 janvier 2017), y compris le remplacement de pièces ou d'appareils qui en découle."
+        },
+        {
+          "question": "Dois-je proposer au client de garder les pièces remplacées ?",
+          "answer": "Oui. Pour les travaux et dépannages soumis au devis préalable, le professionnel doit informer le client qu'il peut, s'il le souhaite, conserver les pièces, éléments ou appareils remplacés."
+        },
+        {
+          "question": "Je fais aussi de la plomberie, ça marche pour les deux métiers ?",
+          "answer": "Oui. Votre bibliothèque d'ouvrages et de prix peut contenir vos ouvrages de chauffage et de plomberie."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Entreprendre.service-public.fr : devis obligatoire, activités concernées",
+          "href": "https://entreprendre.service-public.gouv.fr/vosdroits/F31144"
+        },
+        {
+          "label": "impots.gouv.fr : taux de TVA des travaux dans les logements",
+          "href": "https://www.impots.gouv.fr/professionnel/questions/quel-taux-de-tva-appliquer-pour-les-travaux-realises-dans-les-logements"
+        },
+        {
+          "label": "Entreprendre.service-public.fr : fin de l'attestation de TVA réduite",
+          "href": "https://entreprendre.service-public.gouv.fr/actualites/A18088"
+        },
+        {
+          "label": "Entreprendre.service-public.fr : documents commerciaux, assurance professionnelle",
+          "href": "https://entreprendre.service-public.gouv.fr/vosdroits/F37371"
+        }
+      ]
     }
   ]
 }
