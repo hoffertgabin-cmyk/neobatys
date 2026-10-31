@@ -24,7 +24,7 @@ Tout se modifie depuis Pages CMS (voir [EDITION.md](EDITION.md)), ou directement
 
 ## Logiciel
 
-- [ ] Vérifier que les fonctionnalités annoncées correspondent à votre logiciel (signature électronique, import, export comptable…) dans `content/data/offers.json`, `content/data/pages.json` et `content/data/faq.json`
+- [ ] Vérifier que les fonctionnalités annoncées correspondent à votre logiciel (signature électronique, import, export comptable…) dans `content/data/offers.json`, `content/data/pages.json`, `content/data/faq.json` et `content/data/software-guides.json`
 - [ ] « Données hébergées en France [À VÉRIFIER] » dans `content/data/pages.json`
 
 ## Pages légales (`content/data/legal.json`)
