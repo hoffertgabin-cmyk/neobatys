@@ -302,6 +302,210 @@
           "href": "https://entreprendre.service-public.gouv.fr/actualites/A18088"
         }
       ]
+    },
+    {
+      "slug": "mentions-obligatoires-devis",
+      "label": "Mentions obligatoires du devis de travaux",
+      "summary": "Devis préalable, informations à y faire figurer, TVA réduite sans attestation, assurance décennale, conservation : ce que doit contenir un devis du bâtiment.",
+      "breadcrumb": "Mentions obligatoires du devis",
+      "updated": "31 octobre 2026",
+      "seo": {
+        "title": "Mentions obligatoires d'un devis de travaux du bâtiment",
+        "description": "Comment faire un devis bâtiment conforme : informations obligatoires, TVA à 10 % ou 5,5 % avec simple mention, assurance décennale, conservation du devis. Avec les sources officielles."
+      },
+      "hero": {
+        "eyebrow": "Guide du devis",
+        "title": "Les mentions obligatoires d'un devis de travaux",
+        "subtitle": "Ce qu'un devis du bâtiment doit contenir, ce qui a changé pour la TVA réduite et ce que chacun doit conserver ensuite, avec les liens vers les textes officiels."
+      },
+      "sections": [
+        {
+          "title": "Quand le devis est obligatoire",
+          "paragraphs": [
+            "Pour les travaux et dépannages du bâtiment et de l'équipement de la maison, la réglementation impose de remettre un devis préalable au client. La liste officielle couvre notamment la maçonnerie, l'isolation, la menuiserie, la serrurerie, la couverture et la toiture, l'étanchéité, la plomberie et les sanitaires, la plâtrerie, la peinture, la vitrerie, les revêtements de murs et de sols et l'électricité.",
+            "L'obligation vaut aussi pour le remplacement ou l'ajout de pièces, d'éléments ou d'appareils à la suite de ces prestations. Sans devis, le professionnel s'expose à une amende administrative pouvant aller jusqu'à 3 000 € pour une personne physique et 15 000 € pour une société."
+          ],
+          "items": []
+        },
+        {
+          "title": "Les informations à faire figurer",
+          "paragraphs": [
+            "Pour ces travaux, le devis doit comporter les informations suivantes. Le professionnel doit aussi informer le client qu'il peut conserver les pièces, éléments ou appareils remplacés."
+          ],
+          "items": [
+            "La date de rédaction.",
+            "Le nom et l'adresse de l'entreprise.",
+            "Le nom du client et le lieu d'exécution des travaux.",
+            "La nature exacte de l'intervention.",
+            "Le décompte détaillé, en quantité et en prix, de chaque prestation et produit : dénomination, prix unitaire, unité (heure de main-d'œuvre, mètre linéaire, mètre carré) et quantité prévue.",
+            "Le taux horaire de main-d'œuvre TTC et les modalités de décompte du temps estimé.",
+            "Les frais de déplacement, s'il y en a.",
+            "La somme globale à payer HT et TTC, avec le taux de TVA.",
+            "La durée de validité de l'offre.",
+            "Si le devis est gratuit ou payant, et son coût lorsqu'il est payant.",
+            "Lorsque la garantie décennale est obligatoire, les coordonnées de l'assureur et la zone de couverture géographique de l'assurance.",
+            "Les modalités d'enlèvement et de gestion des déchets générés par les travaux, et les coûts associés."
+          ]
+        },
+        {
+          "title": "TVA à 10 % ou 5,5 % : une mention suffit",
+          "paragraphs": [
+            "Dans les logements achevés depuis plus de deux ans, les travaux d'amélioration, de transformation, d'aménagement et d'entretien peuvent bénéficier du taux de 10 %, et certains travaux de rénovation énergétique du taux de 5,5 %. Le taux normal de 20 % s'applique dans les autres cas, par exemple aux travaux qui aboutissent à produire un immeuble neuf.",
+            "Depuis le 1er mars 2025, l'attestation normale ou simplifiée n'est plus requise : le client certifie, par une mention sur le devis ou la facture, que les travaux remplissent les conditions du taux réduit. Le professionnel joint une copie du devis ou de la facture à sa comptabilité."
+          ],
+          "items": []
+        },
+        {
+          "title": "L'assurance décennale",
+          "paragraphs": [
+            "Lorsque ses travaux relèvent de la garantie décennale, l'entreprise du bâtiment doit souscrire, avant le début des travaux, une assurance de responsabilité décennale, qui garantit la réparation des dommages apparaissant dans les 10 ans suivant la réception des travaux.",
+            "Une attestation de cette assurance doit être jointe aux devis ou factures, et le devis indique les coordonnées de l'assureur et la zone géographique couverte. Travailler sans assurance décennale expose à une amende pouvant aller jusqu'à 75 000 € et 6 mois de prison."
+          ],
+          "items": []
+        },
+        {
+          "title": "Signature, acompte et conservation",
+          "paragraphs": [
+            "Le devis engage le professionnel dès que le client l'accepte. Le client n'est engagé qu'à partir de sa signature, précédée de la mention « bon pour travaux » ou « bon pour accord ». Si le contrat ne précise pas qu'une somme versée est un acompte, elle est considérée comme des arrhes.",
+            "Pour les travaux au taux réduit de TVA, le client conserve une copie du devis ou de la facture jusqu'au 31 décembre de la cinquième année suivant la réalisation des travaux d'amélioration, de transformation, d'aménagement ou d'entretien, ou suivant l'émission des factures pour les travaux de rénovation énergétique."
+          ],
+          "items": []
+        },
+        {
+          "title": "Ce que fait le logiciel",
+          "paragraphs": [],
+          "items": [
+            "Les mentions obligatoires ajoutées automatiquement à chaque devis et facture, dont celles de votre assurance décennale une fois renseignées dans vos paramètres.",
+            "Votre bibliothèque d'ouvrages et de prix importée, pour un décompte détaillé ligne par ligne.",
+            "Le devis fait sur téléphone et signé électroniquement par le client.",
+            "Acomptes et situations de travaux, puis avoirs si besoin.",
+            "Relances automatiques et export pour votre expert-comptable.",
+            "Factures au format électronique, transmises via une plateforme agréée."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Faut-il un devis pour un petit dépannage ?",
+          "answer": "Pour les travaux et dépannages du bâtiment listés par la réglementation (plomberie, électricité, menuiserie, serrurerie, couverture, etc.), un devis préalable doit être remis au client."
+        },
+        {
+          "question": "L'attestation de TVA réduite est-elle encore nécessaire ?",
+          "answer": "Non. Depuis le 1er mars 2025, elle est remplacée par une mention sur le devis ou la facture, par laquelle le client certifie que les travaux remplissent les conditions du taux de 10 % ou de 5,5 %."
+        },
+        {
+          "question": "Le devis peut-il être payant ?",
+          "answer": "Oui. Le devis peut être gratuit ou payant, mais il doit l'indiquer, ainsi que son coût lorsqu'il est payant."
+        },
+        {
+          "question": "Le client peut-il se rétracter après avoir signé ?",
+          "answer": "Si le devis est accepté à la suite d'un démarchage, le client dispose de 14 jours pour se rétracter. Ce délai ne s'applique pas aux travaux et réparations d'urgence."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Entreprendre.service-public.fr : devis obligatoire, activités concernées",
+          "href": "https://entreprendre.service-public.gouv.fr/vosdroits/F31144"
+        },
+        {
+          "label": "Entreprendre.service-public.fr : entrepreneur en bâtiment, devis et garantie décennale",
+          "href": "https://entreprendre.service-public.gouv.fr/vosdroits/F39041"
+        },
+        {
+          "label": "impots.gouv.fr : taux de TVA des travaux dans les logements",
+          "href": "https://www.impots.gouv.fr/professionnel/questions/quel-taux-de-tva-appliquer-pour-les-travaux-realises-dans-les-logements"
+        },
+        {
+          "label": "Entreprendre.service-public.fr : fin de l'attestation de TVA réduite",
+          "href": "https://entreprendre.service-public.gouv.fr/actualites/A18088"
+        }
+      ]
+    },
+    {
+      "slug": "menuisier",
+      "label": "Logiciel de devis pour menuisier",
+      "summary": "Fenêtres alu ou PVC, portes, volets, portails : devis préalable, TVA à 10 % ou 5,5 % selon l'ouvrage, décennale, et ce que fait le logiciel.",
+      "breadcrumb": "Menuisier",
+      "updated": "31 octobre 2026",
+      "seo": {
+        "title": "Logiciel de devis et factures pour menuisier (alu, PVC, bois)",
+        "description": "Devis de menuiserie conforme, taux de TVA des fenêtres, portes et volets, décennale : les règles avec les sources officielles, et le logiciel de devis des menuisiers alu, PVC et bois."
+      },
+      "hero": {
+        "eyebrow": "Logiciel pour menuisier",
+        "title": "Le logiciel de devis et factures des menuisiers",
+        "subtitle": "Remplacement de fenêtres, porte d'entrée, volets, portail ou placards : faites le devis chez le client avec vos ouvrages et vos prix, faites-le signer sur place, puis suivez acomptes, situations et relances."
+      },
+      "sections": [
+        {
+          "title": "Le devis avant les travaux",
+          "paragraphs": [
+            "La menuiserie fait partie des travaux et dépannages pour lesquels un devis préalable doit être remis au client, y compris l'entretien des portes de garage, des portes de garage automatiques et des portails électriques. Sans devis, le professionnel s'expose à une amende administrative pouvant aller jusqu'à 3 000 € pour une personne physique et 15 000 € pour une société.",
+            "Pour une menuiserie, chaque fenêtre, porte ou volet peut avoir sa ligne avec sa quantité et son prix unitaire, comme la dépose de l'existant et la pose. La réglementation impose aussi d'indiquer au devis les modalités d'enlèvement et de gestion des déchets générés par les travaux, et leur coût."
+          ],
+          "items": []
+        },
+        {
+          "title": "Fenêtres, portes, volets : quel taux de TVA",
+          "paragraphs": [
+            "Dans un logement achevé depuis plus de deux ans, le taux de 5,5 % s'applique, sous conditions, à l'isolation thermique des parois vitrées et des portes d'entrée donnant sur l'extérieur, ainsi qu'à l'installation de volets isolants. Les portes, fenêtres et portes-fenêtres qui ne sont pas éligibles au taux de 5,5 % relèvent du taux de 10 %.",
+            "Les équipements de cuisine, de salle de bains et de rangement peuvent aussi bénéficier du taux de 10 % s'ils s'incorporent au bâti, s'adaptent à la configuration des locaux et ne peuvent pas être enlevés sans détériorer le meuble ou le bâti. Si le client achète lui-même ses menuiseries, elles restent à 20 % et seule votre pose bénéficie du taux réduit. Dans le neuf, le taux normal s'applique.",
+            "Depuis le 1er mars 2025, l'attestation de TVA réduite n'est plus requise : le client certifie par une mention sur le devis ou la facture que les conditions du taux réduit sont remplies."
+          ],
+          "items": []
+        },
+        {
+          "title": "L'assurance décennale",
+          "paragraphs": [
+            "Lorsque ses travaux relèvent de la garantie décennale, l'entreprise de menuiserie doit souscrire une assurance de responsabilité décennale avant le début des travaux. Une attestation est jointe à ses devis ou factures, et le devis indique les coordonnées de l'assureur et la zone géographique couverte. Le logiciel ajoute ces mentions automatiquement, une fois renseignées dans vos paramètres."
+          ],
+          "items": []
+        },
+        {
+          "title": "Ce que le logiciel fait pour un menuisier",
+          "paragraphs": [],
+          "items": [
+            "Votre bibliothèque d'ouvrages et de prix importée (fenêtres, portes, volets, dépose, pose, enlèvement).",
+            "Le devis fait sur téléphone chez le client, signé électroniquement sur place.",
+            "Un acompte à la commande, puis des situations de travaux sur les chantiers plus longs.",
+            "Avoirs et relances automatiques des factures impayées.",
+            "Mentions obligatoires ajoutées automatiquement à chaque devis et facture.",
+            "Factures au format électronique, transmises via une plateforme agréée, et export pour votre expert-comptable."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Remplacer des fenêtres PVC ou alu : TVA à 5,5 % ou 10 % ?",
+          "answer": "Dans un logement de plus de deux ans, le remplacement de fenêtres relève du taux de 5,5 % lorsqu'il s'agit d'isolation thermique des parois vitrées, sous conditions, et du taux de 10 % dans les autres cas. Vérifiez les conditions sur impots.gouv.fr avant d'appliquer le taux."
+        },
+        {
+          "question": "Un devis est-il obligatoire pour réparer une porte de garage ?",
+          "answer": "Oui. La liste officielle des travaux soumis au devis préalable cite la menuiserie, y compris l'entretien des portes de garage, des portes de garage automatiques et des portails électriques."
+        },
+        {
+          "question": "Je travaille l'alu, le PVC et le bois, le logiciel suit ?",
+          "answer": "Oui. Votre bibliothèque d'ouvrages contient vos menuiseries dans chaque matériau avec vos propres prix, que vous reprenez ligne par ligne dans vos devis."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Entreprendre.service-public.fr : devis obligatoire, activités concernées",
+          "href": "https://entreprendre.service-public.gouv.fr/vosdroits/F31144"
+        },
+        {
+          "label": "Entreprendre.service-public.fr : entrepreneur en bâtiment, devis et garantie décennale",
+          "href": "https://entreprendre.service-public.gouv.fr/vosdroits/F39041"
+        },
+        {
+          "label": "impots.gouv.fr : taux de TVA des travaux dans les logements",
+          "href": "https://www.impots.gouv.fr/professionnel/questions/quel-taux-de-tva-appliquer-pour-les-travaux-realises-dans-les-logements"
+        },
+        {
+          "label": "Entreprendre.service-public.fr : fin de l'attestation de TVA réduite",
+          "href": "https://entreprendre.service-public.gouv.fr/actualites/A18088"
+        }
+      ]
     }
   ]
 }
