@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import * as m from "motion/react-m";
 import { useReducedMotion, useScroll, useSpring } from "motion/react";
 import { process } from "@/content/home";
@@ -27,6 +27,18 @@ export function Process() {
   });
   const scale = reduce ? 1 : progress;
 
+  // Sur mobile, le rail s'arrête au centre de la dernière icône (28 px = moitié de size-14)
+  const [railBottom, setRailBottom] = useState(0);
+  useLayoutEffect(() => {
+    const last = ref.current?.querySelector<HTMLElement>("ol > li:last-child");
+    if (!last) return;
+    const measure = () => setRailBottom(Math.max(0, last.offsetHeight - 28));
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(last);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <Section id="processus" theme="light" aria-labelledby="processus-titre">
       <SectionHeading
@@ -40,7 +52,8 @@ export function Process() {
         {/* Rail + progression : vertical sur mobile, horizontal à partir de md */}
         <div
           aria-hidden="true"
-          className="absolute top-0 bottom-0 left-[27px] w-0.5 bg-nuit/8 md:hidden"
+          className="absolute top-0 left-[27px] w-0.5 bg-nuit/8 md:hidden"
+          style={{ bottom: railBottom }}
         >
           <m.div
             style={{ scaleY: scale }}
