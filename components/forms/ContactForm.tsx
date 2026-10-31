@@ -76,10 +76,16 @@ export function ContactForm() {
     },
   });
 
-  // Pré-sélection du service via l'URL (/contact?service=logiciel)
+  // Pré-remplissage via l'URL (/contact?service=logiciel, ou ?service=site&maquette=Plombier)
   useEffect(() => {
-    const service = new URLSearchParams(window.location.search).get("service");
+    const params = new URLSearchParams(window.location.search);
+    const service = params.get("service");
     if (service && services.some((s) => s.value === service)) setValue("service", service);
+    const maquette = params.get("maquette");
+    if (maquette && trades.includes(maquette)) {
+      setValue("trade", maquette);
+      setValue("message", `Je suis intéressé par la maquette ${maquette}.`);
+    }
   }, [setValue]);
 
   async function onSubmit(data: ContactData) {

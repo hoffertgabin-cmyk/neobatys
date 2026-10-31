@@ -2,14 +2,16 @@
 
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import * as m from "motion/react-m";
-import { Maximize2, X } from "lucide-react";
+import { ArrowRight, Maximize2, X } from "lucide-react";
 import { mockupsOnly, projects, type Project } from "@/content/projects";
 import { sectionsCopy } from "@/content/home";
 import { cn } from "@/lib/utils";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PlaceholderBadge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
 import { ScaledCanvas } from "@/components/mockups/ScaledCanvas";
 import { MOCKUP_HEIGHT, MOCKUP_WIDTH, TradeSiteMockup } from "@/components/mockups/TradeSiteMockup";
 
@@ -17,6 +19,10 @@ const ALL = "Tous";
 
 /** Métier et ville ; la ville d'une maquette fictive n'est pas affichée. */
 const projectMeta = (p: Project) => (p.placeholder ? p.trade : `${p.trade} · ${p.city}`);
+
+/** Formulaire de contact pré-rempli avec le métier de la maquette. */
+const interestHref = (p: Project) =>
+  `/contact?service=site&maquette=${encodeURIComponent(p.trade)}`;
 
 /** Aperçu de la maquette dans la carte : le haut du site, coupé en bas. */
 function ProjectPreview({ project }: { project: Project }) {
@@ -111,6 +117,9 @@ function ProjectDialog({ project, onClose }: { project: Project | null; onClose:
                 fonctionnent (rien n&apos;est envoyé).
               </p>
             </div>
+            <Button href={interestHref(project)} arrow className="ml-auto shrink-0 max-sm:hidden">
+              Cette maquette m&apos;intéresse
+            </Button>
             <button
               type="button"
               onClick={() => ref.current?.close()}
@@ -269,6 +278,12 @@ export function Projects() {
                   </li>
                 ))}
               </ul>
+              <Link
+                href={interestHref(project)}
+                className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-nuit underline-offset-4 hover:underline"
+              >
+                Cette maquette m&apos;intéresse <ArrowRight aria-hidden="true" className="size-4" />
+              </Link>
             </div>
           </m.li>
         ))}
