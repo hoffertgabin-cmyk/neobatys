@@ -302,6 +302,209 @@
           "href": "https://entreprendre.service-public.gouv.fr/actualites/A18088"
         }
       ]
+    },
+    {
+      "slug": "macon",
+      "label": "Logiciel de devis pour maçon",
+      "summary": "Devis préalable obligatoire, TVA à 10 % ou 20 % selon l'ampleur des travaux, attestation décennale, situations de travaux : les règles de la maçonnerie et ce que fait le logiciel.",
+      "breadcrumb": "Maçon",
+      "updated": "31 octobre 2026",
+      "seo": {
+        "title": "Logiciel de devis maçonnerie : devis et factures pour maçon",
+        "description": "Devis de maçonnerie conforme, bon taux de TVA, attestation décennale, situations de travaux et factures électroniques : le logiciel de devis pensé pour les maçons."
+      },
+      "hero": {
+        "eyebrow": "Logiciel pour maçon",
+        "title": "Le logiciel de devis et factures des maçons",
+        "subtitle": "Une ouverture dans un mur porteur, une dalle, une extension : chiffrez au mètre carré depuis votre bibliothèque de prix, faites signer le devis et facturez le chantier par situations."
+      },
+      "sections": [
+        {
+          "title": "Un devis préalable, avec les bonnes mentions",
+          "paragraphs": [
+            "La maçonnerie figure dans la liste des travaux du bâtiment pour lesquels la réglementation (arrêté du 24 janvier 2017) impose de remettre un devis préalable. Sans devis, le professionnel s'expose à une amende administrative pouvant aller jusqu'à 3 000 € pour un entrepreneur individuel et 15 000 € pour une société.",
+            "Le devis détaille chaque prestation et chaque produit en quantité et en prix, avec l'unité à laquelle le prix s'applique : heures de main-d'œuvre, mètre linéaire ou mètre carré. Il indique aussi le taux horaire de main-d'œuvre TTC, les frais de déplacement s'il y en a, le total HT et TTC avec le taux de TVA, la durée de validité de l'offre, et les modalités d'enlèvement et de gestion des déchets du chantier avec leur coût."
+          ],
+          "items": []
+        },
+        {
+          "title": "10 % ou 20 % : l'ampleur des travaux compte",
+          "paragraphs": [
+            "Dans un logement achevé depuis plus de deux ans, les travaux d'amélioration, de transformation, d'aménagement et d'entretien sont en principe à 10 %, y compris les matériaux indispensables comme le ciment. Le taux réduit ne s'applique plus quand les travaux reviennent à produire un immeuble neuf.",
+            "C'est le cas, selon l'administration fiscale, des travaux qui surélèvent le bâtiment ou ajoutent une construction, qui remettent à neuf plus de la moitié du gros œuvre (fondations, murs porteurs, charpente, consistance des façades hors ravalement), ou qui augmentent la surface de plancher de plus de 10 %. Ces travaux sont au taux normal de 20 %. Depuis le 1er mars 2025, le client certifie par une mention sur le devis ou la facture que les conditions du taux réduit sont remplies.",
+            "Le logiciel vous laisse choisir le taux ligne par ligne, pour qu'un même devis puisse mélanger plusieurs taux."
+          ],
+          "items": []
+        },
+        {
+          "title": "La décennale jointe au devis",
+          "paragraphs": [
+            "Le maçon doit souscrire une assurance de responsabilité décennale avant de commencer les travaux. Elle couvre pendant 10 ans après la réception les dommages qui compromettent la solidité de l'ouvrage ou rendent son utilisation impossible. Le défaut d'assurance est puni jusqu'à 75 000 € d'amende et 6 mois de prison.",
+            "Une attestation d'assurance décennale doit être jointe à vos devis ou factures, et le devis indique les coordonnées de l'assureur et la zone géographique couverte. Une fois ces informations renseignées dans vos paramètres, le logiciel les ajoute automatiquement."
+          ],
+          "items": []
+        },
+        {
+          "title": "Votre bibliothèque d'ouvrages de maçonnerie",
+          "paragraphs": [
+            "Un devis de maçonnerie se construit avec des ouvrages qui reviennent d'un chantier à l'autre. Importez-les une fois, depuis Excel ou votre ancien logiciel, avec leur unité et leur prix, puis ajustez les quantités sur place."
+          ],
+          "items": [
+            "Terrassement et fouilles en rigole, au mètre cube.",
+            "Fondations et semelles en béton armé, au mètre linéaire.",
+            "Dalle et chape, au mètre carré.",
+            "Mur en blocs béton ou en briques, au mètre carré.",
+            "Création d'une ouverture dans un mur porteur, avec linteau ou poutre.",
+            "Enduit de façade, au mètre carré.",
+            "Évacuation des gravats et location d'échafaudage."
+          ]
+        },
+        {
+          "title": "Ce que le logiciel fait pour un maçon",
+          "paragraphs": [],
+          "items": [
+            "Le devis fait sur téléphone sur le chantier, signé électroniquement sur place ou par lien.",
+            "Acompte à la commande, puis situations de travaux à l'avancement pour les extensions et les gros chantiers.",
+            "Avoirs quand un poste est retiré ou modifié en cours de chantier.",
+            "Relances automatiques des factures impayées.",
+            "Factures au format électronique, transmises via une plateforme agréée.",
+            "Export pour votre expert-comptable."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Le devis est-il obligatoire pour des travaux de maçonnerie ?",
+          "answer": "Oui. La maçonnerie fait partie des travaux du bâtiment soumis au devis préalable par l'arrêté du 24 janvier 2017. Le devis doit notamment détailler chaque prestation en quantité et en prix, et indiquer le taux horaire TTC et les frais de déplacement."
+        },
+        {
+          "question": "Quel taux de TVA pour une extension de maison ?",
+          "answer": "Une addition de construction ou une surélévation est exclue des taux réduits : elle est au taux normal de 20 %. Les travaux d'amélioration ou d'entretien dans un logement de plus de deux ans restent en principe à 10 %."
+        },
+        {
+          "question": "Acompte ou arrhes : que demander à la signature ?",
+          "answer": "Le contrat doit le préciser. Si rien n'est indiqué, la somme versée est considérée comme des arrhes, que le client peut abandonner pour revenir sur sa décision. Le logiciel facture l'acompte prévu au devis, puis les situations de travaux."
+        },
+        {
+          "question": "Comment facturer un gros chantier en plusieurs fois ?",
+          "answer": "Avec les situations de travaux : vous facturez le chantier à l'avancement, étape par étape, plutôt qu'en une seule fois à la fin."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Entreprendre.service-public.fr : devis obligatoire, activités concernées",
+          "href": "https://entreprendre.service-public.gouv.fr/vosdroits/F31144"
+        },
+        {
+          "label": "Entreprendre.service-public.fr : maçon, conditions d'accès et d'exercice",
+          "href": "https://entreprendre.service-public.gouv.fr/vosdroits/F39037"
+        },
+        {
+          "label": "impots.gouv.fr : taux de TVA des travaux dans les logements",
+          "href": "https://www.impots.gouv.fr/professionnel/questions/quel-taux-de-tva-appliquer-pour-les-travaux-realises-dans-les-logements"
+        }
+      ]
+    },
+    {
+      "slug": "peintre",
+      "label": "Logiciel de devis pour peintre en bâtiment",
+      "summary": "Devis préalable obligatoire, TVA à 10 % sur la peinture fournie et posée dans un logement de plus de deux ans, décennale selon les travaux, chiffrage au mètre carré : les règles du métier et ce que fait le logiciel.",
+      "breadcrumb": "Peintre",
+      "updated": "31 octobre 2026",
+      "seo": {
+        "title": "Logiciel de devis pour peintre en bâtiment : devis et factures",
+        "description": "Devis de peinture conforme et chiffré au mètre carré, bon taux de TVA, mentions de décennale, factures électroniques : le logiciel de devis pensé pour les peintres en bâtiment."
+      },
+      "hero": {
+        "eyebrow": "Logiciel pour peintre",
+        "title": "Le logiciel de devis et factures des peintres en bâtiment",
+        "subtitle": "Une chambre à rafraîchir, un appartement entier, une façade : mesurez les surfaces, chiffrez au mètre carré depuis votre bibliothèque de prix et faites signer le devis avant de quitter le client."
+      },
+      "sections": [
+        {
+          "title": "Un devis préalable, chiffré au mètre carré",
+          "paragraphs": [
+            "La peinture figure dans la liste des travaux du bâtiment pour lesquels la réglementation (arrêté du 24 janvier 2017) impose de remettre un devis préalable. Sans devis, le professionnel s'expose à une amende administrative pouvant aller jusqu'à 3 000 € pour un entrepreneur individuel et 15 000 € pour une société.",
+            "Le devis détaille chaque prestation et chaque produit en quantité et en prix, avec l'unité à laquelle le prix s'applique : heures de main-d'œuvre, mètre linéaire ou mètre carré. Il indique aussi le taux horaire de main-d'œuvre TTC, les frais de déplacement s'il y en a, le total HT et TTC avec le taux de TVA, la durée de validité de l'offre, et les modalités d'enlèvement et de gestion des déchets avec leur coût."
+          ],
+          "items": []
+        },
+        {
+          "title": "Le bon taux de TVA sur la peinture",
+          "paragraphs": [
+            "Dans un logement achevé depuis plus de deux ans, les travaux d'amélioration et d'entretien sont en principe à 10 %, et l'administration fiscale cite la peinture et les papiers peints parmi les fournitures indispensables qui suivent ce taux quand vous les fournissez et les posez.",
+            "Si le client achète lui-même sa peinture, cet achat reste à 20 % et seule votre pose bénéficie du taux réduit. Depuis le 1er mars 2025, le client certifie par une mention sur le devis ou la facture que les conditions du taux réduit sont remplies. Le logiciel vous laisse choisir le taux ligne par ligne."
+          ],
+          "items": []
+        },
+        {
+          "title": "La décennale : selon les travaux",
+          "paragraphs": [
+            "Pour un peintre en bâtiment, l'assurance de responsabilité décennale est obligatoire pour certains travaux, comme l'isolation par l'extérieur ou le revêtement de façade et la réparation des fissures. Elle est facultative pour la simple peinture décorative d'intérieur.",
+            "Lorsqu'elle est obligatoire, une attestation d'assurance décennale doit être jointe à vos devis ou factures, et le devis indique les coordonnées de l'assureur et la zone géographique couverte. Une fois ces informations renseignées dans vos paramètres, le logiciel les ajoute automatiquement."
+          ],
+          "items": []
+        },
+        {
+          "title": "Votre bibliothèque d'ouvrages de peinture",
+          "paragraphs": [
+            "Un devis de peinture se construit avec des ouvrages qui reviennent d'un chantier à l'autre. Importez-les une fois, depuis Excel ou votre ancien logiciel, avec leur unité et leur prix, puis ajustez les surfaces sur place."
+          ],
+          "items": [
+            "Protection des sols et des menuiseries.",
+            "Préparation des supports : lessivage, rebouchage, ponçage.",
+            "Enduit de lissage, au mètre carré.",
+            "Impression et deux couches de finition, au mètre carré, murs et plafonds séparés.",
+            "Pose de toile de verre ou de papier peint, au mètre carré.",
+            "Peinture des boiseries et des radiateurs, à l'unité ou au mètre linéaire.",
+            "Ravalement de façade et location d'échafaudage."
+          ]
+        },
+        {
+          "title": "Ce que le logiciel fait pour un peintre",
+          "paragraphs": [],
+          "items": [
+            "Le devis fait sur téléphone chez le client, signé électroniquement sur place ou par lien.",
+            "Acompte à la commande, puis situations de travaux pour les appartements entiers et les façades.",
+            "Avoirs quand une pièce est retirée du chantier.",
+            "Relances automatiques des factures impayées.",
+            "Factures au format électronique, transmises via une plateforme agréée.",
+            "Export pour votre expert-comptable."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Le devis est-il obligatoire pour des travaux de peinture ?",
+          "answer": "Oui. La peinture fait partie des travaux du bâtiment soumis au devis préalable par l'arrêté du 24 janvier 2017, avec un décompte détaillé en quantité et en prix, par exemple au mètre carré."
+        },
+        {
+          "question": "Quel taux de TVA quand le client fournit la peinture ?",
+          "answer": "La peinture achetée par le client reste à 20 %. Votre prestation de pose, dans un logement achevé depuis plus de deux ans, peut bénéficier du taux réduit de 10 %."
+        },
+        {
+          "question": "Un peintre doit-il avoir une décennale ?",
+          "answer": "Cela dépend des travaux. Elle est obligatoire par exemple pour le revêtement de façade et la réparation des fissures, et facultative pour la simple peinture décorative d'intérieur."
+        },
+        {
+          "question": "Puis-je faire le devis pendant le métré ?",
+          "answer": "Oui. Le logiciel fonctionne sur téléphone et tablette : vous chiffrez les surfaces sur place, le client signe sur place ou reçoit un lien."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Entreprendre.service-public.fr : devis obligatoire, activités concernées",
+          "href": "https://entreprendre.service-public.gouv.fr/vosdroits/F31144"
+        },
+        {
+          "label": "Entreprendre.service-public.fr : peintre en bâtiment, conditions d'accès et d'exercice",
+          "href": "https://entreprendre.service-public.gouv.fr/vosdroits/F39038"
+        },
+        {
+          "label": "impots.gouv.fr : taux de TVA des travaux dans les logements",
+          "href": "https://www.impots.gouv.fr/professionnel/questions/quel-taux-de-tva-appliquer-pour-les-travaux-realises-dans-les-logements"
+        }
+      ]
     }
   ]
 }
