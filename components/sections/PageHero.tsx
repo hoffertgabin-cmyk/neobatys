@@ -7,6 +7,8 @@ type Props = {
   title: string;
   subtitle?: string;
   breadcrumb: string;
+  /** Page parente affichée entre l'accueil et la page courante. */
+  parent?: { label: string; href: string };
   children?: React.ReactNode;
   compact?: boolean;
 };
@@ -17,6 +19,7 @@ export function PageHero({
   title,
   subtitle,
   breadcrumb,
+  parent,
   children,
   compact = false,
 }: Props) {
@@ -38,6 +41,18 @@ export function PageHero({
             <li aria-hidden="true">
               <ChevronRight className="size-3.5" />
             </li>
+            {parent && (
+              <>
+                <li>
+                  <Link href={parent.href} className="hover:text-nuit">
+                    {parent.label}
+                  </Link>
+                </li>
+                <li aria-hidden="true">
+                  <ChevronRight className="size-3.5" />
+                </li>
+              </>
+            )}
             <li aria-current="page" className="text-nuit">
               {breadcrumb}
             </li>

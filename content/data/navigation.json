@@ -10,6 +10,10 @@
         "href": "/logiciel"
       },
       {
+        "label": "Facturation électronique",
+        "href": "/logiciel/facturation-electronique"
+      },
+      {
         "label": "Intelligence artificielle",
         "href": "/#ia"
       },
