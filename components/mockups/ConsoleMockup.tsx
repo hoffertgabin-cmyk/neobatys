@@ -38,13 +38,13 @@ const events = [
   "Facture réglée après relance",
 ];
 
-/** Console NEOBATYS du hero, faite en HTML/CSS (pas une image). */
+/** Console NEOBATYS (hero et offre logiciel), faite en HTML/CSS (pas une image). */
 export function ConsoleMockup({ className }: { className?: string }) {
   return (
     <div
       aria-hidden="true"
       className={cn(
-        "rounded-3xl bg-white/90 p-4 text-nuit shadow-[0_40px_90px_-30px_rgb(23_23_23/0.35)] ring-1 ring-nuit/8 backdrop-blur select-none sm:p-6",
+        "@container rounded-3xl bg-white/90 p-4 text-nuit shadow-[0_40px_90px_-30px_rgb(23_23_23/0.35)] ring-1 ring-nuit/8 backdrop-blur select-none sm:p-6",
         className,
       )}
     >
@@ -55,7 +55,7 @@ export function ConsoleMockup({ className }: { className?: string }) {
         </span>
       </div>
 
-      <div className="mt-4 grid grid-cols-2 gap-2.5 sm:gap-3 lg:grid-cols-4">
+      <div className="mt-4 grid grid-cols-2 gap-2.5 sm:gap-3 @2xl:grid-cols-4">
         {kpis.map((k) => (
           <div key={k.label} className="rounded-2xl p-3 ring-1 ring-nuit/8 sm:p-4">
             <p className="truncate text-[11px] text-ardoise sm:text-xs">{k.label}</p>
@@ -72,7 +72,7 @@ export function ConsoleMockup({ className }: { className?: string }) {
         ))}
       </div>
 
-      <div className="mt-3 grid gap-3 lg:grid-cols-[1.5fr_1fr]">
+      <div className="mt-3 grid gap-3 @2xl:grid-cols-[1.5fr_1fr]">
         <div className="rounded-2xl p-3 ring-1 ring-nuit/8 sm:p-4">
           <div className="flex items-center justify-between">
             <p className="text-xs font-semibold sm:text-sm">Nouveaux clients</p>

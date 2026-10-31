@@ -20,18 +20,18 @@ type Offer = {
 type Props = {
   offer: Offer;
   theme: SectionTheme;
-  visual: React.ReactNode;
+  visual?: React.ReactNode;
   reverse?: boolean;
   showCta?: boolean;
 };
 
-/** Présentation d'une offre : bénéfices + visuel, puis grille de fonctionnalités. */
+/** Présentation d'une offre : bénéfices + visuel éventuel, puis grille de fonctionnalités. */
 export function OfferSection({ offer, theme, visual, reverse = false, showCta = true }: Props) {
   const dark = theme === "dark";
   const headingId = `${offer.id}-titre`;
   return (
     <Section id={offer.id} theme={theme} pattern={dark} aria-labelledby={headingId}>
-      <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
+      <div className={cn("grid items-center gap-14 lg:gap-16", visual && "lg:grid-cols-2")}>
         <div className={cn(reverse && "lg:order-2")}>
           <SectionHeading
             id={headingId}
@@ -57,13 +57,15 @@ export function OfferSection({ offer, theme, visual, reverse = false, showCta = 
             </Reveal>
           )}
         </div>
-        <Reveal delay={0.1} y={32} className={cn("relative", reverse && "lg:order-1")}>
-          <div
-            aria-hidden="true"
-            className="absolute inset-x-8 inset-y-4 -z-10 rounded-full bg-chantier/20 blur-[90px]"
-          />
-          {visual}
-        </Reveal>
+        {visual && (
+          <Reveal delay={0.1} y={32} className={cn("relative", reverse && "lg:order-1")}>
+            <div
+              aria-hidden="true"
+              className="absolute inset-x-8 inset-y-4 -z-10 rounded-full bg-chantier/20 blur-[90px]"
+            />
+            {visual}
+          </Reveal>
+        )}
       </div>
 
       <Stagger as="ul" className="mt-20 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

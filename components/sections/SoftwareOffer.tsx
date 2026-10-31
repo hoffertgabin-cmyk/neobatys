@@ -1,5 +1,5 @@
 import { softwareOffer } from "@/content/offers";
-import { DashboardMockup } from "@/components/mockups/DashboardMockup";
+import { ConsoleMockup } from "@/components/mockups/ConsoleMockup";
 import { OfferSection } from "./OfferSection";
 
 export function SoftwareOffer({ showCta = true }: { showCta?: boolean }) {
@@ -9,7 +9,7 @@ export function SoftwareOffer({ showCta = true }: { showCta?: boolean }) {
       theme="dark"
       reverse
       showCta={showCta}
-      visual={<DashboardMockup />}
+      visual={<ConsoleMockup />}
     />
   );
 }
