@@ -7,7 +7,7 @@ Tout se modifie depuis Pages CMS (voir [EDITION.md](EDITION.md)), ou directement
 - [ ] `[TÉLÉPHONE]` (affichage) et `phoneHref` au format `+33612345678` : tant qu'il n'est pas rempli, le numéro et les boutons « Appeler » sont masqués
 - [x] E-mail : `contact@neobatys.com` (boîte OVH)
 - [ ] Adresse du siège au Luxembourg : `[ADRESSE DU SIÈGE]`, `[CODE POSTAL]`, `[VILLE]`
-- [ ] Liens Facebook / Instagram / LinkedIn (les icônes apparaissent dès qu'un lien est renseigné)
+- [ ] Liens Facebook / Instagram / LinkedIn (les icônes apparaissent dès qu'un lien est renseigné ; création des comptes : `docs/reseaux-sociaux.md`)
 - [ ] URL définitive du site (`NEXT_PUBLIC_SITE_URL`)
 
 ## Contenus d'exemple à remplacer
