@@ -86,6 +86,41 @@ export function serviceJsonLd(name: string, description: string, path: string) {
   };
 }
 
+/** Logiciel de devis et factures. Pas d'offre ni de note : aucun prix seul ni avis client publié. */
+export function softwareApplicationJsonLd(description: string, features: string[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": `${site.url}/logiciel#logiciel`,
+    name: `Logiciel de devis et factures ${site.name}`,
+    description,
+    url: new URL("/logiciel", site.url).toString(),
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    inLanguage: "fr",
+    featureList: features,
+    provider: { "@id": `${site.url}/#entreprise` },
+    audience: {
+      "@type": "BusinessAudience",
+      audienceType: "Artisans du bâtiment",
+    },
+  };
+}
+
+/** Fil d'Ariane : [{ name, path }] de l'accueil à la page courante. */
+export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: new URL(item.path, site.url).toString(),
+    })),
+  };
+}
+
 export function faqJsonLd(items: { question: string; answer: string }[]) {
   return {
     "@context": "https://schema.org",
