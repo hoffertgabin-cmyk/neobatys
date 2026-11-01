@@ -116,6 +116,8 @@ Organismes vérifiés existants le 31/10/2026. Les adresses initiative-metz.fr, 
 
 ## 9. Actions humaines
 
+Pas à pas avec les liens officiels (Search Console, Bing, annuaires, données NAP) : `docs/seo-actions-ilann.md`.
+
 | Action | Qui | Quand |
 |---|---|---|
 | Relire les 3 guides (dates, amendes, TVA) et confirmer que le logiciel passe bien par une plateforme agréée (laquelle ?) | Ilann, Gabin | avant fusion |
