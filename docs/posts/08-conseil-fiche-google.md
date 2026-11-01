@@ -1,14 +1,15 @@
-# 08 Conseil : 5 choses à remplir sur sa fiche Google
+# 08 1 question, 1 réponse : que remplir en priorité sur ma fiche Google ?
 
 - **Date prévue** : jeudi 26 novembre 2026
 - **Réseaux** : Instagram, Facebook, LinkedIn
 - **Pilier** : conseils pratiques
+- **Série** : « 1 question, 1 réponse » (voir la veille `../veille/reseaux-sociaux.md`, piste 1). Le titre est une vraie question d'artisan.
 - **Format** : carrousel 7 visuels (4:5) ; LinkedIn en document PDF
 - **Source à rouvrir avant publication** : [Aide Google Business Profile, *Conseils pour améliorer votre classement local sur Google*](https://support.google.com/business/answer/7091?hl=fr). Google y cite trois critères du classement local : pertinence, distance et popularité, et recommande d'avoir des informations complètes et exactes, des photos et de répondre aux avis. Ne rien affirmer au-delà de ce que dit cette page.
 
 ## Visuel
 
-1. « Votre fiche Google : 5 choses à remplir ce soir »
+1. « 1 question, 1 réponse : que remplir en priorité sur ma fiche Google ? » (sous-titre : 5 choses à remplir ce soir)
 2. « 1. La bonne catégorie principale (ex. Plombier, pas Entreprise). »
 3. « 2. La zone desservie : les communes où vous intervenez vraiment. »
 4. « 3. Les horaires, y compris les jours fériés. »
@@ -19,6 +20,8 @@
 ## Texte Instagram / Facebook
 
 ```
+1 question, 1 réponse : que remplir en priorité sur ma fiche Google ?
+
 Quand quelqu'un cherche « couvreur près de chez moi », c'est souvent la fiche Google qui s'affiche avant les sites.
 
 5 choses à remplir sur la vôtre :

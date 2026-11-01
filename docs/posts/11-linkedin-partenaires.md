@@ -1,7 +1,7 @@
 # 11 LinkedIn : appel aux partenaires du bâtiment
 
 - **Date prévue** : jeudi 3 décembre 2026
-- **Réseaux** : LinkedIn uniquement (page, puis relais par chaque associé avec une phrase personnelle)
+- **Réseaux** : LinkedIn uniquement (page, puis relais éventuel par un associé, voir plus bas)
 - **Pilier** : partenaires et entreprises du BTP
 - **Format** : post texte + une image (visuel 1:1 « On cherche à échanger avec... »)
 
@@ -31,13 +31,15 @@ Pas de démarchage : un premier échange de 20 minutes pour voir si nos clients 
 
 ## Hashtags
 
-`#BTP #ExpertComptable #GrandEst`
+`#BTP #ExpertComptable #GrandEst #FiersDuBatiment`
 
 ## Appel à l'action
 
 Message privé ou https://www.neobatys.com/contact
 
-## Relais personnel (à adapter par chaque associé)
+## Relais personnel (facultatif)
+
+Un relais depuis un profil personnel affiche le nom de son auteur à côté de NEOBATYS. Le gérant ne relaie pas (règle : son nom n'apparaît jamais). L'autre associé relaie seulement s'il est d'accord pour être nommé publiquement.
 
 ```
 On démarre NEOBATYS avec un objectif simple : rendre du temps aux artisans. Si vous accompagnez des entreprises du bâtiment en Moselle ou au Luxembourg, j'aimerais beaucoup en discuter.

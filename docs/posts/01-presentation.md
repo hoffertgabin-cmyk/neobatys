@@ -50,7 +50,7 @@ www.neobatys.com
 
 ## Hashtags
 
-Instagram (5 maximum) : `#artisanbatiment #artisanmetz #moselle #luxembourg #devisfacture`
+Instagram (5 maximum) : `#artisanbatiment #artisanmetz #moselle #luxembourg #FiersDuBatiment`
 LinkedIn (3) : `#BTP #artisans #GrandEst`
 
 ## Appel à l'action

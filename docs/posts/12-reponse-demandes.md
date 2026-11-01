@@ -1,13 +1,14 @@
-# 12 Démo et conseil : répondre vite aux demandes de devis
+# 12 1 question, 1 réponse : faut-il vraiment répondre vite à une demande de devis ?
 
 - **Date prévue** : vendredi 4 décembre 2026
 - **Réseaux** : Instagram, Facebook, LinkedIn
 - **Pilier** : démos + conseils pratiques
+- **Série** : « 1 question, 1 réponse » (voir la veille `../veille/reseaux-sociaux.md`, piste 1). Le titre est une vraie question d'artisan.
 - **Format** : carrousel 6 visuels (4:5) ; LinkedIn en document PDF
 
 ## Visuel
 
-1. « Une demande de devis le soir. Vous répondez quand ? »
+1. « 1 question, 1 réponse : faut-il vraiment répondre vite à une demande de devis ? »
 2. « Le client a souvent contacté plusieurs artisans. Le premier qui répond a une longueur d'avance. »
 3. « Ce qu'une bonne première réponse contient : un merci, les questions utiles (adresse, photos, délai), la suite. »
 4. Capture : l'assistant de réponse aux demandes (compte de démonstration) qui prépare une réponse à une demande venue du site.
@@ -19,6 +20,8 @@ Slide 2 : formulation de bon sens, sans statistique. Ne pas ajouter de pourcenta
 ## Texte Instagram / Facebook
 
 ```
+1 question, 1 réponse : faut-il vraiment répondre vite à une demande de devis ?
+
 Une demande de devis arrive à 21 h. Le client a probablement écrit à deux ou trois artisans. Qui répond en premier ?
 
 Une bonne première réponse, c'est :

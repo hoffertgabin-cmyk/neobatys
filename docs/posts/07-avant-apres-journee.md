@@ -49,9 +49,15 @@ C'est le parti pris de NEOBATYS. Nous mesurerons le temps réellement gagné ave
 www.neobatys.com
 ```
 
+## Sondage en story (le jour même)
+
+Question : « Vos devis, vous les faites quand ? » Réponses : « Sur place », « Le soir », « Le week-end ». Noter le nombre réel de réponses à la fermeture du sondage (24 h).
+
+Restitution en semaine 5, en post ou en story : « X artisans ont répondu, voici ce qu'ils disent », avec le vrai nombre. Moins de 10 réponses : pas de restitution chiffrée, on remercie seulement. Piste 3 de la veille.
+
 ## Hashtags
 
-Instagram : `#artisanbatiment #organisation #gaindetemps #artisanmetz #moselle`
+Instagram : `#artisanbatiment #FiersDuBatiment #gaindetemps #artisanmetz #moselle`
 LinkedIn : `#BTP #Productivite #Artisans`
 
 ## Appel à l'action

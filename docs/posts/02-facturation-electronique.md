@@ -1,15 +1,16 @@
-# 02 Conseil : facturation électronique, ce qui change pour un artisan en France
+# 02 1 question, 1 réponse : facture électronique, je suis concerné quand ?
 
 - **Date prévue** : jeudi 12 novembre 2026
 - **Réseaux** : Instagram, Facebook, LinkedIn
 - **Pilier** : conseils pratiques
+- **Série** : « 1 question, 1 réponse » (voir la veille `../veille/reseaux-sociaux.md`, piste 1). Le titre est une vraie question d'artisan.
 - **Format** : carrousel 7 visuels (4:5) ; LinkedIn en document PDF
 - **Source à rouvrir avant publication** : [impots.gouv.fr, *À partir de quand suis-je concerné par la réforme de la facturation électronique ?*](https://www.impots.gouv.fr/professionnel/questions/partir-de-quand-suis-je-concerne) (page modifiée le 16/01/2026)
 - **Attention** : règles françaises uniquement. Ne pas cibler ce post sur le Luxembourg.
 
 ## Visuel
 
-1. « Facture électronique : où en est un artisan en novembre 2026 ? »
+1. « 1 question, 1 réponse : facture électronique, je suis concerné quand ? »
 2. « Depuis le 1er septembre 2026 : toutes les entreprises doivent pouvoir **recevoir** des factures électroniques. »
 3. « Au 1er septembre 2027 : les PME et micro-entreprises devront **émettre** leurs factures en électronique. »
 4. « Un PDF envoyé par mail n'est pas une facture électronique au sens de la réforme : la facture passe par une plateforme agréée par l'État. »
@@ -20,7 +21,9 @@
 ## Texte Instagram / Facebook
 
 ```
-Facture électronique : beaucoup d'artisans pensent que c'est pour plus tard. Une partie a déjà commencé.
+1 question, 1 réponse : facture électronique, je suis concerné quand ?
+
+Beaucoup d'artisans pensent que c'est pour plus tard. Une partie a déjà commencé.
 
 En France :
 - depuis le 1er septembre 2026, toutes les entreprises, quelle que soit leur taille, doivent pouvoir recevoir des factures électroniques ;

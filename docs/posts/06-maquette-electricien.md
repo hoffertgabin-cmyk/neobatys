@@ -1,16 +1,17 @@
-# 06 Maquette : un site d'électricien
+# 06 Un site par métier, épisode 2 : un site d'électricien
 
 - **Date prévue** : vendredi 20 novembre 2026
 - **Réseaux** : Instagram, Facebook
 - **Pilier** : maquettes de sites par métier
+- **Série** : « Un site par métier », épisode 2 (voir la veille `../veille/reseaux-sociaux.md`, piste 2). Le numéro d'épisode donne une raison de revenir.
 - **Format** : Reel 9:16, 20 à 30 secondes
 
 ## Visuel
 
-Même principe que le post 03 : enregistrement d'écran natif de la maquette électricien sur www.neobatys.com/sites-internet, défilement lent sur téléphone. Texte à l'écran dès la première seconde : « Maquette d'exemple : site d'un électricien ».
+Même principe que le post 03 : enregistrement d'écran natif de la maquette électricien sur www.neobatys.com/sites-internet, défilement lent sur téléphone. Texte à l'écran dès la première seconde : « Un site par métier, épisode 2 · Maquette d'exemple : site d'un électricien ».
 
 Séquences :
-1. « Maquette d'exemple : site d'un électricien »
+1. « Un site par métier, épisode 2 · Maquette d'exemple : site d'un électricien »
 2. « Les prestations claires : rénovation, mise aux normes, dépannage »
 3. « Les réalisations en photos »
 4. « Une demande de devis en quelques secondes »
@@ -31,6 +32,7 @@ Ce n'est pas le site d'un client, c'est un modèle pour montrer l'idée :
 
 Personnalisé à votre nom, avec vos photos et vos textes, à partir de 990 € HT.
 Toutes les maquettes : www.neobatys.com/sites-internet
+Épisode 3 mardi 1er décembre : le couvreur.
 ```
 
 ## Hashtags

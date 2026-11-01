@@ -1,16 +1,17 @@
-# 10 Maquette : un site de couvreur
+# 10 Un site par métier, épisode 3 : un site de couvreur
 
 - **Date prévue** : mardi 1er décembre 2026
 - **Réseaux** : Instagram, Facebook
 - **Pilier** : maquettes de sites par métier
+- **Série** : « Un site par métier », épisode 3 (voir la veille `../veille/reseaux-sociaux.md`, piste 2). Le numéro d'épisode donne une raison de revenir.
 - **Format** : Reel 9:16, 20 à 30 secondes
 
 ## Visuel
 
-Enregistrement d'écran natif de la maquette couvreur sur www.neobatys.com/sites-internet. Texte à l'écran dès la première seconde : « Maquette d'exemple : site d'un couvreur ».
+Enregistrement d'écran natif de la maquette couvreur sur www.neobatys.com/sites-internet. Texte à l'écran dès la première seconde : « Un site par métier, épisode 3 · Maquette d'exemple : site d'un couvreur ».
 
 Séquences :
-1. « Maquette d'exemple : site d'un couvreur »
+1. « Un site par métier, épisode 3 · Maquette d'exemple : site d'un couvreur »
 2. « Toiture, zinguerie, réparation après intempéries : ce que vous faites, dit simplement »
 3. « Les avant / après qui rassurent »
 4. « La demande de devis, en deux clics »
