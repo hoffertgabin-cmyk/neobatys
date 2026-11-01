@@ -1,8 +1,9 @@
 import { notFound } from "next/navigation";
+import { Download } from "lucide-react";
 import { softwareGuides } from "@/content/software";
 import { breadcrumbJsonLd, faqJsonLd, pageMetadata } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { Button } from "@/components/ui/Button";
+import { Button, buttonClasses } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/sections/PageHero";
 import { SoftwareGuides } from "@/components/sections/SoftwareGuides";
@@ -25,6 +26,8 @@ export default async function GuidePage({ params }: PageProps<"/logiciel/[guide]
   const guide = findGuide((await params).guide);
   if (!guide) notFound();
   const path = `/logiciel/${guide.slug}`;
+  // Fichiers à télécharger (modèles), seulement sur les guides qui en ont
+  const downloads = guide.downloads ?? [];
 
   return (
     <>
@@ -33,11 +36,20 @@ export default async function GuidePage({ params }: PageProps<"/logiciel/[guide]
         breadcrumb={guide.breadcrumb}
         parent={{ label: "Logiciel de gestion", href: "/logiciel" }}
       >
-        <Button href="/contact?service=logiciel" size="lg" arrow>
-          Demander une démo
-        </Button>
+        {downloads.map((d) => (
+          // Lien simple (pas next/link) : c'est un fichier, pas une page
+          <a key={d.href} href={d.href} download className={buttonClasses({ size: "lg" })}>
+            <Download aria-hidden="true" className="size-4" />
+            {d.label}
+          </a>
+        ))}
+        {downloads.length === 0 && (
+          <Button href="/contact?service=logiciel" size="lg" arrow>
+            Demander une démo
+          </Button>
+        )}
         <Button href="/logiciel#demo" size="lg" variant="ghost">
-          Voir le logiciel
+          {downloads.length > 0 ? "Essayer le logiciel" : "Voir le logiciel"}
         </Button>
       </PageHero>
       <section className="bg-white py-16 sm:py-24">
