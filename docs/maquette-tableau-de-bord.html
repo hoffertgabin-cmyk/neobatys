@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maquette, tableau de bord client NEOBATYS</title>
+<!--
+  Maquette statique (données fictives) du tableau de bord d'un artisan sur la plateforme NEOBATYS.
+  Reprend le style de components/mockups/ConsoleMockup.tsx et les couleurs de app/globals.css.
+  Ouvrir directement dans un navigateur, aucune dépendance. Voir docs/plateforme-admin.md.
+-->
+<style>
+  :root {
+    --nuit: #171717; --ardoise: #6b7280; --ardoise-dark: #4d585f; --sable: #f6f8fa; --sable-dark: #eceff3;
+    --chantier: #f97316; --chantier-dark: #c2410c;
+    --lavande: #eef0ff; --rose: #fdf0f4; --menthe: #eafaf2; --peche: #fff3e8; --ciel: #eaf3ff;
+    --ok: #047857; --ok-bg: #ecfdf5; --ok-dot: #10b981;
+    --ring: rgb(23 23 23 / 0.08);
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 14px/1.45 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    color: var(--nuit); background: var(--sable); }
+  .app { display: grid; grid-template-columns: 232px 1fr; min-height: 100vh; }
+  aside { background: #fff; border-right: 1px solid var(--ring); padding: 20px 14px; display: flex; flex-direction: column; gap: 4px; }
+  .brand { font-weight: 600; letter-spacing: -0.02em; padding: 0 10px 14px; }
+  .brand small { display: block; font-weight: 400; color: var(--ardoise); font-size: 12px; }
+  .nav a { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 10px;
+    border-radius: 12px; color: var(--ardoise-dark); text-decoration: none; font-size: 13px; }
+  .nav a.on { background: var(--sable); color: var(--nuit); font-weight: 600; }
+  .nav a.off { color: #a3a3a3; }
+  .nav .tag { font-size: 10px; border-radius: 999px; padding: 1px 7px; background: var(--peche); color: var(--chantier-dark); font-weight: 600; }
+  .nav .count { font-size: 11px; background: var(--chantier); color: #fff; border-radius: 999px; padding: 0 7px; font-weight: 600; }
+  .sep { margin: 12px 10px 4px; font-size: 11px; color: var(--ardoise); text-transform: uppercase; letter-spacing: .06em; }
+  .help { margin-top: auto; padding: 12px; border-radius: 16px; background: var(--lavande); font-size: 12px; color: var(--ardoise-dark); }
+  .help b { color: var(--nuit); }
+  main { padding: 24px clamp(16px, 3vw, 36px) 40px; max-width: 1240px; width: 100%; }
+  header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+  h1 { margin: 0; font-size: 22px; letter-spacing: -0.03em; }
+  .sub { color: var(--ardoise); font-size: 13px; margin-top: 2px; }
+  .pill { display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 600; }
+  .pill.ok { background: var(--ok-bg); color: var(--ok); }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ok-dot); display: inline-block; }
+  .dot.live { animation: pulse 1.6s infinite; }
+  @keyframes pulse { 50% { opacity: .3; } }
+  .btn { border: 0; border-radius: 999px; padding: 8px 14px; font: inherit; font-weight: 600; font-size: 13px; cursor: pointer; }
+  .btn.primary { color: #fff; background-image: linear-gradient(100deg, #ea580c, var(--chantier-dark)); }
+  .btn.ghost { background: #fff; box-shadow: inset 0 0 0 1px var(--ring); }
+  .card { background: #fff; border-radius: 24px; box-shadow: 0 0 0 1px var(--ring); padding: 18px; }
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 20px; }
+  .kpi { padding: 16px; border-radius: 20px; }
+  .kpi p { margin: 0; }
+  .kpi .l { font-size: 12px; color: var(--ardoise); }
+  .kpi .v { font-size: 30px; font-weight: 600; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; margin-top: 4px; }
+  .kpi .v.accent { color: var(--chantier-dark); }
+  .kpi .t { font-size: 11px; color: var(--ok); margin-top: 2px; }
+  .grid2 { display: grid; grid-template-columns: 1.6fr 1fr; gap: 12px; margin-top: 12px; }
+  .head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .head h2 { margin: 0; font-size: 14px; }
+  .chip { font-size: 11px; border-radius: 999px; background: var(--sable); color: var(--ardoise-dark); padding: 2px 9px; }
+  .seg { display: inline-flex; background: var(--sable); border-radius: 999px; padding: 2px; }
+  .seg span { font-size: 11px; padding: 2px 10px; border-radius: 999px; color: var(--ardoise-dark); }
+  .seg span.on { background: #fff; color: var(--nuit); font-weight: 600; box-shadow: 0 0 0 1px var(--ring); }
+  .chart { display: flex; align-items: flex-end; gap: 8px; height: 180px; margin-top: 18px; }
+  .bar { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; height: 100%; gap: 6px; min-width: 0; }
+  .bar i { display: block; border-radius: 10px 10px 4px 4px; background-image: linear-gradient(180deg, #f6c4d6, #c9cdfb); position: relative; }
+  .bar i.now { background-image: linear-gradient(180deg, #fdba74, var(--chantier)); }
+  .bar i.future { background: var(--sable-dark); }
+  .bar span { text-align: center; font-size: 10px; color: var(--ardoise); }
+  .legend { display: flex; gap: 14px; margin-top: 10px; font-size: 11px; color: var(--ardoise); flex-wrap: wrap; }
+  .legend b { color: var(--nuit); }
+  ul.agents { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 10px; }
+  .agents li { display: flex; align-items: center; gap: 10px; }
+  .ico { width: 34px; height: 34px; border-radius: 12px; display: grid; place-items: center; flex-shrink: 0; font-size: 15px; }
+  .agents .txt { flex: 1; min-width: 0; }
+  .agents .txt b { display: block; font-size: 13px; }
+  .agents .txt span { display: block; font-size: 11px; color: var(--ardoise); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .state { font-size: 10px; font-weight: 600; border-radius: 999px; padding: 2px 8px; background: var(--ok-bg); color: var(--ok); }
+  .state.pause { background: var(--sable); color: var(--ardoise-dark); }
+  .state.add { background: var(--peche); color: var(--chantier-dark); }
+  table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 13px; }
+  th { text-align: left; font-size: 11px; font-weight: 500; color: var(--ardoise); padding: 6px 8px; border-bottom: 1px solid var(--ring); }
+  td { padding: 10px 8px; border-bottom: 1px solid var(--ring); vertical-align: middle; }
+  tr:last-child td { border-bottom: 0; }
+  td small { display: block; color: var(--ardoise); font-size: 11px; }
+  .src { font-size: 11px; border-radius: 999px; padding: 2px 8px; white-space: nowrap; }
+  .src.site { background: var(--lavande); } .src.wa { background: var(--menthe); } .src.google { background: var(--ciel); } .src.tel { background: var(--rose); }
+  .st { font-size: 11px; font-weight: 600; white-space: nowrap; }
+  .st.new { color: var(--chantier-dark); } .st.ia { color: #4f46e5; } .st.devis { color: var(--ok); } .st.wait { color: var(--ardoise-dark); }
+  .tablewrap { overflow-x: auto; }
+  ul.todo { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 8px; }
+  .todo li { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border-radius: 16px; background: var(--sable); font-size: 13px; }
+  .todo li small { display: block; color: var(--ardoise); font-size: 11px; }
+  .todo .n { flex-shrink: 0; width: 22px; height: 22px; border-radius: 8px; display: grid; place-items: center; font-size: 11px; font-weight: 700; background: #fff; box-shadow: 0 0 0 1px var(--ring); }
+  .events { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; padding: 0; list-style: none; }
+  .events li { display: flex; align-items: center; gap: 6px; border-radius: 999px; background: #fff; box-shadow: 0 0 0 1px var(--ring); padding: 5px 12px; font-size: 12px; color: var(--ardoise-dark); }
+  .events li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--chantier); }
+  .note { margin-top: 28px; font-size: 12px; color: var(--ardoise); }
+  @media (max-width: 1080px) { .kpis { grid-template-columns: repeat(2, 1fr); } .grid2 { grid-template-columns: 1fr; } }
+  @media (max-width: 760px) {
+    .app { grid-template-columns: 1fr; }
+    aside { flex-direction: row; overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--ring); padding: 10px 12px; }
+    .brand, .sep, .help { display: none; }
+    .nav { display: flex; gap: 4px; } .nav a { white-space: nowrap; } .nav .tag { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside>
+    <div class="brand">NEOBATYS<small>Dupont Rénovation (fictif)</small></div>
+    <nav class="nav">
+      <a class="on" href="#">Accueil</a>
+      <a href="#">Demandes <span class="count">5</span></a>
+      <a href="#">Conversations WhatsApp <span class="count">2</span></a>
+      <a href="#">Devis et factures</a>
+      <a href="#">Assistants IA</a>
+      <a href="#">Avis Google</a>
+      <a href="#">Statistiques</a>
+      <a class="off" href="#">Agenda <span class="tag">Activer</span></a>
+      <a class="off" href="#">Site internet <span class="tag">Activer</span></a>
+    </nav>
+    <div class="sep">Compte</div>
+    <nav class="nav">
+      <a href="#">Mon entreprise</a>
+      <a href="#">Abonnement</a>
+    </nav>
+    <div class="help"><b>Une question ?</b><br>Votre interlocuteur NEOBATYS répond sous 24 h, depuis cet espace.</div>
+  </aside>
+
+  <main>
+    <header>
+      <div>
+        <h1>Bonjour, voici votre semaine</h1>
+        <div class="sub">Lundi 2 novembre 2026 · 3 demandes arrivées depuis vendredi</div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+        <span class="pill ok"><span class="dot"></span>4 assistants IA actifs</span>
+        <button class="btn ghost" type="button">Dicter un devis</button>
+        <button class="btn primary" type="button">Nouveau devis</button>
+      </div>
+    </header>
+
+    <section class="kpis" aria-label="Indicateurs du mois">
+      <div class="card kpi"><p class="l">Demandes de devis</p><p class="v">38</p><p class="t">▲ 12 % sur octobre 2025</p></div>
+      <div class="card kpi"><p class="l">Devis envoyés</p><p class="v">27</p><p class="t">délai moyen 1,8 jour</p></div>
+      <div class="card kpi"><p class="l">Chiffre signé</p><p class="v accent">41 600 €</p><p class="t">taux de signature 44 %</p></div>
+      <div class="card kpi"><p class="l">À encaisser</p><p class="v">8 950 €</p><p class="t">▲ 3 factures réglées après relance</p></div>
+    </section>
+
+    <section class="grid2">
+      <div class="card">
+        <div class="head">
+          <h2>Chiffre signé sur l'année</h2>
+          <div class="seg"><span>Demandes</span><span class="on">Chiffre signé</span><span>Encaissé</span></div>
+        </div>
+        <div class="chart" role="img" aria-label="Chiffre signé par mois en 2026, de janvier à octobre, novembre en cours">
+          <div class="bar"><i style="height:34%"></i><span>Janv.</span></div>
+          <div class="bar"><i style="height:41%"></i><span>Févr.</span></div>
+          <div class="bar"><i style="height:52%"></i><span>Mars</span></div>
+          <div class="bar"><i style="height:63%"></i><span>Avr.</span></div>
+          <div class="bar"><i style="height:58%"></i><span>Mai</span></div>
+          <div class="bar"><i style="height:71%"></i><span>Juin</span></div>
+          <div class="bar"><i style="height:49%"></i><span>Juil.</span></div>
+          <div class="bar"><i style="height:38%"></i><span>Août</span></div>
+          <div class="bar"><i style="height:76%"></i><span>Sept.</span></div>
+          <div class="bar"><i style="height:92%"></i><span>Oct.</span></div>
+          <div class="bar"><i class="now" style="height:14%"></i><span>Nov.</span></div>
+          <div class="bar"><i class="future" style="height:4%"></i><span>Déc.</span></div>
+        </div>
+        <div class="legend"><span>Cumul 2026 : <b>356 200 € HT</b></span><span>Meilleur mois : <b>octobre</b></span><span>Objectif annuel : <b>82 %</b></span></div>
+      </div>
+
+      <div class="card">
+        <div class="head">
+          <h2>Assistants IA</h2>
+          <span class="chip" style="display:inline-flex;gap:6px;align-items:center"><span class="dot live"></span>en direct</span>
+        </div>
+        <ul class="agents">
+          <li><span class="ico" style="background:var(--lavande)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><span class="txt"><b>Réponse aux demandes</b><span>64 réponses ce mois, 4 min en moyenne</span></span><span class="state">actif</span></li>
+          <li><span class="ico" style="background:var(--peche)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4"/></svg></span><span class="txt"><b>Devis à la voix</b><span>11 devis dictés, 2 à relire</span></span><span class="state">actif</span></li>
+          <li><span class="ico" style="background:var(--rose)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2v20l3-2 3 2 3-2 3 2 3-2 1 1V2l-1 1-3-2-3 2-3-2-3 2zM8 8h8M8 12h8M8 16h5"/></svg></span><span class="txt"><b>Relances impayés</b><span>9 relances, 7 factures réglées</span></span><span class="state">actif</span></li>
+          <li><span class="ico" style="background:var(--menthe)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></span><span class="txt"><b>Avis Google</b><span>6 nouveaux avis, note 4,9</span></span><span class="state">actif</span></li>
+          <li><span class="ico" style="background:var(--ciel)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><span class="txt"><b>Standard téléphonique IA</b><span>Sur devis uniquement</span></span><span class="state add">nous contacter</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="grid2">
+      <div class="card">
+        <div class="head"><h2>Demandes de devis</h2><span class="chip">5 à traiter</span></div>
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>Client</th><th>Travaux</th><th>Origine</th><th>Statut</th></tr></thead>
+            <tbody>
+              <tr><td>M. Laurent<small>Metz, il y a 2 h</small></td><td>Salle de bain complète<small>budget 9 à 12 k€</small></td><td><span class="src site">Site</span></td><td><span class="st new">Nouveau</span></td></tr>
+              <tr><td>Mme Keller<small>Thionville, hier</small></td><td>Remplacement chaudière</td><td><span class="src wa">WhatsApp</span></td><td><span class="st ia">L'IA a répondu</span></td></tr>
+              <tr><td>SCI Les Tilleuls<small>Montigny, hier</small></td><td>Peinture parties communes</td><td><span class="src google">Google</span></td><td><span class="st devis">Devis prêt à envoyer</span></td></tr>
+              <tr><td>M. Ferreira<small>Woippy, vendredi</small></td><td>Carrelage terrasse 40 m²</td><td><span class="src tel">Appel manqué</span></td><td><span class="st ia">Rappel proposé</span></td></tr>
+              <tr><td>Mme Simon<small>Metz, jeudi</small></td><td>Fenêtres PVC x 6</td><td><span class="src site">Site</span></td><td><span class="st wait">Visite mardi 9 h</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="head"><h2>À faire aujourd'hui</h2><span class="chip">proposé par l'IA</span></div>
+        <ul class="todo">
+          <li><span class="n">1</span><span>Relire le devis dicté pour la SCI Les Tilleuls<small>3 850 € HT, prêt à envoyer</small></span></li>
+          <li><span class="n">2</span><span>Rappeler M. Ferreira<small>appel manqué vendredi, 40 m² de carrelage</small></span></li>
+          <li><span class="n">3</span><span>Valider la réponse à l'avis de Mme Roux<small>avis 5 étoiles, réponse rédigée</small></span></li>
+        </ul>
+      </div>
+    </section>
+
+    <ul class="events" aria-label="Activité récente">
+      <li>Devis n° 0412 envoyé · salle de bain</li>
+      <li>Nouveau client · rénovation, Metz</li>
+      <li>Facture n° 0388 réglée après relance</li>
+      <li>Avis Google 5 étoiles reçu</li>
+    </ul>
+
+    <p class="note">Maquette statique, données fictives. Chaque bloc correspond à un module activable : un module non souscrit apparaît grisé avec « Activer ».</p>
+  </main>
+</div>
+</body>
+</html>
