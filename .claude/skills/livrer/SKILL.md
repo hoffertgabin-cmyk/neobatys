@@ -14,3 +14,4 @@ description: Livre le chantier en cours sous forme de pull request vérifiée. U
 6. Push de la branche, puis `gh pr create` avec : ce qui change, les fichiers touchés, comment tester.
 7. Attendre la CI (`gh pr checks <n> --watch`). Rouge : corriger et repousser. Verte : donner le lien de la PR et l'aperçu Vercel à l'utilisateur.
 8. Ne pas fusionner sans l'accord de l'utilisateur.
+9. Avant de clore : veille et pistes d'amélioration, voir « Avant de clore un chantier » dans `AGENTS.md`.

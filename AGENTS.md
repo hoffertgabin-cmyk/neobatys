@@ -10,7 +10,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 # Règles du projet NEOBATYS
 
-Deux associés (Ilann et Gabin) travaillent sur ce repo, chacun avec ses sessions Claude Code. `main` est en ligne : chaque commit sur `main` est déployé par Vercel sur neobatys.vercel.app.
+Deux associés (Ilann et Gabin) travaillent sur ce repo, chacun avec ses sessions Claude Code. `main` est en ligne : chaque commit sur `main` est déployé par Vercel sur www.neobatys.com.
 
 ## Avant de commencer
 
@@ -24,6 +24,12 @@ Deux associés (Ilann et Gabin) travaillent sur ce repo, chacun avec ses session
 - Jamais de push direct sur `main`.
 - Fusion seulement si la CI (`.github/workflows/ci.yml` : typecheck, lint, build) est verte : `gh pr checks <n>`.
 - Pour livrer : skill `/livrer`.
+
+## Avant de clore un chantier
+
+- Chercher des pistes d'amélioration du sujet traité, en regardant ce que font les autres sociétés qui servent les artisans et automatisent les entreprises, en priorité les américaines (Jobber, Housecall Pro, ServiceTitan, Podium, Scorpion...).
+- Chaque piste cite sa source (URL vérifiée), dit ce qu'elle apporterait à NEOBATYS et son effort. Rien d'inventé.
+- Les écrire dans `docs/veille/<sujet>.md`, puis les proposer à l'utilisateur avec un top 3. Ne rien coder de plus sans son accord.
 
 ## Code
 
