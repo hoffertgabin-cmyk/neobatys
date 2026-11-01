@@ -1,0 +1,307 @@
+{
+  "section": {
+    "eyebrow": "Guides",
+    "title": "Par métier et par question",
+    "subtitle": "Ce que dit la réglementation, et comment le logiciel vous aide à la respecter sans y passer vos soirées."
+  },
+  "guides": [
+    {
+      "slug": "facturation-electronique",
+      "label": "Facturation électronique obligatoire",
+      "summary": "Dates, plateformes agréées, formats et sanctions : ce qui change pour un artisan en 2026 et 2027, en France et au Luxembourg.",
+      "breadcrumb": "Facturation électronique",
+      "updated": "31 octobre 2026",
+      "seo": {
+        "title": "Facturation électronique obligatoire pour les artisans (2026, 2027)",
+        "description": "Réception depuis le 1er septembre 2026, émission au 1er septembre 2027 pour les TPE et PME du bâtiment : dates, plateforme agréée, formats, sanctions. Et le Luxembourg."
+      },
+      "hero": {
+        "eyebrow": "Facturation électronique",
+        "title": "Facturation électronique : ce qui change pour les artisans du bâtiment",
+        "subtitle": "Depuis le 1er septembre 2026, toutes les entreprises françaises doivent pouvoir recevoir des factures électroniques. Les artisans devront aussi les émettre à partir du 1er septembre 2027. Voici l'essentiel, sans jargon."
+      },
+      "sections": [
+        {
+          "title": "Les dates à retenir",
+          "paragraphs": [
+            "La réforme se fait en deux temps. La date d'émission dépend de la taille de l'entreprise : la plupart des artisans du bâtiment sont des TPE, des PME ou des micro-entrepreneurs, donc concernés par 2027."
+          ],
+          "items": [
+            "1er septembre 2026 : toutes les entreprises assujetties à la TVA en France doivent pouvoir recevoir des factures électroniques.",
+            "1er septembre 2026 : les grandes entreprises et les ETI doivent aussi les émettre.",
+            "1er septembre 2027 : les PME, TPE et micro-entreprises doivent émettre leurs factures au format électronique.",
+            "Même calendrier pour l'e-reporting : la transmission à l'administration des données des opérations qui ne passent pas par une facture électronique (ventes aux particuliers, opérations à l'international)."
+          ]
+        },
+        {
+          "title": "Une facture PDF envoyée par e-mail, ça ne suffit plus",
+          "paragraphs": [
+            "Une facture électronique n'est pas un PDF : c'est un fichier structuré, lisible par un ordinateur, dans l'un des formats admis par l'administration (UBL, CII ou le format mixte Factur-X, qui associe un PDF et des données).",
+            "Elle ne part pas non plus directement de votre boîte mail : elle transite par une plateforme agréée par l'administration fiscale (les anciennes « PDP », appelées plateformes agréées depuis la loi de finances 2026). La liste officielle des plateformes est publiée par l'administration."
+          ],
+          "items": []
+        },
+        {
+          "title": "Et les factures à vos clients particuliers ?",
+          "paragraphs": [
+            "La facture électronique obligatoire concerne les échanges entre entreprises assujetties à la TVA en France. Pour un chantier chez un particulier, vous continuez à faire une facture classique, mais les données de la vente sont transmises à l'administration au titre de l'e-reporting, selon le même calendrier.",
+            "En pratique, un artisan qui travaille à la fois pour des particuliers, des entreprises et des syndics a intérêt à tout faire dans le même logiciel, qui sait quelle facture envoyer par où."
+          ],
+          "items": []
+        },
+        {
+          "title": "Les sanctions prévues",
+          "paragraphs": [
+            "La loi de finances pour 2026 a relevé les amendes. Une facture émise hors du format électronique alors qu'elle devait l'être coûte 50 € par facture, dans la limite de 15 000 € par an. Ne pas avoir de plateforme agréée pour recevoir ses factures expose à une amende de 500 €, puis 1 000 € par période de trois mois. Un manquement à l'e-reporting coûte 500 € par transmission, dans la limite de 15 000 € par an.",
+            "Ces montants sont ceux publiés par l'administration au moment de la mise à jour de cette page : vérifiez-les sur les sources officielles ci-dessous."
+          ],
+          "items": []
+        },
+        {
+          "title": "Ce que vous avez à faire",
+          "paragraphs": [
+            "Vous n'avez pas à devenir expert des formats. Il vous faut un logiciel de facturation raccordé à une plateforme agréée, qui produit des factures au bon format et reçoit celles de vos fournisseurs."
+          ],
+          "items": [
+            "Vérifier que vous recevez déjà vos factures fournisseurs par une plateforme agréée (obligatoire depuis le 1er septembre 2026).",
+            "Mettre à jour votre fichier clients : numéro SIREN de vos clients professionnels, adresses exactes.",
+            "Faire vos devis et factures dans un logiciel prévu pour la réforme plutôt que dans un tableur ou un traitement de texte.",
+            "En parler avec votre expert-comptable, qui doit aussi pouvoir récupérer vos factures."
+          ]
+        },
+        {
+          "title": "Et au Luxembourg ?",
+          "paragraphs": [
+            "Au Luxembourg, la facture électronique est déjà obligatoire pour les marchés publics : depuis le 18 mars 2023, tous les fournisseurs de l'État et des communes doivent la transmettre par le réseau Peppol ou par MyGuichet (loi modifiée du 16 mai 2019).",
+            "Entre entreprises, rien n'est encore obligatoire : un projet de loi (n° 8815) a été déposé à la Chambre des députés le 30 juillet 2026. Il prévoit une obligation progressive à partir de 2028. Un artisan frontalier qui travaille des deux côtés de la frontière a intérêt à anticiper dès maintenant."
+          ],
+          "items": []
+        },
+        {
+          "title": "Comment le logiciel NEOBATYS s'en charge",
+          "paragraphs": [
+            "Vous faites votre devis et votre facture comme d'habitude, depuis le chantier ou le bureau. Le logiciel ajoute les mentions obligatoires, produit la facture au format électronique et la transmet via une plateforme agréée. On vous accompagne pour la mise en place, avec l'import de vos clients et de vos prix."
+          ],
+          "items": []
+        }
+      ],
+      "faq": [
+        {
+          "question": "Je suis micro-entrepreneur, suis-je concerné ?",
+          "answer": "Oui. Les micro-entreprises doivent recevoir les factures électroniques depuis le 1er septembre 2026 et les émettre à partir du 1er septembre 2027, comme les TPE et PME."
+        },
+        {
+          "question": "Je travaille seulement pour des particuliers, que dois-je faire ?",
+          "answer": "Vous devez tout de même pouvoir recevoir les factures électroniques de vos fournisseurs. Pour vos ventes aux particuliers, les données sont transmises à l'administration au titre de l'e-reporting à partir de septembre 2027."
+        },
+        {
+          "question": "Un PDF envoyé par e-mail est-il une facture électronique ?",
+          "answer": "Non. Une facture électronique est un fichier structuré (UBL, CII ou Factur-X) qui transite par une plateforme agréée par l'administration."
+        },
+        {
+          "question": "Quelle est l'amende si je ne suis pas prêt ?",
+          "answer": "La loi de finances pour 2026 prévoit 50 € par facture non conforme, dans la limite de 15 000 € par an, et 500 € si vous n'avez pas de plateforme agréée pour recevoir vos factures. Vérifiez les montants à jour sur impots.gouv.fr."
+        },
+        {
+          "question": "La facture électronique est-elle obligatoire au Luxembourg ?",
+          "answer": "Pour les marchés publics, oui, depuis le 18 mars 2023 (Peppol ou MyGuichet). Entre entreprises, un projet de loi déposé en juillet 2026 prévoit une obligation progressive à partir de 2028."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Entreprendre.service-public.fr : calendrier de la facturation électronique",
+          "href": "https://entreprendre.service-public.gouv.fr/actualites/A15683"
+        },
+        {
+          "label": "Entreprendre.service-public.fr : liste des plateformes agréées",
+          "href": "https://entreprendre.service-public.gouv.fr/actualites/A18759"
+        },
+        {
+          "label": "impots.gouv.fr : je découvre la facturation électronique",
+          "href": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+        },
+        {
+          "label": "impots.gouv.fr : facturation électronique et plateformes agréées",
+          "href": "https://www.impots.gouv.fr/facturation-electronique-et-plateformes-agreees"
+        },
+        {
+          "label": "Guichet.lu : facture électronique dans les marchés publics",
+          "href": "https://guichet.public.lu/fr/entreprises/gestion-juridique-comptabilite/marche-public-concession/facturation/transmission-facture-electronique-marche-public-contrat-concession.html"
+        },
+        {
+          "label": "Chambre des députés du Luxembourg : projet de loi n° 8815",
+          "href": "https://www.chd.lu/en/node/3878"
+        }
+      ]
+    },
+    {
+      "slug": "plombier",
+      "label": "Logiciel de devis pour plombier",
+      "summary": "Devis de dépannage avant intervention, TVA à 10 % ou 5,5 %, chaudières, situations de travaux : les règles du métier et ce que fait le logiciel.",
+      "breadcrumb": "Plombier",
+      "updated": "31 octobre 2026",
+      "seo": {
+        "title": "Logiciel de devis et factures pour plombier et plombier-chauffagiste",
+        "description": "Devis de dépannage conforme, bon taux de TVA, attestation décennale, factures électroniques : le logiciel de devis pensé pour les plombiers, utilisable depuis le chantier."
+      },
+      "hero": {
+        "eyebrow": "Logiciel pour plombier",
+        "title": "Le logiciel de devis et factures des plombiers",
+        "subtitle": "Une fuite à réparer, une salle de bains à refaire, une chaudière à remplacer : faites le devis chez le client, faites-le signer sur place et envoyez la facture le soir même."
+      },
+      "sections": [
+        {
+          "title": "Le devis de dépannage, avant l'intervention",
+          "paragraphs": [
+            "Pour des travaux ou un dépannage de plomberie et de sanitaires chez un particulier, la réglementation (arrêté du 24 janvier 2017) impose de remettre un devis préalable. Sans devis, le professionnel s'expose à une amende administrative pouvant aller jusqu'à 3 000 € pour une personne physique.",
+            "Le devis indique la date, le nom et l'adresse de l'entreprise, le nom du client, le lieu de l'intervention, la nature exacte des réparations, le détail en quantité et en prix de chaque prestation et produit, le taux horaire TTC de main-d'œuvre et le mode de décompte du temps, les frais de déplacement s'il y en a, le total HT et TTC avec le taux de TVA, la durée de validité de l'offre, et si le devis est gratuit ou payant. Le logiciel prévoit chacune de ces lignes."
+          ],
+          "items": []
+        },
+        {
+          "title": "Le bon taux de TVA",
+          "paragraphs": [
+            "Dans un logement achevé depuis plus de deux ans, les travaux d'amélioration et d'entretien sont en principe à 10 %, et les travaux de rénovation énergétique à 5,5 %. Depuis le 1er mars 2025, la fourniture et la pose d'une chaudière fonctionnant au fioul ou au gaz sont à 20 %.",
+            "Depuis cette même date, l'ancienne attestation papier de TVA réduite est remplacée par une mention sur le devis ou la facture. Le logiciel vous laisse choisir le taux par ligne, pour qu'un même devis puisse mélanger plusieurs taux."
+          ],
+          "items": []
+        },
+        {
+          "title": "L'assurance décennale sur chaque devis",
+          "paragraphs": [
+            "Vos devis et factures doivent indiquer votre assureur en responsabilité décennale et la couverture géographique du contrat. Le logiciel ajoute ces mentions automatiquement, une fois renseignées dans vos paramètres."
+          ],
+          "items": []
+        },
+        {
+          "title": "Ce que le logiciel fait pour un plombier",
+          "paragraphs": [],
+          "items": [
+            "Votre bibliothèque de prix (fournitures, main-d'œuvre, déplacement) importée depuis Excel ou votre ancien logiciel.",
+            "Le devis fait sur téléphone chez le client, signé du doigt sur place ou par lien.",
+            "Acomptes et situations de travaux pour les chantiers de salle de bains ou de rénovation.",
+            "Relances automatiques des factures impayées.",
+            "Factures au format électronique, transmises via une plateforme agréée.",
+            "Export pour votre expert-comptable."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Le devis est-il obligatoire pour un petit dépannage de plomberie ?",
+          "answer": "Chez un particulier, oui : la plomberie fait partie des travaux et dépannages pour lesquels l'arrêté du 24 janvier 2017 impose un devis préalable, avec des mentions précises (taux horaire, frais de déplacement, détail des prix)."
+        },
+        {
+          "question": "Quel taux de TVA pour remplacer une chaudière gaz ?",
+          "answer": "Depuis le 1er mars 2025, la fourniture et la pose d'une chaudière fioul ou gaz sont au taux de 20 %. Les autres travaux d'entretien dans un logement de plus de deux ans restent en principe à 10 %."
+        },
+        {
+          "question": "Puis-je faire le devis directement chez le client ?",
+          "answer": "Oui. Le logiciel fonctionne sur téléphone et tablette : vous faites le devis sur place, le client le signe du doigt ou reçoit un lien par e-mail ou SMS."
+        },
+        {
+          "question": "Je fais aussi du chauffage, ça marche pour les deux métiers ?",
+          "answer": "Oui. Votre bibliothèque de prix contient vos ouvrages de plomberie et de chauffage, et chaque ligne de devis a son propre taux de TVA."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Entreprendre.service-public.fr : devis de dépannage et réparation",
+          "href": "https://entreprendre.service-public.gouv.fr/vosdroits/F31144"
+        },
+        {
+          "label": "impots.gouv.fr : taux de TVA des travaux dans les logements",
+          "href": "https://www.impots.gouv.fr/professionnel/questions/quel-taux-de-tva-appliquer-pour-les-travaux-realises-dans-les-logements"
+        },
+        {
+          "label": "Entreprendre.service-public.fr : fin de l'attestation de TVA réduite",
+          "href": "https://entreprendre.service-public.gouv.fr/actualites/A18088"
+        }
+      ]
+    },
+    {
+      "slug": "electricien",
+      "label": "Logiciel de devis pour électricien",
+      "summary": "Dépannage, mise aux normes, rénovation : un devis conforme fait sur le chantier, des factures prêtes pour la facturation électronique.",
+      "breadcrumb": "Électricien",
+      "updated": "31 octobre 2026",
+      "seo": {
+        "title": "Logiciel de devis et factures pour électricien",
+        "description": "Devis de dépannage conforme, mises aux normes, situations de travaux, factures électroniques : le logiciel de devis des électriciens, simple et utilisable depuis le chantier."
+      },
+      "hero": {
+        "eyebrow": "Logiciel pour électricien",
+        "title": "Le logiciel de devis et factures des électriciens",
+        "subtitle": "Du dépannage d'un tableau à la rénovation complète d'une maison : un devis clair fait en quelques minutes, signé sur place, et des factures payées à temps."
+      },
+      "sections": [
+        {
+          "title": "Le devis de dépannage, avant l'intervention",
+          "paragraphs": [
+            "Les travaux et dépannages d'électricité chez un particulier sont soumis à l'arrêté du 24 janvier 2017 : un devis préalable doit être remis au client. Sans devis, le professionnel s'expose à une amende administrative pouvant aller jusqu'à 3 000 € pour une personne physique.",
+            "Le devis précise la date, le nom et l'adresse de l'entreprise, le nom du client, le lieu, la nature exacte des travaux, le détail en quantité et en prix de chaque prestation et produit, le taux horaire TTC et le mode de décompte du temps, les frais de déplacement éventuels, le total HT et TTC avec le taux de TVA, la durée de validité, et si le devis est gratuit ou payant. Le logiciel prévoit chacune de ces lignes."
+          ],
+          "items": []
+        },
+        {
+          "title": "Le bon taux de TVA",
+          "paragraphs": [
+            "Dans un logement de plus de deux ans, les travaux d'amélioration et d'entretien sont en principe à 10 %, les travaux de rénovation énergétique à 5,5 %, et le neuf à 20 %. Depuis le 1er mars 2025, une mention sur le devis ou la facture remplace l'ancienne attestation de TVA réduite. Dans le logiciel, chaque ligne a son taux."
+          ],
+          "items": []
+        },
+        {
+          "title": "L'assurance décennale sur chaque devis",
+          "paragraphs": [
+            "Vos devis et factures indiquent votre assureur en responsabilité décennale et la couverture géographique du contrat. Une fois renseignées, ces mentions s'ajoutent automatiquement."
+          ],
+          "items": []
+        },
+        {
+          "title": "Ce que le logiciel fait pour un électricien",
+          "paragraphs": [],
+          "items": [
+            "Votre bibliothèque d'ouvrages et de prix (points lumineux, prises, tableaux, main-d'œuvre) importée depuis Excel ou votre ancien logiciel.",
+            "Le devis fait sur téléphone chez le client, signé du doigt sur place ou par lien.",
+            "Acomptes et situations de travaux pour les chantiers de rénovation.",
+            "Relances automatiques des factures impayées.",
+            "Factures au format électronique, transmises via une plateforme agréée.",
+            "Export pour votre expert-comptable."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Le devis est-il obligatoire pour un dépannage électrique ?",
+          "answer": "Chez un particulier, oui : l'électricité fait partie des travaux et dépannages pour lesquels l'arrêté du 24 janvier 2017 impose un devis préalable, avec des mentions précises (taux horaire, frais de déplacement, détail des prix)."
+        },
+        {
+          "question": "Puis-je reprendre ma liste de prix actuelle ?",
+          "answer": "Oui. On importe vos ouvrages et vos prix depuis Excel ou votre ancien logiciel lors de la mise en place."
+        },
+        {
+          "question": "Le logiciel gère-t-il les situations de travaux ?",
+          "answer": "Oui. Vous facturez un chantier en plusieurs fois (acompte, situations, facture finale) et le logiciel tient le compte de ce qui reste à facturer."
+        },
+        {
+          "question": "Mes factures seront-elles conformes à la facturation électronique ?",
+          "answer": "Oui. Le logiciel produit vos factures au format électronique et les transmet via une plateforme agréée, avant l'obligation d'émission du 1er septembre 2027 pour les TPE et PME."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Entreprendre.service-public.fr : devis de dépannage et réparation",
+          "href": "https://entreprendre.service-public.gouv.fr/vosdroits/F31144"
+        },
+        {
+          "label": "impots.gouv.fr : taux de TVA des travaux dans les logements",
+          "href": "https://www.impots.gouv.fr/professionnel/questions/quel-taux-de-tva-appliquer-pour-les-travaux-realises-dans-les-logements"
+        },
+        {
+          "label": "Entreprendre.service-public.fr : fin de l'attestation de TVA réduite",
+          "href": "https://entreprendre.service-public.gouv.fr/actualites/A18088"
+        }
+      ]
+    }
+  ]
+}

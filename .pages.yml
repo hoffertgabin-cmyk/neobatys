@@ -1184,6 +1184,116 @@ content:
       - name: text
         label: Texte
         type: text
+- name: software-guides
+  label: Pages guides du logiciel (métiers, facturation électronique)
+  type: file
+  path: content/data/software-guides.json
+  format: json
+  fields:
+  - name: section
+    label: Bloc de liens vers les guides
+    type: object
+    fields:
+    - name: eyebrow
+      label: Surtitre
+      type: string
+    - name: title
+      label: Titre
+      type: string
+    - name: subtitle
+      label: Sous-titre
+      type: text
+  - name: guides
+    label: Guides
+    description: L'adresse de la page est /logiciel/ suivi de l'identifiant. Changer un identifiant change l'adresse (perte du référencement acquis).
+    type: object
+    list:
+      collapsible:
+        collapsed: true
+        summary: '{label}'
+    fields:
+    - name: slug
+      label: Identifiant (adresse)
+      type: string
+    - name: label
+      label: Titre du lien
+      type: string
+    - name: summary
+      label: Résumé du lien
+      type: text
+    - name: breadcrumb
+      label: Fil d'Ariane
+      type: string
+    - name: updated
+      label: Date de mise à jour
+      type: string
+    - name: seo
+      label: Référencement Google
+      type: object
+      fields:
+      - name: title
+        label: Titre de l'onglet
+        type: string
+      - name: description
+        label: Description Google
+        type: text
+    - name: hero
+      label: Haut de page
+      type: object
+      fields:
+      - name: eyebrow
+        label: Surtitre
+        type: string
+      - name: title
+        label: Titre
+        type: string
+      - name: subtitle
+        label: Sous-titre
+        type: text
+    - name: sections
+      label: Paragraphes
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{title}'
+      fields:
+      - name: title
+        label: Intertitre
+        type: string
+      - name: paragraphs
+        label: Paragraphes
+        type: text
+        list: true
+      - name: items
+        label: Liste à puces
+        type: string
+        list: true
+    - name: faq
+      label: Questions
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{question}'
+      fields:
+      - name: question
+        label: Question
+        type: string
+      - name: answer
+        label: Réponse
+        type: text
+    - name: sources
+      label: Sources officielles
+      type: object
+      list: true
+      fields:
+      - name: label
+        label: Nom
+        type: string
+      - name: href
+        label: Lien
+        type: string
 - name: navigation
   label: Menus
   type: file

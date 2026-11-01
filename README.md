@@ -47,6 +47,7 @@ Tous les textes sont dans le dossier **`content/data/`** (un fichier JSON par su
 | `content/data/projects.json`     | réalisations **(exemples à remplacer)**                                            |
 | `content/data/testimonials.json` | témoignages **(exemples à remplacer)**                                             |
 | `content/data/pages.json`        | textes des pages `/sites-internet`, `/logiciel`, `/contact`                        |
+| `content/data/software-guides.json` | pages guides `/logiciel/[guide]` (par métier, facturation électronique)         |
 | `content/data/legal.json`        | mentions légales et politique de confidentialité                                   |
 | `content/data/navigation.json`   | liens du menu et du pied de page                                                   |
 
@@ -89,7 +90,8 @@ Pour ajouter un outil de mesure d'audience plus tard, chargez-le uniquement si `
 ## SEO
 
 - Titres, descriptions et Open Graph par page (`lib/seo.ts`), image de partage générée (`app/opengraph-image.tsx`)
-- Données structurées JSON-LD : `ProfessionalService` (LocalBusiness), `Service`, `FAQPage`
+- Données structurées JSON-LD : `ProfessionalService` (LocalBusiness), `Service`, `SoftwareApplication` (`/logiciel`), `BreadcrumbList` et `FAQPage`
+- Plan de campagne SEO du logiciel (mots-clés, pages, calendrier, actions manuelles) : `docs/seo-logiciel.md`
 - `sitemap.xml` et `robots.txt` générés depuis `NEXT_PUBLIC_SITE_URL`
 
 ## Assistant IA de la FAQ
@@ -120,7 +122,7 @@ Chaque nouveau push sur la branche principale redéploie le site automatiquement
 ## Structure
 
 ```text
-app/            pages (accueil, sites-internet, logiciel, contact, pages légales), API, SEO
+app/            pages (accueil, sites-internet, logiciel et ses guides, contact, pages légales), API, SEO
 components/
   ui/           Button, Section, Card, SpotlightCard, Accordion, Marquee, Counter…
   motion/       Reveal/Stagger (CSS + IntersectionObserver), WordCascade, SmoothScroll
