@@ -1003,6 +1003,95 @@
           "href": "https://entreprendre.service-public.gouv.fr/vosdroits/F37371"
         }
       ]
+    },
+    {
+      "slug": "modele-devis",
+      "label": "Modèle de devis bâtiment gratuit",
+      "summary": "Un modèle Excel avec les mentions obligatoires et le calcul automatique HT, TVA et TTC, à télécharger sans inscription.",
+      "breadcrumb": "Modèle de devis",
+      "updated": "1er novembre 2026",
+      "seo": {
+        "title": "Modèle de devis bâtiment gratuit (Excel) avec mentions obligatoires",
+        "description": "Téléchargez gratuitement un modèle de devis bâtiment au format Excel : mentions obligatoires, décennale, calcul HT, TVA à 20, 10 ou 5,5 % et TTC. Sans inscription."
+      },
+      "hero": {
+        "eyebrow": "Modèle gratuit",
+        "title": "Modèle de devis bâtiment gratuit, au format Excel",
+        "subtitle": "Les mentions obligatoires sont déjà en place et les totaux HT, TVA et TTC se calculent tout seuls. Téléchargement direct, sans inscription."
+      },
+      "downloads": [
+        {
+          "label": "Télécharger le modèle Excel (.xlsx)",
+          "href": "/modeles/modele-devis-batiment.xlsx"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Ce que contient le modèle",
+          "paragraphs": [
+            "Le modèle reprend les informations que la réglementation demande sur un devis de travaux ou de dépannage du bâtiment. Il suffit de remplacer les textes entre crochets par les vôtres."
+          ],
+          "items": [
+            "Date de rédaction, numéro et durée de validité du devis.",
+            "Nom, adresse et SIRET de l'entreprise, nom du client et lieu des travaux.",
+            "Coordonnées de l'assureur en responsabilité décennale et zone de couverture géographique.",
+            "Nature exacte des travaux.",
+            "Tableau détaillé : désignation, unité, quantité, prix unitaire HT et taux de TVA par ligne.",
+            "Totaux HT, TVA par taux (20 %, 10 %, 5,5 %) et TTC calculés automatiquement.",
+            "Taux horaire de main-d'œuvre TTC, décompte du temps, frais de déplacement et gestion des déchets.",
+            "Devis gratuit ou payant, conservation des pièces remplacées, conditions de paiement.",
+            "Emplacement pour la mention de TVA réduite et pour la signature « bon pour travaux »."
+          ]
+        },
+        {
+          "title": "Comment l'utiliser",
+          "paragraphs": [
+            "Ouvrez le fichier dans Excel, LibreOffice ou Google Sheets. Renseignez une fois vos informations d'entreprise et d'assurance, puis enregistrez une copie pour chaque nouveau devis.",
+            "Pour la TVA, saisissez 20 %, 10 % ou 5,5 % sur chaque ligne : les totaux par taux se mettent à jour. Avant d'appliquer un taux réduit, vérifiez les conditions sur impots.gouv.fr."
+          ],
+          "items": []
+        },
+        {
+          "title": "Les limites d'un modèle Excel",
+          "paragraphs": [
+            "Un tableur ne suit pas vos devis : pas de relance quand le client ne répond pas, pas de transformation du devis en facture, pas de signature électronique. Et il ne produit pas de facture électronique : à partir du 1er septembre 2027, les TPE et PME devront émettre leurs factures dans un format électronique, via une plateforme agréée.",
+            "C'est ce que fait le logiciel NEOBATYS : le même devis, fait sur téléphone, signé par le client, puis transformé en facture électronique en un clic. Vous pouvez l'essayer sans inscription dans la démo en ligne."
+          ],
+          "items": []
+        }
+      ],
+      "faq": [
+        {
+          "question": "Le modèle est-il vraiment gratuit ?",
+          "answer": "Oui. Le fichier se télécharge directement, sans inscription ni adresse e-mail."
+        },
+        {
+          "question": "Le modèle suffit-il pour être en règle ?",
+          "answer": "Il contient les mentions prévues pour les devis de travaux et de dépannage du bâtiment, mais c'est à vous de les compléter et de vérifier celles qui s'appliquent à votre activité, par exemple l'assurance décennale."
+        },
+        {
+          "question": "Puis-je l'ouvrir sans Excel ?",
+          "answer": "Oui. Le fichier s'ouvre aussi avec LibreOffice ou Google Sheets."
+        },
+        {
+          "question": "Puis-je faire mes factures avec ce modèle ?",
+          "answer": "Le modèle est prévu pour les devis. Pour les factures, l'obligation de facture électronique (réception depuis le 1er septembre 2026, émission au 1er septembre 2027 pour les TPE et PME) demande un logiciel raccordé à une plateforme agréée."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Entreprendre.service-public.fr : devis obligatoire pour les travaux et dépannages",
+          "href": "https://entreprendre.service-public.gouv.fr/vosdroits/F31144"
+        },
+        {
+          "label": "impots.gouv.fr : taux de TVA des travaux dans les logements",
+          "href": "https://www.impots.gouv.fr/professionnel/questions/quel-taux-de-tva-appliquer-pour-les-travaux-realises-dans-les-logements"
+        },
+        {
+          "label": "Entreprendre.service-public.fr : calendrier de la facturation électronique",
+          "href": "https://entreprendre.service-public.gouv.fr/actualites/A15683"
+        }
+      ]
     }
   ]
 }

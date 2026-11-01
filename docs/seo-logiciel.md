@@ -23,7 +23,7 @@ Plan de référencement de la page `/logiciel` et de ses guides `/logiciel/[guid
 | Luxembourg | logiciel facturation luxembourg, facturation électronique luxembourg (b2b, peppol, myguichet), peppol luxembourg obligatoire | Informationnelle | `/logiciel/facturation-electronique` (section Luxembourg), puis page dédiée si Search Console montre des impressions |
 | Métiers | logiciel devis plombier, électricien, maçonnerie, peintre en bâtiment, menuiserie (alu, pvc), couvreur, toiture, carrelage, chauffagiste | Transactionnelle | `/logiciel/[métier]` |
 | Réglementation devis | mentions obligatoires devis bâtiment, devis travaux, comment faire un devis bâtiment, tva 10 travaux, assurance décennale devis, devis artisan rge, devis sans tva | Informationnelle | sections des pages métier, puis guide dédié |
-| Modèles | modèle devis bâtiment (excel, word, pdf) | Informationnelle | à créer : modèle de devis gratuit à télécharger (aimant à liens) |
+| Modèles | modèle devis bâtiment (excel, word, pdf) | Informationnelle | `/logiciel/modele-devis` |
 | IA | logiciel devis batiment ia | Transactionnelle | `/logiciel` (devis dictés, voir assistants IA) |
 
 ## 3. Concurrents (relevé du 31/10/2026)
@@ -44,23 +44,22 @@ Tarifs : obat.fr/tarifs, tolteck.com/fr-fr/tarifs, batappli.fr/tarifs, batichiff
 
 ## 4. Pages
 
-### Livrées dans cette PR
+### En ligne
 
 | URL | Cible | Contenu |
 |---|---|---|
-| `/logiciel` | générique | JSON-LD `SoftwareApplication` (remplace `Service`) et `FAQPage`, bloc de liens vers les guides |
-| `/logiciel/facturation-electronique` | cluster facturation électronique et Luxembourg | dates, formats, plateformes agréées, sanctions, particuliers, Luxembourg, sources officielles, FAQ |
-| `/logiciel/plombier` | logiciel devis plombier, chauffagiste | devis de dépannage obligatoire, TVA 10 / 5,5 / 20 % (chaudières), décennale, fonctions |
-| `/logiciel/electricien` | logiciel devis électricien | mêmes règles appliquées à l'électricité |
+| `/logiciel` | générique | JSON-LD `SoftwareApplication` et `FAQPage`, bloc de liens vers les guides |
+| `/logiciel/facturation-electronique` | cluster facturation électronique et Luxembourg | dates, formats, plateformes agréées, sanctions, particuliers, Luxembourg, FAQ |
+| `/logiciel/mentions-obligatoires-devis` | cluster réglementation devis | devis préalable, mentions, TVA réduite par mention depuis 2025, décennale |
+| `/logiciel/modele-devis` | modèle devis bâtiment (excel) | modèle Excel `public/modeles/modele-devis-batiment.xlsx` en téléchargement libre, sans formulaire |
+| `/logiciel/plombier`, `electricien`, `macon`, `peintre`, `menuisier`, `couvreur`, `carreleur`, `chauffagiste` | logiciel devis + métier | règles propres au métier, TVA, décennale, fonctions du logiciel |
 
-Chaque guide a son fil d'Ariane (`BreadcrumbList`), sa FAQ (`FAQPage`), des liens vers les autres guides et vers `/logiciel`, et figure au sitemap. Le pied de page pointe vers la facturation électronique. Les textes sont dans `content/data/software-guides.json`, modifiables depuis Pages CMS.
+Chaque guide a son fil d'Ariane (`BreadcrumbList`), sa FAQ (`FAQPage`), ses sources officielles, des liens vers les autres guides et vers `/logiciel`, et figure au sitemap. Le pied de page pointe vers la facturation électronique. Les textes sont dans `content/data/software-guides.json`, modifiables depuis Pages CMS (un guide peut proposer des fichiers à télécharger via `downloads`).
 
 ### À créer ensuite (même gabarit : ajouter une entrée dans `software-guides.json`)
 
-1. `/logiciel/macon`, `/logiciel/peintre`, `/logiciel/menuisier`, `/logiciel/couvreur`, `/logiciel/carreleur`, `/logiciel/chauffagiste` : les métiers les plus suggérés. Chaque page doit avoir un contenu propre au métier (règles, ouvrages typiques), pas un copier-coller avec le nom changé.
-2. `/logiciel/mentions-obligatoires-devis` : mentions du devis du bâtiment, TVA réduite sans attestation depuis 2025, décennale.
-3. `/logiciel/modele-devis` : modèle de devis bâtiment gratuit (PDF), demandé par e-mail ou téléchargeable. C'est la page qui attire naturellement des liens.
-4. `/logiciel/facturation-electronique-luxembourg` si Search Console montre des impressions sur les requêtes Luxembourg.
+1. `/logiciel/facturation-electronique-luxembourg` si Search Console montre des impressions sur les requêtes Luxembourg.
+2. Les idées issues de la veille américaine (`docs/veille/seo-acquisition.md`) : calculateurs, comparatif « logiciel ou Excel », parrainage.
 
 ## 5. Calendrier sur 3 mois
 
