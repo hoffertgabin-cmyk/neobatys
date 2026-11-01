@@ -68,3 +68,7 @@ export const projects =
 
 /** Uniquement des maquettes fictives : la section est présentée comme des exemples. */
 export const mockupsOnly = projects.every((p) => p.placeholder);
+
+/** Maquette fictive d'un métier, même si de vrais projets masquent les maquettes ailleurs. */
+export const mockupProject = (mockup: TradeMockup) =>
+  allProjects.find((p) => p.placeholder && p.mockup === mockup);

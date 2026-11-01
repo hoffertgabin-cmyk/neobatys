@@ -1,10 +1,12 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/content/site";
 import { softwareGuides } from "@/content/software";
+import { tradeSites } from "@/content/trade-sites";
 
 const routes = [
   { path: "/", priority: 1 },
   { path: "/sites-internet", priority: 0.9 },
+  ...tradeSites.map((t) => ({ path: `/sites-internet/${t.slug}`, priority: 0.7 })),
   { path: "/logiciel", priority: 0.9 },
   ...softwareGuides.map((g) => ({ path: `/logiciel/${g.slug}`, priority: 0.7 })),
   { path: "/contact", priority: 0.8 },

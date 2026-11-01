@@ -1,12 +1,15 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Download } from "lucide-react";
-import { softwareGuides } from "@/content/software";
+import { ArrowRight, Download } from "lucide-react";
+import { softwareGuideLinks, softwareGuides, softwareGuidesSection } from "@/content/software";
+import { tradeSiteLinks } from "@/content/trade-sites";
 import { breadcrumbJsonLd, faqJsonLd, pageMetadata } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Button, buttonClasses } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/sections/PageHero";
-import { SoftwareGuides } from "@/components/sections/SoftwareGuides";
+import { ProseSections } from "@/components/sections/ProseSections";
+import { LinkCards } from "@/components/sections/LinkCards";
 import { Faq } from "@/components/sections/Faq";
 import { FinalCta } from "@/components/sections/FinalCta";
 
@@ -28,6 +31,8 @@ export default async function GuidePage({ params }: PageProps<"/logiciel/[guide]
   const path = `/logiciel/${guide.slug}`;
   // Fichiers à télécharger (modèles), seulement sur les guides qui en ont
   const downloads = guide.downloads ?? [];
+  // Page « site internet » du même métier, s'il y en a une
+  const site = tradeSiteLinks.find((t) => t.slug === guide.slug);
 
   return (
     <>
@@ -55,25 +60,19 @@ export default async function GuidePage({ params }: PageProps<"/logiciel/[guide]
       <section className="bg-white py-16 sm:py-24">
         <Container className="max-w-3xl">
           <p className="mb-10 text-sm text-ardoise-dark">Mis à jour le {guide.updated}</p>
-          <div className="space-y-12">
-            {guide.sections.map((section) => (
-              <div key={section.title}>
-                <h2 className="text-2xl font-bold sm:text-3xl">{section.title}</h2>
-                <div className="mt-4 space-y-3 text-lg leading-relaxed text-ardoise-dark">
-                  {section.paragraphs.map((p) => (
-                    <p key={p}>{p}</p>
-                  ))}
-                </div>
-                {section.items.length > 0 && (
-                  <ul className="mt-5 list-disc space-y-2 pl-6 text-lg leading-relaxed text-ardoise-dark marker:text-chantier">
-                    {section.items.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            ))}
-          </div>
+          <ProseSections sections={guide.sections} />
+          {site && (
+            <Link
+              href={site.href}
+              className="group mt-14 flex items-center justify-between gap-4 rounded-2xl bg-sable p-6 ring-1 ring-nuit/5 hover:ring-nuit/20"
+            >
+              <span>
+                <span className="block font-bold">{site.label}</span>
+                <span className="mt-1 block text-ardoise-dark">{site.summary}</span>
+              </span>
+              <ArrowRight aria-hidden="true" className="size-5 shrink-0 transition-transform group-hover:translate-x-1" />
+            </Link>
+          )}
           {guide.sources.length > 0 && (
             <div className="mt-14 border-t border-nuit/10 pt-8">
               <h2 className="text-lg font-bold">Sources officielles</h2>
@@ -97,7 +96,12 @@ export default async function GuidePage({ params }: PageProps<"/logiciel/[guide]
         </Container>
       </section>
       <Faq items={guide.faq} />
-      <SoftwareGuides exclude={guide.slug} />
+      <LinkCards
+        id="guides-titre"
+        heading={softwareGuidesSection}
+        links={softwareGuideLinks.filter((g) => g.slug !== guide.slug)}
+        cta="Lire le guide"
+      />
       <FinalCta />
       <JsonLd
         data={breadcrumbJsonLd([

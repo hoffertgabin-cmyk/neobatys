@@ -16,3 +16,11 @@ export const softwareOnboarding = data.softwareOnboarding;
 export const softwareGuidesSection = guidesData.section;
 
 export const softwareGuides = guidesData.guides;
+
+/** Liens vers les guides, pour la grille <LinkCards>. */
+export const softwareGuideLinks = softwareGuides.map((g) => ({
+  slug: g.slug,
+  href: `/logiciel/${g.slug}`,
+  label: g.label,
+  summary: g.summary,
+}));
