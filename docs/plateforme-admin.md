@@ -120,6 +120,18 @@ L'inscription est libre et gratuite pour tout le monde dès le MVP (décision 5)
 | Nos prospects | Les leads du site NEOBATYS (ce que reçoit l'admin actuel, données reprises) et tous les inscrits gratuits, avec l'état de leurs consentements. Segments pour les e-mails et les audiences publicitaires, limités aux personnes qui ont consenti. Nous sommes une organisation comme une autre, avec le module Demandes. |
 | Outils IA internes | Résumé d'un compte avant un appel, préparation d'un gabarit pour un nouveau métier, analyse des corrections de tous les clients pour améliorer les prompts communs. |
 
+### 2.6 Qui a accès à quoi
+
+Un seul identifiant pour tout le monde, un seul espace : ce qui change d'un profil à l'autre, ce sont les modules ouverts. L'espace s'appelle pour le client « Espace client NEOBATYS », pas « plateforme ».
+
+| Profil | Ce qu'il y trouve | Pourquoi il revient | Ce que ça nous apporte |
+|---|---|---|---|
+| **Client site internet** (on a fait son site, il paie la maintenance) | Les demandes envoyées par le formulaire de son site, rangées et suivies (pas seulement un e-mail perdu) ; les visites de son site et d'où elles viennent ; ses avis Google ; ses demandes de modification du site (un bouton, suivi de l'avancement) ; ses factures NEOBATYS | Il voit ce que son site lui rapporte chaque mois | La maintenance à 200 € HT par mois se justifie d'elle-même, donc moins de résiliations ; les modules non souscrits (devis, assistants IA) sont visibles, grisés avec « Activer » |
+| **Client logiciel ou IA** (formule Essentiel, Pro, Premium ou pack) | Tous les modules de sa formule, réglés par nous | C'est son outil de travail quotidien | Le cœur du produit |
+| **Inscrit gratuit** (pas encore client) | Un outil utile seul : une page de demande de devis à son nom à partager sur Google et Facebook, les demandes reçues, quelques devis par mois, et un **audit gratuit de sa présence en ligne** (fiche Google, avis, site) avec des conseils | Il reçoit des demandes grâce à nous | Un prospect qualifié dans notre CRM, qui voit ce qu'on sait faire ; l'audit débouche naturellement sur nos offres (site, formules, audits approfondis sur devis) |
+
+Règle : tout ce qu'un client site ou logiciel voit dans son espace doit lui servir sans qu'on l'explique ; ce qui ne lui sert pas est masqué, pas affiché vide.
+
 ## 3. Pile technique
 
 La pile reprend celle du site autant que possible : un seul langage, une seule façon de déployer, un seul fournisseur de plus (la base).
@@ -229,7 +241,7 @@ Numérotation des factures : séquence continue par organisation, sans trou, ver
 
 ### 5.1 Inscription libre, prospection et publicité : le cadre
 
-Ce n'est pas un avis juridique ; les CGU, la politique de confidentialité et le contrat de sous-traitance sont à faire relire par un avocat avant l'ouverture. Sources ouvertes le 1er novembre 2026.
+Ce n'est pas un avis juridique. Les CGU, la politique de confidentialité et le contrat de sous-traitance sont rédigés en projet avec une IA dans [`docs/juridique/plateforme/`](juridique/plateforme/README.md), à valider avant l'ouverture des inscriptions. Sources ouvertes le 1er novembre 2026.
 
 **Les règles qui s'appliquent**
 
@@ -251,7 +263,7 @@ Ce n'est pas un avis juridique ; les CGU, la politique de confidentialité et le
 
 1. Case obligatoire : « J'accepte les conditions générales d'utilisation » (lien). En dessous, sans case : « Vos données sont traitées par TAG Delme SARL (NEOBATYS) pour gérer votre compte. Politique de confidentialité. »
 2. Case facultative, non cochée : « Je souhaite recevoir par e-mail les nouveautés et offres NEOBATYS utiles à mon activité. Désinscription en un clic. »
-3. Case facultative, non cochée : « J'accepte que mon adresse e-mail, chiffrée, soit transmise à Meta et Google pour me montrer des publicités NEOBATYS. »
+3. Case facultative, non cochée : « J'accepte que mon adresse e-mail, chiffrée, soit transmise à Meta pour me montrer des publicités NEOBATYS. » Google sera ajouté le jour où on l'utilise, avec une nouvelle version du texte et un nouveau consentement.
 4. Les cases 2 et 3 ne prennent effet qu'après le clic dans l'e-mail de confirmation ; chaque changement est journalisé (table `consents` : compte, finalité, valeur, version du texte, horodatage, adresse IP, source) ; centre de préférences dans le compte ; retrait d'une audience publicitaire au plus tard à la synchronisation suivante.
 
 Pas de mesure d'ouverture des e-mails au départ : elle demanderait une quatrième case pour un gain faible.
@@ -296,8 +308,11 @@ Le MVP n'a ni IA ni WhatsApp : il remplace l'admin actuel, met en place le multi
 | 1 | Nouveau dépôt `neobatys-app` | Contenu de départ prêt dans [`docs/plateforme/depart/`](plateforme/depart/README.md) ; dépôt pas encore créé (compte : voir 8.2) |
 | 2 | L'admin de Gabin est remplacé, son contrat `/api/leads` et ses données sont repris | Étape 1 du plan : reprise des données et arrêt de l'ancien admin |
 | 3 | `app.neobatys.com`, `admin.neobatys.com` redirige | Section 2.1 |
-| 4 | Plateforme et modules **inclus** dans les formules ; au-delà, offres sur devis (audits, options, services supplémentaires) | Pas de prix par module. Les volumes inclus (IA, WhatsApp) restent à fixer pour protéger la marge ; le coût des messages WhatsApp est payé par l'artisan à Meta |
-| 5 | Inscription libre et gratuite pour tout le monde dès le MVP ; les inscrits alimentent notre CRM | Sections 2.4, 2.5, 5.1 et plan réordonné (section 6) |
+| 4 | Plateforme et modules **inclus** dans les formules ; au-delà, offres sur devis (audits, options, services supplémentaires) | Pas de prix par module. Les assistants IA et WhatsApp se règlent avec chaque client : on lui propose l'automatisation et la mise en place d'un nouveau canal d'acquisition, chiffrées sur devis ; pas de volume standard fixé à l'avance. Le coût des messages WhatsApp est payé par l'artisan à Meta |
+| 5 | Inscription libre et gratuite pour tout le monde dès le MVP ; les inscrits alimentent notre CRM | Sections 2.4, 2.5, 2.6, 5.1 et plan réordonné (section 6) |
+| 5 bis | Prospection par e-mail : case à cocher (consentement), la solution la plus sûre | Section 5.1, formulaire |
+| 5 ter | Publicité ciblée et campagnes développées en interne quand c'est possible | Notre back-office envoie les e-mails (Resend) et synchronise lui-même les inscrits qui ont consenti vers les audiences Meta par l'API Marketing de Meta, sans outil marketing tiers ; Google plus tard (Customer Match fermé sous 50 000 $ de dépenses) |
+| 5 quater | Documents juridiques rédigés avec une IA | Projets dans [`docs/juridique/plateforme/`](juridique/plateforme/README.md) |
 | 6 | Base de données | Comparatif en section 3.1, recommandation Supabase Paris, question sur OVH à poser |
 | 7 | Plateforme agréée | Super PDP recommandée, Iopole en repli (section 3.2) |
 | 8 | Démarches Meta | Traitées à part |
@@ -306,8 +321,8 @@ Le MVP n'a ni IA ni WhatsApp : il remplace l'admin actuel, met en place le multi
 
 | Service | Ce qu'on sait | Ce qui manque | Recommandation |
 |---|---|---|---|
-| GitHub | Deux comptes personnels : `leasepro` (Ilann) et `hoffertgabin-cmyk` (Gabin). Le site est dans le compte de Gabin, aucune organisation | Une organisation au nom de l'entreprise | Créer l'organisation GitHub **TAG Delme** (ou NEOBATYS), Ilann et Gabin propriétaires tous les deux, y transférer `neobatys` puis créer `neobatys-app` dedans. Dans un dépôt personnel, seul le propriétaire règle la protection des branches. Pour protéger `main` sur des dépôts **privés**, il faut le plan GitHub Team (4 $ par utilisateur et par mois, soit 8 $ pour deux) : en gratuit, les branches protégées ne sont disponibles que sur les dépôts publics (https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches, https://github.com/pricing) |
-| Vercel | Le site tourne sur le compte de Gabin (`gab-7385`) | Une équipe partagée ; l'offre de ce compte n'est pas connue | Équipe Vercel **Pro** au nom de l'entreprise, Ilann et Gabin membres, projets `neobatys` et `neobatys-app` dedans. Le plan Hobby est réservé à un usage personnel non commercial ; Pro coûte 20 $ par mois et par siège de développeur (https://vercel.com/pricing). Vérifier sur quel plan est `gab-7385` aujourd'hui |
+| GitHub | Deux comptes personnels : `leasepro` (Ilann) et `hoffertgabin-cmyk` (Gabin). Le site est un dépôt **public** du compte de Gabin, aucune organisation | Rien pour le site ; une solution payante pour `neobatys-app`, qui sera **privé** | Le fonctionnement actuel suffit pour le site : sur un dépôt public, la protection des branches est gratuite (seul Gabin peut la régler). Pour un dépôt privé, il faut payer dans tous les cas : soit GitHub Pro sur le compte de Gabin (4 $ par mois, Gabin seul administrateur, le code lui appartient), soit une organisation de l'entreprise en plan Team (4 $ par utilisateur, 8 $ pour deux, les deux associés administrateurs, le code appartient à l'entreprise). Recommandation : l'organisation, pour 4 $ de plus par mois. Sources : https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches, https://github.com/pricing |
+| Vercel | Gabin a le plan Pro (20 $ par mois) sur `gab-7385`, qui héberge le site | Rien d'obligatoire | Ajouter `neobatys-app` comme second projet de la même équipe Pro. Inviter Ilann comme membre seulement s'il doit voir les tableaux de bord Vercel : un siège de développeur supplémentaire est payant, montant à lire dans Settings, Billing (https://vercel.com/pricing) |
 | Supabase | Inconnu ; une trace de Supabase existe côté LeasePro | Une organisation au nom de l'entreprise avec un projet à Paris | Organisation Supabase de l'entreprise, plan Pro, les deux associés membres |
 | Stripe | Inconnu | Compte au nom de TAG Delme SARL (vérification d'identité de la société) | Nécessaire seulement à l'étape 5 ; pas urgent |
 | Meta | Traité à part | | |
@@ -320,13 +335,9 @@ Règle commune : chaque compte est au nom de l'entreprise, avec les deux associ�
 
 | # | Décision | Recommandation |
 |---|---|---|
-| 1 | Ce que contient le compte gratuit | Accueil, Demandes (formulaire de demande de devis à mettre sur son site), Statistiques, et quelques devis par mois pour essayer. Factures électroniques, assistants IA et WhatsApp réservés aux formules. Le chiffre exact de devis gratuits est à fixer avec les offres. |
-| 2 | Base de données, et ce qu'Ilann a chez OVH | Supabase Pro à Paris. Réponse attendue à la question de la section 3.1 ; si c'est de l'Object Storage, on peut y garder les fichiers. |
-| 3 | Organisation GitHub de l'entreprise | La créer (TAG Delme ou NEOBATYS), plan Team à 8 $ par mois pour deux, y transférer `neobatys` et y créer `neobatys-app`. |
-| 4 | Équipe Vercel commune | Équipe Pro au nom de l'entreprise, les deux associés membres ; vérifier d'abord le plan actuel de `gab-7385`. |
-| 5 | Consentement à la prospection : case à cocher (opt-in) ou simple droit d'opposition (opt-out B2B) | Case à cocher pour tous : elle couvre les entrepreneurs individuels, le Luxembourg et l'incertitude sur le compte gratuit. |
-| 6 | Publicité ciblée | Case dédiée ; commencer par Meta seulement, Google Customer Match n'étant ouvert qu'après 50 000 $ de dépenses publicitaires. |
-| 7 | Relecture juridique | Faire relire CGU, politique de confidentialité et contrat de sous-traitance par un avocat avant l'ouverture des inscriptions. |
-| 8 | Volumes d'IA et de messages inclus dans chaque formule | Les fixer avant l'étape 3, avec alertes à 75 % et 100 % ; au-delà, offre sur devis (décision 4). |
-| 9 | Super PDP | Prendre rendez-vous avant l'étape 2 : solidité, engagement de service, contrat éditeur, doc API. |
-| 10 | Réponses de Gabin | Les sept questions de la section 1.2, indispensables pour reprendre ses données à l'étape 1. |
+| 1 | Valider les trois profils de la section 2.6 et le contenu du compte gratuit | Client site : demandes, visites, avis, modifications du site, factures. Inscrit gratuit : page de demande de devis, quelques devis par mois, audit gratuit de présence en ligne. |
+| 2 | Base de données | Supabase Pro à Paris, sauf si l'inventaire OVH (section 3.1) montre quelque chose de réutilisable ; en attente de l'accès OVH. |
+| 3 | Organisation GitHub de l'entreprise ou compte de Gabin pour `neobatys-app` | Organisation en plan Team (8 $ par mois pour deux). |
+| 4 | Valider les projets juridiques de `docs/juridique/plateforme/` | Relecture par Ilann et Gabin ; un avocat seulement sur les points listés dans leur README si le doute persiste. |
+| 5 | Rendez-vous avec Super PDP | Avant l'étape 2. |
+| 6 | Réponses de Gabin aux sept questions de la section 1.2 | Avant l'étape 1. |
