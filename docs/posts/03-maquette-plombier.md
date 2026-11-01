@@ -1,16 +1,17 @@
-# 03 Maquette : un site de plombier
+# 03 Un site par métier, épisode 1 : un site de plombier
 
 - **Date prévue** : vendredi 13 novembre 2026
 - **Réseaux** : Instagram, Facebook
 - **Pilier** : maquettes de sites par métier
+- **Série** : « Un site par métier », épisode 1 (voir la veille `../veille/reseaux-sociaux.md`, piste 2). Le numéro d'épisode donne une raison de revenir.
 - **Format** : Reel 9:16, 20 à 30 secondes
 
 ## Visuel
 
-Enregistrement d'écran natif sur téléphone (pas d'appli avec filigrane) : ouvrir www.neobatys.com/sites-internet, afficher la maquette plombier, faire défiler lentement de l'accueil au formulaire de devis. Texte à l'écran dès la première seconde : « Maquette d'exemple : site d'un plombier ». Musique de la bibliothèque Instagram ou voix off qui lit les 3 points ci-dessous.
+Enregistrement d'écran natif sur téléphone (pas d'appli avec filigrane) : ouvrir www.neobatys.com/sites-internet, afficher la maquette plombier, faire défiler lentement de l'accueil au formulaire de devis. Texte à l'écran dès la première seconde : « Un site par métier, épisode 1 · Maquette d'exemple : site d'un plombier ». Musique de la bibliothèque Instagram ou voix off qui lit les 3 points ci-dessous.
 
 Texte à l'écran, une ligne par séquence :
-1. « Maquette d'exemple : site d'un plombier »
+1. « Un site par métier, épisode 1 · Maquette d'exemple : site d'un plombier »
 2. « Les urgences et la zone d'intervention en haut »
 3. « Les chantiers en photos avant / après »
 4. « Le formulaire de devis, à portée de pouce »
@@ -29,6 +30,7 @@ Ceci est une maquette d'exemple, pas le site d'un vrai client. Elle montre ce qu
 
 Votre site, à votre nom et avec vos photos, à partir de 990 € HT, en ligne en 2 à 3 semaines.
 Les autres métiers sont sur www.neobatys.com/sites-internet
+Épisode 2 vendredi prochain : l'électricien.
 ```
 
 ## Hashtags

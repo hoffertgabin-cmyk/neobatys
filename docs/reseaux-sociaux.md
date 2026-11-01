@@ -1,6 +1,6 @@
 # Réseaux sociaux NEOBATYS
 
-Instagram, Facebook et LinkedIn : stratégie, profils, création des pages et calendrier des 4 premières semaines. Les 12 posts rédigés sont dans [`posts/`](posts/).
+Instagram, Facebook et LinkedIn : stratégie, profils, création des pages et calendrier des 4 premières semaines. Les 12 posts rédigés sont dans [`posts/`](posts/). La veille sur les acteurs américains qui a nourri les séries ci-dessous est dans [`veille/reseaux-sociaux.md`](veille/reseaux-sociaux.md).
 
 Rien n'est publié automatiquement. Chaque compte est créé et chaque post est publié par Ilann ou Gabin.
 
@@ -9,7 +9,7 @@ Rien n'est publié automatiquement. Chaque compte est créé et chaque post est 
 - Pas de faux client, de faux avis ni de chiffre inventé. Tant qu'aucun client n'a donné son accord écrit, on ne parle que de ce que fait le produit.
 - Les maquettes de sites sont des **exemples** : toujours écrit « maquette d'exemple » sur le visuel ou dans la légende.
 - Les avant/après sont des **scénarios types** (la journée d'un artisan qui fait ses devis le soir), jamais présentés comme un cas réel.
-- Le nom du gérant n'apparaît ni dans les bios, ni dans les posts, ni dans les visuels. On signe « l'équipe NEOBATYS ».
+- Le nom du gérant n'apparaît ni dans les bios, ni dans les posts, ni dans les visuels. On signe « l'équipe NEOBATYS ». Le gérant ne relaie pas les posts depuis un profil personnel et n'affiche pas NEOBATYS sur son profil ; l'autre associé ne le fait que s'il accepte d'être nommé publiquement.
 - Pas de standard téléphonique IA : NEOBATYS ne le vend pas, on n'en parle pas.
 - Les prix cités sont ceux du site (`content/data/pricing.json`), toujours en HT. Si un prix change sur le site, corriger les posts non publiés.
 - Les règles fiscales (facturation électronique, pénalités) sont celles de la **France**. Le Luxembourg a ses propres règles : ne pas les mélanger dans un même post.
@@ -22,7 +22,7 @@ Rien n'est publié automatiquement. Chaque compte est créé et chaque post est 
 | Instagram n'a pas un algorithme unique : Feed, Stories, Explore et Reels sont classés chacun à sa façon. La plupart des Reels vus viennent de comptes qu'on ne suit pas. | [Instagram, *Instagram Ranking Explained*, A. Mosseri, 31/05/2023](https://about.instagram.com/blog/announcements/instagram-ranking-explained) | Les Reels servent à être découvert par des artisans qui ne nous connaissent pas ; les carrousels et posts servent ceux qui nous suivent déjà. |
 | Les Reels en basse résolution, avec filigrane d'une autre appli, muets, majoritairement en texte ou déjà publiés sur Instagram sont moins recommandés. | Même source, section *How we rank Reels* | Reels tournés ou exportés en natif, avec son (voix ou musique de la bibliothèque Instagram), sans logo TikTok/CapCut, pas uniquement du texte. |
 | Instagram limite les hashtags à 5 par publication (annonce de décembre 2025). | [Blog du Modérateur](https://www.blogdumoderateur.com/instagram-limite-hashtags-5-par-publication/), [Social Media Today](https://www.socialmediatoday.com/news/instagram-implements-new-limits-on-hashtag-use/808309/) | 3 à 5 hashtags précis par post (métier, ville), jamais de liste générique. |
-| LinkedIn recommande au minimum une publication par jour sur une page entreprise. Article ancien (non daté, cite Twitter). | [LinkedIn Marketing Solutions, #AskLMS](https://business.linkedin.com/marketing-solutions/blog/w/whats-the-optimal-frequency-of-updates-on-a-company-or-showcase-page-asklms) | Hors de portée pour deux associés. On vise la régularité (2 par semaine) plutôt que le volume, et on relaie depuis les profils personnels. |
+| LinkedIn recommande au minimum une publication par jour sur une page entreprise. Article ancien (non daté, cite Twitter). | [LinkedIn Marketing Solutions, #AskLMS](https://business.linkedin.com/marketing-solutions/blog/w/whats-the-optimal-frequency-of-updates-on-a-company-or-showcase-page-asklms) | Hors de portée pour deux associés. On vise la régularité (2 par semaine) plutôt que le volume. |
 | Une page LinkedIn complète (logo, description, site web) est plus facile à trouver et peut recevoir jusqu'à 30 % de vues hebdomadaires en plus. | [LinkedIn Aide, *Complete your LinkedIn Page*](https://www.linkedin.com/help/linkedin/answer/a553372) | Tous les champs de la page remplis avant le premier post (voir checklist). |
 | Réception des factures électroniques obligatoire pour toutes les entreprises françaises depuis le 1er septembre 2026 ; émission obligatoire pour les PME et micro-entreprises au 1er septembre 2027. | [impots.gouv.fr, *À partir de quand suis-je concerné ?*, modifié le 16/01/2026](https://www.impots.gouv.fr/professionnel/questions/partir-de-quand-suis-je-concerne) | Pilier « conseils » : post 02. Revérifier la page avant chaque publication sur le sujet. |
 | Entre professionnels, une indemnité forfaitaire de 40 € pour frais de recouvrement est due en cas de retard de paiement. | [DGCCRF, *Délais de paiement*](https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/delais-de-paiement-les-regles-connaitre), [Légifrance, décret 2012-1115](https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000026453435) | Post 05. |
@@ -56,6 +56,19 @@ Ce qui n'est **pas** sourcé ici et qu'on ne présente pas comme une règle : me
 
 Les maquettes existantes : plombier, électricien, maçon, menuisier, couvreur, peintre, chauffagiste, carreleur, charpentier (`components/mockups/trade/`). Les visuels se capturent sur www.neobatys.com/sites-internet et www.neobatys.com/logiciel.
 
+## Séries récurrentes
+
+Inspirées de la veille (Electrician U, Jobber, RRBuildings, Housecall Pro) : un nom fixe et un numéro donnent une raison de revenir et simplifient la préparation.
+
+| Série | Principe | Posts du calendrier |
+|---|---|---|
+| « 1 question, 1 réponse » | Chaque conseil est titré par une vraie question d'artisan (« Facture électronique, je suis concerné quand ? »). Une question par post, réponse sourcée. Les questions reçues en commentaire ou en message alimentent la suite. | 02, 05, 08, 12 |
+| « Un site par métier » | Les maquettes présentées en épisodes numérotés, avec l'annonce de l'épisode suivant. Toujours « maquette d'exemple ». | 03, 06, 10 (puis menuisier, peintre, maçon, chauffagiste, carreleur, charpentier) |
+| Sondage puis restitution | Un sondage en story, puis un post qui donne le vrai nombre de réponses. Moins de 10 réponses : pas de chiffre, juste un merci. On ne publie jamais de statistique qu'on n'a pas. | Sondage avec le post 07, restitution en semaine 5 |
+| « Paroles d'artisans » | À partir de la semaine 5, un vendredi sur deux : un artisan du secteur raconte son métier et son parcours en 60 à 90 s ou en 5 visuels. Il est présenté comme artisan, **jamais comme client** tant qu'il ne l'est pas. Accord écrit avant tournage (texte, image, nom de l'entreprise), relecture par l'artisan avant publication, retrait sur simple demande. | Après la semaine 4 |
+
+Mot d'ordre commun : `#FiersDuBatiment`, qui parle du métier plutôt que du logiciel (vérifier avant la première utilisation qu'il n'est pas déjà associé à une autre marque).
+
 ## Formats
 
 - **Carrousel** (Instagram, Facebook ; document PDF sur LinkedIn) : 5 à 8 visuels au format portrait 4:5, une idée par visuel, titre lisible sur téléphone, dernier visuel = appel à l'action.
@@ -69,7 +82,7 @@ Les maquettes existantes : plombier, électricien, maçon, menuisier, couvreur, 
 |---|---|---|
 | Instagram | 3 publications par semaine (mardi, jeudi, vendredi) dont au moins 1 Reel, plus les stories de relais | Gabin ou Ilann, en alternance par semaine |
 | Facebook | Les mêmes 3 publications, publiées en même temps depuis Meta Business Suite | Automatique via la publication croisée |
-| LinkedIn | 2 publications par semaine (mardi, jeudi) sur la page, relayées par chaque associé depuis son profil personnel avec une phrase à lui | L'associé de la semaine publie, l'autre relaie |
+| LinkedIn | 2 publications par semaine (mardi, jeudi) sur la page | L'associé de la semaine publie depuis la page (relais personnel : voir les règles de contenu) |
 
 Budget temps visé : une demi-journée par semaine pour préparer les 3 posts de la semaine suivante (le lundi), 15 minutes par jour pour répondre aux commentaires et messages. Les messages privés reçus (demandes de devis, questions) sont traités comme des demandes de contact : réponse dans la journée, renvoi vers `/contact` si besoin.
 
@@ -174,7 +187,7 @@ Rien de cette liste ne peut être fait par Claude : création de compte, connexi
 - [ ] Depuis le profil personnel LinkedIn (qui doit être complet et avoir une ancienneté suffisante), créer une Page entreprise ([aide LinkedIn : créer une Page](https://www.linkedin.com/help/linkedin/answer/a543852)). LinkedIn peut demander une adresse e-mail professionnelle au domaine `neobatys.com`.
 - [ ] Remplir tous les champs : logo, bannière, slogan, présentation, site, secteur, taille, siège ([aide LinkedIn : compléter la Page](https://www.linkedin.com/help/linkedin/answer/a553372)).
 - [ ] Ajouter Gabin comme super administrateur.
-- [ ] Chaque associé ajoute NEOBATYS comme expérience actuelle sur son profil, pour être rattaché à la page.
+- [ ] Seul l'associé qui accepte d'être nommé publiquement ajoute NEOBATYS comme expérience sur son profil ; le gérant ne le fait pas.
 - [ ] Inviter ses relations pertinentes (artisans, partenaires) à suivre la page, sans envoi en masse.
 
 ### Après la création
@@ -190,19 +203,21 @@ Départ proposé : semaine du 9 novembre 2026. Meta = Instagram + Facebook en pu
 | Semaine | Jour | Post | Pilier | Format Meta | LinkedIn |
 |---|---|---|---|---|---|
 | 1 (9-13 nov.) | Mar. 10 | [01 Présentation](posts/01-presentation.md) | Présentation | Carrousel | Oui |
-| | Jeu. 12 | [02 Facturation électronique](posts/02-facturation-electronique.md) | Conseil | Carrousel | Oui (document) |
-| | Ven. 13 | [03 Maquette plombier](posts/03-maquette-plombier.md) | Maquette | Reel | Non |
+| | Jeu. 12 | [02 Facture électronique, je suis concerné quand ?](posts/02-facturation-electronique.md) | Conseil | Carrousel | Oui (document) |
+| | Ven. 13 | [03 Un site par métier, ép. 1 : plombier](posts/03-maquette-plombier.md) | Maquette | Reel | Non |
 | 2 (16-20 nov.) | Mar. 17 | [04 Devis dicté à la voix](posts/04-demo-devis-voix.md) | Démo | Reel | Oui |
-| | Jeu. 19 | [05 Relancer un impayé](posts/05-conseil-relances.md) | Conseil | Carrousel | Oui |
-| | Ven. 20 | [06 Maquette électricien](posts/06-maquette-electricien.md) | Maquette | Reel | Non |
-| 3 (23-27 nov.) | Mar. 24 | [07 La journée type, avant/après](posts/07-avant-apres-journee.md) | Avant/après | Carrousel | Oui |
-| | Jeu. 26 | [08 Fiche Google](posts/08-conseil-fiche-google.md) | Conseil | Carrousel | Oui |
+| | Jeu. 19 | [05 Relancer un impayé sans fâcher le client ?](posts/05-conseil-relances.md) | Conseil | Carrousel | Oui |
+| | Ven. 20 | [06 Un site par métier, ép. 2 : électricien](posts/06-maquette-electricien.md) | Maquette | Reel | Non |
+| 3 (23-27 nov.) | Mar. 24 | [07 La journée type, avant/après + sondage](posts/07-avant-apres-journee.md) | Avant/après | Carrousel | Oui |
+| | Jeu. 26 | [08 Que remplir sur ma fiche Google ?](posts/08-conseil-fiche-google.md) | Conseil | Carrousel | Oui |
 | | Ven. 27 | [09 Relances automatiques](posts/09-demo-relances.md) | Démo | Reel | Non |
-| 4 (30 nov.-4 déc.) | Mar. 1er | [10 Maquette couvreur](posts/10-maquette-couvreur.md) | Maquette | Reel | Non |
+| 4 (30 nov.-4 déc.) | Mar. 1er | [10 Un site par métier, ép. 3 : couvreur](posts/10-maquette-couvreur.md) | Maquette | Reel | Non |
 | | Jeu. 3 | [11 Partenaires](posts/11-linkedin-partenaires.md) | Partenaires | Non | Oui (texte) |
-| | Ven. 4 | [12 Répondre vite aux demandes](posts/12-reponse-demandes.md) | Démo + conseil | Carrousel | Oui |
+| | Ven. 4 | [12 Faut-il répondre vite aux demandes ?](posts/12-reponse-demandes.md) | Démo + conseil | Carrousel | Oui |
 
 Le mercredi 11 novembre (férié en France) est laissé vide.
+
+Semaine 5 : restitution du sondage du post 07, épisode 4 de « Un site par métier », premier « Paroles d'artisans » si un artisan a donné son accord écrit.
 
 ## Suivi
 
