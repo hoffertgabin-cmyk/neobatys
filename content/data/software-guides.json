@@ -1182,6 +1182,429 @@
           "href": "https://entreprendre.service-public.gouv.fr/actualites/A18088"
         }
       ]
+    },
+    {
+      "slug": "facture-acompte",
+      "label": "Facture d'acompte pour des travaux",
+      "summary": "Quand émettre une facture d'acompte, ce qu'elle contient, quand la TVA est due et comment la facture de solde reprend les acomptes.",
+      "breadcrumb": "Facture d'acompte",
+      "updated": "2 novembre 2026",
+      "seo": {
+        "title": "Facture d'acompte travaux : mentions et TVA",
+        "description": "Facture d'acompte pour un chantier : quand l'émettre, mentions, TVA due à l'encaissement pour les travaux, facture de solde. Sources officielles."
+      },
+      "hero": {
+        "eyebrow": "Guide de la facture",
+        "title": "La facture d'acompte pour des travaux du bâtiment",
+        "subtitle": "Un client verse une partie du prix avant ou pendant le chantier : voici quand faire une facture d'acompte, ce qu'elle doit indiquer, quand la TVA est due et comment boucler avec la facture de solde."
+      },
+      "sections": [
+        {
+          "title": "Acompte ou arrhes : le mot compte",
+          "paragraphs": [
+            "Un acompte est un premier versement sur le prix qui engage fermement les deux parties : le client doit payer la prestation prévue et l'artisan doit la réaliser. Celui qui revient sur son engagement peut être condamné à verser des dommages et intérêts.",
+            "Des arrhes, au contraire, laissent chacun libre de se dédire : le client qui renonce les perd, le professionnel qui renonce doit en rembourser le double. Si le devis ou le contrat ne précise rien, la somme versée d'avance est présumée être des arrhes. Le montant de l'acompte est librement fixé et peut se négocier avant la signature."
+          ],
+          "items": []
+        },
+        {
+          "title": "Quand émettre une facture d'acompte",
+          "paragraphs": [
+            "Pour un client professionnel, la règle fiscale est claire : tout assujetti à la TVA doit délivrer une facture pour les acomptes qui lui sont versés avant la réalisation de l'opération. L'administration précise que cette obligation vaut pour tous les versements d'acomptes, et pas seulement pour ceux qui rendent la TVA exigible.",
+            "Pour un client particulier, l'obligation générale de facturation ne s'applique pas de la même façon, mais une règle propre aux travaux existe : l'entreprise doit remettre une note pour toute prestation comportant l'exécution de travaux immobiliers fournie à un particulier.",
+            "La facturation électronique, qui s'imposera aux TPE et PME pour l'émission à partir du 1er septembre 2027, couvre aussi les acomptes se rapportant aux opérations entre entreprises assujetties à la TVA."
+          ],
+          "items": []
+        },
+        {
+          "title": "Ce que contient la facture d'acompte",
+          "paragraphs": [
+            "La facture d'acompte suit les règles d'une facture ordinaire. Pour la date de l'opération, la fiche officielle des mentions obligatoires indique, en cas d'acompte, la date à laquelle il est versé. L'administration admet qu'une facture d'acompte ne comporte pas toutes les mentions lorsque certaines informations ne sont pas encore connues au moment de son émission, par exemple la date exacte de l'opération, ou la quantité et le prix exacts lorsqu'ils sont variables."
+          ],
+          "items": [
+            "La date d'émission et un numéro unique, dans la même séquence chronologique et continue que vos autres factures.",
+            "L'identité de l'entreprise (nom ou dénomination, adresse, numéro SIREN) et celle du client.",
+            "Le numéro de TVA intracommunautaire de l'entreprise et, s'il est redevable de la TVA, celui du client professionnel.",
+            "La désignation des travaux concernés et le montant de l'acompte HT, le taux de TVA et le montant TTC.",
+            "La date à laquelle le règlement doit intervenir, le taux des pénalités de retard et, pour un client professionnel, l'indemnité forfaitaire de 40 € pour frais de recouvrement.",
+            "Pour une activité artisanale, les références de l'assurance professionnelle, les coordonnées de l'assureur et la couverture géographique."
+          ]
+        },
+        {
+          "title": "Quand la TVA est due sur un acompte",
+          "paragraphs": [
+            "Les travaux immobiliers sont des prestations de services pour la TVA. Pour les prestations de services, la taxe est exigible, en règle générale, lors de l'encaissement des acomptes, du prix ou de la rémunération. Lorsque le prix est payé par acomptes, c'est l'encaissement de chacun d'eux qui rend la TVA exigible : c'est donc le mois où vous recevez l'argent qui compte, pas la date de la facture.",
+            "Une entreprise peut opter pour le paiement de la TVA d'après les débits, c'est-à-dire à la facturation. Dans ce cas, la mention « Option pour le paiement de la taxe d'après les débits » fera partie des mentions obligatoires de la facture électronique."
+          ],
+          "items": []
+        },
+        {
+          "title": "La facture de solde",
+          "paragraphs": [
+            "En pratique, à la fin du chantier, la facture de solde reprend le montant total des travaux réalisés, rappelle les factures d'acompte déjà émises et déduit les sommes déjà versées pour faire apparaître le reste à payer. Le montant total HT, la TVA par taux et le TTC portent sur l'ensemble des travaux, afin que le client et votre comptabilité retrouvent le détail complet du chantier.",
+            "Sur un chantier long, des situations de travaux intermédiaires permettent de facturer au fur et à mesure de l'avancement, avant la facture de solde."
+          ],
+          "items": []
+        },
+        {
+          "title": "Ce que fait le logiciel",
+          "paragraphs": [],
+          "items": [
+            "Acomptes et situations de travaux, puis avoirs si besoin.",
+            "Avoirs et factures finales.",
+            "Les mentions obligatoires ajoutées automatiquement à chaque devis et facture.",
+            "Suivi des paiements et des impayés.",
+            "Factures au format électronique, transmises via une plateforme agréée.",
+            "Relances automatiques et export pour votre expert-comptable."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Une facture d'acompte est-elle obligatoire ?",
+          "answer": "Pour un client professionnel, oui : tout assujetti à la TVA doit délivrer une facture pour les acomptes versés avant la réalisation de l'opération. Pour un particulier, une note doit être remise pour les travaux immobiliers."
+        },
+        {
+          "question": "Quand dois-je déclarer la TVA d'un acompte sur travaux ?",
+          "answer": "En règle générale, la TVA sur les travaux est exigible à l'encaissement de chaque acompte, sauf si l'entreprise a opté pour le paiement de la TVA d'après les débits."
+        },
+        {
+          "question": "Si le devis ne dit rien, la somme versée est-elle un acompte ?",
+          "answer": "Non. En l'absence de précision, une somme versée d'avance est présumée être des arrhes, que chacun peut abandonner (ou rembourser au double) pour se dédire. Pour un engagement ferme, le devis doit parler d'acompte."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Service-public.fr : acompte, avance, arrhes et avoir, quelles différences",
+          "href": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31187"
+        },
+        {
+          "label": "Entreprendre.service-public.fr : mentions obligatoires sur une facture",
+          "href": "https://entreprendre.service-public.gouv.fr/vosdroits/F31808"
+        },
+        {
+          "label": "BOFiP : délivrance de factures, cas des acomptes (BOI-TVA-DECLA-30-20-10)",
+          "href": "https://bofip.impots.gouv.fr/bofip/1525-PGP.html/identifiant=BOI-TVA-DECLA-30-20-10-20190925"
+        },
+        {
+          "label": "BOFiP : mentions des factures, mesures applicables aux factures d'acomptes",
+          "href": "https://bofip.impots.gouv.fr/bofip/142-PGP.html/identifiant=BOI-TVA-DECLA-30-20-20-20-20220119"
+        },
+        {
+          "label": "BOFiP : fait générateur et exigibilité de la TVA, prestations de services",
+          "href": "https://bofip.impots.gouv.fr/bofip/283-PGP.html/identifiant=BOI-TVA-BASE-20-20-20181107"
+        },
+        {
+          "label": "Entreprendre.service-public.fr : calendrier de la facturation électronique",
+          "href": "https://entreprendre.service-public.gouv.fr/actualites/A15683"
+        }
+      ]
+    },
+    {
+      "slug": "retenue-de-garantie",
+      "label": "Retenue de garantie sur un chantier privé",
+      "summary": "Plafond de 5 %, consignation, caution qui la remplace et libération un an après la réception : la retenue de garantie des marchés privés.",
+      "breadcrumb": "Retenue de garantie",
+      "updated": "2 novembre 2026",
+      "seo": {
+        "title": "Retenue de garantie travaux : 5 % et caution",
+        "description": "Retenue de garantie sur un marché de travaux privé : plafond de 5 %, consignation, caution bancaire qui la remplace, libération un an après la réception."
+      },
+      "hero": {
+        "eyebrow": "Guide du chantier",
+        "title": "La retenue de garantie dans les marchés de travaux privés",
+        "subtitle": "Le client peut garder une partie de vos acomptes jusqu'à la levée des réserves. La loi encadre cette retenue : plafond, consignation, caution et date de libération."
+      },
+      "sections": [
+        {
+          "title": "À quoi sert la retenue de garantie",
+          "paragraphs": [
+            "Dans les marchés de travaux privés, le maître de l'ouvrage peut retenir une partie des acomptes versés à l'entreprise. Cette retenue sert à garantir l'exécution des travaux pour satisfaire, le cas échéant, aux réserves faites à la réception par le maître de l'ouvrage.",
+            "Elle est encadrée par la loi n° 71-584 du 16 juillet 1971, qui vise les marchés de travaux définis par l'article 1779-3° du code civil. Les marchés publics obéissent à leurs propres règles, qui ne sont pas traitées ici."
+          ],
+          "items": []
+        },
+        {
+          "title": "Un plafond de 5 % et une consignation",
+          "paragraphs": [
+            "La retenue est égale au plus à 5 % du montant des acomptes.",
+            "Le maître de l'ouvrage doit consigner entre les mains d'un consignataire une somme égale à la retenue. Il complète cette consignation si les retenues dépassent la somme déjà consignée."
+          ],
+          "items": []
+        },
+        {
+          "title": "La caution qui remplace la retenue",
+          "paragraphs": [
+            "La retenue n'est pas pratiquée si l'entrepreneur fournit, pour un montant égal, une caution personnelle et solidaire émanant d'un établissement financier figurant sur une liste fixée par décret. Dans ce cas, l'entreprise perçoit ses acomptes sans retenue."
+          ],
+          "items": []
+        },
+        {
+          "title": "La libération un an après la réception",
+          "paragraphs": [
+            "À l'expiration d'un délai d'un an à compter de la réception des travaux, faite avec ou sans réserve, la caution est libérée ou les sommes consignées sont versées à l'entrepreneur, même sans mainlevée.",
+            "La seule exception : le maître de l'ouvrage a notifié au consignataire ou à la caution, par lettre recommandée, son opposition motivée par l'inexécution des obligations de l'entrepreneur. Une opposition abusive peut entraîner une condamnation à des dommages et intérêts.",
+            "Ces règles sont d'ordre public : les clauses, stipulations et arrangements qui auraient pour effet de faire échec aux dispositions de la loi sont nuls, quelle qu'en soit la forme."
+          ],
+          "items": [
+            "Notez la date de réception des travaux, qui fait courir le délai d'un an.",
+            "Conservez le procès-verbal de réception et la liste des réserves.",
+            "À l'échéance, demandez le versement des sommes consignées ou la libération de la caution."
+          ]
+        },
+        {
+          "title": "Ce que fait le logiciel",
+          "paragraphs": [],
+          "items": [
+            "Acomptes et situations de travaux, puis avoirs si besoin.",
+            "Avoirs et factures finales.",
+            "Suivi des paiements et des impayés.",
+            "Fichier clients et historique.",
+            "Relances automatiques et export pour votre expert-comptable."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Le client peut-il retenir plus de 5 % ?",
+          "answer": "Non. Pour les marchés de travaux privés, la loi du 16 juillet 1971 plafonne la retenue à 5 % du montant des acomptes, et toute clause contraire est nulle."
+        },
+        {
+          "question": "Quand dois-je récupérer la retenue de garantie ?",
+          "answer": "Un an après la réception des travaux, avec ou sans réserve, sauf si le client a notifié par lettre recommandée une opposition motivée par l'inexécution de vos obligations."
+        },
+        {
+          "question": "Puis-je éviter la retenue de garantie ?",
+          "answer": "Oui, en fournissant une caution personnelle et solidaire d'un montant égal, émise par un établissement financier figurant sur la liste fixée par décret."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Légifrance : loi n° 71-584 du 16 juillet 1971, article 1 (plafond, consignation, caution)",
+          "href": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039280616"
+        },
+        {
+          "label": "Légifrance : loi n° 71-584 du 16 juillet 1971, article 2 (libération un an après la réception)",
+          "href": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006474230"
+        }
+      ]
+    },
+    {
+      "slug": "facture-impayee",
+      "label": "Relancer une facture impayée de travaux",
+      "summary": "Délais de paiement, pénalités de retard, indemnité de 40 €, mise en demeure et injonction de payer : que faire face à une facture impayée.",
+      "breadcrumb": "Facture impayée",
+      "updated": "2 novembre 2026",
+      "seo": {
+        "title": "Facture impayée travaux : relance et recours",
+        "description": "Facture de travaux impayée : délais de paiement, pénalités de retard, indemnité de 40 €, mise en demeure, injonction de payer. Client pro ou particulier."
+      },
+      "hero": {
+        "eyebrow": "Guide des impayés",
+        "title": "Facture de travaux impayée : relancer, mettre en demeure, saisir le juge",
+        "subtitle": "Le chantier est fini, la facture est envoyée, le paiement n'arrive pas. Voici les règles à connaître, ce qui change selon que le client est un professionnel ou un particulier, et les étapes jusqu'à l'injonction de payer."
+      },
+      "sections": [
+        {
+          "title": "Quand une facture est en retard",
+          "paragraphs": [
+            "Avec un client particulier, le paiement est en général exigible immédiatement : il n'y a pas de délai spécifique, on parle de paiement comptant.",
+            "Entre professionnels, le délai de paiement doit figurer sur la facture et dans les conditions générales de vente. En principe, il est de 30 jours à compter de la réalisation de la prestation. Les parties peuvent convenir d'un délai différent, dans des limites fixées par la loi : 60 jours à compter de la date d'émission de la facture, ou 45 jours fin de mois si le contrat le prévoit et que ce n'est pas abusif."
+          ],
+          "items": []
+        },
+        {
+          "title": "Pénalités de retard et indemnité de 40 € : client professionnel",
+          "paragraphs": [
+            "Toute facture doit indiquer le taux des pénalités de retard. Entre professionnels, elles courent à partir du lendemain de la date de règlement indiquée sur la facture, sans qu'un rappel ou une mise en demeure soit nécessaire.",
+            "Le taux ne peut pas être inférieur à 3 fois le taux de l'intérêt légal, soit 8,25 % au second semestre 2026. Le code de commerce recommande d'utiliser le taux de refinancement de la Banque centrale européenne majoré de 10 points, soit 12,40 % pour le second semestre 2026.",
+            "S'y ajoute une indemnité forfaitaire pour frais de recouvrement de 40 € par facture payée en retard, due une seule fois et même en cas de paiement partiel. Elle doit figurer sur la facture et dans les CGV, et elle n'est pas soumise à la TVA. Si vos frais réels sont supérieurs, une indemnisation complémentaire peut être demandée sur justificatifs."
+          ],
+          "items": []
+        },
+        {
+          "title": "Et avec un client particulier ?",
+          "paragraphs": [
+            "L'indemnité forfaitaire de 40 € ne peut être réclamée qu'à un client professionnel. Face à un particulier, la somme due peut produire des intérêts au taux de l'intérêt légal, qui correspond à ce que le débiteur doit au créancier en cas de retard de paiement : pour un créancier professionnel, ce taux est de 2,75 % au second semestre 2026.",
+            "Les étapes de relance, de mise en demeure et d'injonction de payer décrites ci-dessous s'appliquent quel que soit le client."
+          ],
+          "items": []
+        },
+        {
+          "title": "Relance puis mise en demeure",
+          "paragraphs": [
+            "Le recouvrement amiable se fait généralement en deux étapes, qui ne sont pas obligatoires. La relance, par téléphone ou par écrit, suffit souvent quand l'impayé vient d'un oubli ou d'une difficulté passagère. Si l'impayé cache un désaccord sur les travaux, mieux vaut d'abord régler le différend.",
+            "La mise en demeure est l'étape suivante. Elle peut prendre trois formes :"
+          ],
+          "items": [
+            "Une lettre recommandée avec accusé de réception, rédigée en termes suffisamment clairs et formels pour valoir mise en demeure.",
+            "Une sommation de payer, acte délivré par un commissaire de justice, plus coûteuse.",
+            "Le contrat lui-même, lorsqu'il prévoit que le débiteur est mis en demeure par la seule arrivée de l'échéance.",
+            "Pour une créance qui ne dépasse pas 5 000 €, une procédure simplifiée de recouvrement peut aussi être confiée à un commissaire de justice, avec l'accord du débiteur."
+          ]
+        },
+        {
+          "title": "L'injonction de payer",
+          "paragraphs": [
+            "Si le client ne paie toujours pas, l'injonction de payer permet d'obtenir rapidement un titre exécutoire. Il n'y a pas de limite de montant. La créance doit être certaine, d'un montant déterminé, arrivée à échéance et non prescrite. Le créancier peut faire la demande lui-même.",
+            "La requête est adressée au tribunal du lieu où demeure le débiteur : tribunal judiciaire ou tribunal de commerce selon la nature de la créance. Elle est gratuite devant le tribunal judiciaire ; devant le tribunal de commerce, des frais de greffe de 33,47 € sont dus.",
+            "Pour une ordonnance rendue à compter du 1er septembre 2026, le créancier a 3 mois pour la faire signifier par un commissaire de justice, sinon elle est non avenue. Le débiteur dispose ensuite d'un mois à partir de la signification pour faire opposition."
+          ],
+          "items": []
+        },
+        {
+          "title": "Ce que fait le logiciel",
+          "paragraphs": [],
+          "items": [
+            "Relances automatiques personnalisables.",
+            "Suivi des paiements et des impayés.",
+            "Les mentions obligatoires ajoutées automatiquement à chaque devis et facture.",
+            "Tableau de bord du chiffre d'affaires.",
+            "Fichier clients et historique.",
+            "Export pour l'expert-comptable."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Faut-il une mise en demeure pour appliquer des pénalités de retard ?",
+          "answer": "Non, entre professionnels : les pénalités de retard sont exigibles dès le lendemain de la date de règlement indiquée sur la facture, sans rappel ni mise en demeure."
+        },
+        {
+          "question": "Puis-je réclamer 40 € à un particulier qui paie en retard ?",
+          "answer": "Non. L'indemnité forfaitaire de 40 € pour frais de recouvrement ne peut être réclamée qu'à un client professionnel."
+        },
+        {
+          "question": "L'injonction de payer est-elle limitée à un montant ?",
+          "answer": "Non, il n'y a pas de limite de montant. La créance doit être certaine, d'un montant déterminé et arrivée à échéance."
+        },
+        {
+          "question": "Combien de temps le client a-t-il pour contester une injonction de payer ?",
+          "answer": "Il dispose d'un mois à partir de la signification de l'ordonnance pour faire opposition auprès du tribunal."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Entreprendre.service-public.fr : délais de paiement entre professionnels et pénalités de retard",
+          "href": "https://entreprendre.service-public.gouv.fr/vosdroits/F23211"
+        },
+        {
+          "label": "Entreprendre.service-public.fr : mentions obligatoires sur une facture",
+          "href": "https://entreprendre.service-public.gouv.fr/vosdroits/F31808"
+        },
+        {
+          "label": "Entreprendre.service-public.fr : recouvrement amiable, relance et mise en demeure",
+          "href": "https://entreprendre.service-public.gouv.fr/vosdroits/F38586"
+        },
+        {
+          "label": "Service-public.fr : injonction de payer et procédure simplifiée",
+          "href": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1746"
+        },
+        {
+          "label": "Service-public.fr : qu'est-ce que l'intérêt légal",
+          "href": "https://www.service-public.gouv.fr/particuliers/vosdroits/F20688"
+        }
+      ]
+    },
+    {
+      "slug": "devis-excel-ou-logiciel",
+      "label": "Devis sur Excel ou avec un logiciel",
+      "summary": "Tableur, traitement de texte ou logiciel de devis : ce que chaque outil fait bien, ses limites, et ce que change la facture électronique.",
+      "breadcrumb": "Excel ou logiciel",
+      "updated": "2 novembre 2026",
+      "seo": {
+        "title": "Devis sur Excel ou logiciel : comparatif",
+        "description": "Faire ses devis et factures sur Excel, Word ou avec un logiciel : avantages, limites, numérotation, mentions et facture électronique obligatoire en 2027."
+      },
+      "hero": {
+        "eyebrow": "Guide du devis",
+        "title": "Faire ses devis sur Excel ou avec un logiciel ?",
+        "subtitle": "Beaucoup d'artisans commencent avec un tableur ou un traitement de texte, et c'est souvent suffisant au début. Voici une comparaison simple, et ce que la facture électronique obligatoire change à partir de 2027."
+      },
+      "sections": [
+        {
+          "title": "Ce qu'un tableur fait bien",
+          "paragraphs": [
+            "Un modèle Excel ou Word ne coûte rien de plus que l'outil que vous avez déjà, se prend en main vite et suffit quand on fait peu de devis. Bien construit, il reprend les mentions obligatoires d'un devis de travaux et calcule seul les totaux HT, TVA et TTC.",
+            "C'est le principe du modèle de devis Excel gratuit proposé dans nos guides : les mentions sont en place, il suffit de remplacer les textes entre crochets."
+          ],
+          "items": []
+        },
+        {
+          "title": "Ce qu'il faut gérer soi-même",
+          "paragraphs": [
+            "Avec un tableur, la conformité repose entièrement sur vous. Plusieurs règles demandent de la rigueur à chaque document :"
+          ],
+          "items": [
+            "Chaque facture porte un numéro unique, basé sur une séquence chronologique et continue : pas de trou ni de doublon quand on duplique un fichier.",
+            "Les mentions obligatoires du devis et de la facture, dont le taux des pénalités de retard et, pour un client professionnel, l'indemnité forfaitaire de 40 €.",
+            "Pour une activité artisanale, les références de l'assurance professionnelle, les coordonnées de l'assureur et la couverture géographique.",
+            "Le suivi des devis envoyés, des acomptes reçus et des factures en retard, à tenir à part.",
+            "La conservation des factures : les documents établis ou reçus sur support informatique se conservent sous cette forme pendant 6 ans."
+          ]
+        },
+        {
+          "title": "Ce que change la facture électronique",
+          "paragraphs": [
+            "Toutes les entreprises assujetties à la TVA en France doivent pouvoir recevoir des factures électroniques depuis le 1er septembre 2026. Les PME, TPE et micro-entreprises devront aussi les émettre à partir du 1er septembre 2027, pour leurs opérations avec d'autres entreprises assujetties, acomptes compris.",
+            "Une facture électronique respecte un format structuré (UBL, CII ou un format mixte associant données et image) et transite par une plateforme agréée. L'administration le dit clairement : une facture papier scannée, un PDF ordinaire ou un document envoyé par e-mail ne sera plus conforme. Un tableur ou un traitement de texte, seul, ne produit pas ce type de fichier.",
+            "Quatre nouvelles mentions s'ajoutent aussi aux factures des PME à partir de la même date : le numéro SIREN du client, l'adresse de livraison si elle est différente, la nature des opérations (biens, services ou les deux) et, le cas échéant, l'option pour le paiement de la TVA d'après les débits."
+          ],
+          "items": []
+        },
+        {
+          "title": "Comment choisir",
+          "paragraphs": [
+            "Le tableur convient pour démarrer, pour un volume réduit ou pour des clients uniquement particuliers, à condition de tenir la numérotation et le suivi avec soin. Dès que vous facturez des entreprises, des syndics ou des maîtres d'ouvrage professionnels, l'émission électronique à partir de septembre 2027 rend nécessaire une solution raccordée à une plateforme agréée.",
+            "Le bon moment pour changer est souvent celui où le suivi prend plus de temps que la rédaction : relances oubliées, acomptes à rapprocher, devis signés à retrouver. Un logiciel peut reprendre votre fichier clients et vos prix depuis Excel."
+          ],
+          "items": []
+        },
+        {
+          "title": "Ce que fait le logiciel",
+          "paragraphs": [],
+          "items": [
+            "Votre bibliothèque d'ouvrages et de prix importée, pour un décompte détaillé ligne par ligne.",
+            "Le devis fait sur téléphone et signé électroniquement par le client.",
+            "Les mentions obligatoires ajoutées automatiquement à chaque devis et facture.",
+            "Acomptes et situations de travaux, puis avoirs si besoin.",
+            "Relances automatiques et export pour votre expert-comptable.",
+            "Factures au format électronique, transmises via une plateforme agréée."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Ai-je le droit de faire mes factures sur Excel ?",
+          "answer": "Aujourd'hui oui, si elles comportent les mentions obligatoires et une numérotation continue. À partir du 1er septembre 2027, les TPE et PME devront émettre leurs factures aux entreprises dans un format électronique, via une plateforme agréée."
+        },
+        {
+          "question": "Un PDF tiré de Word ou d'Excel est-il une facture électronique ?",
+          "answer": "Non. Selon l'administration, un PDF ordinaire ou un document envoyé par e-mail ne sera plus conforme : la facture électronique est un fichier structuré qui passe par une plateforme agréée."
+        },
+        {
+          "question": "Je ne travaille que pour des particuliers, dois-je changer d'outil ?",
+          "answer": "L'émission de factures électroniques concerne les opérations entre entreprises. Vous devez tout de même pouvoir recevoir les factures électroniques de vos fournisseurs depuis le 1er septembre 2026, et les données de vos ventes aux particuliers seront transmises à l'administration selon le même calendrier."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Entreprendre.service-public.fr : calendrier de la facturation électronique",
+          "href": "https://entreprendre.service-public.gouv.fr/actualites/A15683"
+        },
+        {
+          "label": "impots.gouv.fr : je découvre la facturation électronique",
+          "href": "https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique"
+        },
+        {
+          "label": "Entreprendre.service-public.fr : mentions obligatoires sur une facture",
+          "href": "https://entreprendre.service-public.gouv.fr/vosdroits/F31808"
+        },
+        {
+          "label": "Entreprendre.service-public.fr : devis obligatoire, activités concernées",
+          "href": "https://entreprendre.service-public.gouv.fr/vosdroits/F31144"
+        }
+      ]
     }
   ],
   "tvaCalculator": {
