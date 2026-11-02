@@ -1092,6 +1092,125 @@
           "href": "https://entreprendre.service-public.gouv.fr/actualites/A15683"
         }
       ]
+    },
+    {
+      "slug": "calculateur-tva",
+      "label": "Calculateur de TVA travaux",
+      "summary": "Passer du HT au TTC aux taux de 20, 10 et 5,5 %, et savoir quel taux appliquer à des travaux dans un logement.",
+      "breadcrumb": "Calculateur de TVA",
+      "updated": "2 novembre 2026",
+      "tool": "tva",
+      "seo": {
+        "title": "Calculateur TVA travaux : HT et TTC",
+        "description": "Calculez gratuitement HT, TVA et TTC aux taux du bâtiment (20, 10 et 5,5 %) et vérifiez quel taux s'applique à vos travaux, avec les sources officielles."
+      },
+      "hero": {
+        "eyebrow": "Outil gratuit",
+        "title": "Calculateur de TVA pour les travaux du bâtiment",
+        "subtitle": "Entrez un montant HT ou TTC, choisissez le taux : le calcul se fait tout de suite, sans inscription. Et en dessous, les règles pour choisir le bon taux."
+      },
+      "sections": [
+        {
+          "title": "Comment le calcul est fait",
+          "paragraphs": [
+            "Pour passer du HT au TTC, on multiplie le montant HT par 1 plus le taux : 1 000 € HT à 10 % donnent 1 100 € TTC. Pour retrouver le HT à partir du TTC, on divise par le même nombre : 1 055 € TTC à 5,5 % correspondent à 1 000 € HT.",
+            "Le montant de TVA est la différence entre le TTC et le HT. Le calculateur arrondit chaque montant au centime."
+          ],
+          "items": []
+        },
+        {
+          "title": "Les trois taux des travaux dans les logements",
+          "paragraphs": [
+            "À côté du taux normal de 20 %, deux taux réduits peuvent s'appliquer, sous conditions, aux travaux réalisés dans des logements d'habitation achevés depuis plus de deux ans, que l'occupant soit propriétaire, locataire ou occupant à titre gratuit, en résidence principale ou secondaire."
+          ],
+          "items": [
+            "10 % : travaux d'amélioration, de transformation, d'aménagement et d'entretien, sauf la part qui correspond à la fourniture d'équipements ménagers et mobiliers ou à certains gros équipements.",
+            "5,5 % : travaux de rénovation énergétique portant sur la pose, l'installation, l'adaptation ou l'entretien de certains matériaux et équipements.",
+            "20 % : le taux normal, dans tous les autres cas."
+          ]
+        },
+        {
+          "title": "Les cas qui restent à 20 %",
+          "paragraphs": [
+            "Le taux réduit ne vaut que pour les travaux et équipements réalisés et facturés par l'entreprise. Quand le client achète lui-même un équipement pour le faire poser, cet achat reste à 20 % et seule la pose peut relever du taux réduit.",
+            "Le taux réduit est aussi exclu pour les travaux qui aboutissent à produire un immeuble neuf ou qui augmentent la surface de plancher des locaux existants de plus de 10 %. Depuis le 1er mars 2025, la fourniture et l'installation d'une chaudière susceptible d'utiliser un combustible fossile, comme le gaz ou le fioul, relèvent du taux normal, alors que son entretien et sa maintenance gardent le taux réduit."
+          ],
+          "items": []
+        },
+        {
+          "title": "La mention à prévoir sur le devis ou la facture",
+          "paragraphs": [
+            "Depuis le 1er mars 2025, l'attestation normale ou simplifiée n'est plus demandée pour appliquer un taux réduit. Le client certifie, par une mention sur le devis ou sur la facture, que les travaux remplissent les conditions du taux réduit appliqué."
+          ],
+          "items": []
+        },
+        {
+          "title": "Ce que fait le logiciel",
+          "paragraphs": [
+            "Le calculateur dépanne pour un montant. Sur un vrai devis, le logiciel fait le calcul ligne par ligne et ajoute les mentions à votre place."
+          ],
+          "items": [
+            "Les mentions obligatoires ajoutées automatiquement à chaque devis et facture.",
+            "Votre bibliothèque d'ouvrages et de prix importée, pour un décompte détaillé ligne par ligne.",
+            "Le devis fait sur téléphone et signé électroniquement par le client.",
+            "Acomptes et situations de travaux, puis avoirs si besoin.",
+            "Factures au format électronique, transmises via une plateforme agréée."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Comment passer d'un prix TTC à un prix HT ?",
+          "answer": "On divise le montant TTC par 1 plus le taux de TVA : par 1,2 à 20 %, par 1,1 à 10 % et par 1,055 à 5,5 %. Le calculateur ci-dessus le fait pour vous."
+        },
+        {
+          "question": "Faut-il encore une attestation pour la TVA à 10 % ou 5,5 % ?",
+          "answer": "Non. Depuis le 1er mars 2025, l'attestation normale ou simplifiée est remplacée par une mention sur le devis ou la facture, par laquelle le client certifie que les travaux remplissent les conditions du taux réduit."
+        },
+        {
+          "question": "Le taux réduit s'applique-t-il dans un logement neuf ?",
+          "answer": "Les taux de 10 % et 5,5 % sont réservés aux logements achevés depuis plus de deux ans. Ils sont aussi exclus pour les travaux qui aboutissent à produire un immeuble neuf."
+        }
+      ],
+      "sources": [
+        {
+          "label": "impots.gouv.fr : taux de TVA des travaux dans les logements",
+          "href": "https://www.impots.gouv.fr/professionnel/questions/quel-taux-de-tva-appliquer-pour-les-travaux-realises-dans-les-logements"
+        },
+        {
+          "label": "Entreprendre.service-public.fr : une simple mention remplace l'attestation de TVA",
+          "href": "https://entreprendre.service-public.gouv.fr/actualites/A18088"
+        }
+      ]
     }
-  ]
+  ],
+  "tvaCalculator": {
+    "title": "Calculer HT, TVA et TTC",
+    "amount": "Montant (€)",
+    "from": {
+      "ht": "Saisi en HT",
+      "ttc": "Saisi en TTC"
+    },
+    "rate": "Taux de TVA",
+    "rates": [
+      {
+        "value": 20,
+        "label": "20 %"
+      },
+      {
+        "value": 10,
+        "label": "10 %"
+      },
+      {
+        "value": 5.5,
+        "label": "5,5 %"
+      }
+    ],
+    "results": {
+      "ht": "HT",
+      "tva": "TVA",
+      "ttc": "TTC"
+    },
+    "note": "Calcul indicatif, arrondi au centime. Rien n'est envoyé : tout se calcule sur votre appareil. Le choix du taux dépend des travaux et du logement, voir ci-dessous."
+  }
 }

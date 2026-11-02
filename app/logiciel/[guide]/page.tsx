@@ -1,7 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, Download } from "lucide-react";
-import { softwareGuideLinks, softwareGuides, softwareGuidesSection } from "@/content/software";
+import {
+  softwareGuideLinks,
+  softwareGuides,
+  softwareGuidesSection,
+  tvaCalculator,
+} from "@/content/software";
 import { tradeSiteLinks } from "@/content/trade-sites";
 import { breadcrumbJsonLd, faqJsonLd, pageMetadata } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -9,6 +14,7 @@ import { Button, buttonClasses } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/sections/PageHero";
 import { ProseSections } from "@/components/sections/ProseSections";
+import { TvaCalculator } from "@/components/sections/TvaCalculator";
 import { LinkCards } from "@/components/sections/LinkCards";
 import { Faq } from "@/components/sections/Faq";
 import { FinalCta } from "@/components/sections/FinalCta";
@@ -60,6 +66,7 @@ export default async function GuidePage({ params }: PageProps<"/logiciel/[guide]
       <section className="bg-white py-16 sm:py-24">
         <Container className="max-w-3xl">
           <p className="mb-10 text-sm text-ardoise-dark">Mis à jour le {guide.updated}</p>
+          {guide.tool === "tva" && <TvaCalculator labels={tvaCalculator} />}
           <ProseSections sections={guide.sections} />
           {site && (
             <Link
