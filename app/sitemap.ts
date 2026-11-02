@@ -9,6 +9,7 @@ const routes = [
   ...tradeSites.map((t) => ({ path: `/sites-internet/${t.slug}`, priority: 0.7 })),
   { path: "/logiciel", priority: 0.9 },
   { path: "/intelligence-artificielle", priority: 0.9 },
+  { path: "/digitaliser-son-entreprise", priority: 0.8 },
   ...softwareGuides.map((g) => ({ path: `/logiciel/${g.slug}`, priority: 0.7 })),
   { path: "/contact", priority: 0.8 },
   { path: "/mentions-legales", priority: 0.2 },

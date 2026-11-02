@@ -14,6 +14,7 @@ import { Button, buttonClasses } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/sections/PageHero";
 import { ProseSections } from "@/components/sections/ProseSections";
+import { SourcesList } from "@/components/sections/SourcesList";
 import { TvaCalculator } from "@/components/sections/TvaCalculator";
 import { LinkCards } from "@/components/sections/LinkCards";
 import { Faq } from "@/components/sections/Faq";
@@ -80,26 +81,7 @@ export default async function GuidePage({ params }: PageProps<"/logiciel/[guide]
               <ArrowRight aria-hidden="true" className="size-5 shrink-0 transition-transform group-hover:translate-x-1" />
             </Link>
           )}
-          {guide.sources.length > 0 && (
-            <div className="mt-14 border-t border-nuit/10 pt-8">
-              <h2 className="text-lg font-bold">Sources officielles</h2>
-              <ul className="mt-4 space-y-2 text-sm text-ardoise-dark">
-                {guide.sources.map((s) => (
-                  <li key={s.href}>
-                    <a
-                      href={s.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline underline-offset-4 hover:text-nuit"
-                    >
-                      {s.label}
-                      <span className="sr-only"> (nouvel onglet)</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+          <SourcesList sources={guide.sources} />
         </Container>
       </section>
       <Faq items={guide.faq} />

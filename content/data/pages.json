@@ -213,5 +213,131 @@
         "answer": "Oui : elle travaille à partir de votre bibliothèque d'ouvrages et de vos tarifs, importés dans le logiciel. C'est ce qui lui permet de préparer un devis réaliste, que vous relisez toujours avant envoi."
       }
     ]
+  },
+  "digitalisationPage": {
+    "seo": {
+      "title": "Digitaliser son entreprise artisanale : aides",
+      "description": "Site, devis et factures, facturation électronique, IA : par où commencer, et les aides au numérique (70 % au Luxembourg avec les SME Packages, France Num)."
+    },
+    "hero": {
+      "eyebrow": "Accompagnement des artisans",
+      "title": "Digitaliser son entreprise artisanale, étape par étape",
+      "subtitle": "Être trouvé sur internet, faire ses devis plus vite, passer à la facture électronique, essayer l'IA : par quoi commencer, et quelles aides publiques peuvent financer une partie du projet."
+    },
+    "updated": "3 novembre 2026",
+    "sections": [
+      {
+        "title": "Par où commencer",
+        "paragraphs": [
+          "Digitaliser une entreprise du bâtiment ne veut pas dire tout changer d'un coup. Les chantiers qui rapportent le plus vite sont ceux qui font gagner des clients ou des heures chaque semaine. Dans l'ordre où nous les conseillons :"
+        ],
+        "items": [
+          "Être trouvé : un site clair sur mobile et une fiche Google à jour, pour que les clients de votre zone vous trouvent et vous appellent.",
+          "Répondre vite : toutes les demandes au même endroit, et une réponse rapide, même le soir.",
+          "Faire ses devis et factures sans ressaisie : un logiciel avec vos prix, des devis signés en ligne, des relances automatiques.",
+          "Préparer la facture électronique : en France, toutes les entreprises assujetties à la TVA doivent pouvoir recevoir des factures électroniques depuis le 1er septembre 2026, et les TPE et PME devront les émettre à partir du 1er septembre 2027.",
+          "Gagner du temps avec l'IA : des assistants qui préparent les réponses, les devis et les relances, que vous validez."
+        ]
+      },
+      {
+        "title": "Au Luxembourg : 70 % du projet remboursé avec les SME Packages Digital",
+        "paragraphs": [
+          "Le ministère de l'Économie finance la digitalisation des PME avec le programme SME Packages Digital. Il couvre trois axes : le marketing digital (création ou amélioration du site web, campagnes sur les réseaux sociaux), le système de gestion (logiciel propre à votre secteur, caisse, ERP) et la facturation électronique.",
+          "Le projet doit coûter entre 3 000 et 25 000 euros HTVA. L'aide est de 70 % des coûts éligibles, versée après la mise en place."
+        ],
+        "items": [
+          "Pour qui : une PME qui a une autorisation d'établissement et son siège social au Luxembourg.",
+          "Première étape obligatoire : une préanalyse avec le service eHandwierk de la Chambre des Métiers pour les entreprises artisanales (ou la House of Entrepreneurship de la Chambre de Commerce).",
+          "Vous choisissez ensuite votre package et votre prestataire, et vous établissez ensemble un devis entre 3 000 et 25 000 euros HTVA.",
+          "eHandwierk vous aide à préparer la demande, que le ministère analyse et valide.",
+          "Le prestataire met l'outil en place, une réunion d'évaluation clôt le dossier, vous réglez la facture et vous percevez la subvention de 70 % des coûts éligibles."
+        ]
+      },
+      {
+        "title": "Le même principe pour l'intelligence artificielle",
+        "paragraphs": [
+          "Le programme SME Packages AI suit les mêmes règles pour intégrer un outil d'intelligence artificielle dans les processus d'une PME : mêmes conditions, préanalyse obligatoire avec eHandwierk, projet de 3 000 à 25 000 euros HTVA et aide de 70 % des coûts éligibles."
+        ],
+        "items": []
+      },
+      {
+        "title": "En France : le portail France Num",
+        "paragraphs": [
+          "France Num est le portail de l'État pour la transformation numérique des entreprises. Il propose des guides classés par priorité (être visible sur internet, passer à la facturation électronique, exploiter l'intelligence artificielle), un moteur de recherche des aides financières, des formations, et une carte des Activateurs France Num, des professionnels qui accompagnent les TPE et PME près de chez elles, région par région."
+        ],
+        "items": []
+      },
+      {
+        "title": "Ce que NEOBATYS met en place",
+        "paragraphs": [
+          "Nous couvrons les trois axes que financent les aides au numérique : le site internet et la fiche Google, le logiciel de devis et factures avec la facturation électronique, et les assistants IA. Un seul interlocuteur s'occupe de tout, de la mise en place à la formation.",
+          "Au Luxembourg, le programme laisse l'entreprise choisir son prestataire : demandez-nous un devis détaillé pour votre dossier, et faites confirmer l'éligibilité de votre projet par eHandwierk lors de la préanalyse."
+        ],
+        "items": []
+      }
+    ],
+    "faq": [
+      {
+        "question": "Un artisan peut-il faire financer son site internet au Luxembourg ?",
+        "answer": "Oui, si son entreprise remplit les conditions : le programme SME Packages Digital couvre la création ou l'amélioration du site web, pour un projet de 3 000 à 25 000 euros HTVA, avec une aide de 70 % des coûts éligibles. La préanalyse avec eHandwierk, à la Chambre des Métiers, est la première étape."
+      },
+      {
+        "question": "Faut-il avancer l'argent ?",
+        "answer": "Oui. L'entreprise règle la facture finale au prestataire, puis perçoit la subvention de 70 % des coûts éligibles, après la mise en place du package et la réunion d'évaluation."
+      },
+      {
+        "question": "Le logiciel de devis et la facture électronique sont-ils concernés ?",
+        "answer": "Le programme SME Packages Digital cite le logiciel propre au secteur d'activité et la facturation électronique parmi ses axes. L'éligibilité précise de votre projet est vérifiée lors de la préanalyse."
+      },
+      {
+        "question": "Et pour un artisan installé en France ?",
+        "answer": "Les SME Packages sont réservés aux entreprises qui ont leur siège social au Luxembourg. En France, le portail France Num recense les aides financières au numérique et les Activateurs qui accompagnent les TPE près de chez elles."
+      }
+    ],
+    "related": {
+      "eyebrow": "Nos solutions",
+      "title": "Les outils pour chaque étape",
+      "subtitle": "Ce que nous mettons en place, du site internet aux assistants IA."
+    },
+    "relatedLinks": [
+      {
+        "href": "/sites-internet",
+        "label": "Site internet",
+        "summary": "Un site sur mesure, mobile et bien placé sur Google dans votre zone, avec votre fiche Google."
+      },
+      {
+        "href": "/logiciel",
+        "label": "Logiciel de devis et factures",
+        "summary": "Devis signés en ligne, factures, relances automatiques et facturation électronique."
+      },
+      {
+        "href": "/intelligence-artificielle",
+        "label": "Assistants IA",
+        "summary": "Réponse aux demandes, devis dictés à la voix, avis Google : préparés par l'IA, validés par vous."
+      },
+      {
+        "href": "/logiciel/facturation-electronique",
+        "label": "Facturation électronique",
+        "summary": "Les dates, les formats et ce qui change pour les artisans en 2026 et 2027."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Guichet.lu : SME Packages Digital",
+        "href": "https://guichet.public.lu/fr/entreprises/financement-aides/regime-sme-packages/soutien-pme/sme-packages-digital.html"
+      },
+      {
+        "label": "Guichet.lu : SME Packages AI",
+        "href": "https://guichet.public.lu/fr/entreprises/financement-aides/regime-sme-packages/soutien-pme/sme-package-ai.html"
+      },
+      {
+        "label": "France Num : le portail de la transformation numérique des entreprises",
+        "href": "https://www.francenum.gouv.fr/"
+      },
+      {
+        "label": "Entreprendre.service-public.fr : facturation électronique entre entreprises",
+        "href": "https://entreprendre.service-public.gouv.fr/actualites/A15683"
+      }
+    ]
   }
 }
