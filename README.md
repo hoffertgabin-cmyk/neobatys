@@ -94,6 +94,8 @@ Pour ajouter un outil de mesure d'audience plus tard, chargez-le uniquement si `
 - Données structurées JSON-LD : `ProfessionalService` (LocalBusiness, avec logo `app/apple-icon.tsx`), `WebSite` (accueil, nom du site dans Google), `Service`, `SoftwareApplication` (`/logiciel`), `Article` avec date de mise à jour (guides), `BreadcrumbList` et `FAQPage`
 - Plan de campagne SEO du logiciel (mots-clés, pages, calendrier, actions manuelles) : `docs/seo-logiciel.md`
 - `sitemap.xml` et `robots.txt` générés depuis `NEXT_PUBLIC_SITE_URL`
+- IndexNow : après chaque déploiement de production, `.github/workflows/indexnow.yml` lance `scripts/indexnow.mjs`, qui signale les URL du sitemap à Bing et aux autres moteurs IndexNow (clé publique dans `public/<clé>.txt`)
+- Balises de vérification Google Search Console et Bing Webmaster : `verification` dans `content/data/site.json` (Pages CMS)
 
 ## Assistant IA de la FAQ
 

@@ -15,14 +15,30 @@ Le site est prêt côté code (sitemap, robots.txt, canonicals, données structu
 
 La fiche Google Business Profile est traitée par la session réseaux sociaux, avec ces mêmes données.
 
-## Étapes
+## À faire en premier : faire indexer le site
+
+Au 2 novembre 2026, `site:neobatys.com` ne donne aucun résultat sur Bing, et rien ne montre que Search Console est en place. Bing alimente aussi DuckDuckGo et la recherche de ChatGPT et de Copilot : tant que le site n'y est pas indexé, il ne peut pas y apparaître.
+
+Le site est prêt : il suffit de coller un code. Deux façons, au choix :
+
+- **Balise (le plus simple)** : dans Pages CMS, « Infos de l'entreprise » puis « Codes de vérification des moteurs de recherche ». Coller seulement la valeur `content="..."` donnée par Google ou Bing. La balise apparaît sur toutes les pages après le déploiement (2 à 3 minutes), puis cliquer sur « Valider » chez Google ou Bing.
+- **Fichier** : déposer le fichier HTML de Google ou `BingSiteAuth.xml` dans le dossier `public/` du dépôt (via une PR).
+
+Pour Google, la propriété « Domaine » validée par DNS reste la meilleure (elle couvre www et sans www), mais demande l'accès au registraire du nom de domaine.
 
 | # | Étape | Lien officiel |
 |---|---|---|
-| 1 | Google Search Console : ajouter une propriété « Domaine » `neobatys.com` et la valider par un enregistrement DNS TXT chez le registraire (couvre www et sans www) | https://search.google.com/search-console · aide : https://support.google.com/webmasters/answer/9008080?hl=fr |
-| 2 | Search Console : envoyer `https://www.neobatys.com/sitemap.xml` dans le rapport Sitemaps | https://support.google.com/webmasters/answer/7451001?hl=fr |
-| 3 | Search Console : demander l'indexation de /logiciel, /sites-internet, /logiciel/modele-devis et d'une page métier avec l'outil d'inspection d'URL | https://support.google.com/webmasters/answer/9012289?hl=fr |
-| 4 | Bing Webmaster Tools : importer le site depuis Search Console (pas de seconde validation), le sitemap suit | https://www.bing.com/webmasters · procédure : https://blogs.bing.com/webmaster/september-2019/Import-sites-from-Search-Console-to-Bing-Webmaster-Tools |
+| 1 | Google Search Console : ajouter la propriété (« Domaine » par DNS, ou « Préfixe d'URL » `https://www.neobatys.com/` par balise HTML), coller le code, valider | https://search.google.com/search-console · aide : https://support.google.com/webmasters/answer/9008080?hl=fr |
+| 2 | Bing Webmaster Tools : importer le site depuis Search Console (pas de seconde validation), ou l'ajouter et le valider par balise `msvalidate.01` ou fichier `BingSiteAuth.xml` | https://www.bing.com/webmasters · import : https://blogs.bing.com/webmaster/september-2019/Import-sites-from-Search-Console-to-Bing-Webmaster-Tools · aide : https://www.bing.com/webmasters/help/add-and-verify-site-12184f8b |
+| 3 | Dans les deux outils : envoyer `https://www.neobatys.com/sitemap.xml` | https://support.google.com/webmasters/answer/7451001?hl=fr |
+| 4 | Search Console : demander l'indexation de l'accueil, /sites-internet, /logiciel et /logiciel/calculateur-tva avec l'outil d'inspection d'URL | https://support.google.com/webmasters/answer/9012289?hl=fr |
+
+IndexNow est en place : après chaque déploiement de production, `.github/workflows/indexnow.yml` signale toutes les URL du sitemap à Bing et aux autres moteurs IndexNow. Le suivi se voit dans Bing Webmaster Tools, rubrique IndexNow. Google n'utilise pas IndexNow : pour lui, Search Console et le sitemap.
+
+## Ensuite
+
+| # | Étape | Lien officiel |
+|---|---|---|
 | 5 | Bing Places (fiche locale Bing, importable depuis Google Business Profile une fois celle-ci validée) | https://www.bing.com/forbusiness/ |
 | 6 | Apple Business (fiche Plans) | https://business.apple.com/ |
 | 7 | PagesJaunes : créer la fiche gratuite via Solocal Manager. Page protégée contre les robots : lien relevé par recherche, à ouvrir dans un navigateur | https://www.solocal.com/solocalmanager |

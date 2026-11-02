@@ -16,6 +16,10 @@
       "instagram": "",
       "linkedin": ""
     },
-    "showSampleContent": false
+    "showSampleContent": false,
+    "verification": {
+      "google": "",
+      "bing": ""
+    }
   }
 }
