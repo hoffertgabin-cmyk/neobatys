@@ -1,6 +1,6 @@
 # Réseaux sociaux NEOBATYS
 
-Instagram, Facebook et LinkedIn : stratégie, profils, création des pages et calendrier des 4 premières semaines. Les 12 posts rédigés sont dans [`posts/`](posts/). La veille sur les acteurs américains qui a nourri les séries ci-dessous est dans [`veille/reseaux-sociaux.md`](veille/reseaux-sociaux.md).
+Instagram, Facebook et LinkedIn : stratégie et calendrier des 4 premières semaines. Profils, fiche Google et création des comptes : [`fiche-google-et-reseaux.md`](fiche-google-et-reseaux.md). Les 12 posts rédigés sont dans [`posts/`](posts/). La veille sur les acteurs américains qui a nourri les séries ci-dessous est dans [`veille/reseaux-sociaux.md`](veille/reseaux-sociaux.md).
 
 Rien n'est publié automatiquement. Chaque compte est créé et chaque post est publié par Ilann ou Gabin.
 
@@ -86,115 +86,9 @@ Mot d'ordre commun : `#FiersDuBatiment`, qui parle du métier plutôt que du log
 
 Budget temps visé : une demi-journée par semaine pour préparer les 3 posts de la semaine suivante (le lundi), 15 minutes par jour pour répondre aux commentaires et messages. Les messages privés reçus (demandes de devis, questions) sont traités comme des demandes de contact : réponse dans la journée, renvoi vers `/contact` si besoin.
 
-## Bios et descriptions
+## Profils et création des comptes
 
-Revérifier le compteur de caractères affiché par chaque réseau au moment de la saisie.
-
-### Instagram (bio, 150 caractères maximum)
-
-Nom affiché : `NEOBATYS | Sites et logiciel pour artisans`
-Nom d'utilisateur : `@neobatys` (ou `@neobatys.btp` s'il est pris)
-Catégorie : Logiciel (ou Service informatique)
-
-```
-Sites internet, devis, factures et IA pour artisans du bâtiment.
-Metz, Moselle et Luxembourg.
-Démo gratuite ↓
-```
-
-Lien : `https://www.neobatys.com/contact`
-
-### Facebook (intro de la page)
-
-Nom de la page : `NEOBATYS`
-Catégorie : Logiciel, puis Service de conception de sites web
-
-Intro (courte) :
-
-```
-Sites internet, logiciel de devis et factures et assistants IA pour les artisans du bâtiment. Metz, Moselle, Luxembourg.
-```
-
-Section « À propos » (longue) :
-
-```
-NEOBATYS aide les artisans du bâtiment à trouver des clients et à passer moins de temps sur la paperasse.
-
-- Sites internet pour artisans, à partir de 990 € HT
-- Logiciel de devis et factures, prêt pour la facturation électronique
-- Assistants IA : réponse aux demandes de devis, devis dictés à la voix, relances des impayés, demandes d'avis Google
-
-Nous travaillons autour de Metz, en Moselle et au Luxembourg. Démo gratuite de 20 minutes sur www.neobatys.com/contact
-```
-
-Site web : `https://www.neobatys.com`, e-mail : `contact@neobatys.com`, bouton d'action : « Envoyer un message » ou « Réserver » vers `/contact`.
-
-### LinkedIn (page entreprise)
-
-Nom : `NEOBATYS`
-Slogan (120 caractères maximum) :
-
-```
-Sites internet, logiciel de devis et factures et IA pour les artisans du bâtiment
-```
-
-Secteur : Développement de logiciels. Taille : 2 à 10 salariés. Type : Société privée.
-Site web : `https://www.neobatys.com`
-Siège : 44, rue de l'Industrie, L-8069 Strassen, Luxembourg.
-
-Présentation :
-
-```
-NEOBATYS équipe les artisans et les petites entreprises du bâtiment avec trois outils qui se parlent :
-
-1. Un site internet pensé pour être trouvé sur Google par les clients du secteur et recevoir des demandes de devis (à partir de 990 € HT).
-2. Un logiciel de devis et de factures : devis sur place, signature en ligne, transformation en facture, relances automatiques, export comptable, prêt pour la facturation électronique obligatoire en France.
-3. Des assistants IA réglés sur le métier : réponse rapide aux demandes de devis, devis dictés à la voix, relances des impayés, demandes d'avis Google. L'artisan valide tout ce qui part chez ses clients.
-
-Nous travaillons autour de Metz, en Moselle et au Luxembourg, avec un interlocuteur humain joignable. Nous échangeons volontiers avec les experts-comptables, négoces, fédérations et réseaux d'entrepreneurs du BTP.
-
-NEOBATYS est un nom commercial de TAG Delme SARL.
-```
-
-Spécialisations ou mots-clés de la page, selon ce que propose LinkedIn : `artisans du bâtiment`, `logiciel devis factures`, `site internet artisan`.
-
-## Checklist de création (à faire par Ilann)
-
-Rien de cette liste ne peut être fait par Claude : création de compte, connexion et validation sont personnelles.
-
-### Avant de commencer
-
-- [ ] Préparer le logo carré (celui de `app/icon.svg`, exporté en PNG haute définition) et une bannière par réseau, aux dimensions indiquées par chaque réseau au moment de l'envoi (elles diffèrent entre Facebook et LinkedIn et changent régulièrement).
-- [ ] Utiliser l'adresse `contact@neobatys.com` (ou une adresse dédiée réseaux) pour l'administration, et activer la double authentification sur chaque compte.
-- [ ] Décider qui est administrateur principal : il faut au moins deux administrateurs (Ilann et Gabin) sur chaque page pour ne jamais perdre l'accès.
-
-### Facebook et Meta Business Suite
-
-- [ ] Depuis un profil Facebook personnel, créer la Page `NEOBATYS` ([aide Meta : créer une Page](https://www.facebook.com/business/help/473994396650734)). Le profil personnel reste invisible des visiteurs de la Page.
-- [ ] Remplir catégorie, intro, À propos, site, e-mail, adresse (ou zone desservie), logo, bannière, bouton d'action.
-- [ ] Créer un portefeuille business dans Meta Business Suite (business.facebook.com) au nom de NEOBATYS ([aide Meta : créer un portefeuille business](https://www.facebook.com/business/help/1710077379203657)), y rattacher la Page et ajouter Gabin.
-- [ ] Ne pas ajouter de moyen de paiement tant qu'aucune publicité n'est décidée.
-
-### Instagram
-
-- [ ] Créer le compte `@neobatys` depuis l'application, le passer en compte professionnel (catégorie Logiciel, type Entreprise).
-- [ ] Remplir nom, bio, lien vers `/contact`, photo de profil (même logo que Facebook).
-- [ ] Relier le compte Instagram à la Page Facebook dans Meta Business Suite (Paramètres, Comptes Instagram), pour publier les deux en même temps et gérer les messages au même endroit.
-- [ ] Créer 3 stories à la une vides au départ : « Sites », « Logiciel », « IA », alimentées au fil des posts.
-
-### LinkedIn
-
-- [ ] Depuis le profil personnel LinkedIn (qui doit être complet et avoir une ancienneté suffisante), créer une Page entreprise ([aide LinkedIn : créer une Page](https://www.linkedin.com/help/linkedin/answer/a543852)). LinkedIn peut demander une adresse e-mail professionnelle au domaine `neobatys.com`.
-- [ ] Remplir tous les champs : logo, bannière, slogan, présentation, site, secteur, taille, siège ([aide LinkedIn : compléter la Page](https://www.linkedin.com/help/linkedin/answer/a553372)).
-- [ ] Ajouter Gabin comme super administrateur.
-- [ ] Seul l'associé qui accepte d'être nommé publiquement ajoute NEOBATYS comme expérience sur son profil ; le gérant ne le fait pas.
-- [ ] Inviter ses relations pertinentes (artisans, partenaires) à suivre la page, sans envoi en masse.
-
-### Après la création
-
-- [ ] Renseigner les trois URL dans Pages CMS (Réseaux sociaux) ou dans `content/data/site.json` : les icônes apparaissent alors dans le pied de page et les profils sont déclarés aux moteurs de recherche.
-- [ ] Partager le lien du site une fois sur chaque réseau et vérifier l'aperçu (titre, description, image). Outils : [Débogueur de partage Meta](https://developers.facebook.com/tools/debug/), [Post Inspector LinkedIn](https://www.linkedin.com/post-inspector/).
-- [ ] Publier les 3 premiers posts avant d'inviter des abonnés, pour qu'un profil visité ne soit pas vide.
+Bios, catégories, noms d'utilisateur, visuels, fiche Google et pas-à-pas de création : [`fiche-google-et-reseaux.md`](fiche-google-et-reseaux.md).
 
 ## Calendrier des 4 premières semaines
 
