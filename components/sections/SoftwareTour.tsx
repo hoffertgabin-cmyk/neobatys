@@ -58,7 +58,7 @@ function NextAction({ children, onClick }: { children: ReactNode; onClick: () =>
     <button
       type="button"
       onClick={onClick}
-      className="relative inline-flex items-center gap-2 rounded-full bg-chantier px-4 py-2.5 text-sm font-semibold text-white shadow-[0_10px_24px_-10px_rgb(249_115_22/0.8)] transition-transform hover:scale-[1.03] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nuit"
+      className="relative inline-flex items-center gap-2 rounded-full bg-chantier px-4 py-2.5 text-sm font-semibold text-nuit shadow-[0_10px_24px_-10px_rgb(249_115_22/0.8)] transition-transform hover:scale-[1.03] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nuit"
     >
       <span
         aria-hidden="true"
@@ -518,7 +518,7 @@ function RemindersScreen({ amount, next }: { amount: number; next: () => void })
             Sauf erreur de notre part, la facture {INVOICE} de{" "}
             <strong className="text-nuit">{euro(amount)}</strong> reste à régler. Vous pouvez la
             payer en ligne en un clic :
-            <span className="mt-2 block w-fit rounded-md bg-chantier px-3 py-1.5 text-xs font-semibold text-white">
+            <span className="mt-2 block w-fit rounded-md bg-chantier px-3 py-1.5 text-xs font-semibold text-nuit">
               Payer la facture
             </span>
             <span className="mt-2 block">Merci et bonne journée !</span>
