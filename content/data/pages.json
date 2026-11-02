@@ -139,5 +139,79 @@
         "answer": "Personne ne peut honnêtement le garantir. En revanche, on met en place tout ce qui compte pour le référencement local, et c'est souvent sur les recherches proches de chez vous que les résultats arrivent le plus vite."
       }
     ]
+  },
+  "iaPage": {
+    "seo": {
+      "title": "Assistants IA pour artisans du bâtiment",
+      "description": "Assistants IA pour artisans : réponse aux demandes de devis en quelques minutes, devis dictés à la voix, relances, avis Google. Installés, réglés, suivis."
+    },
+    "hero": {
+      "eyebrow": "Intelligence artificielle pour artisans",
+      "title": "Des assistants IA qui répondent, chiffrent et relancent pour vous",
+      "subtitle": "Répondre aux demandes le soir, taper les devis, relancer les factures : ce sont les tâches qui débordent sur vos soirées. Nos assistants IA les préparent, réglés sur votre métier et vos tarifs, et vous gardez la main sur ce qui part."
+    },
+    "sections": [
+      {
+        "title": "Ce qu'un assistant IA fait pour un artisan",
+        "paragraphs": [
+          "Un assistant IA est un programme qui comprend un message écrit ou dicté et prépare une réponse, un devis ou une relance à partir de vos informations : vos prestations, vos tarifs, votre zone, votre façon de parler à vos clients.",
+          "Ce n'est pas un gadget à essayer seul le dimanche. Nous l'installons, nous le réglons sur votre métier, nous vous formons, puis nous l'ajustons avec vous. Par défaut, rien ne part sans votre validation."
+        ],
+        "items": []
+      },
+      {
+        "title": "Répondre aux demandes de devis, même le soir",
+        "paragraphs": [
+          "Une demande qui attend jusqu'au lendemain part souvent chez un concurrent. L'assistant de réponse aux demandes répond en quelques minutes à chaque demande reçue par votre site, Google ou les réseaux, pose les questions utiles pour préparer le chantier et propose une visite.",
+          "Vous recevez la demande déjà qualifiée : type de travaux, adresse, photos, disponibilités. Vous relisez la réponse proposée et vous l'envoyez, ou vous la corrigez."
+        ],
+        "items": []
+      },
+      {
+        "title": "Le devis dicté à la voix sur le chantier",
+        "paragraphs": [
+          "Vous décrivez le chantier à voix haute, comme vous le feriez à un collègue. L'IA prépare le devis à partir de votre bibliothèque d'ouvrages et de vos prix. Vous vérifiez, vous ajustez, vous envoyez. Le devis est toujours relu avant envoi."
+        ],
+        "items": []
+      },
+      {
+        "title": "Relances, avis Google et suivi",
+        "paragraphs": [
+          "Les mêmes assistants s'occupent des tâches répétitives qui suivent le chantier."
+        ],
+        "items": [
+          "Relances des factures en retard, polies et graduées, qui s'arrêtent dès que le client a payé.",
+          "Un message après chaque chantier terminé pour demander un avis Google.",
+          "Vos factures d'achat lues, classées et prêtes pour le comptable.",
+          "Marge par chantier, devis signés, chiffre du mois : les bons chiffres sans tableur."
+        ]
+      },
+      {
+        "title": "Comment on le met en place",
+        "paragraphs": [
+          "Les assistants sont inclus dans le Pack IA, avec le site et le logiciel de devis et factures : vous choisissez deux assistants parmi les devis dictés, la réponse aux demandes et les avis Google. Ils sont réglés sur votre métier et vos tarifs, et nous les suivons et les ajustons pendant trois mois.",
+          "Un interlocuteur humain reste joignable du début à la fin."
+        ],
+        "items": []
+      }
+    ],
+    "faq": [
+      {
+        "question": "L'assistant envoie-t-il des messages sans mon accord ?",
+        "answer": "Non, pas par défaut. L'assistant prépare la réponse, le devis ou la relance, et vous validez avant l'envoi. Vous pouvez assouplir ce réglage pour certains messages si vous le souhaitez."
+      },
+      {
+        "question": "Faut-il savoir utiliser l'IA pour s'en servir ?",
+        "answer": "Non. Nous installons et réglons les assistants sur votre métier, nous vous formons, puis nous les ajustons avec vous. Au quotidien, vous relisez et vous validez, comme un message préparé par un collègue."
+      },
+      {
+        "question": "Quels assistants sont inclus dans le Pack IA ?",
+        "answer": "Deux assistants au choix parmi les devis dictés à la voix, la réponse aux demandes et les avis Google, avec le site et le logiciel de devis et factures, et trois mois de suivi et d'ajustements."
+      },
+      {
+        "question": "L'IA connaît-elle mes prix ?",
+        "answer": "Oui : elle travaille à partir de votre bibliothèque d'ouvrages et de vos tarifs, importés dans le logiciel. C'est ce qui lui permet de préparer un devis réaliste, que vous relisez toujours avant envoi."
+      }
+    ]
   }
 }

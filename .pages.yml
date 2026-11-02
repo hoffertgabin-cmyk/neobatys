@@ -889,7 +889,7 @@ content:
     label: Choix « autre » du formulaire
     type: string
 - name: pages
-  label: Pages Sites, Logiciel et Contact
+  label: Pages Sites, Logiciel, IA et Contact
   type: file
   path: content/data/pages.json
   format: json
@@ -1000,6 +1000,66 @@ content:
           label: Points
           type: string
           list: true
+    - name: faq
+      label: Questions
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{question}'
+      fields:
+      - name: question
+        label: Question
+        type: string
+      - name: answer
+        label: Réponse
+        type: text
+  - name: iaPage
+    label: Page Intelligence artificielle
+    type: object
+    fields:
+    - name: seo
+      label: Référencement Google
+      type: object
+      fields:
+      - name: title
+        label: Titre de l'onglet
+        type: string
+      - name: description
+        label: Description Google
+        type: text
+    - name: hero
+      label: Haut de page
+      type: object
+      fields:
+      - name: eyebrow
+        label: Surtitre
+        type: string
+      - name: title
+        label: Titre
+        type: string
+      - name: subtitle
+        label: Sous-titre
+        type: text
+    - name: sections
+      label: Paragraphes
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{title}'
+      fields:
+      - name: title
+        label: Intertitre
+        type: string
+      - name: paragraphs
+        label: Paragraphes
+        type: text
+        list: true
+      - name: items
+        label: Liste à puces
+        type: string
+        list: true
     - name: faq
       label: Questions
       type: object
