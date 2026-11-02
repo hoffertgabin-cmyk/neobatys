@@ -52,14 +52,15 @@ Tarifs : obat.fr/tarifs, tolteck.com/fr-fr/tarifs, batappli.fr/tarifs, batichiff
 | `/logiciel/facturation-electronique` | cluster facturation électronique et Luxembourg | dates, formats, plateformes agréées, sanctions, particuliers, Luxembourg, FAQ |
 | `/logiciel/mentions-obligatoires-devis` | cluster réglementation devis | devis préalable, mentions, TVA réduite par mention depuis 2025, décennale |
 | `/logiciel/modele-devis` | modèle devis bâtiment (excel) | modèle Excel `public/modeles/modele-devis-batiment.xlsx` en téléchargement libre, sans formulaire |
+| `/logiciel/calculateur-tva` | calcul TVA travaux, HT / TTC | calculateur 20, 10, 5,5 % dans le navigateur, règles du taux réduit, mention depuis 2025 |
 | `/logiciel/plombier`, `electricien`, `macon`, `peintre`, `menuisier`, `couvreur`, `carreleur`, `chauffagiste` | logiciel devis + métier | règles propres au métier, TVA, décennale, fonctions du logiciel |
 
-Chaque guide a son fil d'Ariane (`BreadcrumbList`), sa FAQ (`FAQPage`), ses sources officielles, des liens vers les autres guides et vers `/logiciel`, et figure au sitemap. Le pied de page pointe vers la facturation électronique. Les textes sont dans `content/data/software-guides.json`, modifiables depuis Pages CMS (un guide peut proposer des fichiers à télécharger via `downloads`).
+Chaque guide a son fil d'Ariane (`BreadcrumbList`), sa FAQ (`FAQPage`), ses sources officielles, des liens vers les autres guides et vers `/logiciel`, et figure au sitemap. Le pied de page pointe vers la facturation électronique, le modèle de devis et le calculateur de TVA. Les textes sont dans `content/data/software-guides.json`, modifiables depuis Pages CMS (un guide peut proposer des fichiers à télécharger via `downloads`, ou le calculateur de TVA via `tool: "tva"`).
 
 ### À créer ensuite (même gabarit : ajouter une entrée dans `software-guides.json`)
 
 1. `/logiciel/facturation-electronique-luxembourg` si Search Console montre des impressions sur les requêtes Luxembourg.
-2. Les idées issues de la veille américaine (`docs/veille/seo-acquisition.md`) : calculateurs, comparatif « logiciel ou Excel », parrainage.
+2. Les idées issues de la veille américaine (`docs/veille/seo-acquisition.md`) : autres calculateurs (taux horaire, marge), comparatif « logiciel ou Excel », parrainage.
 
 ## 5. Calendrier sur 3 mois
 

@@ -18,6 +18,10 @@
         "href": "/logiciel/modele-devis"
       },
       {
+        "label": "Calculateur de TVA",
+        "href": "/logiciel/calculateur-tva"
+      },
+      {
         "label": "Intelligence artificielle",
         "href": "/#ia"
       },

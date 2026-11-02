@@ -17,6 +17,9 @@ export const softwareGuidesSection = guidesData.section;
 
 export const softwareGuides = guidesData.guides;
 
+/** Libellés du calculateur de TVA, affiché sur les guides marqués `tool: "tva"`. */
+export const tvaCalculator = guidesData.tvaCalculator;
+
 /** Liens vers les guides, pour la grille <LinkCards>. */
 export const softwareGuideLinks = softwareGuides.map((g) => ({
   slug: g.slug,

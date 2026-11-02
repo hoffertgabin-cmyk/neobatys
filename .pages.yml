@@ -1203,6 +1203,56 @@ content:
     - name: subtitle
       label: Sous-titre
       type: text
+  - name: tvaCalculator
+    label: Textes du calculateur de TVA
+    type: object
+    fields:
+    - name: title
+      label: Titre
+      type: string
+    - name: amount
+      label: Libellé du montant
+      type: string
+    - name: from
+      label: Montant saisi
+      type: object
+      fields:
+      - name: ht
+        label: Bouton HT
+        type: string
+      - name: ttc
+        label: Bouton TTC
+        type: string
+    - name: rate
+      label: Libellé du taux
+      type: string
+    - name: rates
+      label: Taux proposés
+      type: object
+      list: true
+      fields:
+      - name: value
+        label: Taux (nombre, ex. 5.5)
+        type: number
+      - name: label
+        label: Texte du bouton
+        type: string
+    - name: results
+      label: Résultats
+      type: object
+      fields:
+      - name: ht
+        label: HT
+        type: string
+      - name: tva
+        label: TVA
+        type: string
+      - name: ttc
+        label: TTC
+        type: string
+    - name: note
+      label: Note sous le calcul
+      type: text
   - name: guides
     label: Guides
     description: L'adresse de la page est /logiciel/ suivi de l'identifiant. Changer un identifiant change l'adresse (perte du référencement acquis).
@@ -1294,6 +1344,10 @@ content:
       - name: href
         label: Lien
         type: string
+    - name: tool
+      label: Outil intégré (facultatif)
+      description: '« tva » affiche le calculateur HT / TVA / TTC en haut de la page. Laisser vide sinon.'
+      type: string
     - name: downloads
       label: Fichiers à télécharger (facultatif)
       description: Boutons de téléchargement en haut de page. Le fichier va dans public/modeles/, le lien commence par /modeles/.
