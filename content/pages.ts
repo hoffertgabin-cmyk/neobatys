@@ -9,3 +9,5 @@ export const sitesPage = data.sitesPage;
 export const logicielPage = data.logicielPage;
 
 export const contactPage = data.contactPage;
+
+export const iaPage = data.iaPage;

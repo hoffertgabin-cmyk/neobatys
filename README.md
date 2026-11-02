@@ -46,7 +46,7 @@ Tous les textes sont dans le dossier **`content/data/`** (un fichier JSON par su
 | `content/data/stats.json`        | chiffres clés **(exemples à remplacer)**                                           |
 | `content/data/projects.json`     | réalisations **(exemples à remplacer)**                                            |
 | `content/data/testimonials.json` | témoignages **(exemples à remplacer)**                                             |
-| `content/data/pages.json`        | textes des pages `/sites-internet`, `/logiciel`, `/contact`                        |
+| `content/data/pages.json`        | textes des pages `/sites-internet`, `/logiciel`, `/intelligence-artificielle`, `/contact` |
 | `content/data/software-guides.json` | pages guides `/logiciel/[guide]` (par métier, facturation électronique)         |
 | `content/data/trade-sites.json`     | pages « site internet pour un métier » `/sites-internet/[metier]`, avec la maquette du métier |
 | `content/data/legal.json`        | mentions légales et politique de confidentialité                                   |
