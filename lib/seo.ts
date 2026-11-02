@@ -57,6 +57,7 @@ export function localBusinessJsonLd() {
     telephone: filled(site.phone),
     email: filled(site.email),
     image: `${site.url}/opengraph-image`,
+    logo: `${site.url}/apple-icon`,
     address: {
       "@type": "PostalAddress",
       streetAddress: filled(site.address.street),
@@ -104,6 +105,68 @@ export function softwareApplicationJsonLd(description: string, features: string[
       "@type": "BusinessAudience",
       audienceType: "Artisans du bâtiment",
     },
+  };
+}
+
+/** Nom du site dans les résultats Google : données WebSite sur la page d'accueil. */
+export function websiteJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${site.url}/#site`,
+    name: site.name,
+    url: site.url,
+    inLanguage: "fr",
+    publisher: { "@id": `${site.url}/#entreprise` },
+  };
+}
+
+const months = [
+  "janvier",
+  "février",
+  "mars",
+  "avril",
+  "mai",
+  "juin",
+  "juillet",
+  "août",
+  "septembre",
+  "octobre",
+  "novembre",
+  "décembre",
+];
+
+/** « 2 novembre 2026 » ou « 1er novembre 2026 » vers « 2026-11-02 » ; undefined si la date n'est pas reconnue. */
+export function frenchDateToIso(date: string) {
+  const m = date.trim().match(/^(\d{1,2})(?:er)? (\S+) (\d{4})$/);
+  const month = m ? months.indexOf(m[2].toLowerCase()) + 1 : 0;
+  if (!m || month === 0) return undefined;
+  return `${m[3]}-${String(month).padStart(2, "0")}-${m[1].padStart(2, "0")}`;
+}
+
+/** Guide éditorial : titre, date de mise à jour, éditeur. */
+export function articleJsonLd({
+  headline,
+  description,
+  path,
+  updated,
+}: {
+  headline: string;
+  description: string;
+  path: string;
+  updated: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline,
+    description,
+    url: new URL(path, site.url).toString(),
+    inLanguage: "fr",
+    dateModified: frenchDateToIso(updated),
+    image: `${site.url}/opengraph-image`,
+    author: { "@id": `${site.url}/#entreprise` },
+    publisher: { "@id": `${site.url}/#entreprise` },
   };
 }
 
