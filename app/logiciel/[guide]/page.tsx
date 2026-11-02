@@ -8,7 +8,7 @@ import {
   tvaCalculator,
 } from "@/content/software";
 import { tradeSiteLinks } from "@/content/trade-sites";
-import { breadcrumbJsonLd, faqJsonLd, pageMetadata } from "@/lib/seo";
+import { articleJsonLd, breadcrumbJsonLd, faqJsonLd, pageMetadata } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Button, buttonClasses } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
@@ -118,6 +118,14 @@ export default async function GuidePage({ params }: PageProps<"/logiciel/[guide]
         ])}
       />
       <JsonLd data={faqJsonLd(guide.faq)} />
+      <JsonLd
+        data={articleJsonLd({
+          headline: guide.hero.title,
+          description: guide.seo.description,
+          path,
+          updated: guide.updated,
+        })}
+      />
     </>
   );
 }
