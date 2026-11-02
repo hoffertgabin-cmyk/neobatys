@@ -91,7 +91,7 @@ Pour ajouter un outil de mesure d'audience plus tard, chargez-le uniquement si `
 ## SEO
 
 - Titres, descriptions et Open Graph par page (`lib/seo.ts`), image de partage générée (`app/opengraph-image.tsx`)
-- Données structurées JSON-LD : `ProfessionalService` (LocalBusiness), `Service`, `SoftwareApplication` (`/logiciel`), `BreadcrumbList` et `FAQPage`
+- Données structurées JSON-LD : `ProfessionalService` (LocalBusiness, avec logo `app/apple-icon.tsx`), `WebSite` (accueil, nom du site dans Google), `Service`, `SoftwareApplication` (`/logiciel`), `Article` avec date de mise à jour (guides), `BreadcrumbList` et `FAQPage`
 - Plan de campagne SEO du logiciel (mots-clés, pages, calendrier, actions manuelles) : `docs/seo-logiciel.md`
 - `sitemap.xml` et `robots.txt` générés depuis `NEXT_PUBLIC_SITE_URL`
 

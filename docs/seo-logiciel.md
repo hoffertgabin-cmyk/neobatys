@@ -55,7 +55,7 @@ Tarifs : obat.fr/tarifs, tolteck.com/fr-fr/tarifs, batappli.fr/tarifs, batichiff
 | `/logiciel/calculateur-tva` | calcul TVA travaux, HT / TTC | calculateur 20, 10, 5,5 % dans le navigateur, règles du taux réduit, mention depuis 2025 |
 | `/logiciel/plombier`, `electricien`, `macon`, `peintre`, `menuisier`, `couvreur`, `carreleur`, `chauffagiste` | logiciel devis + métier | règles propres au métier, TVA, décennale, fonctions du logiciel |
 
-Chaque guide a son fil d'Ariane (`BreadcrumbList`), sa FAQ (`FAQPage`), ses sources officielles, des liens vers les autres guides et vers `/logiciel`, et figure au sitemap. Le pied de page pointe vers la facturation électronique, le modèle de devis et le calculateur de TVA. Les textes sont dans `content/data/software-guides.json`, modifiables depuis Pages CMS (un guide peut proposer des fichiers à télécharger via `downloads`, ou le calculateur de TVA via `tool: "tva"`).
+Chaque guide a son fil d'Ariane (`BreadcrumbList`), sa FAQ (`FAQPage`), ses données `Article` (date tirée de `updated`, à garder au format « 2 novembre 2026 »), ses sources officielles, des liens vers les autres guides et vers `/logiciel`, et figure au sitemap. Le pied de page pointe vers la facturation électronique, le modèle de devis et le calculateur de TVA. Les textes sont dans `content/data/software-guides.json`, modifiables depuis Pages CMS (un guide peut proposer des fichiers à télécharger via `downloads`, ou le calculateur de TVA via `tool: "tva"`).
 
 ### À créer ensuite (même gabarit : ajouter une entrée dans `software-guides.json`)
 

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { faq } from "@/content/faq";
-import { faqJsonLd } from "@/lib/seo";
+import { faqJsonLd, websiteJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Hero } from "@/components/sections/Hero";
 import { TradesMarquee } from "@/components/sections/TradesMarquee";
@@ -40,6 +40,7 @@ export default function HomePage() {
       <Faq />
       <FinalCta />
       <JsonLd data={faqJsonLd(faq)} />
+      <JsonLd data={websiteJsonLd()} />
     </>
   );
 }
