@@ -26,4 +26,4 @@ Suite du chantier « référencer neobatys.com au maximum ». Les idées déjà 
 
 1. Parrainage (impact le plus fort, attend une décision commerciale).
 2. Fiches Bing et Apple, dès que la fiche Google est validée.
-3. IndexNow, à faire avec la prochaine série de guides.
+3. IndexNow : en place depuis le 2 novembre 2026 (`scripts/indexnow.mjs`, `.github/workflows/indexnow.yml`).

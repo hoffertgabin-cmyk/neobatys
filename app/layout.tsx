@@ -39,6 +39,11 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image", title: defaultTitle, description, images: ["/opengraph-image"] },
   formatDetection: { telephone: false },
+  // Balises de propriété Search Console et Bing Webmaster, saisies dans content/data/site.json
+  verification: {
+    google: site.verification.google || undefined,
+    other: site.verification.bing ? { "msvalidate.01": site.verification.bing } : undefined,
+  },
 };
 
 const bootScript = `(function(d){d.classList.add('js');try{var c=JSON.parse(localStorage.getItem('${CONSENT_KEY}'));if(c&&Date.now()-c.at<${CONSENT_MAX_AGE_MS})d.classList.add('consent-set')}catch(e){}})(document.documentElement)`;

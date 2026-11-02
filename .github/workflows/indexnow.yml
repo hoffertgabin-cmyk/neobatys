@@ -1,0 +1,21 @@
+name: IndexNow
+
+# Après chaque déploiement de production réussi (statut « Vercel » sur main),
+# signale les URL du sitemap à Bing et aux autres moteurs IndexNow.
+on:
+  status:
+  workflow_dispatch:
+
+jobs:
+  ping:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.context == 'Vercel' && github.event.state == 'success' &&
+      contains(github.event.branches.*.name, 'main'))
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/indexnow.mjs

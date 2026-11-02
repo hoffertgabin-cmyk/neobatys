@@ -75,6 +75,17 @@ content:
       label: Afficher les contenus d'exemple
       description: "Décoché : les avis, chiffres et projets marqués « Exemple » sont masqués (les maquettes restent visibles, présentées comme des exemples). Coché : ils s'affichent avec un badge « Exemple ». À laisser décoché sur le site en ligne."
       type: boolean
+    - name: verification
+      label: Codes de vérification des moteurs de recherche
+      description: Coller seulement le code (la valeur de content="..."), pas toute la balise. Vide = pas de balise.
+      type: object
+      fields:
+      - name: google
+        label: Google Search Console (balise google-site-verification)
+        type: string
+      - name: bing
+        label: Bing Webmaster Tools (balise msvalidate.01)
+        type: string
 - name: home
   label: Page d'accueil
   type: file
