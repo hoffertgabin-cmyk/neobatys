@@ -2,7 +2,7 @@
 
 Un seul logiciel, hébergé chez nous. Chaque artisan crée son compte et trouve tout de suite les modules standards ; on active les autres et on personnalise ensuite. Nous avons notre propre back-office pour suivre tous les clients.
 
-Statut : proposition, rien n'est codé. Les décisions d'Ilann du 1er novembre 2026 sont intégrées (section 8) ; celles qui restent ouvertes sont listées à la fin. Le contenu de départ du futur dépôt `neobatys-app` est dans [`docs/plateforme/depart/`](plateforme/depart/README.md). La veille sur les concurrents est dans [`docs/veille/plateforme-admin.md`](veille/plateforme-admin.md). La maquette du tableau de bord client est [`docs/maquette-tableau-de-bord.html`](maquette-tableau-de-bord.html) (ouvrir dans un navigateur).
+Statut : proposition, rien n'est codé. Les décisions d'Ilann des 1er et 2 novembre 2026 sont intégrées (section 8) ; celles qui restent ouvertes sont listées à la fin. Le contenu de départ du futur dépôt `neobatys-app` est dans [`docs/plateforme/depart/`](plateforme/depart/README.md). La veille sur les concurrents est dans [`docs/veille/plateforme-admin.md`](veille/plateforme-admin.md). La maquette du tableau de bord client est [`docs/maquette-tableau-de-bord.html`](maquette-tableau-de-bord.html) (ouvrir dans un navigateur).
 
 ## 1. Ce qui existe aujourd'hui
 
@@ -318,6 +318,7 @@ Le MVP n'a ni IA ni WhatsApp : il remplace l'admin actuel, met en place le multi
 | 6 | Base de données | Comparatif en section 3.1, recommandation Supabase Paris, question sur OVH à poser |
 | 7 | Plateforme agréée | Super PDP recommandée, Iopole en repli (section 3.2) |
 | 8 | Démarches Meta | Traitées à part |
+| 9 | Module Achats, stock et outillage (2 novembre 2026) : les huit recommandations retenues, dont les prix nets de l'artisan plutôt que les sites de Leroy Merlin ou Castorama | Section 5 de [`docs/plateforme/module-achats-stock.md`](plateforme/module-achats-stock.md) |
 
 ### 8.2 Comptes et services : ce qui existe, ce qui manque
 
@@ -341,6 +342,5 @@ Règle commune : chaque compte est au nom de l'entreprise, avec les deux associ�
 | 2 | Base de données | Supabase Pro à Paris, sauf si l'inventaire OVH (section 3.1) montre quelque chose de réutilisable ; en attente de l'accès OVH. |
 | 3 | Organisation GitHub de l'entreprise ou compte de Gabin pour `neobatys-app` | Organisation en plan Team (8 $ par mois pour deux). |
 | 4 | Valider les projets juridiques de `docs/juridique/plateforme/` | Relecture par Ilann et Gabin ; un avocat seulement sur les points listés dans leur README si le doute persiste. |
-| 5 | Rendez-vous avec Super PDP | Avant l'étape 2. |
+| 5 | Rendez-vous avec Super PDP | Avant l'étape 2 ; y valider aussi la lecture des factures fournisseurs pour le module Achats. |
 | 6 | Réponses de Gabin aux sept questions de la section 1.2 | Avant l'étape 1. |
-| 7 | Module Achats, stock et outillage | Huit décisions propres au module, section 5 de [`docs/plateforme/module-achats-stock.md`](plateforme/module-achats-stock.md) ; la principale : partir des prix nets de l'artisan (ses fichiers tarif et ses factures), pas des sites de Leroy Merlin ou Castorama. |
