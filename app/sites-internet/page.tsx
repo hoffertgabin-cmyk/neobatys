@@ -1,5 +1,6 @@
 import { sitesPage } from "@/content/pages";
 import { websiteOffer } from "@/content/offers";
+import { tradeSiteLinks, tradeSitesSection } from "@/content/trade-sites";
 import { pageMetadata, faqJsonLd, serviceJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Button } from "@/components/ui/Button";
@@ -9,6 +10,7 @@ import { Included } from "@/components/sections/Included";
 import { Process } from "@/components/sections/Process";
 import { Projects } from "@/components/sections/Projects";
 import { Faq } from "@/components/sections/Faq";
+import { LinkCards } from "@/components/sections/LinkCards";
 import { FinalCta } from "@/components/sections/FinalCta";
 
 export const metadata = pageMetadata({
@@ -32,6 +34,12 @@ export default function SitesInternetPage() {
       <Process />
       <Projects />
       <Faq items={sitesPage.faq} />
+      <LinkCards
+        id="metiers-titre"
+        heading={tradeSitesSection}
+        links={tradeSiteLinks}
+        cta="Voir la page"
+      />
       <FinalCta />
       <JsonLd
         data={serviceJsonLd(

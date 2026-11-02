@@ -1,0 +1,656 @@
+{
+  "section": {
+    "eyebrow": "Par métier",
+    "title": "Un site pensé pour votre métier",
+    "subtitle": "Chaque métier a ses clients et ses urgences. Choisissez le vôtre pour voir ce que contient le site et parcourir la maquette d'exemple."
+  },
+  "trades": [
+    {
+      "slug": "plombier",
+      "mockup": "plombier",
+      "label": "Site internet pour plombier",
+      "summary": "Numéro visible, demande de dépannage rapide, avis en avant : un site fait pour le client qui a une fuite et cherche depuis son téléphone.",
+      "breadcrumb": "Plombier",
+      "seo": {
+        "title": "Création de site internet pour plombier",
+        "description": "Site internet pour plombier : pensé pour le mobile et l'urgence, formulaire de demande, avis Google, référencement local et fiche Google Business."
+      },
+      "hero": {
+        "eyebrow": "Site internet pour plombier",
+        "title": "Un site de plombier qui se fait appeler au bon moment",
+        "subtitle": "Quand une fuite arrive, le client cherche sur son téléphone et appelle le premier plombier qui le rassure. Votre site doit lui montrer votre numéro, votre zone et vos avis sans le faire chercher."
+      },
+      "sections": [
+        {
+          "title": "Ce que cherche un client qui a une fuite",
+          "paragraphs": [
+            "Beaucoup de recherches de plombier partent d'un problème concret : une fuite sous l'évier, un WC bouché, un chauffe-eau qui ne chauffe plus. Le client est pressé, parfois inquiet, et il cherche depuis son téléphone un plombier proche de chez lui.",
+            "Dans ce moment, il ne lit pas de longs textes. Il veut savoir tout de suite si vous intervenez chez lui, comment vous joindre et si d'autres clients ont été satisfaits. Les projets réfléchis, comme une salle de bain à refaire, demandent au contraire des photos et des explications pour se décider."
+          ],
+          "items": [
+            "Un numéro de téléphone bien visible sur mobile",
+            "La zone d'intervention annoncée clairement",
+            "Des avis clients pour rassurer avant d'appeler",
+            "Des photos de salles de bain pour les projets de rénovation"
+          ]
+        },
+        {
+          "title": "Ce que contient votre site de plombier",
+          "paragraphs": [
+            "Le site suit l'offre NEOBATYS : un design sur mesure à vos couleurs, cinq pages (accueil, services, réalisations, avis, contact) et des textes rédigés avec vous. Il est soigné d'abord sur mobile, puisque c'est là que vos clients vous cherchent.",
+            "Pour être trouvé, nous travaillons le référencement local sur votre ville et votre zone, et nous créons ou optimisons votre fiche Google Business pour apparaître sur Maps. Le formulaire de devis vous transmet des demandes déjà qualifiées : type de travaux, adresse et photos de la fuite ou de la pièce."
+          ],
+          "items": [
+            "Avis Google affichés sur le site",
+            "Galerie avant / après pour vos salles de bain",
+            "Nom de domaine, hébergement et https inclus",
+            "Modifications de contenu sur simple demande"
+          ]
+        },
+        {
+          "title": "La maquette plombier, page par page",
+          "paragraphs": [
+            "Pour vous montrer le rendu, nous avons dessiné un site de plombier d'exemple. C'est une maquette navigable, avec une entreprise fictive : ce n'est pas le site d'un vrai client.",
+            "Elle comporte cinq onglets (Accueil, Dépannage, Salle de bain, Avis, Urgence) et un bouton d'urgence toujours visible en haut. L'accueil présente les prestations, de la petite fuite à la salle de bain complète, puis la zone d'intervention, les avis et une foire aux questions."
+          ],
+          "items": [
+            "Un formulaire de demande où l'on choisit le problème (fuite, WC bouché, chauffe-eau, autre) avant de donner son adresse et son téléphone",
+            "Une page Dépannage avec les bons réflexes en attendant le plombier",
+            "Une page Salle de bain où l'on choisit l'aménagement (douche à l'italienne, baignoire, accessible PMR) et le style",
+            "Une page Avis avec un formulaire pour laisser le sien",
+            "Des articles de conseil sur les fuites, la douche à l'italienne et le chauffe-eau"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Mon numéro sera-t-il facile à trouver pour un client en urgence ?",
+          "answer": "Oui. Le site est conçu d'abord pour le téléphone : votre numéro est mis en avant dès l'arrivée sur la page, sans avoir à le chercher dans un menu."
+        },
+        {
+          "question": "Je fais du dépannage et de la rénovation de salle de bain : les deux ont leur place ?",
+          "answer": "Oui. Le dépannage parle aux clients pressés, tandis que la page réalisations et la galerie avant / après servent ceux qui préparent un projet de salle de bain."
+        },
+        {
+          "question": "Que contient une demande envoyée par le formulaire ?",
+          "answer": "Le formulaire de devis demande le type de travaux, l'adresse et des photos. Avant de rappeler, vous savez s'il s'agit d'une fuite ou d'un projet, et où se trouve le chantier."
+        }
+      ]
+    },
+    {
+      "slug": "electricien",
+      "mockup": "electricien",
+      "label": "Site internet pour électricien",
+      "summary": "Mise aux normes, bornes, domotique : un site qui explique vos services, montre vos chantiers et reçoit des demandes de devis claires.",
+      "breadcrumb": "Électricien",
+      "seo": {
+        "title": "Création de site internet pour électricien",
+        "description": "Site internet pour électricien : services expliqués, réalisations, demande de devis qualifiée, avis Google et référencement local dans votre zone."
+      },
+      "hero": {
+        "eyebrow": "Site internet pour électricien",
+        "title": "Un site d'électricien qui rassure avant le premier appel",
+        "subtitle": "L'électricité touche à la sécurité de la maison. Avant de vous confier son tableau ou sa borne de recharge, le client veut comprendre ce que vous faites et voir que d'autres vous ont fait confiance."
+      },
+      "sections": [
+        {
+          "title": "Ce que cherche un client en électricité",
+          "paragraphs": [
+            "Les demandes d'électricité mélangent deux situations. D'un côté, la panne ou le disjoncteur qui saute, où le client veut un électricien proche et joignable. De l'autre, les projets : mise en sécurité d'une maison ancienne, installation d'une borne pour la voiture, éclairage ou domotique.",
+            "Pour ces projets, le client compare. Il cherche des explications simples sur ce qui sera fait, des qualifications affichées, des exemples de chantiers proches du sien et un moyen facile de demander un devis sans attendre un rendez-vous."
+          ],
+          "items": [
+            "Des services présentés un par un, avec des mots simples",
+            "Vos qualifications et garanties visibles",
+            "Des chantiers récents comparables au sien",
+            "Une demande de devis qui ne prend que quelques instants"
+          ]
+        },
+        {
+          "title": "Ce que contient votre site d'électricien",
+          "paragraphs": [
+            "Vous obtenez un site sur mesure à vos couleurs, avec cinq pages : accueil, services, réalisations, avis et contact. Les textes sont rédigés avec vous, pour décrire votre activité réelle, qu'il s'agisse de rénovation, de bornes ou de domotique.",
+            "Le formulaire de devis fait préciser le type de travaux, l'adresse et des photos : une photo du tableau en dit souvent long avant de se déplacer. Le référencement local, la fiche Google Business et vos avis Google mis en avant vous rendent visible auprès des clients de votre zone."
+          ],
+          "items": [
+            "Site parfait sur mobile, tablette et ordinateur",
+            "Galerie de chantiers facile à compléter",
+            "Statistiques de visites simples",
+            "Mises à jour et sauvegardes comprises"
+          ]
+        },
+        {
+          "title": "La maquette électricien, page par page",
+          "paragraphs": [
+            "Nous avons dessiné un site d'électricien d'exemple pour que vous puissiez juger sur pièce. C'est une maquette navigable, avec une entreprise fictive : ce n'est pas un vrai client.",
+            "Elle s'organise en quatre onglets (Accueil, Services, Réalisations, Devis) et un bouton « Devis gratuit » toujours accessible. La page Services détaille trois activités : mise aux normes, bornes de recharge, éclairage et domotique, chacune avec ses points clés."
+          ],
+          "items": [
+            "Une page Réalisations qui liste des chantiers récents avec leur type : rénovation, borne, domotique",
+            "Un devis en ligne en trois étapes : le besoin (mise aux normes, borne, domotique, dépannage), le logement (maison, appartement, local pro), puis les coordonnées",
+            "Une section qui explique comment se déroule une demande",
+            "Des avis clients, la zone d'intervention et une foire aux questions",
+            "Des articles de conseil sur la rénovation électrique, les bornes et l'éclairage LED"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Je fais à la fois du dépannage et des bornes de recharge, comment le site le montre ?",
+          "answer": "La page services présente chaque activité séparément, avec ses propres explications. Le client qui cherche une borne n'a pas à lire ce qui concerne le dépannage, et inversement."
+        },
+        {
+          "question": "Mes qualifications peuvent-elles apparaître sur le site ?",
+          "answer": "Oui. Les textes sont rédigés avec vous : vos qualifications et vos garanties sont mises en avant là où le client les cherche, sur l'accueil et à côté de vos services."
+        },
+        {
+          "question": "Puis-je demander une photo du tableau électrique dans le formulaire ?",
+          "answer": "Le formulaire de devis prévoit l'envoi de photos en plus du type de travaux et de l'adresse. Vous pouvez donc juger de l'installation avant de vous déplacer."
+        }
+      ]
+    },
+    {
+      "slug": "macon",
+      "mockup": "macon",
+      "label": "Site internet pour maçon",
+      "summary": "Façades, murets, terrasses, extensions : un site qui montre vos chantiers en avant / après et donne envie de vous confier un gros projet.",
+      "breadcrumb": "Maçon",
+      "seo": {
+        "title": "Création de site internet pour maçon",
+        "description": "Site internet pour maçon : galerie de chantiers avant / après, prestations détaillées, demande de devis, avis Google et référencement local."
+      },
+      "hero": {
+        "eyebrow": "Site internet pour maçon",
+        "title": "Un site de maçon où vos chantiers parlent pour vous",
+        "subtitle": "Une extension ou un ravalement, c'est un gros budget. Le client veut voir ce que vous avez déjà construit avant de vous appeler. Votre site lui montre vos chantiers, votre méthode et votre sérieux."
+      },
+      "sections": [
+        {
+          "title": "Ce que cherche un client en maçonnerie",
+          "paragraphs": [
+            "Un client qui cherche un maçon a souvent un projet précis en tête : refaire une façade, monter un muret, couler une terrasse, agrandir sa maison. Ce sont des travaux visibles, durables et coûteux, qu'il ne confie pas sur un simple numéro.",
+            "Il compare donc les entreprises de son secteur sur ce qu'elles ont déjà réalisé. Des photos de chantiers, surtout avant et après, valent mieux qu'une longue description. Il veut aussi comprendre comment le chantier va se dérouler et être sûr que l'entreprise est solide."
+          ],
+          "items": [
+            "Des photos de chantiers terminés, classées par type de travaux",
+            "Des comparaisons avant / après",
+            "Les étapes d'un chantier, expliquées simplement",
+            "Une présentation de l'entreprise et de l'équipe"
+          ]
+        },
+        {
+          "title": "Ce que contient votre site de maçon",
+          "paragraphs": [
+            "Le site comprend cinq pages : accueil, services, réalisations, avis et contact. La galerie avant / après met vos plus beaux chantiers en valeur, et vous pouvez y ajouter facilement les nouveaux au fil de l'année. Pas de photos professionnelles ? On démarre avec celles prises au téléphone.",
+            "Les textes sont rédigés avec vous pour décrire vos vrais savoir-faire. Le formulaire de devis recueille le type de travaux, l'adresse et des photos du terrain ou de la façade. Le référencement local et la fiche Google Business vous rendent visible dans votre zone."
+          ],
+          "items": [
+            "Design sur mesure à vos couleurs",
+            "Avis Google mis en avant",
+            "Nom de domaine et hébergement inclus",
+            "Modifications de contenu sur simple demande"
+          ]
+        },
+        {
+          "title": "La maquette maçon, page par page",
+          "paragraphs": [
+            "Nous avons dessiné un site de maçon d'exemple pour montrer le rendu. C'est une maquette navigable, avec une entreprise fictive : ce n'est pas le site d'un vrai client.",
+            "Elle compte quatre onglets (Accueil, Prestations, Galerie, Contact) et un bouton « Demander un devis » toujours visible. L'accueil présente l'entreprise, ses savoir-faire, la méthode de chantier étape par étape, les avis et la zone d'intervention."
+          ],
+          "items": [
+            "Une galerie avant / après avec un curseur pour comparer les deux photos",
+            "Des chantiers classés par type : façades, murets, terrasses, extensions",
+            "Une page Prestations, du petit muret à l'extension",
+            "Un formulaire de contact avec le nom, le téléphone et la description du projet",
+            "Des articles de conseil sur le ravalement, les murets en pierre et les terrasses béton"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Je n'ai que des photos de chantier prises au téléphone, ça suffit ?",
+          "answer": "Oui. On démarre avec ce que vous avez et on vous montre comment prendre de bonnes photos au fil des chantiers, notamment pour réussir vos avant / après."
+        },
+        {
+          "question": "Puis-je ajouter un nouveau chantier dans la galerie moi-même ?",
+          "answer": "Oui si vous le souhaitez. Sinon, envoyez-nous les photos et on les ajoute : les modifications de contenu sont comprises dans la maintenance."
+        },
+        {
+          "question": "Le site peut-il présenter des travaux très différents, du muret à l'extension ?",
+          "answer": "Oui. La page services décrit chaque type de travaux, et la galerie permet de classer les réalisations pour que chaque client trouve des chantiers proches du sien."
+        }
+      ]
+    },
+    {
+      "slug": "menuisier",
+      "mockup": "menuisier",
+      "label": "Site internet pour menuisier",
+      "summary": "Escaliers, cuisines, dressings sur mesure : un site qui met en scène vos réalisations et votre atelier pour attirer les bons projets.",
+      "breadcrumb": "Menuisier",
+      "seo": {
+        "title": "Création de site internet pour menuisier",
+        "description": "Site internet pour menuisier : réalisations sur mesure en photos, présentation de l'atelier, demande de projet, avis Google et référencement local."
+      },
+      "hero": {
+        "eyebrow": "Site internet pour menuisier",
+        "title": "Un site de menuisier qui montre ce que vos mains fabriquent",
+        "subtitle": "Un escalier, une cuisine ou une bibliothèque sur mesure se choisit avec les yeux. Votre site présente vos réalisations, votre atelier et votre façon de travailler, pour que le client vienne avec un projet."
+      },
+      "sections": [
+        {
+          "title": "Ce que cherche un client en menuiserie sur mesure",
+          "paragraphs": [
+            "Le client qui cherche un menuisier n'est généralement pas dans l'urgence. Il a vu une idée, il veut un escalier qui change la pièce, un dressing sous pente, une cuisine en bois massif. Il cherche des réalisations qui ressemblent à ce qu'il imagine.",
+            "Il veut aussi comprendre à qui il a affaire : l'atelier, les bois utilisés, les étapes entre la première prise de mesures et la pose. Plus il se projette, plus il est prêt à décrire son projet et à demander un devis."
+          ],
+          "items": [
+            "Des photos de réalisations, rangées par type de meuble ou d'ouvrage",
+            "Les essences de bois et les finitions proposées",
+            "Les étapes d'un projet, de la mesure à la pose",
+            "La présentation de l'atelier et de l'équipe"
+          ]
+        },
+        {
+          "title": "Ce que contient votre site de menuisier",
+          "paragraphs": [
+            "Vous obtenez un site sur mesure à vos couleurs, avec cinq pages : accueil, services, réalisations, avis et contact. La galerie met vos plus belles pièces en valeur et s'enrichit facilement à chaque nouveau chantier.",
+            "Les textes sont rédigés avec vous, pour parler de votre savoir-faire avec vos mots. Le formulaire de devis recueille le type de travaux, l'adresse et des photos de la pièce à aménager. Le référencement local et votre fiche Google Business vous rendent visible auprès des clients de votre zone."
+          ],
+          "items": [
+            "Site parfait sur mobile, tablette et ordinateur",
+            "Avis Google affichés pour rassurer",
+            "Certificat de sécurité https",
+            "Mises à jour et sauvegardes comprises"
+          ]
+        },
+        {
+          "title": "La maquette menuisier, page par page",
+          "paragraphs": [
+            "Nous avons dessiné un site de menuisier d'exemple pour que vous voyiez le rendu. C'est une maquette navigable, avec une entreprise fictive : ce n'est pas le site d'un vrai client.",
+            "Elle s'organise en quatre onglets (Accueil, Catalogue, Atelier, Contact) et un bouton « Votre projet » toujours visible. L'accueil met une réalisation à la une, un escalier, et fait défiler d'autres créations sur mesure."
+          ],
+          "items": [
+            "Un catalogue de tout ce que l'atelier fabrique : escaliers, cuisines, dressings, portes, bibliothèques, terrasses bois",
+            "Une page Atelier qui présente le lieu, l'équipe et les étapes de l'esquisse à la pose",
+            "Un formulaire de contact avec le nom, le téléphone, la ville et la description du projet",
+            "Des avis clients, la zone d'intervention et une foire aux questions",
+            "Des articles de conseil sur le choix du bois, les cuisines sur mesure et l'entretien du bois huilé"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Mes réalisations sont très variées, comment les présenter ?",
+          "answer": "La page réalisations les regroupe par type d'ouvrage, pour qu'un client qui cherche un escalier tombe sur vos escaliers et un client qui veut un dressing sur vos dressings."
+        },
+        {
+          "question": "Le site peut-il parler de mon atelier et de ma façon de travailler ?",
+          "answer": "Oui. Les textes sont rédigés avec vous : l'atelier, les bois que vous travaillez et les étapes d'un projet trouvent leur place sur l'accueil et la page services."
+        },
+        {
+          "question": "Comment un client me décrit-il son projet ?",
+          "answer": "Par le formulaire de devis, qui demande le type de travaux, l'adresse et des photos. Une photo de la pièce ou de la cage d'escalier vous aide à préparer la première visite."
+        }
+      ]
+    },
+    {
+      "slug": "couvreur",
+      "mockup": "couvreur",
+      "label": "Site internet pour couvreur",
+      "summary": "Photos de toitures, demandes de réfection qualifiées, avis en avant : un site de couvreur relié à vos devis avec le Pack Gestion.",
+      "breadcrumb": "Couvreur",
+      "seo": {
+        "title": "Création de site internet pour couvreur",
+        "description": "Site internet pour couvreur : photos de toitures avant / après, demande de devis avec photos, avis Google, référencement local et fiche Google Business."
+      },
+      "hero": {
+        "eyebrow": "Site internet pour couvreur",
+        "title": "Un site de couvreur qui transforme les visites en devis de toiture",
+        "subtitle": "Une tuile envolée, une fuite au plafond ou une toiture à refaire : le client veut voir des toits que vous avez déjà traités et vous envoyer ses photos. Votre site s'en charge, et le logiciel peut prendre le relais pour le devis."
+      },
+      "sections": [
+        {
+          "title": "Ce que cherche un client pour sa toiture",
+          "paragraphs": [
+            "Les recherches de couvreur arrivent souvent après un problème : une fuite, des tuiles déplacées, une gouttière qui déborde. D'autres clients préparent un chantier plus lourd, comme une réfection complète, un démoussage ou la pose de fenêtres de toit.",
+            "Dans les deux cas, le client ne peut pas monter voir lui-même. Il a besoin de voir des toitures que vous avez réalisées pour juger votre travail, et il veut pouvoir envoyer facilement une photo de son toit pour obtenir un devis de réfection ou de réparation."
+          ],
+          "items": [
+            "Des photos de toitures avant et après intervention",
+            "Les travaux proposés, de la réparation à la réfection",
+            "Un moyen simple d'envoyer des photos du toit",
+            "Des avis clients pour rassurer"
+          ]
+        },
+        {
+          "title": "Ce que contient votre site de couvreur",
+          "paragraphs": [
+            "Le site comprend cinq pages : accueil, services, réalisations, avis et contact, avec un design sur mesure à vos couleurs et des textes rédigés avec vous. La galerie avant / après est l'endroit idéal pour montrer vos toitures.",
+            "Le formulaire de devis recueille le type de travaux, l'adresse et des photos : vous voyez l'état du toit avant de vous déplacer. Avec le Pack Gestion, ces demandes arrivent directement dans le logiciel de devis, avec un seul interlocuteur et une seule maintenance."
+          ],
+          "items": [
+            "Référencement local sur votre ville et votre zone",
+            "Fiche Google Business créée ou optimisée",
+            "Nom de domaine, hébergement et https inclus",
+            "Modifications de contenu sur simple demande"
+          ]
+        },
+        {
+          "title": "La maquette couvreur : le côté logiciel",
+          "paragraphs": [
+            "Pour le couvreur, la maquette d'exemple montre l'autre moitié du Pack Gestion : le logiciel de devis d'une entreprise de couverture fictive. C'est une maquette navigable, ce n'est pas un vrai client.",
+            "On y voit ce que deviennent les demandes une fois reçues. Elle comporte cinq onglets : Tableau de bord, Devis, Clients, Relances et Nouveau devis, avec des exemples de travaux de couverture (réfection de toiture, gouttières, démoussage, fenêtres de toit, faîtage)."
+          ],
+          "items": [
+            "Un tableau de bord avec les devis du mois, le chiffre d'affaires signé et les chantiers à venir",
+            "Une liste de devis filtrable par statut : envoyé, signé, à relancer",
+            "La création d'un devis à partir d'une bibliothèque d'ouvrages de couverture, ligne par ligne",
+            "Un fichier clients consultable",
+            "Le réglage des relances automatiques, avec l'aperçu du message reçu par le client"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Pourquoi la maquette couvreur montre-t-elle un logiciel et pas un site ?",
+          "answer": "Elle illustre le Pack Gestion : le site reçoit la demande, le logiciel prépare le devis. Le site d'un couvreur reprend les mêmes cinq pages que pour les autres métiers, avec une galerie de toitures."
+        },
+        {
+          "question": "Un client peut-il m'envoyer des photos de son toit ?",
+          "answer": "Oui. Le formulaire de devis prévoit l'envoi de photos, en plus du type de travaux et de l'adresse. Vous voyez l'état de la toiture avant de vous déplacer."
+        },
+        {
+          "question": "Puis-je prendre le site seul, sans le logiciel ?",
+          "answer": "Oui. Le site internet est une offre à part entière. Le Pack Gestion est proposé à ceux qui veulent aussi relier leurs demandes à leurs devis et factures."
+        }
+      ]
+    },
+    {
+      "slug": "peintre",
+      "mockup": "peintre",
+      "label": "Site internet pour peintre",
+      "summary": "Intérieurs, façades, enduits décoratifs : un site qui montre vos chantiers avant et après et aide le client à parler couleurs avec vous.",
+      "breadcrumb": "Peintre",
+      "seo": {
+        "title": "Création de site internet pour peintre",
+        "description": "Site internet pour peintre en bâtiment : réalisations avant / après, prestations intérieures et façades, demande de devis, avis Google et SEO local."
+      },
+      "hero": {
+        "eyebrow": "Site internet pour peintre",
+        "title": "Un site de peintre où le résultat se voit avant le devis",
+        "subtitle": "En peinture, le client achète un résultat qu'il imagine mal. Vos photos avant et après, vos finitions et vos conseils couleur l'aident à se décider, et à vous choisir."
+      },
+      "sections": [
+        {
+          "title": "Ce que cherche un client en peinture",
+          "paragraphs": [
+            "Un client qui cherche un peintre veut rafraîchir un intérieur, changer l'ambiance d'une pièce, refaire une façade ou poser un papier peint. Il a souvent une idée de couleur mais peu d'idée du travail : préparation des murs, protection des meubles, finitions.",
+            "Il juge d'abord sur les images. Des photos avant et après montrent mieux qu'un texte la différence entre un travail soigné et un coup de rouleau. Il apprécie aussi des conseils pour choisir sa teinte et sa finition, et une demande de devis simple à remplir."
+          ],
+          "items": [
+            "Des photos avant et après, pièce par pièce",
+            "Les prestations intérieures et extérieures bien séparées",
+            "Des conseils sur les couleurs et les finitions",
+            "Des avis qui parlent de propreté et de soin"
+          ]
+        },
+        {
+          "title": "Ce que contient votre site de peintre",
+          "paragraphs": [
+            "Le site est dessiné sur mesure, à vos couleurs, ce qui compte double pour un métier de la couleur. Il comprend cinq pages : accueil, services, réalisations, avis et contact, avec des textes rédigés avec vous.",
+            "La galerie avant / après met vos chantiers en valeur et s'enrichit facilement. Le formulaire de devis recueille le type de travaux, l'adresse et des photos des pièces ou de la façade. Le référencement local et votre fiche Google Business vous rendent visible auprès des clients proches."
+          ],
+          "items": [
+            "Site parfait sur mobile, tablette et ordinateur",
+            "Avis Google mis en avant",
+            "Statistiques de visites simples",
+            "Mises à jour et sauvegardes comprises"
+          ]
+        },
+        {
+          "title": "La maquette peintre, section par section",
+          "paragraphs": [
+            "Nous avons dessiné un site de peintre d'exemple pour montrer une autre approche : tout tient sur une seule page qui défile. C'est une maquette navigable, avec une entreprise fictive : ce n'est pas un vrai client.",
+            "Le menu mène directement à chaque section : Accueil, Prestations, Réalisations, Avis et Contact. Les prestations couvrent la peinture intérieure, le ravalement de façade, le papier peint et les enduits décoratifs."
+          ],
+          "items": [
+            "Une section Réalisations qui montre un chantier avant, pendant et après",
+            "Un formulaire de contact où l'on indique les pièces à peindre et où l'on choisit une teinte dans un petit nuancier",
+            "Des avis clients mis en avant",
+            "Des articles de conseil sur le choix des couleurs, les finitions mate, velours ou satinée, et l'entretien des façades"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Mon site peut-il ressembler à mon univers de couleurs ?",
+          "answer": "Oui. Le design est fait sur mesure à vos couleurs. Pour un peintre, c'est aussi une façon de montrer votre goût avant même la première photo de chantier."
+        },
+        {
+          "question": "Je fais de l'intérieur et des façades, faut-il deux sites ?",
+          "answer": "Non. La page services présente chaque prestation séparément, et la galerie de réalisations peut mélanger intérieurs et façades pour montrer toute l'étendue de votre travail."
+        },
+        {
+          "question": "Comment réussir mes photos avant / après ?",
+          "answer": "On démarre avec ce que vous avez, même des photos prises au téléphone, et on vous montre comment en faire de bonnes : même angle, même lumière, avant et après le chantier."
+        }
+      ]
+    },
+    {
+      "slug": "chauffagiste",
+      "mockup": "chauffagiste",
+      "label": "Site internet pour chauffagiste",
+      "summary": "Entretien, installation, contrats : un site de chauffagiste qui répond aux pannes de l'hiver comme aux projets de pompe à chaleur.",
+      "breadcrumb": "Chauffagiste",
+      "seo": {
+        "title": "Création de site internet pour chauffagiste",
+        "description": "Site internet pour chauffagiste : entretien, installation et dépannage présentés clairement, demande de devis, avis Google et référencement local."
+      },
+      "hero": {
+        "eyebrow": "Site internet pour chauffagiste",
+        "title": "Un site de chauffagiste pour l'entretien, l'installation et la panne",
+        "subtitle": "Vos clients vous cherchent pour trois raisons : la panne quand il fait froid, l'entretien annuel et le changement d'équipement. Votre site répond aux trois, simplement."
+      },
+      "sections": [
+        {
+          "title": "Ce que cherche un client en chauffage",
+          "paragraphs": [
+            "La panne de chaudière en plein hiver amène des clients pressés, qui veulent un chauffagiste joignable et proche. L'entretien annuel amène des clients qui veulent surtout un rendez-vous facile à prendre. Le remplacement d'une chaudière par une pompe à chaleur amène des clients qui comparent longuement.",
+            "Ces trois publics n'attendent pas la même chose. Le premier cherche un numéro, le deuxième un créneau, le troisième des explications sur les solutions, les économies possibles et les aides. Un bon site de chauffagiste les oriente vite vers la bonne page."
+          ],
+          "items": [
+            "Un accès rapide pour les pannes",
+            "Une demande d'entretien simple à envoyer",
+            "Des explications claires sur les équipements et les aides",
+            "Des avis qui parlent de réactivité"
+          ]
+        },
+        {
+          "title": "Ce que contient votre site de chauffagiste",
+          "paragraphs": [
+            "Le site comprend cinq pages : accueil, services, réalisations, avis et contact, avec un design sur mesure à vos couleurs et des textes rédigés avec vous. La page services sépare l'entretien, l'installation et le dépannage pour que chaque client trouve vite ce qui le concerne.",
+            "Le formulaire de devis recueille le type de travaux, l'adresse et des photos, par exemple de la chaudière en place. Le référencement local, votre fiche Google Business et vos avis Google mis en avant vous rendent visible auprès des clients de votre zone."
+          ],
+          "items": [
+            "Galerie avant / après de vos installations",
+            "Site parfait sur mobile, tablette et ordinateur",
+            "Nom de domaine, hébergement et https inclus",
+            "Modifications de contenu sur simple demande"
+          ]
+        },
+        {
+          "title": "La maquette chauffagiste, page par page",
+          "paragraphs": [
+            "Nous avons dessiné un site de chauffagiste d'exemple pour montrer le rendu. C'est une maquette navigable, avec une entreprise fictive : ce n'est pas le site d'un vrai client.",
+            "Elle compte six onglets (Accueil, Entretien, Installation, Contrats, Contact, Rendez-vous) et un bouton « Prendre rendez-vous » toujours visible. L'accueil présente les services, l'équipe, les avis, la zone d'intervention et une foire aux questions."
+          ],
+          "items": [
+            "Une page Entretien où l'on choisit son équipement : chaudière gaz, chaudière fioul, pompe à chaleur, poêle à granulés",
+            "Une page Installation qui compare les solutions de chauffage",
+            "Une page Contrats où l'on choisit sa formule d'entretien",
+            "Une page Rendez-vous avec un choix de jour et de créneau horaire",
+            "Des articles de conseil sur l'entretien de chaudière, la pompe à chaleur et les radiateurs qui chauffent mal"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Le site peut-il séparer l'entretien, l'installation et le dépannage ?",
+          "answer": "Oui. La page services présente chaque activité à part, avec ses propres explications, pour que le client en panne ne se perde pas dans les pages consacrées aux pompes à chaleur."
+        },
+        {
+          "question": "La prise de rendez-vous en ligne de la maquette fait-elle partie du site ?",
+          "answer": "La maquette montre une idée de parcours. Le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos ; parlez-nous de vos besoins pour le reste."
+        },
+        {
+          "question": "Puis-je parler des aides à la rénovation sur mon site ?",
+          "answer": "Oui. Les textes sont rédigés avec vous et peuvent expliquer les aides que vous accompagnez. On les met à jour sur simple demande quand les règles changent."
+        }
+      ]
+    },
+    {
+      "slug": "carreleur",
+      "mockup": "carreleur",
+      "label": "Site internet pour carreleur",
+      "summary": "Salles de bain, pièces de vie, terrasses : un site de carreleur qui montre vos poses en photos et reçoit des demandes précises.",
+      "breadcrumb": "Carreleur",
+      "seo": {
+        "title": "Création de site internet pour carreleur",
+        "description": "Site internet pour carreleur : galerie de poses par type de pièce, avant / après, demande de devis avec photos, avis Google et référencement local."
+      },
+      "hero": {
+        "eyebrow": "Site internet pour carreleur",
+        "title": "Un site de carreleur où la qualité de pose se voit en photo",
+        "subtitle": "Un joint régulier, une coupe nette, un grand format bien posé : en carrelage, le détail fait la différence. Votre site montre ce détail et aide le client à préciser son projet."
+      },
+      "sections": [
+        {
+          "title": "Ce que cherche un client en carrelage",
+          "paragraphs": [
+            "Le client qui cherche un carreleur prépare souvent une salle de bain, une cuisine, un sol de pièce de vie ou une terrasse. Il a parfois déjà choisi son carrelage et cherche quelqu'un pour le poser proprement, parfois il hésite encore sur le format et le motif.",
+            "Il veut voir des poses comparables à son projet, par type de pièce, et se rassurer sur la finition. Il aimerait aussi avoir une idée du budget avant de demander un devis, et savoir quelles questions se poser sur l'étanchéité ou l'antidérapant."
+          ],
+          "items": [
+            "Des réalisations classées par type de pièce",
+            "Des gros plans qui montrent la qualité de pose",
+            "Les types de pose proposés, du droit au chevron",
+            "Des conseils pour bien choisir son carrelage"
+          ]
+        },
+        {
+          "title": "Ce que contient votre site de carreleur",
+          "paragraphs": [
+            "Le site comprend cinq pages : accueil, services, réalisations, avis et contact, avec un design sur mesure à vos couleurs et des textes rédigés avec vous. La galerie avant / après est faite pour montrer une salle de bain avant et après votre passage.",
+            "Le formulaire de devis recueille le type de travaux, l'adresse et des photos de la pièce. Le référencement local et votre fiche Google Business, créée ou optimisée, vous rendent visible dans votre zone, et vos avis Google rassurent les nouveaux visiteurs."
+          ],
+          "items": [
+            "Site parfait sur mobile, tablette et ordinateur",
+            "Certificat de sécurité https",
+            "Mises à jour et sauvegardes comprises",
+            "Statistiques de visites simples"
+          ]
+        },
+        {
+          "title": "La maquette carreleur, page par page",
+          "paragraphs": [
+            "Nous avons dessiné un site de carreleur d'exemple pour montrer le rendu. C'est une maquette navigable, avec une entreprise fictive : ce n'est pas le site d'un vrai client.",
+            "Elle s'organise en quatre onglets (Accueil, Prestations, Galerie, Contact) et un bouton « Estimer mon chantier ». Sur l'accueil, un petit outil d'estimation fait choisir le type de pose (carrelage sol, faïence murale, grand format) et le motif (droit, diagonale, chevron)."
+          ],
+          "items": [
+            "Une galerie filtrable : salle de bain, pièces de vie, terrasses, rénovation",
+            "Une page Prestations, de la douche à la terrasse",
+            "La méthode de pose expliquée, avec le plan de pose avant chantier",
+            "Un formulaire de contact avec le nom, le téléphone et la description du projet",
+            "Des articles de conseil sur le grand format, la faïence de salle de bain et le carrelage extérieur"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "L'outil d'estimation de la maquette est-il inclus dans le site ?",
+          "answer": "La maquette montre une idée de parcours. Le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos ; parlez-nous de vos besoins pour le reste."
+        },
+        {
+          "question": "Comment montrer la qualité de mes finitions ?",
+          "answer": "Par la galerie de réalisations et les photos avant / après. On démarre avec vos photos de téléphone et on vous montre comment cadrer joints et coupes pour qu'ils se voient."
+        },
+        {
+          "question": "Je pose aussi des terrasses, le site peut-il le montrer ?",
+          "answer": "Oui. La page services présente chaque type de pose, et la galerie peut regrouper les chantiers par pièce, terrasses comprises, pour que chaque client trouve un exemple proche du sien."
+        }
+      ]
+    },
+    {
+      "slug": "charpentier",
+      "mockup": "charpentier",
+      "label": "Site internet pour charpentier",
+      "summary": "Charpente, ossature bois, carports : un site de charpentier qui montre vos ouvrages et explique vos projets bois avant le rendez-vous.",
+      "breadcrumb": "Charpentier",
+      "seo": {
+        "title": "Création de site internet pour charpentier",
+        "description": "Site internet pour charpentier : charpente, ossature bois et extensions en photos, demande de devis avec photos, avis Google et référencement local."
+      },
+      "hero": {
+        "eyebrow": "Site internet pour charpentier",
+        "title": "Un site de charpentier pour les projets qui se pensent en bois",
+        "subtitle": "Une charpente à reprendre, une extension en ossature bois, un carport : ce sont des projets longs à mûrir. Votre site montre vos ouvrages et répond aux premières questions du client."
+      },
+      "sections": [
+        {
+          "title": "Ce que cherche un client en charpente",
+          "paragraphs": [
+            "Le client qui cherche un charpentier a souvent deux types de besoins. Une charpente ancienne à traiter, renforcer ou refaire, souvent liée à un projet de toiture. Ou un projet neuf : extension en ossature bois, carport, préau, surélévation.",
+            "Ces projets se préparent longtemps. Le client cherche des exemples d'ouvrages réalisés, des explications sur les techniques et les bois, et des réponses à ses premières questions sur les démarches et l'organisation du chantier avant d'oser demander un devis."
+          ],
+          "items": [
+            "Des photos d'ouvrages : charpentes, extensions, carports",
+            "La distinction claire entre rénovation de charpente et construction bois",
+            "Les bois utilisés et leur origine",
+            "Une présentation de l'atelier et de l'équipe"
+          ]
+        },
+        {
+          "title": "Ce que contient votre site de charpentier",
+          "paragraphs": [
+            "Le site comprend cinq pages : accueil, services, réalisations, avis et contact, avec un design sur mesure à vos couleurs et des textes rédigés avec vous. La page services sépare la charpente et l'ossature bois, deux métiers que les clients ne cherchent pas de la même façon.",
+            "La galerie avant / après met vos ouvrages en valeur. Le formulaire de devis recueille le type de travaux, l'adresse et des photos, par exemple des combles ou du terrain. Le référencement local et votre fiche Google Business vous rendent visible dans votre zone."
+          ],
+          "items": [
+            "Avis Google mis en avant",
+            "Site parfait sur mobile, tablette et ordinateur",
+            "Nom de domaine et hébergement inclus",
+            "Modifications de contenu sur simple demande"
+          ]
+        },
+        {
+          "title": "La maquette charpentier, page par page",
+          "paragraphs": [
+            "Nous avons dessiné un site de charpentier d'exemple pour montrer le rendu. C'est une maquette navigable, avec une entreprise fictive : ce n'est pas le site d'un vrai client.",
+            "Elle compte quatre onglets (Accueil, Charpente, Ossature bois, Contact) et un bouton « Demander un devis » toujours visible. L'accueil présente le savoir-faire, de la charpente traditionnelle aux extensions bois et aux carports, puis les chantiers récents."
+          ],
+          "items": [
+            "Une page Charpente qui présente plusieurs façons de couvrir",
+            "Une page Ossature bois consacrée aux agrandissements",
+            "Des badges sur le bois local et l'atelier de taille",
+            "Un formulaire de contact avec le nom, le téléphone et la description du projet",
+            "Des articles de conseil sur les extensions bois, le traitement de charpente et le choix de couverture"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Je fais de la charpente et de l'ossature bois, comment le site les présente ?",
+          "answer": "La page services les sépare, avec des explications et des photos propres à chacune. Le client qui cherche une extension n'a pas à lire ce qui concerne la reprise d'une charpente."
+        },
+        {
+          "question": "Puis-je mettre en avant le bois que j'utilise ?",
+          "answer": "Oui. Les textes sont rédigés avec vous : l'origine de vos bois, votre atelier et votre façon de travailler trouvent leur place sur l'accueil et la page services."
+        },
+        {
+          "question": "Un client peut-il m'envoyer des photos de ses combles ?",
+          "answer": "Oui. Le formulaire de devis prévoit l'envoi de photos, en plus du type de travaux et de l'adresse. Vous voyez l'état de la charpente avant la première visite."
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import { logicielPage } from "@/content/pages";
 import { softwareOffer } from "@/content/offers";
+import { softwareGuideLinks, softwareGuidesSection } from "@/content/software";
 import { pageMetadata, faqJsonLd, softwareApplicationJsonLd } from "@/lib/seo";
 import { isFilled } from "@/lib/placeholders";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -12,7 +13,7 @@ import { Included } from "@/components/sections/Included";
 import { Stats } from "@/components/sections/Stats";
 import { Pricing } from "@/components/sections/Pricing";
 import { Faq } from "@/components/sections/Faq";
-import { SoftwareGuides } from "@/components/sections/SoftwareGuides";
+import { LinkCards } from "@/components/sections/LinkCards";
 import { FinalCta } from "@/components/sections/FinalCta";
 
 export const metadata = pageMetadata({
@@ -39,7 +40,12 @@ export default function LogicielPage() {
       <Stats />
       <Pricing />
       <Faq items={logicielPage.faq} />
-      <SoftwareGuides />
+      <LinkCards
+        id="guides-titre"
+        heading={softwareGuidesSection}
+        links={softwareGuideLinks}
+        cta="Lire le guide"
+      />
       <FinalCta />
       <JsonLd
         data={softwareApplicationJsonLd(
