@@ -87,7 +87,7 @@ Trois parties, activables séparément selon le métier.
 
 Cartes de l'Accueil, visibles seulement si le module est actif : « À commander cette semaine » (par fournisseur), « Ruptures à venir », « Outils sortis », « Prix en hausse » (familles dont l'index ou le dernier prix payé a monté de plus de X % sur 3 mois).
 
-Activation par défaut selon le gabarit du métier (proposition) : catalogue et achats par chantier pour tous ; consommables pour plombier, électricien, chauffagiste ; outillage pour tous ceux qui ont des salariés.
+Activation par défaut selon le gabarit du métier (décision 7) : catalogue et achats par chantier pour tous ; consommables pour plombier, électricien, chauffagiste ; outillage pour tous ceux qui ont des salariés.
 
 ## 3. Modèle de données
 
@@ -129,15 +129,17 @@ FAB-DIS n'est pas prévu : il apporte des fiches produits, pas les prix de l'art
 
 Place dans le plan général : A avec l'étape 2 ; B, C, E et F forment une étape « Achats et stock » juste après ; D suit le raccordement à la plateforme agréée ; G, H et I dépendent des réponses des partenaires et peuvent avancer en parallèle.
 
-## 5. Décisions ouvertes
+## 5. Décisions prises par Ilann le 2 novembre 2026
 
-| # | Décision | Recommandation |
+| # | Décision | Suite à donner |
 |---|---|---|
-| 1 | Source des prix : abandonner l'idée des prix Leroy Merlin ou Castorama au profit des prix nets de l'artisan (ses fichiers tarif, puis ses factures) | Oui : ce sont ses vrais prix, et c'est faisable sans partenariat ni copie de sites. |
-| 2 | Lire les factures fournisseurs reçues par la plateforme agréée pour tenir les prix à jour | Oui ; à valider au rendez-vous Super PDP (réception pour le compte de l'artisan, accès aux lignes de facture). |
-| 3 | Demander l'accès à l'API Rexel (offre Découverte) | Oui, au moment de l'étape B ; confirmer que l'usage par un éditeur pour plusieurs artisans est permis. |
-| 4 | Base d'ouvrages : Batiprix, BatiChiffrage ou aucune | Batiprix en option payée par l'artisan (API documentée, intégration gratuite) ; aucune incluse par défaut. |
-| 5 | Périmètre du stock | Outillage nominatif par QR, consommables au seuil mini, achats par chantier ; pas d'inventaire comptable valorisé. |
-| 6 | « Meilleur moment pour acheter » | Seulement les tendances INSEE, les prix payés et les hausses annoncées ; ne rien promettre de prédictif. |
-| 7 | Activation par métier | Catalogue et achats pour tous ; consommables pour plombier, électricien, chauffagiste ; outillage dès qu'il y a des salariés. |
-| 8 | Partenariat Saint-Gobain (Point.P, Cedeo) | Plus tard, avec une base d'artisans utilisateurs à montrer. |
+| 1 | Les prix viennent des prix nets de l'artisan (ses fichiers tarif, puis ses factures fournisseurs), pas des sites de Leroy Merlin ou Castorama | Étape A : import des fichiers tarif |
+| 2 | Les factures fournisseurs reçues par la plateforme agréée tiennent les prix à jour | Point à l'ordre du jour du rendez-vous Super PDP : réception pour le compte de l'artisan, accès aux lignes de facture (étape D) |
+| 3 | Accès à l'API Rexel (offre Découverte) | Demande faite au moment de l'étape B, après confirmation qu'un éditeur peut s'en servir pour plusieurs artisans |
+| 4 | Base d'ouvrages : Batiprix en option payée par l'artisan, aucune incluse par défaut | Étape H, après accord de Batiprix |
+| 5 | Stock limité à l'outillage nominatif par QR, aux consommables au seuil mini et aux achats par chantier ; pas d'inventaire comptable valorisé | Sections 2.2 et 2.3 |
+| 6 | « Meilleur moment pour acheter » : tendances INSEE, prix payés et hausses annoncées seulement, rien de prédictif | Étape F |
+| 7 | Activation par métier : catalogue et achats pour tous ; consommables pour plombier, électricien, chauffagiste ; outillage dès qu'il y a des salariés | Gabarits de métier (section 2.4) |
+| 8 | Partenariat Saint-Gobain (Point.P, Cedeo) plus tard, avec des artisans utilisateurs à montrer | Étape I |
+
+Aucune de ces suites ne crée de compte ni ne contacte un partenaire sans un nouvel accord d'Ilann.
