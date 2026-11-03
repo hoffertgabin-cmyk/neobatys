@@ -101,20 +101,20 @@ Activation par défaut selon le gabarit du métier (décision 7) : catalogue et 
 
 ## 3. Modèle de données
 
-Ajouts à `db/schema.ts` de l'admin, tous rattachés à la fiche de l'artisan (`contact_id`), comme ses tables actuelles :
+Ajouts à `db/schema.ts` de l'admin, tous avec l'`organization_id` de l'artisan, posé par le multi-clients (étape 2 de [`docs/fusion-outils.md`](../fusion-outils.md)) :
 
 ```
 artisan_price_items   + supplier_id, référence, famille, code ETIM (facultatif), remise, tarif_du, index_insee (ex. BT47)
-suppliers             contact_id, nom, type (négoce, grande surface, fabricant), connexion (fichier | api | facture), identifiants chiffrés
-price_imports         contact_id, supplier_id, importé_le, source (fichier | facture | api), correspondance des colonnes
+suppliers             (créée à l'étape 4 de fusion-outils pour l'agent Factures fournisseurs) + type (négoce, grande surface, fabricant), connexion (fichier | api | facture), identifiants chiffrés
+price_imports         organization_id, supplier_id, importé_le, source (fichier | facture | api), correspondance des colonnes
 price_history         price_item_id, prix, date, source (tarif | facture | api)
 supplier_invoice_lines  supplier_invoice_id, price_item_id (rapproché), libellé, quantité, prix unitaire
 material_needs        chantier_id (agent_chantiers), price_item_id, quantité_prévue, quantité_couverte (calculé)
-purchase_orders       contact_id, supplier_id, statut, envoyé_le, chantier_id (facultatif) ; purchase_order_lines
-locations             contact_id, type (dépôt | véhicule | chantier), nom, chantier_id
+purchase_orders       organization_id, supplier_id, statut, envoyé_le, chantier_id (facultatif) ; purchase_order_lines
+locations             organization_id, type (dépôt | véhicule | chantier), nom, chantier_id
 stock_items           price_item_id, location_id, quantité, seuil_mini, seuil_réassort
 stock_movements       price_item_id, de_location_id, vers_location_id, quantité, motif (achat | sortie chantier | transfert | inventaire | perte), chantier_id, user_id, date
-tools                 contact_id, libellé, numéro de série, qr_code, location_id, affecté_à, chantier_id, état, prochaine_vérification
+tools                 organization_id, libellé, numéro de série, qr_code, location_id, affecté_à, chantier_id, état, prochaine_vérification
 price_indices         code (BT01...), mois, valeur, publié_le  (commun à tous les artisans, source INSEE)
 ```
 

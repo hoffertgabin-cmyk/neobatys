@@ -2,7 +2,7 @@
 
 La plateforme n'est plus un outil à part. Elle part de l'admin que Gabin a déjà en ligne (`hoffertgabin-cmyk/neobatys-admin`, dépôt privé, `admin.neobatys.com`), en reprend les règles, et y ajoute ce qui lui manque pour servir plusieurs artisans : leurs comptes, l'inscription libre, le module Achats et stock, le cadre juridique.
 
-Statut : conception, rien n'est codé de notre côté. Recalé le 3 novembre 2026 sur l'admin lu à cette date (110 commits sur `main`, PR #39 et #40 ouvertes). Décisions en section 8. La veille sur les concurrents est dans [`docs/veille/plateforme-admin.md`](veille/plateforme-admin.md), la maquette de l'espace artisan dans [`docs/maquette-tableau-de-bord.html`](maquette-tableau-de-bord.html) (ouvrir dans un navigateur). La comparaison de l'admin avec IA Compta (DriftShop) et le CRM WhatsApp de LeasePro est faite à part, dans `docs/fusion-outils.md` (session « fusion-outils ») : les points qui en dépendent portent la mention « à aligner avec fusion-outils ».
+Statut : conception, rien n'est codé de notre côté. Recalé le 3 novembre 2026 sur l'admin lu à cette date (110 commits sur `main`, PR #39 et #40 ouvertes). Le plan de migration et les décisions de fond (multi-clients, base, connexion, reprises de DriftShop et LeasePro) sont dans [`fusion-outils.md`](fusion-outils.md), qui fait référence ; ce document décrit le produit qu'on bâtit dessus. Décisions en section 8. La veille sur les concurrents est dans [`docs/veille/plateforme-admin.md`](veille/plateforme-admin.md), la maquette de l'espace artisan dans [`docs/maquette-tableau-de-bord.html`](maquette-tableau-de-bord.html) (ouvrir dans un navigateur).
 
 ## 1. Ce qui existe : l'admin de Gabin
 
@@ -23,7 +23,7 @@ Le site parle déjà à l'admin : `lib/admin-leads.ts` envoie chaque demande à 
 
 ### 1.2 Pour les associés
 
-CRM (fiches, statuts, historique, attribution), demandes du site et saisies à la main, boîte mail partagée avec modèles, devis et factures de NEOBATYS (numérotation sans trou, TVA en autoliquidation, PDF), compta (relevés bancaires importés, compte courant d'associé, export), calendrier, projets clients, réseaux sociaux, pilotage, conservation RGPD (`/conservation`, effacement des prospects à 3 ans), journal d'audit. Compta : à aligner avec fusion-outils (IA Compta de DriftShop).
+CRM (fiches, statuts, historique, attribution), demandes du site et saisies à la main, boîte mail partagée avec modèles, devis et factures de NEOBATYS (numérotation sans trou, TVA en autoliquidation, PDF), compta (relevés bancaires importés, compte courant d'associé, export), calendrier, projets clients, réseaux sociaux, pilotage, conservation RGPD (`/conservation`, effacement des prospects à 3 ans), journal d'audit. La compta de l'admin reste celle de NEOBATYS ; l'IA Compta de DriftShop reste un produit séparé, dont les règles passent dans l'agent Factures fournisseurs ([`fusion-outils.md`](fusion-outils.md), décision 5).
 
 ### 1.3 Les agents IA pour les artisans
 
@@ -58,7 +58,7 @@ Ce que l'admin fait mieux que notre première conception, et qui s'applique à t
 | Les niveaux d'autonomie sont réglés **par agent, pour tous les artisans** (`agent_policies` n'a pas de colonne artisan) | Un artisan prudent et un artisan pressé ne peuvent pas avoir des réglages différents |
 | Pas d'inscription libre, pas de consentements de prospection | Décision 5 d'Ilann (section 8) |
 | Pas d'achats ni de stock | Décision 9, [`docs/plateforme/module-achats-stock.md`](plateforme/module-achats-stock.md) |
-| Pas de WhatsApp | À aligner avec fusion-outils (CRM WhatsApp de LeasePro) |
+| Pas de WhatsApp | Canal Cloud porté depuis le CRM de LeasePro ([`fusion-outils.md`](fusion-outils.md), décision 6) |
 | Pas d'abonnement payé en ligne | Stripe, en dernier |
 | Plateforme agréée non branchée (interface prête dans la PR #39) | Émission obligatoire pour les TPE et PME au 1er septembre 2027 |
 
@@ -71,14 +71,7 @@ Ce que l'admin fait mieux que notre première conception, et qui s'applique à t
 | Ilann et Gabin | `admin.neobatys.com`, comme aujourd'hui | Tout : CRM, compta, tous les artisans et leurs agents |
 | Un artisan et ses salariés | Même application, espace artisan (adresse : décision ouverte, section 8.3) | Ses données seulement : demandes, devis, factures, agents et ce qu'ils ont préparé, réglages permis |
 
-Pas de nouveau dépôt ni de nouvelle base : la clé qui sépare les artisans existe déjà, c'est la fiche de l'artisan (`contact_id`, directement ou par `agent_deployments`). La PR #40 sépare déjà les données par clés composées artisan + objet.
-
-À ajouter :
-- une table des membres d'un artisan (compte, fiche artisan, rôle : gérant ou salarié) ;
-- la connexion par lien e-mail ouverte aux membres invités, en plus de `ALLOWED_EMAILS` pour les associés ;
-- une seule fonction qui donne l'artisan de la session, utilisée par chaque page et chaque action de l'espace artisan ;
-- un test automatique qui crée deux artisans et vérifie qu'aucune page ne montre les données de l'autre ;
-- « voir comme l'artisan » pour les associés, inscrit dans le journal d'audit.
+Pas de nouveau dépôt : le multi-clients se fait dans l'admin, par ligne, selon l'étape 2 de [`fusion-outils.md`](fusion-outils.md) : tables `organizations` et `members`, une organisation par artisan créée depuis sa fiche `contacts`, `organization_id` sur les tables des agents et du CRM des artisans, Row Level Security, une fonction d'accès qui prend l'organisation de la session, un test croisé à deux organisations en CI. NEOBATYS est une organisation `staff`. Ce document y ajoute « voir comme l'artisan » pour les associés, inscrit dans le journal d'audit.
 
 L'installation séparée (BEST TP) reste possible pour un client qui exige sa propre base ; ce n'est plus le cas général.
 
@@ -97,7 +90,7 @@ Ce qui n'est pas un agent :
 | Accueil de l'artisan | À faire : chiffres du mois, demandes à traiter, actions en attente de ses agents (maquette) |
 | Statistiques de son site | Les vues sont comptées pour le site NEOBATYS seulement ; à étendre aux sites que nous livrons, avec le même contrat `/api/vues` et une clé par site |
 | Achats, stock et outillage | À faire, bâti sur le catalogue de prix, l'agent Factures fournisseurs et l'agent Rentabilité : [`docs/plateforme/module-achats-stock.md`](plateforme/module-achats-stock.md) |
-| Conversations WhatsApp | À faire ; à aligner avec fusion-outils |
+| Conversations WhatsApp | À faire : étape 6 de [`fusion-outils.md`](fusion-outils.md), canal Cloud porté depuis LeasePro |
 | Site internet | À faire : état du site livré, demandes de modification |
 
 Règle : un module n'est ouvert à un artisan qu'avec son banc d'essai et la mesure qui dira dans un mois s'il sert.
@@ -132,10 +125,10 @@ On garde celle de l'admin (section 1.1). Ce qui change :
 | Sujet | Décision proposée | Pourquoi |
 |---|---|---|
 | Base | Rester sur Neon (Francfort). Passer de l'offre gratuite à une offre payante avant les premières factures d'artisans, pour l'historique de restauration ; prix à l'usage, « environ 15 $/mois » selon Neon (https://neon.com/pricing, relevé le 1er novembre 2026) | Déjà en production, intégration Vercel, données en Union européenne. Neon n'a pas de région en France (https://neon.com/docs/introduction/regions) : si un client exige un hébergement en France, la question se rouvre pour lui seul |
-| Fichiers | En base (`bytea`), dans des tables à part, comme aujourd'hui ; un stockage de fichiers seulement quand les photos de chantier (PR #40) pèseront | Rien à ajouter tant que le volume reste faible |
-| Connexion | Auth.js, déjà en place, étendu aux membres des artisans (section 2.1) | Pas de seconde bibliothèque. Auth.js 5 est encore en bêta (5.0.0-beta.32) : à surveiller |
+| Fichiers | Sortir du `bytea` vers un stockage objet en Union européenne | Étape 3 de [`fusion-outils.md`](fusion-outils.md) : les photos de chantier (PR #40) alourdiraient la base |
+| Connexion | Better Auth et son plugin `organization`, à la place d'Auth.js 5 (encore en bêta, 5.0.0-beta.32), au moment de créer les comptes artisans | [`fusion-outils.md`](fusion-outils.md), décision 4 ; version et doc du plugin à vérifier au moment de coder |
 | Paiement des abonnements | Stripe Billing, en dernier | Inchangé |
-| WhatsApp | À aligner avec fusion-outils | Le CRM de LeasePro a déjà un canal Cloud prêt |
+| WhatsApp | API Cloud de Meta, canal porté depuis le CRM de LeasePro, identifiants chiffrés par organisation | [`fusion-outils.md`](fusion-outils.md), décision 6 et étape 6 |
 
 Ce que la pile ne contient pas, volontairement : pas de second dépôt, pas de microservices, pas de file de messages dédiée tant que Postgres et les tâches planifiées de Vercel suffisent.
 
@@ -145,10 +138,10 @@ Super PDP, recommandée par les deux conceptions : la nôtre (1er novembre) et `
 
 ## 4. Données
 
-Le modèle est `db/schema.ts` de l'admin. Ajouts, tous rattachés à la fiche de l'artisan (`contact_id`) :
+Le modèle est `db/schema.ts` de l'admin, plus les tables `organizations` et `members` de l'étape 2 de [`fusion-outils.md`](fusion-outils.md). Ce que ce document y ajoute, rattaché à l'organisation de l'artisan :
 
 ```
-artisan_members       contact_id, user_id, rôle (gerant | salarie), invité_par, créé_le
+members               + rôle côté artisan (gerant | salarie)
 agent_policies        + deployment_id : niveaux par installation au lieu de par agent
 consents              user_id, finalité (prospection | publicite), valeur, version du texte, horodatage, IP, source
 ```
@@ -161,7 +154,7 @@ Les règles de l'admin s'appliquent (`AGENTS.md` du dépôt de l'admin) : aucun 
 
 - **Rôles RGPD.** Pour notre CRM et les inscrits, nous sommes responsables de traitement. Pour les données des clients de chaque artisan, nous sommes sous-traitant (article 28) : contrat de sous-traitance annexé aux CGU. La PR #11 le signale déjà comme bloquant pour BEST TP.
 - **Droit à l'effacement.** L'admin n'a pas de bouton pour supprimer une fiche (relevé dans la PR #11) : à ajouter avant d'ouvrir des comptes artisans.
-- **Comptes.** Lien de connexion à durée courte, sessions révocables, limitation des tentatives ; double authentification pour les associés à étudier avec Auth.js.
+- **Comptes.** Lien de connexion à durée courte, sessions révocables, limitation des tentatives ; double authentification pour les associés avec Better Auth.
 - **Journal d'audit** de tout « voir comme l'artisan » et de tout export.
 - **Sous-traitants ultérieurs** publiés : Vercel, Neon, Anthropic, OpenAI (fournisseur prévu dans `lib/ai/models.ts`), Twilio, OVH (mail), puis Meta, Stripe, la plateforme agréée.
 
@@ -204,17 +197,15 @@ Pas de mesure d'ouverture des e-mails au départ : elle demanderait une quatriè
 
 ## 6. Plan en étapes
 
-Tout se fait dans le dépôt de l'admin, par PR, avec ses règles (`AGENTS.md` de l'admin) et son banc d'essai.
+Le plan de migration est celui de [`fusion-outils.md`](fusion-outils.md), section 4 (étapes 0 à 7 : rangement, PR #39 et #40, multi-clients, fichiers, factures fournisseurs, évaluations, WhatsApp, export comptable). Tout se fait dans le dépôt de l'admin, par PR, avec ses règles et son banc d'essai. Ce document y ajoute :
 
-| Étape | Contenu | Fin quand |
+| Ajout | Se place | Fin quand |
 |---|---|---|
-| **0. Aligner** | Décisions de la section 8.3 ; PR #39 et #40 de Gabin fusionnées ; conclusions de fusion-outils intégrées ; bouton d'effacement d'une fiche ; contrat de sous-traitance relu. **Rien n'est créé ni acheté sans l'accord d'Ilann.** | Les deux associés valident ce document et `docs/fusion-outils.md`. |
-| **1. Comptes artisans** | Membres d'un artisan, connexion par lien, espace artisan (accueil, demandes, agents et validations, catalogue de prix, profil), niveaux par installation, « voir comme », test d'isolation, gabarits par métier. | Un artisan pilote valide lui-même les brouillons de ses agents pendant un mois. |
-| **2. Inscription libre** | Formulaire avec les deux consentements (section 5.1), confirmation de l'e-mail, fiche CRM « inscription », formule gratuite, export des consentements, CGU et politique publiées. | Un inconnu s'inscrit et apparaît dans le CRM avec ses consentements. |
-| **3. Facture électronique** | Super PDP branchée derrière l'interface de la PR #39 : réception d'abord, puis émission. | Un artisan pilote émet et reçoit par la plateforme agréée avant le 1er septembre 2027. |
-| **4. Achats et stock** | Étapes A à I de [`docs/plateforme/module-achats-stock.md`](plateforme/module-achats-stock.md). | Un artisan pilote commande le matériel d'un chantier depuis son devis signé. |
-| **5. WhatsApp** | À aligner avec fusion-outils. | Un artisan pilote répond à ses clients WhatsApp depuis son espace. |
-| **6. Paiement en ligne** | Stripe Billing : passage du gratuit à une formule sans nous parler. | Un artisan passe en formule payante seul. |
+| **Espace artisan** : accueil, demandes, agents et validations, catalogue de prix, profil, niveaux par installation, gabarits par métier, « voir comme » | Avec l'étape 2 (multi-clients) | Un artisan pilote valide lui-même les brouillons de ses agents pendant un mois. |
+| **Inscription libre** : formulaire avec les deux consentements (section 5.1), confirmation de l'e-mail, fiche CRM « inscription », formule gratuite, export des consentements, CGU et politique publiées | Après l'étape 2, contrat de sous-traitance signé | Un inconnu s'inscrit et apparaît dans le CRM avec ses consentements. |
+| **Facture électronique** : Super PDP branchée derrière l'interface de la PR #39, réception d'abord, puis émission | Après l'étape 1 | Un artisan pilote émet et reçoit par la plateforme agréée avant le 1er septembre 2027. |
+| **Achats et stock** : étapes A à I de [`docs/plateforme/module-achats-stock.md`](plateforme/module-achats-stock.md) | Après les étapes 2 et 4 | Un artisan pilote commande le matériel d'un chantier depuis son devis signé. |
+| **Paiement en ligne** : Stripe Billing, passage du gratuit à une formule sans nous parler | En dernier | Un artisan passe en formule payante seul. |
 
 Les agents déjà construits continuent d'être livrés en service géré pendant toutes ces étapes : rien de ce qui est vendu aujourd'hui n'attend l'espace artisan.
 
@@ -233,7 +224,7 @@ Les agents déjà construits continuent d'être livrés en service géré pendan
 
 | # | Date | Décision | Où |
 |---|---|---|---|
-| 1 | 3 novembre 2026 | Partir de l'admin de Gabin au lieu d'un outil à part ; en garder les agents, les règles datées et sourcées, le banc d'essai et la validation avant envoi. Remplace les décisions du 1er novembre sur le dépôt `neobatys-app`, le remplacement de l'admin de Gabin et la base Supabase | Tout ce document |
+| 1 | 3 novembre 2026 | Partir de l'admin de Gabin au lieu d'un outil à part ; en garder les agents, les règles datées et sourcées, le banc d'essai et la validation avant envoi. Remplace les décisions du 1er novembre sur le dépôt `neobatys-app` et le remplacement de l'admin de Gabin. Le contenu de départ de `neobatys-app` (`docs/plateforme/depart/`) est retiré d'ici ; il reste lisible dans l'historique git pour ce qui serait à reprendre dans l'admin | Tout ce document, et [`fusion-outils.md`](fusion-outils.md) |
 | 2 | 1er novembre 2026 | Plateforme et modules inclus dans les formules ; au-delà, offres sur devis. Assistants IA et WhatsApp chiffrés avec chaque client ; le coût des messages WhatsApp est payé par l'artisan à Meta | Section 2.5 |
 | 3 | 1er novembre 2026 | Inscription libre et gratuite pour tout le monde, les inscrits alimentent notre CRM ; prospection par e-mail sur case à cocher ; publicité ciblée et campagnes faites en interne quand c'est possible (Meta d'abord, Google plus tard) | Sections 2.4 et 5.1 |
 | 4 | 1er novembre 2026 | Documents juridiques rédigés avec une IA | [`docs/juridique/plateforme/`](juridique/plateforme/README.md) |
@@ -257,14 +248,12 @@ Règle commune : chaque compte est au nom de l'entreprise, avec les deux associ�
 
 ### 8.3 Encore ouvertes
 
+Les décisions de fond (base de l'outil, multi-clients par ligne ou installation par client, région de la base, connexion, DriftShop, LeasePro, ordre des PR, évaluations, répartition) sont celles de [`fusion-outils.md`](fusion-outils.md), section 7, numérotées 1 à 9. Restent propres à ce document :
+
 | # | Décision | Recommandation |
 |---|---|---|
-| 1 | Espace artisan dans l'admin (une application, des comptes artisans) ou une installation par client comme BEST TP | Une seule application avec des comptes artisans ; l'installation séparée seulement pour un client qui exige sa propre base. |
-| 2 | Adresse de l'espace artisan | `app.neobatys.com` pointé sur le même projet Vercel que `admin.neobatys.com` : les associés gardent leur adresse, les artisans n'ont pas « admin » dans la leur. |
-| 3 | Qui valide les brouillons des agents d'un artisan | L'artisan lui-même quand il a un compte, un associé sinon ; niveaux réglés par installation. |
-| 4 | Base de données | Rester sur Neon, offre payante avant les premières factures d'artisans. L'inventaire OVH n'est plus nécessaire pour cette décision. |
-| 5 | Ordre des étapes | Comptes artisans, puis inscription libre, puis facture électronique, puis achats et stock, puis WhatsApp, puis Stripe (section 6). |
-| 6 | Compta de l'admin ou IA Compta de DriftShop, CRM de l'admin ou CRM WhatsApp de LeasePro | À aligner avec fusion-outils : ne rien trancher ici avant `docs/fusion-outils.md`. |
-| 7 | Organisation GitHub de l'entreprise pour l'admin | Oui, à décider avec Gabin, puisque le dépôt est sur son compte. |
-| 8 | Valider les projets juridiques de `docs/juridique/plateforme/` | Relecture par Ilann et Gabin, en y ajoutant Twilio et OpenAI aux sous-traitants ; un avocat seulement sur les points listés dans leur README. |
-| 9 | Rendez-vous avec Super PDP | Avant l'étape 3, à deux avec Gabin ; y valider aussi la lecture des factures fournisseurs pour le module Achats. |
+| 1 | Adresse de l'espace artisan | `app.neobatys.com` pointé sur le même projet Vercel que `admin.neobatys.com` : les associés gardent leur adresse, les artisans n'ont pas « admin » dans la leur. |
+| 2 | Qui valide les brouillons des agents d'un artisan | L'artisan lui-même quand il a un compte, un associé sinon ; niveaux réglés par installation. |
+| 3 | Organisation GitHub de l'entreprise pour l'admin | Oui, à décider avec Gabin, puisque le dépôt est sur son compte (étape 0 de [`fusion-outils.md`](fusion-outils.md)). |
+| 4 | Valider les projets juridiques de `docs/juridique/plateforme/` | Relecture par Ilann et Gabin ; un avocat seulement sur les points listés dans leur README. Le contrat de sous-traitance est signé avant le premier compte artisan. |
+| 5 | Rendez-vous avec Super PDP | Avant de brancher la facture électronique, à deux avec Gabin ; y valider aussi la lecture des factures fournisseurs pour le module Achats. |
