@@ -55,3 +55,5 @@ const fill = (sections: LegalSection[]): LegalSection[] =>
 export const mentionsLegales = fill(data.mentionsLegales);
 
 export const politiqueConfidentialite = fill(data.politiqueConfidentialite);
+
+export const cgv = fill(data.cgv);

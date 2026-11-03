@@ -1816,3 +1816,20 @@ content:
       label: Paragraphes
       type: text
       list: true
+  - name: cgv
+    label: Conditions générales de vente
+    description: 'Mots remplacés automatiquement : {entreprise}, {nom_commercial}, {forme_juridique}, {capital}, {adresse}, {rcs}, {autorisation},
+      {tva}, {telephone}, {email}, {directeur}, {hebergeur}, {hebergeur_adresse}, {hebergeur_site}.'
+    type: object
+    list:
+      collapsible:
+        collapsed: true
+        summary: '{title}'
+    fields:
+    - name: title
+      label: Titre
+      type: string
+    - name: paragraphs
+      label: Paragraphes
+      type: text
+      list: true

@@ -14,6 +14,7 @@ const routes = [
   { path: "/contact", priority: 0.8 },
   { path: "/mentions-legales", priority: 0.2 },
   { path: "/politique-de-confidentialite", priority: 0.2 },
+  { path: "/conditions-generales-de-vente", priority: 0.2 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

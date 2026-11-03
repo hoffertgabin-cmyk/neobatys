@@ -126,5 +126,135 @@
         "Si cela change, un bandeau vous demandera votre consentement avant tout dépôt de traceur, avec la possibilité de refuser aussi simplement que d'accepter."
       ]
     }
+  ],
+  "cgv": [
+    {
+      "title": "1. Objet et champ d'application",
+      "paragraphs": [
+        "1.1. Les présentes conditions générales de vente (CGV) s'appliquent à toutes les prestations vendues par {entreprise}, {forme_juridique}, dont le siège est situé {adresse}, immatriculée au Registre de commerce et des sociétés de Luxembourg sous le numéro {rcs}, n° de TVA {tva}, sous le nom commercial {nom_commercial} (le « Prestataire »).",
+        "1.2. Elles s'adressent exclusivement aux professionnels (le « Client »). En signant un devis, le Client déclare agir pour les besoins de son activité professionnelle. Les prestations ne sont pas proposées aux consommateurs.",
+        "1.3. Les CGV sont communiquées à tout Client qui en fait la demande et sont jointes à chaque devis. La signature du devis vaut acceptation des CGV. Les conditions particulières du devis prévalent sur les CGV. Les conditions générales d'achat du Client ne s'appliquent que si le Prestataire les accepte par écrit."
+      ]
+    },
+    {
+      "title": "2. Prestations",
+      "paragraphs": [
+        "2.1. Le Prestataire propose aux artisans et entreprises du bâtiment : la création de sites internet ; le paramétrage d'un logiciel de devis et de factures, l'import des données du Client et la formation à son usage ; la mise en place d'assistants fonctionnant par intelligence artificielle, réglés sur le métier du Client ; la maintenance, l'hébergement et les modifications sur demande, au forfait mensuel ou inclus dans un abonnement.",
+        "2.2. Le contenu exact, le nombre de pages, les assistants retenus, les délais et le prix figurent dans le devis signé, qui seul fait foi. Les tarifs affichés sur le site sont indicatifs.",
+        "2.3. Lorsque la prestation inclut le logiciel ou la plateforme en ligne, les conditions générales d'utilisation de la plateforme et l'accord de traitement des données (article 28 du RGPD) sont fournis avec le devis et s'appliquent en complément des présentes CGV."
+      ]
+    },
+    {
+      "title": "3. Commande et obligations du Client",
+      "paragraphs": [
+        "3.1. La commande est ferme à la signature du devis et au paiement de l'acompte prévu à l'article 6.2.",
+        "3.2. Le Client fournit dans les délais convenus les éléments nécessaires à la prestation (textes, photos, logo, fichier clients, tarifs, accès à sa fiche Google). Il garantit détenir les droits sur ces éléments. Un retard du Client décale d'autant les délais du Prestataire.",
+        "3.3. Les délais indiqués courent à compter de la réception de l'acompte et de tous les éléments nécessaires. Ils sont donnés de bonne foi. Leur dépassement n'ouvre droit à aucune pénalité, sauf délai impératif stipulé au devis."
+      ]
+    },
+    {
+      "title": "4. Prix",
+      "paragraphs": [
+        "4.1. Les prix sont exprimés en euros hors taxes (HT).",
+        "4.2. Les prix uniques couvrent la prestation décrite au devis. Après la livraison, la maintenance (hébergement, nom de domaine, licence du logiciel, mises à jour et modifications sur demande) est facturée 200 € HT par mois, sans engagement, sauf offre incluant une période offerte.",
+        "4.3. Abonnements : prix mensuel HT, sans frais de départ, maintenance comprise, avec un engagement de 12 mois à compter de la mise en ligne ou de la mise en service. À l'issue de l'engagement, l'abonnement se poursuit de mois en mois et peut être résilié par l'une ou l'autre partie avec un préavis d'un mois, par écrit (e-mail compris).",
+        "4.4. La consommation des services d'intelligence artificielle utilisés par les assistants du Client est refacturée au prix coûtant, sans marge, sur la facture mensuelle.",
+        "4.5. Le Prestataire peut réviser ses prix une fois par an pour les contrats en cours, avec un préavis écrit de deux mois. Le Client peut alors résilier sans frais avant l'entrée en vigueur du nouveau prix."
+      ]
+    },
+    {
+      "title": "5. TVA",
+      "paragraphs": [
+        "5.1. Client établi au Luxembourg : la TVA luxembourgeoise est ajoutée au taux en vigueur le jour de la facturation.",
+        "5.2. Client assujetti établi dans un autre État membre de l'Union européenne, notamment en France : la prestation est imposable dans l'État du Client (directive 2006/112/CE, article 44 ; loi TVA luxembourgeoise, article 17, paragraphe 1er, b). La facture est émise hors taxes, sans TVA luxembourgeoise, avec la mention « Autoliquidation » et le numéro de TVA intracommunautaire du Client. Le Client déclare et acquitte la TVA dans son pays (directive 2006/112/CE, article 196). Il communique son numéro de TVA avant la première facture."
+      ]
+    },
+    {
+      "title": "6. Facturation et paiement",
+      "paragraphs": [
+        "6.1. Les factures sont émises au format électronique.",
+        "6.2. Prix uniques : 40 % à la signature du devis, à titre d'acompte, et le solde à la livraison (mise en ligne du site ou mise en service du logiciel ou des assistants). Abonnements et maintenance : facturés chaque mois, à terme à échoir.",
+        "6.3. Les factures sont payables par virement à 30 jours à compter de leur date d'émission. Aucun escompte n'est accordé pour paiement anticipé."
+      ]
+    },
+    {
+      "title": "7. Retard de paiement",
+      "paragraphs": [
+        "7.1. Tout retard de paiement entraîne de plein droit, sans rappel préalable, des intérêts de retard calculés au taux appliqué par la Banque centrale européenne à son opération de refinancement la plus récente, majoré de 8 points de pourcentage pour un Client établi au Luxembourg (loi modifiée du 18 avril 2004 relative aux délais de paiement et aux intérêts de retard, articles 1er et 3) et de 10 points de pourcentage pour un Client établi en France (code de commerce, article L441-10).",
+        "7.2. Il entraîne aussi une indemnité forfaitaire pour frais de recouvrement de 40 € par facture payée en retard (loi du 18 avril 2004, article 5 ; code de commerce, article D441-5). Si les frais de recouvrement réellement engagés dépassent ce montant, le Prestataire peut demander une indemnisation complémentaire sur justificatifs.",
+        "7.3. Après une mise en demeure restée sans effet pendant 15 jours, le Prestataire peut suspendre ses prestations (maintenance, hébergement, accès au logiciel et aux assistants) jusqu'au paiement complet. Pendant la suspension, les données du Client sont conservées et ne sont pas supprimées."
+      ]
+    },
+    {
+      "title": "8. Livraison et garantie",
+      "paragraphs": [
+        "8.1. À la livraison, le Client dispose de 10 jours ouvrés pour signaler par écrit les écarts avec le devis. Sans réserve écrite dans ce délai, la livraison est réputée acceptée.",
+        "8.2. Le Prestataire corrige gratuitement les anomalies qui rendent un livrable non conforme au devis, signalées dans les 3 mois suivant la livraison. Les demandes d'évolution sont facturées sur devis, sauf si elles sont incluses dans la maintenance ou l'abonnement."
+      ]
+    },
+    {
+      "title": "9. Propriété des livrables",
+      "paragraphs": [
+        "9.1. Les éléments fournis par le Client restent sa propriété.",
+        "9.2. Prix unique : après paiement complet, le Client devient titulaire des droits d'utilisation, de reproduction et de modification sur les éléments créés spécifiquement pour lui (textes, visuels, mise en page et code de son site), pour le monde entier et pour toute la durée des droits.",
+        "9.3. Abonnement : le site est mis à disposition pendant la durée du contrat. À la fin de l'abonnement, si le Client a payé au moins 12 mois d'abonnement, la cession prévue à l'article 9.2 lui est acquise sans supplément. Si le contrat prend fin avant 12 mois payés, le Client peut reprendre son site en payant les mensualités restant à courir jusqu'au douzième mois.",
+        "9.4. Le Prestataire conserve la propriété de ses outils, gabarits, composants réutilisables, du logiciel, de la plateforme et des assistants, ainsi que de son savoir-faire. Les composants réutilisables intégrés au site cédé peuvent être utilisés par le Client sans limite de durée, pour ce site uniquement. Le logiciel, la plateforme et les assistants ne sont utilisables que pendant la durée du contrat. Les composants libres restent soumis à leur licence.",
+        "9.5. Sauf refus écrit du Client, le Prestataire peut citer son nom et montrer le site réalisé comme référence commerciale."
+      ]
+    },
+    {
+      "title": "10. Fin du contrat : nom de domaine, contenus et données",
+      "paragraphs": [
+        "10.1. Le nom de domaine du site est enregistré au nom du Client, qui en reste titulaire à la fin du contrat. Le Prestataire lui remet sur demande les codes nécessaires à son transfert.",
+        "10.2. Pendant 30 jours après la fin du contrat, le Client peut demander la restitution de ses contenus et de ses données (clients, devis, factures) dans un format standard et lisible par machine, ainsi que, s'il y a droit selon l'article 9, les fichiers de son site. Passé ce délai, ils sont supprimés, sauf les documents que le Prestataire doit conserver en vertu de ses obligations légales et comptables."
+      ]
+    },
+    {
+      "title": "11. Intelligence artificielle",
+      "paragraphs": [
+        "11.1. Les assistants produisent des propositions (devis dictés, réponses, relances) qui ne partent vers les clients du Client qu'après validation, par le Prestataire pour les envois que le logiciel lui soumet, ou par le Client lui-même. Seuls certains messages fixes (accusé de réception d'un appel manqué, rappel de rendez-vous la veille) peuvent partir sans validation, uniquement si le Client les a expressément activés, et sous sa responsabilité.",
+        "11.2. Les messages et documents envoyés le sont au nom du Client, qui en reste responsable, en particulier de leurs mentions légales et de leurs montants. Le Prestataire répond des erreurs commises lors de sa propre validation, dans les limites de l'article 12.",
+        "11.3. Les résultats d'un assistant peuvent contenir des erreurs. Le Prestataire ne garantit pas leur exactitude."
+      ]
+    },
+    {
+      "title": "12. Responsabilité",
+      "paragraphs": [
+        "12.1. Le Prestataire est tenu d'une obligation de moyens.",
+        "12.2. Sa responsabilité ne peut être engagée que pour un dommage direct et prouvé résultant d'un manquement à ses obligations. Elle est exclue pour les dommages indirects, notamment la perte de chiffre d'affaires ou de clientèle, et la perte de données dont le Client n'a pas conservé de copie.",
+        "12.3. Toutes causes confondues, la responsabilité du Prestataire est limitée au montant HT payé par le Client au titre de la prestation en cause au cours des 12 derniers mois. Cette limite ne s'applique pas en cas de faute lourde ou de faute intentionnelle, ni aux dommages corporels.",
+        "12.4. Le Prestataire n'est pas responsable des interruptions dues aux services de tiers (hébergeur, registre de noms de domaine, Google, fournisseurs d'intelligence artificielle, opérateurs), ni d'un cas de force majeure."
+      ]
+    },
+    {
+      "title": "13. Données personnelles",
+      "paragraphs": [
+        "13.1. Pour la gestion de la relation commerciale, chaque partie traite les données de l'autre en tant que responsable du traitement. Le traitement par le Prestataire est décrit dans sa politique de confidentialité, publiée sur ce site.",
+        "13.2. Lorsque le Prestataire traite pour le Client les données des clients de celui-ci (logiciel, assistants, site), il agit en tant que sous-traitant au sens de l'article 28 du RGPD, dans les conditions de l'accord de traitement des données prévu à l'article 2.3."
+      ]
+    },
+    {
+      "title": "14. Durée et résiliation",
+      "paragraphs": [
+        "14.1. Un contrat à prix unique prend fin à la livraison et au paiement complet. La maintenance qui suit peut être résiliée à tout moment avec un préavis d'un mois.",
+        "14.2. En cas de manquement grave d'une partie non réparé 30 jours après une mise en demeure par lettre recommandée ou par e-mail avec accusé de réception, l'autre partie peut résilier le contrat de plein droit, sans préjudice des sommes dues."
+      ]
+    },
+    {
+      "title": "15. Droit applicable et litiges",
+      "paragraphs": [
+        "15.1. Les présentes CGV et les contrats qu'elles régissent sont soumis au droit luxembourgeois (règlement (CE) n° 593/2008, dit Rome I, article 3).",
+        "15.2. Pour un Client établi en France, les règles impératives du droit français s'appliquent en outre, notamment celles de l'article L441-10 du code de commerce sur les délais de paiement, les pénalités de retard et l'indemnité forfaitaire de 40 € (article D441-5).",
+        "15.3. Les parties cherchent d'abord une solution amiable. À défaut, tout litige relève de la compétence exclusive des tribunaux de Luxembourg-Ville (règlement (UE) n° 1215/2012, dit Bruxelles I bis, article 25)."
+      ]
+    },
+    {
+      "title": "16. Dispositions diverses",
+      "paragraphs": [
+        "16.1. Si une clause est déclarée nulle, les autres restent applicables.",
+        "16.2. Le fait de ne pas se prévaloir d'une clause ne vaut pas renonciation à s'en prévaloir plus tard.",
+        "16.3. Version du 3 novembre 2026, applicable aux devis signés à partir de cette date."
+      ]
+    }
   ]
 }
