@@ -6,7 +6,7 @@ const kpis = [
   { label: "Demandes de devis", value: "38", trend: "▲ ce mois-ci", accent: false },
   {
     label: "Demandes traitées par l'IA",
-    value: "64",
+    value: "35",
     trend: "réponse en quelques minutes",
     accent: false,
   },
@@ -49,7 +49,12 @@ export function ConsoleMockup({ className }: { className?: string }) {
       )}
     >
       <div className="flex items-center justify-between gap-3">
-        <p className="text-sm font-semibold tracking-[-0.02em] sm:text-base">NEOBATYS · Console</p>
+        <div className="flex min-w-0 items-center gap-2">
+          <p className="text-sm font-semibold tracking-[-0.02em] sm:text-base">NEOBATYS · Console</p>
+          <span className="rounded-full bg-sable px-2 py-0.5 text-[10px] font-semibold text-ardoise-dark sm:text-[11px]">
+            Données d&apos;exemple
+          </span>
+        </div>
         <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 text-[11px] font-semibold text-emerald-700 sm:text-xs">
           <span className="size-1.5 rounded-full bg-emerald-500" />4 assistants IA actifs
         </span>

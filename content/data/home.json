@@ -104,7 +104,7 @@
       },
       {
         "title": "Supervisé",
-        "text": "Chaque message relu avant de partir chez vos clients"
+        "text": "Chaque message relu avant l'envoi, sauf deux envois automatiques si vous le demandez"
       }
     ]
   },
@@ -152,7 +152,7 @@
       {
         "id": "ia",
         "title": "L'IA intégrée à votre quotidien",
-        "text": "Des agents qui préparent les réponses aux demandes, les devis et les relances, branchés sur vos outils. Rien ne part chez vos clients sans relecture."
+        "text": "Des agents qui préparent les réponses aux demandes, les devis et les relances, branchés sur vos outils. Chaque message est relu par notre équipe avant l'envoi ; deux envois seulement peuvent partir seuls, et uniquement si vous le demandez."
       },
       {
         "id": "couts",
