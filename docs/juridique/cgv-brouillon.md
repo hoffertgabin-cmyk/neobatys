@@ -80,7 +80,7 @@
 
 ## 9. Intelligence artificielle
 
-9.1. Les assistants IA produisent des propositions (devis dictés, réponses, relances) que le Client relit et valide avant tout envoi à ses propres clients, sauf réglage contraire décidé par lui. Le Client reste responsable des documents qu'il émet, en particulier de leurs mentions légales et de leurs montants.
+9.1. Les assistants IA produisent des propositions (devis dictés, réponses, relances) qui ne partent vers les clients du Client qu'après validation : par un associé du Prestataire pour les envois que le logiciel soumet à validation, ou par le Client lui-même. Seules exceptions réglées dans le logiciel : certains messages fixes (accusé de réception d'un appel manqué, rappel de rendez-vous la veille) peuvent partir sans clic pour le Client qui les a expressément activés. [À TRANCHER avec le juriste : qui valide, qui répond d'un envoi erroné.] Le Client reste responsable des documents qu'il émet, en particulier de leurs mentions légales et de leurs montants.
 
 9.2. Les résultats d'un assistant IA peuvent contenir des erreurs ; le Prestataire ne garantit pas leur exactitude.
 
