@@ -84,9 +84,9 @@ Le lien `/contact?service=site|logiciel|pack` pré-sélectionne le service deman
 
 ## Cookies et RGPD
 
-Le site ne dépose **aucun traceur** : seul le choix de l'utilisateur est mémorisé (stockage local, 6 mois). Le bandeau propose « Tout refuser » et « Tout accepter » au même niveau, et se rouvre via « Gérer les cookies » dans le pied de page.
+Le site ne dépose **aucun cookie ni traceur** : il n'a donc pas de bandeau. Le compteur de pages vues (`components/seo/PageViewPing.tsx`, `app/api/vue`) envoie seulement le chemin de la page à l'admin, qui garde un total par jour et par page, sans cookie, adresse IP ni identifiant.
 
-Pour ajouter un outil de mesure d'audience plus tard, chargez-le uniquement si `readConsent() === "accepted"` (voir `lib/consent.ts`, événement `neobatys:consent`).
+Ajouter un outil de mesure d'audience ou un pixel publicitaire qui dépose un traceur demande de remettre un bandeau de consentement avant de le charger (CNIL, https://www.cnil.fr/fr/cookies-et-autres-traceurs/que-dit-la-loi).
 
 ## SEO
 
@@ -129,12 +129,12 @@ app/            pages (accueil, sites-internet, logiciel et ses guides, contact,
 components/
   ui/           Button, Section, Card, SpotlightCard, Accordion, Marquee, Counter…
   motion/       Reveal/Stagger (CSS + IntersectionObserver), WordCascade, SmoothScroll
-  layout/       Navbar, MobileMenu, Footer, CookieBanner, Logo
+  layout/       Navbar, MobileMenu, Footer, Logo
   mockups/      maquettes de site, tableau de bord et téléphone dessinées en code
   sections/     une section de page par fichier
   forms/        ContactForm
 content/        tous les textes modifiables
-lib/            utilitaires, SEO, schéma du formulaire, consentement
+lib/            utilitaires, SEO, schéma du formulaire
 ```
 
 ## Animations et accessibilité

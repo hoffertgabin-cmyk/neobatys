@@ -12,7 +12,7 @@
       "address": "440 N Barranca Ave #4133, Covina, CA 91723, États-Unis",
       "website": "https://vercel.com"
     },
-    "lastUpdate": "29 octobre 2026"
+    "lastUpdate": "3 novembre 2026"
   },
   "mentionsLegales": [
     {
@@ -74,28 +74,42 @@
       "paragraphs": [
         "Via le formulaire de contact : nom, métier, téléphone, adresse e-mail, service souhaité et contenu de votre message.",
         "Via l'assistant IA de la FAQ : uniquement le texte de la question posée. Elle n'est pas enregistrée par le site ; merci de ne pas y indiquer de données personnelles.",
-        "Aucune donnée n'est collectée à votre insu. Aucun outil de mesure d'audience ni cookie publicitaire n'est déposé sans votre consentement."
+        "Compteur de pages vues : à chaque page affichée, le site transmet seulement l'adresse de la page (par exemple « /contact »). Notre outil interne n'en garde qu'un total par jour et par page, sans cookie, sans adresse IP et sans identifiant de visiteur : ce compteur ne permet pas de vous reconnaître."
       ]
     },
     {
       "title": "Finalités et base légale",
       "paragraphs": [
-        "Répondre à votre demande de contact, de devis ou de démonstration (mesures précontractuelles, art. 6.1.b du RGPD).",
-        "Mesure d'audience éventuelle, uniquement si vous l'acceptez (consentement, art. 6.1.a du RGPD)."
+        "Répondre à votre demande de contact, de devis ou de démonstration et en assurer le suivi : mesures précontractuelles prises à votre demande (art. 6.1.b du RGPD). C'est pourquoi le formulaire ne vous demande pas de cocher une case de consentement : l'envoi de votre demande suffit.",
+        "Le compteur de pages vues sert à savoir quelles pages sont consultées, pour améliorer le site. Il ne traite aucune donnée permettant de vous identifier."
       ]
     },
     {
-      "title": "Destinataires",
+      "title": "Destinataires et sous-traitants",
       "paragraphs": [
         "Vos données sont destinées uniquement à {entreprise}. Elles ne sont jamais vendues.",
-        "Pour fonctionner, le site fait appel à des prestataires qui agissent comme sous-traitants : {hebergeur} (hébergement du site), Resend (envoi par e-mail des messages du formulaire de contact) et OVH (hébergement de notre boîte mail). Les questions posées à l'assistant IA de la FAQ sont transmises à Anthropic (fournisseur du modèle d'IA Claude) pour générer la réponse.",
-        "Vercel, Resend et Anthropic sont des sociétés établies aux États-Unis : les données qui leur sont transmises peuvent donc être traitées hors de l'Union européenne. [À COMPLÉTER : préciser les garanties applicables (clauses contractuelles types ou Data Privacy Framework).]"
+        "Elles passent par des prestataires qui agissent comme sous-traitants, chacun lié par un contrat de traitement des données :",
+        "Vercel Inc. (États-Unis) : hébergement du site et de notre outil interne de gestion des demandes ; les fonctions de cet outil s'exécutent à Paris.",
+        "Neon (groupe Databricks, États-Unis) : base de données de notre outil interne, où votre demande est enregistrée ; elle est hébergée dans l'Union européenne, à Francfort.",
+        "Resend (Plus Five Five, Inc., États-Unis) : envoi par e-mail des messages du formulaire de contact.",
+        "OVH (France) : notre boîte mail, qui reçoit vos messages et les alertes de notre outil interne.",
+        "Anthropic PBC (États-Unis) : génération des réponses de l'assistant IA de la FAQ, à partir de la seule question posée."
+      ]
+    },
+    {
+      "title": "Transferts hors de l'Union européenne",
+      "paragraphs": [
+        "Vercel, Neon, Resend et Anthropic sont des sociétés américaines : une partie des données peut être traitée ou consultée depuis les États-Unis. Ces transferts sont encadrés par les garanties prévues au chapitre V du RGPD :",
+        "Vercel, Neon et Resend adhèrent au cadre de protection des données UE-États-Unis (Data Privacy Framework), reconnu par la décision d'adéquation de la Commission européenne du 10 juillet 2023. Leurs contrats de traitement des données contiennent en plus les clauses contractuelles types de la Commission européenne.",
+        "Anthropic n'adhère pas à ce cadre : les transferts vers Anthropic reposent sur les clauses contractuelles types de la Commission européenne, intégrées à son contrat de traitement des données.",
+        "Vous pouvez obtenir une copie de ces garanties en écrivant à {email}."
       ]
     },
     {
       "title": "Durée de conservation",
       "paragraphs": [
-        "Les demandes de contact sont conservées 3 ans à compter du dernier échange, puis supprimées. [À ADAPTER]"
+        "Les demandes de contact sont conservées 3 ans à compter de notre dernier échange avec vous, puis supprimées, conformément au référentiel de la CNIL sur la gestion des activités commerciales. Si vous devenez client, vos données sont conservées pendant la relation commerciale, puis le temps imposé par nos obligations comptables et fiscales.",
+        "Les questions posées à l'assistant IA ne sont pas conservées par le site. Le compteur de pages vues ne contient aucune donnée personnelle."
       ]
     },
     {
@@ -108,8 +122,8 @@
     {
       "title": "Cookies",
       "paragraphs": [
-        "Le site enregistre uniquement votre choix de consentement dans votre navigateur (stockage local, 6 mois). Il ne dépose aucun cookie de mesure d'audience ou publicitaire sans votre accord.",
-        "Vous pouvez modifier votre choix à tout moment via le lien « Gérer les cookies » en bas de page."
+        "Le site ne dépose aucun cookie et n'utilise aucun traceur : ni mesure d'audience par cookie, ni publicité, ni réseau social intégré. C'est pourquoi aucun bandeau ne vous demande votre accord.",
+        "Si cela change, un bandeau vous demandera votre consentement avant tout dépôt de traceur, avec la possibilité de refuser aussi simplement que d'accepter."
       ]
     }
   ]

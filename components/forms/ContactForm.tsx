@@ -234,35 +234,16 @@ export function ContactForm() {
           <label htmlFor={id("company")}>Ne pas remplir</label>
           <input {...register("company")} id={id("company")} tabIndex={-1} autoComplete="off" />
         </div>
-        <div className="sm:col-span-2">
-          <div className="flex items-start gap-3">
-            <input
-              {...register("consent")}
-              {...a11y("consent")}
-              type="checkbox"
-              className="mt-0.5 size-5 shrink-0 rounded accent-chantier"
-            />
-            <label htmlFor={id("consent")} className="text-sm leading-relaxed text-ardoise-dark">
-              J&apos;accepte que {site.name} utilise ces informations pour me recontacter au sujet
-              de ma demande.{" "}
-              <Link
-                href="/politique-de-confidentialite"
-                className="font-medium text-chantier-dark underline underline-offset-2"
-              >
-                Politique de confidentialité
-              </Link>
-            </label>
-          </div>
-          {errors.consent && (
-            <p
-              id={`${id("consent")}-erreur`}
-              className="mt-1.5 flex items-center gap-1.5 text-sm text-red-700"
-            >
-              <CircleAlert aria-hidden="true" className="size-4 shrink-0" />
-              {errors.consent.message}
-            </p>
-          )}
-        </div>
+        {/* Information RGPD (art. 13), pas de case : la base légale est la demande elle-même (art. 6.1.b) */}
+        <p className="text-sm leading-relaxed text-ardoise-dark sm:col-span-2">
+          {site.name} utilise ces informations uniquement pour répondre à votre demande.{" "}
+          <Link
+            href="/politique-de-confidentialite"
+            className="font-medium text-chantier-dark underline underline-offset-2"
+          >
+            Politique de confidentialité
+          </Link>
+        </p>
       </div>
 
       {status === "error" && (

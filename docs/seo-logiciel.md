@@ -114,7 +114,7 @@ Organismes vérifiés existants le 31/10/2026. Les adresses initiative-metz.fr, 
 
 - **Search Console** : propriété de domaine `neobatys.com` (validation DNS), sitemap `https://www.neobatys.com/sitemap.xml`. À suivre chaque mois : impressions et clics par page, requêtes qui apparaissent (y compris celles qu'on ne vise pas encore), pages exclues de l'index.
 - **Indicateurs** : pages indexées sur 4 (puis sur le total), impressions mensuelles des guides, demandes de démo venant de `/logiciel` et des guides (`/contact?service=logiciel`).
-- **Mesure d'audience** : à brancher uniquement après consentement (voir `lib/consent.ts`).
+- **Mesure d'audience** : le compteur de pages vues de l'admin, sans cookie. Un outil qui dépose un traceur demande de remettre un bandeau de consentement avant de le charger.
 - **Données structurées** : tester `/logiciel` et un guide avec l'outil de test des résultats enrichis de Google. Le `SoftwareApplication` ne déclare ni prix ni note : Google n'affichera pas d'étoiles, c'est voulu tant qu'il n'y a ni prix seul du logiciel ni vrais avis.
 
 ## 9. Actions humaines
