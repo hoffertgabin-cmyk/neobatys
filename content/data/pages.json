@@ -163,7 +163,7 @@
       {
         "title": "Quels agents dans quelle formule",
         "paragraphs": [
-          "Nous ne vendons pas les agents un par un. Chaque formule en comprend certains, mis en place et relus par notre équipe. La consommation d'IA vous est facturée au prix coûtant, sans marge de notre part : quelques euros par mois pour un artisan seul."
+          "Nous ne vendons pas les agents un par un. Chaque formule en comprend certains, mis en place et relus par notre équipe. Les coûts d'IA (les API) sont à votre charge, au prix coûtant et sans marge de notre part : quelques euros par mois pour un artisan seul. Ils ne sont pas compris dans le prix de la formule."
         ],
         "items": [
           "Pack Gestion et abonnement Essentiel : les 4 agents de gestion, Relance de devis, Relances impayés, Rendez-vous et rappels, Documents et échéances.",
@@ -279,7 +279,7 @@
       },
       {
         "question": "Quels agents sont compris dans ma formule ?",
-        "answer": "Le Pack Gestion et l'abonnement Essentiel comprennent les 4 agents de gestion : relance de devis, relances impayés, rendez-vous et documents. Le Pack IA et l'abonnement Pro y ajoutent 3 agents au choix parmi 6. La Transformation complète et l'abonnement Premium comprennent les 12 agents. Un autre agent s'ajoute à la demande, sans prix d'agent. Dans tous les cas, la consommation d'IA vous est facturée au prix coûtant, sans marge de notre part."
+        "answer": "Le Pack Gestion et l'abonnement Essentiel comprennent les 4 agents de gestion : relance de devis, relances impayés, rendez-vous et documents. Le Pack IA et l'abonnement Pro y ajoutent 3 agents au choix parmi 6. La Transformation complète et l'abonnement Premium comprennent les 12 agents. Un autre agent s'ajoute à la demande, sans prix d'agent. Dans tous les cas, les coûts d'IA (les API) sont à votre charge, au prix coûtant et sans marge de notre part ; ils ne sont pas compris dans le prix de la formule."
       },
       {
         "question": "Un agent répond-il au téléphone à ma place ?",

@@ -139,6 +139,6 @@
         }
       ]
     },
-    "note": "Prix hors taxes. Offres en une fois : la maintenance (200 € HT par mois, sans engagement) couvre l'hébergement, le nom de domaine, la licence du logiciel, la relecture des envois des agents, les mises à jour et les modifications sur simple demande. Abonnements : sans frais de départ, maintenance comprise, engagement 12 mois. La consommation d'IA des agents vous est facturée au prix coûtant, sans marge de notre part."
+    "note": "Prix hors taxes. Offres en une fois : la maintenance (200 € HT par mois, sans engagement) couvre l'hébergement, le nom de domaine, la licence du logiciel, la relecture des envois des agents, les mises à jour et les modifications sur simple demande. Abonnements : sans frais de départ, maintenance comprise, engagement 12 mois. Les coûts d'IA des agents (les API) sont à la charge du client, au prix coûtant et sans marge, en plus du prix de la formule."
   }
 }
