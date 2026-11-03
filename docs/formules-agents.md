@@ -1,6 +1,8 @@
 # Formules et agents IA
 
-Proposition du 3 novembre 2026 pour placer les 12 agents de la page `/intelligence-artificielle` dans les formules. Les prix et le contenu des formules sont une décision d'Ilann et de Gabin : rien n'est publié avant leur accord (section 6).
+Proposition du 3 novembre 2026, revue le même jour, pour placer les 12 agents de la page `/intelligence-artificielle` dans les formules. Les prix et le contenu des formules sont une décision d'Ilann et de Gabin : rien n'est publié avant leur accord (section 6).
+
+**Modèle fixé par Ilann le 3 novembre 2026** : NEOBATYS ne facture pas les agents en eux-mêmes. Le client paie sa consommation d'IA sur son propre compte (sa clé API). NEOBATYS fournit la base : logiciel, mise en place, relecture et suivi. Certains agents sont compris dans chaque formule, les autres s'ajoutent à la demande.
 
 ## 1. Le constat
 
@@ -38,9 +40,9 @@ Le modèle et le plafond de sortie (`maxTokens`) de chaque agent sont lus dans s
 
 ### Résultat
 
-Calcul : pour chaque appel, tokens × prix du modèle, multiplié par le volume du mois ; plus les minutes de relecture × 40 €/h.
+Calcul : pour chaque appel, tokens × prix du modèle, multiplié par le volume du mois ; plus les minutes de relecture × 40 €/h. Avec le modèle retenu, la colonne IA et SMS est réglée par le client ; NEOBATYS ne supporte que la relecture.
 
-| Agent | Modèle | IA et SMS ($/mois) | Relecture (min/mois) | Relecture (€) | **Total (€ HT/mois)** |
+| Agent | Modèle | IA et SMS, payés par le client ($/mois) | Relecture (min/mois) | Relecture, coût NEOBATYS (€) | Total (€ HT/mois) |
 |---|---|---|---|---|---|
 | Devis à la voix | Opus + dictée | 4,16 | 45 | 30,00 | **34,16** |
 | Réponse aux demandes | Opus | 2,10 | 30 | 20,00 | **22,10** |
@@ -58,38 +60,38 @@ Calcul : pour chaque appel, tokens × prix du modèle, multiplié par le volume 
 
 Ce qu'il faut en retenir :
 
-- **L'IA coûte peu, la relecture coûte cher.** Les 12 agents consomment environ 11 € d'IA et de SMS par mois ; la relecture, un peu plus de 3 heures, pèse plus de 90 % du coût. Le prix doit suivre le temps de l'équipe, pas les tokens.
-- **Risque SMS** : les SMS des Appels manqués sont plafonnés à 300 par artisan et par mois (`APPELS_SMS_MONTHLY_CAP`), soit environ 24 $ au pire (`docs/APPELS-MANQUES.md`).
-- **Plafond IA de l'admin** : 50 $ par mois par défaut, pour toute l'entreprise et non par artisan (`DEFAULT_MONTHLY_CAP_USD`, `companySettings.aiMonthlyCapUsd`). Au-delà, les agents s'arrêtent jusqu'au mois suivant. Avec 11,49 $ par artisan équipé des 12 agents, il est atteint au 5e client (décision 6).
+- **Ce que paie le client** : environ 11 $ d'IA et de SMS par mois pour les 12 agents, 0,44 $ pour les 4 agents de gestion. C'est un argument : il paie l'IA au prix coûtant, sans marge de notre part.
+- **Ce que paie NEOBATYS** : la relecture, un peu plus de 3 heures par mois pour les 12 agents, soit 124,67 € à 40 € de l'heure. C'est elle que les formules doivent couvrir.
+- **SMS** : les SMS des Appels manqués sont plafonnés à 300 par artisan et par mois (`APPELS_SMS_MONTHLY_CAP`), soit environ 24 $ au pire (`docs/APPELS-MANQUES.md`). Qui paie le numéro et les SMS : décision 3.
 
-## 3. Deux grilles possibles
+### Prérequis dans l'admin
 
-### Grille A : agents inclus par palier, prix inchangés
+Aujourd'hui l'admin lit une seule clé par fournisseur dans ses variables d'environnement (`lib/ai/budget.ts`, `aiKey` : `ANTHROPIC_API_KEY`, `OPENAI_API_KEY`), et un seul plafond de 50 $ par mois (`companySettings.aiMonthlyCapUsd`). Le plan de plateforme prévoit une seule application pour tous les artisans, une organisation par artisan (`docs/plateforme-admin.md`, section 2.1). Pour que chaque client paie sa propre consommation, il faut donc, avec l'étape multi-clients :
 
-| Formule | Prix | Agents inclus | Coût des agents (€ HT/mois, hypothèses ci-dessus) |
-|---|---|---|---|
-| Site Artisan | 990 € | aucun (pas de logiciel) | 0 |
-| Pack Gestion / Essentiel | 2 990 € / 490 €/mois | **4 agents de gestion** : Relance de devis, Relances impayés, Rendez-vous et rappels, Documents et échéances | 27,78 |
-| Pack IA / Pro | 5 990 € / 990 €/mois | les 4, plus **3 agents au choix parmi 6** : Réponse aux demandes, Appels manqués, Devis à la voix, Avis Google, Entretiens annuels, Dossiers d'aides | 101,22 au plus (si Devis à la voix, Réponse et Appels manqués) |
-| Transformation / Premium | 9 900 € / 1 490 €/mois | **les 12**, dont Factures fournisseurs et Suivi de rentabilité | 136,16 |
+- une clé API par organisation, stockée chiffrée, utilisée à la place de la clé commune ;
+- un plafond par organisation, que le client fixe ou accepte ;
+- la même chose pour Twilio si le client paie ses SMS (décision 3).
+
+Tant que ce n'est pas fait, la consommation passe par la clé de NEOBATYS (décision 6).
+
+## 3. La grille
+
+| Formule | Prix | Agents compris | Relecture à notre charge (€ HT/mois) | IA et SMS du client ($/mois) |
+|---|---|---|---|---|
+| Site Artisan | 990 € | aucun (pas de logiciel) | 0 | 0 |
+| Pack Gestion / Essentiel | 2 990 € / 490 €/mois | **4 agents de gestion** : Relance de devis, Relances impayés, Rendez-vous et rappels, Documents et échéances | 27,34 | 0,44 |
+| Pack IA / Pro | 5 990 € / 990 €/mois | les 4, plus **3 agents au choix parmi 6** : Réponse aux demandes, Appels manqués, Devis à la voix, Avis Google, Entretiens annuels, Dossiers d'aides | 90,67 au plus | 10,55 au plus |
+| Transformation / Premium | 9 900 € / 1 490 €/mois | **les 12**, dont Factures fournisseurs et Suivi de rentabilité | 124,67 | 11,49 |
+
+Les « au plus » valent pour le choix le plus lourd : Devis à la voix, Réponse aux demandes et Appels manqués.
+
+**Les autres agents s'ajoutent à la demande**, sans prix d'agent : le client paie leur consommation d'IA sur son compte, NEOBATYS les met en place et relit leurs envois. Le temps de relecture d'un agent ajouté va de 0,67 € (Documents et échéances) à 30 € par mois (Devis à la voix). Au-delà de 2 ou 3 agents ajoutés, la formule au-dessus devient le bon conseil (décision 4).
 
 Pourquoi ce découpage :
 
-- les 4 agents de gestion tiennent la promesse « relances automatiques » déjà faite pour le logiciel, et coûtent surtout de la relecture courte ;
+- les 4 agents de gestion tiennent la promesse « relances automatiques » déjà faite pour le logiciel, et demandent peu de relecture ;
 - le choix passe de 2 parmi 3 à 3 parmi 6 : chaque métier y trouve son agent (Entretiens pour un chauffagiste, Dossiers d'aides pour un artisan RGE) ;
 - Factures fournisseurs et Suivi de rentabilité restent la marque de la formule haute, comme aujourd'hui.
-
-### Grille B : socle et agents à la carte
-
-| Élément | Prix proposé | Coût (€ HT/mois) | Marge par agent |
-|---|---|---|---|
-| Socle : les 4 agents de gestion, dans toute formule avec logiciel | inclus | 27,78 | — |
-| Agent qui écrit à vos clients : Réponse aux demandes, Appels manqués, Devis à la voix, Avis Google, Entretiens annuels | 49 € HT/mois chacun | 10,89 à 34,16 | 14,84 (Devis à la voix) à 38,11 (Avis Google) |
-| Outil interne : Factures fournisseurs, Suivi de rentabilité, Dossiers d'aides | 19 € HT/mois chacun | 1,44 à 5,43 | 13,57 à 17,56 |
-| Pro et Pack IA | inchangés, 3 agents à 49 € inclus | | |
-| Premium et Transformation | inchangés, les 12 inclus | | |
-
-La grille B vend un agent de plus sans changer de formule, et rend la maintenance indépendante des agents, ce qui ouvrirait la voie à une maintenance moins chère (audit client d'octobre, cité par la session pilote ; le document n'est pas dans le dépôt). En revanche elle multiplie les lignes à expliquer et à facturer.
 
 ### Comparaison avec les prix américains
 
@@ -106,52 +108,50 @@ Prix relevés le 1er novembre 2026 sur les pages officielles (`docs/veille/offre
 
 Lecture :
 
-- **Les options IA américaines coûtent 29 à 39 $/mois**, mais l'artisan les règle et les surveille lui-même. Chez NEOBATYS, l'équipe relit chaque envoi : c'est ce qui justifie 49 € par agent en grille B, et c'est aussi ce qui coûte.
+- **Les Américains vendent chaque option IA 29 à 39 $/mois**, consommation comprise. NEOBATYS ne vend pas l'agent : le client paie l'IA au prix coûtant (1 à 11 $ par mois selon nos hypothèses), et l'équipe relit chaque envoi. C'est un message simple : « l'IA vous coûte ce qu'elle coûte, pas plus ».
 - **Un logiciel américain avec ses options IA et marketing** (Jobber Grow + Receptionist + Marketing Suite) revient à 327 $/mois sans engagement. Pro, à 990 €/mois, coûte trois fois plus, mais comprend le site, la mise en place, la relecture et l'accompagnement. Cet écart est à assumer dans le discours, pas à cacher.
-- **Paliers selon le nombre d'automatisations** : c'est le modèle de Workiz (5 puis 10), proche de la grille A (4, 7, puis 12 agents).
+- **Paliers selon le nombre d'automatisations** : c'est le modèle de Workiz (5 puis 10), proche de la grille (4, 7, puis 12 agents).
 
 ## 4. Marge
 
-Marge sur les agents seulement : prix moins coût des agents. Elle ne déduit ni la mise en place, ni l'hébergement, ni les modifications du site.
+Prix moins relecture à notre charge. La consommation d'IA n'y entre plus, puisque le client la paie. Ni la mise en place, ni l'hébergement, ni les modifications du site ne sont déduits.
 
-| Formule | Revenu mensuel | Coût des agents, grille A | Reste |
+| Formule | Revenu mensuel | Relecture | Reste |
 |---|---|---|---|
-| Essentiel | 490 € | 27,78 € | 462,22 € |
-| Pro | 990 € | 101,22 € au plus | 888,78 € |
-| Premium | 1 490 € | 136,16 € | 1 353,84 € |
-| Pack Gestion, maintenance | 200 € | 27,78 € | 172,22 € |
-| Pack IA, maintenance | 200 € | 101,22 € au plus | 98,78 € |
-| Transformation, maintenance après les 6 mois offerts | 200 € | 136,16 € | 63,84 € |
+| Essentiel | 490 € | 27,34 € | 462,66 € |
+| Pro | 990 € | 90,67 € au plus | 899,33 € |
+| Premium | 1 490 € | 124,67 € | 1 365,33 € |
+| Pack Gestion, maintenance | 200 € | 27,34 € | 172,66 € |
+| Pack IA, maintenance | 200 € | 90,67 € au plus | 109,33 € |
+| Transformation, maintenance après les 6 mois offerts | 200 € | 124,67 € | 75,33 € |
 
-Aujourd'hui, le Pack IA à 2 agents parmi 3 coûte au plus 56,26 € par mois (Devis à la voix et Réponse) : la grille A réduit le reste de la maintenance du Pack IA de 144 € à 99 € au pire.
-
-**Sensibilité au temps de relecture** : à 60 € de l'heure au lieu de 40, les 12 agents coûtent 198,49 € par mois. La maintenance de la Transformation (200 €) ne couvrirait plus que les agents. Les 6 mois offerts de la Transformation représentent 817 € de coût d'agents, pris sur les 9 900 €.
+**Sensibilité au temps de relecture** : à 60 € de l'heure au lieu de 40, la relecture des 12 agents coûte 187 € par mois. La maintenance de la Transformation (200 €) ne laisserait que 13 €. Les 6 mois offerts de la Transformation représentent 748 € de relecture, pris sur les 9 900 €.
 
 **Capacité de l'équipe** : un client Premium demande environ 3 heures de relecture par mois ; 20 clients Premium, environ 62 heures.
 
 ## 5. Cohérence avec la maintenance et les abonnements
 
-- **Abonnement ou paiement en une fois sur 12 mois** : Essentiel 5 880 € contre Pack Gestion 5 390 € (2 990 + 12 × 200) ; Pro 11 880 € contre Pack IA 8 390 € ; Premium 17 880 € contre Transformation 11 100 € (9 900 + 6 × 200). L'abonnement coûte plus cher sur un an, en échange de zéro avance : c'est cohérent tant que l'écart reste lisible. La grille A ne change rien à ces écarts.
-- **La maintenance à 200 €** couvre « les coûts de l'IA » (`pricing.json`, `note`). En grille A, elle reste suffisante pour toutes les formules, mais la marge de la Transformation devient mince (63,84 €) et disparaît si le temps de relecture vaut 60 € de l'heure.
-- **Audit d'octobre** (maintenance jugée trop chère) : la grille A ne le règle pas ; la grille B le permettrait en sortant les agents de la maintenance. Le temps passé en modifications du site, qui fixe le vrai coût de la maintenance, n'est pas mesuré : aucun nouveau prix de maintenance n'est proposé ici.
-- **Décision du 1er novembre** (`docs/plateforme-admin.md`, section 8.1, n° 2) : « Assistants IA et WhatsApp chiffrés avec chaque client ». Elle contredit une grille publique qui inclut les agents : à trancher (décision 7).
+- **Abonnement ou paiement en une fois sur 12 mois** : Essentiel 5 880 € contre Pack Gestion 5 390 € (2 990 + 12 × 200) ; Pro 11 880 € contre Pack IA 8 390 € ; Premium 17 880 € contre Transformation 11 100 € (9 900 + 6 × 200). L'abonnement coûte plus cher sur un an, en échange de zéro avance : c'est cohérent tant que l'écart reste lisible. La grille ne change rien à ces écarts.
+- **La maintenance à 200 €** dit couvrir « les coûts de l'IA » (`pricing.json`, `note`). Avec le modèle retenu, le client paie l'IA lui-même : la note est réécrite dans cette PR : « les coûts de l'IA » devient « la relecture des envois des agents », et une phrase dit que la consommation d'IA est réglée sur le compte du client, au prix coûtant. La maintenance reste suffisante pour la relecture de toutes les formules, mais celle de la Transformation devient mince à 60 € de l'heure.
+- **Audit d'octobre** (maintenance jugée trop chère) : sortir l'IA de la maintenance va dans son sens. Le temps passé en modifications du site, qui fixe le vrai coût de la maintenance, n'est pas mesuré : aucun nouveau prix n'est proposé ici.
+- **Décision du 1er novembre** (`docs/plateforme-admin.md`, section 8.1, n° 2) : « Assistants IA et WhatsApp chiffrés avec chaque client ». Le modèle retenu la précise : on ne chiffre pas l'agent, on chiffre la consommation, payée par le client (décision 7).
 
 ## 6. Décisions
 
-1. **Grille A ou grille B.** Recommandation : **A**. Elle garde les prix, ferme le trou des 7 agents sans formule et se lit en une ligne par formule. La grille B reste la suite naturelle si des clients demandent un seul agent de plus, ou si la maintenance doit baisser.
-2. **Les 4 agents de gestion (Relance de devis, Relances impayés, Rendez-vous et rappels, Documents et échéances) inclus dans le Pack Gestion et l'abonnement Essentiel.** Recommandation : oui. Le site promet déjà des relances automatiques, et leur coût (27,78 €/mois) tient dans la maintenance et dans Essentiel.
-3. **Pack IA et Pro : 3 agents au choix parmi 6, au lieu de 2 parmi 3.** Recommandation : oui. Coût au pire 101,22 €/mois, pour 990 € en abonnement ou 200 € de maintenance.
-4. **Transformation et Premium : les 12 agents.** Recommandation : oui, c'est ce que dit déjà « tous les assistants ».
-5. **Maintenance à 200 € HT.** Recommandation : inchangée dans cette PR. Mesurer pendant 3 mois le temps de relecture et de modifications par client, puis trancher l'audit d'octobre avec des chiffres réels.
-6. **Plafond IA de l'admin (50 $/mois pour toute l'entreprise).** Recommandation : le relever avant le 5e client équipé des 12 agents ; 15 $ par artisan équipé laisse une marge sur les 11,49 $ estimés. Réglage de Gabin, dans l'admin.
-7. **Décision du 1er novembre « Assistants IA chiffrés avec chaque client ».** Recommandation : la remplacer par la grille publique ; ne garder le devis que pour un usage hors norme (volume très supérieur aux hypothèses, WhatsApp).
-8. **Valeur de l'heure de relecture (40 € HT ici).** Recommandation : la fixer ensemble ; c'est elle qui fait varier la marge, pas le prix de l'IA.
+1. **Agents compris par formule : 4 en Pack Gestion et Essentiel, 7 en Pack IA et Pro (les 4 plus 3 au choix parmi 6), 12 en Transformation et Premium.** Recommandation : oui. La grille garde les prix, ferme le trou des 7 agents sans formule et se lit en une ligne par formule.
+2. **Consommation d'IA payée par le client sur son propre compte.** Fixé par Ilann. Reste à dire au client, au devis, combien il paiera : recommandation, l'estimation de la section 2 (moins de 1 $ par mois en Essentiel, 10,55 $ au plus en Pro, 11,49 $ en Premium, SMS compris), remplacée par sa consommation réelle après 3 mois.
+3. **Numéro et SMS des Appels manqués (3,85 $/mois, 24 $ au pire).** Recommandation : même règle que l'IA, payés par le client sur son compte Twilio ; c'est aussi de la consommation.
+4. **Agents ajoutés hors formule.** Recommandation : sans prix d'agent, mise en place et relecture comprises ; au-delà de 2 ou 3 ajouts, proposer la formule au-dessus, car la relecture n'est plus couverte.
+5. **Maintenance à 200 € HT.** Recommandation : prix inchangé, note réécrite (l'IA n'y est plus). Mesurer pendant 3 mois le temps de relecture et de modifications par client, puis trancher l'audit d'octobre avec des chiffres réels.
+6. **Clé API et plafond par organisation dans l'admin.** Recommandation : à faire par Gabin avec l'étape multi-clients ; d'ici là, la consommation des premiers clients passe par la clé de NEOBATYS et se refacture au réel, et le plafond commun de 50 $ doit être relevé avant le 5e client équipé des 12 agents.
+7. **Décision du 1er novembre « Assistants IA chiffrés avec chaque client ».** Recommandation : la remplacer par « agents compris selon la formule, consommation d'IA payée par le client ; devis seulement pour WhatsApp ou un usage hors norme ».
+8. **Valeur de l'heure de relecture (40 € HT ici).** Recommandation : la fixer ensemble ; c'est le seul coût des agents qui reste à notre charge.
 9. **Facturation client et Compte rendu et réception**, en service dans l'admin mais absents du site. Recommandation : présenter Facturation client comme une fonction du logiciel (socle), et Compte rendu et réception dans une PR à part après cette décision.
 
 ## 7. Ce que contient la PR
 
-Grille A, sans changer aucun prix :
+Prix inchangés :
 
-- `content/data/pricing.json` : agents de chaque formule, en une fois et en abonnement ;
+- `content/data/pricing.json` : agents de chaque formule, en une fois et en abonnement ; note de la maintenance réécrite ;
 - `content/data/offers.json` : les 4 agents de gestion dans le Pack Gestion ;
-- `content/data/pages.json` (page IA) : section « Quels agents dans quelle formule », sous-titre des agents et une question de FAQ.
+- `content/data/pages.json` (page IA) : section « Quels agents dans quelle formule » (agents compris, ajouts à la demande, consommation payée par le client), sous-titre des agents et une question de FAQ.
