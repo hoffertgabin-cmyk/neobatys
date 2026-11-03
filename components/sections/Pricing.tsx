@@ -39,6 +39,7 @@ function PlanCard({ plan, unit, sub }: { plan: Plan; unit: string; sub: string }
       <p className={cn("mt-2 text-sm", muted)}>{plan.description}</p>
 
       <div className="mt-6">
+        <p className={cn("text-xs font-medium", muted)}>{pricing.pricePrefix}</p>
         <p className="flex items-baseline gap-1.5">
           <span className="font-display text-4xl font-extrabold whitespace-nowrap tabular-nums">
             {plan.price}
