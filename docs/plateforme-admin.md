@@ -229,7 +229,7 @@ Les agents déjà construits continuent d'être livrés en service géré pendan
 | 3 | 1er novembre 2026 | Inscription libre et gratuite pour tout le monde, les inscrits alimentent notre CRM ; prospection par e-mail sur case à cocher ; publicité ciblée et campagnes faites en interne quand c'est possible (Meta d'abord, Google plus tard) | Sections 2.4 et 5.1 |
 | 4 | 1er novembre 2026 | Documents juridiques rédigés avec une IA | [`docs/juridique/plateforme/`](juridique/plateforme/README.md) |
 | 5 | 1er novembre 2026 | Plateforme agréée : Super PDP, Iopole en repli | Section 3.1 |
-| 6 | 1er novembre 2026 | Démarches Meta traitées à part | |
+| 6 | 1er novembre 2026 | Démarches Meta traitées à part | [`meta-whatsapp.md`](meta-whatsapp.md) |
 | 7 | 2 novembre 2026 | Module Achats, stock et outillage : les huit recommandations retenues | [`docs/plateforme/module-achats-stock.md`](plateforme/module-achats-stock.md), section 5 |
 
 ### 8.2 Comptes et services
@@ -242,7 +242,7 @@ Les agents déjà construits continuent d'être livrés en service géré pendan
 | Twilio | Branché dans le code des appels manqués | Compte au nom de l'entreprise, à confirmer avec Gabin |
 | Super PDP | Aucun compte | Compte éditeur, après un rendez-vous, avant l'étape 3 |
 | Stripe | Aucun | Compte au nom de TAG Delme SARL, à l'étape 6 seulement |
-| Meta | Traité à part | |
+| Meta | Portefeuille « TAG Delme SARL », vérification, application Tech Provider : [`meta-whatsapp.md`](meta-whatsapp.md) | Les étapes 1 à 6 de sa section 3, par Ilann |
 
 Règle commune : chaque compte est au nom de l'entreprise, avec les deux associés administrateurs et la double authentification.
 

@@ -322,7 +322,7 @@ Le post 06 filme la maquette électricien, qui montre la photo d'une personne (b
 
 ### Rattachement au portefeuille Meta de TAG Delme SARL
 
-La session « Démarches Meta WhatsApp pour TAG Delme » prépare le portefeuille business Meta de TAG Delme SARL, qui porte aussi WhatsApp. La règle est d'avoir un seul portefeuille, au nom de TAG Delme SARL, et pas de second portefeuille « NEOBATYS ». Il réunit :
+Le portefeuille business Meta de TAG Delme SARL, préparé dans [`meta-whatsapp.md`](meta-whatsapp.md), porte aussi WhatsApp. La règle est d'avoir un seul portefeuille, au nom de TAG Delme SARL, et pas de second portefeuille « NEOBATYS ». Il réunit :
 - la Page Facebook NEOBATYS ;
 - le compte Instagram NEOBATYS ;
 - le numéro WhatsApp.
@@ -345,7 +345,7 @@ Une ligne par action, dans l'ordre. Activer la double authentification sur chaqu
 
 ### Meta
 
-8. Vérifier avec la session Meta que le portefeuille TAG Delme SARL existe et que vous en avez le contrôle total.
+8. Vérifier, selon [`meta-whatsapp.md`](meta-whatsapp.md) section 3, que le portefeuille TAG Delme SARL existe et que vous en avez le contrôle total.
 9. Créer la Page Facebook `NEOBATYS` depuis votre profil personnel, qui reste invisible des visiteurs : [créer une Page](https://www.facebook.com/business/help/473994396650734).
 10. Remplir la page :
     - catégorie, intro, À propos, site, e-mail, zone ;
@@ -387,6 +387,6 @@ Tant qu'un champ est vide, rien ne s'affiche (`isFilled`, `lib/placeholders.ts`)
 5. **Post 06 (électricien).** La maquette filmée montre la photo d'une personne, tirée d'une banque d'images. Recommandation : faire le Reel sans s'arrêter sur la photo, ou changer l'image de la maquette dans le même chantier que la décision 4.
 6. **Mesurer la provenance.** `PageViewPing` n'enregistre que le chemin, donc l'UTM de la fiche n'est pas compté. Recommandation : petit chantier pour enregistrer aussi `utm_source` dans `/api/vue`, sans cookie et sans donnée personnelle. D'ici là, utiliser les statistiques de la fiche.
 7. **Lien de la fiche Google sur le site.** `site.json` n'a pas de champ prévu pour ce lien. Recommandation : ajouter l'URL de la fiche (format court `g.page` ou celui que Google fournit) à `sameAs` une fois la fiche validée. C'est un changement d'une ligne, à faire quand l'URL existe.
-8. **Portefeuille Meta.** Recommandation : un seul portefeuille, celui de TAG Delme SARL, géré avec la session Meta et WhatsApp. Pas de portefeuille « NEOBATYS » séparé.
+8. **Portefeuille Meta.** Recommandation : un seul portefeuille, celui de TAG Delme SARL, décrit dans [`meta-whatsapp.md`](meta-whatsapp.md). Pas de portefeuille « NEOBATYS » séparé.
 
 Pistes d'amélioration (avis automatiques chez Podium, Birdeye et Jobber) : [`veille/avis-et-fiche-google.md`](veille/avis-et-fiche-google.md).
