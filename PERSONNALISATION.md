@@ -25,7 +25,7 @@ Tout se modifie depuis Pages CMS (voir [EDITION.md](EDITION.md)), ou directement
 ## Logiciel
 
 - [ ] Vérifier que les fonctionnalités annoncées correspondent à votre logiciel (signature électronique, import, export comptable…) dans `content/data/offers.json`, `content/data/pages.json`, `content/data/faq.json` et `content/data/software-guides.json`
-- [ ] « Données hébergées en France [À VÉRIFIER] » dans `content/data/pages.json`
+- [x] Hébergement des données du logiciel (`content/data/pages.json`) : base Postgres Neon à Francfort, vérifié le 3 novembre 2026 dans `docs/MISE-EN-LIGNE.md` du dépôt `neobatys-admin`
 
 ## Pages légales (`content/data/legal.json`)
 
@@ -34,7 +34,7 @@ Tout se modifie depuis Pages CMS (voir [EDITION.md](EDITION.md)), ou directement
 - [ ] N° d'autorisation d'établissement (si applicable)
 - [ ] Directeur de la publication
 - [ ] Hébergeur (pré-rempli avec Vercel, à vérifier)
-- [ ] Transferts hors UE (Vercel, Resend, Anthropic) et durée de conservation dans la politique de confidentialité
+- [x] Sous-traitants, transferts hors UE et durée de conservation dans la politique de confidentialité (vérifiés le 3 novembre 2026, sources dans la PR) ; à revoir à chaque nouveau prestataire
 - [ ] Date de mise à jour
 - [ ] Faire relire ces textes (ce sont des modèles, pas un conseil juridique)
 
