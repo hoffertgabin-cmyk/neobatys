@@ -208,12 +208,6 @@
   }
 }
 
-/* Bandeau cookies : masqué sans JavaScript ou si un choix est déjà enregistré */
-html:not(.js) .cookie-banner,
-html.consent-set .cookie-banner {
-  display: none;
-}
-
 /* Lenis */
 html.lenis,
 html.lenis body {

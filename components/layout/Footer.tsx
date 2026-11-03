@@ -6,7 +6,6 @@ import { hasPhone, mailHref, site, telHref } from "@/content/site";
 import { isFilled } from "@/lib/placeholders";
 import { FacebookIcon, InstagramIcon, LinkedinIcon } from "@/components/ui/SocialIcons";
 import { Logo } from "./Logo";
-import { CookieSettingsLink } from "./CookieBanner";
 
 const socials = [
   { key: "facebook", label: "Facebook", Icon: FacebookIcon },
@@ -108,9 +107,6 @@ export function Footer() {
                 </Link>
               </li>
             ))}
-            <li>
-              <CookieSettingsLink />
-            </li>
           </ul>
         </div>
       </div>
