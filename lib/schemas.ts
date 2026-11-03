@@ -26,9 +26,6 @@ export const contactSchema = z.object({
   email: z.email("Adresse e-mail invalide."),
   service: z.string().refine((v) => serviceValues.includes(v), "Choisissez un service."),
   message: z.string().trim().max(2000, "2000 caractères maximum.").optional().or(z.literal("")),
-  consent: z.literal(true, {
-    error: "Votre accord est nécessaire pour vous recontacter.",
-  }),
   // Champ piège anti-spam : accepté ici pour que la route réponde OK au robot sans rien envoyer
   company: z.string().max(200).optional(),
 });

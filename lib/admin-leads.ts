@@ -24,6 +24,7 @@ export async function sendLeadToAdmin(data: ContactData, serviceLabel: string): 
         service: data.service,
         serviceLabel,
         message: data.message ?? "",
+        // Exigé par l'admin (z.literal(true)) ; aucun consentement n'est recueilli, la base est l'art. 6.1.b
         consent: true,
         submittedAt: new Date().toISOString(),
       }),
