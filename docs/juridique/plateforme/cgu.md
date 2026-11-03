@@ -192,6 +192,6 @@ Ouvertes le 1er novembre 2026.
 - RGPD, article 7 (consentement distinct de l'acceptation d'autres conditions) : https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre2
 - CNIL, questions-réponses sur les référentiels de gestion commerciale (suppression des données clients à la fin du contrat, archivage intermédiaire pour obligation comptable ou fiscale, comptes inactifs) : https://www.cnil.fr/fr/questions-reponses-sur-les-referentiels-relatifs-la-gestion-des-activites-commerciales-et-des
 - Identité de l'éditeur : `content/data/legal.json` et `content/data/site.json` du dépôt.
-- Facture électronique (plateforme agréée, calendrier) : section 3.2 de `docs/plateforme-admin.md`, qui cite ses propres sources.
+- Facture électronique (plateforme agréée, calendrier) : section 3.1 de `docs/plateforme-admin.md`, qui cite ses propres sources.
 
 Non vérifié sur un texte officiel : la base légale de la durée de conservation de dix ans des pièces comptables (en France et au Luxembourg), les règles de pénalités de retard, les règlements européens sur la loi applicable et la juridiction (voir README).

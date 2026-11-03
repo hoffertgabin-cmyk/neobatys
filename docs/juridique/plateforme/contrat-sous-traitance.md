@@ -127,11 +127,13 @@ Localisation et garanties à confirmer pour chaque prestataire avant publication
 | Prestataire | Service fourni | Données concernées | Localisation | Garantie en cas de transfert |
 |---|---|---|---|---|
 | Vercel Inc. (États-Unis) | Hébergement et exécution de l'application | Toutes, en transit | [À CONFIRMER : région des fonctions, en Union européenne] | [À CONFIRMER : cadre UE-États-Unis et/ou clauses contractuelles types] |
-| Supabase, Inc. [À CONFIRMER : entité contractante] | Base de données, stockage des fichiers, sauvegardes | Toutes | Union européenne, région Paris (AWS `eu-west-3`) [À CONFIRMER] | [À CONFIRMER : accès éventuels depuis les États-Unis pour le support] |
+| Neon [À CONFIRMER : entité contractante] | Base de données, fichiers, sauvegardes | Toutes | Union européenne, région Francfort [À CONFIRMER] | [À CONFIRMER : accès éventuels depuis les États-Unis pour le support] |
 | Anthropic [À CONFIRMER : entité contractante] | Modèle d'IA des assistants (brouillons, devis à la voix) | Contenus nécessaires à la tâche : texte des demandes, messages, transcription de notes vocales, éléments de devis | [À CONFIRMER] | [À CONFIRMER] |
+| OpenAI [À CONFIRMER : entité contractante ; seulement si ce fournisseur, prévu dans le code, est utilisé] | Modèle d'IA de secours | Contenus nécessaires à la tâche | [À CONFIRMER] | [À CONFIRMER] |
+| Twilio [À CONFIRMER : entité contractante] | Appels manqués et SMS (uniquement si le Responsable active l'agent Appels manqués) | Numéros, horodatages, contenu des SMS | [À CONFIRMER] | [À CONFIRMER] |
 | Meta Platforms Ireland Limited [À CONFIRMER] | API WhatsApp Business (uniquement si le Responsable active WhatsApp) | Numéros, noms et contenus des conversations WhatsApp | [À CONFIRMER] | [À CONFIRMER ; qualification à valider : sous-traitant ultérieur ou prestataire direct du Responsable] |
 | Stripe [À CONFIRMER : entité contractante] | Liens de paiement des factures du Responsable [À CONFIRMER : uniquement si ce service est proposé] | Identité du payeur, montant, référence de facture | [À CONFIRMER] | [À CONFIRMER] |
-| Resend [À CONFIRMER : entité contractante] | Envoi des e-mails (devis, factures, relances, demandes d'avis) | Adresse e-mail, nom, contenu du message | [À CONFIRMER] | [À CONFIRMER] |
+| OVH SAS | Messagerie : envoi et réception des e-mails (devis, factures, relances, demandes d'avis) | Adresse e-mail, nom, contenu du message | France [À CONFIRMER] | Sans objet si les données restent dans l'Union européenne [À CONFIRMER] |
 | Super PDP [À CONFIRMER : dénomination sociale] | Plateforme agréée de facture électronique : transmission et réception | Données des factures (identité et adresse du client, lignes, montants) | France [À CONFIRMER] | Sans objet si les données restent dans l'Union européenne [À CONFIRMER] |
 
 ## Annexe 2. Mesures techniques et organisationnelles de sécurité
