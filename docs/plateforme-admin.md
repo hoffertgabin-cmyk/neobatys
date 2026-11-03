@@ -2,7 +2,7 @@
 
 Un seul logiciel, hébergé chez nous. Chaque artisan crée son compte et trouve tout de suite les modules standards ; on active les autres et on personnalise ensuite. Nous avons notre propre back-office pour suivre tous les clients.
 
-Statut : proposition, rien n'est codé. Les décisions d'Ilann des 1er et 2 novembre 2026 sont intégrées (section 8) ; celles qui restent ouvertes sont listées à la fin. Le contenu de départ du futur dépôt `neobatys-app` est dans [`docs/plateforme/depart/`](plateforme/depart/README.md). La veille sur les concurrents est dans [`docs/veille/plateforme-admin.md`](veille/plateforme-admin.md). La maquette du tableau de bord client est [`docs/maquette-tableau-de-bord.html`](maquette-tableau-de-bord.html) (ouvrir dans un navigateur).
+Statut : proposition, rien n'est codé. Les décisions d'Ilann des 1er et 2 novembre 2026 sont intégrées (section 8) ; celles qui restent ouvertes sont listées à la fin. Le plan de fusion des outils ([`fusion-outils.md`](fusion-outils.md)) propose de revenir sur les décisions 1 et 2. Le contenu de départ du futur dépôt `neobatys-app` est dans [`docs/plateforme/depart/`](plateforme/depart/README.md). La veille sur les concurrents est dans [`docs/veille/plateforme-admin.md`](veille/plateforme-admin.md). La maquette du tableau de bord client est [`docs/maquette-tableau-de-bord.html`](maquette-tableau-de-bord.html) (ouvrir dans un navigateur).
 
 ## 1. Ce qui existe aujourd'hui
 
@@ -15,7 +15,7 @@ Statut : proposition, rien n'est codé. Les décisions d'Ilann des 1er et 2 nove
 | `app/api/contact/route.ts` | Valide (zod), anti-robot, limite 5 envois / 10 min / IP, e-mail Resend, puis `after(() => sendLeadToAdmin(...))`. | Inchangé. |
 | `app/api/vue/route.ts` | Relaie chaque page vue (hors robots) vers `new URL("/api/vues", ADMIN_LEADS_URL)`. L'admin garde un total par jour et par page. | Même contrat à reprendre (`POST /api/vues`, `{ path }`). |
 
-Le site parle donc à l'admin par deux routes, `/api/leads` et `/api/vues`, avec un secret partagé. C'est tout ce qu'on sait de l'admin actuel : le dépôt `neobatys-admin` n'est pas visible depuis ce compte GitHub (`gh repo view hoffertgabin-cmyk/neobatys-admin` : introuvable).
+Le site parle donc à l'admin par deux routes, `/api/leads` et `/api/vues`, avec un secret partagé. Le dépôt `neobatys-admin` est lisible depuis le 3 novembre 2026 : sa lecture, et la comparaison avec l'IA Compta DriftShop et le CRM LeasePro, sont dans [`fusion-outils.md`](fusion-outils.md), qui propose de partir de l'admin de Gabin plutôt que d'un nouveau dépôt.
 
 Le site promet déjà, page Logiciel (`content/data/software.json`) : bibliothèque d'ouvrages, devis signé du doigt sur téléphone, facture d'acompte en un clic, relances automatiques avec lien de paiement, tableau de bord en temps réel, export comptable, factures électroniques par une plateforme agréée. La plateforme doit tenir ces promesses ou le site doit être corrigé.
 
