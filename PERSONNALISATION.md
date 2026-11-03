@@ -16,7 +16,7 @@ Tout se modifie depuis Pages CMS (voir [EDITION.md](EDITION.md)), ou directement
 - [ ] **Réalisations** (`content/data/projects.json`) : 9 projets d'exemple (un par métier, chacun avec sa maquette et ses couleurs dans `theme`), à remplacer par de vrais clients (avec leur accord) et leurs captures d'écran
 - [ ] **Témoignages** (`content/data/testimonials.json`) : 4 avis d'exemple, à remplacer par de vrais avis (avec accord écrit)
 - [ ] Pour chaque vrai contenu, décocher « Exemple » : il s'affiche aussitôt. La case « Afficher les contenus d'exemple » (`showSampleContent`) reste décochée sur le site en ligne
-- [ ] « 2 990 € HT, site et logiciel compris » et « Le plus choisi » (`content/data/offers.json`, `content/data/pricing.json`) : à confirmer
+- [ ] « 2 990 € HT, site et logiciel compris » (`content/data/offers.json`, `content/data/pricing.json`) : à confirmer
 
 ## Tarifs (`content/data/pricing.json`)
 

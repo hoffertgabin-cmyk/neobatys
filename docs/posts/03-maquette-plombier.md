@@ -28,7 +28,7 @@ Ceci est une maquette d'exemple, pas le site d'un vrai client. Elle montre ce qu
 - un formulaire de demande de devis simple sur mobile ;
 - un site pensé pour être trouvé sur Google dans votre secteur.
 
-Votre site, à votre nom et avec vos photos, à partir de 990 € HT, en ligne en 2 à 3 semaines.
+Votre site, à votre nom et avec vos photos, à partir de 990 € HT, en ligne en 3 à 4 semaines.
 Les autres métiers sont sur www.neobatys.com/sites-internet
 Épisode 2 vendredi prochain : l'électricien.
 ```

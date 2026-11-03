@@ -15,7 +15,7 @@
           "Formulaire de demande de devis",
           "Galerie de chantiers avant / après",
           "Fiche Google Business optimisée",
-          "En ligne en 2 à 3 semaines"
+          "En ligne en 3 à 4 semaines"
         ],
         "cta": {
           "label": "Créer mon site",
@@ -41,7 +41,7 @@
           "href": "/contact?service=pack"
         },
         "featured": true,
-        "badge": "Le plus choisi"
+        "badge": "Recommandé"
       },
       {
         "id": "ia",
