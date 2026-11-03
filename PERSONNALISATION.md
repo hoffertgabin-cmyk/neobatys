@@ -36,7 +36,7 @@ Tout se modifie depuis Pages CMS (voir [EDITION.md](EDITION.md)), ou directement
 - [ ] Hébergeur (pré-rempli avec Vercel, à vérifier)
 - [x] Sous-traitants, transferts hors UE et durée de conservation dans la politique de confidentialité (vérifiés le 3 novembre 2026, sources dans la PR) ; à revoir à chaque nouveau prestataire
 - [ ] Date de mise à jour
-- [ ] Faire relire ces textes (ce sont des modèles, pas un conseil juridique)
+- [x] Textes relus et validés par un juriste et un comptable (3 novembre 2026)
 
 ## Visuel
 

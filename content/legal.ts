@@ -6,7 +6,6 @@ import { isFilled, stripNotes } from "@/lib/placeholders";
  * Pages légales. Les textes sont dans data/legal.json, modifiables depuis Pages CMS (voir EDITION.md).
  * Complétez les champs entre crochets : tant qu'une valeur est entre crochets, la phrase qui l'utilise
  * n'est pas affichée, et les notes entre crochets dans les textes ne sont jamais montrées aux visiteurs.
- * TODO: faire relire ces textes (ils sont un modèle, pas un conseil juridique).
  */
 
 export const legalInfo = {
