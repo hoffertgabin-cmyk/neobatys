@@ -20,8 +20,9 @@ export const contactSchema = z.object({
     .string()
     .trim()
     .regex(
-      /^(?:\+33\s?|0)[1-9](?:[\s.-]?\d{2}){4}$/,
-      "Numéro invalide, par exemple 06 12 34 56 78.",
+      // France (06 12 34 56 78, +33 6...) ou Luxembourg (+352 / 00352, 6 à 11 chiffres).
+      /^(?:(?:\+33\s?|0)[1-9](?:[\s.-]?\d{2}){4}|(?:\+|00)352[\s.-]?\d(?:[\s.-]?\d){5,10})$/,
+      "Numéro invalide, par exemple 06 12 34 56 78 ou +352 621 123 456.",
     ),
   email: z.email("Adresse e-mail invalide."),
   service: z.string().refine((v) => serviceValues.includes(v), "Choisissez un service."),
