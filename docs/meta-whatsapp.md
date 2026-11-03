@@ -101,3 +101,11 @@ Les décisions WhatsApp encore ouvertes, reprises en tenant compte du plan de fu
 | 6 | Politique de confidentialité pour l'examen de l'application | **La page du site, complétée** d'un paragraphe sur WhatsApp et Meta, en sous-traitant ultérieur, avant de soumettre l'examen. Petit chantier séparé sur `content/`. |
 | 7 | Numéro WhatsApp propre à NEOBATYS | **Pas tout de suite.** Le numéro de test de Meta suffit pour l'examen. Notre numéro viendra de la ligne mobile dédiée (décision 2 de [`fiche-google-et-reseaux.md`](fiche-google-et-reseaux.md)), connectée comme celle d'un artisan. |
 | 8 | Quand lancer | **Maintenant**, étapes 1 à 6 de la section 3. Le statut Tech Provider n'attend pas le code, et l'étape 6 de la fusion ne doit pas attendre Meta. |
+
+## 7. Paragraphe prêt à coller dans la politique de confidentialité (à publier seulement quand le canal WhatsApp existe)
+
+À ajouter dans `content/data/legal.json` (sections « Destinataires et sous-traitants » et « Transferts ») le jour où la plateforme envoie ou reçoit des messages WhatsApp pour des artisans. Ne pas le publier avant : le site n'utilise pas Meta aujourd'hui, la politique doit rester exacte.
+
+> Meta Platforms Ireland Limited (WhatsApp Business Platform) : transmission des messages WhatsApp échangés entre un artisan client de NEOBATYS et ses propres clients, à la demande de l'artisan. NEOBATYS agit alors comme sous-traitant de l'artisan. Meta Platforms, Inc. (États-Unis) adhère au cadre de protection des données UE-États-Unis ; [à vérifier avant publication : liste du Data Privacy Framework et clauses types du contrat de Meta].
+
+Pour l'examen Meta, indiquer l'adresse de la page `/politique-de-confidentialite` une fois ce paragraphe publié.
