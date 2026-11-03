@@ -1071,6 +1071,51 @@ content:
         label: Liste à puces
         type: string
         list: true
+    - name: agentsIntro
+      label: Titre du bloc des agents
+      type: object
+      fields:
+      - name: eyebrow
+        label: Surtitre
+        type: string
+      - name: title
+        label: Titre
+        type: string
+      - name: subtitle
+        label: Sous-titre
+        type: text
+    - name: agentGroups
+      label: Agents par famille
+      description: Ne présenter que des agents en service dans l'outil, avec ce qu'ils font vraiment.
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{title}'
+      fields:
+      - name: title
+        label: Famille
+        type: string
+      - name: agents
+        label: Agents
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{name}'
+        fields:
+        - name: id
+          label: Ancre (adresse /intelligence-artificielle#ancre)
+          type: string
+        - name: name
+          label: Nom
+          type: string
+        - name: text
+          label: Ce qu'il fait
+          type: text
+        - name: sending
+          label: Envoi au client (qui relit)
+          type: string
     - name: faq
       label: Questions
       type: object

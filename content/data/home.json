@@ -11,8 +11,8 @@
       },
       {
         "icon": "message",
-        "title": "Réponse immédiate aux demandes",
-        "text": "Chaque demande du site, de Google ou des réseaux reçoit une réponse en quelques minutes, même le soir."
+        "title": "Réponse aux demandes",
+        "text": "Chaque demande est classée par urgence et reçoit une réponse préparée sur votre ton et vos tarifs, relue avant l'envoi."
       },
       {
         "icon": "receipt",
@@ -78,7 +78,7 @@
     "items": [
       {
         "problem": "Des demandes de devis qui attendent des jours une réponse, donc des clients perdus",
-        "solution": "Un assistant IA répond en quelques minutes et vous transmet les demandes qualifiées"
+        "solution": "Un agent IA prépare la réponse à chaque demande et vous transmet les demandes qualifiées"
       },
       {
         "problem": "Les devis faits le soir, après 10 heures de chantier",
@@ -104,7 +104,7 @@
       },
       {
         "title": "Supervisé",
-        "text": "Vous validez ce qui part chez vos clients"
+        "text": "Chaque message relu avant de partir chez vos clients"
       }
     ]
   },
@@ -152,7 +152,7 @@
       {
         "id": "ia",
         "title": "L'IA intégrée à votre quotidien",
-        "text": "Des assistants qui répondent aux demandes, préparent les devis et relancent, branchés sur vos outils. Vous gardez la main sur ce qui part."
+        "text": "Des agents qui préparent les réponses aux demandes, les devis et les relances, branchés sur vos outils. Rien ne part chez vos clients sans relecture."
       },
       {
         "id": "couts",
