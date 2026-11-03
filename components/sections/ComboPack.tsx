@@ -1,5 +1,6 @@
 import { Check, Globe, Plus, Calculator } from "lucide-react";
 import { comboPack } from "@/content/offers";
+import { pricing } from "@/content/pricing";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
@@ -37,7 +38,10 @@ export function ComboPack() {
                 <Button href={comboPack.cta.href} size="lg" variant="light" arrow>
                   {comboPack.cta.label}
                 </Button>
-                <span className="text-sm font-semibold text-chantier-light">{comboPack.badge}</span>
+                <span className="text-sm font-semibold text-chantier-light">
+                  <span className="mr-1 text-xs font-medium text-ardoise-light">{pricing.pricePrefix}</span>
+                  {comboPack.badge}
+                </span>
               </div>
             </div>
             {/* Schéma site + logiciel */}

@@ -621,6 +621,9 @@ content:
     - name: oneOffTitle
       label: Titre des offres en une fois
       type: string
+    - name: pricePrefix
+      label: Texte en petit au-dessus de chaque prix
+      type: string
     - name: maintenance
       label: Texte sous le prix (maintenance)
       type: string

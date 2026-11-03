@@ -159,12 +159,24 @@
           "Chaque message qui part chez un client est relu et validé par notre équipe avant l'envoi. Deux envois seulement peuvent partir seuls, et uniquement si vous le demandez : l'accusé de réception par SMS après un appel manqué, à texte fixe, et le rappel de rendez-vous la veille."
         ],
         "items": []
+      },
+      {
+        "title": "Quels agents dans quelle formule",
+        "paragraphs": [
+          "Nous ne vendons pas les agents un par un. Chaque formule en comprend certains, mis en place et relus par notre équipe. La consommation d'IA est réglée sur votre propre compte, au prix coûtant : quelques euros par mois pour un artisan seul."
+        ],
+        "items": [
+          "Pack Gestion et abonnement Essentiel : les 4 agents de gestion, Relance de devis, Relances impayés, Rendez-vous et rappels, Documents et échéances.",
+          "Pack IA et abonnement Pro : ces 4 agents, plus 3 au choix parmi Réponse aux demandes, Appels manqués, Devis à la voix, Avis Google, Entretiens annuels et Dossiers d'aides.",
+          "Transformation complète et abonnement Premium : les 12 agents, dont Factures fournisseurs et Suivi de rentabilité.",
+          "Un agent qui n'est pas dans votre formule s'ajoute à la demande, sans prix d'agent."
+        ]
       }
     ],
     "agentsIntro": {
       "eyebrow": "Nos agents",
       "title": "12 agents, une tâche chacun",
-      "subtitle": "Nous activons ceux dont vous avez besoin, d'abord en test, puis en service."
+      "subtitle": "Selon votre formule, nous activons ceux dont vous avez besoin, d'abord en test, puis en service."
     },
     "agentGroups": [
       {
@@ -264,6 +276,10 @@
       {
         "question": "Les messages partent-ils chez mes clients sans contrôle ?",
         "answer": "Non. Chaque message destiné à un client est relu et validé par notre équipe avant l'envoi. Seuls deux envois peuvent partir seuls, et uniquement si vous le demandez : l'accusé de réception par SMS après un appel manqué, à texte fixe, et le rappel de rendez-vous la veille."
+      },
+      {
+        "question": "Quels agents sont compris dans ma formule ?",
+        "answer": "Le Pack Gestion et l'abonnement Essentiel comprennent les 4 agents de gestion : relance de devis, relances impayés, rendez-vous et documents. Le Pack IA et l'abonnement Pro y ajoutent 3 agents au choix parmi 6. La Transformation complète et l'abonnement Premium comprennent les 12 agents. Un autre agent s'ajoute à la demande, sans prix d'agent. Dans tous les cas, la consommation d'IA est réglée sur votre propre compte, au prix coûtant."
       },
       {
         "question": "Un agent répond-il au téléphone à ma place ?",

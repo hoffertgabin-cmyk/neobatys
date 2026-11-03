@@ -1,6 +1,7 @@
 {
   "pricing": {
     "oneOffTitle": "En une fois",
+    "pricePrefix": "À partir de",
     "maintenance": "puis 200 € HT / mois de maintenance",
     "plans": [
       {
@@ -32,6 +33,7 @@
           "Logiciel de devis et factures paramétré",
           "Import de vos clients et de vos prix",
           "Demandes du site reliées au logiciel",
+          "4 agents de gestion : relance de devis, relances impayés, rendez-vous, documents et échéances",
           "Formation sur place incluse"
         ],
         "cta": {
@@ -44,11 +46,11 @@
       {
         "id": "ia",
         "name": "Pack IA",
-        "description": "Le Pack Gestion, plus deux assistants IA qui travaillent pour vous.",
+        "description": "Le Pack Gestion, plus trois agents IA au choix qui travaillent pour vous.",
         "price": "5 990 €",
         "features": [
           "Tout le contenu du Pack Gestion",
-          "2 assistants IA au choix : devis dictés, réponse aux demandes, avis Google",
+          "3 agents IA au choix parmi 6 : réponse aux demandes, appels manqués, devis à la voix, avis Google, entretiens annuels, dossiers d'aides",
           "Réglés sur votre métier et vos tarifs",
           "Suivi et ajustements pendant 3 mois"
         ],
@@ -61,11 +63,11 @@
       {
         "id": "transformation",
         "name": "Transformation complète",
-        "description": "Toute l'entreprise équipée : site, logiciel et tous les assistants IA.",
+        "description": "Toute l'entreprise équipée : site, logiciel et les 12 agents IA.",
         "price": "9 900 €",
         "features": [
           "Tout le contenu du Pack IA",
-          "Tous les assistants IA, dont la lecture des factures fournisseurs et le suivi de rentabilité",
+          "Les 12 agents IA, dont la lecture des factures fournisseurs et le suivi de rentabilité",
           "Site jusqu'à 10 pages",
           "Accompagnement pendant 6 mois"
         ],
@@ -90,6 +92,7 @@
           "features": [
             "Site Artisan 5 pages",
             "Logiciel de devis et factures paramétré",
+            "4 agents de gestion : relance de devis, relances impayés, rendez-vous, documents et échéances",
             "Formation incluse",
             "Hébergement, maintenance et modifications sur demande"
           ],
@@ -102,11 +105,11 @@
         {
           "id": "abonnement-pro",
           "name": "Pro",
-          "description": "Site, logiciel et deux assistants IA qui travaillent pour vous.",
+          "description": "Site, logiciel et trois agents IA au choix qui travaillent pour vous.",
           "price": "990 €",
           "features": [
             "Tout le contenu d'Essentiel",
-            "2 assistants IA au choix : devis dictés, réponse aux demandes, avis Google",
+            "3 agents IA au choix parmi 6 : réponse aux demandes, appels manqués, devis à la voix, avis Google, entretiens annuels, dossiers d'aides",
             "Réglés sur votre métier et vos tarifs",
             "Suivi et ajustements chaque mois"
           ],
@@ -124,7 +127,7 @@
           "price": "1 490 €",
           "features": [
             "Tout le contenu de Pro",
-            "Tous les assistants IA, dont la lecture des factures fournisseurs et le suivi de rentabilité",
+            "Les 12 agents IA, dont la lecture des factures fournisseurs et le suivi de rentabilité",
             "Site jusqu'à 10 pages",
             "Accompagnement continu et interlocuteur prioritaire"
           ],
@@ -136,6 +139,6 @@
         }
       ]
     },
-    "note": "Prix hors taxes. Offres en une fois : la maintenance (200 € HT par mois, sans engagement) couvre l'hébergement, le nom de domaine, la licence du logiciel, les coûts de l'IA, les mises à jour et les modifications sur simple demande. Abonnements : sans frais de départ, maintenance comprise, engagement 12 mois."
+    "note": "Prix hors taxes. Offres en une fois : la maintenance (200 € HT par mois, sans engagement) couvre l'hébergement, le nom de domaine, la licence du logiciel, la relecture des envois des agents, les mises à jour et les modifications sur simple demande. Abonnements : sans frais de départ, maintenance comprise, engagement 12 mois. La consommation d'IA des agents est réglée sur votre propre compte, au prix coûtant."
   }
 }
