@@ -4,7 +4,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/sections/PageHero";
-import { AiServices } from "@/components/sections/AiServices";
+import { AgentGroups } from "@/components/sections/AgentGroups";
 import { ProseSections } from "@/components/sections/ProseSections";
 import { Pricing } from "@/components/sections/Pricing";
 import { Faq } from "@/components/sections/Faq";
@@ -28,13 +28,13 @@ export default function IntelligenceArtificiellePage() {
           <ProseSections sections={iaPage.sections} />
         </Container>
       </section>
-      <AiServices />
+      <AgentGroups heading={iaPage.agentsIntro} groups={iaPage.agentGroups} />
       <Pricing />
       <Faq items={iaPage.faq} />
       <FinalCta />
       <JsonLd
         data={serviceJsonLd(
-          "Assistants IA pour artisans du bâtiment",
+          "Agents IA pour artisans du bâtiment",
           iaPage.seo.description,
           "/intelligence-artificielle",
         )}

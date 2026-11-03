@@ -142,75 +142,144 @@
   },
   "iaPage": {
     "seo": {
-      "title": "Assistants IA pour artisans du bâtiment",
-      "description": "Assistants IA pour artisans : réponse aux demandes de devis en quelques minutes, devis dictés à la voix, relances, avis Google. Installés, réglés, suivis."
+      "title": "Agents IA pour artisans du bâtiment",
+      "description": "12 agents IA pour artisans : devis dictés, relances de devis et d'impayés, rendez-vous, appels manqués, avis Google, entretiens, aides, documents."
     },
     "hero": {
       "eyebrow": "Intelligence artificielle pour artisans",
-      "title": "Des assistants IA qui répondent, chiffrent et relancent pour vous",
-      "subtitle": "Répondre aux demandes le soir, taper les devis, relancer les factures : ce sont les tâches qui débordent sur vos soirées. Nos assistants IA les préparent, réglés sur votre métier et vos tarifs, et vous gardez la main sur ce qui part."
+      "title": "Des agents IA qui préparent le travail de bureau à votre place",
+      "subtitle": "Devis, relances, rendez-vous, avis Google, entretiens, dossiers d'aides : chaque agent prépare une tâche précise, réglé sur votre métier et vos tarifs. Notre équipe relit avant que quoi que ce soit parte chez vos clients."
     },
     "sections": [
       {
-        "title": "Ce qu'un assistant IA fait pour un artisan",
+        "title": "Comment fonctionnent nos agents",
         "paragraphs": [
-          "Un assistant IA est un programme qui comprend un message écrit ou dicté et prépare une réponse, un devis ou une relance à partir de vos informations : vos prestations, vos tarifs, votre zone, votre façon de parler à vos clients.",
-          "Ce n'est pas un gadget à essayer seul le dimanche. Nous l'installons, nous le réglons sur votre métier, nous vous formons, puis nous l'ajustons avec vous. Par défaut, rien ne part sans votre validation."
-        ],
-        "items": []
-      },
-      {
-        "title": "Répondre aux demandes de devis, même le soir",
-        "paragraphs": [
-          "Une demande qui attend jusqu'au lendemain part souvent chez un concurrent. L'assistant de réponse aux demandes répond en quelques minutes à chaque demande reçue par votre site, Google ou les réseaux, pose les questions utiles pour préparer le chantier et propose une visite.",
-          "Vous recevez la demande déjà qualifiée : type de travaux, adresse, photos, disponibilités. Vous relisez la réponse proposée et vous l'envoyez, ou vous la corrigez."
-        ],
-        "items": []
-      },
-      {
-        "title": "Le devis dicté à la voix sur le chantier",
-        "paragraphs": [
-          "Vous décrivez le chantier à voix haute, comme vous le feriez à un collègue. L'IA prépare le devis à partir de votre bibliothèque d'ouvrages et de vos prix. Vous vérifiez, vous ajustez, vous envoyez. Le devis est toujours relu avant envoi."
-        ],
-        "items": []
-      },
-      {
-        "title": "Relances, avis Google et suivi",
-        "paragraphs": [
-          "Les mêmes assistants s'occupent des tâches répétitives qui suivent le chantier."
-        ],
-        "items": [
-          "Relances des factures en retard, polies et graduées, qui s'arrêtent dès que le client a payé.",
-          "Un message après chaque chantier terminé pour demander un avis Google.",
-          "Vos factures d'achat lues, classées et prêtes pour le comptable.",
-          "Marge par chantier, devis signés, chiffre du mois : les bons chiffres sans tableur."
-        ]
-      },
-      {
-        "title": "Comment on le met en place",
-        "paragraphs": [
-          "Les assistants sont inclus dans le Pack IA, avec le site et le logiciel de devis et factures : vous choisissez deux assistants parmi les devis dictés, la réponse aux demandes et les avis Google. Ils sont réglés sur votre métier et vos tarifs, et nous les suivons et les ajustons pendant trois mois.",
-          "Un interlocuteur humain reste joignable du début à la fin."
+          "Un agent IA est un programme spécialisé dans une tâche : préparer un devis à partir de votre dictée, relancer un devis resté sans réponse, proposer un créneau de rendez-vous. Il travaille avec vos informations : vos prestations, vos prix, vos horaires, votre zone, votre ton.",
+          "Les chiffres ne viennent jamais de l'IA : les prix sont tirés de votre catalogue, les montants et les dates des relances sont posés par le logiciel. L'IA rédige, classe et résume.",
+          "Chaque message qui part chez un client est relu et validé par notre équipe avant l'envoi. Deux envois seulement peuvent partir seuls, et uniquement si vous le demandez : l'accusé de réception par SMS après un appel manqué, à texte fixe, et le rappel de rendez-vous la veille."
         ],
         "items": []
       }
     ],
+    "agentsIntro": {
+      "eyebrow": "Nos agents",
+      "title": "12 agents, une tâche chacun",
+      "subtitle": "Nous activons ceux dont vous avez besoin, d'abord en test, puis en service."
+    },
+    "agentGroups": [
+      {
+        "title": "Trouver et répondre aux clients",
+        "agents": [
+          {
+            "id": "reponse-aux-demandes",
+            "name": "Réponse aux demandes",
+            "text": "Il classe chaque demande de client par urgence et prépare une réponse sur votre ton, avec votre zone et vos tarifs. Il signale ce qui demande votre avis, comme un prix non prévu ou un client déjà connu.",
+            "sending": "Relu par notre équipe avant l'envoi"
+          },
+          {
+            "id": "appels-manques",
+            "name": "Appels manqués",
+            "text": "Quand vous ne pouvez pas décrocher, l'appel renvoyé arrive sur une messagerie qui enregistre la demande. Le message est transcrit et classé par urgence, une réponse par SMS est préparée sans prix ni délai inventés, et vous êtes prévenu d'une urgence par SMS si vous le souhaitez. Ce n'est pas un standard qui parle à votre place : c'est une messagerie qui ne laisse plus filer de demande.",
+            "sending": "Accusé SMS automatique seulement si vous le choisissez ; réponse relue par notre équipe"
+          },
+          {
+            "id": "rendez-vous",
+            "name": "Rendez-vous et rappels",
+            "text": "Votre client reçoit un lien pour choisir un créneau libre, calculé d'après vos horaires, les jours fériés et le temps de trajet. L'agent confirme la visite, prévient la veille et gère les retards, les annulations et la liste d'attente.",
+            "sending": "Par e-mail ; rappel de la veille automatique seulement si vous le choisissez"
+          },
+          {
+            "id": "avis-google",
+            "name": "Avis Google",
+            "text": "Après chaque chantier terminé, il prépare une demande d'avis, avec une seule relance. Il écarte les pratiques interdites (contrepartie, note suggérée, tri des seuls clients contents), prépare une réponse aux avis reçus et vous prévient d'un avis négatif.",
+            "sending": "Relu par notre équipe avant l'envoi ; réponse publiée sur Google par notre équipe"
+          }
+        ]
+      },
+      {
+        "title": "Devis et paiements",
+        "agents": [
+          {
+            "id": "devis-a-la-voix",
+            "name": "Devis à la voix",
+            "text": "Vous dictez le chantier depuis votre téléphone, jusqu'à 3 minutes. L'IA découpe la dictée en lignes, les prix viennent de votre catalogue, et s'il manque une information, l'agent vous pose jusqu'à 5 questions.",
+            "sending": "Devis relu avant l'envoi au client, en PDF par e-mail"
+          },
+          {
+            "id": "relance-de-devis",
+            "name": "Relance de devis",
+            "text": "Chaque matin, il repère les devis envoyés restés sans réponse et prépare des relances progressives, devis joint. Tout s'arrête dès que le client signe, refuse ou répond ; à l'approche de la fin de validité, il propose de prolonger la date, jamais de baisser le prix.",
+            "sending": "Relu par notre équipe avant l'envoi"
+          },
+          {
+            "id": "relances-impayes",
+            "name": "Relances impayés",
+            "text": "Chaque matin, il repère les factures en retard et prépare une relance de plus en plus ferme, avec le bon montant, le bon numéro et la bonne date. Juste avant l'envoi, il vérifie que le client n'a pas payé ; au dernier palier, il passe la main à vous et à votre comptable.",
+            "sending": "Relu par notre équipe avant l'envoi"
+          }
+        ]
+      },
+      {
+        "title": "Parc, chantiers et comptabilité",
+        "agents": [
+          {
+            "id": "entretiens-annuels",
+            "name": "Entretiens annuels",
+            "text": "Il suit votre parc d'équipements et vos contrats, et calcule les échéances d'entretien d'après les textes officiels. Il vérifie que chaque client accepte d'être contacté, regroupe les visites par secteur et par semaine, et prépare les campagnes de rappel.",
+            "sending": "Relu par notre équipe avant l'envoi, par e-mail"
+          },
+          {
+            "id": "rentabilite",
+            "name": "Suivi de rentabilité",
+            "text": "Il calcule la marge de chaque chantier à partir du devis, des dépenses et des heures, et vous alerte quand un chantier passe sous votre objectif ou en perte. Sur demande, l'IA commente les chiffres, sans jamais les calculer elle-même.",
+            "sending": "Outil de suivi : rien ne part chez vos clients"
+          },
+          {
+            "id": "factures-fournisseurs",
+            "name": "Factures fournisseurs",
+            "text": "La photo ou le PDF d'une facture d'achat est lu automatiquement et les doublons probables sont signalés. Chaque mois, le dossier (tableau et originaux) est prêt à transmettre à votre comptable.",
+            "sending": "Outil interne : rien ne part chez vos clients"
+          }
+        ]
+      },
+      {
+        "title": "Dossiers et conformité",
+        "agents": [
+          {
+            "id": "dossiers-aides",
+            "name": "Dossiers d'aides",
+            "text": "Pour MaPrimeRénov' (par geste ou rénovation d'ampleur), les CEE, l'éco-prêt à taux zéro et la TVA à 5,5 %, il liste les pièces et contrôle les dates, les mentions, la qualification RGE et la cohérence entre devis et facture. Il ne promet ni aide ni montant, et ne dépose rien : votre client dépose sa demande, avec un dossier complet.",
+            "sending": "Message au client listant les pièces, relu par notre équipe avant l'envoi"
+          },
+          {
+            "id": "documents-echeances",
+            "name": "Documents et échéances",
+            "text": "Il garde à jour votre décennale, votre RC pro, votre RGE, votre Kbis, votre attestation de vigilance et vos habilitations, et vous prévient 90, 30 et 7 jours avant l'expiration. Il signale un écart entre les travaux de vos devis et les activités assurées, et prépare un dossier à partager avec un maître d'ouvrage.",
+            "sending": "Outil interne : partage du dossier seulement à votre demande"
+          }
+        ]
+      }
+    ],
     "faq": [
       {
-        "question": "L'assistant envoie-t-il des messages sans mon accord ?",
-        "answer": "Non, pas par défaut. L'assistant prépare la réponse, le devis ou la relance, et vous validez avant l'envoi. Vous pouvez assouplir ce réglage pour certains messages si vous le souhaitez."
+        "question": "Les messages partent-ils chez mes clients sans contrôle ?",
+        "answer": "Non. Chaque message destiné à un client est relu et validé par notre équipe avant l'envoi. Seuls deux envois peuvent partir seuls, et uniquement si vous le demandez : l'accusé de réception par SMS après un appel manqué, à texte fixe, et le rappel de rendez-vous la veille."
       },
       {
-        "question": "Faut-il savoir utiliser l'IA pour s'en servir ?",
-        "answer": "Non. Nous installons et réglons les assistants sur votre métier, nous vous formons, puis nous les ajustons avec vous. Au quotidien, vous relisez et vous validez, comme un message préparé par un collègue."
+        "question": "Un agent répond-il au téléphone à ma place ?",
+        "answer": "Non. L'agent Appels manqués est une messagerie : le client laisse sa demande, elle est transcrite et classée, puis une réponse par SMS est préparée et relue avant l'envoi."
       },
       {
-        "question": "Quels assistants sont inclus dans le Pack IA ?",
-        "answer": "Deux assistants au choix parmi les devis dictés à la voix, la réponse aux demandes et les avis Google, avec le site et le logiciel de devis et factures, et trois mois de suivi et d'ajustements."
+        "question": "L'IA peut-elle se tromper dans mes prix ?",
+        "answer": "Les prix ne viennent pas de l'IA. Pour un devis, ils sont tirés de votre catalogue ; pour les relances, le montant, le numéro et la date sont posés par le logiciel. L'IA rédige le texte, et le devis est relu avant l'envoi."
       },
       {
-        "question": "L'IA connaît-elle mes prix ?",
-        "answer": "Oui : elle travaille à partir de votre bibliothèque d'ouvrages et de vos tarifs, importés dans le logiciel. C'est ce qui lui permet de préparer un devis réaliste, que vous relisez toujours avant envoi."
+        "question": "L'agent Dossiers d'aides dépose-t-il les demandes de MaPrimeRénov' ?",
+        "answer": "Non. Il prépare et contrôle le dossier, liste les pièces manquantes et envoie à votre client la liste des pièces. C'est votre client qui dépose sa demande. L'agent ne promet ni aide, ni montant, ni délai."
+      },
+      {
+        "question": "Faut-il savoir utiliser l'IA ?",
+        "answer": "Non. Nous réglons les agents sur votre métier et vos tarifs, nous les mettons en test puis en service, et nous les suivons. Pour les devis, vous dictez depuis un lien sur votre téléphone."
       }
     ]
   },
@@ -236,7 +305,7 @@
           "Répondre vite : toutes les demandes au même endroit, et une réponse rapide, même le soir.",
           "Faire ses devis et factures sans ressaisie : un logiciel avec vos prix, des devis signés en ligne, des relances automatiques.",
           "Préparer la facture électronique : en France, toutes les entreprises assujetties à la TVA doivent pouvoir recevoir des factures électroniques depuis le 1er septembre 2026, et les TPE et PME devront les émettre à partir du 1er septembre 2027.",
-          "Gagner du temps avec l'IA : des assistants qui préparent les réponses, les devis et les relances, que vous validez."
+          "Gagner du temps avec l'IA : des agents qui préparent les réponses, les devis et les relances, relus avant l'envoi."
         ]
       },
       {
@@ -312,8 +381,8 @@
       },
       {
         "href": "/intelligence-artificielle",
-        "label": "Assistants IA",
-        "summary": "Réponse aux demandes, devis dictés à la voix, avis Google : préparés par l'IA, validés par vous."
+        "label": "Agents IA",
+        "summary": "Devis dictés, relances, rendez-vous, avis Google, dossiers d'aides : préparés par l'IA, relus avant l'envoi."
       },
       {
         "href": "/logiciel/facturation-electronique",
