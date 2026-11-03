@@ -54,11 +54,10 @@ Elles sont aussi traitées par nos prestataires, qui agissent sur nos instructio
 | Prestataire | Rôle | Localisation des données |
 |---|---|---|
 | Vercel Inc. | Hébergement de l'application | [À VÉRIFIER : région des fonctions ; société établie aux États-Unis] |
-| Supabase | Base de données, fichiers, sauvegardes | Union européenne, région Paris [À VÉRIFIER : contrat] |
+| Neon | Base de données, fichiers, sauvegardes | Union européenne, région Francfort [À VÉRIFIER : contrat] |
 | Anthropic | Modèle d'intelligence artificielle des assistants | [À VÉRIFIER ; société établie aux États-Unis] |
 | Stripe | Paiement des abonnements | [À VÉRIFIER] |
-| Resend | Envoi des e-mails | [À VÉRIFIER ; société établie aux États-Unis] |
-| [À COMPLÉTER : hébergeur de notre messagerie] | Boîte e-mail de NEOBATYS | [À VÉRIFIER] |
+| OVH SAS | Messagerie : envoi et réception des e-mails | France [À VÉRIFIER] |
 
 Meta Platforms Ireland Limited [À VÉRIFIER : entité contractante] reçoit votre adresse e-mail hachée uniquement si vous avez coché la case relative à la publicité. Meta compare cette empreinte à ses propres utilisateurs pour afficher nos publicités ; les empreintes qui ne correspondent à aucun utilisateur ne sont pas utilisées [À VÉRIFIER : conditions de Meta en vigueur]. Pour cette transmission, NEOBATYS et Meta peuvent être responsables conjoints ; [À COMPLÉTER : renvoi vers l'accord de responsabilité conjointe de Meta et vers sa politique de confidentialité].
 

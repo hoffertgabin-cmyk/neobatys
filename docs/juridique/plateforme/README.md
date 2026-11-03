@@ -28,7 +28,7 @@ Limites à faire examiner par l'avocat :
 
 Identité et contacts :
 - numéro d'autorisation d'établissement (s'il y a lieu) et numéro de téléphone de TAG Delme SARL ;
-- adresse définitive de la plateforme (`app.neobatys.com` proposée) et URL de la grille tarifaire ;
+- adresse définitive de l'espace artisan (`app.neobatys.com` proposée, décision ouverte 2 de `docs/plateforme-admin.md`) et URL de la grille tarifaire ;
 - adresse e-mail dédiée aux données personnelles, et désignation ou non d'un délégué à la protection des données ;
 - numéros de version et dates d'entrée en vigueur des trois textes.
 
@@ -38,7 +38,7 @@ Commercial :
 - formats d'export proposés.
 
 Prestataires (annexe 1 du contrat de sous-traitance, section 4 de la politique) :
-- entité contractante, localisation des données et garantie de transfert (cadre de protection des données UE-États-Unis ou clauses contractuelles types) pour **chaque** prestataire : Vercel, Supabase, Anthropic, Meta, Stripe, Resend, Super PDP ;
+- entité contractante, localisation des données et garantie de transfert (cadre de protection des données UE-États-Unis ou clauses contractuelles types) pour **chaque** prestataire : Vercel, Neon, Anthropic, OpenAI, Twilio, OVH, Meta, Stripe, Super PDP ;
 - hébergeur de la messagerie de NEOBATYS ;
 - fréquence de synchronisation des audiences Meta ;
 - liste, nom et durée des cookies de la plateforme ;

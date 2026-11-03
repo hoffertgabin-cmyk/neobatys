@@ -1,244 +1,169 @@
-# Plateforme NEOBATYS : conception (phase 1)
+# Plateforme NEOBATYS : suite de l'admin de Gabin
 
-Un seul logiciel, hébergé chez nous. Chaque artisan crée son compte et trouve tout de suite les modules standards ; on active les autres et on personnalise ensuite. Nous avons notre propre back-office pour suivre tous les clients.
+La plateforme n'est plus un outil à part. Elle part de l'admin que Gabin a déjà en ligne (`hoffertgabin-cmyk/neobatys-admin`, dépôt privé, `admin.neobatys.com`), en reprend les règles, et y ajoute ce qui lui manque pour servir plusieurs artisans : leurs comptes, l'inscription libre, le module Achats et stock, le cadre juridique.
 
-Statut : proposition, rien n'est codé. Les décisions d'Ilann des 1er et 2 novembre 2026 sont intégrées (section 8) ; celles qui restent ouvertes sont listées à la fin. Le contenu de départ du futur dépôt `neobatys-app` est dans [`docs/plateforme/depart/`](plateforme/depart/README.md). La veille sur les concurrents est dans [`docs/veille/plateforme-admin.md`](veille/plateforme-admin.md). La maquette du tableau de bord client est [`docs/maquette-tableau-de-bord.html`](maquette-tableau-de-bord.html) (ouvrir dans un navigateur).
+Statut : conception, rien n'est codé de notre côté. Recalé le 3 novembre 2026 sur l'admin lu à cette date (110 commits sur `main`, PR #39 et #40 ouvertes). Décisions en section 8. La veille sur les concurrents est dans [`docs/veille/plateforme-admin.md`](veille/plateforme-admin.md), la maquette de l'espace artisan dans [`docs/maquette-tableau-de-bord.html`](maquette-tableau-de-bord.html) (ouvrir dans un navigateur). La comparaison de l'admin avec IA Compta (DriftShop) et le CRM WhatsApp de LeasePro est faite à part, dans `docs/fusion-outils.md` (session « fusion-outils ») : les points qui en dépendent portent la mention « à aligner avec fusion-outils ».
 
-## 1. Ce qui existe aujourd'hui
+## 1. Ce qui existe : l'admin de Gabin
 
-### 1.1 Le site (ce dépôt)
+### 1.1 Pile et services
 
-| Élément | Ce qu'il fait | Ce qu'on en garde |
+| Brique | Dans l'admin | Source |
 |---|---|---|
-| `components/mockups/ConsoleMockup.tsx` | Console vitrine : 4 KPI, histogramme dégradé rose-lavande, assistants IA « actifs », fil d'événements. Couleurs dans `app/globals.css` (`nuit`, `sable`, `chantier`, `lavande`, `peche`, `rose`, `menthe`). | Le style cible du vrai tableau de bord. La maquette le reprend tel quel. |
-| `lib/admin-leads.ts` | Après chaque formulaire de contact, envoie `POST ADMIN_LEADS_URL` (Bearer `ADMIN_LEADS_SECRET`) : `name, trade, phone, email, service, serviceLabel, message, consent, submittedAt`. Timeout 3 s, jamais d'erreur visible. Contrat cité : `docs/CONTRAT-SITE-CRM.md` du dépôt `neobatys-admin`. | Le contrat. La nouvelle plateforme doit accepter exactement ce JSON, pour que le site ne change pas le jour de la bascule. |
-| `app/api/contact/route.ts` | Valide (zod), anti-robot, limite 5 envois / 10 min / IP, e-mail Resend, puis `after(() => sendLeadToAdmin(...))`. | Inchangé. |
-| `app/api/vue/route.ts` | Relaie chaque page vue (hors robots) vers `new URL("/api/vues", ADMIN_LEADS_URL)`. L'admin garde un total par jour et par page. | Même contrat à reprendre (`POST /api/vues`, `{ path }`). |
+| Application | Next.js 16.4.2, React 19.3.0, TypeScript, Tailwind 4, Zod 4 | `package.json` |
+| Base | Postgres Neon, région Francfort, offre gratuite ; PGlite en local ; Drizzle ORM 0.45, migrations numérotées (0000 à 0018 sur `main`) | `docs/MISE-EN-LIGNE.md`, `db/` |
+| Hébergement | Vercel, projet séparé du site, fonctions à Paris (`cdg1`), tâches planifiées : relève des mails, rappels du matin, relance de devis, appels, rendez-vous, avis, conservation RGPD | `docs/PLAN-V1.md`, `app/api/cron/` |
+| Connexion | Auth.js 5 (bêta), lien de connexion par e-mail, réservé aux adresses de `ALLOWED_EMAILS` : les deux associés seulement | `auth.ts`, `AGENTS.md` |
+| Mail | Boîte Zimbra `contact@neobatys.com` (OVH), IMAP et SMTP, copie dans « Envoyés » | `docs/CADRAGE.md` |
+| IA | SDK Anthropic et OpenAI derrière un seul module (`lib/ai/`), journal d'usage et de coût sans le contenu des échanges (`ai_calls`) | `lib/ai/`, `db/schema.ts` |
+| Téléphonie | Twilio derrière une interface, avec un faux fournisseur pour les tests | `lib/telephony/` |
+| PDF | `@react-pdf/renderer` | `lib/quote-pdf.tsx` |
 
-Le site parle donc à l'admin par deux routes, `/api/leads` et `/api/vues`, avec un secret partagé. C'est tout ce qu'on sait de l'admin actuel : le dépôt `neobatys-admin` n'est pas visible depuis ce compte GitHub (`gh repo view hoffertgabin-cmyk/neobatys-admin` : introuvable).
+Le site parle déjà à l'admin : `lib/admin-leads.ts` envoie chaque demande à `POST /api/leads` et `app/api/vue/route.ts` chaque page vue à `POST /api/vues`, selon `docs/CONTRAT-SITE-CRM.md` du dépôt de l'admin. Rien à changer côté site.
 
-Le site promet déjà, page Logiciel (`content/data/software.json`) : bibliothèque d'ouvrages, devis signé du doigt sur téléphone, facture d'acompte en un clic, relances automatiques avec lien de paiement, tableau de bord en temps réel, export comptable, factures électroniques par une plateforme agréée. La plateforme doit tenir ces promesses ou le site doit être corrigé.
+### 1.2 Pour les associés
 
-### 1.2 Questions à poser à Gabin sur l'admin actuel
+CRM (fiches, statuts, historique, attribution), demandes du site et saisies à la main, boîte mail partagée avec modèles, devis et factures de NEOBATYS (numérotation sans trou, TVA en autoliquidation, PDF), compta (relevés bancaires importés, compte courant d'associé, export), calendrier, projets clients, réseaux sociaux, pilotage, conservation RGPD (`/conservation`, effacement des prospects à 3 ans), journal d'audit. Compta : à aligner avec fusion-outils (IA Compta de DriftShop).
 
-1. Quelle pile (framework, base, hébergeur, région) et où tourne `admin.neobatys.com` ? Qui a les accès (Vercel, base, DNS) ?
-2. Quelles données y sont déjà : leads, vues, clients, devis, factures ? Combien de lignes, depuis quand ? Une facture a-t-elle déjà été émise depuis cet outil (numérotation légale à reprendre) ?
-3. Le module devis / factures montré sur le site existe-t-il, et à quel point ? Des artisans l'utilisent-ils ?
-4. Y a-t-il des comptes clients (artisans) ou seulement nous deux ?
-5. Le contrat `docs/CONTRAT-SITE-CRM.md` : version à jour, et autres appelants que le site ?
-6. Qu'est-ce qui lui semble solide et à garder, qu'est-ce qu'il referait ?
-7. Accepte-t-il qu'on parte d'un nouveau dépôt commun, ou préfère-t-il faire évoluer le sien ?
+### 1.3 Les agents IA pour les artisans
 
-### 1.3 Le CRM WhatsApp de LeasePro (`/Users/ilann_abd/Claude Code Leasepro`, lu sans modification)
+Douze agents dans `lib/agents.ts`, chacun avec ses capacités :
 
-**Pile.** Serveur Node (Express 4, CommonJS), SQLite (`better-sqlite3`), sessions `express-session` stockées en SQLite, interface React 18 + Vite 5 + React Router 6. Tourne sur le Mac d'Ilann (agent `launchd`), Dockerfile et Caddy prêts pour un serveur (`docs/deploiement.md`). Tunnel Cloudflare temporaire pour les webhooks Meta.
-
-**WhatsApp.** Deux moteurs derrière un réglage `wa_provider` (`server/canaux/whatsapp-provider.js`) :
-- `baileys` (actif) : `@whiskeysockets/baileys` 7.0.0-rc, protocole non officiel, avec garde-fous anti-suspension (délais aléatoires, 30 messages/h, 150/jour). Impossible à proposer à des clients : non conforme aux conditions de WhatsApp, risque de suspension du numéro de l'artisan, un processus par numéro qui doit rester connecté.
-- `cloud` (prêt, non activé) : API officielle Meta, `server/canaux/whatsapp-cloud.js`, Graph `v21.0`, webhook signé, contrôle de la fenêtre de 24 h, modèles. Les identifiants sont des réglages uniques (`whatsapp_access_token`, `whatsapp_phone_number_id`, `whatsapp_waba_id`...) : un seul numéro par installation.
-- Messenger et Instagram : `server/canaux/meta-messagerie.js`, même logique.
-- `docs/passage-coexistence.md` décrit Coexistence (même numéro dans l'appli WhatsApp Business et dans l'API). C'est exactement ce qu'il faut à un artisan qui ne veut pas changer de numéro.
-
-**Données.** `server/infra/schema.sql` : `users` (rôles `admin | user`), `clients` (fiche vivante `profil_json`, étape, niveau d'intérêt, mode IA, reprise en main), `messages`, `settings` (clé-valeur, y compris les clés d'API), `corrections`, `questions`, `offers`, `journal_ia`, `api_usage`. Migrations numérotées dans `server/infra/db.js`. **Aucune notion de compte ou d'entreprise** : tout est mono-entreprise.
-
-**IA.** Un seul point d'entrée, `server/ia/providers.js` (SDK OpenAI et Anthropic, sorties structurées, compteur de coût réel). Usages : brouillon de réponse, relecture par un « manager » sur un modèle plus fort (`server/ia/manager.js`), fiche client qui se complète seule (`server/clients/fiche.js`), note d'intérêt, apprentissage des corrections du gérant (`server/savoir/`), bilan de la semaine, transcription des vocaux (`server/ia/voix.js`). Suite d'évaluation (`scripts/eval.js`) : c'est la méthode à garder.
-
-**Spécifique à LeasePro.** Le prompt de l'agent (`server/ia/agent-prompt.js`, 339 lignes) parle de LeasePro, de véhicules, du gérant ; les étapes de qualification (pays, particulier ou société, budget) et les offres sont celles du leasing ; plusieurs modules IA citent le vocabulaire du métier (`interest.js`, `bilan.js`, `relance-prompt.js`, `fiche.js`).
-
-**Ce qui se réutilise.**
-
-| Se reprend presque tel quel (à porter en TypeScript) | Se réécrit |
+| Famille | Agents |
 |---|---|
-| Logique du canal Cloud : webhook signé, fenêtre de 24 h, envoi de modèles | Stockage : une ligne d'identifiants par artisan, chiffrée, au lieu de `settings` |
-| Boucle brouillon, relecture, validation humaine, mode autonome éteint par défaut | Prompts : un gabarit « artisan du bâtiment » avec des variables (métier, zone, tarifs, ton) |
-| Apprentissage par corrections, questions de l'IA au gérant | Toutes les tables : colonne `organization_id` partout, Postgres au lieu de SQLite |
-| Fiche vivante, résumé en trois lignes, reprise en main quand le gérant écrit lui-même | Connexion du numéro : Embedded Signup de Meta au lieu de cinq identifiants collés à la main |
-| Méthode : mesure avant changement, suite d'évaluation, journal de coût IA | Baileys : n'est pas repris |
+| Trouver des clients | Réponse aux demandes, Appels manqués, Devis à la voix, Avis Google, Relance de devis, Entretiens annuels, Rendez-vous et rappels |
+| Être payé et gérer | Relances impayés, Factures fournisseurs, Suivi de rentabilité, Dossiers d'aides, Documents et échéances |
 
-Conclusion : on reprend le **savoir-faire et les algorithmes**, pas le code tel quel. Le CRM LeasePro reste l'outil de LeasePro ; le module WhatsApp de NEOBATYS est écrit pour plusieurs entreprises dès le départ, en s'appuyant dessus fichier par fichier.
+En PR : Facturation client (#39 : acomptes, situations, avoirs, Factur-X, plateforme agréée derrière une interface) et Compte rendu et réception de chantier (#40).
 
-## 2. Ce que fait la plateforme
+Comment ils fonctionnent aujourd'hui : un agent est **installé pour un artisan** (`agent_deployments`, un artisan étant une fiche `contacts`), avec ce que l'agent sait de lui (`profile`). Ce sont les associés qui le pilotent depuis l'admin ; l'artisan ne se connecte pas. Il intervient seulement par des liens sans compte (dictée, signature, choix de rendez-vous, dépôt de pièces). C'est un service géré.
 
-### 2.1 Trois espaces, une seule application
+### 1.4 Ce qu'on garde comme règles de toute la plateforme
 
-| Espace | Pour qui | Adresse proposée |
+Ce que l'admin fait mieux que notre première conception, et qui s'applique à tout ce qu'on ajoute :
+
+1. **Niveaux d'autonomie par capacité** : Observer, Recommander, Brouillon, Validation, Autonome. Une capacité « sensible » (tout ce qui part chez un client ou engage l'artisan) ne dépasse jamais Validation, sauf exception écrite dans le code (accusé de réception d'un appel manqué, rappel de la veille d'un rendez-vous). Pause générale de tous les agents (`agent_control`).
+2. **Validation avant envoi** : aucun message ne part chez un client sans le clic d'une personne. Chaque action est journalisée avec sa raison et sa décision (`agent_actions`), avec une empreinte pour ne jamais traiter deux fois la même demande.
+3. **Règles datées et sourcées** : ce qui vient de la loi ou d'un barème est dans le code, pas dans le texte envoyé à l'IA, avec l'URL de la source, l'édition lue et la date du relevé. Au-delà de 60 jours sans relecture, une mise en garde s'affiche ; au-delà de 120 jours, l'outil ne calcule plus de montant (`lib/aides-rules.ts`). Chaque agent concerné a sa page `/regles`.
+4. **Banc d'essai rejouable** : `/agents/controle` rejoue une centaine de scénarios difficiles (`lib/agent-eval.ts` et les suites par agent), dont des consignes cachées dans une demande. La PR #39 ajoute 310 contrôles lancés en CI.
+5. **Les montants viennent du code** : l'IA rédige, le code calcule. Prix tirés du catalogue de l'artisan, numéros sans trou, document émis figé en base, correction par avoir ou nouvelle version.
+6. **Données sobres** : fichiers stockés à part des listes, journal d'IA sans contenu, empreinte seule pour les oppositions (arrêt des relances), secrets saisis par les associés dans Vercel, jamais par un agent.
+
+### 1.5 Ce que l'admin ne fait pas encore
+
+| Manque | Pourquoi ça compte |
+|---|---|
+| L'artisan n'a pas de compte | Il ne voit ni ses demandes, ni ses devis, ni ce que font ses agents ; tout passe par nous |
+| Un client qui veut son espace a une **installation séparée** (PR #11, BEST TP : `INSTANCE_NAME`, `MODULE_DEVIS=off`, base à part) | Une installation par client ne tient pas au-delà de quelques clients : mises à jour, migrations et coûts multipliés |
+| Les niveaux d'autonomie sont réglés **par agent, pour tous les artisans** (`agent_policies` n'a pas de colonne artisan) | Un artisan prudent et un artisan pressé ne peuvent pas avoir des réglages différents |
+| Pas d'inscription libre, pas de consentements de prospection | Décision 5 d'Ilann (section 8) |
+| Pas d'achats ni de stock | Décision 9, [`docs/plateforme/module-achats-stock.md`](plateforme/module-achats-stock.md) |
+| Pas de WhatsApp | À aligner avec fusion-outils (CRM WhatsApp de LeasePro) |
+| Pas d'abonnement payé en ligne | Stripe, en dernier |
+| Plateforme agréée non branchée (interface prête dans la PR #39) | Émission obligatoire pour les TPE et PME au 1er septembre 2027 |
+
+## 2. La suite : ce qu'on ajoute à l'admin
+
+### 2.1 Un seul outil, deux sortes de comptes
+
+| Qui | Où | Ce qu'il voit |
 |---|---|---|
-| Espace artisan | Chaque client et ses salariés | `app.neobatys.com` |
-| Back-office | Ilann et Gabin | `app.neobatys.com/interne`, réservé au rôle `staff` |
-| API publique | Le site NEOBATYS et les sites que nous livrons aux artisans | `app.neobatys.com/api/...` |
+| Ilann et Gabin | `admin.neobatys.com`, comme aujourd'hui | Tout : CRM, compta, tous les artisans et leurs agents |
+| Un artisan et ses salariés | Même application, espace artisan (adresse : décision ouverte, section 8.3) | Ses données seulement : demandes, devis, factures, agents et ce qu'ils ont préparé, réglages permis |
 
-Une seule base de code et une seule base de données : un artisan n'est qu'une **organisation** ; nous sommes une organisation de plus, avec le rôle `staff` qui voit toutes les autres. C'est le modèle de HighLevel (compte agence, sous-comptes clients), sans la complexité de la marque blanche dont nous n'avons pas besoin.
+Pas de nouveau dépôt ni de nouvelle base : la clé qui sépare les artisans existe déjà, c'est la fiche de l'artisan (`contact_id`, directement ou par `agent_deployments`). La PR #40 sépare déjà les données par clés composées artisan + objet.
 
-### 2.2 Les modules
+À ajouter :
+- une table des membres d'un artisan (compte, fiche artisan, rôle : gérant ou salarié) ;
+- la connexion par lien e-mail ouverte aux membres invités, en plus de `ALLOWED_EMAILS` pour les associés ;
+- une seule fonction qui donne l'artisan de la session, utilisée par chaque page et chaque action de l'espace artisan ;
+- un test automatique qui crée deux artisans et vérifie qu'aucune page ne montre les données de l'autre ;
+- « voir comme l'artisan » pour les associés, inscrit dans le journal d'audit.
 
-Un module = un écran dans le menu, ses tables, ses tâches de fond, ses réglages, et un tableau de bord qui alimente l'accueil. Le catalogue est **dans le code** (une liste typée) ; ce qui est en base, c'est l'activation et les réglages de chaque artisan.
+L'installation séparée (BEST TP) reste possible pour un client qui exige sa propre base ; ce n'est plus le cas général.
 
-| Module | Ce qu'il fait | Compte gratuit / formules | Vient de |
-|---|---|---|---|
-| **Accueil** | KPI du mois, graphique sur l'année, demandes à traiter, assistants IA, « à faire aujourd'hui » (maquette) | Gratuit | `ConsoleMockup` |
-| **Demandes** | Toutes les demandes entrantes au même endroit : formulaire du site de l'artisan, appel manqué, WhatsApp, Google. Statut, origine, relance. | Gratuit | Contrat `/api/leads` du site |
-| **Devis et factures** | Bibliothèque d'ouvrages, devis, signature en ligne, acompte, facture, relance, export comptable. Facture électronique par une plateforme agréée partenaire. | Gratuit : quelques devis par mois ; complet dans les formules | Promesses de `content/data/software.json` |
-| **Assistant réponse aux demandes** | Répond en quelques minutes à chaque demande (e-mail, WhatsApp), qualifie, propose une visite. Validation humaine par défaut. | Formules | LeasePro : brouillon, manager, corrections |
-| **Devis à la voix** | L'artisan dicte sur le chantier, l'IA prépare le devis à partir de sa bibliothèque d'ouvrages. Toujours relu avant envoi. | Formules | LeasePro : `voix.js` |
-| **Relances impayés** | Rappels polis et gradués (J+3, J+7, J+14 après l'échéance, comme Podium) avec lien de paiement, arrêt automatique au paiement. | Formules | Promesse du site |
-| **Avis Google** | Demande d'avis après chaque chantier terminé, brouillon de réponse aux avis reçus. | Formules | Offre du site |
-| **Conversations WhatsApp** | Boîte de réception WhatsApp (et Messenger, Instagram) de l'artisan, fiche client, brouillons IA. | Formules | LeasePro (canal Cloud) |
-| **Statistiques** | Visites du site de l'artisan, demandes par source, taux de signature, délai de réponse. | Gratuit | Contrat `/api/vues` |
-| **Achats, stock et outillage** | Catalogue d'articles relié aux devis (fichiers tarif de l'artisan, puis ses factures fournisseurs, puis API Rexel et Sonepar), besoins par chantier et bons de commande, outillage par QR, consommables au seuil mini, tendances de prix INSEE. Détail : [`docs/plateforme/module-achats-stock.md`](plateforme/module-achats-stock.md) | Formules, selon le métier | Demande d'Ilann du 1er novembre 2026 |
-| **Site internet** | État du site livré, modifications demandées, nom de domaine. | Clients site | Offres sites |
-| Standard téléphonique IA | Pas un module standard : sur devis uniquement. | Non | |
+### 2.2 Les modules sont les agents
 
-Règle reprise de LeasePro : un module n'est livré qu'avec la mesure qui dira dans un mois s'il sert (connexions, actions faites dedans).
+Le catalogue de modules est celui de l'admin (`lib/agents.ts`) : activer un module pour un artisan, c'est installer l'agent pour lui (`agent_deployments`, statut À créer, En test, Actif, En pause). Ce que l'artisan peut faire dans son espace :
 
-### 2.3 Personnalisation sans fork
+- voir ce que chaque agent a préparé et **valider lui-même** ce qui attend une validation, si on le lui permet ; sinon, un associé valide comme aujourd'hui ;
+- régler les niveaux d'autonomie de ses agents dans les limites du code (une capacité sensible reste plafonnée à Validation) : il faut pour cela passer `agent_policies` d'un réglage par agent à un réglage par installation ;
+- tenir son catalogue de prix, son profil (horaires, zone, ton, mentions) et ses documents.
 
-Trois niveaux, du plus courant au plus rare, sans jamais copier le code pour un client :
+Ce qui n'est pas un agent :
 
-1. **Réglages du module** (l'artisan ou nous) : logo, couleurs des documents, mentions, conditions de paiement, ton de l'IA, horaires, zone d'intervention, tarifs annonçables. Stockés en JSON validé par un schéma zod par module.
-2. **Contenus par artisan** (nous) : prompt complémentaire, questions de qualification propres au métier, modèles de messages WhatsApp, bibliothèque d'ouvrages importée.
-3. **Gabarits de départ par métier** (nous) : plombier, électricien, couvreur... Un gabarit = une liste de modules activés + leurs réglages + une bibliothèque d'ouvrages type. Appliqué à la création du compte. C'est l'équivalent des « snapshots » de HighLevel, et c'est ce qui rend « le client a déjà accès à la plupart des services » réaliste.
-
-Une demande vraiment spécifique devient soit un réglage de plus pour tous, soit un développement sur devis hors plateforme.
-
-### 2.4 Le parcours d'un nouvel inscrit
-
-L'inscription est libre et gratuite pour tout le monde dès le MVP (décision 5) : chaque compte gratuit est aussi un prospect de NEOBATYS.
-
-1. Inscription sur `app.neobatys.com` : e-mail et mot de passe (ou lien magique), nom de l'entreprise, métier, SIRET facultatif. Deux cases distinctes et non cochées, séparées de l'acceptation des CGU : recevoir nos offres par e-mail, et publicité personnalisée à partir de l'e-mail (voir section 5.1). Confirmation de l'adresse par e-mail avant toute prospection.
-2. Le gabarit du métier s'applique et le compte gratuit ouvre les modules de la formule gratuite (décision ouverte n° 1 en fin de document).
-3. Assistant de démarrage en quatre étapes (le site promet un accompagnement humain, on garde les deux) : logo et mentions, import clients et prix (Excel), premier devis, connexion WhatsApp (facultative, Embedded Signup de Meta).
-4. L'inscrit apparaît dans notre CRM interne (back-office, « Nos prospects ») avec son métier, son origine et l'état de ses consentements ; une alerte « à appeler sous 24 h » est créée.
-5. Passage à une formule (Essentiel, Pro, Premium ou pack) : signée avec nous, puis activée depuis le back-office. Le paiement en ligne par Stripe vient à l'étape 5.
-
-### 2.5 Notre back-office
-
-| Écran | Contenu |
+| Module | État |
 |---|---|
-| Clients | Tous les artisans : offre, modules actifs, MRR, dernière connexion, demandes sur 30 jours, état WhatsApp, consommation IA. Tri et filtres. |
-| Fiche client | Tout ce qui précède, plus l'historique, les notes internes, les modules à activer d'un clic, les réglages. Bouton « voir comme le client » (accès tracé dans le journal d'audit, visible du client). |
-| Chiffres | MRR, nouveaux clients, résiliations, revenu par module, coût IA et WhatsApp par client comparé à son abonnement. |
-| Alertes | Numéro WhatsApp déconnecté, paiement Stripe échoué, demande non traitée depuis 48 h, client inactif depuis 14 jours, coût IA au-dessus du seuil, erreur d'envoi de facture électronique. Chaque alerte part aussi par e-mail. |
-| Nos prospects | Les leads du site NEOBATYS (ce que reçoit l'admin actuel, données reprises) et tous les inscrits gratuits, avec l'état de leurs consentements. Segments pour les e-mails et les audiences publicitaires, limités aux personnes qui ont consenti. Nous sommes une organisation comme une autre, avec le module Demandes. |
-| Outils IA internes | Résumé d'un compte avant un appel, préparation d'un gabarit pour un nouveau métier, analyse des corrections de tous les clients pour améliorer les prompts communs. |
+| Accueil de l'artisan | À faire : chiffres du mois, demandes à traiter, actions en attente de ses agents (maquette) |
+| Statistiques de son site | Les vues sont comptées pour le site NEOBATYS seulement ; à étendre aux sites que nous livrons, avec le même contrat `/api/vues` et une clé par site |
+| Achats, stock et outillage | À faire, bâti sur le catalogue de prix, l'agent Factures fournisseurs et l'agent Rentabilité : [`docs/plateforme/module-achats-stock.md`](plateforme/module-achats-stock.md) |
+| Conversations WhatsApp | À faire ; à aligner avec fusion-outils |
+| Site internet | À faire : état du site livré, demandes de modification |
 
-### 2.6 Qui a accès à quoi
+Règle : un module n'est ouvert à un artisan qu'avec son banc d'essai et la mesure qui dira dans un mois s'il sert.
 
-Un seul identifiant pour tout le monde, un seul espace : ce qui change d'un profil à l'autre, ce sont les modules ouverts. L'espace s'appelle pour le client « Espace client NEOBATYS », pas « plateforme ».
+### 2.3 Gabarits par métier
+
+Un gabarit = les agents à installer, leurs niveaux, un profil type et un catalogue de prix de départ, appliqués à la création d'un artisan (plombier, électricien, couvreur...). Une demande vraiment spécifique devient un réglage de plus pour tous, ou un développement sur devis.
+
+### 2.4 Inscription libre et notre CRM
+
+L'inscription libre et gratuite reste décidée (décision 5) ; elle s'appuie sur les comptes artisans de la section 2.1 :
+
+1. Inscription : e-mail (lien de connexion, comme l'admin), entreprise, métier, SIRET facultatif. Deux cases distinctes et non cochées, séparées des CGU (section 5.1), actives seulement après la confirmation de l'e-mail.
+2. L'inscrit devient une fiche du CRM existant (source « inscription »), avec l'état de ses consentements : il n'y a pas de second CRM à créer.
+3. Le gabarit de son métier s'applique ; le compte gratuit ouvre les modules de la formule gratuite (section 2.5).
+4. Passage à une formule : signée avec nous, activée par un associé ; le paiement en ligne vient en dernier.
+
+### 2.5 Qui a accès à quoi
 
 | Profil | Ce qu'il y trouve | Pourquoi il revient | Ce que ça nous apporte |
 |---|---|---|---|
-| **Client site internet** (on a fait son site, il paie la maintenance) | Les demandes envoyées par le formulaire de son site, rangées et suivies (pas seulement un e-mail perdu) ; les visites de son site et d'où elles viennent ; ses avis Google ; ses demandes de modification du site (un bouton, suivi de l'avancement) ; ses factures NEOBATYS | Il voit ce que son site lui rapporte chaque mois | La maintenance à 200 € HT par mois se justifie d'elle-même, donc moins de résiliations ; les modules non souscrits (devis, assistants IA) sont visibles, grisés avec « Activer » |
-| **Client logiciel ou IA** (formule Essentiel, Pro, Premium ou pack) | Tous les modules de sa formule, réglés par nous | C'est son outil de travail quotidien | Le cœur du produit |
-| **Inscrit gratuit** (pas encore client) | Un outil utile seul : une page de demande de devis à son nom à partager sur Google et Facebook, les demandes reçues, quelques devis par mois, et un **audit gratuit de sa présence en ligne** (fiche Google, avis, site) avec des conseils | Il reçoit des demandes grâce à nous | Un prospect qualifié dans notre CRM, qui voit ce qu'on sait faire ; l'audit débouche naturellement sur nos offres (site, formules, audits approfondis sur devis) |
+| **Client site internet** (maintenance) | Les demandes de son formulaire, les visites de son site, ses avis Google, ses demandes de modification, ses factures NEOBATYS | Il voit ce que son site lui rapporte | La maintenance se justifie d'elle-même ; les agents non souscrits sont visibles, grisés avec « Activer » |
+| **Client logiciel ou IA** (Essentiel, Pro, Premium ou pack) | Ses agents, réglés par nous, et ce qu'ils préparent | C'est son outil de travail | Le cœur du produit |
+| **Inscrit gratuit** | Une page de demande de devis à son nom, les demandes reçues, quelques devis par mois, un audit gratuit de sa présence en ligne | Il reçoit des demandes grâce à nous | Un prospect qualifié dans notre CRM |
 
-Règle : tout ce qu'un client site ou logiciel voit dans son espace doit lui servir sans qu'on l'explique ; ce qui ne lui sert pas est masqué, pas affiché vide.
+Ce qui ne sert pas à un profil est masqué, pas affiché vide.
 
 ## 3. Pile technique
 
-La pile reprend celle du site autant que possible : un seul langage, une seule façon de déployer, un seul fournisseur de plus (la base).
+On garde celle de l'admin (section 1.1). Ce qui change :
 
-Versions relevées sur le registre npm (`npm view <paquet> dist-tags.latest`) le 1er novembre 2026. Tarifs : voir la veille, sources citées.
+| Sujet | Décision proposée | Pourquoi |
+|---|---|---|
+| Base | Rester sur Neon (Francfort). Passer de l'offre gratuite à une offre payante avant les premières factures d'artisans, pour l'historique de restauration ; prix à l'usage, « environ 15 $/mois » selon Neon (https://neon.com/pricing, relevé le 1er novembre 2026) | Déjà en production, intégration Vercel, données en Union européenne. Neon n'a pas de région en France (https://neon.com/docs/introduction/regions) : si un client exige un hébergement en France, la question se rouvre pour lui seul |
+| Fichiers | En base (`bytea`), dans des tables à part, comme aujourd'hui ; un stockage de fichiers seulement quand les photos de chantier (PR #40) pèseront | Rien à ajouter tant que le volume reste faible |
+| Connexion | Auth.js, déjà en place, étendu aux membres des artisans (section 2.1) | Pas de seconde bibliothèque. Auth.js 5 est encore en bêta (5.0.0-beta.32) : à surveiller |
+| Paiement des abonnements | Stripe Billing, en dernier | Inchangé |
+| WhatsApp | À aligner avec fusion-outils | Le CRM de LeasePro a déjà un canal Cloud prêt |
 
-| Brique | Choix | Version / offre | Pourquoi |
-|---|---|---|---|
-| Application | Next.js (App Router), TypeScript, Tailwind 4 | `next` 16.4.3 (le site est en 16.4.2) | Même pile que le site : mêmes composants (`ConsoleMockup`, couleurs), même CI, même hébergeur, mêmes réflexes pour Claude Code. Lire `node_modules/next/dist/docs/` avant de coder (règle d'`AGENTS.md`). |
-| Base de données | Postgres chez Supabase, région Paris (`eu-west-3`) | Plan Pro, 25 $/mois (8 Go de disque, 100 Go de fichiers, sauvegarde quotidienne gardée 7 jours) ; restauration à la seconde (PITR) en option, à partir de 100 $/mois, à prendre dès les premières vraies factures | Postgres avec Row Level Security, stockage de fichiers (PDF, photos, vocaux) et sauvegardes au même endroit, en France, sans adresse IP à gérer depuis Vercel. Comparatif avec OVHcloud et Neon en section 3.1. Choisir explicitement Paris, pas l'option générique « Europe » (qui peut placer le projet à Londres ou Zurich). |
-| Accès aux données | Drizzle ORM | `drizzle-orm` 0.45.4 | Schéma en TypeScript, SQL lisible, migrations versionnées, pas de génération de client ni de moteur à embarquer. Alternative : Prisma 7.10.1 (attention : le tag `latest` de Prisma pointe vers une pré-version 8.0.0-rc.29, il faudrait épingler). |
-| Authentification | Better Auth | `better-auth` 1.7.15, plugins `organization`, `admin`, `two-factor`, `magic-link` (présents dans les exports du paquet) | Organisations, membres et rôles fournis, comptes stockés dans notre propre Postgres. Auth.js reste en bêta pour sa v5 (5.0.0-beta.32). Vérifier dans la doc du plugin `admin` la fonction « se connecter en tant que » avant de s'en servir. |
-| Paiement des abonnements | Stripe Billing | `stripe` 23.1.0 ; 1,5 % + 0,25 € par carte UE standard, 0,35 € par prélèvement SEPA, Billing 0,7 % du récurrent | Abonnements, essai, relance des cartes refusées, portail client. Le même compte peut servir aux paiements des factures des artisans plus tard (Stripe Connect, à étudier à l'étape 2). |
-| IA | API Anthropic | `@anthropic-ai/sdk` 1.3.0 | Fournisseur déjà utilisé par le CRM LeasePro (actif depuis le 18 octobre 2026) et par l'assistant FAQ du site. Un seul module d'appel, comme `server/ia/providers.js`, pour pouvoir changer de modèle en mesurant. |
-| WhatsApp | API Cloud de Meta, NEOBATYS « Tech Provider », Embedded Signup | 0,0248 € par message de service ou utilitaire, 0,0712 € par message marketing (grille France au 1er octobre 2026), 1 000 messages de service gratuits par mois et par numéro | Officiel, le numéro reste celui de l'artisan (Coexistence), l'artisan paie Meta directement. Démarche longue : vérification d'entreprise, examen de l'application, 10 nouveaux clients par 7 jours au début. |
-| E-mails | Resend | déjà utilisé par le site (`resend` ^6.34.1) | Rien de nouveau à apprendre. |
-| Facture électronique | Super PDP, plateforme agréée, par API en « marque grise » | 0,01 € HT par facture par API jusqu'à 10 000 par mois (tarif public) | Réception obligatoire pour toutes les entreprises depuis le 1er septembre 2026, émission obligatoire pour les TPE et PME au 1er septembre 2027. Notre logiciel sera une « solution compatible » raccordée à une PA ; on ne devient pas PA nous-mêmes. Choix détaillé en section 3.2. |
-| Hébergement | Vercel, projet séparé du site, fonctions en région européenne proche de la base | offre Vercel actuelle du site | Même outil que le site, aperçu par PR, CI identique. Les tâches de fond (relances, synchronisations) passent par les tâches planifiées de Vercel ou une file Postgres ; à trancher à l'étape 1 en lisant la doc à jour. |
+Ce que la pile ne contient pas, volontairement : pas de second dépôt, pas de microservices, pas de file de messages dédiée tant que Postgres et les tâches planifiées de Vercel suffisent.
 
-Ce que la pile ne contient pas, volontairement : pas de microservices, pas de Kubernetes, pas de second langage, pas de file de messages dédiée tant que Postgres suffit.
+### 3.1 Plateforme agréée de facture électronique
 
-### 3.1 Base de données : Supabase, OVHcloud ou Neon
+Super PDP, recommandée par les deux conceptions : la nôtre (1er novembre) et `docs/AGENT-FACTURATION.md` de la PR #39, qui chiffre le coût et place la plateforme derrière une interface, avec une fausse plateforme pour les tests. Iopole en repli. L'agent Facturation est une solution compatible : NEOBATYS ne devient pas plateforme agréée. Calendrier : réception obligatoire pour toutes les entreprises depuis le 1er septembre 2026, émission pour les TPE et PME au 1er septembre 2027 (https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique). Le détail vit dans la doc de l'admin, plus ici.
 
-Relevé le 1er novembre 2026.
+## 4. Données
 
-| Critère | Supabase Pro, Paris | OVHcloud Public Cloud Databases for PostgreSQL | Neon Launch |
-|---|---|---|---|
-| Où sont les données | Paris (AWS `eu-west-3`) ; Auth et fichiers dans la même région | France : Gravelines, Strasbourg, Roubaix, Paris (3 zones). **Pas de région au Luxembourg** | Francfort ou Londres (AWS), pas de France |
-| Société | Américaine, sur AWS (Cloud Act : non vérifié sur une page Supabase) | OVH Groupe SA, française (Roubaix) | Américaine, sur AWS |
-| Prix de départ réaliste | 25 $/mois, puis PITR à partir de 100 $/mois | Essential DB1-4 (1 nœud) environ 54 € HT/mois, sauvegardes gardées 2 jours ; Business DB1-4 (2 nœuds, 14 jours de sauvegardes) environ 139 € HT/mois | À l'usage, 0,106 $ par heure de calcul, « environ 15 $/mois » selon Neon |
-| Sauvegardes | Quotidiennes, 7 jours ; PITR en option | Quotidiennes, PITR, copie dans une autre région (Paris vers Gravelines) | Historique de restauration jusqu'à 7 jours |
-| Fichiers (PDF, photos) | Inclus (100 Go) | Object Storage S3 à part, sans frais de sortie | Object Storage inclus |
-| Authentification | Incluse (on garde Better Auth quand même, pour les organisations) | Aucune : tout dans notre code | Better Auth géré proposé |
-| Connexion depuis Vercel | Rien à régler | Liste d'adresses IP autorisées obligatoire ; les IP sortantes de Vercel ne sont pas fixes : il faut les Static IPs de Vercel (plans Pro et Enterprise, prix non vérifié) ou ouvrir la base à tout Internet (déconseillé par OVH) | Intégration Vercel officielle |
-| Qualification SecNumCloud | Non | Pas pour cette offre (seulement Bare Metal Pod, Private Cloud SecNumCloud, SNC Cloud Platform) | Non |
-| Travail d'exploitation pour nous | Faible | Moyen à fort (IP, auth, fichiers, deux services) | Faible |
-
-**Recommandation : Supabase Pro à Paris.** Données en France, un seul service pour la base, les fichiers et les sauvegardes, rien à régler côté réseau, environ 25 $ par mois au départ. OVHcloud ne vaut le coût (au moins 139 € par mois pour une base de production à deux nœuds, plus les Static IPs de Vercel et l'authentification à écrire) que si « hébergé par une société française » devient un argument de vente exigé par des clients. Neon n'héberge pas en France.
-
-Ce qui se réutilise si Ilann a déjà quelque chose chez OVH :
-- hébergement web mutualisé avec base MySQL : non (MySQL, pas Postgres) ;
-- VPS : techniquement oui, mais sauvegardes, mises à jour et sécurité seraient à notre charge, déconseillé ;
-- Object Storage (compatible S3) : oui, pour les PDF et photos si on veut les garder chez un hébergeur français ;
-- Web Cloud Databases en PostgreSQL : possible, mais même problème d'IP Vercel non fixes.
-
-**Question à poser à Ilann :** « Dans ton espace client OVHcloud, rubrique Produits et services (ou sur une facture OVH récente), qu'est-ce que tu as exactement : un hébergement web (Perso, Pro...), une base Web Cloud Databases, un VPS, un projet Public Cloud, de l'Object Storage ? Sur quel compte (perso ou TAG Delme), dans quel datacenter, et pour quel usage aujourd'hui ? »
-
-Sources : https://supabase.com/pricing, https://supabase.com/docs/guides/platform/regions, https://supabase.com/docs/guides/platform/backups, https://www.ovhcloud.com/fr/public-cloud/prices/, https://www.ovhcloud.com/fr/public-cloud/regions-availability/, https://docs.ovhcloud.com/fr/guides/public-cloud/databases/postgresql-capabilities.md, https://docs.ovhcloud.com/fr/guides/public-cloud/databases/backups.md, https://docs.ovhcloud.com/fr/guides/public-cloud/databases/postgresql-prepare-for-incoming-connections.md, https://www.ovhcloud.com/fr/compliance/secnumcloud/, https://vercel.com/kb/guide/how-to-allowlist-deployment-ip-address, https://vercel.com/docs/networking/static-ips, https://neon.com/pricing, https://neon.com/docs/introduction/regions.
-
-### 3.2 Plateforme agréée de facture électronique
-
-Notre module Devis et factures sera une **solution compatible** (ex-« opérateur de dématérialisation ») : il produit des factures conformes mais ne transmet rien lui-même ; il doit être raccordé à une plateforme agréée (PA) (présentation des labels par la DGFiP : https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/fe_presentation-des-labels.pdf).
-
-Liste officielle téléchargée le 1er novembre 2026 (page mise à jour le 30 octobre 2026, https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees) : 156 plateformes ont un numéro d'immatriculation, dans un fichier intitulé « liste_pa_attente_rapport_audit » (immatriculation délivrée, rapport d'audit encore attendu d'après le nom du fichier) ; un second fichier liste celles qui attendent encore les tests d'interopérabilité.
-
-| Plateforme | Immatriculée le | API | Prix affiché | Offre pour éditeurs |
-|---|---|---|---|---|
-| **Super PDP** | 22/12/2025 | Oui, référence publique (https://www.superpdp.tech/documentation) | Compte gratuit jusqu'à 1 000 factures/mois ; API 0,01 € HT par facture jusqu'à 10 000/mois ; vérification d'identité 2 € (https://www.superpdp.tech/tarifs) | « Marque grise » au tarif de gros, revendable ; marque blanche sur demande. Factur-X, CII, UBL, JSON ; émission et réception |
-| Iopole | 11/12/2025 | Oui, avec bac à sable (https://docs.ppd.iopole.fr) | Sur devis | Ciblée éditeurs : marque blanche en option, inscription du client et mandat de réception intégrés |
-| B2Brouter | 12/12/2025 | Oui (https://developer.b2brouter.net/docs/) | Non lisible | Marque blanche et grise, programme startups |
-| Pennylane | 11/12/2025 | Oui (https://pennylane.readme.io) | Non vérifié | L'API agit sur le compte Pennylane du client : chaque artisan devrait être client Pennylane (déduction, non confirmée par Pennylane) |
-
-**Recommandation : Super PDP.** Seule des candidates à publier un prix par facture (1 centime), une offre pensée pour les éditeurs qui intègrent par API, les quatre formats, l'émission et la réception. **Solution de repli : Iopole** (bac à sable, parcours d'inscription du client intégré), sur devis. Avant de signer : rendez-vous avec Super PDP pour vérifier sa solidité (taille, engagement de service écrit), le contrat éditeur et la doc API, que nous n'avons pas pu lire en entier (page affichée par JavaScript).
-
-Calendrier (https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique) : réception obligatoire pour toutes les entreprises depuis le 1er septembre 2026, émission pour les TPE et PME au 1er septembre 2027. Le e-reporting des paiements concerne les prestations où la TVA est due à l'encaissement ; les travaux du BTP en autoliquidation en sont exclus. Date de début du e-reporting pour les PME : non vérifiée sur une page officielle.
-
-## 4. Données et multi-clients
-
-Une seule base Postgres, une colonne `organization_id` sur chaque table métier.
+Le modèle est `db/schema.ts` de l'admin. Ajouts, tous rattachés à la fiche de l'artisan (`contact_id`) :
 
 ```
-organizations      id, nom, siret, métier, gabarit, statut, créé_le
-members            organization_id, user_id, rôle (owner | admin | membre)
-users / sessions   gérés par la bibliothèque d'authentification
-organization_modules  organization_id, module, actif, essai_jusqu_au, réglages (jsonb)
-contacts           organization_id, nom, téléphone, e-mail, adresse, origine
-leads              organization_id, contact_id, source, travaux, statut, reçu_le
-conversations      organization_id, contact_id, canal, mode_ia, en_main_depuis
-messages           organization_id, conversation_id, sens, contenu, statut d'envoi
-channels           organization_id, type (whatsapp...), identifiants chiffrés, état
-quotes / invoices  organization_id, numéro (séquence par organisation), lignes, totaux, statut
-payments           organization_id, invoice_id, montant, moyen, reçu_le
-reviews            organization_id, source, note, texte, réponse
-ai_runs            organization_id, module, modèle, jetons, coût, brouillon, verdict
-audit_log          organization_id, acteur, action, cible, horodatage
-consents           user_id, finalité (prospection | publicité), valeur, version du texte, horodatage, IP, source
-subscriptions      organization_id, offre, stripe_customer_id, statut, montant mensuel
+artisan_members       contact_id, user_id, rôle (gerant | salarie), invité_par, créé_le
+agent_policies        + deployment_id : niveaux par installation au lieu de par agent
+consents              user_id, finalité (prospection | publicite), valeur, version du texte, horodatage, IP, source
 ```
 
-Garde-fous contre la fuite d'un client à l'autre :
-- Toute requête passe par une fonction qui prend l'organisation de la session ; aucune requête brute dans les écrans.
-- En plus, politiques Row Level Security de Postgres sur les tables métier, pour qu'un oubli dans le code ne suffise pas à fuir.
-- Un test automatique crée deux organisations et vérifie qu'aucune route ne renvoie les données de l'autre.
-
-Numérotation des factures : séquence continue par organisation, sans trou, verrouillée en base ; une facture émise n'est jamais modifiée (avoir pour corriger).
+Plus les tables du module Achats et stock ([`docs/plateforme/module-achats-stock.md`](plateforme/module-achats-stock.md), section 3). Les tables `users`, `contacts`, `audit_log` et `ai_calls` existent déjà.
 
 ## 5. Sécurité et RGPD
 
-- **Rôles.** Pour notre CRM (inscrits gratuits, leads du site), nous sommes responsables de traitement : section 5.1. Pour chaque artisan, nous sommes sous-traitant (article 28 du RGPD) des données de ses clients : contrat de sous-traitance annexé aux conditions générales. Pour nos propres prospects, nous sommes responsables de traitement (déjà couvert par `politique-de-confidentialite`).
-- **Hébergement en Union européenne** pour la base et les fichiers. Liste des sous-traitants ultérieurs publiée (hébergeur, base, Anthropic, Meta, Stripe, Resend) avec leurs contrats de traitement des données.
-- **Secrets.** Jetons WhatsApp et clés chiffrés en base (clé maîtresse dans les variables Vercel), jamais affichés en clair après saisie. La leçon de LeasePro (clés d'API dans la table `settings`, copiées dans les sauvegardes) n'est pas reproduite.
-- **Comptes.** Mots de passe hachés par la bibliothèque, double authentification obligatoire pour le rôle `staff`, sessions révocables, limitation des tentatives.
-- **Journal d'audit** de tout accès `staff` à un compte client et de tout export.
-- **Droits des personnes.** Export et suppression d'un contact à la demande de l'artisan ; suppression complète d'une organisation à la résiliation après la durée de conservation légale des factures (10 ans pour les pièces comptables, conservées à part).
-- **IA.** Pas d'entraînement des modèles sur les données des clients (vérifier les conditions du fournisseur retenu), données minimales dans les prompts, journal des appels.
-- **Sauvegardes** quotidiennes chiffrées hors de la base principale, restauration testée une fois par trimestre.
+Les règles de l'admin s'appliquent (`AGENTS.md` du dépôt de l'admin) : aucun mail à un client sans validation, conservation des prospects 3 ans appliquée par le code, secrets saisis par les associés. En plus, dès que les artisans ont un compte :
+
+- **Rôles RGPD.** Pour notre CRM et les inscrits, nous sommes responsables de traitement. Pour les données des clients de chaque artisan, nous sommes sous-traitant (article 28) : contrat de sous-traitance annexé aux CGU. La PR #11 le signale déjà comme bloquant pour BEST TP.
+- **Droit à l'effacement.** L'admin n'a pas de bouton pour supprimer une fiche (relevé dans la PR #11) : à ajouter avant d'ouvrir des comptes artisans.
+- **Comptes.** Lien de connexion à durée courte, sessions révocables, limitation des tentatives ; double authentification pour les associés à étudier avec Auth.js.
+- **Journal d'audit** de tout « voir comme l'artisan » et de tout export.
+- **Sous-traitants ultérieurs** publiés : Vercel, Neon, Anthropic, OpenAI (fournisseur prévu dans `lib/ai/models.ts`), Twilio, OVH (mail), puis Meta, Stripe, la plateforme agréée.
 
 ### 5.1 Inscription libre, prospection et publicité : le cadre
 
@@ -279,68 +204,67 @@ Pas de mesure d'ouverture des e-mails au départ : elle demanderait une quatriè
 
 ## 6. Plan en étapes
 
-Hypothèse : deux associés, le site et la vente continuent en parallèle, Claude Code fait l'essentiel du code. L'inscription libre passe dans le MVP (décision 5), le paiement en ligne reste à la fin.
+Tout se fait dans le dépôt de l'admin, par PR, avec ses règles (`AGENTS.md` de l'admin) et son banc d'essai.
 
 | Étape | Contenu | Fin quand |
 |---|---|---|
-| **0. Préparer** | Décisions encore ouvertes (fin du document), réponses de Gabin (section 1.2), organisation GitHub et équipe Vercel communes, création de `neobatys-app` avec [`docs/plateforme/depart/`](plateforme/depart/README.md), base de données, textes juridiques (section 5.1). **Rien n'est créé sans l'accord d'Ilann.** | Dépôt créé, CI verte sur une page vide, base en ligne, CGU et politique de confidentialité relues. |
-| **1. MVP : comptes, prospects, demandes** | Inscription libre avec consentements séparés et confirmation de l'e-mail, organisations et rôles, catalogue de modules et activation, back-office (clients, fiche, « voir comme », Nos prospects), module Demandes, routes `/api/leads` et `/api/vues` compatibles avec le site, reprise des données de l'admin de Gabin, Accueil avec les vrais chiffres, export des consentements. | Le site envoie ses leads à la plateforme, `admin.neobatys.com` redirige, l'admin de Gabin est arrêté ; un inconnu peut s'inscrire et apparaît dans Nos prospects. |
-| **2. Devis et factures** | Bibliothèque d'ouvrages, devis PDF, signature en ligne, acompte et facture, relances impayés (J+3, J+7, J+14), export comptable, raccordement à la plateforme agréée retenue (réception d'abord, émission avant le 1er septembre 2027). | Un artisan pilote fait un mois de devis et factures sans autre outil. |
-| **2 bis. Achats et stock** | Besoins par chantier et bons de commande, outillage par QR, consommables au seuil mini, tendances INSEE ; lecture des factures fournisseurs dès le raccordement à la plateforme agréée. Le catalogue d'articles importé est déjà livré avec l'étape 2. | Un artisan pilote commande le matériel d'un chantier depuis son devis signé. |
-| **3. Assistants IA** | Réponse aux demandes (e-mail d'abord), devis à la voix, avis Google. Validation humaine par défaut, suite d'évaluation reprise de LeasePro. | Taux de brouillons envoyés sans correction mesuré chez deux artisans. |
-| **4. WhatsApp** | Statut Tech Provider (démarches menées à part dès maintenant), Embedded Signup, Coexistence, boîte de réception, brouillons IA. | Un artisan pilote répond à ses clients WhatsApp depuis la plateforme. |
-| **5. Paiement en ligne** | Stripe Billing : passage du gratuit à une formule sans nous parler, factures d'abonnement, MRR et alertes de paiement automatiques. | Un artisan passe en formule payante seul. |
+| **0. Aligner** | Décisions de la section 8.3 ; PR #39 et #40 de Gabin fusionnées ; conclusions de fusion-outils intégrées ; bouton d'effacement d'une fiche ; contrat de sous-traitance relu. **Rien n'est créé ni acheté sans l'accord d'Ilann.** | Les deux associés valident ce document et `docs/fusion-outils.md`. |
+| **1. Comptes artisans** | Membres d'un artisan, connexion par lien, espace artisan (accueil, demandes, agents et validations, catalogue de prix, profil), niveaux par installation, « voir comme », test d'isolation, gabarits par métier. | Un artisan pilote valide lui-même les brouillons de ses agents pendant un mois. |
+| **2. Inscription libre** | Formulaire avec les deux consentements (section 5.1), confirmation de l'e-mail, fiche CRM « inscription », formule gratuite, export des consentements, CGU et politique publiées. | Un inconnu s'inscrit et apparaît dans le CRM avec ses consentements. |
+| **3. Facture électronique** | Super PDP branchée derrière l'interface de la PR #39 : réception d'abord, puis émission. | Un artisan pilote émet et reçoit par la plateforme agréée avant le 1er septembre 2027. |
+| **4. Achats et stock** | Étapes A à I de [`docs/plateforme/module-achats-stock.md`](plateforme/module-achats-stock.md). | Un artisan pilote commande le matériel d'un chantier depuis son devis signé. |
+| **5. WhatsApp** | À aligner avec fusion-outils. | Un artisan pilote répond à ses clients WhatsApp depuis son espace. |
+| **6. Paiement en ligne** | Stripe Billing : passage du gratuit à une formule sans nous parler. | Un artisan passe en formule payante seul. |
 
-Le MVP n'a ni IA ni WhatsApp : il remplace l'admin actuel, met en place le multi-clients, ouvre l'inscription et commence à remplir notre CRM. Ce qui est vendu aujourd'hui (devis, factures, IA) continue d'être livré comme aujourd'hui jusqu'à l'étape 2.
+Les agents déjà construits continuent d'être livrés en service géré pendant toutes ces étapes : rien de ce qui est vendu aujourd'hui n'attend l'espace artisan.
 
 ## 7. Ce qu'on ne fait pas
 
-- Pas de marque blanche (chaque artisan voit NEOBATYS) : rien ne la demande aujourd'hui.
-- Pas d'application mobile native : interface web pensée pour le téléphone, installable.
-- Pas de facturation électronique développée nous-mêmes : partenaire agréé.
+- Pas de nouveau dépôt ni de seconde base pour la plateforme : on fait évoluer l'admin.
+- Pas une installation par client en cas général (le cas BEST TP reste l'exception).
+- Pas de marque blanche, pas d'application mobile native (interface web installable).
+- Pas de facturation électronique transmise par nous : plateforme agréée.
 - Pas de Baileys ni d'automate WhatsApp non officiel chez les clients.
 - Pas de standard téléphonique IA en module standard.
 
 ## 8. Décisions
 
-### 8.1 Prises par Ilann le 1er novembre 2026
+### 8.1 Prises par Ilann
 
-| # | Décision | Ce que ça change dans ce document |
-|---|---|---|
-| 1 | Nouveau dépôt `neobatys-app` | Contenu de départ prêt dans [`docs/plateforme/depart/`](plateforme/depart/README.md) ; dépôt pas encore créé (compte : voir 8.2) |
-| 2 | L'admin de Gabin est remplacé, son contrat `/api/leads` et ses données sont repris | Étape 1 du plan : reprise des données et arrêt de l'ancien admin |
-| 3 | `app.neobatys.com`, `admin.neobatys.com` redirige | Section 2.1 |
-| 4 | Plateforme et modules **inclus** dans les formules ; au-delà, offres sur devis (audits, options, services supplémentaires) | Pas de prix par module. Les assistants IA et WhatsApp se règlent avec chaque client : on lui propose l'automatisation et la mise en place d'un nouveau canal d'acquisition, chiffrées sur devis ; pas de volume standard fixé à l'avance. Le coût des messages WhatsApp est payé par l'artisan à Meta |
-| 5 | Inscription libre et gratuite pour tout le monde dès le MVP ; les inscrits alimentent notre CRM | Sections 2.4, 2.5, 2.6, 5.1 et plan réordonné (section 6) |
-| 5 bis | Prospection par e-mail : case à cocher (consentement), la solution la plus sûre | Section 5.1, formulaire |
-| 5 ter | Publicité ciblée et campagnes développées en interne quand c'est possible | Notre back-office envoie les e-mails (Resend) et synchronise lui-même les inscrits qui ont consenti vers les audiences Meta par l'API Marketing de Meta, sans outil marketing tiers ; Google plus tard (Customer Match fermé sous 50 000 $ de dépenses) |
-| 5 quater | Documents juridiques rédigés avec une IA | Projets dans [`docs/juridique/plateforme/`](juridique/plateforme/README.md) |
-| 6 | Base de données | Comparatif en section 3.1, recommandation Supabase Paris, question sur OVH à poser |
-| 7 | Plateforme agréée | Super PDP recommandée, Iopole en repli (section 3.2) |
-| 8 | Démarches Meta | Traitées à part |
-| 9 | Module Achats, stock et outillage (2 novembre 2026) : les huit recommandations retenues, dont les prix nets de l'artisan plutôt que les sites de Leroy Merlin ou Castorama | Section 5 de [`docs/plateforme/module-achats-stock.md`](plateforme/module-achats-stock.md) |
-
-### 8.2 Comptes et services : ce qui existe, ce qui manque
-
-| Service | Ce qu'on sait | Ce qui manque | Recommandation |
+| # | Date | Décision | Où |
 |---|---|---|---|
-| GitHub | Deux comptes personnels : `leasepro` (Ilann) et `hoffertgabin-cmyk` (Gabin). Le site est un dépôt **public** du compte de Gabin, aucune organisation | Rien pour le site ; une solution payante pour `neobatys-app`, qui sera **privé** | Le fonctionnement actuel suffit pour le site : sur un dépôt public, la protection des branches est gratuite (seul Gabin peut la régler). Pour un dépôt privé, il faut payer dans tous les cas : soit GitHub Pro sur le compte de Gabin (4 $ par mois, Gabin seul administrateur, le code lui appartient), soit une organisation de l'entreprise en plan Team (4 $ par utilisateur, 8 $ pour deux, les deux associés administrateurs, le code appartient à l'entreprise). Recommandation : l'organisation, pour 4 $ de plus par mois. Sources : https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches, https://github.com/pricing |
-| Vercel | Gabin a le plan Pro (20 $ par mois) sur `gab-7385`, qui héberge le site | Rien d'obligatoire | Ajouter `neobatys-app` comme second projet de la même équipe Pro. Inviter Ilann comme membre seulement s'il doit voir les tableaux de bord Vercel : un siège de développeur supplémentaire est payant, montant à lire dans Settings, Billing (https://vercel.com/pricing) |
-| Supabase | Inconnu ; une trace de Supabase existe côté LeasePro | Une organisation au nom de l'entreprise avec un projet à Paris | Organisation Supabase de l'entreprise, plan Pro, les deux associés membres |
-| Stripe | Inconnu | Compte au nom de TAG Delme SARL (vérification d'identité de la société) | Nécessaire seulement à l'étape 5 ; pas urgent |
-| Meta | Traité à part | | |
-| Super PDP | Aucun | Compte éditeur | Après un rendez-vous, avant l'étape 2 |
-| Resend | Utilisé par le site | Domaine d'envoi pour `app.neobatys.com` | Ajouter le domaine au compte existant le moment venu |
+| 1 | 3 novembre 2026 | Partir de l'admin de Gabin au lieu d'un outil à part ; en garder les agents, les règles datées et sourcées, le banc d'essai et la validation avant envoi. Remplace les décisions du 1er novembre sur le dépôt `neobatys-app`, le remplacement de l'admin de Gabin et la base Supabase | Tout ce document |
+| 2 | 1er novembre 2026 | Plateforme et modules inclus dans les formules ; au-delà, offres sur devis. Assistants IA et WhatsApp chiffrés avec chaque client ; le coût des messages WhatsApp est payé par l'artisan à Meta | Section 2.5 |
+| 3 | 1er novembre 2026 | Inscription libre et gratuite pour tout le monde, les inscrits alimentent notre CRM ; prospection par e-mail sur case à cocher ; publicité ciblée et campagnes faites en interne quand c'est possible (Meta d'abord, Google plus tard) | Sections 2.4 et 5.1 |
+| 4 | 1er novembre 2026 | Documents juridiques rédigés avec une IA | [`docs/juridique/plateforme/`](juridique/plateforme/README.md) |
+| 5 | 1er novembre 2026 | Plateforme agréée : Super PDP, Iopole en repli | Section 3.1 |
+| 6 | 1er novembre 2026 | Démarches Meta traitées à part | |
+| 7 | 2 novembre 2026 | Module Achats, stock et outillage : les huit recommandations retenues | [`docs/plateforme/module-achats-stock.md`](plateforme/module-achats-stock.md), section 5 |
 
-Règle commune : chaque compte est au nom de l'entreprise, avec les deux associés administrateurs et la double authentification, et une adresse e-mail de l'entreprise comme propriétaire (pas une adresse personnelle).
+### 8.2 Comptes et services
+
+| Service | Ce qu'on sait | Ce qui manque |
+|---|---|---|
+| GitHub | `neobatys-admin` est un dépôt privé du compte de Gabin ; Ilann y a accès depuis le 3 novembre 2026. Le site est un dépôt public du même compte | Rien d'obligatoire. Une organisation au nom de l'entreprise (plan Team, 4 $ par utilisateur et par mois, https://github.com/pricing) ferait appartenir le code à l'entreprise : décision ouverte |
+| Vercel | Équipe Pro de Gabin (`gab-7385`) pour le site ; l'admin a son propre projet | Vérifier que l'admin est dans la même équipe Pro (les tâches toutes les 5 minutes l'exigent) |
+| Neon | Base `neobatys-admin`, Francfort, offre gratuite | Offre payante avant les premières factures d'artisans |
+| Twilio | Branché dans le code des appels manqués | Compte au nom de l'entreprise, à confirmer avec Gabin |
+| Super PDP | Aucun compte | Compte éditeur, après un rendez-vous, avant l'étape 3 |
+| Stripe | Aucun | Compte au nom de TAG Delme SARL, à l'étape 6 seulement |
+| Meta | Traité à part | |
+
+Règle commune : chaque compte est au nom de l'entreprise, avec les deux associés administrateurs et la double authentification.
 
 ### 8.3 Encore ouvertes
 
 | # | Décision | Recommandation |
 |---|---|---|
-| 1 | Valider les trois profils de la section 2.6 et le contenu du compte gratuit | Client site : demandes, visites, avis, modifications du site, factures. Inscrit gratuit : page de demande de devis, quelques devis par mois, audit gratuit de présence en ligne. |
-| 2 | Base de données | Supabase Pro à Paris, sauf si l'inventaire OVH (section 3.1) montre quelque chose de réutilisable ; en attente de l'accès OVH. |
-| 3 | Organisation GitHub de l'entreprise ou compte de Gabin pour `neobatys-app` | Organisation en plan Team (8 $ par mois pour deux). |
-| 4 | Valider les projets juridiques de `docs/juridique/plateforme/` | Relecture par Ilann et Gabin ; un avocat seulement sur les points listés dans leur README si le doute persiste. |
-| 5 | Rendez-vous avec Super PDP | Avant l'étape 2 ; y valider aussi la lecture des factures fournisseurs pour le module Achats. |
-| 6 | Réponses de Gabin aux sept questions de la section 1.2 | Avant l'étape 1. |
+| 1 | Espace artisan dans l'admin (une application, des comptes artisans) ou une installation par client comme BEST TP | Une seule application avec des comptes artisans ; l'installation séparée seulement pour un client qui exige sa propre base. |
+| 2 | Adresse de l'espace artisan | `app.neobatys.com` pointé sur le même projet Vercel que `admin.neobatys.com` : les associés gardent leur adresse, les artisans n'ont pas « admin » dans la leur. |
+| 3 | Qui valide les brouillons des agents d'un artisan | L'artisan lui-même quand il a un compte, un associé sinon ; niveaux réglés par installation. |
+| 4 | Base de données | Rester sur Neon, offre payante avant les premières factures d'artisans. L'inventaire OVH n'est plus nécessaire pour cette décision. |
+| 5 | Ordre des étapes | Comptes artisans, puis inscription libre, puis facture électronique, puis achats et stock, puis WhatsApp, puis Stripe (section 6). |
+| 6 | Compta de l'admin ou IA Compta de DriftShop, CRM de l'admin ou CRM WhatsApp de LeasePro | À aligner avec fusion-outils : ne rien trancher ici avant `docs/fusion-outils.md`. |
+| 7 | Organisation GitHub de l'entreprise pour l'admin | Oui, à décider avec Gabin, puisque le dépôt est sur son compte. |
+| 8 | Valider les projets juridiques de `docs/juridique/plateforme/` | Relecture par Ilann et Gabin, en y ajoutant Twilio et OpenAI aux sous-traitants ; un avocat seulement sur les points listés dans leur README. |
+| 9 | Rendez-vous avec Super PDP | Avant l'étape 3, à deux avec Gabin ; y valider aussi la lecture des factures fournisseurs pour le module Achats. |

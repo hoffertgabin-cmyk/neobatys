@@ -1,6 +1,6 @@
 # Module Achats, stock et outillage
 
-Conception, pas de code. Complète [`docs/plateforme-admin.md`](../plateforme-admin.md) (sections 2.2 et 6). Sources ouvertes le 1er novembre 2026 ; ce qui n'a pas pu être vérifié est marqué comme tel.
+Conception, pas de code. Complète [`docs/plateforme-admin.md`](../plateforme-admin.md) (sections 2.2 et 6) : le module se construit dans l'admin de Gabin (`neobatys-admin`), sur ce qu'il a déjà (section 2), recalé le 3 novembre 2026. Sources ouvertes le 1er novembre 2026 ; ce qui n'a pas pu être vérifié est marqué comme tel.
 
 Demande d'Ilann :
 1. Un devis relié aux fournisseurs : les articles et les prix viennent des catalogues, idéalement des prix négociés du compte pro de l'artisan.
@@ -61,20 +61,30 @@ Ce que le module peut dire honnêtement : la tendance de chaque famille de maté
 
 Trois parties, activables séparément selon le métier.
 
+Ce que l'admin a déjà, et sur quoi le module s'appuie au lieu de le refaire :
+
+| Dans l'admin | Ce que ça fait | Ce que le module y ajoute |
+|---|---|---|
+| `artisan_price_items` | Catalogue de prix d'un artisan (libellé, unité, prix HT), « la seule source des prix de ses devis » ; utilisé par l'agent Devis à la voix | Fournisseur, référence, famille, remise, date du tarif, import des fichiers tarif |
+| Agent Factures fournisseurs (`supplier_invoices`) | Lit une photo ou un PDF, totaux par taux de TVA, chantier, validation par une personne, transmission au comptable | Les lignes de la facture rapprochées des articles, donc le dernier prix payé |
+| PR #39 (agent Facturation) | Lit les factures électroniques des fournisseurs sans IA | La même chose, sans photo ni relecture des montants |
+| Agent Suivi de rentabilité (`agent_chantiers`, `agent_chantier_entries`) | Chantier, dépenses, heures, avenants, marge prévue et réelle, alertes | Les besoins en matériel et les achats du chantier |
+| PR #40 (réception de chantier) | Fin de chantier, réserves | Le retour de l'outillage à la fin du chantier |
+
 ### 2.1 Catalogue d'articles relié aux devis (inclus dans Devis et factures)
 
-- L'artisan importe le fichier tarif de chacun de ses fournisseurs (Excel ou CSV) : on reconnaît les colonnes (référence, libellé, unité, prix, famille, remise), on garde la correspondance par fournisseur pour les imports suivants.
+- L'artisan importe le fichier tarif de chacun de ses fournisseurs (Excel ou CSV) dans son catalogue (`artisan_price_items`, étendu) : on reconnaît les colonnes (référence, libellé, unité, prix, famille, remise), on garde la correspondance par fournisseur pour les imports suivants.
 - Remises par famille ou par référence, cascadées, calquées sur la structure CNR de FAB-DIS : un seul modèle, quelle que soit la source.
 - Dans le devis, l'artisan cherche un article (« plaque BA13 », « cuivre 14 ») et voit le prix net de chacun de ses fournisseurs, avec la date du tarif. Un ouvrage de sa bibliothèque contient des articles : si le prix d'un article change, l'ouvrage le signale.
-- Les factures fournisseurs reçues par la plateforme agréée mettent à jour le dernier prix payé, sans saisie.
+- Les factures fournisseurs lues par l'agent Factures fournisseurs, ou reçues en facture électronique (PR #39), mettent à jour le dernier prix payé, une fois validées.
 - Plus tard : API Rexel puis Sonepar ; base d'ouvrages Batiprix en option payée par l'artisan.
 
 ### 2.2 Besoins et achats par chantier
 
-- Un devis signé crée un chantier ; ses lignes donnent la liste du matériel nécessaire, avec la date de début.
+- Un devis signé ouvre le chantier de l'agent Rentabilité (`agent_chantiers`) ; ses lignes donnent la liste du matériel nécessaire, avec la date de début.
 - **Besoin net** = quantités des chantiers qui démarrent dans les N prochaines semaines, moins le stock disponible, moins ce qui est déjà commandé.
 - La liste d'achat est regroupée par fournisseur (le moins cher ou le fournisseur habituel), puis envoyée en bon de commande PDF par e-mail. Plus tard, commande directe par API chez Rexel ou Sonepar.
-- Comparaison prévu (devis) et réel (factures fournisseurs rattachées au chantier) : la marge réelle du chantier.
+- Prévu et réel par chantier : déjà calculés par l'agent Rentabilité ; les achats validés y entrent comme dépenses, sans ressaisie.
 
 ### 2.3 Stock et outillage
 
@@ -91,34 +101,33 @@ Activation par défaut selon le gabarit du métier (décision 7) : catalogue et 
 
 ## 3. Modèle de données
 
-Ajouts au modèle de la section 4 de `docs/plateforme-admin.md`, tous avec `organization_id` :
+Ajouts à `db/schema.ts` de l'admin, tous rattachés à la fiche de l'artisan (`contact_id`), comme ses tables actuelles :
 
 ```
-suppliers            id, nom, type (négoce, grande surface, fabricant), connexion (fichier | api | facture), identifiants chiffrés
-price_lists          id, supplier_id, importé_le, source (fichier, facture, api), correspondance des colonnes
-articles             id, supplier_id, référence, libellé, unité, famille, code ETIM (facultatif), prix_net, remise, index_insee (ex. BT47)
-price_history        article_id, prix, date, source (tarif | facture | api)
-works                ouvrages de la bibliothèque (déjà prévus) ; work_items : work_id, article_id, quantité
-quote_lines          ... + article_id ou work_id (facultatif)
-jobs                 chantier créé depuis un devis signé : quote_id, adresse, début, fin, statut
-locations            id, type (dépôt | véhicule | chantier), nom, job_id (si chantier)
-stock_items          article_id, location_id, quantité, seuil_mini, seuil_réassort
-stock_movements      article_id, de_location_id, vers_location_id, quantité, motif (achat | sortie chantier | transfert | inventaire | perte), job_id, user_id, date
-tools                id, libellé, numéro de série, qr_code, location_id, affecté_à (user_id), job_id, état, prochaine_vérification
-material_needs       job_id, article_id, quantité_prévue, quantité_couverte (calculé)
-purchase_orders      id, supplier_id, statut, envoyé_le, job_id (facultatif) ; purchase_order_lines
-supplier_invoices    id, supplier_id, reçue_le (via la plateforme agréée), job_id ; lignes rapprochées des articles
-price_indices        code (BT01...), mois, valeur, publié_le  (commun à tous les clients, source INSEE)
+artisan_price_items   + supplier_id, référence, famille, code ETIM (facultatif), remise, tarif_du, index_insee (ex. BT47)
+suppliers             contact_id, nom, type (négoce, grande surface, fabricant), connexion (fichier | api | facture), identifiants chiffrés
+price_imports         contact_id, supplier_id, importé_le, source (fichier | facture | api), correspondance des colonnes
+price_history         price_item_id, prix, date, source (tarif | facture | api)
+supplier_invoice_lines  supplier_invoice_id, price_item_id (rapproché), libellé, quantité, prix unitaire
+material_needs        chantier_id (agent_chantiers), price_item_id, quantité_prévue, quantité_couverte (calculé)
+purchase_orders       contact_id, supplier_id, statut, envoyé_le, chantier_id (facultatif) ; purchase_order_lines
+locations             contact_id, type (dépôt | véhicule | chantier), nom, chantier_id
+stock_items           price_item_id, location_id, quantité, seuil_mini, seuil_réassort
+stock_movements       price_item_id, de_location_id, vers_location_id, quantité, motif (achat | sortie chantier | transfert | inventaire | perte), chantier_id, user_id, date
+tools                 contact_id, libellé, numéro de série, qr_code, location_id, affecté_à, chantier_id, état, prochaine_vérification
+price_indices         code (BT01...), mois, valeur, publié_le  (commun à tous les artisans, source INSEE)
 ```
+
+Rien de nouveau pour les chantiers (`agent_chantiers`), les factures fournisseurs (`supplier_invoices`) et la marge : ils existent. Le relevé des index INSEE suit la règle des règles datées de l'admin : source, date du relevé, mise en garde quand il vieillit.
 
 ## 4. MVP, coûts et partenariats
 
 | Étape | Contenu | Coût externe | Dépend de |
 |---|---|---|---|
-| **A** (avec l'étape 2 du plan, Devis et factures) | Import des fichiers tarif, remises par famille, recherche d'article dans le devis, ouvrages reliés aux articles | Aucun | Rien |
+| **A** | Import des fichiers tarif dans le catalogue existant, remises par famille, recherche d'article dans le devis, ouvrages reliés aux articles | Aucun | Rien |
 | **B** | Chantier depuis le devis signé, besoins nets, liste d'achat par fournisseur, bon de commande PDF par e-mail | Aucun | A |
 | **C** | Outillage par QR (étiquettes à imprimer), lieux, mouvements simples | Étiquettes | Rien |
-| **D** | Factures fournisseurs reçues : dernier prix payé, prévu et réel par chantier | Inclus dans la plateforme agréée retenue (à confirmer avec Super PDP) | Raccordement à la plateforme agréée |
+| **D** | Lignes des factures fournisseurs (agent Factures fournisseurs, puis factures électroniques de la PR #39) : dernier prix payé, achats versés dans la marge du chantier | Inclus dans la plateforme agréée retenue (à confirmer avec Super PDP) pour les factures électroniques | Agent Factures fournisseurs ; plateforme agréée pour les factures électroniques |
 | **E** | Consommables au seuil mini, point de commande, alertes de rupture | Aucun | B, C |
 | **F** | Index INSEE et cartes « Prix en hausse » | Gratuit (Licence Ouverte), clé d'API à créer | Rien |
 | **G** | API Rexel (Découverte, offerte), puis Sonepar | Rexel Découverte gratuit ; Premium et Sonepar sur devis | Accord de Rexel ou Sonepar |
@@ -127,7 +136,7 @@ price_indices        code (BT01...), mois, valeur, publié_le  (commun à tous l
 
 FAB-DIS n'est pas prévu : il apporte des fiches produits, pas les prix de l'artisan.
 
-Place dans le plan général : A avec l'étape 2 ; B, C, E et F forment une étape « Achats et stock » juste après ; D suit le raccordement à la plateforme agréée ; G, H et I dépendent des réponses des partenaires et peuvent avancer en parallèle.
+Place dans le plan général : étape 4 « Achats et stock » de `docs/plateforme-admin.md`. A et D peuvent commencer plus tôt, puisqu'ils prolongent le catalogue et l'agent Factures fournisseurs déjà en place ; les factures électroniques suivent le raccordement à la plateforme agréée ; G, H et I dépendent des réponses des partenaires et peuvent avancer en parallèle.
 
 ## 5. Décisions prises par Ilann le 2 novembre 2026
 
