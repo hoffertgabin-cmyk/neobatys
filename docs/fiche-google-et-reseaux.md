@@ -322,7 +322,7 @@ Le post 06 filme la maquette électricien, qui montre la photo d'une personne (b
 
 ### Rattachement au portefeuille Meta de TAG Delme SARL
 
-Le portefeuille business Meta de TAG Delme SARL, préparé dans [`meta-whatsapp.md`](meta-whatsapp.md), qui porte aussi WhatsApp. La règle est d'avoir un seul portefeuille, au nom de TAG Delme SARL, et pas de second portefeuille « NEOBATYS ». Il réunit :
+Le portefeuille business Meta de TAG Delme SARL, préparé dans [`meta-whatsapp.md`](meta-whatsapp.md), porte aussi WhatsApp. La règle est d'avoir un seul portefeuille, au nom de TAG Delme SARL, et pas de second portefeuille « NEOBATYS ». Il réunit :
 - la Page Facebook NEOBATYS ;
 - le compte Instagram NEOBATYS ;
 - le numéro WhatsApp.
