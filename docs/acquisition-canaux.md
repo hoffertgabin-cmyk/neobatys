@@ -60,16 +60,16 @@ Ce qui fait citer une page, selon Google et Microsoft (documentation officielle)
 | Création site internet artisan | `/sites-internet` | En ligne |
 | Site internet plombier, électricien, maçon... | `/sites-internet/<métier>` (9 pages) | En ligne |
 | Agence web Metz, Moselle, Luxembourg | Aucune | **Bloqué** : pas de zone desservie dans `content/data/site.json` |
-| Assistant IA artisan, agent IA, réponse automatique aux demandes de devis, devis à la voix | `/intelligence-artificielle` | PR #43 |
-| Conseil IA, automatisation PME bâtiment | `/intelligence-artificielle` | PR #43 ; à enrichir si une offre de conseil distincte existe |
-| Digitalisation artisan, aides au numérique | Aucune | À créer : « Digitaliser son entreprise artisanale », avec les SME Packages (Luxembourg) et France Num |
+| Assistant IA artisan, agent IA, réponse automatique aux demandes de devis, devis à la voix | `/intelligence-artificielle` | En ligne |
+| Conseil IA, automatisation PME bâtiment | `/intelligence-artificielle` | En ligne ; à enrichir si une offre de conseil distincte existe |
+| Digitalisation artisan, aides au numérique, accompagnement | `/digitaliser-son-entreprise` (SME Packages Digital et AI au Luxembourg, France Num) | En ligne après fusion |
 
 ## 4. Ordre de priorité
 
 1. Indexation Google et Bing (Ilann, 30 minutes) : rien d'autre ne compte tant que le site n'est pas indexé.
 2. Fiche Google Business Profile et premiers avis réels.
 3. Profil G2 gratuit, fiche Appvizer.
-4. Page « Digitaliser son entreprise artisanale » avec l'aide SME Packages, puis contact eHandwierk.
+4. Contact eHandwierk (Chambre des Métiers) pour présenter l'offre et confirmer l'éligibilité des projets ; la page `/digitaliser-son-entreprise` explique l'aide aux artisans.
 5. Candidature France Num, lecture de la charte « solution compatible ».
 6. Épisode de podcast, démo vidéo du logiciel.
 7. Club Partenaires BTP 57, Chambre des Métiers, Fédération des Artisans.

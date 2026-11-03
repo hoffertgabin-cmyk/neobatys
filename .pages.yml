@@ -900,7 +900,7 @@ content:
     label: Choix « autre » du formulaire
     type: string
 - name: pages
-  label: Pages Sites, Logiciel, IA et Contact
+  label: Pages Sites, Logiciel, IA, Digitalisation et Contact
   type: file
   path: content/data/pages.json
   format: json
@@ -1085,6 +1085,107 @@ content:
       - name: answer
         label: Réponse
         type: text
+  - name: digitalisationPage
+    label: Page Digitaliser son entreprise
+    type: object
+    fields:
+    - name: seo
+      label: Référencement Google
+      type: object
+      fields:
+      - name: title
+        label: Titre de l'onglet
+        type: string
+      - name: description
+        label: Description Google
+        type: text
+    - name: hero
+      label: Haut de page
+      type: object
+      fields:
+      - name: eyebrow
+        label: Surtitre
+        type: string
+      - name: title
+        label: Titre
+        type: string
+      - name: subtitle
+        label: Sous-titre
+        type: text
+    - name: updated
+      label: Date de mise à jour
+      type: string
+    - name: sections
+      label: Paragraphes
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{title}'
+      fields:
+      - name: title
+        label: Intertitre
+        type: string
+      - name: paragraphs
+        label: Paragraphes
+        type: text
+        list: true
+      - name: items
+        label: Liste à puces
+        type: string
+        list: true
+    - name: faq
+      label: Questions
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{question}'
+      fields:
+      - name: question
+        label: Question
+        type: string
+      - name: answer
+        label: Réponse
+        type: text
+    - name: related
+      label: Bloc de liens vers nos solutions
+      type: object
+      fields:
+      - name: eyebrow
+        label: Surtitre
+        type: string
+      - name: title
+        label: Titre
+        type: string
+      - name: subtitle
+        label: Sous-titre
+        type: text
+    - name: relatedLinks
+      label: Liens vers nos solutions
+      type: object
+      list: true
+      fields:
+      - name: href
+        label: Lien
+        type: string
+      - name: label
+        label: Titre
+        type: string
+      - name: summary
+        label: Résumé
+        type: text
+    - name: sources
+      label: Sources officielles
+      type: object
+      list: true
+      fields:
+      - name: label
+        label: Nom
+        type: string
+      - name: href
+        label: Lien
+        type: string
   - name: contactPage
     label: Page Contact
     type: object
