@@ -1,7 +1,7 @@
 {
   "pricing": {
     "oneOffTitle": "En une fois",
-    "pricePrefix": "",
+    "pricePrefix": "À partir de",
     "maintenance": "puis 200 € HT / mois de maintenance",
     "plans": [
       {
