@@ -39,7 +39,9 @@ export function ComboPack() {
                   {comboPack.cta.label}
                 </Button>
                 <span className="text-sm font-semibold text-chantier-light">
-                  <span className="mr-1 text-xs font-medium text-ardoise-light">{pricing.pricePrefix}</span>
+                  {pricing.pricePrefix && (
+                    <span className="mr-1 text-xs font-medium text-ardoise-light">{pricing.pricePrefix}</span>
+                  )}
                   {comboPack.badge}
                 </span>
               </div>
