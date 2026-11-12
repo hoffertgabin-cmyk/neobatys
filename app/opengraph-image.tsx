@@ -46,7 +46,7 @@ export default function OpengraphImage() {
       </div>
       <div style={{ display: "flex", flexDirection: "column" }}>
         <div style={{ fontSize: 72, fontWeight: 700, lineHeight: 1.05 }}>
-          {"Plus de clients. Moins de coûts."}
+          {"Plus de clients. Vos devis en 2 minutes."}
         </div>
         <div
           style={{
@@ -56,7 +56,7 @@ export default function OpengraphImage() {
             color: "#C2410C",
           }}
         >
-          {"L'IA s'occupe du reste."}
+          {"On installe tout pour vous."}
         </div>
       </div>
       <div style={{ fontSize: 30, color: "#4D585F" }}>
