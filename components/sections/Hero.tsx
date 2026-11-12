@@ -24,10 +24,7 @@ export function Hero() {
         <p className="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-ardoise-dark sm:text-xl">
           {hero.subtitle}
         </p>
-        <div
-          className="mt-9 flex animate-fade-up flex-col justify-center gap-3 sm:flex-row"
-          style={{ animationDelay: "0.45s" }}
-        >
+        <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
           <Button href={hero.primaryCta.href} size="lg" arrow>
             {hero.primaryCta.label}
           </Button>

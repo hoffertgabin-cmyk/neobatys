@@ -26,17 +26,17 @@ export default function HomePage() {
     <>
       <Hero />
       <TradesMarquee />
+      <Projects />
       <PainPoints />
-      <Results />
-      <AiServices />
       <WebsiteOffer />
       <SoftwareOffer />
       <ComboPack />
+      <Pricing />
+      <AiServices />
+      <Results />
       <Process />
       <Stats />
-      <Projects />
       <Testimonials />
-      <Pricing />
       <Faq />
       <FinalCta />
       <JsonLd data={faqJsonLd(faq)} />

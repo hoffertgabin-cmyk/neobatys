@@ -173,6 +173,8 @@ export function Projects() {
   const filters = [ALL, ...Array.from(new Set(projects.map((p) => p.trade)))];
   const [active, setActive] = useState(ALL);
   const [selected, setSelected] = useState<Project | null>(null);
+  // Sur téléphone, 3 maquettes d'abord : les 9 empilées font 6 écrans.
+  const [expanded, setExpanded] = useState(false);
   const visible = active === ALL ? projects : projects.filter((p) => p.trade === active);
   const copy = mockupsOnly ? sectionsCopy.projects.mockups : sectionsCopy.projects;
   const noun = mockupsOnly ? "maquette" : "réalisation";
@@ -214,13 +216,16 @@ export function Projects() {
       </p>
 
       <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {visible.map((project) => (
+        {visible.map((project, index) => (
           <m.li
             key={`${active}-${project.title}`}
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="group overflow-hidden rounded-2xl bg-white shadow-soft ring-1 ring-nuit/5 transition-shadow hover:shadow-lift"
+            className={cn(
+              "group overflow-hidden rounded-2xl bg-white shadow-soft ring-1 ring-nuit/5 transition-shadow hover:shadow-lift",
+              !expanded && index >= 3 && "max-sm:hidden",
+            )}
           >
             <div className="relative aspect-[4/3] w-full overflow-hidden">
               <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-[1.04]">
@@ -288,6 +293,13 @@ export function Projects() {
           </m.li>
         ))}
       </ul>
+      {!expanded && visible.length > 3 && (
+        <div className="mt-6 text-center sm:hidden">
+          <Button variant="ghost" onClick={() => setExpanded(true)}>
+            Voir les {visible.length} {noun}s
+          </Button>
+        </div>
+      )}
 
       <ProjectDialog project={selected} onClose={() => setSelected(null)} />
     </Section>

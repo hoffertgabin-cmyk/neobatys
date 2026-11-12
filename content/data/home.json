@@ -55,16 +55,16 @@
   },
   "hero": {
     "eyebrow": "Sites internet, logiciel et IA pour artisans du bâtiment",
-    "titleLines": ["Plus de clients.", "Moins de coûts.", "L'IA s'occupe du reste."],
-    "highlight": "L'IA s'occupe du reste.",
-    "subtitle": "Un site qui vous amène des clients, un logiciel qui fait vos devis et vos factures, et des assistants IA qui répondent et relancent à votre place. On met tout en place pour vous.",
+    "titleLines": ["Plus de clients.", "Vos devis en 2 minutes.", "On installe tout pour vous."],
+    "highlight": "On installe tout pour vous.",
+    "subtitle": "Un site à votre nom, en ligne sous 7 jours, à partir de 990 € HT. Un logiciel qui fait vos devis et vos factures. Et, si vous le voulez, des assistants IA qui préparent vos réponses et vos relances.",
     "primaryCta": {
       "label": "Demander un devis",
       "href": "/contact"
     },
     "secondaryCta": {
-      "label": "Ce que l'IA peut faire",
-      "href": "/#ia"
+      "label": "Voir un site pour mon métier",
+      "href": "/#realisations"
     },
     "reassurance": ["Sans engagement", "Réponse sous 24 h", "Accompagnement humain"],
     "modelsLabel": "Les modèles d'IA de référence, branchés sur votre quotidien",
