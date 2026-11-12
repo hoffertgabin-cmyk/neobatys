@@ -90,7 +90,6 @@ Objectif : une dizaine de liens propres en 3 mois, pas de lien acheté, pas d'é
 | Source | Type de lien | Comment |
 |---|---|---|
 | Google Business Profile, Bing Places, Apple Business | fiche | création directe |
-| Editus.lu, PagesJaunes | annuaire | inscription gratuite |
 | Capterra, GetApp, Appvizer | fiche éditeur de logiciel | inscription éditeur |
 | CAPEB Moselle (capeb57.fr), Fédération BTP Moselle (ffbatiment.fr) | partenaire, article, atelier | proposer un atelier « facturation électronique 2027 » aux adhérents |
 | CMA Alsace-Moselle-Grand Est (cma-alsace-moselle-grandest.fr) | agenda, partenaires | atelier ou fiche prestataire numérique |
@@ -119,14 +118,14 @@ Organismes vérifiés existants le 31/10/2026. Les adresses initiative-metz.fr, 
 
 ## 9. Actions humaines
 
-Pas à pas avec les liens officiels (Search Console, Bing, annuaires, données NAP) : `docs/seo-actions-ilann.md`.
+Pas à pas avec les liens officiels (Search Console, Bing, données NAP) : `docs/seo-actions-ilann.md`.
 
 | Action | Qui | Quand |
 |---|---|---|
 | Relire les 3 guides (dates, amendes, TVA) et confirmer que le logiciel passe bien par une plateforme agréée (laquelle ?) | Ilann, Gabin | avant fusion |
 | Créer la propriété Search Console et envoyer le sitemap | Ilann | S1 |
 | Créer ou compléter Google Business Profile | Ilann | S1 |
-| Inscriptions annuaires et fiches logiciel | Ilann ou Gabin | S2 à S4 |
+| Fiches logiciel | Ilann ou Gabin | S2 à S4 |
 | Contacts CAPEB, FFB, CMA, Chambre des Métiers | Ilann, Gabin | S5 à S8 |
 | Ouvrir Google Keyword Planner pour obtenir les volumes réels et reprioriser les métiers | Ilann | S2 |
 

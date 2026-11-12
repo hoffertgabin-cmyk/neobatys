@@ -41,11 +41,11 @@ IndexNow est en place : après chaque déploiement de production, `.github/workf
 |---|---|---|
 | 5 | Bing Places (fiche locale Bing, importable depuis Google Business Profile une fois celle-ci validée) | https://www.bing.com/forbusiness/ |
 | 6 | Apple Business (fiche Plans) | https://business.apple.com/ |
-| 7 | PagesJaunes : créer la fiche gratuite via Solocal Manager. Page protégée contre les robots : lien relevé par recherche, à ouvrir dans un navigateur | https://www.solocal.com/solocalmanager |
-| 8 | Editus (annuaire professionnel du Luxembourg), bouton « Créer son profil entreprise ». Page protégée contre les robots, gratuité de la fiche de base non confirmée : ne rien payer | https://www.editus.lu/fr/catalogue/editus-luxembourg-sa-kayl-1/pourquoi-creer-votre-profil-sur-editus-lu-413087a |
-| 9 | Un mois après : dans Search Console, rapport « Pages » (pages non indexées) et « Performances » (requêtes). Noter les requêtes qui montent pour choisir les prochains guides | https://search.google.com/search-console |
+| 7 | Un mois après : dans Search Console, rapport « Pages » (pages non indexées) et « Performances » (requêtes). Noter les requêtes qui montent pour choisir les prochains guides | https://search.google.com/search-console |
 
-Annuaires et liens locaux (CAPEB, FFB, CMA, partenaires) : voir `docs/seo-logiciel.md`, section 6.
+Pas d'inscription dans les annuaires (PagesJaunes, Editus) : décision d'Ilann du 12/11/2026, NEOBATYS est une des activités de TAG Delme SARL, pas une entreprise à part.
+
+Liens locaux (CAPEB, FFB, CMA, partenaires) : voir `docs/seo-logiciel.md`, section 6.
 
 ## Décisions qui attendent Ilann et Gabin
 
