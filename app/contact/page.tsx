@@ -1,4 +1,4 @@
-import { Mail, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { contactPage } from "@/content/pages";
 import { hasPhone, mailHref, site, telHref } from "@/content/site";
 import { pageMetadata } from "@/lib/seo";
@@ -9,9 +9,10 @@ import { ContactForm } from "@/components/forms/ContactForm";
 
 export const metadata = pageMetadata({ ...contactPage.seo, path: "/contact" });
 
-const infos = [
+const infos: { Icon: typeof Mail; label: string; value: string; href?: string }[] = [
   ...(hasPhone ? [{ Icon: Phone, label: "Téléphone", value: site.phone, href: telHref }] : []),
   { Icon: Mail, label: "E-mail", value: site.email, href: mailHref },
+  { Icon: MapPin, label: "Zone d'intervention", value: site.zone },
 ];
 
 export default function ContactPage() {

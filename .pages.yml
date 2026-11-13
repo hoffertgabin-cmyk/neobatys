@@ -57,6 +57,27 @@ content:
         label: Pays (code)
         type: string
         readonly: true
+    - name: zone
+      label: Zone d'intervention
+      type: string
+      description: Phrase affichée sur la page contact et connue de l'assistant de la FAQ. Si vous la changez, changez aussi la question « Où intervenez-vous ? » de la FAQ et le cercle ci-dessous.
+    - name: zoneOnSite
+      label: Zone sur place (pour Google)
+      description: Cercle déclaré à Google comme zone où l'on se déplace, en plus de toute la France à distance.
+      type: object
+      fields:
+      - name: city
+        label: Ville au centre
+        type: string
+      - name: latitude
+        label: Latitude du centre
+        type: number
+      - name: longitude
+        label: Longitude du centre
+        type: number
+      - name: radiusKm
+        label: Rayon (km)
+        type: number
     - name: socials
       label: Réseaux sociaux
       description: Laisser vide pour masquer l'icône.

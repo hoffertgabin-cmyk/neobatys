@@ -59,7 +59,7 @@ Ce qui fait citer une page, selon Google et Microsoft (documentation officielle)
 | Modèle de devis, calcul de TVA, acompte, retenue, impayés | `/logiciel/modele-devis`, `calculateur-tva`, `facture-acompte`, `retenue-de-garantie`, `facture-impayee`, `devis-excel-ou-logiciel` | En ligne |
 | Création site internet artisan | `/sites-internet` | En ligne |
 | Site internet plombier, électricien, maçon... | `/sites-internet/<métier>` (9 pages) | En ligne |
-| Agence web Metz, Moselle, Luxembourg | Aucune | **Bloqué** : pas de zone desservie dans `content/data/site.json` |
+| Agence web Metz, Moselle, Luxembourg | Aucune | Zone fixée dans `content/data/site.json` (50 km autour de Metz) ; une page locale seulement avec du contenu propre (chantiers, avis locaux) |
 | Assistant IA artisan, agent IA, réponse automatique aux demandes de devis, devis à la voix | `/intelligence-artificielle` | En ligne |
 | Conseil IA, automatisation PME bâtiment | `/intelligence-artificielle` | En ligne ; à enrichir si une offre de conseil distincte existe |
 | Digitalisation artisan, aides au numérique, accompagnement | `/digitaliser-son-entreprise` (SME Packages Digital et AI au Luxembourg, France Num) | En ligne après fusion |

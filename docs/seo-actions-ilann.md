@@ -11,7 +11,7 @@ Le site est prêt côté code (sitemap, robots.txt, canonicals, données structu
 - Site : https://www.neobatys.com
 - E-mail : contact@neobatys.com
 - Téléphone : pas encore renseigné dans `site.json`. Le remplir là d'abord (Pages CMS), puis le même numéro partout.
-- Zone desservie : absente de `site.json`. À décider et à y ajouter avant de la déclarer dans les fiches (voir décisions en fin de page).
+- Zone desservie : à distance partout en France, et sur place dans un rayon d'environ 50 km autour de Metz (champ `zone` de `site.json`, décision du 13/11/2026 à confirmer par Ilann).
 
 La fiche Google Business Profile est traitée par la session réseaux sociaux, avec ces mêmes données.
 
@@ -49,6 +49,6 @@ Liens locaux (CAPEB, FFB, CMA, partenaires) : voir `docs/seo-logiciel.md`, secti
 
 ## Décisions qui attendent Ilann et Gabin
 
-1. **Zone desservie** : l'écrire dans `site.json` (par exemple « Luxembourg et Moselle », si c'est la réalité). Sans elle, pas de pages locales ni de zone déclarée dans les données structurées.
+1. **Zone desservie** : proposée le 13/11/2026, à distance partout en France, et sur place dans un rayon d'environ 50 km autour de Metz. Écrite dans `site.json` et déclarée dans les données structurées (`areaServed`) ; à confirmer par Ilann.
 2. **Parrainage** (idée 5 de `docs/veille/seo-acquisition.md`) : fixer la récompense, par exemple un mois de maintenance offert au parrain et au filleul. La page `/parrainage` se code ensuite (effort S).
 3. **Calculateurs gratuits** (idée 2) : valider la liste (taux horaire, prix de vente avec marge, HT/TTC aux taux du bâtiment). Pas de conseil fiscal, formules affichées.

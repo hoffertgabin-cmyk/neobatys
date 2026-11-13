@@ -11,6 +11,13 @@
       "city": "Strassen",
       "country": "LU"
     },
+    "zone": "À distance partout en France, et sur place dans un rayon d'environ 50 km autour de Metz",
+    "zoneOnSite": {
+      "city": "Metz",
+      "latitude": 49.1193,
+      "longitude": 6.1757,
+      "radiusKm": 50
+    },
     "socials": {
       "facebook": "",
       "instagram": "",
