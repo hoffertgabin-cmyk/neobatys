@@ -2,7 +2,7 @@
   "faq": [
     {
       "question": "Je ne suis pas à l'aise avec l'informatique, est-ce que je vais m'en sortir ?",
-      "answer": "Oui. Nos outils sont pensés pour des artisans, pas pour des informaticiens. On vous forme au téléphone ou sur place, et on reste joignables dès que vous avez une question."
+      "answer": "Oui. Nos outils sont pensés pour des artisans, pas pour des informaticiens. On vous forme sur place dans un rayon d'environ 50 km autour de Metz, à distance au-delà, et on reste joignables dès que vous avez une question."
     },
     {
       "question": "Combien de temps faut-il pour avoir mon site en ligne ?",
@@ -37,8 +37,8 @@
       "answer": "Ça dépend de la formule. Les offres en une fois sont suivies d'une maintenance à 200 € HT par mois sans engagement : vous pouvez l'arrêter quand vous voulez, et on vous aide à récupérer votre site et vos données. Les abonnements n'ont pas de frais de départ, en échange d'un engagement de 12 mois."
     },
     {
-      "question": "Tout peut se faire à distance ?",
-      "answer": "Oui. Tout peut se faire à distance, par téléphone et en visio, partout en France."
+      "question": "Où intervenez-vous ?",
+      "answer": "À distance partout en France : tout peut se faire par téléphone et en visio. Et sur place dans un rayon d'environ 50 km autour de Metz, pour un rendez-vous ou une formation."
     }
   ]
 }

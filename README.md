@@ -37,7 +37,7 @@ Tous les textes sont dans le dossier **`content/data/`** (un fichier JSON par su
 
 | Fichier                          | Contenu                                                                            |
 | -------------------------------- | ---------------------------------------------------------------------------------- |
-| `content/data/site.json`         | nom, ville, **téléphone, e-mail, zone, SIRET**, adresse, réseaux sociaux |
+| `content/data/site.json`         | nom, **téléphone, e-mail, zone d'intervention**, adresse du siège, réseaux sociaux |
 | `content/data/home.json`         | hero, avant/après, résultats, cas d'usage IA, étapes, CTA final, titres            |
 | `content/data/offers.json`       | offre Sites internet, offre Logiciel, Pack combiné                                 |
 | `content/data/pricing.json`      | les 4 offres en une fois, la maintenance et les 3 abonnements                      |

@@ -212,7 +212,7 @@
     {
       "title": "11. Intelligence artificielle",
       "paragraphs": [
-        "11.1. Les assistants produisent des propositions (devis dictés, réponses, relances) qui ne partent vers les clients du Client qu'après validation, par le Prestataire pour les envois que le logiciel lui soumet, ou par le Client lui-même. Seuls certains messages fixes (accusé de réception d'un appel manqué, rappel de rendez-vous la veille) peuvent partir sans validation, uniquement si le Client les a expressément activés, et sous sa responsabilité.",
+        "11.1. Les assistants produisent des propositions (devis dictés, réponses, relances) qui ne partent vers les clients du Client qu'après relecture et validation par l'équipe du Prestataire. À cette fin, le Client accorde au Prestataire, pendant toute la durée du contrat, un accès de maintenance à ses outils (logiciel, assistants et messageries reliées), limité à cette relecture, au paramétrage et au support. Seuls certains messages fixes (accusé de réception d'un appel manqué, rappel de rendez-vous la veille) peuvent partir sans validation, uniquement si le Client les a expressément activés, et sous sa responsabilité.",
         "11.2. Les messages et documents envoyés le sont au nom du Client, qui en reste responsable, en particulier de leurs mentions légales et de leurs montants. Le Prestataire répond des erreurs commises lors de sa propre validation, dans les limites de l'article 12.",
         "11.3. Les résultats d'un assistant peuvent contenir des erreurs. Le Prestataire ne garantit pas leur exactitude."
       ]
