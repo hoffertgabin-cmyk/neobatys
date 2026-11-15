@@ -23,7 +23,9 @@ export function Stats() {
             key={stat.label}
             className="relative rounded-3xl bg-white p-6 text-center shadow-soft ring-1 ring-nuit/5 sm:p-8"
           >
-            {stat.placeholder && <PlaceholderBadge className="mb-3 text-ardoise" />}
+            {stat.placeholder && (
+              <PlaceholderBadge className="mb-3 text-ardoise" />
+            )}
             <p className="font-display text-4xl font-semibold tracking-[-0.045em] sm:text-5xl">
               <Counter value={stat.value} suffix={stat.suffix} />
             </p>

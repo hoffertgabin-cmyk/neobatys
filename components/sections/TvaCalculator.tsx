@@ -82,10 +82,7 @@ export function TvaCalculator({ labels }: { labels: Labels }) {
       </div>
       <dl className="mt-6 grid gap-3 sm:grid-cols-3" aria-live="polite">
         {(["ht", "tva", "ttc"] as const).map((k) => (
-          <div
-            key={k}
-            className="flex items-baseline justify-between rounded-xl bg-white p-4 ring-1 ring-nuit/5 sm:block"
-          >
+          <div key={k} className="flex items-baseline justify-between rounded-xl bg-white p-4 ring-1 ring-nuit/5 sm:block">
             <dt className="text-xs font-semibold tracking-wide text-ardoise-dark uppercase">
               {labels.results[k]}
             </dt>

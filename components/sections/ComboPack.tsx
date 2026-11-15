@@ -40,9 +40,7 @@ export function ComboPack() {
                 </Button>
                 <span className="text-sm font-semibold text-chantier-light">
                   {pricing.pricePrefix && (
-                    <span className="mr-1 text-xs font-medium text-ardoise-light">
-                      {pricing.pricePrefix}
-                    </span>
+                    <span className="mr-1 text-xs font-medium text-ardoise-light">{pricing.pricePrefix}</span>
                   )}
                   {comboPack.badge}
                 </span>
