@@ -12,7 +12,7 @@ Répondre en français, simplement : l'utilisateur n'est pas développeur.
 
 ## Avant toute chose : demander la zone
 
-**Ne jamais inventer ni supposer une zone d'intervention.** Aucune ville, aucun département n'est codé en dur dans ce skill. Zone NEOBATYS (décision du 13/11/2026) : à distance partout en France, et sur place dans un rayon d'environ 50 km autour de Metz. Elle est dans `content/data/site.json` (`zone` et `zoneOnSite`) : ne pas l'élargir ni la changer sans demande explicite.
+**Ne jamais inventer ni supposer une zone d'intervention.** Aucune ville, aucun département n'est codé en dur dans ce skill. Zone NEOBATYS (décision d'Ilann du 15/11/2026) : « Société luxembourgeoise, nous travaillons au Luxembourg, en France et partout en Europe, sur place ou à distance. » Elle est dans `content/data/site.json` (`zone`) : ne pas la changer sans demande explicite.
 
 Toujours demander (ou lire dans `content/`) avant d'écrire :
 
@@ -46,7 +46,7 @@ Règle du projet : **un texte se modifie dans `content/`, pas dans les composant
 - `serviceJsonLd()` décrit une offre et la rattache à l'entreprise par cet `@id`.
 - `faqJsonLd()` transforme une liste question/réponse en `FAQPage`.
 - **Valeurs entre crochets** (`[TÉLÉPHONE]`, `[ZONE]`…) : `lib/seo.ts` les retire automatiquement du JSON-LD. Une valeur non remplie n'apparaît donc pas chez Google, mais elle peut rester visible sur la page : le signaler à l'utilisateur.
-- `areaServed` déclare deux zones : la France entière (`Country`, travail à distance) et un cercle (`GeoCircle`) construit à partir de `site.zoneOnSite` (ville, latitude, longitude, rayon en km) pour les déplacements sur place. La phrase affichée sur la page contact et connue de l'assistant est `site.zone`. Les trois (phrase, cercle, question « Où intervenez-vous ? » de la FAQ) doivent dire la même chose.
+- `areaServed` déclare, dans `lib/seo.ts`, le Luxembourg, la France puis l'Europe (`Country`, `Continent`). La phrase affichée sur la page contact et connue de l'assistant est `site.zone`. Les deux, et la réponse « Où intervenez-vous ? » de la FAQ, doivent dire la même chose.
 
 ## Titres et descriptions
 

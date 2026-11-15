@@ -65,19 +65,11 @@ export function localBusinessJsonLd() {
       addressLocality: filled(site.address.city),
       addressCountry: site.address.country,
     },
-    // À distance partout en France, sur place dans un cercle autour de Metz (content/data/site.json)
+    // Société luxembourgeoise : Luxembourg, France, puis toute l'Europe (phrase dans content/data/site.json)
     areaServed: [
+      { "@type": "Country", name: "Luxembourg" },
       { "@type": "Country", name: "France" },
-      {
-        "@type": "GeoCircle",
-        name: `${site.zoneOnSite.radiusKm} km autour de ${site.zoneOnSite.city}`,
-        geoMidpoint: {
-          "@type": "GeoCoordinates",
-          latitude: site.zoneOnSite.latitude,
-          longitude: site.zoneOnSite.longitude,
-        },
-        geoRadius: site.zoneOnSite.radiusKm * 1000,
-      },
+      { "@type": "Continent", name: "Europe" },
     ],
     priceRange: "€€",
     // Profils officiels sur les réseaux, omis tant qu'aucun n'est renseigné
