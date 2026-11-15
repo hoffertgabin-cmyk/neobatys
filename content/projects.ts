@@ -36,7 +36,14 @@ export type TradeMockup =
   | "peintre"
   | "chauffagiste"
   | "carreleur"
-  | "charpentier";
+  | "charpentier"
+  | "platrier"
+  | "serrurier"
+  | "paysagiste"
+  | "terrassier"
+  | "isolation"
+  | "etancheur"
+  | "constructeur";
 
 export type Project = {
   title: string;
@@ -53,6 +60,8 @@ export type Project = {
   theme: TradeTheme;
   /** Maquette fictive, pas un vrai client. */
   placeholder?: boolean;
+  /** Affiché sur la page d'accueil (3 au plus). */
+  featured?: boolean;
 };
 
 /** Un champ image laissé vide dans Pages CMS peut être enregistré comme "" ou null. */
@@ -72,3 +81,10 @@ export const mockupsOnly = projects.every((p) => p.placeholder);
 /** Maquette fictive d'un métier, même si de vrais projets masquent les maquettes ailleurs. */
 export const mockupProject = (mockup: TradeMockup) =>
   allProjects.find((p) => p.placeholder && p.mockup === mockup);
+
+/** Métier et ville ; la ville d'une maquette fictive n'est pas affichée. */
+export const projectMeta = (p: Project) => (p.placeholder ? p.trade : `${p.trade} · ${p.city}`);
+
+/** Formulaire de contact pré-rempli avec le métier de la maquette. */
+export const interestHref = (p: Project) =>
+  `/contact?service=site&maquette=${encodeURIComponent(p.trade)}`;

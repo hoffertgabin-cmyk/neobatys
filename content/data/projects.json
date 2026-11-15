@@ -4,72 +4,75 @@
       "title": "Maquette · Plomberie",
       "trade": "Plombier",
       "city": "Thionville",
-      "description": "Site vitrine + formulaire de dépannage urgent.",
+      "description": "Site de dépannage : délai et numéro d'abord, estimation de salle de bain, rappel en 15 minutes.",
       "tags": ["Site vitrine", "SEO local"],
       "mockup": "plombier",
       "brand": "Hydrélia",
-      "domain": "exemple-plomberie-thionville.fr",
+      "domain": "hydrelia-exemple.fr",
       "theme": {
-        "primary": "#0369a1",
+        "primary": "#0f3d4c",
         "onPrimary": "#ffffff",
-        "dark": "#0b2942",
-        "soft": "#e8f4fc",
-        "accent": "#38bdf8"
+        "dark": "#092a35",
+        "soft": "#e9eeed",
+        "accent": "#c9a05a"
       },
-      "placeholder": true
+      "placeholder": true,
+      "featured": true
     },
     {
       "title": "Maquette · Électricité",
       "trade": "Électricien",
       "city": "Montigny-lès-Metz",
-      "description": "Site + logiciel de devis relié au formulaire.",
+      "description": "Site + logiciel de devis : diagnostic en ligne, devis signé en ligne et suivi de la demande.",
       "tags": ["Pack Gestion"],
       "mockup": "electricien",
       "brand": "Volténa",
-      "domain": "exemple-electricite-montigny.fr",
+      "domain": "voltena-exemple.fr",
       "theme": {
-        "primary": "#facc15",
-        "onPrimary": "#111827",
-        "ink": "#a16207",
-        "dark": "#0f172a",
-        "soft": "#fefce8",
-        "accent": "#fde047"
+        "primary": "#f0b54a",
+        "onPrimary": "#121417",
+        "ink": "#8a5a00",
+        "dark": "#121417",
+        "soft": "#f4f2ed",
+        "accent": "#f0b54a"
       },
-      "placeholder": true
+      "placeholder": true,
+      "featured": true
     },
     {
       "title": "Maquette · Maçonnerie",
       "trade": "Maçon",
       "city": "Pont-à-Mousson",
-      "description": "Galerie avant / après de rénovations.",
+      "description": "Site éditorial : chantier avant / pendant / après, savoir-faire et demande de visite avec photos.",
       "tags": ["Site vitrine", "Galerie"],
       "mockup": "macon",
       "brand": "Pierre & Taloche",
-      "domain": "exemple-maconnerie-pontamousson.fr",
+      "domain": "pierre-et-taloche-exemple.fr",
       "theme": {
-        "primary": "#57534e",
+        "primary": "#23272b",
         "onPrimary": "#ffffff",
-        "dark": "#1c1917",
-        "soft": "#f5f3f0",
-        "accent": "#d4a373"
+        "dark": "#23272b",
+        "soft": "#ecebe7",
+        "accent": "#c58f3d"
       },
-      "placeholder": true
+      "placeholder": true,
+      "featured": true
     },
     {
       "title": "Maquette · Menuiserie",
       "trade": "Menuisier",
       "city": "Boulay-Moselle",
-      "description": "Catalogue de réalisations sur mesure.",
-      "tags": ["Site vitrine"],
+      "description": "Catalogue d'atelier : réalisations sur mesure en fiches, estimation de budget par essence.",
+      "tags": ["Site vitrine", "Catalogue"],
       "mockup": "menuisier",
       "brand": "Atelier Chêne & Fil",
-      "domain": "exemple-menuiserie-boulay.fr",
+      "domain": "chene-et-fil-exemple.fr",
       "theme": {
-        "primary": "#92400e",
+        "primary": "#2b2018",
         "onPrimary": "#ffffff",
-        "dark": "#2b1708",
-        "soft": "#fbf5ec",
-        "accent": "#d6a064"
+        "dark": "#2b2018",
+        "soft": "#eeebe5",
+        "accent": "#c49a6c"
       },
       "placeholder": true
     },
@@ -77,17 +80,17 @@
       "title": "Maquette · Couverture",
       "trade": "Couvreur",
       "city": "Hayange",
-      "description": "Logiciel de devis et relances automatiques.",
-      "tags": ["Logiciel"],
+      "description": "Site de couvreur : diagnostic de toiture en 3 questions, urgence fuite, suivi de chantier en ligne pour le client.",
+      "tags": ["Site vitrine", "Suivi de chantier"],
       "mockup": "couvreur",
       "brand": "Toitures Horizon",
-      "domain": "app.exemple-couverture-hayange.fr",
+      "domain": "toitures-horizon-exemple.fr",
       "theme": {
-        "primary": "#334155",
+        "primary": "#1d262d",
         "onPrimary": "#ffffff",
-        "dark": "#0f172a",
-        "soft": "#f1f5f9",
-        "accent": "#c2410c"
+        "dark": "#1d262d",
+        "soft": "#eef1f3",
+        "accent": "#b4472a"
       },
       "placeholder": true
     },
@@ -95,17 +98,17 @@
       "title": "Maquette · Peinture",
       "trade": "Peintre",
       "city": "Woippy",
-      "description": "Site one-page et fiche Google Business.",
-      "tags": ["Site vitrine", "Google Business"],
+      "description": "Site de peintre : nuancier qui teinte un vrai mur, réalisations intérieures et façades, devis avec échantillons.",
+      "tags": ["Site vitrine", "Nuancier"],
       "mockup": "peintre",
       "brand": "Nuances & Murs",
-      "domain": "exemple-peinture-woippy.fr",
+      "domain": "nuances-et-murs-exemple.fr",
       "theme": {
-        "primary": "#7c3aed",
+        "primary": "#24423a",
         "onPrimary": "#ffffff",
-        "dark": "#2e1065",
-        "soft": "#f6f3ff",
-        "accent": "#f472b6"
+        "dark": "#1d1c1a",
+        "soft": "#f1efeb",
+        "accent": "#2c4a60"
       },
       "placeholder": true
     },
@@ -113,17 +116,17 @@
       "title": "Maquette · Chauffage",
       "trade": "Chauffagiste",
       "city": "Saint-Avold",
-      "description": "Prise de rendez-vous d'entretien et rappels annuels.",
+      "description": "Site de chauffagiste : simulateur d'aides pour pompe à chaleur, rendez-vous d'entretien en ligne, contrats.",
       "tags": ["Site vitrine", "Rendez-vous en ligne"],
       "mockup": "chauffagiste",
       "brand": "Thermalis",
-      "domain": "exemple-chauffage-saint-avold.fr",
+      "domain": "thermalis-exemple.fr",
       "theme": {
-        "primary": "#dc2626",
+        "primary": "#d4521c",
         "onPrimary": "#ffffff",
-        "dark": "#3b0a0a",
-        "soft": "#fef4f2",
-        "accent": "#fb923c"
+        "dark": "#17202a",
+        "soft": "#eef2f5",
+        "accent": "#a83c0c"
       },
       "placeholder": true
     },
@@ -131,17 +134,17 @@
       "title": "Maquette · Carrelage",
       "trade": "Carreleur",
       "city": "Amnéville",
-      "description": "Site avec estimation de devis au m².",
+      "description": "Site de carreleur : motifs de pose dessinés en direct et estimation au m².",
       "tags": ["Site vitrine", "Devis en ligne"],
       "mockup": "carreleur",
       "brand": "Atelier Calepin",
-      "domain": "exemple-carrelage-amneville.fr",
+      "domain": "atelier-calepin-exemple.fr",
       "theme": {
-        "primary": "#0f766e",
+        "primary": "#1d5945",
         "onPrimary": "#ffffff",
-        "dark": "#042f2e",
-        "soft": "#effcf9",
-        "accent": "#5eead4"
+        "dark": "#123b2e",
+        "soft": "#f1efe8",
+        "accent": "#dcd7cc"
       },
       "placeholder": true
     },
@@ -149,17 +152,145 @@
       "title": "Maquette · Charpente",
       "trade": "Charpentier",
       "city": "Faulquemont",
-      "description": "Site, logiciel et assistant IA qui répond aux demandes.",
+      "description": "Site d'atelier bois : estimateur d'extension avec calendrier et assistant qui répond aux questions.",
       "tags": ["Pack Gestion", "IA"],
       "mockup": "charpentier",
       "brand": "Futaie Charpente",
-      "domain": "exemple-charpente-faulquemont.fr",
+      "domain": "futaie-charpente-exemple.fr",
       "theme": {
-        "primary": "#166534",
+        "primary": "#2c4a36",
         "onPrimary": "#ffffff",
-        "dark": "#0a2615",
-        "soft": "#f1f8f2",
-        "accent": "#ca8a04"
+        "dark": "#17201a",
+        "soft": "#f3ede3",
+        "accent": "#d9b27c"
+      },
+      "placeholder": true
+    },
+    {
+      "title": "Maquette · Plâtrerie",
+      "trade": "Plâtrier-plaquiste",
+      "city": "Sarreguemines",
+      "description": "Site de plaquiste : chantiers avant peinture, page sous-traitance et chiffrage en ligne avec dépôt de plans.",
+      "tags": ["Site vitrine", "Devis en ligne"],
+      "mockup": "platrier",
+      "brand": "Atelier Gypse",
+      "domain": "atelier-gypse-exemple.fr",
+      "theme": {
+        "primary": "#24272b",
+        "onPrimary": "#ffffff",
+        "dark": "#24272b",
+        "soft": "#f6f5f1",
+        "accent": "#2c55c9"
+      },
+      "placeholder": true
+    },
+    {
+      "title": "Maquette · Serrurerie",
+      "trade": "Serrurier-métallier",
+      "city": "Forbach",
+      "description": "Site de serrurier-métallier : tarifs de dépannage affichés et estimateur de portail sur mesure.",
+      "tags": ["Site vitrine", "Tarifs en ligne"],
+      "mockup": "serrurier",
+      "brand": "Clé & Fer",
+      "domain": "cle-et-fer-exemple.fr",
+      "theme": {
+        "primary": "#15171a",
+        "onPrimary": "#ffffff",
+        "dark": "#15171a",
+        "soft": "#f2f2f0",
+        "accent": "#ff6b1a",
+        "ink": "#b4470a"
+      },
+      "placeholder": true
+    },
+    {
+      "title": "Maquette · Paysage",
+      "trade": "Paysagiste",
+      "city": "Sarrebourg",
+      "description": "Site de paysagiste : calendrier des saisons, calcul de contrat d'entretien, demande de visite avec photos du terrain.",
+      "tags": ["Site vitrine", "Contrats d'entretien"],
+      "mockup": "paysagiste",
+      "brand": "Verdance Jardins",
+      "domain": "verdance-jardins-exemple.fr",
+      "theme": {
+        "primary": "#26331f",
+        "onPrimary": "#ffffff",
+        "dark": "#26331f",
+        "soft": "#eef1ea",
+        "accent": "#a7b694"
+      },
+      "placeholder": true
+    },
+    {
+      "title": "Maquette · Terrassement",
+      "trade": "Terrassier",
+      "city": "Bouzonville",
+      "description": "Site de terrassier : particuliers et professionnels, parc matériel, calcul de volume de terre et devis avec plan du terrain.",
+      "tags": ["Site vitrine", "Devis en ligne"],
+      "mockup": "terrassier",
+      "brand": "Socle TP",
+      "domain": "socle-tp-exemple.fr",
+      "theme": {
+        "primary": "#1a1b1d",
+        "onPrimary": "#ffffff",
+        "dark": "#1a1b1d",
+        "soft": "#ecebe6",
+        "accent": "#f2b300"
+      },
+      "placeholder": true
+    },
+    {
+      "title": "Maquette · Isolation",
+      "trade": "Isolation",
+      "city": "Creutzwald",
+      "description": "Site d'isolation qui inspire confiance : pertes de chaleur expliquées, aides sans promesse, visite gratuite.",
+      "tags": ["Site vitrine", "Estimation en ligne"],
+      "mockup": "isolation",
+      "brand": "Cocon Isolation",
+      "domain": "cocon-isolation-exemple.fr",
+      "theme": {
+        "primary": "#c8562d",
+        "onPrimary": "#ffffff",
+        "ink": "#a2421f",
+        "dark": "#2e241d",
+        "soft": "#f5efe6",
+        "accent": "#e8dccb"
+      },
+      "placeholder": true
+    },
+    {
+      "title": "Maquette · Étanchéité",
+      "trade": "Étancheur",
+      "city": "Metz",
+      "description": "Site d'étancheur : coupe de toiture à explorer, chantiers documentés et signalement d'infiltration.",
+      "tags": ["Site vitrine", "Copropriétés"],
+      "mockup": "etancheur",
+      "brand": "Calfeutre",
+      "domain": "calfeutre-exemple.fr",
+      "theme": {
+        "primary": "#202326",
+        "onPrimary": "#ffffff",
+        "dark": "#202326",
+        "soft": "#ebeae5",
+        "accent": "#86a64a"
+      },
+      "placeholder": true
+    },
+    {
+      "title": "Maquette · Construction",
+      "trade": "Constructeur",
+      "city": "Château-Salins",
+      "description": "Site de constructeur : les étapes du terrain aux clés, des maisons modifiables et un simulateur de budget avant le rendez-vous.",
+      "tags": ["Site vitrine", "Prise de rendez-vous"],
+      "mockup": "constructeur",
+      "brand": "Maisons Orée",
+      "domain": "maisons-oree-exemple.fr",
+      "theme": {
+        "primary": "#18222b",
+        "onPrimary": "#ffffff",
+        "dark": "#18222b",
+        "soft": "#eef1ef",
+        "accent": "#33506a"
       },
       "placeholder": true
     }

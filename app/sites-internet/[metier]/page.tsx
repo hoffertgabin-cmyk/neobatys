@@ -9,8 +9,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { PlaceholderBadge } from "@/components/ui/Badge";
-import { ScaledCanvas } from "@/components/mockups/ScaledCanvas";
-import { MOCKUP_HEIGHT, MOCKUP_WIDTH, TradeSiteMockup } from "@/components/mockups/TradeSiteMockup";
+import { MockupLauncher } from "@/components/mockups/MockupLauncher";
 import { PageHero } from "@/components/sections/PageHero";
 import { ProseSections } from "@/components/sections/ProseSections";
 import { LinkCards } from "@/components/sections/LinkCards";
@@ -43,7 +42,11 @@ export default async function TradeSitePage({ params }: PageProps<"/sites-intern
         breadcrumb={trade.breadcrumb}
         parent={{ label: "Sites internet", href: "/sites-internet" }}
       >
-        <Button href={`/contact?service=site&maquette=${encodeURIComponent(trade.breadcrumb)}`} size="lg" arrow>
+        <Button
+          href={`/contact?service=site&maquette=${encodeURIComponent(trade.breadcrumb)}`}
+          size="lg"
+          arrow
+        >
           Demander un devis
         </Button>
         <Button href="/sites-internet#realisations" size="lg" variant="ghost">
@@ -58,11 +61,7 @@ export default async function TradeSitePage({ params }: PageProps<"/sites-intern
                 className="overflow-hidden rounded-2xl p-4 ring-1 ring-nuit/8 sm:p-6"
                 style={{ backgroundColor: project.theme.soft }}
               >
-                <div className="overflow-hidden rounded-xl shadow-lift ring-1 ring-nuit/8">
-                  <ScaledCanvas width={MOCKUP_WIDTH} height={MOCKUP_HEIGHT}>
-                    <TradeSiteMockup project={project} />
-                  </ScaledCanvas>
-                </div>
+                <MockupLauncher project={project} />
               </div>
               <figcaption className="mt-3 flex flex-wrap items-center gap-2 text-sm text-ardoise-dark">
                 <PlaceholderBadge label="Maquette" className="text-ardoise-dark" />
@@ -81,7 +80,10 @@ export default async function TradeSitePage({ params }: PageProps<"/sites-intern
                 <span className="block font-bold">{guide.label}</span>
                 <span className="mt-1 block text-ardoise-dark">{guide.summary}</span>
               </span>
-              <ArrowRight aria-hidden="true" className="size-5 shrink-0 transition-transform group-hover:translate-x-1" />
+              <ArrowRight
+                aria-hidden="true"
+                className="size-5 shrink-0 transition-transform group-hover:translate-x-1"
+              />
             </Link>
           )}
         </Container>

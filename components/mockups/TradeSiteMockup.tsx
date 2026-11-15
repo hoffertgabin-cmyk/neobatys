@@ -2,36 +2,47 @@
 
 import type { ComponentType } from "react";
 import type { Project, TradeMockup } from "@/content/projects";
-import type { SiteProps } from "./trade/kit";
-import { PlombierSite } from "./trade/plombier";
-import { ElectricienSite } from "./trade/electricien";
-import { MaconSite } from "./trade/macon";
-import { MenuisierSite } from "./trade/menuisier";
-import { CouvreurSite } from "./trade/couvreur";
-import { PeintreSite } from "./trade/peintre";
-import { ChauffagisteSite } from "./trade/chauffagiste";
-import { CarreleurSite } from "./trade/carreleur";
-import { CharpentierSite } from "./trade/charpentier";
+import type { SiteProps } from "./site/frame";
+import { MOCKUP_HEIGHT, MOCKUP_WIDTH } from "./size";
+import * as plombier from "./site/plombier";
+import * as electricien from "./site/electricien";
+import * as macon from "./site/macon";
+import * as menuisier from "./site/menuisier";
+import * as couvreur from "./site/couvreur";
+import * as peintre from "./site/peintre";
+import * as chauffagiste from "./site/chauffagiste";
+import * as carreleur from "./site/carreleur";
+import * as charpentier from "./site/charpentier";
+import * as platrier from "./site/platrier";
+import * as serrurier from "./site/serrurier";
+import * as paysagiste from "./site/paysagiste";
+import * as terrassier from "./site/terrassier";
+import * as isolation from "./site/isolation";
+import * as etancheur from "./site/etancheur";
+import * as constructeur from "./site/constructeur";
 
 /**
- * Maquettes de sites par métier, dessinées en code aux couleurs de `project.theme`.
- * Chaque métier est un petit site navigable (components/mockups/trade/) :
- * figé dans les cartes, utilisable dans la fenêtre agrandie (`interactive`).
- * Taille de référence : 720 × 540, mise à l'échelle par <ScaledCanvas>.
+ * Maquettes de sites par métier (components/mockups/site/<métier>.tsx), au format
+ * 1280 × 800 : chargées seulement dans la fenêtre agrandie (MockupDialog), les cartes
+ * affichant une capture fixe (MockupPreview).
  */
-export const MOCKUP_WIDTH = 720;
-export const MOCKUP_HEIGHT = 540;
-
-const sites: Record<TradeMockup, ComponentType<SiteProps>> = {
-  plombier: PlombierSite,
-  electricien: ElectricienSite,
-  macon: MaconSite,
-  menuisier: MenuisierSite,
-  couvreur: CouvreurSite,
-  peintre: PeintreSite,
-  chauffagiste: ChauffagisteSite,
-  carreleur: CarreleurSite,
-  charpentier: CharpentierSite,
+const sites: Record<TradeMockup, { Site: ComponentType<SiteProps> }> = {
+  plombier,
+  electricien,
+  macon,
+  menuisier,
+  couvreur,
+  peintre,
+  chauffagiste,
+  carreleur,
+  charpentier,
+  platrier,
+  serrurier,
+  paysagiste,
+  terrassier,
+  isolation,
+  etancheur,
+  constructeur,
 };
 
 export function TradeSiteMockup({
@@ -45,6 +56,6 @@ export function TradeSiteMockup({
   width?: number;
   height?: number;
 }) {
-  const Site = sites[project.mockup];
+  const { Site } = sites[project.mockup];
   return <Site project={project} interactive={interactive} width={width} height={height} />;
 }

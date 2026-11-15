@@ -54,7 +54,7 @@ Tous les textes sont dans le dossier **`content/data/`** (un fichier JSON par su
 
 Les icônes se choisissent par leur nom (`"phone"`, `"zap"`…) : la liste est dans `components/ui/Icon.tsx`.
 
-**Contenus d'exemple** : les avis, chiffres et projets marqués « Exemple » (`placeholder: true`) sont masqués tant que la case « Afficher les contenus d'exemple » (`showSampleContent` dans `content/data/site.json`) est décochée. Les sections avis et chiffres disparaissent alors entièrement ; les 9 maquettes de métier restent visibles, présentées comme des « Exemples de maquettes », jusqu'à l'ajout d'un vrai projet client. Toute valeur entre crochets (`[TÉLÉPHONE]`, `[N° RCS…]`…) est considérée comme vide : la ligne ou le bouton correspondant n'est pas affiché (`lib/placeholders.ts`).
+**Contenus d'exemple** : les avis, chiffres et projets marqués « Exemple » (`placeholder: true`) sont masqués tant que la case « Afficher les contenus d'exemple » (`showSampleContent` dans `content/data/site.json`) est décochée. Les sections avis et chiffres disparaissent alors entièrement ; les maquettes de métier restent visibles, présentées comme des « Exemples de maquettes », jusqu'à l'ajout d'un vrai projet client. Toute valeur entre crochets (`[TÉLÉPHONE]`, `[N° RCS…]`…) est considérée comme vide : la ligne ou le bouton correspondant n'est pas affiché (`lib/placeholders.ts`).
 
 **Images de réalisations** : déposez vos captures dans `public/images/realisations/` et renseignez `image: "/images/realisations/mon-projet.jpg"` dans `content/projects.ts`. Elles sont optimisées automatiquement par `next/image`.
 
@@ -130,12 +130,30 @@ components/
   ui/           Button, Section, Card, SpotlightCard, Accordion, Marquee, Counter…
   motion/       Reveal/Stagger (CSS + IntersectionObserver), WordCascade, SmoothScroll
   layout/       Navbar, MobileMenu, Footer, Logo
-  mockups/      maquettes de site, tableau de bord et téléphone dessinées en code
+  mockups/      maquettes de site (site/<métier>.tsx), tableau de bord et téléphone dessinées en code
   sections/     une section de page par fichier
   forms/        ContactForm
 content/        tous les textes modifiables
 lib/            utilitaires, SEO, schéma du formulaire
 ```
+
+## Maquettes de sites
+
+Chaque métier a un site d'exemple navigable, dessiné en code au format 1280 × 800 : `components/mockups/site/<métier>.tsx` (socle commun : `site/frame.tsx`). Les photos sont libres de droits (Unsplash), dans `public/images/maquettes/`, et chacune est créditée dans `content/maquettes-credits.json` ; la page « Mentions légales » de chaque maquette affiche ces crédits.
+
+Pour que les pages restent légères, les cartes et le haut des pages métier montrent une image fixe (`public/images/maquettes/apercus/<métier>.jpg`) ; le code de la maquette ne se charge qu'au clic sur « Parcourir la maquette ». Après avoir modifié une maquette, refaire son image :
+
+```bash
+npm run dev
+```
+
+```bash
+node scripts/apercus-maquettes.mjs plombier
+```
+
+(sans nom de métier, toutes les images sont refaites ; ajouter `URL=http://localhost:<port>` si le site ne tourne pas sur le port 3000). La page `/apercu-maquette/<métier>` utilisée par ce script n'existe qu'en local.
+
+Les 3 maquettes de la page d'accueil sont celles cochées « Sur l'accueil » dans Pages CMS (Réalisations).
 
 ## Animations et accessibilité
 
