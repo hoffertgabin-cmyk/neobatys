@@ -96,28 +96,43 @@ const reviews = [
 const works = [
   { src: "plb-italienne", t: "Douche à l'italienne", c: "Yutz", d: "9 jours", k: "Salle de bain" },
   {
-    src: "plb-verte",
-    t: "Salle d'eau carreaux verts",
+    src: "plb-r1",
+    t: "Double vasque et grès brun",
     c: "Thionville",
-    d: "7 jours",
+    d: "11 jours",
     k: "Salle de bain",
   },
   {
-    src: "plb-bois",
-    t: "Baignoire îlot et meuble chêne",
+    src: "plb-r2",
+    t: "Bois et éclairage indirect",
     c: "Hettange-Grande",
     d: "12 jours",
     k: "Salle de bain",
   },
+  { src: "plb-r3", t: "Douche en marbre", c: "Florange", d: "8 jours", k: "Salle de bain" },
   {
-    src: "plb-douche",
-    t: "Douche vitrée en métro blanc",
-    c: "Florange",
+    src: "plb-baignoire",
+    t: "Baignoire et meuble noyer",
+    c: "Terville",
+    d: "10 jours",
+    k: "Salle de bain",
+  },
+  {
+    src: "plb-metro",
+    t: "Douche en carreaux métro",
+    c: "Fameck",
     d: "6 jours",
     k: "Salle de bain",
   },
-  { src: "plb-vanne", t: "Remplacement de ballon", c: "Hayange", d: "1 journée", k: "Chauffe-eau" },
-  { src: "plb-vasque", t: "Robinetterie et vasque", c: "Fameck", d: "2 heures", k: "Dépannage" },
+  {
+    src: "plb-laiton",
+    t: "Nourrice et vannes refaites",
+    c: "Hayange",
+    d: "1 journée",
+    k: "Chauffe-eau",
+  },
+  { src: "plb-r4", t: "Vasque et robinetterie", c: "Uckange", d: "3 heures", k: "Dépannage" },
+  { src: "plb-fuite", t: "Fuite sur robinet extérieur", c: "Yutz", d: "1 heure", k: "Dépannage" },
 ];
 
 const towns = [
@@ -362,11 +377,11 @@ function Home() {
       <section className="grid @min-[900px]:min-h-[652px] @min-[900px]:grid-cols-[1fr_1fr]">
         <div className="relative order-first h-[260px] @min-[900px]:order-last @min-[900px]:h-auto">
           <Photo
-            src="plb-douche"
-            alt="Douche vitrée carrelée en blanc, avec niche murale"
+            src="plb-hero"
+            alt="Salle de bain claire avec baignoire îlot et douche vitrée"
             priority
             sizes="(min-width: 1024px) 640px, 100vw"
-            position="50% 60%"
+            position="40% 50%"
           />
           <div className="absolute bottom-6 left-6 hidden w-[300px] rounded-[10px] bg-white p-5 shadow-[0_20px_50px_-20px_rgb(9_42_53/0.5)] @min-[900px]:block">
             <p className="text-[13px] text-black/55">Prochain créneau d&apos;urgence</p>
@@ -845,11 +860,7 @@ function Depannage() {
         </div>
         <aside>
           <div className="relative h-[220px] overflow-hidden rounded-[10px]">
-            <Photo
-              src="plb-vanne"
-              alt="Intervention sur les vannes d'un chauffe-eau"
-              sizes="480px"
-            />
+            <Photo src="plb-fuite" alt="Robinet en laiton qui fuit" sizes="480px" />
           </div>
           <h2 className="mt-8 text-[24px] font-bold tracking-[-0.02em]">Nos tarifs de dépannage</h2>
           <table className="mt-4 w-full text-[15.5px]">
@@ -883,8 +894,8 @@ function Depannage() {
 
 const layouts = [
   { t: "Douche à l'italienne", src: "plb-italienne", base: 900 },
-  { t: "Baignoire", src: "plb-bois", base: 850 },
-  { t: "Douche et carreaux métro", src: "plb-douche", base: 820 },
+  { t: "Baignoire", src: "plb-baignoire", base: 850 },
+  { t: "Douche et carreaux métro", src: "plb-metro", base: 820 },
 ] as const;
 const finishes = ["Essentiel", "Confort", "Haut de gamme"] as const;
 const finishRate = { Essentiel: 1, Confort: 1.25, "Haut de gamme": 1.6 };
@@ -1154,23 +1165,16 @@ function Credits() {
         intro="Hydrélia est une entreprise fictive : ce site est un exemple réalisé par NEOBATYS. Les photos sont libres de droits."
       />
       <section className={cn("py-14 @min-[900px]:py-20", pad)}>
-        <PhotoCredits
-          photos={[
-            "plb-douche",
-            "plb-italienne",
-            "plb-verte",
-            "plb-bois",
-            "plb-vanne",
-            "plb-vasque",
-          ]}
-        />
+        <PhotoCredits photos={works.map((w) => w.src).concat("plb-hero")} />
       </section>
       <Footer />
     </>
   );
 }
 
-export function PlombierSite(props: SiteProps) {
+export const desktop = true;
+
+export function Site(props: SiteProps) {
   return (
     <SiteFrame
       {...props}

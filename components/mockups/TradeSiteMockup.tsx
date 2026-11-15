@@ -2,48 +2,43 @@
 
 import type { ComponentType } from "react";
 import type { Project, TradeMockup } from "@/content/projects";
-import type { SiteProps } from "./trade/kit";
-import { PlombierSite } from "./site/plombier";
-import { SITE_HEIGHT, SITE_WIDTH } from "./site/frame";
-import { ElectricienSite } from "./trade/electricien";
-import { MaconSite } from "./trade/macon";
-import { MenuisierSite } from "./trade/menuisier";
-import { CouvreurSite } from "./trade/couvreur";
-import { PeintreSite } from "./trade/peintre";
-import { ChauffagisteSite } from "./trade/chauffagiste";
-import { CarreleurSite } from "./trade/carreleur";
-import { CharpentierSite } from "./trade/charpentier";
+import { SITE_HEIGHT, SITE_WIDTH, type SiteProps } from "./site/frame";
+import * as plombier from "./site/plombier";
+import * as electricien from "./site/electricien";
+import * as macon from "./site/macon";
+import * as menuisier from "./site/menuisier";
+import * as couvreur from "./site/couvreur";
+import * as peintre from "./site/peintre";
+import * as chauffagiste from "./site/chauffagiste";
+import * as carreleur from "./site/carreleur";
+import * as charpentier from "./site/charpentier";
 
 /**
- * Maquettes de sites par métier, dessinées en code aux couleurs de `project.theme`.
- * Chaque métier est un petit site navigable (components/mockups/trade/) :
- * figé dans les cartes, utilisable dans la fenêtre agrandie (`interactive`).
- * Taille de référence : 720 × 540, mise à l'échelle par <ScaledCanvas>.
+ * Maquettes de sites par métier (components/mockups/site/<métier>.tsx) :
+ * figées dans les cartes, navigables dans la fenêtre agrandie (`interactive`).
+ * Chaque module exporte `Site` et `desktop` (format 1280 × 800, sinon ancien 720 × 540).
  */
 export const MOCKUP_WIDTH = 720;
 export const MOCKUP_HEIGHT = 540;
 
-/** Maquettes refaites au format bureau 1280 × 800 (les autres restent en 720 × 540). */
-const desktop = new Set<TradeMockup>(["plombier"]);
+const sites: Record<TradeMockup, { Site: ComponentType<SiteProps>; desktop: boolean }> = {
+  plombier,
+  electricien,
+  macon,
+  menuisier,
+  couvreur,
+  peintre,
+  chauffagiste,
+  carreleur,
+  charpentier,
+};
 
 /** Taille de référence de la maquette d'un métier. */
 export function mockupSize(mockup: TradeMockup) {
-  return desktop.has(mockup)
+  return sites[mockup].desktop
     ? { width: SITE_WIDTH, height: SITE_HEIGHT }
     : { width: MOCKUP_WIDTH, height: MOCKUP_HEIGHT };
 }
-
-const sites: Record<TradeMockup, ComponentType<SiteProps>> = {
-  plombier: PlombierSite,
-  electricien: ElectricienSite,
-  macon: MaconSite,
-  menuisier: MenuisierSite,
-  couvreur: CouvreurSite,
-  peintre: PeintreSite,
-  chauffagiste: ChauffagisteSite,
-  carreleur: CarreleurSite,
-  charpentier: CharpentierSite,
-};
 
 export function TradeSiteMockup({
   project,
@@ -56,7 +51,7 @@ export function TradeSiteMockup({
   width?: number;
   height?: number;
 }) {
-  const Site = sites[project.mockup];
+  const { Site } = sites[project.mockup];
   const size = mockupSize(project.mockup);
   return (
     <Site

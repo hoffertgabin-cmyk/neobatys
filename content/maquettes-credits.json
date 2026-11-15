@@ -233,40 +233,64 @@
     "license": "Public domain",
     "url": "https://commons.wikimedia.org/wiki/File:NPS_Preservationists_are_at_work_laying_out_the_timber_frame_joinery_for_the_Warfield_House_roofing._Timber_frame_joinery_(35560cdd-6d7c-4f7e-a765-9efbdccc8de6).JPG"
   },
-  "plb-douche": {
-    "title": "Bathroom Shower (48877712171)",
-    "creator": "Yellowstone National Park",
-    "license": "Public domain",
-    "url": "https://commons.wikimedia.org/wiki/File:Bathroom_Shower_(48877712171).jpg"
+  "plb-hero": {
+    "title": "Salle de bain claire, baignoire îlot et douche vitrée",
+    "creator": "@goodlifeconstruction",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/p9A8tpM93Hk"
   },
-  "plb-vanne": {
-    "title": "Businesswoman turns valve in a mechanical room…",
-    "creator": "Shixart1985",
-    "license": "CC BY 2.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Businesswoman_turns_valve_in_a_mechanical_room_during_a_maintenance_task_in_an_industrial_setting.jpg"
+  "plb-fuite": {
+    "title": "Robinet en laiton qui fuit",
+    "creator": "@elimendeinagella",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/n2ZufifTbSo"
+  },
+  "plb-laiton": {
+    "title": "Raccords en laiton et acier",
+    "creator": "@aalat",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/mfO0SRKNzME"
   },
   "plb-italienne": {
-    "title": "Free minimalistic bathroom design image",
-    "creator": "rawpixel",
-    "license": "CC0",
-    "url": "https://www.rawpixel.com/image/5907191/photo-image-light-public-domain-shadow"
+    "title": "Douche à l'italienne carrelage sombre",
+    "creator": "@immorenovation",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/en9pOa2YAKI"
   },
-  "plb-bois": {
-    "title": "Modern bathroom, house interior",
-    "creator": "rawpixel",
-    "license": "CC0",
-    "url": "https://www.rawpixel.com/image/6042742/photo-image-public-domain-house-room"
+  "plb-baignoire": {
+    "title": "Salle de bain blanche avec baignoire et double vasque",
+    "creator": "@lotusdnp",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/Dk_o7KQyGkI"
   },
-  "plb-vasque": {
-    "title": "Bathroom Sink",
-    "creator": "Dan Watson (StockSnap)",
-    "license": "CC0",
-    "url": "https://stocksnap.io/photo/bathroom-sink-D3901L7G93"
+  "plb-metro": {
+    "title": "Douche en carreaux métro blancs",
+    "creator": "@loudspace",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/JAW8aK3ImD8"
   },
-  "plb-verte": {
-    "title": "Modern Bathroom",
-    "creator": "Travel Adventures (StockSnap)",
-    "license": "CC0",
-    "url": "https://stocksnap.io/photo/modern-bathroom-F4CZ0LN5OO"
+  "plb-r1": {
+    "title": "Salle de bain grès brun et double vasque",
+    "creator": "@claybanks",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/ckdoA-tv9uw"
+  },
+  "plb-r2": {
+    "title": "Salle de bain bois et éclairage indirect",
+    "creator": "@petepxl",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/6YEMkA-2ji8"
+  },
+  "plb-r3": {
+    "title": "Douche en marbre blanc et robinetterie noire",
+    "creator": "@zacgudakov",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/VCUbsNJdZpQ"
+  },
+  "plb-r4": {
+    "title": "Salle d'eau grise avec vasque posée",
+    "creator": "@alextyson195",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/V-lDT7pTtz4"
   }
 }
