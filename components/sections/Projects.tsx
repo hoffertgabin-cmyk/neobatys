@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { mockupsOnly, projectMeta, projects, type Project } from "@/content/projects";
+import { interestHref, mockupsOnly, projectMeta, projects, type Project } from "@/content/projects";
 import { tradeSites } from "@/content/trade-sites";
 import { sectionsCopy } from "@/content/home";
 import { Section } from "@/components/ui/Section";
@@ -82,13 +82,23 @@ export function Projects({ featured = false }: { featured?: boolean }) {
                 </Link>
               </h3>
               <p className="mt-1 text-sm text-ardoise">{project.description}</p>
-              <p className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-nuit">
-                Voir la maquette{" "}
-                <ArrowRight
-                  aria-hidden="true"
-                  className="size-4 transition-transform group-hover:translate-x-1"
-                />
-              </p>
+              <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
+                <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-nuit">
+                  Voir la maquette
+                  <ArrowRight
+                    aria-hidden="true"
+                    className="size-4 transition-transform group-hover:translate-x-1"
+                  />
+                </span>
+                {/* Au-dessus du lien qui couvre la carte : mène au formulaire pré-rempli. */}
+                <Button
+                  href={interestHref(project)}
+                  variant="ghost"
+                  className="relative z-10 h-9 px-4 text-[13px]"
+                >
+                  Cette maquette m&apos;intéresse
+                </Button>
+              </div>
             </div>
           </li>
         ))}

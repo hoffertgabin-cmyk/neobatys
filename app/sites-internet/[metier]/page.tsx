@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import { tradeSiteLinks, tradeSites, tradeSitesSection } from "@/content/trade-sites";
 import { softwareGuideLinks } from "@/content/software";
-import { mockupProject } from "@/content/projects";
+import { interestHref, mockupProject } from "@/content/projects";
 import { breadcrumbJsonLd, faqJsonLd, pageMetadata, serviceJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Button } from "@/components/ui/Button";
@@ -43,7 +43,11 @@ export default async function TradeSitePage({ params }: PageProps<"/sites-intern
         parent={{ label: "Sites internet", href: "/sites-internet" }}
       >
         <Button
-          href={`/contact?service=site&maquette=${encodeURIComponent(trade.breadcrumb)}`}
+          href={
+            project
+              ? interestHref(project)
+              : `/contact?service=site&maquette=${encodeURIComponent(trade.breadcrumb)}`
+          }
           size="lg"
           arrow
         >
@@ -68,6 +72,14 @@ export default async function TradeSitePage({ params }: PageProps<"/sites-intern
                 {project.brand} est une entreprise fictive : la maquette montre le site type, pas un
                 client.
               </figcaption>
+              <div className="mt-6 flex flex-col items-start gap-3 rounded-2xl bg-sable p-5 ring-1 ring-nuit/5 sm:flex-row sm:items-center sm:justify-between">
+                <p className="text-ardoise-dark">
+                  Un site comme celui-ci pour votre entreprise, à vos couleurs ?
+                </p>
+                <Button href={interestHref(project)} arrow className="shrink-0">
+                  Cette maquette m&apos;intéresse
+                </Button>
+              </div>
             </figure>
           )}
           <ProseSections sections={trade.sections} />
