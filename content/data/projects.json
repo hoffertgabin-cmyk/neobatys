@@ -170,17 +170,17 @@
       "title": "Maquette · Plâtrerie",
       "trade": "Plâtrier-plaquiste",
       "city": "Sarreguemines",
-      "description": "Maquette en préparation.",
-      "tags": ["Site vitrine"],
+      "description": "Site de plaquiste : chantiers avant peinture, page sous-traitance et chiffrage en ligne avec dépôt de plans.",
+      "tags": ["Site vitrine", "Devis en ligne"],
       "mockup": "platrier",
       "brand": "Atelier Gypse",
       "domain": "atelier-gypse-exemple.fr",
       "theme": {
-        "primary": "#333333",
+        "primary": "#24272b",
         "onPrimary": "#ffffff",
-        "dark": "#222222",
-        "soft": "#f2f2f2",
-        "accent": "#999999"
+        "dark": "#24272b",
+        "soft": "#f6f5f1",
+        "accent": "#2c55c9"
       },
       "placeholder": true
     },
@@ -188,17 +188,18 @@
       "title": "Maquette · Serrurerie",
       "trade": "Serrurier-métallier",
       "city": "Forbach",
-      "description": "Maquette en préparation.",
-      "tags": ["Site vitrine"],
+      "description": "Site de serrurier-métallier : tarifs de dépannage affichés et estimateur de portail sur mesure.",
+      "tags": ["Site vitrine", "Tarifs en ligne"],
       "mockup": "serrurier",
       "brand": "Clé & Fer",
       "domain": "cle-et-fer-exemple.fr",
       "theme": {
-        "primary": "#333333",
+        "primary": "#15171a",
         "onPrimary": "#ffffff",
-        "dark": "#222222",
-        "soft": "#f2f2f2",
-        "accent": "#999999"
+        "dark": "#15171a",
+        "soft": "#f2f2f0",
+        "accent": "#ff6b1a",
+        "ink": "#b4470a"
       },
       "placeholder": true
     },
@@ -206,17 +207,17 @@
       "title": "Maquette · Paysage",
       "trade": "Paysagiste",
       "city": "Sarrebourg",
-      "description": "Maquette en préparation.",
-      "tags": ["Site vitrine"],
+      "description": "Site de paysagiste : calendrier des saisons, calcul de contrat d'entretien, demande de visite avec photos du terrain.",
+      "tags": ["Site vitrine", "Contrats d'entretien"],
       "mockup": "paysagiste",
       "brand": "Verdance Jardins",
       "domain": "verdance-jardins-exemple.fr",
       "theme": {
-        "primary": "#333333",
+        "primary": "#26331f",
         "onPrimary": "#ffffff",
-        "dark": "#222222",
-        "soft": "#f2f2f2",
-        "accent": "#999999"
+        "dark": "#26331f",
+        "soft": "#eef1ea",
+        "accent": "#a7b694"
       },
       "placeholder": true
     },
@@ -224,17 +225,17 @@
       "title": "Maquette · Terrassement",
       "trade": "Terrassier",
       "city": "Bouzonville",
-      "description": "Maquette en préparation.",
-      "tags": ["Site vitrine"],
+      "description": "Site de terrassier : particuliers et professionnels, parc matériel, calcul de volume de terre et devis avec plan du terrain.",
+      "tags": ["Site vitrine", "Devis en ligne"],
       "mockup": "terrassier",
       "brand": "Socle TP",
       "domain": "socle-tp-exemple.fr",
       "theme": {
-        "primary": "#333333",
+        "primary": "#1a1b1d",
         "onPrimary": "#ffffff",
-        "dark": "#222222",
-        "soft": "#f2f2f2",
-        "accent": "#999999"
+        "dark": "#1a1b1d",
+        "soft": "#ecebe6",
+        "accent": "#f2b300"
       },
       "placeholder": true
     },
@@ -242,17 +243,18 @@
       "title": "Maquette · Isolation",
       "trade": "Isolation",
       "city": "Creutzwald",
-      "description": "Maquette en préparation.",
-      "tags": ["Site vitrine"],
+      "description": "Site d'isolation qui inspire confiance : pertes de chaleur expliquées, aides sans promesse, visite gratuite.",
+      "tags": ["Site vitrine", "Estimation en ligne"],
       "mockup": "isolation",
       "brand": "Cocon Isolation",
       "domain": "cocon-isolation-exemple.fr",
       "theme": {
-        "primary": "#333333",
+        "primary": "#c8562d",
         "onPrimary": "#ffffff",
-        "dark": "#222222",
-        "soft": "#f2f2f2",
-        "accent": "#999999"
+        "ink": "#a2421f",
+        "dark": "#2e241d",
+        "soft": "#f5efe6",
+        "accent": "#e8dccb"
       },
       "placeholder": true
     },
@@ -260,17 +262,17 @@
       "title": "Maquette · Étanchéité",
       "trade": "Étancheur",
       "city": "Metz",
-      "description": "Maquette en préparation.",
-      "tags": ["Site vitrine"],
+      "description": "Site d'étancheur : coupe de toiture à explorer, chantiers documentés et signalement d'infiltration.",
+      "tags": ["Site vitrine", "Copropriétés"],
       "mockup": "etancheur",
       "brand": "Calfeutre",
       "domain": "calfeutre-exemple.fr",
       "theme": {
-        "primary": "#333333",
+        "primary": "#202326",
         "onPrimary": "#ffffff",
-        "dark": "#222222",
-        "soft": "#f2f2f2",
-        "accent": "#999999"
+        "dark": "#202326",
+        "soft": "#ebeae5",
+        "accent": "#86a64a"
       },
       "placeholder": true
     },
@@ -278,17 +280,17 @@
       "title": "Maquette · Construction",
       "trade": "Constructeur",
       "city": "Château-Salins",
-      "description": "Maquette en préparation.",
-      "tags": ["Site vitrine"],
+      "description": "Site de constructeur : les étapes du terrain aux clés, des maisons modifiables et un simulateur de budget avant le rendez-vous.",
+      "tags": ["Site vitrine", "Prise de rendez-vous"],
       "mockup": "constructeur",
       "brand": "Maisons Orée",
       "domain": "maisons-oree-exemple.fr",
       "theme": {
-        "primary": "#333333",
+        "primary": "#18222b",
         "onPrimary": "#ffffff",
-        "dark": "#222222",
-        "soft": "#f2f2f2",
-        "accent": "#999999"
+        "dark": "#18222b",
+        "soft": "#eef1ef",
+        "accent": "#33506a"
       },
       "placeholder": true
     }

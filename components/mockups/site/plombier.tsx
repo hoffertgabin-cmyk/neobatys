@@ -1172,8 +1172,6 @@ function Credits() {
   );
 }
 
-export const desktop = true;
-
 export function Site(props: SiteProps) {
   return (
     <SiteFrame

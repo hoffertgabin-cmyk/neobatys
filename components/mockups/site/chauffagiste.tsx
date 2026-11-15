@@ -32,8 +32,6 @@ const bricolage = Bricolage_Grotesque({
   preload: false,
 });
 
-export const desktop = true;
-
 const PHONE = "06 39 98 75 64";
 
 const vars = {

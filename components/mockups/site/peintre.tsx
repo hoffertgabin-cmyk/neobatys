@@ -39,8 +39,6 @@ const sans = Onest({
   preload: false,
 });
 
-export const desktop = true;
-
 const PHONE = "06 39 98 14 52";
 
 const vars = {

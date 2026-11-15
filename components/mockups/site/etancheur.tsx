@@ -62,7 +62,7 @@ const layers: Layer[] = [
     id: "protection",
     t: "Protection",
     d: "Dalles sur plots, gravillons ou substrat végétalisé : la couche qui marche, qui pousse ou qui protège la membrane des UV.",
-    h: 34,
+    h: 58,
     fill: "#b9b6ab",
     pattern: "dalles",
   },
@@ -70,14 +70,14 @@ const layers: Layer[] = [
     id: "membrane",
     t: "Membrane d'étanchéité",
     d: "Deux couches de bitume élastomère soudées à la flamme, ou une membrane synthétique. C'est elle qui arrête l'eau, relevés compris.",
-    h: 22,
+    h: 30,
     fill: "#202326",
   },
   {
     id: "isolant",
     t: "Isolant",
     d: "Panneaux rigides de polyuréthane ou de laine de roche, posés en pente vers les évacuations. Épaisseur calculée pour la réglementation.",
-    h: 54,
+    h: 92,
     fill: "#e2cf7e",
     pattern: "isolant",
   },
@@ -85,14 +85,14 @@ const layers: Layer[] = [
     id: "vapeur",
     t: "Pare-vapeur",
     d: "Un film bitumineux qui empêche l'humidité de la maison de mouiller l'isolant par en dessous.",
-    h: 10,
+    h: 16,
     fill: "#6c7177",
   },
   {
     id: "support",
     t: "Support béton",
     d: "La dalle existante, vérifiée et réparée avant tout : fissures, pente, état des évacuations.",
-    h: 46,
+    h: 78,
     fill: "#a9aba7",
     pattern: "beton",
   },
@@ -111,7 +111,7 @@ const jobs: Job[] = [
   {
     src: "eta-hero",
     t: "Toiture-terrasse végétalisée",
-    c: "Metz, Sablon",
+    c: "Immeuble de bureaux",
     k: "Végétalisée",
     m2: "420 m²",
     steps: [
@@ -223,7 +223,10 @@ function Logo({ light = false }: { light?: boolean }) {
       <svg viewBox="0 0 34 34" className="size-8.5" aria-hidden="true">
         <rect x="2" y="21" width="30" height="4" fill="var(--sedum)" />
         <rect x="2" y="26" width="30" height="3" fill={light ? "#ffffff" : "var(--membrane)"} />
-        <path d="M17 3c3.6 4.7 6 7.9 6 10.6a6 6 0 0 1-12 0C11 10.9 13.4 7.7 17 3Z" fill={light ? "#ffffff" : "var(--membrane)"} />
+        <path
+          d="M17 3c3.6 4.7 6 7.9 6 10.6a6 6 0 0 1-12 0C11 10.9 13.4 7.7 17 3Z"
+          fill={light ? "#ffffff" : "var(--membrane)"}
+        />
       </svg>
       <span className="leading-none">
         <span className="block text-[22px] font-bold tracking-[-0.02em]">Calfeutre</span>
@@ -262,7 +265,10 @@ function Header() {
         <span className="ml-auto hidden text-[14.5px] font-semibold @min-[900px]:inline @min-[1100px]:ml-0">
           {PHONE}
         </span>
-        <Go to="signaler" className={cn(btnDark, "hidden h-11 px-5 text-[15px] @min-[900px]:inline-flex")}>
+        <Go
+          to="signaler"
+          className={cn(btnDark, "hidden h-11 px-5 text-[15px] @min-[900px]:inline-flex")}
+        >
           Signaler une infiltration
         </Go>
         <button
@@ -317,8 +323,8 @@ function Footer() {
         <div className="text-white">
           <Logo light />
           <p className="mt-5 max-w-[300px] text-[14px] leading-relaxed text-white/65">
-            Toitures-terrasses, balcons et toits végétalisés en Moselle, pour les particuliers et les
-            copropriétés.
+            Toitures-terrasses, balcons et toits végétalisés en Moselle, pour les particuliers et
+            les copropriétés.
           </p>
         </div>
         <div className="text-[14px]">
@@ -350,7 +356,12 @@ function Footer() {
           <p className="mt-1">Metz et 40 km autour</p>
         </div>
       </div>
-      <div className={cn("flex flex-wrap justify-between gap-2 border-t border-white/10 py-5 text-[12.5px]", pad)}>
+      <div
+        className={cn(
+          "flex flex-wrap justify-between gap-2 border-t border-white/10 py-5 text-[12.5px]",
+          pad,
+        )}
+      >
         <span className="flex flex-wrap gap-x-4">
           <span>© 2026 Calfeutre</span>
           <button type="button" onClick={() => go("credits")} className="hover:text-white">
@@ -363,9 +374,25 @@ function Footer() {
   );
 }
 
-function PageTitle({ crumb, title, intro, dark = false }: { crumb: string; title: string; intro?: string; dark?: boolean }) {
+function PageTitle({
+  crumb,
+  title,
+  intro,
+  dark = false,
+}: {
+  crumb: string;
+  title: string;
+  intro?: string;
+  dark?: boolean;
+}) {
   return (
-    <div className={cn("pt-10 pb-12 @min-[900px]:pt-14 @min-[900px]:pb-16", pad, dark ? "bg-(--membrane) text-white" : "bg-(--beton)")}>
+    <div
+      className={cn(
+        "pt-10 pb-12 @min-[900px]:pt-14 @min-[900px]:pb-16",
+        pad,
+        dark ? "bg-(--membrane) text-white" : "bg-(--beton)",
+      )}
+    >
       <p className={cn("text-[14px]", dark ? "text-white/55" : "text-black/50")}>
         <Go to="home" className={dark ? "hover:text-white" : "hover:text-black"}>
           Accueil
@@ -376,7 +403,12 @@ function PageTitle({ crumb, title, intro, dark = false }: { crumb: string; title
         {title}
       </h1>
       {intro && (
-        <p className={cn("mt-4 max-w-[620px] text-[17px] leading-relaxed", dark ? "text-white/65" : "text-black/60")}>
+        <p
+          className={cn(
+            "mt-4 max-w-[620px] text-[17px] leading-relaxed",
+            dark ? "text-white/65" : "text-black/60",
+          )}
+        >
           {intro}
         </p>
       )}
@@ -386,18 +418,42 @@ function PageTitle({ crumb, title, intro, dark = false }: { crumb: string; title
 
 /* ------------------------------------------------------- Coupe interactive */
 
-function Section({ active, onPick, compact = false }: { active: string; onPick: (id: string) => void; compact?: boolean }) {
+/** Position verticale de chaque couche dans la coupe (calculée une fois). */
+const rows = layers.reduce<(Layer & { y: number })[]>(
+  (acc, l) => [
+    ...acc,
+    { ...l, y: acc.length ? acc[acc.length - 1].y + acc[acc.length - 1].h : 30 },
+  ],
+  [],
+);
+const stackHeight = rows[rows.length - 1].y + rows[rows.length - 1].h;
+
+function Section({
+  active,
+  onPick,
+  compact = false,
+}: {
+  active: string;
+  onPick: (id: string) => void;
+  compact?: boolean;
+}) {
   const W = 560;
-  let y = 30;
-  const rows = layers.map((l) => {
-    const r = { ...l, y };
-    y += l.h;
-    return r;
-  });
+  const y = stackHeight;
   const current = layers.find((l) => l.id === active) ?? layers[0];
   return (
-    <div className={cn("grid gap-8", !compact && "@min-[900px]:grid-cols-[1.15fr_1fr] @min-[900px]:items-center @min-[900px]:gap-14")}>
-      <svg viewBox={`0 0 ${W} ${y + 20}`} className="w-full" role="img" aria-label="Coupe d'une toiture-terrasse">
+    <div
+      className={cn(
+        "grid gap-8",
+        !compact &&
+          "@min-[900px]:grid-cols-[1.15fr_1fr] @min-[900px]:items-center @min-[900px]:gap-14",
+      )}
+    >
+      <svg
+        viewBox={`0 0 ${W} ${y + 20}`}
+        className="w-full"
+        role="img"
+        aria-label="Coupe d'une toiture-terrasse"
+      >
         <defs>
           <pattern id="eta-isolant" width="14" height="14" patternUnits="userSpaceOnUse">
             <path d="M0 14 L14 0" stroke="#c9b45f" strokeWidth="1.2" />
@@ -432,7 +488,9 @@ function Section({ active, onPick, compact = false }: { active: string; onPick: 
               }}
             >
               <rect x={20} y={l.y} width={W - 70} height={l.h} fill={l.fill} />
-              {l.pattern && <rect x={20} y={l.y} width={W - 70} height={l.h} fill={`url(#eta-${l.pattern})`} />}
+              {l.pattern && (
+                <rect x={20} y={l.y} width={W - 70} height={l.h} fill={`url(#eta-${l.pattern})`} />
+              )}
               {l.id === "membrane" && (
                 <rect x={W - 50} y={14} width={6} height={l.y + l.h - 14} fill="#202326" />
               )}
@@ -448,8 +506,6 @@ function Section({ active, onPick, compact = false }: { active: string; onPick: 
             </g>
           );
         })}
-        {/* Évacuation d'eau pluviale */}
-        <path d={`M28 ${30 + 34 + 22} q 0 -4 6 -4`} stroke="#5d8bb0" strokeWidth="2" fill="none" />
       </svg>
       <div>
         <div className="flex flex-wrap gap-2">
@@ -459,7 +515,7 @@ function Section({ active, onPick, compact = false }: { active: string; onPick: 
               type="button"
               onClick={() => onPick(l.id)}
               aria-pressed={l.id === active}
-              className="h-9 px-3 text-[13.5px] font-medium ring-1 ring-inset ring-black/15 aria-pressed:bg-(--membrane) aria-pressed:text-white aria-pressed:ring-(--membrane)"
+              className="h-9 px-3 text-[13.5px] font-medium ring-1 ring-black/15 ring-inset aria-pressed:bg-(--membrane) aria-pressed:text-white aria-pressed:ring-(--membrane)"
             >
               {i + 1}. {l.t}
             </button>
@@ -480,7 +536,7 @@ function Home() {
     <>
       {/* Premier écran : le toit en grand, la question qui amène le client */}
       <section className="relative">
-        <div className="relative h-[300px] @min-[900px]:h-[470px]">
+        <div className="relative h-[280px] @min-[900px]:h-[350px]">
           <Photo
             src="eta-hero"
             alt="Grande toiture-terrasse végétalisée avec lanterneaux"
@@ -488,39 +544,53 @@ function Home() {
             sizes="(min-width: 1024px) 1280px, 100vw"
             position="50% 60%"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
-          <p className="absolute right-5 bottom-4 text-[13px] text-white/85 @min-[900px]:right-16">
-            Toiture végétalisée de 420 m², Metz Sablon
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+          <p className="absolute top-4 right-5 bg-black/35 px-2.5 py-1 text-[13px] text-white/90 @min-[900px]:right-16">
+            Toiture végétalisée de 420 m²
           </p>
         </div>
-        <div className="bg-(--membrane) text-white @min-[900px]:-mt-24 @min-[900px]:mr-[22%] @min-[900px]:relative">
-          <div className={cn("py-10 @min-[900px]:py-12", pad)}>
-            <h1 className="max-w-[720px] text-[36px] leading-[1.02] font-bold tracking-[-0.035em] text-balance @min-[900px]:text-[58px]">
-              L&apos;eau passe par le toit&nbsp;? On trouve d&apos;où, et on la fait arrêter.
-            </h1>
-            <p className="mt-5 max-w-[540px] text-[17px] leading-relaxed text-white/65">
-              Toitures-terrasses, balcons et toits végétalisés, à Metz et 40 km autour. Diagnostic
-              sous 5 jours, devis détaillé couche par couche.
-            </p>
-            <p className="mt-8 text-[14.5px] text-white/60">Où se trouve le problème&nbsp;?</p>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {places.map((p) => (
-                <Go
-                  key={p}
-                  to="signaler"
-                  param={p}
-                  className="inline-flex h-11 items-center gap-2 px-4 text-[15px] font-medium ring-1 ring-inset ring-white/25 hover:bg-white hover:text-(--membrane)"
-                >
-                  {p}
-                </Go>
-              ))}
+        <div className="bg-(--membrane) text-white">
+          <div
+            className={cn(
+              "grid gap-8 py-10 @min-[900px]:grid-cols-[1.45fr_1fr] @min-[900px]:items-end @min-[900px]:gap-14 @min-[900px]:py-12",
+              pad,
+            )}
+          >
+            <div>
+              <h1 className="text-[36px] leading-[1.02] font-bold tracking-[-0.035em] text-balance @min-[900px]:text-[52px]">
+                L&apos;eau passe par le toit&nbsp;? On trouve d&apos;où, et on la fait arrêter.
+              </h1>
+              <p className="mt-5 max-w-[560px] text-[17px] leading-relaxed text-white/65">
+                Toitures-terrasses, balcons et toits végétalisés, à Metz et 40 km autour. Diagnostic
+                sous 5 jours, devis détaillé couche par couche.
+              </p>
+            </div>
+            <div>
+              <p className="text-[14.5px] text-white/60">Où se trouve le problème&nbsp;?</p>
+              <div className="mt-3 grid grid-cols-2 gap-2">
+                {places.map((p) => (
+                  <Go
+                    key={p}
+                    to="signaler"
+                    param={p}
+                    className="flex h-12 items-center justify-between gap-2 px-4 text-left text-[15px] font-medium ring-1 ring-white/25 ring-inset hover:bg-white hover:text-(--membrane)"
+                  >
+                    {p} <ArrowRight className="size-4 shrink-0 opacity-60" />
+                  </Go>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Preuves */}
-      <section className={cn("grid gap-6 border-b border-black/8 py-10 @min-[600px]:grid-cols-2 @min-[900px]:grid-cols-4", pad)}>
+      <section
+        className={cn(
+          "grid gap-6 border-b border-black/8 py-10 @min-[600px]:grid-cols-2 @min-[900px]:grid-cols-4",
+          pad,
+        )}
+      >
         {[
           ["Sous 5 jours", "pour le diagnostic sur place"],
           ["10 ans", "de garantie décennale sur l'étanchéité"],
@@ -536,7 +606,10 @@ function Home() {
 
       {/* Coupe */}
       <section className={cn("py-16 @min-[900px]:py-24", pad)}>
-        <H2 className="max-w-[720px]">Une terrasse étanche, c&apos;est cinq couches. Il suffit d&apos;une pour que l&apos;eau passe.</H2>
+        <H2 className="max-w-[720px]">
+          Une terrasse étanche, c&apos;est cinq couches. Il suffit d&apos;une pour que l&apos;eau
+          passe.
+        </H2>
         <p className="mt-4 max-w-[600px] text-[17px] leading-relaxed text-black/60">
           Touchez une couche pour voir son rôle. Nos devis détaillent chacune d&apos;elles, avec la
           marque et l&apos;épaisseur.
@@ -550,19 +623,47 @@ function Home() {
       <section className={cn("bg-(--beton) py-16 @min-[900px]:py-24", pad)}>
         <div className="flex flex-wrap items-end justify-between gap-4">
           <H2>Ce que nous rendons étanche</H2>
-          <Go to="terrasses" className="inline-flex items-center gap-2 text-[15.5px] font-semibold text-(--sedum-t) hover:underline">
+          <Go
+            to="terrasses"
+            className="inline-flex items-center gap-2 text-[15.5px] font-semibold text-(--sedum-t) hover:underline"
+          >
             Toutes les prestations <ArrowRight className="size-4" />
           </Go>
         </div>
         <div className="mt-10 grid gap-5 @min-[600px]:grid-cols-2 @min-[900px]:grid-cols-[1.3fr_1fr_1fr]">
           {[
-            { src: "eta-terrasse", t: "Toitures-terrasses", d: "Accessibles ou non, sur maison, garage ou immeuble.", to: "terrasses" },
-            { src: "eta-balcon", t: "Balcons et loggias", d: "Résine sous carrelage, reprise des nez de dalle.", to: "terrasses" },
-            { src: "eta-vegetal", t: "Toits végétalisés", d: "Membrane anti-racines et sedum, avec contrôle de charge.", to: "terrasses" },
+            {
+              src: "eta-terrasse",
+              t: "Toitures-terrasses",
+              d: "Accessibles ou non, sur maison, garage ou immeuble.",
+              to: "terrasses",
+            },
+            {
+              src: "eta-balcon",
+              t: "Balcons et loggias",
+              d: "Résine sous carrelage, reprise des nez de dalle.",
+              to: "terrasses",
+            },
+            {
+              src: "eta-vegetal",
+              t: "Toits végétalisés",
+              d: "Membrane anti-racines et sedum, avec contrôle de charge.",
+              to: "terrasses",
+            },
           ].map((s, i) => (
             <Go key={s.t} to={s.to} className="group bg-white text-left">
-              <span className={cn("relative block overflow-hidden", i === 0 ? "h-[300px]" : "h-[220px] @min-[900px]:h-[300px]")}>
-                <Photo src={s.src} alt={s.t} sizes="(min-width: 1024px) 480px, 100vw" className="transition-transform duration-500 group-hover:scale-[1.03]" />
+              <span
+                className={cn(
+                  "relative block overflow-hidden",
+                  i === 0 ? "h-[300px]" : "h-[220px] @min-[900px]:h-[300px]",
+                )}
+              >
+                <Photo
+                  src={s.src}
+                  alt={s.t}
+                  sizes="(min-width: 1024px) 480px, 100vw"
+                  className="transition-transform duration-500 group-hover:scale-[1.03]"
+                />
               </span>
               <span className="block p-5">
                 <span className="block text-[19px] font-semibold">{s.t}</span>
@@ -574,19 +675,33 @@ function Home() {
       </section>
 
       {/* Chantier documenté */}
-      <section className={cn("grid gap-10 py-16 @min-[900px]:grid-cols-[1fr_1.1fr] @min-[900px]:items-center @min-[900px]:gap-16 @min-[900px]:py-24", pad)}>
+      <section
+        className={cn(
+          "grid gap-10 py-16 @min-[900px]:grid-cols-[1fr_1.1fr] @min-[900px]:items-center @min-[900px]:gap-16 @min-[900px]:py-24",
+          pad,
+        )}
+      >
         <div className="relative h-[280px] @min-[900px]:h-[480px]">
-          <Photo src="eta-chantier" alt="Équipe en réfection sur un toit plat" sizes="(min-width: 1024px) 600px, 100vw" />
+          <Photo
+            src="eta-chantier"
+            alt="Équipe en réfection sur un toit plat"
+            sizes="(min-width: 1024px) 600px, 100vw"
+          />
         </div>
         <div>
           <H2>Une fois recouverte, l&apos;étanchéité ne se voit plus. Nos photos, si.</H2>
           <p className="mt-5 text-[17px] leading-relaxed text-black/62">
             À chaque étape, l&apos;équipe photographie la couche posée avant de la recouvrir. Vous
-            recevez le rapport complet à la réception : c&apos;est la preuve du travail fait, pour vous
-            ou pour votre assureur.
+            recevez le rapport complet à la réception : c&apos;est la preuve du travail fait, pour
+            vous ou pour votre assureur.
           </p>
           <ol className="mt-8 space-y-4 border-t border-black/8 pt-8">
-            {["Support réparé et nettoyé", "Pare-vapeur et isolant en pente", "Membrane en deux couches, relevés compris", "Essai d'eau avant la protection"].map((s, i) => (
+            {[
+              "Support réparé et nettoyé",
+              "Pare-vapeur et isolant en pente",
+              "Membrane en deux couches, relevés compris",
+              "Essai d'eau avant la protection",
+            ].map((s, i) => (
               <li key={s} className="flex items-baseline gap-4 text-[16.5px]">
                 <span className="w-6 text-[15px] font-bold text-(--sedum-t)">{i + 1}</span>
                 {s}
@@ -605,15 +720,19 @@ function Home() {
           <p className="text-[15px] text-(--sedum)">Syndics, gestionnaires, conseils syndicaux</p>
           <H2 className="mt-4">Une copropriété suivie dans la durée, pas seulement réparée.</H2>
           <p className="mt-5 max-w-[480px] text-[17px] leading-relaxed text-white/65">
-            Visite annuelle des toitures, nettoyage des évacuations, rapport photo transmis au syndic
-            avant l&apos;assemblée générale.
+            Visite annuelle des toitures, nettoyage des évacuations, rapport photo transmis au
+            syndic avant l&apos;assemblée générale.
           </p>
           <Go to="syndics" className={cn(btnSedum, "mt-8")}>
             Notre offre pour les copropriétés
           </Go>
         </div>
         <div className="relative h-[260px] @min-[900px]:h-auto">
-          <Photo src="eta-copro" alt="Immeuble en brique avec balcons" sizes="(min-width: 1024px) 640px, 100vw" />
+          <Photo
+            src="eta-copro"
+            alt="Immeuble en brique avec balcons"
+            sizes="(min-width: 1024px) 640px, 100vw"
+          />
         </div>
       </section>
 
@@ -643,7 +762,9 @@ function Home() {
             <p className="text-[26px] font-bold tracking-[-0.02em] @min-[900px]:text-[32px]">
               Une tache au plafond, une flaque qui reste&nbsp;?
             </p>
-            <p className="mt-2 text-[16.5px] text-black/60">Envoyez deux photos : on vous dit si c&apos;est urgent.</p>
+            <p className="mt-2 text-[16.5px] text-black/60">
+              Envoyez deux photos : on vous dit si c&apos;est urgent.
+            </p>
           </div>
           <Go to="signaler" className={btnDark}>
             Signaler une infiltration
@@ -706,7 +827,9 @@ function Terrasses() {
             </article>
           ))}
         </div>
-        <p className="mt-8 text-[13.5px] text-black/50">Prix indicatifs, hors dépose et accès difficile. Le prix ferme est donné après visite.</p>
+        <p className="mt-8 text-[13.5px] text-black/50">
+          Prix indicatifs, hors dépose et accès difficile. Le prix ferme est donné après visite.
+        </p>
       </section>
       <section className={cn("bg-(--beton) py-16 @min-[900px]:py-20", pad)}>
         <H2>La coupe, couche par couche</H2>
@@ -731,7 +854,11 @@ function Chantiers() {
   const job = jobs.find((j) => j.src === open);
   return (
     <>
-      <PageTitle crumb="Chantiers" title="Des chantiers documentés, étape par étape" intro="Chaque chantier a son rapport photo. En voici quelques-uns, avec l'accord des clients." />
+      <PageTitle
+        crumb="Chantiers"
+        title="Des chantiers documentés, étape par étape"
+        intro="Chaque chantier a son rapport photo. En voici quelques-uns, avec l'accord des clients."
+      />
       <section className={cn("py-12 @min-[900px]:py-16", pad)}>
         <Pick
           options={kinds}
@@ -748,7 +875,11 @@ function Chantiers() {
               <Photo src={job.src} alt={job.t} sizes="(min-width: 1024px) 640px, 100vw" />
             </div>
             <div>
-              <button type="button" onClick={() => setOpen(null)} className="text-[14px] text-black/55 hover:text-black">
+              <button
+                type="button"
+                onClick={() => setOpen(null)}
+                className="text-[14px] text-black/55 hover:text-black"
+              >
                 Fermer ×
               </button>
               <h2 className="mt-3 text-[28px] font-bold tracking-[-0.02em]">{job.t}</h2>
@@ -770,9 +901,19 @@ function Chantiers() {
         )}
         <div className="mt-8 grid gap-6 @min-[600px]:grid-cols-2 @min-[900px]:grid-cols-3">
           {shown.map((j) => (
-            <button key={j.src} type="button" onClick={() => setOpen(j.src)} className="group text-left">
+            <button
+              key={j.src}
+              type="button"
+              onClick={() => setOpen(j.src)}
+              className="group text-left"
+            >
               <span className="relative block aspect-[4/3] overflow-hidden">
-                <Photo src={j.src} alt={j.t} sizes="(min-width: 1024px) 400px, 100vw" className="transition-transform duration-500 group-hover:scale-[1.03]" />
+                <Photo
+                  src={j.src}
+                  alt={j.t}
+                  sizes="(min-width: 1024px) 400px, 100vw"
+                  className="transition-transform duration-500 group-hover:scale-[1.03]"
+                />
               </span>
               <span className="mt-3 block text-[17.5px] font-semibold">{j.t}</span>
               <span className="block text-[14px] text-black/55">
@@ -799,7 +940,12 @@ function Syndics() {
         title="Pour les syndics et les conseils syndicaux"
         intro="Une seule entreprise pour les toitures-terrasses, les balcons et les infiltrations de l'immeuble, avec des rapports que l'on peut présenter en assemblée générale."
       />
-      <section className={cn("grid gap-12 py-14 @min-[900px]:grid-cols-[1fr_1fr] @min-[900px]:gap-16 @min-[900px]:py-20", pad)}>
+      <section
+        className={cn(
+          "grid gap-12 py-14 @min-[900px]:grid-cols-[1fr_1fr] @min-[900px]:gap-16 @min-[900px]:py-20",
+          pad,
+        )}
+      >
         <div>
           <h2 className="text-[26px] font-bold tracking-[-0.02em]">Le contrat d&apos;entretien</h2>
           <ul className="mt-6 divide-y divide-black/8 border-y border-black/8">
@@ -807,7 +953,10 @@ function Syndics() {
               ["Visite annuelle", "Toitures, relevés, joints et évacuations, au printemps."],
               ["Nettoyage", "Évacuations, chéneaux et toits végétalisés désherbés."],
               ["Rapport photo", "Envoyé au syndic, avec les points à surveiller et leur coût."],
-              ["Intervention prioritaire", "Sous 48 h en cas d'infiltration chez un copropriétaire."],
+              [
+                "Intervention prioritaire",
+                "Sous 48 h en cas d'infiltration chez un copropriétaire.",
+              ],
             ].map(([t, d]) => (
               <li key={t} className="py-4">
                 <p className="text-[17px] font-semibold">{t}</p>
@@ -815,15 +964,26 @@ function Syndics() {
               </li>
             ))}
           </ul>
-          <p className="mt-5 text-[15px] text-black/55">À partir de 0,90 € HT par m² de toiture et par an.</p>
+          <p className="mt-5 text-[15px] text-black/55">
+            À partir de 0,90 € HT par m² de toiture et par an.
+          </p>
         </div>
         <div>
           <div className="relative h-[260px]">
-            <Photo src="eta-facade" alt="Façade d'immeuble à balcons" sizes="(min-width: 1024px) 560px, 100vw" />
+            <Photo
+              src="eta-facade"
+              alt="Façade d'immeuble à balcons"
+              sizes="(min-width: 1024px) 560px, 100vw"
+            />
           </div>
-          <h2 className="mt-8 text-[26px] font-bold tracking-[-0.02em]">Demande de visite pour un immeuble</h2>
+          <h2 className="mt-8 text-[26px] font-bold tracking-[-0.02em]">
+            Demande de visite pour un immeuble
+          </h2>
           <DemoForm
-            success={{ title: "Demande reçue", text: "Un responsable vous rappelle pour fixer la visite avec le gardien ou le conseil syndical." }}
+            success={{
+              title: "Demande reçue",
+              text: "Un responsable vous rappelle pour fixer la visite avec le gardien ou le conseil syndical.",
+            }}
             submit="Demander la visite"
             submitClassName={cn(btnDark, "mt-6 w-full")}
             className="mt-5"
@@ -837,7 +997,10 @@ function Syndics() {
               ].map(([l, ph]) => (
                 <label key={l} className="block">
                   <span className="text-[14px] font-medium text-black/70">{l}</span>
-                  <input placeholder={ph} className="mt-2 h-12 w-full bg-white px-4 text-[16px] ring-1 ring-black/15 outline-none placeholder:text-black/35 focus:ring-2 focus:ring-(--membrane)" />
+                  <input
+                    placeholder={ph}
+                    className="mt-2 h-12 w-full bg-white px-4 text-[16px] ring-1 ring-black/15 outline-none placeholder:text-black/35 focus:ring-2 focus:ring-(--membrane)"
+                  />
                 </label>
               ))}
             </div>
@@ -874,7 +1037,12 @@ function Signaler() {
         title="Signaler une infiltration"
         intro="Quatre questions et deux photos : on vous rappelle sous 24 h pour vous dire si c'est urgent et fixer le diagnostic."
       />
-      <section className={cn("grid gap-12 py-14 @min-[900px]:grid-cols-[1.4fr_1fr] @min-[900px]:gap-16 @min-[900px]:py-20", pad)}>
+      <section
+        className={cn(
+          "grid gap-12 py-14 @min-[900px]:grid-cols-[1.4fr_1fr] @min-[900px]:gap-16 @min-[900px]:py-20",
+          pad,
+        )}
+      >
         <DemoForm
           success={{
             title: "Signalement envoyé",
@@ -884,9 +1052,21 @@ function Signaler() {
           submitClassName={cn(btnDark, "mt-8 w-full")}
         >
           <p className="text-[15px] font-semibold">Où voyez-vous l&apos;eau&nbsp;?</p>
-          <Pick options={places} value={place} onChange={setPlace} className="mt-3" itemClassName={chip} />
+          <Pick
+            options={places}
+            value={place}
+            onChange={setPlace}
+            className="mt-3"
+            itemClassName={chip}
+          />
           <p className="mt-7 text-[15px] font-semibold">Depuis quand&nbsp;?</p>
-          <Pick options={since} value={when} onChange={setWhen} className="mt-3" itemClassName={chip} />
+          <Pick
+            options={since}
+            value={when}
+            onChange={setWhen}
+            className="mt-3"
+            itemClassName={chip}
+          />
           <p className="mt-7 text-[15px] font-semibold">Vous êtes</p>
           <Pick options={who} value={me} onChange={setMe} className="mt-3" itemClassName={chip} />
           <div className="mt-7 grid gap-5 @min-[600px]:grid-cols-2">
@@ -906,14 +1086,18 @@ function Signaler() {
             className="mt-3 flex h-24 w-full items-center justify-center gap-3 border-2 border-dashed border-black/20 text-[15px] text-black/60 hover:border-black/40"
           >
             <Camera className="size-5" />
-            {photos ? `${photos} photo${photos > 1 ? "s" : ""} ajoutée${photos > 1 ? "s" : ""} (exemple)` : "Ajouter des photos"}
+            {photos
+              ? `${photos} photo${photos > 1 ? "s" : ""} ajoutée${photos > 1 ? "s" : ""} (exemple)`
+              : "Ajouter des photos"}
           </button>
         </DemoForm>
         <aside className="bg-(--beton) p-6 @min-[900px]:p-8">
           <div className="relative h-[200px]">
             <Photo src="eta-flaque" alt="Eau stagnante sur un toit plat" sizes="420px" />
           </div>
-          <h2 className="mt-6 text-[22px] font-bold tracking-[-0.02em]">En attendant notre passage</h2>
+          <h2 className="mt-6 text-[22px] font-bold tracking-[-0.02em]">
+            En attendant notre passage
+          </h2>
           <ol className="mt-4 space-y-3 text-[15.5px] leading-relaxed">
             {[
               "Placez un récipient sous l'écoulement et protégez le sol.",
@@ -968,8 +1152,6 @@ function Credits() {
   );
 }
 
-export const desktop = true;
-
 export function Site(props: SiteProps) {
   return (
     <SiteFrame
@@ -978,10 +1160,20 @@ export function Site(props: SiteProps) {
       header={<Header />}
       pages={[
         { id: "home", label: "Accueil", path: "/", render: () => <Home /> },
-        { id: "terrasses", label: "Toitures-terrasses", path: "/toitures-terrasses", render: () => <Terrasses /> },
+        {
+          id: "terrasses",
+          label: "Toitures-terrasses",
+          path: "/toitures-terrasses",
+          render: () => <Terrasses />,
+        },
         { id: "chantiers", label: "Chantiers", path: "/chantiers", render: () => <Chantiers /> },
         { id: "syndics", label: "Copropriétés", path: "/coproprietes", render: () => <Syndics /> },
-        { id: "signaler", label: "Signaler une infiltration", path: "/signaler-une-infiltration", render: () => <Signaler /> },
+        {
+          id: "signaler",
+          label: "Signaler une infiltration",
+          path: "/signaler-une-infiltration",
+          render: () => <Signaler />,
+        },
         {
           id: "credits",
           label: "Mentions légales",
