@@ -1,7 +1,7 @@
 /**
  * Pages « site internet pour <métier> » (/sites-internet/[metier]).
  * Les textes sont dans data/trade-sites.json, modifiables depuis Pages CMS.
- * `mockup` désigne la maquette dessinée en code du métier (components/mockups/trade/).
+ * `mockup` désigne la maquette dessinée en code du métier (components/mockups/site/).
  */
 import data from "./data/trade-sites.json";
 import type { TradeMockup } from "./projects";

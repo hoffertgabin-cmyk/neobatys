@@ -1,238 +1,4 @@
 {
-  "plombier-sdb": {
-    "title": "Bathroom, Frederick C. Robie House, Woodlawn Avenue and 58th…",
-    "creator": "w_lemay",
-    "license": "CC BY-SA 2.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Bathroom,_Frederick_C._Robie_House,_Woodlawn_Avenue_and_58th_Street,_Hyde_Park,_Chicago,_IL_-_54213879503.jpg"
-  },
-  "tableau": {
-    "title": "Модульные блоки защиты российских брендов",
-    "creator": "Retired electrician",
-    "license": "CC0",
-    "url": "https://commons.wikimedia.org/wiki/File:%D0%9C%D0%BE%D0%B4%D1%83%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8_%D0%B7%D0%B0%D1%89%D0%B8%D1%82%D1%8B_%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D1%85_%D0%B1%D1%80%D0%B5%D0%BD%D0%B4%D0%BE%D0%B2.jpg"
-  },
-  "borne": {
-    "title": "Delta Electronics EVPT3215MWE 20190601",
-    "creator": "Solomon203",
-    "license": "CC BY-SA 4.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Delta_Electronics_EVPT3215MWE_20190601.jpg"
-  },
-  "eclairage": {
-    "title": "Interior design by IRchitect",
-    "creator": "Bmbrozig",
-    "license": "CC BY-SA 4.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Interior_design_by_IRchitect.jpg"
-  },
-  "electricien-hero": {
-    "title": "Electrician at work (2)",
-    "creator": "Sid Mbog",
-    "license": "CC BY-SA 4.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Electrician_at_work_(2).jpg"
-  },
-  "electricien-chantier": {
-    "title": "Electrician - Flickr - garryknight",
-    "creator": "Garry Knight from London, England",
-    "license": "CC BY 2.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Electrician_-_Flickr_-_garryknight.jpg"
-  },
-  "facade": {
-    "title": "Maison CMI modèle Prune, perspective 3D",
-    "creator": "MAISON CMI",
-    "license": "CC BY-SA 4.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Maison_CMI_mod%C3%A8le_Prune,_perspective_3D.jpg"
-  },
-  "muret": {
-    "title": "Stone wall - Arlington, MA - 20200726 095639",
-    "creator": "Daderot",
-    "license": "CC0",
-    "url": "https://commons.wikimedia.org/wiki/File:Stone_wall_-_Arlington,_MA_-_20200726_095639.jpg"
-  },
-  "terrasse": {
-    "title": "Maison CMI modèle 4, perspective 3D",
-    "creator": "MAISON CMI",
-    "license": "CC BY-SA 4.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Maison_CMI_mod%C3%A8le_4,_perspective_3D.jpg"
-  },
-  "macon-hero": {
-    "title": "Bricklayer at work",
-    "creator": "Okhaifo",
-    "license": "CC BY-SA 4.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Bricklayer_at_work.jpg"
-  },
-  "macon-chantier": {
-    "title": "Nigerian bricklayers (5)",
-    "creator": "Kenogenic",
-    "license": "CC BY-SA 4.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Nigerian_bricklayers_(5).jpg"
-  },
-  "macon-mur": {
-    "title": "Brickwork in Russia. Moscow region. img 38",
-    "creator": "Dmitry Makeev",
-    "license": "CC BY-SA 4.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Brickwork_in_Russia._Moscow_region._img_38.jpg"
-  },
-  "maison": {
-    "title": "Maison CMI modèle 6, perspective 3D",
-    "creator": "MAISON CMI",
-    "license": "CC BY-SA 4.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Maison_CMI_mod%C3%A8le_6,_perspective_3D.jpg"
-  },
-  "escalier": {
-    "title": "Interior of the Mița the Cyclist House, Bucharest (09)",
-    "creator": "Neoclassicism Enthusiast",
-    "license": "CC0",
-    "url": "https://commons.wikimedia.org/wiki/File:Interior_of_the_Mi%C8%9Ba_the_Cyclist_House,_Bucharest_(09).jpg"
-  },
-  "cuisine-bois": {
-    "title": "Cozy wooden cabin interior with kitchen",
-    "creator": "Shixart1985",
-    "license": "CC BY 2.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Cozy_wooden_cabin_interior_with_kitchen.jpg"
-  },
-  "atelier": {
-    "title": "Punt-building-workshop-in-Oxford",
-    "creator": "Thruston",
-    "license": "Public domain",
-    "url": "https://commons.wikimedia.org/wiki/File:Punt-building-workshop-in-Oxford.jpg"
-  },
-  "menuisier-hero": {
-    "title": "Close-up of a carpenters hand sandpapering the wood",
-    "creator": "Shixart1985",
-    "license": "CC BY 2.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Close-up_of_a_carpenters_hand_sandpapering_the_wood.jpg"
-  },
-  "menuisier-outils": {
-    "title": "Vienna - Carpenter workshop tools - 0027",
-    "creator": "Jorge Royan",
-    "license": "CC BY-SA 3.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Vienna_-_Carpenter_workshop_tools_-_0027.jpg"
-  },
-  "cuisine-moderne": {
-    "title": "Modern kitchen and dining area with stylish furnishings and…",
-    "creator": "Shixart1985",
-    "license": "CC BY 2.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Modern_kitchen_and_dining_area_with_stylish_furnishings_and_natural_light_in_a_contemporary_home_setting.jpg"
-  },
-  "salon": {
-    "title": "Living Room with Pooja Niche Interior Design in Kolkata by Estate…",
-    "creator": "Estate Lookup Interiors",
-    "license": "CC0",
-    "url": "https://commons.wikimedia.org/wiki/File:Living_Room_with_Pooja_Niche_Interior_Design_in_Kolkata_by_Estate_Lookup_Interiors.png"
-  },
-  "salon2": {
-    "title": "Interior view, living room, the Farnsworth House, Plano, Illinois…",
-    "creator": "Carol M. Highsmith",
-    "license": "Public domain",
-    "url": "https://commons.wikimedia.org/wiki/File:Interior_view,_living_room,_the_Farnsworth_House,_Plano,_Illinois_LCCN2010630502.tif"
-  },
-  "salon3": {
-    "title": "Kitchen and sitting room in a house in Corinda, Queensland",
-    "creator": "Kgbo",
-    "license": "CC BY-SA 4.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Kitchen_and_sitting_room_in_a_house_in_Corinda,_Queensland.jpg"
-  },
-  "peintre": {
-    "title": "US Navy 070823-N-9195K-025 Aerographer's Mate 1st Class William…",
-    "creator": "U.S. Navy",
-    "license": "Public domain",
-    "url": "https://commons.wikimedia.org/wiki/File:US_Navy_070823-N-9195K-025_Aerographer%27s_Mate_1st_Class_William_Palmer_uses_a_roller_to_add_a_second_coat_of_paint_to_a_wall_during_a_community_relations_project_at_Voza_Medical_Clinic_in_support_of_Pacific_Partnership.jpg"
-  },
-  "peintre-mur": {
-    "title": "Paint roller 4",
-    "creator": "Michael Cory",
-    "license": "CC BY 2.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Paint_roller_4.jpg"
-  },
-  "chaudiere": {
-    "title": "Wall mounted boiler in kitchen",
-    "creator": "Turbojet",
-    "license": "CC BY-SA 4.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Wall_mounted_boiler_in_kitchen.jpg"
-  },
-  "pac": {
-    "title": "Air Source Heat Pump - Vailliant aroTherm Plus on a terraced house",
-    "creator": "Southend-on-Sea Borough Council, UK",
-    "license": "CC0",
-    "url": "https://commons.wikimedia.org/wiki/File:Air_Source_Heat_Pump_-_Vailliant_aroTherm_Plus_on_a_terraced_house.jpg"
-  },
-  "chauffagiste": {
-    "title": "Heat Pump Installation (51323299230)",
-    "creator": "Vernon Air Conditioning, Plumbing & Electrical Services",
-    "license": "CC BY 2.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Heat_Pump_Installation_(51323299230).jpg"
-  },
-  "radiateur": {
-    "title": "Heimeier-Thermostat-1687928",
-    "creator": "USA-Reiseblogger / Simon",
-    "license": "CC0",
-    "url": "https://commons.wikimedia.org/wiki/File:Heimeier-Thermostat-1687928.jpg"
-  },
-  "chauffage-hero": {
-    "title": "Mitsubishi Electric MUZ-FD25VABH room air conditioner",
-    "creator": "Santeri Viinamäki",
-    "license": "CC BY-SA 4.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Mitsubishi_Electric_MUZ-FD25VABH_room_air_conditioner.jpg"
-  },
-  "carrelage": {
-    "title": "Floor tile installation in the back of house area of the LIRR…",
-    "creator": "MTA Capital Construction Mega Projects",
-    "license": "CC BY 2.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Floor_tile_installation_in_the_back_of_house_area_of_the_LIRR_passenger_concourse._08-29-2019_(48647691101).jpg"
-  },
-  "faience": {
-    "title": "Dornbirn-Porcelain wall tiles Klimex ultrastrong…",
-    "creator": "Asurnipal",
-    "license": "CC BY-SA 4.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Dornbirn-Porcelain_wall_tiles_Klimex_ultrastrong_brown-red-bricks-11ASD.jpg"
-  },
-  "terrasse-carrelage": {
-    "title": "Waterproof membrane that will serve as an epoxy for the…",
-    "creator": "MTA Capital Construction Mega Projects",
-    "license": "CC BY 2.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Waterproof_membrane_that_will_serve_as_an_epoxy_for_the_installation_of_terrazzo_tile_flooring_for_the_future_LIRR_passenger_concourse._(49434132893).jpg"
-  },
-  "carreleur-hero": {
-    "title": "Bathroom in hotel in Bergen, Norway. 2016-03-16. hand wash basin…",
-    "creator": "Wolfmann",
-    "license": "CC BY-SA 4.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Bathroom_in_hotel_in_Bergen,_Norway._2016-03-16._hand_wash_basin_sink,_mirror,_toilet,_shower_cabinet,_etc_(low_view)._Also_wall_and_floor_tiles.jpg"
-  },
-  "carreleur-sol": {
-    "title": "Mosaic tiled wall",
-    "creator": "Sweetie candykim",
-    "license": "CC0",
-    "url": "https://commons.wikimedia.org/wiki/File:Mosaic_tiled_wall.JPG"
-  },
-  "ossature": {
-    "title": "Timber frame house under construction, New Zealand",
-    "creator": "L Maule",
-    "license": "CC BY-SA 4.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Timber_frame_house_under_construction,_New_Zealand.jpg"
-  },
-  "charpente": {
-    "title": "Nabawan Sabah Construction-of-a-traditional-house-01",
-    "creator": "CEphoto, Uwe Aranas",
-    "license": "CC BY-SA 4.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Nabawan_Sabah_Construction-of-a-traditional-house-01.jpg"
-  },
-  "toiture": {
-    "title": "Old tiled roof in Lahälla",
-    "creator": "W.carter",
-    "license": "CC0",
-    "url": "https://commons.wikimedia.org/wiki/File:Old_tiled_roof_in_Lah%C3%A4lla.jpg"
-  },
-  "charpente-hero": {
-    "title": "Plimoth Patuxet Construction 2025 March 27",
-    "creator": "Rinbro",
-    "license": "CC0",
-    "url": "https://commons.wikimedia.org/wiki/File:Plimoth_Patuxet_Construction_2025_March_27.jpg"
-  },
-  "charpente-atelier": {
-    "title": "NPS Preservationists are at work laying out the timber frame…",
-    "creator": "NPS Photo",
-    "license": "Public domain",
-    "url": "https://commons.wikimedia.org/wiki/File:NPS_Preservationists_are_at_work_laying_out_the_timber_frame_joinery_for_the_Warfield_House_roofing._Timber_frame_joinery_(35560cdd-6d7c-4f7e-a765-9efbdccc8de6).JPG"
-  },
   "plb-hero": {
     "title": "Salle de bain claire, baignoire îlot et douche vitrée",
     "creator": "@goodlifeconstruction",
@@ -292,5 +58,527 @@
     "creator": "@alextyson195",
     "license": "Licence Unsplash",
     "url": "https://unsplash.com/photos/V-lDT7pTtz4"
+  },
+  "men-hero": {
+    "title": "Mains qui tracent au crayon sur une planche, copeaux",
+    "creator": "@craftkitties",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/GfYA6q5ESLI"
+  },
+  "men-atelier": {
+    "title": "Établi d'atelier à la lumière d'une fenêtre",
+    "creator": "@maple_yin",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/KKY0GrQPqVo"
+  },
+  "men-rabots": {
+    "title": "Rabots anciens sur un mur sombre",
+    "creator": "@meanduck",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/WWLuyDP3t1U"
+  },
+  "men-ciseau": {
+    "title": "Ciseau à bois qui creuse une planche",
+    "creator": "@drscythe",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/3cIvvzjE6Lk"
+  },
+  "men-gouges": {
+    "title": "Gouges posées sur un plateau en bois",
+    "creator": "@drscythe",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/v8vz-Roj8zo"
+  },
+  "men-mesure": {
+    "title": "Mains qui mesurent un assemblage, noir et blanc",
+    "creator": "@jbonunsplash",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/TH_3Igq3Rik"
+  },
+  "men-cuisine": {
+    "title": "Cuisine en chêne aux formes arrondies",
+    "creator": "@___atmos",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/ag7FMjaVxC8"
+  },
+  "men-cuisine2": {
+    "title": "Longue cuisine en chêne clair",
+    "creator": "@goodlifeconstruction",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/Jl5BfxX089Q"
+  },
+  "men-noyer": {
+    "title": "Façades en noyer et plan en pierre noire",
+    "creator": "@___atmos",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/UBoDgr8Y0YA"
+  },
+  "men-escalier": {
+    "title": "Escalier en bois courbe",
+    "creator": "@danzai_ph",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/JS3BH31COQg"
+  },
+  "men-escalier2": {
+    "title": "Escalier droit en bois et verre",
+    "creator": "@jessica_hearn",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/4w1-fhuBO00"
+  },
+  "men-biblio": {
+    "title": "Bibliothèque murale sur mesure",
+    "creator": "@pickawood",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/JzrpTIuooFc"
+  },
+  "men-echelle": {
+    "title": "Bibliothèque avec échelle en bois",
+    "creator": "@mitchel3uo",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/g_Y9K409vNw"
+  },
+  "men-niche": {
+    "title": "Niches en bois éclairées",
+    "creator": "@___atmos",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/agz5hQ0rXUc"
+  },
+  "cou-hero": {
+    "title": "Couvreurs qui posent des tuiles sur liteaux",
+    "creator": "@skstrannik",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/OnwxQNEbPco"
+  },
+  "cou-tuiles-noires": {
+    "title": "Tuiles mécaniques noires",
+    "creator": "@jasmund",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/m_vEaZizd2s"
+  },
+  "cou-terre-cuite": {
+    "title": "Tuiles en terre cuite",
+    "creator": "@robinjoshua4",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/MjLrM8rVMC0"
+  },
+  "cou-chantier": {
+    "title": "Tuiles empilées sur le toit pendant le chantier",
+    "creator": "@reskp",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/3ECOXx-tCvc"
+  },
+  "cou-maison": {
+    "title": "Maison en briques et toiture en tuiles plates",
+    "creator": "@tanyabarrow",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/y4iBCffm3n0"
+  },
+  "cou-neuf": {
+    "title": "Toitures neuves en tuiles",
+    "creator": "@jack_barton",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/DXWoUTH3swA"
+  },
+  "cou-ardoise": {
+    "title": "Ardoises naturelles",
+    "creator": "@josepplans",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/t7XtmgozucU"
+  },
+  "cou-mansarde": {
+    "title": "Toit en ardoise avec lucarnes",
+    "creator": "@lea_gindorf",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/9eC9AT9HQxQ"
+  },
+  "cou-ecailles": {
+    "title": "Ardoises en écailles",
+    "creator": "@moino007",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/6ZaSS7e0T-4"
+  },
+  "cou-zinguerie": {
+    "title": "Mains qui fixent une gouttière",
+    "creator": "@smartins20",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/E07VvBCSSNE"
+  },
+  "cou-zinc": {
+    "title": "Toiture en zinc à joints debout",
+    "creator": "@ryunosuke_kikuno",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/Mu9uo42SXEY"
+  },
+  "cou-velux": {
+    "title": "Toit en ardoise et fenêtre de toit",
+    "creator": "@taravester",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/sWMtUZaOtxk"
+  },
+  "car-hero": {
+    "title": "Banquette et sol en zellige vert",
+    "creator": "@entre2vue",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/g46FzLS_sZg"
+  },
+  "car-chevron": {
+    "title": "Douche en carreaux bleus posés en chevron",
+    "creator": "@tilemerchant",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/F1tC72f9648"
+  },
+  "car-ecailles": {
+    "title": "Mur en carreaux écailles",
+    "creator": "@tilemerchant",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/NwApEJORbIs"
+  },
+  "car-cuisine": {
+    "title": "Crédence de cuisine en carreaux sombres verticaux",
+    "creator": "@claybanks",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/PGBtDH4zEMw"
+  },
+  "car-terrazzo": {
+    "title": "Sol en terrazzo au soleil",
+    "creator": "@jipy32",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/Bv3gQifeT3A"
+  },
+  "car-damier": {
+    "title": "Sol en damier de marbre vert et blanc",
+    "creator": "@ninjason",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/p9ZSblHyk80"
+  },
+  "car-terrasse": {
+    "title": "Terrasse en grandes dalles claires",
+    "creator": "@tilemerchant",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/hMnON34Y-yo"
+  },
+  "car-sejour": {
+    "title": "Séjour en grands carreaux effet marbre",
+    "creator": "@rajaa_14",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/sNwHCsDAT1c"
+  },
+  "car-baguettes": {
+    "title": "Carreaux baguettes vert d'eau",
+    "creator": "@printandproper",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/6QsTY7tzTo8"
+  },
+  "car-zellige": {
+    "title": "Mur en zellige clair",
+    "creator": "@riadtilemarketing",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/6EZqFQ_6ZNQ"
+  },
+  "car-sdb": {
+    "title": "Salle de bain marbre et vasque rouge",
+    "creator": "@tilemerchant",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/1bz5VY74LTY"
+  },
+  "cha-hero": {
+    "title": "Combles sous une charpente en bois éclairée",
+    "creator": "@pixtresa",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/CvuAuZGAYQ4"
+  },
+  "cha-ossature": {
+    "title": "Murs à ossature bois en cours de montage",
+    "creator": "@troyscanon",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/pb2rODOfXz8"
+  },
+  "cha-lamelle": {
+    "title": "Poutres en lamellé-collé sur ciel bleu",
+    "creator": "@greg_rosenke",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/yQ9slR8E5jM"
+  },
+  "cha-fermettes": {
+    "title": "Fermettes de toiture posées",
+    "creator": "@troyscanon",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/w6g9DqZUNkI"
+  },
+  "cha-comble": {
+    "title": "Charpente apparente en sapin clair",
+    "creator": "@bgoodpic",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/BNUzt0nInEc"
+  },
+  "cha-ancienne": {
+    "title": "Ancienne charpente à restaurer",
+    "creator": "@vimocay",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/l6VeUE-e914"
+  },
+  "cha-extension": {
+    "title": "Extension à bardage bois",
+    "creator": "@borzenkov",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/FtUpVRdcBm4"
+  },
+  "cha-noire": {
+    "title": "Maison bois à bardage noir et pignon vitré",
+    "creator": "@malwinanogaj",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/iiTOdErqzn4"
+  },
+  "cha-pignon": {
+    "title": "Maison à pignon et bardage bois",
+    "creator": "@pjrpkm",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/pnEtsdgBeBE"
+  },
+  "cha-levage": {
+    "title": "Levage d'un panneau d'ossature bois",
+    "creator": "@pjdoesvideo",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/_J0S8bQ8Nak"
+  },
+  "ele-hero": {
+    "title": "Cuisine sombre éclairée par un ruban LED sous les meubles",
+    "creator": "@itsbilalmn",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/TWIeLLm7DPc"
+  },
+  "ele-tableau": {
+    "title": "Tableau électrique avec disjoncteurs",
+    "creator": "@markusspiske",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/kK7uPfb2YWU"
+  },
+  "ele-mesure": {
+    "title": "Mesure au testeur dans un tableau, main gantée",
+    "creator": "@toolmash",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/PkHf7BUWbtk"
+  },
+  "ele-borne": {
+    "title": "Borne de recharge murale sur mur de briques",
+    "creator": "@zaptec",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/YawPVmsnCbw"
+  },
+  "ele-inter": {
+    "title": "Interrupteurs à bascule laiton sur plaque noire",
+    "creator": "@lunyon",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/JO1ITtg46NY"
+  },
+  "ele-cuisine": {
+    "title": "Cuisine claire avec suspensions en verre",
+    "creator": "@atfilms",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/SwtyCf0lKYc"
+  },
+  "ele-salon": {
+    "title": "Salon chaleureux en lumière douce",
+    "creator": "@suher90",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/piCZ2weLnDE"
+  },
+  "ele-led": {
+    "title": "Étagères éclairées par LED intégrées",
+    "creator": "@julianamoralesr_",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/ZeKBpWZi3K0"
+  },
+  "mac-hero": {
+    "title": "Façade en pierre calcaire avec lierre",
+    "creator": "@gabrieleromanoy",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/oLjrp7UkMTw"
+  },
+  "mac-avant": {
+    "title": "Arrière de maison avant l'extension, gravats",
+    "creator": "@brett_jordan",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/3q5tRT1jZKI"
+  },
+  "mac-pendant": {
+    "title": "Extension en cours, murs en parpaings",
+    "creator": "@brett_jordan",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/1JyKl58kj5Y"
+  },
+  "mac-apres": {
+    "title": "Extension terminée et enduite en blanc",
+    "creator": "@brett_jordan",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/wLp29VrzNOM"
+  },
+  "mac-moellons": {
+    "title": "Mur en moellons et porte bleue",
+    "creator": "@pixtresa",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/A_tsFWawmWE"
+  },
+  "mac-truelle": {
+    "title": "Truelle et mortier en main",
+    "creator": "@gowthamagm",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/MXPWld5uysw"
+  },
+  "mac-parpaing": {
+    "title": "Pose de parpaings au mortier",
+    "creator": "@solomen",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/i6V6diaf71A"
+  },
+  "mac-pierre-seche": {
+    "title": "Mur en pierres sèches et terrasse",
+    "creator": "@visualsbyroyalz",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/n0RPqord5Ns"
+  },
+  "mac-escalier": {
+    "title": "Escalier extérieur en pierre",
+    "creator": "@geox3",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/Lo6sJSgr0lU"
+  },
+  "mac-chaux": {
+    "title": "Enduit à la chaux autour d'une fenêtre en pierre",
+    "creator": "@eprouzet",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/td0XXWednY0"
+  },
+  "mac-maison": {
+    "title": "Maison en pierre aux volets gris",
+    "creator": "@rosaliegdy",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/-oAIXVdFgW0"
+  },
+  "pei-hero": {
+    "title": "Salle à manger au mur bleu profond",
+    "creator": "@beazy",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/GAwEGMN_EMs"
+  },
+  "pei-mur": {
+    "title": "Salon au mur blanc, canapé gris et trois cadres",
+    "creator": "@kropachev",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/NaqJJyzex08"
+  },
+  "pei-rouleau": {
+    "title": "Rouleau de peinture bleue sur un mur blanc",
+    "creator": "@themephotos",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/Cl-OpYWFFm0"
+  },
+  "pei-r1": {
+    "title": "Salon au mur bleu canard et galerie de cadres",
+    "creator": "@spacejoy",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/KSfe2Z4REEM"
+  },
+  "pei-r2": {
+    "title": "Salon au mur bleu nuit et canapé cognac",
+    "creator": "@spacejoy",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/kz_xZG9ufbk"
+  },
+  "pei-r3": {
+    "title": "Coin salon au mur vert sauge",
+    "creator": "@spacejoy",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/TKFskJy8PQ8"
+  },
+  "pei-r4": {
+    "title": "Salon au mur bleu pétrole, lumière du matin",
+    "creator": "@beazy",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/eKTTk3Q2zy0"
+  },
+  "pei-r5": {
+    "title": "Mur terre cuite et plantes",
+    "creator": "@seffen99",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/DMJ2JMSQ17E"
+  },
+  "pei-r6": {
+    "title": "Chambre au mur noir mat",
+    "creator": "@spacejoy",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/M95SWsUIXTE"
+  },
+  "pei-fac1": {
+    "title": "Façade enduit saumon et porte vert de gris",
+    "creator": "@densaldanha",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/bK_hTBqCyEw"
+  },
+  "pei-fac2": {
+    "title": "Façade rose aux fenêtres blanches",
+    "creator": "@mydailydestinations",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/8saVYOMHFzU"
+  },
+  "pei-fac3": {
+    "title": "Fenêtre aux volets bleus sur façade claire",
+    "creator": "@conniedevries",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/QPS4FZMfA7Q"
+  },
+  "chf-hero": {
+    "title": "Pompe à chaleur devant une maison blanche",
+    "creator": "@alpha_innotec",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/-nbWCvUiFJA"
+  },
+  "chf-pac2": {
+    "title": "Pompe à chaleur contre un bardage bois",
+    "creator": "@alpha_innotec",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/ci0I3-1_oy0"
+  },
+  "chf-pac3": {
+    "title": "Pompe à chaleur au pied d'une façade en pierre",
+    "creator": "@alpha_innotec",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/TDtycnfiDa8"
+  },
+  "chf-chaufferie": {
+    "title": "Vannes, manomètres et circulateur d'une chaufferie",
+    "creator": "@tinkerman",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/2nsQWyPU6tw"
+  },
+  "chf-cuivre": {
+    "title": "Tuyauterie cuivre d'une installation de chauffage",
+    "creator": "@mario",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/BrezDFrGvfU"
+  },
+  "chf-radiateur": {
+    "title": "Radiateur blanc et plante",
+    "creator": "@patrick_von_der_wehd",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/2gbSywLPVfU"
+  },
+  "chf-salon": {
+    "title": "Salon lumineux en hiver",
+    "creator": "@claybanks",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/PAoispQVHNI"
+  },
+  "chf-thermostat": {
+    "title": "Réglage d'un thermostat programmable",
+    "creator": "@artlambi",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/YG19gb9jW0I"
+  },
+  "chf-manometre": {
+    "title": "Thermomètre de chaudière",
+    "creator": "@redaquamedia",
+    "license": "Licence Unsplash",
+    "url": "https://unsplash.com/photos/0A7cA6PEjz4"
   }
 }
