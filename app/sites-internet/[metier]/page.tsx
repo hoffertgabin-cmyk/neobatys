@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { PlaceholderBadge } from "@/components/ui/Badge";
 import { ScaledCanvas } from "@/components/mockups/ScaledCanvas";
-import { MOCKUP_HEIGHT, MOCKUP_WIDTH, TradeSiteMockup } from "@/components/mockups/TradeSiteMockup";
+import { mockupSize, TradeSiteMockup } from "@/components/mockups/TradeSiteMockup";
 import { PageHero } from "@/components/sections/PageHero";
 import { ProseSections } from "@/components/sections/ProseSections";
 import { LinkCards } from "@/components/sections/LinkCards";
@@ -59,7 +59,7 @@ export default async function TradeSitePage({ params }: PageProps<"/sites-intern
                 style={{ backgroundColor: project.theme.soft }}
               >
                 <div className="overflow-hidden rounded-xl shadow-lift ring-1 ring-nuit/8">
-                  <ScaledCanvas width={MOCKUP_WIDTH} height={MOCKUP_HEIGHT}>
+                  <ScaledCanvas {...mockupSize(project.mockup)}>
                     <TradeSiteMockup project={project} />
                   </ScaledCanvas>
                 </div>

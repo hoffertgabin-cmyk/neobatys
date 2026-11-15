@@ -4,17 +4,17 @@
       "title": "Maquette · Plomberie",
       "trade": "Plombier",
       "city": "Thionville",
-      "description": "Site vitrine + formulaire de dépannage urgent.",
+      "description": "Site de dépannage : délai et numéro d'abord, estimation de salle de bain, rappel en 15 minutes.",
       "tags": ["Site vitrine", "SEO local"],
       "mockup": "plombier",
       "brand": "Hydrélia",
-      "domain": "exemple-plomberie-thionville.fr",
+      "domain": "hydrelia-exemple.fr",
       "theme": {
-        "primary": "#0369a1",
+        "primary": "#0f3d4c",
         "onPrimary": "#ffffff",
-        "dark": "#0b2942",
-        "soft": "#e8f4fc",
-        "accent": "#38bdf8"
+        "dark": "#092a35",
+        "soft": "#e9eeed",
+        "accent": "#c9a05a"
       },
       "placeholder": true
     },

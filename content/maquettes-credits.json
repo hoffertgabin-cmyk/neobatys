@@ -1,39 +1,9 @@
 {
-  "plombier-hero": {
-    "title": "Bathroom in hotel in Bergen, Norway. 2016-03-16. Hand wash basin…",
-    "creator": "Wolfmann",
-    "license": "CC BY-SA 4.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Bathroom_in_hotel_in_Bergen,_Norway._2016-03-16._Hand_wash_basin_sink,_mirror,_toilet,_shower_cabinet,_etc._Also_wall_and_floor_tiles.jpg"
-  },
-  "sdb-italienne": {
-    "title": "USVI IMG 5425 - Modern bathroom with sleek gray walls white…",
-    "creator": "Government of the United States Virgin Islands",
-    "license": "Public domain",
-    "url": "https://commons.wikimedia.org/wiki/File:USVI_IMG_5425_-_Modern_bathroom_with_sleek_gray_walls_white_cabinets_and_a_large_mirror_above_the_sink_A_walk-in_shower_is_visible_to_the_right.jpg"
-  },
-  "plombier-evier": {
-    "title": "Plumber at work 2010 USA",
-    "creator": "ocean yamaha",
-    "license": "CC BY 2.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Plumber_at_work_2010_USA.jpg"
-  },
-  "chauffe-eau": {
-    "title": "Scaldabagno Bluker",
-    "creator": "Air fans",
-    "license": "CC BY-SA 4.0",
-    "url": "https://commons.wikimedia.org/wiki/File:Scaldabagno_Bluker.jpg"
-  },
   "plombier-sdb": {
     "title": "Bathroom, Frederick C. Robie House, Woodlawn Avenue and 58th…",
     "creator": "w_lemay",
     "license": "CC BY-SA 2.0",
     "url": "https://commons.wikimedia.org/wiki/File:Bathroom,_Frederick_C._Robie_House,_Woodlawn_Avenue_and_58th_Street,_Hyde_Park,_Chicago,_IL_-_54213879503.jpg"
-  },
-  "plombier-sdb2": {
-    "title": "Old bathroom with subway tiles",
-    "creator": "Alf van Beem",
-    "license": "CC0",
-    "url": "https://commons.wikimedia.org/wiki/File:Old_bathroom_with_subway_tiles.JPG"
   },
   "tableau": {
     "title": "Модульные блоки защиты российских брендов",
@@ -262,5 +232,41 @@
     "creator": "NPS Photo",
     "license": "Public domain",
     "url": "https://commons.wikimedia.org/wiki/File:NPS_Preservationists_are_at_work_laying_out_the_timber_frame_joinery_for_the_Warfield_House_roofing._Timber_frame_joinery_(35560cdd-6d7c-4f7e-a765-9efbdccc8de6).JPG"
+  },
+  "plb-douche": {
+    "title": "Bathroom Shower (48877712171)",
+    "creator": "Yellowstone National Park",
+    "license": "Public domain",
+    "url": "https://commons.wikimedia.org/wiki/File:Bathroom_Shower_(48877712171).jpg"
+  },
+  "plb-vanne": {
+    "title": "Businesswoman turns valve in a mechanical room…",
+    "creator": "Shixart1985",
+    "license": "CC BY 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Businesswoman_turns_valve_in_a_mechanical_room_during_a_maintenance_task_in_an_industrial_setting.jpg"
+  },
+  "plb-italienne": {
+    "title": "Free minimalistic bathroom design image",
+    "creator": "rawpixel",
+    "license": "CC0",
+    "url": "https://www.rawpixel.com/image/5907191/photo-image-light-public-domain-shadow"
+  },
+  "plb-bois": {
+    "title": "Modern bathroom, house interior",
+    "creator": "rawpixel",
+    "license": "CC0",
+    "url": "https://www.rawpixel.com/image/6042742/photo-image-public-domain-house-room"
+  },
+  "plb-vasque": {
+    "title": "Bathroom Sink",
+    "creator": "Dan Watson (StockSnap)",
+    "license": "CC0",
+    "url": "https://stocksnap.io/photo/bathroom-sink-D3901L7G93"
+  },
+  "plb-verte": {
+    "title": "Modern Bathroom",
+    "creator": "Travel Adventures (StockSnap)",
+    "license": "CC0",
+    "url": "https://stocksnap.io/photo/modern-bathroom-F4CZ0LN5OO"
   }
 }

@@ -3,7 +3,8 @@
 import type { ComponentType } from "react";
 import type { Project, TradeMockup } from "@/content/projects";
 import type { SiteProps } from "./trade/kit";
-import { PlombierSite } from "./trade/plombier";
+import { PlombierSite } from "./site/plombier";
+import { SITE_HEIGHT, SITE_WIDTH } from "./site/frame";
 import { ElectricienSite } from "./trade/electricien";
 import { MaconSite } from "./trade/macon";
 import { MenuisierSite } from "./trade/menuisier";
@@ -22,6 +23,16 @@ import { CharpentierSite } from "./trade/charpentier";
 export const MOCKUP_WIDTH = 720;
 export const MOCKUP_HEIGHT = 540;
 
+/** Maquettes refaites au format bureau 1280 × 800 (les autres restent en 720 × 540). */
+const desktop = new Set<TradeMockup>(["plombier"]);
+
+/** Taille de référence de la maquette d'un métier. */
+export function mockupSize(mockup: TradeMockup) {
+  return desktop.has(mockup)
+    ? { width: SITE_WIDTH, height: SITE_HEIGHT }
+    : { width: MOCKUP_WIDTH, height: MOCKUP_HEIGHT };
+}
+
 const sites: Record<TradeMockup, ComponentType<SiteProps>> = {
   plombier: PlombierSite,
   electricien: ElectricienSite,
@@ -37,8 +48,8 @@ const sites: Record<TradeMockup, ComponentType<SiteProps>> = {
 export function TradeSiteMockup({
   project,
   interactive = false,
-  width = MOCKUP_WIDTH,
-  height = MOCKUP_HEIGHT,
+  width,
+  height,
 }: {
   project: Project;
   interactive?: boolean;
@@ -46,5 +57,13 @@ export function TradeSiteMockup({
   height?: number;
 }) {
   const Site = sites[project.mockup];
-  return <Site project={project} interactive={interactive} width={width} height={height} />;
+  const size = mockupSize(project.mockup);
+  return (
+    <Site
+      project={project}
+      interactive={interactive}
+      width={width ?? size.width}
+      height={height ?? size.height}
+    />
+  );
 }

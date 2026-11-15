@@ -13,7 +13,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PlaceholderBadge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { ScaledCanvas } from "@/components/mockups/ScaledCanvas";
-import { MOCKUP_HEIGHT, MOCKUP_WIDTH, TradeSiteMockup } from "@/components/mockups/TradeSiteMockup";
+import { mockupSize, TradeSiteMockup } from "@/components/mockups/TradeSiteMockup";
 
 const ALL = "Tous";
 
@@ -26,10 +26,11 @@ const interestHref = (p: Project) =>
 
 /** Aperçu de la maquette dans la carte : le haut du site, coupé en bas. */
 function ProjectPreview({ project }: { project: Project }) {
+  const { width, height } = mockupSize(project.mockup);
   return (
     <div className="absolute inset-0" style={{ backgroundColor: project.theme.soft }}>
       <div className="absolute inset-x-5 top-5 overflow-hidden rounded-t-xl shadow-lift ring-1 ring-nuit/8">
-        <ScaledCanvas width={MOCKUP_WIDTH} height={MOCKUP_HEIGHT}>
+        <ScaledCanvas width={width} height={height}>
           <TradeSiteMockup project={project} />
         </ScaledCanvas>
       </div>
@@ -43,7 +44,9 @@ type Viewport = { mode: "scale"; scale: number } | { mode: "fluid"; width: numbe
  * Taille de la maquette dans la fenêtre : mise à l'échelle sur grand écran,
  * en pleine largeur (sans zoom, pour garder des boutons lisibles) sur mobile.
  */
-function useViewport(open: boolean) {
+function useViewport(project: Project | null) {
+  const open = project !== null;
+  const { width: MOCKUP_WIDTH, height: MOCKUP_HEIGHT } = mockupSize(project?.mockup ?? "plombier");
   const headerRef = useRef<HTMLDivElement>(null);
   const boxRef = useRef<HTMLDivElement>(null);
   const [viewport, setViewport] = useState<Viewport | null>(null);
@@ -55,7 +58,8 @@ function useViewport(open: boolean) {
       const width = box.clientWidth;
       if (width === 0) return;
       const free = window.innerHeight - (headerRef.current?.offsetHeight ?? 0);
-      if (width >= MOCKUP_WIDTH) {
+      // Au-delà de 760 px, la maquette est réduite pour montrer la version bureau entière.
+      if (width >= Math.min(MOCKUP_WIDTH, 760)) {
         const scale = Math.min(width / MOCKUP_WIDTH, Math.max(0.6, (free - 64) / MOCKUP_HEIGHT));
         setViewport({ mode: "scale", scale });
       } else {
@@ -70,15 +74,15 @@ function useViewport(open: boolean) {
       observer.disconnect();
       window.removeEventListener("resize", measure);
     };
-  }, [open]);
+  }, [open, MOCKUP_WIDTH, MOCKUP_HEIGHT]);
 
-  return { headerRef, boxRef, viewport };
+  return { headerRef, boxRef, viewport, size: { width: MOCKUP_WIDTH, height: MOCKUP_HEIGHT } };
 }
 
 /** Fenêtre d'agrandissement : la maquette devient un site navigable. */
 function ProjectDialog({ project, onClose }: { project: Project | null; onClose: () => void }) {
   const ref = useRef<HTMLDialogElement>(null);
-  const { headerRef, boxRef, viewport } = useViewport(project !== null);
+  const { headerRef, boxRef, viewport, size } = useViewport(project);
 
   useEffect(() => {
     const dialog = ref.current;
@@ -138,8 +142,8 @@ function ProjectDialog({ project, onClose }: { project: Project | null; onClose:
                 <div
                   className="relative mx-auto overflow-hidden rounded-2xl shadow-lift ring-1 ring-nuit/8"
                   style={{
-                    width: MOCKUP_WIDTH * viewport.scale,
-                    height: MOCKUP_HEIGHT * viewport.scale,
+                    width: size.width * viewport.scale,
+                    height: size.height * viewport.scale,
                   }}
                 >
                   <div
