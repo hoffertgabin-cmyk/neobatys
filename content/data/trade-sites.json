@@ -651,6 +651,412 @@
           "answer": "Oui. Le formulaire de devis prévoit l'envoi de photos, en plus du type de travaux et de l'adresse. Vous voyez l'état de la charpente avant la première visite."
         }
       ]
+    },
+    {
+      "slug": "platrier-plaquiste",
+      "mockup": "platrier",
+      "label": "Site internet pour plâtrier-plaquiste",
+      "summary": "Cloisons, faux plafonds, isolation intérieure : un site qui montre des finitions nettes et reçoit des demandes avec les surfaces et les plans.",
+      "breadcrumb": "Plâtrier-plaquiste",
+      "seo": {
+        "title": "Création de site internet pour plâtrier-plaquiste",
+        "description": "Site internet pour plâtrier-plaquiste : réalisations en photos, demande de devis avec surfaces et plans, référencement local et fiche Google Business."
+      },
+      "hero": {
+        "eyebrow": "Site internet pour plâtrier-plaquiste",
+        "title": "Un site de plaquiste qui montre la qualité des finitions",
+        "subtitle": "Une cloison bien faite ne se voit plus une fois peinte. Votre site doit montrer vos chantiers avant la peinture, vos délais et votre zone, et recevoir des demandes déjà chiffrables."
+      },
+      "sections": [
+        {
+          "title": "Ce que cherche un client en plâtrerie",
+          "paragraphs": [
+            "Vos clients sont des particuliers qui aménagent des combles ou redistribuent des pièces, mais aussi des maîtres d'œuvre et des entreprises générales qui cherchent un sous-traitant fiable. Les deux veulent savoir si vous êtes disponible, sur quelle zone et à quel niveau de finition.",
+            "Le particulier compare des photos et des délais. Le professionnel regarde vos références, vos assurances et votre capacité à tenir un planning."
+          ],
+          "items": [
+            "Des photos de cloisons, plafonds et combles aménagés",
+            "Les délais et la zone d'intervention affichés clairement",
+            "Une page pour les professionnels (sous-traitance, assurances)",
+            "Un formulaire qui demande la surface et accepte les plans"
+          ]
+        },
+        {
+          "title": "Ce que contient votre site de plâtrier-plaquiste",
+          "paragraphs": [
+            "Le site suit l'offre NEOBATYS : un design sur mesure à vos couleurs, cinq pages (accueil, prestations, réalisations, avis, contact) et des textes rédigés avec vous, soignés d'abord sur mobile.",
+            "Nous travaillons le référencement local sur votre ville et votre zone, et nous créons ou optimisons votre fiche Google Business. Le formulaire de devis vous transmet le type de travaux, la surface et les plans ou photos."
+          ],
+          "items": [
+            "Galerie de réalisations par type de travaux",
+            "Avis Google affichés sur le site",
+            "Nom de domaine, hébergement et https inclus",
+            "Modifications de contenu sur simple demande"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Je travaille surtout en sous-traitance, un site m'est-il utile ?",
+          "answer": "Oui. Un maître d'œuvre ou une entreprise générale vérifie souvent un sous-traitant sur internet avant de l'appeler. Le site montre vos références, votre zone et vos assurances, et vous permet aussi de toucher des particuliers."
+        },
+        {
+          "question": "Un client peut-il m'envoyer ses plans ?",
+          "answer": "Oui. Le formulaire de devis accepte des plans et des photos, en plus de la surface et du type de travaux."
+        },
+        {
+          "question": "Puis-je montrer mes chantiers avant la peinture ?",
+          "answer": "Oui, et c'est conseillé : les photos de bandes, d'angles et de plafonds avant peinture montrent la qualité de votre travail mieux qu'une pièce finie."
+        }
+      ]
+    },
+    {
+      "slug": "serrurier-metallier",
+      "mockup": "serrurier",
+      "label": "Site internet pour serrurier-métallier",
+      "summary": "Dépannage de serrure, portails, garde-corps et escaliers sur mesure : un site qui rassure en urgence et met en valeur l'atelier.",
+      "breadcrumb": "Serrurier-métallier",
+      "seo": {
+        "title": "Création de site internet pour serrurier-métallier",
+        "description": "Site internet pour serrurier-métallier : dépannage avec tarifs clairs, réalisations de métallerie sur mesure, référencement local et fiche Google Business."
+      },
+      "hero": {
+        "eyebrow": "Site internet pour serrurier-métallier",
+        "title": "Un site de serrurier qui inspire confiance",
+        "subtitle": "En serrurerie, les clients se méfient des tarifs abusifs. Un site avec vos prix affichés, votre adresse réelle et vos réalisations fait la différence, en urgence comme pour un portail sur mesure."
+      },
+      "sections": [
+        {
+          "title": "Ce que cherche un client en serrurerie et métallerie",
+          "paragraphs": [
+            "Il y a deux clients différents. Celui qui est bloqué devant sa porte cherche un serrurier proche, joignable tout de suite et honnête sur le prix. Celui qui veut un portail, un garde-corps ou une verrière prend son temps et compare des réalisations.",
+            "Le premier lit trois lignes sur son téléphone. Le second regarde vos photos, vos matériaux et vos délais de fabrication."
+          ],
+          "items": [
+            "Un numéro et des tarifs de dépannage visibles tout de suite",
+            "Une entreprise identifiable : nom, ville, assurances",
+            "Une galerie de métallerie sur mesure",
+            "Un formulaire de devis avec dimensions et photos"
+          ]
+        },
+        {
+          "title": "Ce que contient votre site de serrurier-métallier",
+          "paragraphs": [
+            "Le site suit l'offre NEOBATYS : un design sur mesure à vos couleurs, cinq pages (accueil, dépannage, métallerie, avis, contact) et des textes rédigés avec vous, soignés d'abord sur mobile.",
+            "Nous travaillons le référencement local sur votre ville et votre zone, et nous créons ou optimisons votre fiche Google Business, essentielle en dépannage."
+          ],
+          "items": [
+            "Grille de tarifs de dépannage",
+            "Galerie de portails, garde-corps et escaliers",
+            "Nom de domaine, hébergement et https inclus",
+            "Modifications de contenu sur simple demande"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Faut-il vraiment afficher mes tarifs de dépannage ?",
+          "answer": "C'est ce qui rassure le plus un client bloqué dehors. Un prix de déplacement et des fourchettes claires vous distinguent des annonces abusives qui inquiètent les clients."
+        },
+        {
+          "question": "Je fais surtout de la métallerie, pas de dépannage.",
+          "answer": "Le site s'adapte : la métallerie peut occuper toute la page d'accueil, avec vos réalisations et le formulaire de devis sur mesure, et le dépannage passer au second plan ou disparaître."
+        },
+        {
+          "question": "Un client peut-il envoyer les dimensions de son portail ?",
+          "answer": "Oui. Le formulaire prévoit les dimensions, le matériau souhaité et des photos de l'emplacement."
+        }
+      ]
+    },
+    {
+      "slug": "paysagiste",
+      "mockup": "paysagiste",
+      "label": "Site internet pour paysagiste",
+      "summary": "Création de jardins, terrasses et entretien : un site très photographique, avec les saisons et les contrats d'entretien.",
+      "breadcrumb": "Paysagiste",
+      "seo": {
+        "title": "Création de site internet pour paysagiste",
+        "description": "Site internet pour paysagiste : jardins et terrasses en photos, contrats d'entretien, demande de devis avec photos du terrain, référencement local."
+      },
+      "hero": {
+        "eyebrow": "Site internet pour paysagiste",
+        "title": "Un site de paysagiste qui donne envie de son futur jardin",
+        "subtitle": "Un jardin se vend sur photo. Votre site doit montrer vos créations, expliquer vos contrats d'entretien et recevoir des demandes avec la surface et des photos du terrain."
+      },
+      "sections": [
+        {
+          "title": "Ce que cherche un client pour son jardin",
+          "paragraphs": [
+            "Le client qui veut créer un jardin ou une terrasse cherche de l'inspiration et un professionnel de confiance près de chez lui. Il compare des photos, puis demande un devis.",
+            "Celui qui cherche de l'entretien veut savoir ce qui est compris, à quelle fréquence, et si le crédit d'impôt pour les services à la personne s'applique."
+          ],
+          "items": [
+            "Des réalisations en grandes photos",
+            "Les contrats d'entretien expliqués simplement",
+            "La zone d'intervention et les délais",
+            "Un formulaire avec la surface et des photos du terrain"
+          ]
+        },
+        {
+          "title": "Ce que contient votre site de paysagiste",
+          "paragraphs": [
+            "Le site suit l'offre NEOBATYS : un design sur mesure à vos couleurs, cinq pages (accueil, création, entretien, réalisations, contact) et des textes rédigés avec vous, soignés d'abord sur mobile.",
+            "Nous travaillons le référencement local sur votre ville et votre zone, et nous créons ou optimisons votre fiche Google Business."
+          ],
+          "items": [
+            "Galerie par type de projet (jardin, terrasse, clôture)",
+            "Avis Google affichés sur le site",
+            "Nom de domaine, hébergement et https inclus",
+            "Modifications de contenu sur simple demande"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Puis-je présenter mes contrats d'entretien sur le site ?",
+          "answer": "Oui. Une page présente ce qui est compris (tonte, taille, ramassage), la fréquence et la façon de demander un devis."
+        },
+        {
+          "question": "Faut-il mentionner le crédit d'impôt ?",
+          "answer": "Seulement si votre entreprise y ouvre droit, c'est-à-dire si vous êtes déclaré pour les services à la personne. Nous l'indiquons avec vous, sans promesse que vous ne pourriez pas tenir."
+        },
+        {
+          "question": "Un client peut-il m'envoyer des photos de son terrain ?",
+          "answer": "Oui. Le formulaire accepte des photos, la surface et le type de projet."
+        }
+      ]
+    },
+    {
+      "slug": "terrassier",
+      "mockup": "terrassier",
+      "label": "Site internet pour terrassier",
+      "summary": "Terrassement, VRD, assainissement et accès : un site qui montre le matériel, les chantiers et reçoit des demandes avec l'adresse du terrain.",
+      "breadcrumb": "Terrassier",
+      "seo": {
+        "title": "Création de site internet pour terrassier",
+        "description": "Site internet pour entreprise de terrassement : chantiers et matériel en photos, demande de devis avec adresse du terrain, référencement local et fiche Google Business."
+      },
+      "hero": {
+        "eyebrow": "Site internet pour terrassier",
+        "title": "Un site de terrassier aussi solide que vos chantiers",
+        "subtitle": "Vos clients sont des particuliers qui font construire, des constructeurs et des collectivités. Votre site doit montrer votre matériel, vos chantiers et votre zone, et recevoir des demandes avec l'adresse exacte du terrain."
+      },
+      "sections": [
+        {
+          "title": "Ce que cherche un client en terrassement",
+          "paragraphs": [
+            "Un particulier qui fait construire cherche quelqu'un pour la fouille, les réseaux ou l'assainissement, souvent sur conseil de son constructeur. Il veut savoir si vous intervenez chez lui et dans quels délais.",
+            "Un constructeur ou une collectivité regarde vos références, votre matériel et votre capacité à tenir un planning."
+          ],
+          "items": [
+            "Les prestations expliquées simplement (fouilles, réseaux, assainissement, accès)",
+            "Le parc matériel en photos",
+            "La zone d'intervention",
+            "Un formulaire avec l'adresse du terrain et les plans"
+          ]
+        },
+        {
+          "title": "Ce que contient votre site de terrassier",
+          "paragraphs": [
+            "Le site suit l'offre NEOBATYS : un design sur mesure à vos couleurs, cinq pages (accueil, prestations, matériel, chantiers, contact) et des textes rédigés avec vous, soignés d'abord sur mobile.",
+            "Nous travaillons le référencement local sur votre ville et votre zone, et nous créons ou optimisons votre fiche Google Business."
+          ],
+          "items": [
+            "Galerie de chantiers avec étapes",
+            "Avis Google affichés sur le site",
+            "Nom de domaine, hébergement et https inclus",
+            "Modifications de contenu sur simple demande"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Je travaille surtout pour des constructeurs, un site m'est-il utile ?",
+          "answer": "Oui. Les constructeurs et les particuliers qu'ils vous envoient vérifient votre sérieux sur internet. Le site montre votre matériel, vos chantiers et vos assurances."
+        },
+        {
+          "question": "Un client peut-il m'envoyer l'adresse et le plan de son terrain ?",
+          "answer": "Oui. Le formulaire demande l'adresse du terrain, le type de travaux et accepte le plan de masse ou des photos."
+        },
+        {
+          "question": "Puis-je présenter l'assainissement non collectif ?",
+          "answer": "Oui. Une page peut expliquer les étapes, de l'étude de sol à la pose de la filière, et la façon de demander un devis."
+        }
+      ]
+    },
+    {
+      "slug": "isolation",
+      "mockup": "isolation",
+      "label": "Site internet pour entreprise d'isolation",
+      "summary": "Combles, murs par l'intérieur ou l'extérieur, planchers : un site qui explique les aides sans promesse et reçoit des demandes qualifiées.",
+      "breadcrumb": "Entreprise d'isolation",
+      "seo": {
+        "title": "Création de site internet pour entreprise d'isolation",
+        "description": "Site internet pour entreprise d'isolation : prestations et aides expliquées clairement, label RGE mis en avant, demande de devis qualifiée, référencement local."
+      },
+      "hero": {
+        "eyebrow": "Site internet pour entreprise d'isolation",
+        "title": "Un site d'isolation qui inspire confiance, pas méfiance",
+        "subtitle": "Après des années de démarchage abusif, les clients se méfient de l'isolation. Votre site doit montrer une vraie entreprise locale, vos chantiers, votre label RGE et des aides expliquées honnêtement."
+      },
+      "sections": [
+        {
+          "title": "Ce que cherche un client en isolation",
+          "paragraphs": [
+            "Le client a souvent une facture de chauffage trop élevée ou un projet de rénovation. Il veut comprendre ce qu'il faut isoler en premier, combien cela coûte et quelles aides existent.",
+            "Il vérifie surtout que l'entreprise est réelle et locale, qu'elle est bien RGE et qu'elle ne promet pas des travaux gratuits."
+          ],
+          "items": [
+            "Le label RGE et l'assurance décennale visibles",
+            "Les prestations expliquées pièce par pièce",
+            "Les aides présentées sans promesse de montant",
+            "Des chantiers en photos, avec la ville"
+          ]
+        },
+        {
+          "title": "Ce que contient votre site d'isolation",
+          "paragraphs": [
+            "Le site suit l'offre NEOBATYS : un design sur mesure à vos couleurs, cinq pages (accueil, prestations, aides, réalisations, contact) et des textes rédigés avec vous, soignés d'abord sur mobile.",
+            "Nous travaillons le référencement local sur votre ville et votre zone, et nous créons ou optimisons votre fiche Google Business."
+          ],
+          "items": [
+            "Une page sur les aides, mise à jour avec vous",
+            "Avis Google affichés sur le site",
+            "Nom de domaine, hébergement et https inclus",
+            "Modifications de contenu sur simple demande"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Comment présenter les aides sans promettre de montant ?",
+          "answer": "Le site explique quelles aides existent et à quelles conditions, et renvoie vers le site officiel France Rénov' pour le calcul. Le montant exact est donné au client dans votre devis."
+        },
+        {
+          "question": "Mon label RGE peut-il apparaître sur le site ?",
+          "answer": "Oui, avec votre numéro de qualification, que le client peut vérifier sur l'annuaire officiel. C'est l'un des premiers éléments qu'il cherche."
+        },
+        {
+          "question": "Le site peut-il recevoir des demandes déjà qualifiées ?",
+          "answer": "Oui. Le formulaire demande le type de logement, la surface, le mode de chauffage et ce que le client souhaite isoler."
+        }
+      ]
+    },
+    {
+      "slug": "etancheur",
+      "mockup": "etancheur",
+      "label": "Site internet pour étancheur",
+      "summary": "Toitures-terrasses, balcons, toitures végétalisées : un site qui rassure les syndics et les particuliers, avec des chantiers documentés.",
+      "breadcrumb": "Étancheur",
+      "seo": {
+        "title": "Création de site internet pour étancheur",
+        "description": "Site internet pour entreprise d'étanchéité : toitures-terrasses et balcons, chantiers documentés, demande d'intervention pour infiltration, référencement local."
+      },
+      "hero": {
+        "eyebrow": "Site internet pour étancheur",
+        "title": "Un site d'étancheur qui rassure avant la première visite",
+        "subtitle": "Une infiltration inquiète, une réfection de toiture-terrasse coûte cher. Votre site doit montrer des chantiers documentés, vos garanties et une façon simple de demander un diagnostic."
+      },
+      "sections": [
+        {
+          "title": "Ce que cherche un client en étanchéité",
+          "paragraphs": [
+            "Les particuliers vous cherchent souvent à cause d'une infiltration sous une terrasse ou un balcon. Les syndics et gestionnaires d'immeubles cherchent une entreprise capable de suivre une copropriété dans la durée.",
+            "Tous veulent comprendre la cause, le délai et la garantie, et voir des chantiers comparables."
+          ],
+          "items": [
+            "Une demande de diagnostic d'infiltration simple",
+            "Des chantiers documentés étape par étape",
+            "Les garanties et assurances visibles",
+            "Une page pour les syndics et gestionnaires"
+          ]
+        },
+        {
+          "title": "Ce que contient votre site d'étancheur",
+          "paragraphs": [
+            "Le site suit l'offre NEOBATYS : un design sur mesure à vos couleurs, cinq pages (accueil, prestations, chantiers, professionnels, contact) et des textes rédigés avec vous, soignés d'abord sur mobile.",
+            "Nous travaillons le référencement local sur votre ville et votre zone, et nous créons ou optimisons votre fiche Google Business."
+          ],
+          "items": [
+            "Galerie de chantiers avant / après",
+            "Avis Google affichés sur le site",
+            "Nom de domaine, hébergement et https inclus",
+            "Modifications de contenu sur simple demande"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Je travaille surtout pour des syndics, le site doit-il leur parler ?",
+          "answer": "Oui. Une page dédiée présente vos références en copropriété, vos garanties et la façon de vous consulter, avec un formulaire adapté."
+        },
+        {
+          "question": "Un client peut-il signaler une infiltration en ligne ?",
+          "answer": "Oui. Le formulaire demande l'emplacement, depuis quand l'infiltration dure et des photos, pour préparer votre visite."
+        },
+        {
+          "question": "Puis-je montrer les étapes d'un chantier ?",
+          "answer": "Oui, et c'est conseillé : une fois l'étanchéité recouverte, on ne voit plus le travail. Les photos des couches successives montrent votre sérieux."
+        }
+      ]
+    },
+    {
+      "slug": "constructeur-maison",
+      "mockup": "constructeur",
+      "label": "Site internet pour constructeur de maisons",
+      "summary": "Maisons individuelles, extensions et rénovations complètes : un site qui accompagne un projet long, du terrain à la remise des clés.",
+      "breadcrumb": "Constructeur de maisons",
+      "seo": {
+        "title": "Création de site internet pour constructeur de maisons et entreprise générale",
+        "description": "Site internet pour constructeur de maisons et entreprise générale du bâtiment : réalisations, étapes du projet, demande de rendez-vous qualifiée, référencement local."
+      },
+      "hero": {
+        "eyebrow": "Site internet pour constructeur et entreprise générale",
+        "title": "Un site de constructeur à la hauteur d'un projet de vie",
+        "subtitle": "Faire construire est la plus grosse dépense d'une famille. Votre site doit montrer vos maisons, expliquer chaque étape et donner envie de prendre un premier rendez-vous."
+      },
+      "sections": [
+        {
+          "title": "Ce que cherche un client qui fait construire",
+          "paragraphs": [
+            "Le client prend son temps : il compare des maisons, des prix au mètre carré et des délais pendant des semaines. Il veut comprendre comment se passe un projet, du terrain aux clés, et qui sera son interlocuteur.",
+            "Il cherche aussi des garanties : contrat, assurance dommages-ouvrage, garantie de livraison selon votre statut."
+          ],
+          "items": [
+            "Des maisons et rénovations en grandes photos",
+            "Les étapes du projet expliquées",
+            "Les garanties présentées clairement",
+            "Une prise de rendez-vous avec le terrain et le budget"
+          ]
+        },
+        {
+          "title": "Ce que contient votre site de constructeur",
+          "paragraphs": [
+            "Le site suit l'offre NEOBATYS : un design sur mesure à vos couleurs, des pages pour vos maisons, votre méthode, vos réalisations et le contact, et des textes rédigés avec vous, soignés d'abord sur mobile.",
+            "Nous travaillons le référencement local sur votre ville et votre zone, et nous créons ou optimisons votre fiche Google Business."
+          ],
+          "items": [
+            "Une page méthode, du premier rendez-vous aux clés",
+            "Avis Google affichés sur le site",
+            "Nom de domaine, hébergement et https inclus",
+            "Modifications de contenu sur simple demande"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Je suis une entreprise générale, pas un constructeur, le site convient-il ?",
+          "answer": "Oui. Le site présente vos corps d'état, votre coordination de chantier et vos réalisations, que vous construisiez des maisons neuves ou que vous meniez des rénovations complètes."
+        },
+        {
+          "question": "Puis-je présenter mes garanties sur le site ?",
+          "answer": "Oui, avec les termes exacts de vos contrats et assurances. Nous les rédigeons avec vous pour ne rien promettre que vous ne couvrez pas."
+        },
+        {
+          "question": "Le formulaire peut-il demander le terrain et le budget ?",
+          "answer": "Oui. Le client indique s'il a un terrain, la commune, son budget et le type de projet, ce qui prépare votre premier rendez-vous."
+        }
+      ]
     }
   ]
 }

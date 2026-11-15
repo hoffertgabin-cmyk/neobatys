@@ -26,7 +26,7 @@ export default function HomePage() {
     <>
       <Hero />
       <TradesMarquee />
-      <Projects />
+      <Projects featured />
       <PainPoints />
       <WebsiteOffer />
       <SoftwareOffer />

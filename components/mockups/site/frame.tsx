@@ -17,7 +17,7 @@ import credits from "@/content/maquettes-credits.json";
 type Credit = { title: string; creator: string; license: string; url: string };
 
 /**
- * Socle des maquettes de sites (format bureau 1280 × 800).
+ * Socle des maquettes de sites (format bureau, voir ../size.ts).
  *
  * Chaque métier dessine lui-même son en-tête, ses pages et son pied de page,
  * pour avoir sa propre allure ; ce fichier ne fournit que le cadre du
@@ -26,9 +26,6 @@ type Credit = { title: string; creator: string; license: string; url: string };
  * Sous 900 px de large (fenêtre agrandie sur téléphone), les pages passent
  * en mise en page mobile grâce aux requêtes de conteneur (@min-[900px]:…).
  */
-
-export const SITE_WIDTH = 1280;
-export const SITE_HEIGHT = 800;
 
 export type SiteProps = { project: Project; interactive: boolean; width: number; height: number };
 

@@ -86,9 +86,7 @@ function Carousel() {
                     {[t.trade, t.city].filter(isFilled).join(" · ")}
                   </span>
                 </span>
-                {t.placeholder && (
-                  <PlaceholderBadge className="ml-auto text-ardoise-dark" />
-                )}
+                {t.placeholder && <PlaceholderBadge className="ml-auto text-ardoise-dark" />}
               </figcaption>
             </m.figure>
           </AnimatePresence>

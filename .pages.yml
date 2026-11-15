@@ -778,6 +778,13 @@ content:
         - chauffagiste
         - carreleur
         - charpentier
+        - platrier
+        - serrurier
+        - paysagiste
+        - terrassier
+        - isolation
+        - etancheur
+        - constructeur
     - name: brand
       label: Nom affiché dans la maquette
       type: string
@@ -810,6 +817,10 @@ content:
     - name: placeholder
       label: Maquette d'exemple (projet fictif)
       description: Coché, le projet est présenté comme une maquette d'exemple, pas comme un client. Décochez-le pour un vrai projet client (avec son accord). Dès qu'un vrai projet existe, les maquettes sont masquées tant que « Afficher les contenus d'exemple » est décoché.
+      type: boolean
+    - name: featured
+      label: Sur l'accueil
+      description: Coché, le projet fait partie des 3 affichés sur la page d'accueil (les suivants sont ignorés). Les autres restent sur la page Sites internet.
       type: boolean
 - name: testimonials
   label: Témoignages
@@ -1622,7 +1633,7 @@ content:
       type: string
     - name: mockup
       label: Maquette affichée
-      description: 'Une des maquettes dessinées en code : plombier, electricien, macon, menuisier, couvreur, peintre, chauffagiste, carreleur, charpentier.'
+      description: 'Une des maquettes dessinées en code : plombier, electricien, macon, menuisier, couvreur, peintre, chauffagiste, carreleur, charpentier, platrier, serrurier, paysagiste, terrassier, isolation, etancheur, constructeur.'
       type: string
     - name: seo
       label: Référencement Google

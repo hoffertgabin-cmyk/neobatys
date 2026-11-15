@@ -50,7 +50,9 @@ export function ConsoleMockup({ className }: { className?: string }) {
     >
       <div className="flex items-center justify-between gap-3">
         <div className="flex min-w-0 items-center gap-2">
-          <p className="text-sm font-semibold tracking-[-0.02em] sm:text-base">NEOBATYS · Console</p>
+          <p className="text-sm font-semibold tracking-[-0.02em] sm:text-base">
+            NEOBATYS · Console
+          </p>
           <span className="rounded-full bg-sable px-2 py-0.5 text-[10px] font-semibold text-ardoise-dark sm:text-[11px]">
             Données d&apos;exemple
           </span>
