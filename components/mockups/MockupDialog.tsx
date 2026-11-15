@@ -68,11 +68,16 @@ export function MockupDialog({
   onClose: () => void;
 }) {
   const ref = useRef<HTMLDialogElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
   const { headerRef, boxRef, viewport } = useViewport(project !== null);
 
   useEffect(() => {
     const dialog = ref.current;
-    if (project && dialog && !dialog.open) dialog.showModal();
+    if (project && dialog && !dialog.open) {
+      dialog.showModal();
+      // Focus sur « Fermer » plutôt que sur le premier lien de la fenêtre.
+      closeRef.current?.focus({ preventScroll: true });
+    }
   }, [project]);
 
   return (
@@ -106,12 +111,21 @@ export function MockupDialog({
                 {project.description} Naviguez dans la maquette : menus, boutons et formulaires
                 fonctionnent (rien n&apos;est envoyé).
               </p>
+              {/* Sur téléphone, le bouton passe sous le titre. */}
+              <Button
+                href={interestHref(project)}
+                arrow
+                className="mt-3 h-10 px-4 text-[13px] sm:hidden"
+              >
+                Cette maquette m&apos;intéresse
+              </Button>
             </div>
             <Button href={interestHref(project)} arrow className="ml-auto shrink-0 max-sm:hidden">
               Cette maquette m&apos;intéresse
             </Button>
             <button
               type="button"
+              ref={closeRef}
               onClick={() => ref.current?.close()}
               className="grid size-11 shrink-0 place-items-center rounded-full bg-sable text-nuit ring-1 ring-nuit/5 transition-colors hover:bg-sable-dark"
             >
