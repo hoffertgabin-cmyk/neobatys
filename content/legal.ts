@@ -27,7 +27,6 @@ const values: Record<string, string> = {
   adresse: legalInfo.address,
   rcs: legalInfo.rcs,
   tva: legalInfo.vat,
-  autorisation: legalInfo.businessPermit,
   telephone: legalInfo.phone,
   email: legalInfo.email,
   directeur: legalInfo.director,

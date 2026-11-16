@@ -1775,9 +1775,6 @@ content:
     - name: vat
       label: N° TVA
       type: string
-    - name: businessPermit
-      label: Autorisation d'établissement
-      type: string
     - name: director
       label: Directeur de la publication
       type: string
@@ -1799,8 +1796,7 @@ content:
       type: string
   - name: mentionsLegales
     label: Mentions légales
-    description: 'Mots remplacés automatiquement : {entreprise}, {nom_commercial}, {forme_juridique}, {capital}, {adresse}, {rcs}, {autorisation},
-      {tva}, {telephone}, {email}, {directeur}, {hebergeur}, {hebergeur_adresse}, {hebergeur_site}.'
+    description: 'Mots remplacés automatiquement : {entreprise}, {nom_commercial}, {forme_juridique}, {capital}, {adresse}, {rcs}, {tva}, {telephone}, {email}, {directeur}, {hebergeur}, {hebergeur_adresse}, {hebergeur_site}.'
     type: object
     list:
       collapsible:
@@ -1816,8 +1812,7 @@ content:
       list: true
   - name: politiqueConfidentialite
     label: Politique de confidentialité
-    description: 'Mots remplacés automatiquement : {entreprise}, {nom_commercial}, {forme_juridique}, {capital}, {adresse}, {rcs}, {autorisation},
-      {tva}, {telephone}, {email}, {directeur}, {hebergeur}, {hebergeur_adresse}, {hebergeur_site}.'
+    description: 'Mots remplacés automatiquement : {entreprise}, {nom_commercial}, {forme_juridique}, {capital}, {adresse}, {rcs}, {tva}, {telephone}, {email}, {directeur}, {hebergeur}, {hebergeur_adresse}, {hebergeur_site}.'
     type: object
     list:
       collapsible:
@@ -1833,8 +1828,7 @@ content:
       list: true
   - name: cgv
     label: Conditions générales de vente
-    description: 'Mots remplacés automatiquement : {entreprise}, {nom_commercial}, {forme_juridique}, {capital}, {adresse}, {rcs}, {autorisation},
-      {tva}, {telephone}, {email}, {directeur}, {hebergeur}, {hebergeur_adresse}, {hebergeur_site}.'
+    description: 'Mots remplacés automatiquement : {entreprise}, {nom_commercial}, {forme_juridique}, {capital}, {adresse}, {rcs}, {tva}, {telephone}, {email}, {directeur}, {hebergeur}, {hebergeur_adresse}, {hebergeur_site}.'
     type: object
     list:
       collapsible:

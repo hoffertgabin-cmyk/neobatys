@@ -5,7 +5,6 @@
     "capital": "12 000 €",
     "rcs": "B301874",
     "vat": "LU37090845",
-    "businessPermit": "[N° D'AUTORISATION D'ÉTABLISSEMENT — à vérifier si applicable]",
     "director": "Le gérant de TAG Delme SARL",
     "host": {
       "name": "Vercel Inc.",
@@ -23,7 +22,6 @@
         "Siège social : {adresse}.",
         "Immatriculée au Registre de commerce et des sociétés de Luxembourg sous le numéro {rcs}.",
         "N° d'identification TVA : {tva}.",
-        "Autorisation d'établissement : {autorisation}.",
         "Téléphone : {telephone}.",
         "E-mail : {email}."
       ]
