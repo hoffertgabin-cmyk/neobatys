@@ -215,7 +215,7 @@
             "id": "devis-a-la-voix",
             "name": "Devis à la voix",
             "text": "Vous dictez le chantier depuis votre téléphone, jusqu'à 3 minutes. L'IA découpe la dictée en lignes, les prix viennent de votre catalogue, et s'il manque une information, l'agent vous pose jusqu'à 5 questions.",
-            "sending": "Devis relu avant l'envoi au client, en PDF par e-mail"
+            "sending": "Devis relu par notre équipe avant l'envoi au client, en PDF par e-mail"
           },
           {
             "id": "relance-de-devis",
@@ -287,7 +287,7 @@
       },
       {
         "question": "L'IA peut-elle se tromper dans mes prix ?",
-        "answer": "Les prix ne viennent pas de l'IA. Pour un devis, ils sont tirés de votre catalogue ; pour les relances, le montant, le numéro et la date sont posés par le logiciel. L'IA rédige le texte, et le devis est relu avant l'envoi."
+        "answer": "Les prix ne viennent pas de l'IA. Pour un devis, ils sont tirés de votre catalogue ; pour les relances, le montant, le numéro et la date sont posés par le logiciel. L'IA rédige le texte, et chaque message est relu par notre équipe avant l'envoi."
       },
       {
         "question": "L'agent Dossiers d'aides dépose-t-il les demandes de MaPrimeRénov' ?",

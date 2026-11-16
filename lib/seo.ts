@@ -65,6 +65,12 @@ export function localBusinessJsonLd() {
       addressLocality: filled(site.address.city),
       addressCountry: site.address.country,
     },
+    // Société luxembourgeoise : Luxembourg, France, puis toute l'Europe (phrase dans content/data/site.json)
+    areaServed: [
+      { "@type": "Country", name: "Luxembourg" },
+      { "@type": "Country", name: "France" },
+      { "@type": "Continent", name: "Europe" },
+    ],
     priceRange: "€€",
     // Profils officiels sur les réseaux, omis tant qu'aucun n'est renseigné
     sameAs: socials.length > 0 ? socials : undefined,

@@ -57,6 +57,10 @@ content:
         label: Pays (code)
         type: string
         readonly: true
+    - name: zone
+      label: Zone d'intervention
+      type: string
+      description: Phrase affichée sur la page contact et connue de l'assistant de la FAQ. Si vous la changez, changez aussi la réponse « Où intervenez-vous ? » de la FAQ (et les pays déclarés à Google dans lib/seo.ts).
     - name: socials
       label: Réseaux sociaux
       description: Laisser vide pour masquer l'icône.
