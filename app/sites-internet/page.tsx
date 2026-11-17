@@ -1,6 +1,6 @@
 import { sitesPage } from "@/content/pages";
 import { websiteOffer } from "@/content/offers";
-import { pageMetadata, faqJsonLd, serviceJsonLd } from "@/lib/seo";
+import { pageMetadata, faqJsonLd, planOffers, serviceJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Button } from "@/components/ui/Button";
 import { PageHero } from "@/components/sections/PageHero";
@@ -38,6 +38,7 @@ export default function SitesInternetPage() {
           "Création de site internet pour artisans",
           websiteOffer.subtitle,
           "/sites-internet",
+          { offers: planOffers(["site", "abonnement-essentiel"]) },
         )}
       />
       <JsonLd data={faqJsonLd(sitesPage.faq)} />

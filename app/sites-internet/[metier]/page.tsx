@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { tradeSiteLinks, tradeSites, tradeSitesSection } from "@/content/trade-sites";
 import { softwareGuideLinks } from "@/content/software";
 import { interestHref, mockupProject } from "@/content/projects";
-import { breadcrumbJsonLd, faqJsonLd, pageMetadata, serviceJsonLd } from "@/lib/seo";
+import { breadcrumbJsonLd, faqJsonLd, pageMetadata, planOffers, serviceJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
@@ -108,7 +108,11 @@ export default async function TradeSitePage({ params }: PageProps<"/sites-intern
         cta="Voir la page"
       />
       <FinalCta />
-      <JsonLd data={serviceJsonLd(trade.label, trade.seo.description, path)} />
+      <JsonLd
+        data={serviceJsonLd(trade.label, trade.seo.description, path, {
+          offers: planOffers(["site", "abonnement-essentiel"]),
+        })}
+      />
       <JsonLd
         data={breadcrumbJsonLd([
           { name: "Accueil", path: "/" },

@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { QUESTION_MAX } from "@/lib/limits";
 import { trades, otherTrade } from "@/content/trades";
 
 export const services = [
@@ -34,9 +35,7 @@ export const contactSchema = z.object({
 export type ContactInput = z.input<typeof contactSchema>;
 export type ContactData = z.output<typeof contactSchema>;
 
-/** Question posée à l'assistant IA de la FAQ. */
-export const QUESTION_MAX = 500;
-
+/** Question posée à l'assistant IA de la FAQ (longueur maximale : lib/limits.ts). */
 export const faqAssistantSchema = z.object({
   question: z
     .string()
