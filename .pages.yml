@@ -789,6 +789,7 @@ content:
         - isolation
         - etancheur
         - constructeur
+        - facadiste
     - name: brand
       label: Nom affiché dans la maquette
       type: string
@@ -1637,7 +1638,7 @@ content:
       type: string
     - name: mockup
       label: Maquette affichée
-      description: 'Une des maquettes dessinées en code : plombier, electricien, macon, menuisier, couvreur, peintre, chauffagiste, carreleur, charpentier, platrier, serrurier, paysagiste, terrassier, isolation, etancheur, constructeur.'
+      description: 'Une des maquettes dessinées en code : plombier, electricien, macon, menuisier, couvreur, peintre, chauffagiste, carreleur, charpentier, platrier, serrurier, paysagiste, terrassier, isolation, etancheur, constructeur, facadiste.'
       type: string
     - name: seo
       label: Référencement Google

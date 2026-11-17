@@ -1172,6 +1172,79 @@
           "answer": "Oui. Le client indique s'il a un terrain, la commune, son budget et le type de projet, ce qui prépare votre premier rendez-vous."
         }
       ]
+    },
+    {
+      "slug": "facadiste",
+      "mockup": "facadiste",
+      "label": "Site internet pour façadiste",
+      "summary": "Ravalement, enduits et isolation par l'extérieur : un site qui montre des façades transformées et aide le client à choisir sa teinte.",
+      "breadcrumb": "Façadiste",
+      "seo": {
+        "title": "Création de site internet pour façadiste",
+        "description": "Site internet pour façadiste : ravalement et isolation par l'extérieur en photos, nuancier d'enduits, estimation au m², référencement local et fiche Google Business."
+      },
+      "hero": {
+        "eyebrow": "Site internet pour façadiste",
+        "title": "Un site de façadiste qui donne envie de refaire sa façade",
+        "subtitle": "Une façade se voit de la rue, et le client la compare avec celle du voisin. Votre site doit montrer vos chantiers, l'aider à choisir sa teinte et sa finition, et recevoir des demandes avec la surface à traiter."
+      },
+      "sections": [
+        {
+          "title": "Ce que cherche un client pour sa façade",
+          "paragraphs": [
+            "Le client qui refait sa façade hésite longtemps : ravalement simple, enduit neuf ou isolation par l'extérieur ? Il veut voir des façades comparables à la sienne, comprendre ce que comprend le prix et choisir une teinte qui plaira encore dans vingt ans.",
+            "Pour l'isolation par l'extérieur, il cherche aussi une entreprise RGE et des explications claires sur les aides, sans promesse."
+          ],
+          "items": [
+            "Des façades avant et après, en grandes photos",
+            "Les teintes et finitions d'enduit présentées simplement",
+            "Ce que comprend un ravalement : échafaudage, protection, démarches en mairie",
+            "Un formulaire qui demande la surface et l'état de la façade"
+          ]
+        },
+        {
+          "title": "Ce que contient votre site de façadiste",
+          "paragraphs": [
+            "Le site suit l'offre NEOBATYS : un design sur mesure à vos couleurs, cinq pages (accueil, prestations, réalisations, avis, contact) et des textes rédigés avec vous, soignés d'abord sur mobile.",
+            "Nous travaillons le référencement local sur votre ville et votre zone, et nous créons ou optimisons votre fiche Google Business. Le formulaire de devis vous transmet le type de travaux, la surface et des photos de la façade."
+          ],
+          "items": [
+            "Galerie de réalisations par type de travaux",
+            "Avis Google affichés sur le site",
+            "Nom de domaine, hébergement et https inclus",
+            "Modifications de contenu sur simple demande"
+          ]
+        },
+        {
+          "title": "La maquette façadiste, page par page",
+          "paragraphs": [
+            "Pour vous montrer le rendu, nous avons dessiné un site de façadiste d'exemple. C'est une maquette navigable, avec une entreprise fictive : ce n'est pas le site d'un vrai client.",
+            "Le premier écran pose la promesse, puis une grande photo de façade avec une bande de teintes d'enduit. La maquette comporte sept pages : Accueil, Ravalement, Isolation extérieure, Nuancier, Réalisations, Devis et Mentions légales.",
+            "Les outils interactifs de la maquette montrent des idées de parcours : le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos, et nous ajoutons ces outils sur demande."
+          ],
+          "items": [
+            "Une bande de teintes qui mène au nuancier",
+            "Un nuancier qui applique la teinte choisie sur de vraies textures d'enduit : gratté, taloché, écrasé",
+            "Une page Ravalement avec ce que comprend le prix et des prix indicatifs au m²",
+            "Une page Isolation extérieure avec les étapes et les aides, sans montant promis",
+            "Une estimation selon les travaux, l'état et la taille de la façade, puis une demande de visite"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Puis-je montrer mes façades avant et après ?",
+          "answer": "Oui. La galerie classe vos chantiers par type de travaux (ravalement, isolation, enduit) et chaque photo peut être agrandie. Des photos avant et après sont l'argument le plus fort d'un façadiste."
+        },
+        {
+          "question": "Le nuancier de la maquette montre-t-il de vraies teintes de fabricant ?",
+          "answer": "Non, les teintes de la maquette sont inventées. Sur votre site, nous reprenons les teintes que vous proposez vraiment, en rappelant que le choix définitif se fait sur échantillon."
+        },
+        {
+          "question": "Un client peut-il m'envoyer la surface et des photos de sa façade ?",
+          "answer": "Oui. Le formulaire demande le type de travaux, la commune et accepte des photos, pour préparer votre visite."
+        }
+      ]
     }
   ]
 }

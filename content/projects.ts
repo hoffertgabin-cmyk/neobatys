@@ -43,7 +43,8 @@ export type TradeMockup =
   | "terrassier"
   | "isolation"
   | "etancheur"
-  | "constructeur";
+  | "constructeur"
+  | "facadiste";
 
 export type Project = {
   title: string;
