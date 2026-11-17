@@ -20,6 +20,7 @@ import * as terrassier from "./site/terrassier";
 import * as isolation from "./site/isolation";
 import * as etancheur from "./site/etancheur";
 import * as constructeur from "./site/constructeur";
+import * as facadiste from "./site/facadiste";
 
 /**
  * Maquettes de sites par métier (components/mockups/site/<métier>.tsx), au format
@@ -43,6 +44,7 @@ const sites: Record<TradeMockup, { Site: ComponentType<SiteProps> }> = {
   isolation,
   etancheur,
   constructeur,
+  facadiste,
 };
 
 export function TradeSiteMockup({

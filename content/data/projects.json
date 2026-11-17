@@ -293,6 +293,24 @@
         "accent": "#33506a"
       },
       "placeholder": true
+    },
+    {
+      "title": "Maquette · Façades",
+      "trade": "Façadiste",
+      "city": "Hagondange",
+      "description": "Site de façadier : bande de teintes d'enduit, nuancier sur vraies textures, simulateur de ravalement au m².",
+      "tags": ["Site vitrine", "Nuancier"],
+      "mockup": "facadiste",
+      "brand": "Façades Linéa",
+      "domain": "facades-linea-exemple.fr",
+      "theme": {
+        "primary": "#22211f",
+        "onPrimary": "#ffffff",
+        "dark": "#22211f",
+        "soft": "#f3efe7",
+        "accent": "#a8522a"
+      },
+      "placeholder": true
     }
   ]
 }
