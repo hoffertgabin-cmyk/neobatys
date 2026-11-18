@@ -71,6 +71,8 @@ CONTACT_TO_EMAIL=contact@neobatys.com         # plusieurs adresses séparées pa
 CONTACT_FROM_EMAIL="NEOBATYS <contact@neobatys.com>"
 ```
 
+- **Créneau de rappel** : le champ facultatif « Quand vous rappeler ? » (liste `callbacks` de `lib/schemas.ts`) apparaît dans le mail aux associés et part dans le CRM.
+- **Accusé de réception** : une fois le mail aux associés parti, le visiteur reçoit un message fixe, sans IA (`content/contact-ack.ts`), qui confirme la réception et rappelle le créneau choisi. Il ne reprend rien de ce que le visiteur a saisi librement, part seulement si `CONTACT_FROM_EMAIL` est définie, et une seule fois par adresse et par jour. Décision d'Ilann du 18 novembre 2026.
 - **Copie dans le CRM** de l'outil d'administration NEOBATYS : une fois la réponse envoyée au visiteur (après la tentative d'envoi Resend), chaque demande valide est aussi transmise à `POST /api/leads` de l'admin (`lib/admin-leads.ts`). Il faut définir :
 
 ```bash
