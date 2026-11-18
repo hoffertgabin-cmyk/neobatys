@@ -10,8 +10,17 @@ export const services = [
   { value: "autre", label: "Je ne sais pas encore" },
 ] as const;
 
+/** Créneaux de rappel proposés ; le libellé part dans le mail et dans le CRM (champ `callback` de /api/leads). */
+export const callbacks = [
+  { value: "matin", label: "Le matin (8 h à 12 h)" },
+  { value: "midi", label: "Le midi (12 h à 14 h)" },
+  { value: "apres-midi", label: "L'après-midi (14 h à 18 h)" },
+  { value: "soir", label: "Le soir (après 18 h)" },
+] as const;
+
 const tradeValues: string[] = [...trades, otherTrade];
 const serviceValues: string[] = services.map((s) => s.value);
+const callbackValues: string[] = callbacks.map((c) => c.value);
 
 export const contactSchema = z.object({
   name: z.string().trim().min(2, "Indiquez votre nom (2 caractères minimum).").max(100),
@@ -26,6 +35,11 @@ export const contactSchema = z.object({
     ),
   email: z.email("Adresse e-mail invalide."),
   service: z.string().refine((v) => serviceValues.includes(v), "Choisissez un service."),
+  // Facultatif : vide = pas de préférence
+  callback: z
+    .string()
+    .refine((v) => v === "" || callbackValues.includes(v), "Choisissez un créneau.")
+    .optional(),
   message: z.string().trim().max(2000, "2000 caractères maximum.").optional().or(z.literal("")),
   // Champ piège anti-spam : accepté ici pour que la route réponde OK au robot sans rien envoyer
   company: z.string().max(200).optional(),

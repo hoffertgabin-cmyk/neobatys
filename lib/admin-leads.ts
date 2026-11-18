@@ -6,7 +6,11 @@ import type { ContactData } from "@/lib/schemas";
  * Sans ADMIN_LEADS_URL ou ADMIN_LEADS_SECRET, rien n'est envoyé.
  * Ne lève jamais d'erreur : un échec est seulement écrit dans les logs, sans données personnelles.
  */
-export async function sendLeadToAdmin(data: ContactData, serviceLabel: string): Promise<void> {
+export async function sendLeadToAdmin(
+  data: ContactData,
+  serviceLabel: string,
+  callbackLabel?: string,
+): Promise<void> {
   const url = process.env.ADMIN_LEADS_URL;
   const secret = process.env.ADMIN_LEADS_SECRET;
   if (!url || !secret) return;
@@ -23,6 +27,8 @@ export async function sendLeadToAdmin(data: ContactData, serviceLabel: string): 
         email: data.email,
         service: data.service,
         serviceLabel,
+        // Créneau de rappel choisi ; absent sans préférence (JSON.stringify écarte undefined)
+        callback: callbackLabel,
         message: data.message ?? "",
         submittedAt: new Date().toISOString(),
       }),

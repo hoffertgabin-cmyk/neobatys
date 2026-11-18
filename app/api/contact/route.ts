@@ -1,6 +1,6 @@
 import { after, NextResponse } from "next/server";
 import { Resend } from "resend";
-import { contactSchema, services } from "@/lib/schemas";
+import { callbacks, contactSchema, services } from "@/lib/schemas";
 import { site } from "@/content/site";
 import { clientIp, createRateLimiter } from "@/lib/rate-limit";
 import { sendLeadToAdmin } from "@/lib/admin-leads";
@@ -33,9 +33,10 @@ export async function POST(request: Request) {
   if (data.company) return NextResponse.json({ ok: true });
 
   const serviceLabel = services.find((s) => s.value === data.service)?.label ?? data.service;
+  const callbackLabel = callbacks.find((c) => c.value === data.callback)?.label;
   // Copie dans le CRM de l'outil d'administration, une fois la réponse envoyée (donc après
   // la tentative Resend, quel qu'en soit le résultat). Sans effet sur la réponse au visiteur.
-  after(() => sendLeadToAdmin(data, serviceLabel));
+  after(() => sendLeadToAdmin(data, serviceLabel, callbackLabel));
 
   const lines = [
     ["Nom", data.name],
@@ -43,6 +44,7 @@ export async function POST(request: Request) {
     ["Téléphone", data.phone],
     ["E-mail", data.email],
     ["Service", serviceLabel],
+    ...(callbackLabel ? [["Rappel", callbackLabel]] : []),
     ["Message", data.message || "—"],
   ];
 
