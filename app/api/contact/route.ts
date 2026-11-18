@@ -8,6 +8,9 @@ import { sendLeadToAdmin } from "@/lib/admin-leads";
 
 // Limite simple anti-abus : 5 envois / 10 min par adresse IP
 const rateLimited = createRateLimiter({ max: 5, windowMs: 10 * 60 * 1000 });
+// Un seul accusé de réception par adresse et par jour : le formulaire ne sert pas à inonder la boîte d'un tiers
+// shortcut: mémoire du serveur, donc par instance ; passer à un compteur partagé si un abus est constaté
+const ackLimited = createRateLimiter({ max: 1, windowMs: 24 * 60 * 60 * 1000 });
 
 const escape = (s: string) =>
   s.replace(
@@ -83,7 +86,7 @@ export async function POST(request: Request) {
     // Accusé de réception au visiteur, une fois la réponse envoyée : un échec ne change rien pour lui.
     // Seulement avec notre propre adresse d'envoi : l'adresse d'essai de Resend n'écrit pas à des tiers.
     const from = process.env.CONTACT_FROM_EMAIL;
-    if (from) {
+    if (from && !ackLimited(data.email.toLowerCase())) {
       after(async () => {
         const ack = await resend.emails
           .send({
