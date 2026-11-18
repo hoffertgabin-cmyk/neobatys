@@ -7,6 +7,7 @@
 | `cgu.md` | Conditions générales d'utilisation et de vente (compte gratuit et formules payantes) |
 | `politique-de-confidentialite.md` | Politique de confidentialité de la plateforme, NEOBATYS responsable de traitement |
 | `contrat-sous-traitance.md` | Accord de traitement des données (article 28 du RGPD), annexé aux CGU, avec la liste des sous-traitants ultérieurs et les mesures de sécurité |
+| `accord-de-confidentialite.md` | Accord de confidentialité réciproque, à faire signer avant qu'une entreprise ouvre ses données à NEOBATYS (projet du 18 novembre 2026) |
 
 Aucun de ces textes n'est un avis juridique. Ils sont à faire relire par un avocat (droit luxembourgeois et français) avant l'ouverture de la plateforme.
 
