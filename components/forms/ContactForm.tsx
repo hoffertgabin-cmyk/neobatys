@@ -5,7 +5,13 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ChevronDown, CircleAlert, CircleCheck, LoaderCircle, Phone, Send } from "lucide-react";
-import { contactSchema, services, type ContactData, type ContactInput } from "@/lib/schemas";
+import {
+  callbacks,
+  contactSchema,
+  services,
+  type ContactData,
+  type ContactInput,
+} from "@/lib/schemas";
 import { trades, otherTrade } from "@/content/trades";
 import { contactPage } from "@/content/pages";
 import { hasPhone, site, telHref } from "@/content/site";
@@ -71,6 +77,7 @@ export function ContactForm() {
       email: "",
       message: "",
       service: "",
+      callback: "",
       trade: "",
       company: "",
     },
@@ -208,6 +215,33 @@ export function ContactForm() {
                 {services.map((s) => (
                   <option key={s.value} value={s.value}>
                     {s.label}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown
+                aria-hidden="true"
+                className="pointer-events-none absolute top-[calc(50%+4px)] right-4 size-4 -translate-y-1/2 text-ardoise"
+              />
+            </div>
+          </Field>
+        </div>
+        <div className="sm:col-span-2">
+          <Field
+            id={id("callback")}
+            label="Quand vous rappeler ?"
+            optional
+            error={errors.callback?.message}
+          >
+            <div className="relative">
+              <select
+                {...register("callback")}
+                {...a11y("callback")}
+                className={cn(fieldBase, "h-12 appearance-none pr-10")}
+              >
+                <option value="">Peu importe</option>
+                {callbacks.map((c) => (
+                  <option key={c.value} value={c.value}>
+                    {c.label}
                   </option>
                 ))}
               </select>
