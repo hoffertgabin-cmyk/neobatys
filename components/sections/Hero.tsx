@@ -1,5 +1,6 @@
 import { Check, Sparkle } from "lucide-react";
 import { hero } from "@/content/home";
+import { navCta } from "@/content/navigation";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { WordCascade } from "@/components/motion/WordCascade";
@@ -25,8 +26,8 @@ export function Hero() {
           {hero.subtitle}
         </p>
         <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-          <Button href={hero.primaryCta.href} size="lg" arrow>
-            {hero.primaryCta.label}
+          <Button href={navCta.href} size="lg" arrow>
+            {navCta.label}
           </Button>
           <Button href={hero.secondaryCta.href} size="lg" variant="ghost">
             {hero.secondaryCta.label}

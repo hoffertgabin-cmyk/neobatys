@@ -9,9 +9,6 @@ export const hero = data.hero;
 
 export const painPoints = data.painPoints;
 
-/** Les leviers mis en avant dans la grille « Résultats ». Les visuels sont dans components/sections/Results.tsx. */
-export const results = data.results;
-
 export const ai = data.ai;
 
 export const process = data.process;

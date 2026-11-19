@@ -38,8 +38,8 @@ Tous les textes sont dans le dossier **`content/data/`** (un fichier JSON par su
 | Fichier                          | Contenu                                                                            |
 | -------------------------------- | ---------------------------------------------------------------------------------- |
 | `content/data/site.json`         | nom, **téléphone, e-mail, zone d'intervention**, adresse du siège, réseaux sociaux |
-| `content/data/home.json`         | hero, avant/après, résultats, cas d'usage IA, étapes, CTA final, titres            |
-| `content/data/offers.json`       | offre Sites internet, offre Logiciel, Pack combiné                                 |
+| `content/data/home.json`         | hero, avant/après, cas d'usage des agents IA, étapes, CTA final, titres            |
+| `content/data/offers.json`       | offre Sites internet, offre Logiciel, contenu du pack                              |
 | `content/data/pricing.json`      | les 4 offres en une fois, la maintenance et les 3 abonnements                      |
 | `content/data/faq.json`          | questions fréquentes (aussi utilisées pour le SEO)                                 |
 | `content/data/trades.json`       | métiers du bandeau défilant et de la liste du formulaire                           |

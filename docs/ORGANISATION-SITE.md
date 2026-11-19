@@ -21,7 +21,8 @@ Par Ilann, le 19 novembre 2026. Les numéros sont ceux de la liste d'origine et 
 
 ## Décisions encore ouvertes
 
-- **Les 12 questions de la section 4.4** sur la cible et l'offre. Pour la phrase à retenir et la taille d'entreprise visée, une proposition sera appliquée à titre provisoire dans le lot 3.
+- **Les 12 questions de la section 4.4** sur la cible et l'offre. Pour la phrase à retenir et la taille d'entreprise visée, une proposition est appliquée à titre provisoire (section 5.4), à valider par Ilann.
+- **Ce qu'Ilann doit fournir** pour compléter le site : liste en section 5.4.
 - **Les 3 réponses proposées en section 3.6** sur ce qu'est une démonstration chez NEOBATYS : appliquées sur le site, à valider par Ilann.
 
 ## Avancement
@@ -30,7 +31,7 @@ Par Ilann, le 19 novembre 2026. Les numéros sont ceux de la liste d'origine et 
 |---|---|---|
 | 1 | Menu et pied de page en pages seulement, pages `/tarifs` et `/guides`, bouton « Demander une démo », grille des prix à un seul endroit | Fait (PR #82) |
 | 2 | Parcours de démonstration (section 3.6) | Fait dans la PR du lot 2 : points 1 à 3 de la section 3.6. Les points 4 et 5 restent à faire |
-| 3 | Accueil raccourcie, titres, vocabulaire « agents IA », cible | À faire |
+| 3 | Accueil raccourcie, titres, vocabulaire « agents IA », cible | Fait dans la PR du lot 3. Détail en section 5.4 |
 
 ## En bref
 
@@ -404,6 +405,58 @@ Ils emploient « agents IA » partout (décision 7).
 | 3 | Page « gagner du temps au bureau » | Dépend de la question 8. Pas de demande visible pour « automatisation entreprise batiment » | À écrire après la réponse | | Moyen |
 
 Règle à tenir : une page par recherche. Avant de créer une page, vérifier qu'aucune page existante ne vise déjà la même recherche (par exemple, `/logiciel` vise « logiciel devis factures artisan » et ne doit pas être doublée).
+
+### 5.4 Ce qui est appliqué dans le lot 3
+
+#### La phrase à retenir : trois formulations comparées
+
+Les titres d'accueil relevés chez les autres (section 2.1) suivent trois modèles :
+
+| Modèle | Exemples relevés | Formulation pour NEOBATYS |
+|---|---|---|
+| A. Le produit et pour qui | Tolteck : « Le meilleur logiciel de devis – factures pour les artisans du bâtiment » ; ServiceTitan : « AI software for commercial and residential trades » ; Avoca : « The AI Front Office for Service Businesses » | « Agents IA pour le bâtiment. Devis, relances, réponses. On installe tout pour vous. » |
+| B. Le bénéfice | Obat : « La solution bâtiment tout-en-un qui vous fait gagner du temps et de l'argent » ; Housecall Pro : « Everything to run and grow your business » | « Le travail de bureau de votre entreprise du bâtiment, préparé à votre place. » |
+| C. L'image de l'employé | Lindy : « Hire an AI Employee That Gets Work Done » | « Embauchez des agents IA pour vos devis et vos relances. » |
+
+**Recommandé et appliqué, à titre provisoire : A.** Raisons : les mots recherchés (« agent IA », « bâtiment ») sont dans le titre, on comprend en une ligne ce qui est vendu et à qui, et la dernière ligne reprend la promesse déjà en ligne (« On installe tout pour vous »). B ne dit pas ce qu'on vend. C promet un employé : trop fort tant qu'une partie des envois est relue par notre équipe.
+
+Le titre proposé en section 5.2 (« Vos devis, vos relances et vos appels préparés par des agents IA. Vous validez. ») n'a pas été retenu : « vos appels » et « vous validez » disaient plus que ce que le site décrit (les envois sont relus par notre équipe), et il tenait sur cinq lignes, ce qui repoussait le bouton hors de l'écran.
+
+#### La taille d'entreprise visée : trois formulations comparées
+
+| Formulation | Appui |
+|---|---|
+| « Pour l'artisan seul comme pour l'entreprise d'une vingtaine de salariés » | La prospection vise 1 à 10 salariés (`docs/commercial/kit-prospection.md`) ; les formules hautes s'adressent à plus grand |
+| « De 1 à 50 salariés » | Obat a une page « entreprises de 2 à 50 salariés » ; non vérifié que l'outil NEOBATYS couvre les besoins d'une entreprise de 50 personnes (planning d'équipe, RH) |
+| Pas de chiffre : « artisans et entreprises du bâtiment » | Décision 3, sans risque, mais ne répond pas à « est-ce fait pour moi ? » |
+
+**Recommandé et appliqué, à titre provisoire : la première**, dans une seule phrase sous le titre de l'accueil. Elle se retire en changeant un texte si Ilann préfère une autre borne.
+
+#### Ce qui a changé
+
+- **Accueil** : de 15 blocs à 12. Ordre : accroche, métiers, avant et après, agents IA (avec un lien vers la page Agents IA, qui manquait), logiciel, sites internet, exemples de sites, étapes, aperçu des prix, avis (quand il y en aura), questions, contact. Retirés : le bloc « Résultats » (il répétait « avant et après »), le bloc « Pack » (le pack est dans les tarifs) et les chiffres clés (encore vides).
+- **Bouton principal de l'accueil** : « Demander une démo », le même que celui du menu. Second bouton : « Voir les agents IA ».
+- **Titres et descriptions pour Google** : accueil, Logiciel, Agents IA (tableau avant et après joint à la PR). Les autres pages ne changent pas.
+- **Vocabulaire** : « agents IA » sur l'accueil, la page des aides, le pied de page, l'image de partage et l'illustration de l'accueil.
+- **Phrase de marque** (pied de page, données pour Google) : « Agents IA, logiciel de gestion et sites internet pour les artisans et entreprises du bâtiment ».
+
+Vérifié par un parcours automatique des 44 adresses du plan du site : un seul titre principal par page, un titre et une description uniques partout, aucun lien mort.
+
+#### Laissé tel quel, à décider
+
+- **Conditions générales de vente** : elles disent « assistants » à dix endroits. C'est un texte contractuel : le changer est une décision d'Ilann, de préférence avec le juriste.
+- **Bloc de fin de page « Parlons de votre projet »**, présent sur toutes les pages : son bouton dit encore « Demander un devis ». Sur les pages Sites internet c'est le bon mot ; sur les pages Agents IA et Logiciel, « Demander une démo » serait plus cohérent.
+- **Maquettes de sites d'exemple** : le mot « assistant » y désigne une fonction du site d'un client fictif, pas nos agents. Non modifié.
+
+#### Ce qu'Ilann doit fournir
+
+Rien n'a été inventé : ces emplacements sont absents des pages, pas vides.
+
+1. **Un exemple réel par agent IA**, en commençant par trois agents : ce que le client a dicté ou reçu, ce que l'agent a préparé (capture d'écran de l'outil, données anonymisées), le temps gagné s'il a été mesuré.
+2. **Le numéro de téléphone à afficher** (`content/data/site.json`, champs `phone` et `phoneHref`). Les boutons « Appeler » apparaissent tout seuls dès qu'il est renseigné.
+3. **Un avis client réel**, même un seul, avec l'accord écrit du client : le bloc des avis reste masqué sans cela.
+4. **Les liens des réseaux sociaux**, s'ils existent : les icônes du pied de page sont masquées tant qu'ils sont vides.
+5. **La validation ou la correction** de la phrase d'accroche, de la borne « une vingtaine de salariés » et des trois réponses sur la démonstration (section 3.6).
 
 ## 6. La suite
 
