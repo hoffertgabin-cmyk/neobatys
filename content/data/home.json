@@ -50,7 +50,7 @@
     "subtitle": "Un appel de 30 minutes suffit pour savoir ce qui vous ferait gagner le plus de clients, de temps et d'argent. C'est gratuit, et vous n'êtes engagé à rien.",
     "primaryCta": {
       "label": "Demander un devis",
-      "href": "/contact"
+      "href": "/contact?service=site"
     },
     "secondaryCta": {
       "label": "Appeler",

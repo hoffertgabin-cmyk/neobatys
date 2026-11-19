@@ -107,7 +107,7 @@ export default async function TradeSitePage({ params }: PageProps<"/sites-intern
         links={tradeSiteLinks.filter((t) => t.slug !== trade.slug)}
         cta="Voir la page"
       />
-      <FinalCta />
+      <FinalCta quote />
       <JsonLd data={serviceJsonLd(trade.label, trade.seo.description, path)} />
       <JsonLd
         data={breadcrumbJsonLd([

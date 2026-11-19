@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { navCta } from "@/content/navigation";
 import { notFound } from "next/navigation";
 import { ArrowRight, Download } from "lucide-react";
 import {
@@ -56,8 +57,8 @@ export default async function GuidePage({ params }: PageProps<"/logiciel/[guide]
           </a>
         ))}
         {downloads.length === 0 && (
-          <Button href="/contact?service=logiciel" size="lg" arrow>
-            Demander une démo
+          <Button href={navCta.href} size="lg" arrow>
+            {navCta.label}
           </Button>
         )}
         <Button href="/logiciel#demo" size="lg" variant="ghost">

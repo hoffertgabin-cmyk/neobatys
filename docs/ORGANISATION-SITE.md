@@ -438,6 +438,7 @@ Le titre proposé en section 5.2 (« Vos devis, vos relances et vos appels prép
 - **Bouton principal de l'accueil** : « Demander une démo », le même que celui du menu. Second bouton : « Voir les agents IA ».
 - **Titres et descriptions pour Google** : accueil, Logiciel, Agents IA (tableau avant et après joint à la PR). Les autres pages ne changent pas.
 - **Vocabulaire** : « agents IA » sur l'accueil, la page des aides, le pied de page, l'image de partage et l'illustration de l'accueil.
+- **Bloc de fin de page « Parlons de votre projet »** : son bouton est celui du menu, « Demander une démo », sur toutes les pages, sauf les pages Sites internet (la page et les 18 métiers), où il reste « Demander un devis » et présélectionne la création de site. Règle pour les pages qui ne sont ni l'un ni l'autre (accueil, tarifs, guides, aides) : le bouton du menu, puisque les agents IA et le logiciel passent en premier.
 - **Phrase de marque** (pied de page, données pour Google) : « Agents IA, logiciel de gestion et sites internet pour les artisans et entreprises du bâtiment ».
 
 Vérifié par un parcours automatique des 44 adresses du plan du site : un seul titre principal par page, un titre et une description uniques partout, aucun lien mort.
@@ -445,7 +446,6 @@ Vérifié par un parcours automatique des 44 adresses du plan du site : un seul 
 #### Laissé tel quel, à décider
 
 - **Conditions générales de vente** : elles disent « assistants » à dix endroits. C'est un texte contractuel : le changer est une décision d'Ilann, de préférence avec le juriste.
-- **Bloc de fin de page « Parlons de votre projet »**, présent sur toutes les pages : son bouton dit encore « Demander un devis ». Sur les pages Sites internet c'est le bon mot ; sur les pages Agents IA et Logiciel, « Demander une démo » serait plus cohérent.
 - **Maquettes de sites d'exemple** : le mot « assistant » y désigne une fonction du site d'un client fictif, pas nos agents. Non modifié.
 
 #### Ce qu'Ilann doit fournir

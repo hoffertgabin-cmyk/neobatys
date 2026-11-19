@@ -32,7 +32,7 @@ export default function SitesInternetPage() {
       <Process />
       <Projects />
       <Faq items={sitesPage.faq} />
-      <FinalCta />
+      <FinalCta quote />
       <JsonLd
         data={serviceJsonLd(
           "Création de site internet pour artisans",

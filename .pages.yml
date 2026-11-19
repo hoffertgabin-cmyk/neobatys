@@ -304,7 +304,7 @@ content:
       label: Sous-titre
       type: text
     - name: primaryCta
-      label: Bouton principal
+      label: Bouton des pages Sites internet (ailleurs, le bouton du menu)
       type: object
       fields:
       - name: label
