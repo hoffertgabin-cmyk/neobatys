@@ -23,7 +23,7 @@
   ],
   "cta": {
     "label": "Demander une démo",
-    "href": "/contact"
+    "href": "/contact?service=demo"
   },
   "footerNav": {
     "offres": [

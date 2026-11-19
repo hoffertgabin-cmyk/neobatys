@@ -1,3 +1,4 @@
+import { navCta } from "@/content/navigation";
 import { logicielPage } from "@/content/pages";
 import { softwareOffer } from "@/content/offers";
 import { softwareGuideLinks, softwareGuidesSection } from "@/content/software";
@@ -25,8 +26,8 @@ export default function LogicielPage() {
   return (
     <>
       <PageHero {...logicielPage.hero} breadcrumb="Logiciel de gestion">
-        <Button href="/contact?service=logiciel" size="lg" arrow>
-          Demander une démo
+        <Button href={navCta.href} size="lg" arrow>
+          {navCta.label}
         </Button>
         <Button href="#demo" size="lg" variant="ghost">
           Essayer la démo en ligne

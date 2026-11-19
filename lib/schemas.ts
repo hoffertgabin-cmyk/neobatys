@@ -2,6 +2,7 @@ import { z } from "zod";
 import { trades, otherTrade } from "@/content/trades";
 
 export const services = [
+  { value: "demo", label: "Démonstration du logiciel et des agents IA" },
   { value: "site", label: "Création de site internet" },
   { value: "logiciel", label: "Logiciel de gestion (devis, factures)" },
   { value: "pack", label: "Pack Gestion (site + logiciel)" },

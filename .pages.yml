@@ -1289,6 +1289,44 @@ content:
       - name: text
         label: Texte
         type: text
+    - name: nextTitle
+      label: Titre du bloc des étapes
+      type: string
+    - name: steps
+      label: Étapes après l'envoi
+      type: string
+      list: true
+    - name: demo
+      label: Textes affichés quand on arrive par « Demander une démo »
+      type: object
+      fields:
+      - name: hero
+        label: Haut de page
+        type: object
+        fields:
+        - name: eyebrow
+          label: Surtitre
+          type: string
+        - name: title
+          label: Titre
+          type: string
+        - name: subtitle
+          label: Sous-titre
+          type: text
+      - name: success
+        label: Message après envoi du formulaire
+        type: object
+        fields:
+        - name: title
+          label: Titre
+          type: string
+        - name: text
+          label: Texte
+          type: text
+      - name: steps
+        label: Étapes après l'envoi
+        type: string
+        list: true
   - name: tarifsPage
     label: Page Tarifs
     type: object

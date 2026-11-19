@@ -82,7 +82,7 @@ ADMIN_LEADS_SECRET=xxx   # identique à LEADS_SECRET dans le projet Vercel de l'
 
 Sans ces deux variables, rien n'est envoyé. Les demandes de robots (champ piège rempli) ne sont jamais transmises. L'appel est limité à 3 secondes ; en cas d'échec, une ligne est écrite dans les logs (sans données personnelles) et le visiteur reçoit la même réponse : l'e-mail Resend reste la référence.
 
-Le lien `/contact?service=site|logiciel|pack` pré-sélectionne le service demandé.
+Le lien `/contact?service=site|logiciel|pack|demo` pré-sélectionne le service demandé. Avec `service=demo` (bouton « Demander une démo » du menu), la page, le message de confirmation et l'accusé de réception parlent de la démonstration (`contactPage.demo` dans `content/data/pages.json`).
 
 ## Cookies et RGPD
 
