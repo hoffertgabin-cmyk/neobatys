@@ -1,15 +1,40 @@
 # Organisation du site : menu, pages, cible et accroche
 
-Étude du 19 novembre 2026, demandée par Ilann. Rien n'est modifié sur le site : ce document sert à décider. Les décisions à prendre sont en section 6.
+Étude du 19 novembre 2026, demandée par Ilann. Rien n'est modifié sur le site : ce document sert à décider. Les décisions prises et celles qui restent ouvertes sont listées juste en dessous.
 
 Relevés faits sur `origin/main` (commit `475120e`) et sur www.neobatys.com le 19/11/2026. Quand une donnée n'a pas pu être vérifiée, c'est écrit « non vérifié ».
+
+## Décisions prises
+
+Par Ilann, le 19 novembre 2026. Les numéros sont ceux de la liste d'origine et ne changent pas.
+
+| N° | Sujet | Décision |
+|---|---|---|
+| 1 | Organisation | « Menu = pages ». Le menu du haut et le pied de page n'ouvrent que des pages. Le défilement reste à l'intérieur d'une page |
+| 2 | Offre mise en avant | Les agents IA en premier, le logiciel en deuxième, les sites internet en troisième |
+| 3 | Cible écrite sur le site | « Artisans et entreprises du bâtiment » |
+| 4 | Premier lot de la refonte | Nouveau menu et pied de page, avec deux pages créées : `/tarifs` et `/guides`. Réponse donnée dans la session d'étude |
+| 6 | Bouton du menu | « Demander une démo ». Ce que cela demande de créer est en section 3.6 |
+
+## Décisions encore ouvertes
+
+Recommandation en premier à chaque fois.
+
+- **5. Adresse de la page IA.** Recommandé : garder `/intelligence-artificielle` (aucune redirection, aucun risque). Autre choix : la renommer `/agents-ia` avec une redirection, pour avoir le mot dans l'adresse.
+- **7. Vocabulaire.** Recommandé : « agents IA » partout. Autre choix : « assistants IA » partout. Aujourd'hui les deux coexistent.
+- **8. Accueil.** Recommandé : la raccourcir (résumé et liens vers les pages, section 3.5). Autre choix : la laisser longue et ne changer que le menu.
+- **Les 12 questions de la section 4.4** sur la cible et l'offre, à répondre avant d'écrire les nouveaux textes de l'accueil et des pages à créer.
+- **Les 3 questions de la section 3.6** sur ce qu'est une démonstration chez NEOBATYS, à répondre avant de changer le bouton.
+
+La refonte ne démarre pas avant ces réponses, la fusion de ce document et le sort de la PR #75 (section 1.4).
 
 ## En bref
 
 - Le menu du haut a 6 entrées : 1 ouvre une page, 5 font défiler la page d'accueil. C'est la cause du problème signalé.
 - Le site a 42 pages en ligne, mais le menu n'en montre qu'une. Les pages Sites internet et Logiciel existent et ne sont pas dans le menu.
-- Recommandation : garder les pages (elles servent au référencement) et appliquer une règle simple, « le menu n'ouvre que des pages ».
-- Le site parle aujourd'hui d'abord de sites internet à 990 €. Si la priorité est les agents IA, il faut le décider (section 4), car cela change l'accueil, le menu et les titres.
+- Les pages sont gardées (elles servent au référencement) et le menu n'ouvre plus que des pages.
+- Le site parle aujourd'hui d'abord de sites internet à 990 €. Les agents IA passent en premier : cela change le menu, l'accueil et les titres.
+- Le bouton « Demander une démo » ne mène aujourd'hui à aucun parcours de démonstration : il faut l'adapter (section 3.6).
 
 ## 1. Ce qui existe aujourd'hui
 
@@ -113,7 +138,7 @@ Relevé du 19/11/2026 sur la page d'accueil de 9 éditeurs : 4 logiciels frança
 2. **La même ossature** : Produit ou Fonctionnalités, Métiers ou Cibles, Tarifs, Ressources. Tolteck et Batappli en ont une version courte, en liens directs, proche de ce que NEOBATYS peut tenir aujourd'hui.
 3. **Une page Tarifs dans le menu** chez Obat, Tolteck, Batappli, Axonaut, Housecall Pro et Lindy. Avoca et ServiceTitan, qui vendent par démonstration, ne l'y mettent pas.
 4. **Un seul bouton d'action**, toujours le même : essai gratuit ou inscription pour ceux qu'on peut essayer seul, démonstration pour ceux qui installent (ServiceTitan, Avoca). Personne n'écrit « Demander un devis ».
-5. **L'IA en première ligne seulement chez ceux dont c'est le métier** (Avoca, Lindy). Chez les logiciels de gestion, c'est une ligne sous Produits. Mettre « Agents IA » en tête du menu place donc NEOBATYS dans la deuxième famille : c'est un choix de positionnement (décision 2).
+5. **L'IA en première ligne seulement chez ceux dont c'est le métier** (Avoca, Lindy). Chez les logiciels de gestion, c'est une ligne sous Produits. Mettre « Agents IA » en tête du menu place donc NEOBATYS dans la famille des éditeurs d'agents : c'est le positionnement retenu (décision 2).
 
 ### 2.3 Trois pistes à reprendre
 
@@ -123,28 +148,21 @@ Cette partie tient lieu de veille pour ce sujet (règle de `AGENTS.md`), pour ga
 2. **Des pages par taille d'entreprise** (Obat : micro-entreprise, artisan seul, TPE et PME ; Axonaut : par cible). Apport : répond à la question « est-ce fait pour moi ? », aujourd'hui sans réponse sur le site. Effort : moyen, et seulement après les réponses de la section 4.4.
 3. **Un bouton d'action unique qui dit ce qui se passe ensuite** (« Book a Demo », « Essai gratuit »). Apport : un engagement plus léger que « Demander un devis » pour un logiciel et des agents. Effort : petit. Reprise en décision 6.
 
-## 3. Avis marketing : quelle organisation choisir
+## 3. L'organisation retenue
 
-### 3.1 Les trois options
-
-| Option | Pour | Contre |
-|---|---|---|
-| A. Tout en pages | Comportement prévisible. Une page par sujet, donc une page par recherche Google. Chaque page s'envoie par lien | Demande une page Tarifs en plus. L'accueil doit être raccourcie pour ne pas tout répéter |
-| B. Tout sur une page qui défile | Simple à parcourir sur téléphone, une seule histoire | Une seule page pour toutes les recherches : Google ne peut pas la montrer à la fois pour « logiciel devis plombier » et « agent IA artisan ». Il faudrait supprimer 41 pages déjà en ligne |
-| C. Hybride avec une règle | Garde les pages et garde une accueil qui raconte tout en résumé | Ne marche que si la règle est tenue |
-
-### 3.2 Recommandation : option C, avec cette règle
+### 3.1 La règle
 
 **Le menu du haut et le pied de page n'ouvrent que des pages. Le défilement ne sert qu'à l'intérieur d'une page** (un bouton « Voir la démo » qui descend dans la page Logiciel, par exemple).
 
-Pourquoi :
+L'accueil reste une page qui résume tout, et chaque sujet garde sa page. Deux autres organisations ont été écartées : la page unique qui défile, qui aurait demandé de supprimer 41 pages déjà en ligne, et le site sans accueil qui résume.
 
-- **Référencement.** Google classe des pages, pas des blocs. Le site a déjà une page par sujet (logiciel, sites, IA, guides, métiers) : les retirer serait perdre ce travail. La campagne décrite dans `docs/seo-logiciel.md` repose dessus.
+### 3.2 Pourquoi
+
+- **Référencement.** Google classe des pages, pas des blocs. Le site a déjà une page par sujet (logiciel, sites, IA, guides, métiers). La campagne décrite dans `docs/seo-logiciel.md` repose dessus.
 - **Conversion.** Un artisan qui clique « Tarifs » veut voir des prix tout de suite, sur une page qu'il peut retrouver et transmettre à son associé ou à son comptable.
 - **Confiance.** Un menu qui réagit toujours pareil donne une impression de sérieux. C'est le point soulevé par Ilann.
+- **Usage.** Aucun des 8 menus lus chez les autres éditeurs ne mélange pages et défilement (section 2.2).
 - **Effort faible.** Les pages existent. Il manque une page Tarifs et une page qui liste les guides. Le reste est un changement de liens.
-
-L'option B n'est défendable que pour un site d'une seule offre et d'une seule cible. NEOBATYS a trois offres et 18 métiers.
 
 ### 3.3 Menu cible
 
@@ -152,12 +170,12 @@ Cinq entrées, toutes des pages, plus un bouton. L'ordre suit la priorité donn�
 
 | Ordre | Libellé | Destination | État |
 |---|---|---|---|
-| 1 | Agents IA | `/intelligence-artificielle` (ou `/agents-ia`, décision 5) | Existe |
+| 1 | Agents IA | `/intelligence-artificielle` (adresse à confirmer, décision ouverte 5) | Existe |
 | 2 | Logiciel | `/logiciel` | Existe |
 | 3 | Sites internet | `/sites-internet` | Existe |
 | 4 | Tarifs | `/tarifs` | À créer (la grille existe, il faut lui donner une page) |
 | 5 | Guides | `/guides` | À créer (page qui liste les guides et outils gratuits déjà en ligne, sans changer leurs adresses) |
-| Bouton | Demander une démo | `/contact` | Existe |
+| Bouton | Demander une démo | `/contact?service=demo` | Page existante, à adapter (section 3.6) |
 
 « FAQ » et « Services » sortent du menu : chaque page garde sa FAQ en bas, et « Services » est remplacé par les trois entrées qui disent ce qu'on vend.
 
@@ -187,13 +205,40 @@ Les liens « Résultats », « Comment ça marche », « Pack Gestion » et « F
 /mentions-legales, /politique-de-confidentialite, /conditions-generales-de-vente
 ```
 
-Aucune adresse existante ne change, donc aucune redirection à prévoir, sauf si la page IA est renommée (décision 5).
+Aucune adresse existante ne change, donc aucune redirection à prévoir, sauf si la page IA est renommée (décision ouverte 5).
 
 ### 3.5 L'accueil
 
-Elle reste une page qui défile, mais plus courte : une accroche, les trois offres en un bloc chacune avec un lien « En savoir plus » vers la page, un aperçu des prix avec un lien vers `/tarifs`, la preuve (exemples, avis quand il y en aura), le contact. Les blocs détaillés (tour du logiciel, grille complète, FAQ longue) vivent sur leur page.
+Sous réserve de la décision ouverte 8. Elle reste une page qui défile, mais plus courte : une accroche, les trois offres en un bloc chacune avec un lien « En savoir plus » vers la page, un aperçu des prix avec un lien vers `/tarifs`, la preuve (exemples, avis quand il y en aura), le contact. Les blocs détaillés (tour du logiciel, grille complète, FAQ longue) vivent sur leur page.
 
-### 3.6 Parcours vers la prise de contact
+### 3.6 Le bouton « Demander une démo » : ce qui existe et ce qu'il faut créer
+
+Ce qui existe aujourd'hui, vérifié dans le code :
+
+| Élément | État |
+|---|---|
+| Un aperçu du logiciel à parcourir seul | Existe : bloc « démo » de la page Logiciel (`/logiciel#demo`), ouvert par le bouton « Voir le logiciel en action » |
+| Une promesse de démonstration | Existe, pour le logiciel seulement : « on vous montre le logiciel en 20 minutes, en visio ou sur place, avec vos propres exemples de devis » (FAQ de la page Logiciel) |
+| Une page ou un formulaire pour demander une démonstration | N'existe pas. Le bouton mènerait à `/contact`, dont le titre est « Contact et demande de devis », l'accroche « Parlons de votre projet » et la réponse « On vous rappelle sous 24 h ouvrées » |
+| Un choix « démonstration » dans le formulaire | N'existe pas. Les choix sont : site internet, logiciel, Pack Gestion, Pack IA ou Transformation complète, abonnement, « je ne sais pas encore » (`lib/schemas.ts`) |
+| Une démonstration des agents IA | N'existe pas : ni aperçu, ni vidéo, ni promesse écrite. C'est pourtant l'offre qui passe en premier |
+| Une prise de rendez-vous avec choix d'un créneau | N'existe pas. Le formulaire demande seulement une plage de rappel (matin, midi...) |
+
+En l'état, le visiteur qui clique « Demander une démo » arriverait sur une page qui lui parle de devis et de rappel. Pour que le bouton tienne sa promesse, il faut créer, dans l'ordre :
+
+1. **Un choix « Démonstration » dans le formulaire de contact**, sélectionné d'avance quand on arrive par le bouton (`/contact?service=demo`, sur le modèle des liens `?service=logiciel` qui existent). Effort : petit. À vérifier avec Gabin : que l'admin accepte cette nouvelle valeur à l'arrivée de la demande (non vérifié, l'admin est dans un autre dépôt).
+2. **Des textes de la page Contact qui changent quand on vient pour une démonstration** : titre, accroche, message de confirmation et accusé de réception envoyé par mail (`content/contact-ack.ts`) disent ce qui va se passer (qui rappelle, sous quel délai, durée de la démonstration). Effort : petit.
+3. **Le titre et la description de la page Contact** réécrits (section 5.2). Effort : petit.
+4. **Quelque chose à montrer pour les agents IA** : au minimum, sur la page Agents IA, un exemple réel par agent (ce que l'agent a préparé, ce que le client valide), sur le modèle de l'aperçu du logiciel. Effort : moyen. Sans cela, la démonstration des agents n'existe qu'en rendez-vous.
+5. **Plus tard, si le volume le justifie** : un calendrier pour choisir soi-même son créneau. Effort : moyen, et un outil de plus à tenir. Non recommandé pour l'instant.
+
+Questions pour Ilann, sans réponse supposée :
+
+1. Une démonstration, c'est quoi exactement : 20 minutes en visio, un passage sur place, les deux ? Qui la fait ?
+2. Que montre-t-on des agents IA pendant la démonstration : l'outil en service chez NEOBATYS, un compte d'essai, des exemples préparés ?
+3. Sous quel délai s'engage-t-on à rappeler quelqu'un qui demande une démonstration ?
+
+Le reste du parcours :
 
 - Un bouton fixe dans le menu, le même partout.
 - Sur chaque page d'offre, un bouton adapté qui préremplit le formulaire (cela existe déjà : `/contact?service=logiciel`, `?service=ia`, `?service=site`).
@@ -226,9 +271,9 @@ Les offres en une fois ajoutent 200 € HT par mois de maintenance. Les abonneme
 
 ### 4.3 Ce qui reste flou
 
-1. **Ce qu'on vend en premier.** Le site présente NEOBATYS comme une agence qui fait des sites internet, avec un logiciel et, « si vous le voulez », de l'IA. La demande d'Ilann est de pousser les agents IA et la gestion d'entreprise. Ce sont deux positionnements différents : il faut en choisir un pour l'accueil.
+1. **Ce qu'on vend en premier.** Tranché (décision 2) : les agents IA. Le site, lui, se présente encore comme une agence qui fait des sites internet, avec un logiciel et, « si vous le voulez », de l'IA. L'accueil est à réécrire en conséquence.
 2. **Trois métiers à la fois.** Agence web, éditeur de logiciel, installateur d'IA. Le visiteur ne sait pas lequel est le cœur.
-3. **Artisan ou entreprise.** Tout le site dit « artisan ». Les mots visés par Ilann (« gestion de société », « gestion d'entreprise ») parlent à un dirigeant de PME, pas forcément du bâtiment.
+3. **Artisan ou entreprise.** Tranché (décision 3) : « artisans et entreprises du bâtiment ». Tout le site dit encore « artisan » seulement. Les mots « gestion de société » et « gestion d'entreprise » parlent à un dirigeant de PME : reste à dire jusqu'à quelle taille on vise (question 2).
 4. **Le pays.** La société est luxembourgeoise et annonce « partout en Europe », mais les guides traitent les règles françaises (taux de TVA du bâtiment, facturation électronique de 2026 et 2027, décennale, RGE). Le Luxembourg apparaît surtout sur la page des aides.
 5. **La taille visée par les formules hautes.** La prospection vise 1 à 10 salariés. Une formule à 9 900 € ou 1 490 € par mois s'adresse-t-elle aux mêmes ?
 6. **L'IA sans le reste.** Les agents ne se vendent qu'avec le site et le logiciel (le Pack IA contient le Pack Gestion). Une entreprise qui a déjà son site et son logiciel de devis ne trouve pas d'offre pour elle.
@@ -237,11 +282,11 @@ Les offres en une fois ajoutent 200 € HT par mois de maintenance. Les abonneme
 
 ### 4.4 Questions pour Ilann
 
-Aucune réponse n'est supposée ici.
+Aucune réponse n'est supposée ici. Les questions 1 et 3 ont reçu une première réponse avec les décisions 2 et 3 ; ce qui reste à préciser est indiqué.
 
-1. Si un visiteur ne retient qu'une phrase, laquelle : « ils font des sites pour artisans », « ils ont un logiciel de devis et factures », ou « ils installent des agents IA qui font le travail de bureau » ?
+1. Si un visiteur ne retient qu'une phrase, laquelle ? La décision 2 donne le sens (« ils installent des agents IA qui font le travail de bureau ») ; reste à valider la phrase exacte.
 2. Le client type, c'est qui précisément : quel métier, combien de salariés, quel chiffre d'affaires, depuis combien de temps installé ?
-3. Garde-t-on « artisans du bâtiment » partout, ou passe-t-on à « entreprises du bâtiment » pour parler aussi aux PME de 10 à 50 salariés ? Vise-t-on des entreprises hors bâtiment ?
+3. La décision 3 fixe « artisans et entreprises du bâtiment ». Reste à dire jusqu'à quelle taille d'entreprise on s'adresse (10, 20, 50 salariés ?).
 4. Dans quel pays veut-on les dix prochains clients : France (Moselle d'abord), Luxembourg, les deux ? Si le Luxembourg compte, faut-il des contenus aux règles luxembourgeoises ?
 5. Quel est le premier problème que le client veut régler quand il nous appelle : trouver des clients, faire ses devis plus vite, être payé, ne plus rater d'appels, autre ?
 6. Vend-on les agents IA seuls, à une entreprise qui a déjà un site et un logiciel (Obat, Batappli ou autre) ? Si oui, à quel prix d'entrée ?
@@ -281,50 +326,42 @@ Les titres se terminent par « · NEOBATYS », ajouté automatiquement. Les prop
 | Page | Aujourd'hui | Proposition |
 |---|---|---|
 | Accueil, titre | NEOBATYS · Sites internet, logiciel et IA pour artisans du bâtiment | NEOBATYS · Agents IA et logiciel de gestion pour le bâtiment |
-| Accueil, description | Sites internet, logiciel de devis et factures et assistants IA pour les artisans du bâtiment. Plus de clients, moins de coûts, moins de paperasse. | Des agents IA qui préparent vos devis, vos relances et vos réponses aux clients, un logiciel de gestion et un site internet. Pour les entreprises du bâtiment, installé par nous. |
+| Accueil, description | Sites internet, logiciel de devis et factures et assistants IA pour les artisans du bâtiment. Plus de clients, moins de coûts, moins de paperasse. | Des agents IA qui préparent vos devis, vos relances et vos réponses aux clients, un logiciel de gestion et un site internet. Pour les artisans et les entreprises du bâtiment, installé par nous. |
 | Accueil, titre de page | Plus de clients. Vos devis en 2 minutes. On installe tout pour vous. | Vos devis, vos relances et vos appels préparés par des agents IA. Vous validez. On installe tout. |
 | Agents IA, titre | Agents IA pour artisans du bâtiment | Agents IA pour artisans et entreprises du bâtiment |
 | Agents IA, description | 12 agents IA pour artisans : devis dictés, relances de devis et d'impayés, rendez-vous, appels manqués, avis Google, entretiens, aides, documents. | Inchangée (elle nomme déjà les agents) |
 | Agents IA, titre de page | Des agents IA qui préparent le travail de bureau à votre place | Inchangé |
 | Logiciel, titre | Logiciel de devis et factures pour artisans | Logiciel de gestion bâtiment : devis et factures |
-| Logiciel, description | Logiciel de gestion simple pour artisans : devis en 2 minutes, factures, relances automatiques, export comptable, facturation électronique. Démo gratuite. | Logiciel de gestion pour entreprises du bâtiment : devis en 2 minutes, factures, relances faites par des agents IA, export comptable, facturation électronique. Démo gratuite. |
+| Logiciel, description | Logiciel de gestion simple pour artisans : devis en 2 minutes, factures, relances automatiques, export comptable, facturation électronique. Démo gratuite. | Logiciel de gestion pour artisans et entreprises du bâtiment : devis en 2 minutes, factures, relances faites par des agents IA, export comptable, facturation électronique. Démo gratuite. |
 | Logiciel, titre de page | Vos devis en 2 minutes, vos factures payées à temps | Inchangé |
 | Sites internet (page et 18 métiers) | Création de site internet artisan du bâtiment, puis « ... pour plombier », etc. | Inchangés : ils collent déjà à la recherche visée |
 | Logiciel par métier (8 pages) et guides (8 pages) | « Logiciel de devis et factures pour plombier », « Mentions obligatoires d'un devis de travaux », etc. | Inchangés |
 | Digitaliser son entreprise, titre | Digitaliser son entreprise artisanale : aides | Inchangé |
-| Contact, titre | Contact et demande de devis | Contact : démo, devis ou rappel |
+| Contact, titre | Contact et demande de devis | Demander une démo ou un devis |
 | Contact, description | Demandez un devis pour votre site internet ou une démo du logiciel de gestion. Réponse sous 24 h, sans engagement. | Demandez une démo des agents IA et du logiciel, ou un devis pour votre site internet. Réponse sous 24 h, sans engagement. |
-| Phrase de marque (pied de page, données pour Google) | Sites internet, logiciel de gestion et IA pour artisans du bâtiment | Agents IA, logiciel de gestion et sites internet pour les entreprises du bâtiment |
+| Phrase de marque (pied de page, données pour Google) | Sites internet, logiciel de gestion et IA pour artisans du bâtiment | Agents IA, logiciel de gestion et sites internet pour les artisans et entreprises du bâtiment |
 
-Ces textes dépendent des réponses de la section 4.4 (artisans ou entreprises, ordre des offres). Ils sont à relire par Ilann avant mise en ligne.
+Ces textes suivent les décisions 2, 3 et 6. Ils sont à relire par Ilann avant mise en ligne.
 
-Partout, un seul mot : « agents IA » (remplace « assistants IA » sur l'accueil et dans la FAQ).
+Ils emploient « agents IA » partout, sous réserve de la décision ouverte 7.
 
 ### 5.3 Pages à créer
 
 | Priorité | Page | Recherche visée | Titre proposé | Contenu | Effort |
 |---|---|---|---|---|---|
-| 1 | `/tarifs` | Prix, tarif | Tarifs : agents IA, logiciel et site internet | La grille actuelle, ce qui est compris, la FAQ sur les prix | Petit (le bloc existe) |
-| 1 | `/guides` | Aucune en propre : page de navigation | Guides et outils gratuits pour les entreprises du bâtiment | Liste des 8 guides, du modèle de devis et du calculateur | Petit |
+| 1 (premier lot, décision 4) | `/tarifs` | Prix, tarif | Tarifs : agents IA, logiciel et site internet | La grille actuelle, ce qui est compris, la FAQ sur les prix | Petit (le bloc existe) |
+| 1 (premier lot, décision 4) | `/guides` | Aucune en propre : page de navigation | Guides et outils gratuits pour les entreprises du bâtiment | Liste des 8 guides, du modèle de devis et du calculateur | Petit |
 | 2 | Une page par agent, sous la page Agents IA (12 pages, par lots) | « relance de devis automatique », « répondre aux appels manqués artisan », « devis à la voix », etc. (suggestions non relevées une par une : à vérifier avant d'écrire chaque page) | Agent IA de relance de devis pour artisans, etc. | Ce que fait l'agent, un exemple réel, ce que le client valide, ce que ça coûte, dans quelle formule | Moyen. Commencer par 3 agents |
-| 2 | `/logiciel-gestion-entreprise-batiment` | « logiciel gestion entreprise batiment », « logiciel gestion pme batiment » | Logiciel de gestion d'entreprise du bâtiment avec agents IA | Vue d'ensemble pour un dirigeant : devis, factures, suivi des chantiers, relances, tableau de bord | Moyen. Seulement si la cible « PME » est confirmée (question 3) |
+| 2 | `/logiciel-gestion-entreprise-batiment` | « logiciel gestion entreprise batiment », « logiciel gestion pme batiment » | Logiciel de gestion d'entreprise du bâtiment avec agents IA | Vue d'ensemble pour un dirigeant : devis, factures, suivi des chantiers, relances, tableau de bord | Moyen. La cible « entreprises du bâtiment » est confirmée (décision 3) |
 | 3 | Page « développer son entreprise » ou « développement sur mesure » | Dépend de la question 7 | À écrire après la réponse | | Moyen |
 | 3 | Page « gagner du temps au bureau » | Dépend de la question 8. Pas de demande visible pour « automatisation entreprise batiment » | À écrire après la réponse | | Moyen |
 
 Règle à tenir : une page par recherche. Avant de créer une page, vérifier qu'aucune page existante ne vise déjà la même recherche (par exemple, `/logiciel` vise « logiciel devis factures artisan » et ne doit pas être doublée).
 
-## 6. Décisions à prendre avant la refonte
+## 6. La suite, en trois chantiers
 
-Recommandation en premier à chaque fois.
+Chacun sur sa branche et sa PR, dans cet ordre. Aucun ne démarre avant la fusion de ce document et le sort de la PR #75.
 
-1. **Organisation.** Tranché par Ilann le 19/11/2026 : hybride, « le menu et le pied de page n'ouvrent que des pages », le défilement reste à l'intérieur d'une page.
-2. **Offre mise en avant.** Tranché par Ilann le 19/11/2026 : les agents IA en premier (menu, accueil, titres), le logiciel en deuxième, les sites en troisième.
-3. **Cible écrite sur le site.** Tranché par Ilann le 19/11/2026 : « artisans et entreprises du bâtiment ».
-4. **Premier lot.** Tranché par Ilann le 19/11/2026 : nouveau menu et pied de page, avec les pages `/tarifs` et `/guides`. Les pages d'agents et l'accueil viennent ensuite.
-5. **Adresse de la page IA.** Recommandé : garder `/intelligence-artificielle` (aucune redirection, aucun risque). Autre choix : la renommer `/agents-ia` avec une redirection, pour avoir le mot dans l'adresse.
-6. **Bouton du menu.** Tranché par Ilann le 19/11/2026 : « Demander une démo ».
-7. **Vocabulaire.** Recommandé : « agents IA » partout. Autre choix : « assistants IA » partout.
-8. **Accueil.** Recommandé : la raccourcir (résumé et liens vers les pages). Autre choix : la laisser longue et ne changer que le menu.
-9. **Réponses aux 12 questions de la section 4.4**, au moins les questions 1 à 7, avant d'écrire les nouveaux textes.
-
-Une fois ces choix faits, la refonte tient en trois chantiers séparés : le menu et le pied de page avec `/tarifs` et `/guides` ; l'accueil et les titres ; les pages d'agents.
+1. **Menu et pied de page, avec `/tarifs` et `/guides`** (décision 4). Demande les réponses de la section 3.6 pour le bouton ; sans elles, le bouton garde son texte actuel le temps du chantier.
+2. **Accueil et titres.** Demande les décisions ouvertes 7 et 8 et les réponses de la section 4.4.
+3. **Pages par agent**, par lots de 3. Demande la décision ouverte 5 (adresse de la page IA, dont dépendent les adresses des pages d'agents).
