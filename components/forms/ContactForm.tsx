@@ -63,6 +63,7 @@ function Field({
 export function ContactForm() {
   const uid = useId();
   const [status, setStatus] = useState<Status>("idle");
+  const [sent, setSent] = useState(contactPage.success);
   const {
     register,
     handleSubmit,
@@ -104,6 +105,7 @@ export function ContactForm() {
         body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error(String(res.status));
+      setSent(data.service === "demo" ? contactPage.demo.success : contactPage.success);
       setStatus("success");
       reset();
     } catch {
@@ -125,8 +127,8 @@ export function ContactForm() {
         className="rounded-3xl bg-white p-8 text-center shadow-soft ring-1 ring-nuit/5 sm:p-12"
       >
         <CircleCheck aria-hidden="true" className="mx-auto size-14 text-emerald-600" />
-        <h2 className="mt-5 text-2xl font-bold">{contactPage.success.title}</h2>
-        <p className="mx-auto mt-3 max-w-md text-ardoise-dark">{contactPage.success.text}</p>
+        <h2 className="mt-5 text-2xl font-bold">{sent.title}</h2>
+        <p className="mx-auto mt-3 max-w-md text-ardoise-dark">{sent.text}</p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           {hasPhone && (
             <Button href={telHref} icon={<Phone aria-hidden="true" className="size-4" />}>

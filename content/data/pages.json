@@ -1,8 +1,8 @@
 {
   "contactPage": {
     "seo": {
-      "title": "Contact et demande de devis",
-      "description": "Demandez un devis pour votre site internet ou une démo du logiciel de gestion. Réponse sous 24 h, sans engagement."
+      "title": "Demander une démo ou un devis",
+      "description": "Demandez une démonstration du logiciel et des agents IA, ou un devis pour votre site internet. Rappel sous 24 h ouvrées, sans engagement."
     },
     "hero": {
       "eyebrow": "Contact",
@@ -12,6 +12,28 @@
     "success": {
       "title": "Merci, votre demande est bien partie !",
       "text": "On vous rappelle sous 24 h ouvrées."
+    },
+    "nextTitle": "Et ensuite ?",
+    "steps": [
+      "On vous rappelle sous 24 h ouvrées.",
+      "Appel découverte de 30 minutes, gratuit.",
+      "Vous recevez une proposition claire, sans engagement."
+    ],
+    "demo": {
+      "hero": {
+        "eyebrow": "Démonstration",
+        "title": "Demander une démonstration",
+        "subtitle": "Remplissez le formulaire, on vous rappelle sous 24 h ouvrées pour fixer un créneau. La démonstration dure 20 minutes, en visio ou sur place. Elle est gratuite et ne vous engage à rien."
+      },
+      "success": {
+        "title": "Merci, votre demande de démonstration est bien partie !",
+        "text": "On vous rappelle sous 24 h ouvrées pour fixer le créneau."
+      },
+      "steps": [
+        "On vous rappelle sous 24 h ouvrées pour fixer un créneau.",
+        "Démonstration de 20 minutes, en visio ou sur place : le logiciel et les agents IA.",
+        "Vous posez vos questions. Rien ne vous engage."
+      ]
     }
   },
   "logicielPage": {

@@ -93,7 +93,7 @@ export async function POST(request: Request) {
             from,
             to: data.email,
             replyTo: site.email,
-            ...contactAck(serviceLabel, callbackLabel),
+            ...contactAck(serviceLabel, callbackLabel, data.service === "demo"),
           })
           .catch((e: unknown) => ({ error: e }));
         if (ack.error) console.error("[contact] Accusé de réception non envoyé.");

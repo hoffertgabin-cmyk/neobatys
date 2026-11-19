@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { contactPage } from "@/content/pages";
 import { hasPhone, mailHref, site, telHref } from "@/content/site";
@@ -15,10 +16,14 @@ const infos: { Icon: typeof Mail; label: string; value: string; href?: string }[
   { Icon: MapPin, label: "Zone d'intervention", value: site.zone },
 ];
 
-export default function ContactPage() {
+type Search = Promise<{ service?: string | string[] }>;
+
+type Copy = Pick<typeof contactPage, "hero" | "steps">;
+
+function ContactView({ copy }: { copy: Copy }) {
   return (
     <>
-      <PageHero {...contactPage.hero} breadcrumb="Contact" compact>
+      <PageHero {...copy.hero} breadcrumb="Contact" compact>
         {/* Appel direct, mis en avant sur mobile */}
         {hasPhone && (
           <Button
@@ -71,23 +76,34 @@ export default function ContactPage() {
               )}
             </div>
             <div className="rounded-3xl bg-white p-7 shadow-soft ring-1 ring-nuit/5">
-              <h2 className="font-bold">Et ensuite ?</h2>
+              <h2 className="font-bold">{contactPage.nextTitle}</h2>
               <ol className="mt-4 space-y-3 text-sm text-ardoise-dark">
-                <li>
-                  <b className="text-nuit">1.</b> On vous rappelle sous 24 h ouvrées.
-                </li>
-                <li>
-                  <b className="text-nuit">2.</b> Appel découverte de 30 minutes, gratuit.
-                </li>
-                <li>
-                  <b className="text-nuit">3.</b> Vous recevez une proposition claire, sans
-                  engagement.
-                </li>
+                {copy.steps.map((step, i) => (
+                  <li key={step}>
+                    <b className="text-nuit">{i + 1}.</b> {step}
+                  </li>
+                ))}
               </ol>
             </div>
           </aside>
         </Container>
       </section>
     </>
+  );
+}
+
+/** `/contact?service=demo` (bouton du menu) : mêmes champs, textes de la démonstration. */
+async function ContactContent({ searchParams }: { searchParams: Search }) {
+  const demo = (await searchParams).service === "demo";
+  return <ContactView copy={demo ? contactPage.demo : contactPage} />;
+}
+
+export default function ContactPage({ searchParams }: { searchParams: Search }) {
+  // L'adresse n'est connue qu'à la demande. En attendant, un bloc vide de la hauteur de l'écran :
+  // sans lui, le contenu arrive au-dessus du pied de page et le visiteur se retrouve en bas de page.
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-sable" />}>
+      <ContactContent searchParams={searchParams} />
+    </Suspense>
   );
 }

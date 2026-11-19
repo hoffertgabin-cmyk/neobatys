@@ -22,14 +22,14 @@ Par Ilann, le 19 novembre 2026. Les numéros sont ceux de la liste d'origine et 
 ## Décisions encore ouvertes
 
 - **Les 12 questions de la section 4.4** sur la cible et l'offre. Pour la phrase à retenir et la taille d'entreprise visée, une proposition sera appliquée à titre provisoire dans le lot 3.
-- **Les 3 questions de la section 3.6** sur ce qu'est une démonstration chez NEOBATYS. Une réponse sera proposée dans le lot 2.
+- **Les 3 réponses proposées en section 3.6** sur ce qu'est une démonstration chez NEOBATYS : appliquées sur le site, à valider par Ilann.
 
 ## Avancement
 
 | Lot | Contenu | État |
 |---|---|---|
-| 1 | Menu et pied de page en pages seulement, pages `/tarifs` et `/guides`, bouton « Demander une démo », grille des prix à un seul endroit | Fait dans la PR du lot 1. Le bouton mène à `/contact` en attendant le lot 2 |
-| 2 | Parcours de démonstration (section 3.6) | À faire |
+| 1 | Menu et pied de page en pages seulement, pages `/tarifs` et `/guides`, bouton « Demander une démo », grille des prix à un seul endroit | Fait (PR #82) |
+| 2 | Parcours de démonstration (section 3.6) | Fait dans la PR du lot 2 : points 1 à 3 de la section 3.6. Les points 4 et 5 restent à faire |
 | 3 | Accueil raccourcie, titres, vocabulaire « agents IA », cible | À faire |
 
 ## En bref
@@ -38,7 +38,7 @@ Par Ilann, le 19 novembre 2026. Les numéros sont ceux de la liste d'origine et 
 - Le site a 42 pages en ligne, mais le menu n'en montre qu'une. Les pages Sites internet et Logiciel existent et ne sont pas dans le menu.
 - Les pages sont gardées (elles servent au référencement) et le menu n'ouvre plus que des pages.
 - Le site parle aujourd'hui d'abord de sites internet à 990 €. Les agents IA passent en premier : cela change le menu, l'accueil et les titres.
-- Le bouton « Demander une démo » ne mène aujourd'hui à aucun parcours de démonstration : il faut l'adapter (section 3.6).
+- Le bouton « Demander une démo » mène à la page Contact dans sa version « démonstration » (section 3.6).
 
 ## 1. Ce qui existe aujourd'hui
 
@@ -200,7 +200,7 @@ Cinq entrées, toutes des pages, plus un bouton. L'ordre suit la priorité donn�
 | 3 | Sites internet | `/sites-internet` | Existe |
 | 4 | Tarifs | `/tarifs` | À créer (la grille existe, il faut lui donner une page) |
 | 5 | Guides | `/guides` | À créer (page qui liste les guides et outils gratuits déjà en ligne, sans changer leurs adresses) |
-| Bouton | Demander une démo | `/contact?service=demo` | Page existante, à adapter (section 3.6) |
+| Bouton | Demander une démo | `/contact?service=demo` | Fait |
 
 « FAQ » et « Services » sortent du menu : chaque page garde sa FAQ en bas, et « Services » est remplacé par les trois entrées qui disent ce qu'on vend.
 
@@ -238,7 +238,7 @@ Elle reste une page qui défile, mais plus courte : une accroche, les trois offr
 
 ### 3.6 Le bouton « Demander une démo » : ce qui existe et ce qu'il faut créer
 
-Ce qui existe aujourd'hui, vérifié dans le code :
+Ce qui existait avant le lot 2, vérifié dans le code :
 
 | Élément | État |
 |---|---|
@@ -249,7 +249,7 @@ Ce qui existe aujourd'hui, vérifié dans le code :
 | Une démonstration des agents IA | N'existe pas : ni aperçu, ni vidéo, ni promesse écrite. C'est pourtant l'offre qui passe en premier |
 | Une prise de rendez-vous avec choix d'un créneau | N'existe pas. Le formulaire demande seulement une plage de rappel (matin, midi...) |
 
-En l'état, le visiteur qui clique « Demander une démo » arriverait sur une page qui lui parle de devis et de rappel. Pour que le bouton tienne sa promesse, il faut créer, dans l'ordre :
+Sans changement, le visiteur qui clique « Demander une démo » arrivait sur une page qui lui parlait de devis et de rappel. Ce qu'il fallait créer, dans l'ordre (les points 1 à 3 sont faits, voir plus bas) :
 
 1. **Un choix « Démonstration » dans le formulaire de contact**, sélectionné d'avance quand on arrive par le bouton (`/contact?service=demo`, sur le modèle des liens `?service=logiciel` qui existent). Effort : petit. À vérifier avec Gabin : que l'admin accepte cette nouvelle valeur à l'arrivée de la demande (non vérifié, l'admin est dans un autre dépôt).
 2. **Des textes de la page Contact qui changent quand on vient pour une démonstration** : titre, accroche, message de confirmation et accusé de réception envoyé par mail (`content/contact-ack.ts`) disent ce qui va se passer (qui rappelle, sous quel délai, durée de la démonstration). Effort : petit.
@@ -257,11 +257,33 @@ En l'état, le visiteur qui clique « Demander une démo » arriverait sur une p
 4. **Quelque chose à montrer pour les agents IA** : au minimum, sur la page Agents IA, un exemple réel par agent (ce que l'agent a préparé, ce que le client valide), sur le modèle de l'aperçu du logiciel. Effort : moyen. Sans cela, la démonstration des agents n'existe qu'en rendez-vous.
 5. **Plus tard, si le volume le justifie** : un calendrier pour choisir soi-même son créneau. Effort : moyen, et un outil de plus à tenir. Non recommandé pour l'instant.
 
-Questions pour Ilann, sans réponse supposée :
+#### Comment les autres font (relevé du 19/11/2026)
 
-1. Une démonstration, c'est quoi exactement : 20 minutes en visio, un passage sur place, les deux ? Qui la fait ?
-2. Que montre-t-on des agents IA pendant la démonstration : l'outil en service chez NEOBATYS, un compte d'essai, des exemples préparés ?
-3. Sous quel délai s'engage-t-on à rappeler quelqu'un qui demande une démonstration ?
+| Éditeur | Parcours de démonstration |
+|---|---|
+| [Batappli](https://www.batappli.fr/demander-une-demo) | Une page « Demandez une démo » avec un formulaire (nom, société, mail, téléphone, code postal, message) et un délai annoncé : « Un expert en chiffrage vous contactera sous 48h » |
+| [ServiceTitan](https://www.servicetitan.com/demo) | Un formulaire qui qualifie la demande (métier, nombre de techniciens, taille du bureau) avant le rendez-vous |
+| [Avoca](https://www.avoca.ai/demo) | Une prise de rendez-vous en ligne, avec la durée annoncée : « See in 30 minutes » |
+| Obat, Tolteck, Axonaut, Housecall Pro, Lindy | Pas de demande de démonstration en avant : le bouton principal ouvre un essai gratuit ou une inscription (section 2.1). Axonaut propose aussi une démonstration en vidéo |
+
+Non vérifié : ce qui se passe après l'envoi de chaque formulaire, et l'existence d'une page de démonstration chez Obat et Housecall Pro (les adresses essayées n'existent pas).
+
+Retenu pour NEOBATYS : le formulaire avec un délai et une durée annoncés, comme Batappli et Avoca. C'est la seule forme qui tient avec ce qui existe aujourd'hui : pas d'essai en libre accès comme Obat ou Lindy (l'outil ne s'ouvre pas sans installation), pas de calendrier en ligne (un outil de plus à tenir pour quelques demandes). Les champs du formulaire actuel (métier, créneau de rappel) qualifient déjà la demande, comme chez ServiceTitan.
+
+#### Réponses proposées aux trois questions, à valider par Ilann
+
+Elles sont appliquées sur le site à titre provisoire.
+
+1. **Ce qu'est une démonstration** : 20 minutes, en visio ou sur place, gratuite et sans engagement, faite par l'un des deux associés. C'est ce que la FAQ de la page Logiciel promettait déjà.
+2. **Ce qu'on montre des agents IA** : l'outil en fonctionnement sur une entreprise d'exemple. Le dépôt de l'admin contient un jeu de démonstration prévu pour cela (une entreprise de plomberie inventée, avec ses agents en test : `lib/demo-en-ligne.ts`). À confirmer par Gabin : qu'il est chargé sur une adresse qu'on peut montrer. Le site dit seulement « le logiciel et les agents IA », sans promettre plus.
+3. **Le délai de rappel** : 24 h ouvrées, pour fixer le créneau. C'est le délai déjà annoncé partout sur le site ; Batappli annonce 48 h.
+
+#### Ce qui a été fait dans le lot 2
+
+- Le bouton du menu mène à `/contact?service=demo` ; le choix « Démonstration du logiciel et des agents IA » est présélectionné.
+- Arrivé par ce lien, le visiteur lit un titre, une accroche, des étapes et un message de confirmation qui parlent de la démonstration ; l'accusé de réception par mail aussi.
+- Le titre et la description de la page pour Google : « Demander une démo ou un devis ».
+- Côté admin, vérifié en lecture (`app/api/leads/route.ts`, commit `c6e50f7`) : le champ `service` est un texte libre de 300 caractères au plus, rangé tel quel, et c'est le libellé qui est affiché. La valeur `demo` est acceptée sans changement. Seul le contrat écrit (`docs/CONTRAT-SITE-CRM.md` du dépôt de l'admin) ne la cite pas dans ses exemples : à ajouter par Gabin, sans urgence.
 
 Le reste du parcours :
 
