@@ -317,7 +317,7 @@ Règle à tenir : une page par recherche. Avant de créer une page, vérifier qu
 
 Recommandation en premier à chaque fois.
 
-1. **Organisation.** Recommandé : hybride, « le menu et le pied de page n'ouvrent que des pages ». Autres choix : tout en pages sans accueil longue, ou page unique.
+1. **Organisation.** Tranché par Ilann le 19/11/2026 : hybride, « le menu et le pied de page n'ouvrent que des pages », le défilement reste à l'intérieur d'une page.
 2. **Offre mise en avant.** Recommandé : les agents IA en premier (menu, accueil, titres), le logiciel en deuxième, les sites en troisième. Autre choix : garder le site internet comme porte d'entrée et l'IA en complément, comme aujourd'hui. Dépend des questions 1 et 10 de la section 4.4.
 3. **Cible écrite sur le site.** Recommandé : « artisans et entreprises du bâtiment » (on garde les artisans, on ouvre aux PME du bâtiment). Autres choix : « artisans » seulement, ou « entreprises » tous secteurs.
 4. **Nouvelles pages du premier lot.** Recommandé : `/tarifs` et `/guides` avec le nouveau menu, puis 3 pages d'agents. Autre choix : le menu seul d'abord.
