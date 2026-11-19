@@ -148,7 +148,7 @@ L'option B n'est défendable que pour un site d'une seule offre et d'une seule c
 
 ### 3.3 Menu cible
 
-Cinq entrées, toutes des pages, plus un bouton. L'ordre suit la priorité donnée aux agents IA (à confirmer, décision 2).
+Cinq entrées, toutes des pages, plus un bouton. L'ordre suit la priorité donnée aux agents IA (décision 2).
 
 | Ordre | Libellé | Destination | État |
 |---|---|---|---|
@@ -157,7 +157,7 @@ Cinq entrées, toutes des pages, plus un bouton. L'ordre suit la priorité donn�
 | 3 | Sites internet | `/sites-internet` | Existe |
 | 4 | Tarifs | `/tarifs` | À créer (la grille existe, il faut lui donner une page) |
 | 5 | Guides | `/guides` | À créer (page qui liste les guides et outils gratuits déjà en ligne, sans changer leurs adresses) |
-| Bouton | Être rappelé (ou Demander une démo, décision 6) | `/contact` | Existe |
+| Bouton | Demander une démo | `/contact` | Existe |
 
 « FAQ » et « Services » sortent du menu : chaque page garde sa FAQ en bas, et « Services » est remplacé par les trois entrées qui disent ce qu'on vend.
 
@@ -318,11 +318,11 @@ Règle à tenir : une page par recherche. Avant de créer une page, vérifier qu
 Recommandation en premier à chaque fois.
 
 1. **Organisation.** Tranché par Ilann le 19/11/2026 : hybride, « le menu et le pied de page n'ouvrent que des pages », le défilement reste à l'intérieur d'une page.
-2. **Offre mise en avant.** Recommandé : les agents IA en premier (menu, accueil, titres), le logiciel en deuxième, les sites en troisième. Autre choix : garder le site internet comme porte d'entrée et l'IA en complément, comme aujourd'hui. Dépend des questions 1 et 10 de la section 4.4.
-3. **Cible écrite sur le site.** Recommandé : « artisans et entreprises du bâtiment » (on garde les artisans, on ouvre aux PME du bâtiment). Autres choix : « artisans » seulement, ou « entreprises » tous secteurs.
-4. **Nouvelles pages du premier lot.** Recommandé : `/tarifs` et `/guides` avec le nouveau menu, puis 3 pages d'agents. Autre choix : le menu seul d'abord.
+2. **Offre mise en avant.** Tranché par Ilann le 19/11/2026 : les agents IA en premier (menu, accueil, titres), le logiciel en deuxième, les sites en troisième.
+3. **Cible écrite sur le site.** Tranché par Ilann le 19/11/2026 : « artisans et entreprises du bâtiment ».
+4. **Premier lot.** Tranché par Ilann le 19/11/2026 : nouveau menu et pied de page, avec les pages `/tarifs` et `/guides`. Les pages d'agents et l'accueil viennent ensuite.
 5. **Adresse de la page IA.** Recommandé : garder `/intelligence-artificielle` (aucune redirection, aucun risque). Autre choix : la renommer `/agents-ia` avec une redirection, pour avoir le mot dans l'adresse.
-6. **Bouton du menu.** Recommandé : « Demander une démo » si les agents IA et le logiciel passent en premier. Autres choix : « Demander un devis » (actuel), « Être rappelé ».
+6. **Bouton du menu.** Tranché par Ilann le 19/11/2026 : « Demander une démo ».
 7. **Vocabulaire.** Recommandé : « agents IA » partout. Autre choix : « assistants IA » partout.
 8. **Accueil.** Recommandé : la raccourcir (résumé et liens vers les pages). Autre choix : la laisser longue et ne changer que le menu.
 9. **Réponses aux 12 questions de la section 4.4**, au moins les questions 1 à 7, avant d'écrire les nouveaux textes.
