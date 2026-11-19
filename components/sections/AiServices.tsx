@@ -1,9 +1,10 @@
 import { ai } from "@/content/home";
 import { Section } from "@/components/ui/Section";
+import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
 
-/** Cas d'usage de l'IA, en liste comme un sommaire. */
+/** Cas d'usage des agents IA, en liste comme un sommaire, avec un lien vers la page Agents IA. */
 export function AiServices() {
   return (
     <Section theme="light" aria-labelledby="ia-titre">
@@ -39,6 +40,11 @@ export function AiServices() {
           </StaggerItem>
         ))}
       </Stagger>
+      <div className="mt-10">
+        <Button href={ai.cta.href} size="lg" arrow>
+          {ai.cta.label}
+        </Button>
+      </div>
     </Section>
   );
 }

@@ -38,8 +38,8 @@
   },
   "logicielPage": {
     "seo": {
-      "title": "Logiciel de devis et factures pour artisans",
-      "description": "Logiciel de gestion simple pour artisans : devis en 2 minutes, factures, relances automatiques, export comptable, facturation électronique. Démo gratuite."
+      "title": "Logiciel de gestion bâtiment : devis et factures",
+      "description": "Logiciel de gestion pour artisans et entreprises du bâtiment : devis en 2 minutes, factures, relances automatiques, export comptable, facturation électronique. Démo gratuite."
     },
     "hero": {
       "eyebrow": "Logiciel de gestion pour artisans",
@@ -164,7 +164,7 @@
   },
   "iaPage": {
     "seo": {
-      "title": "Agents IA pour artisans du bâtiment",
+      "title": "Agents IA pour artisans et entreprises du bâtiment",
       "description": "12 agents IA pour artisans : devis dictés, relances de devis et d'impayés, rendez-vous, appels manqués, avis Google, entretiens, aides, documents."
     },
     "hero": {
@@ -377,7 +377,7 @@
       {
         "title": "Ce que NEOBATYS met en place",
         "paragraphs": [
-          "Nous couvrons les trois axes que financent les aides au numérique : le site internet et la fiche Google, le logiciel de devis et factures avec la facturation électronique, et les assistants IA. Un seul interlocuteur s'occupe de tout, de la mise en place à la formation.",
+          "Nous couvrons les trois axes que financent les aides au numérique : le site internet et la fiche Google, le logiciel de devis et factures avec la facturation électronique, et les agents IA. Un seul interlocuteur s'occupe de tout, de la mise en place à la formation.",
           "Au Luxembourg, le programme laisse l'entreprise choisir son prestataire : demandez-nous un devis détaillé pour votre dossier, et faites confirmer l'éligibilité de votre projet par eHandwierk lors de la préanalyse."
         ],
         "items": []
@@ -404,7 +404,7 @@
     "related": {
       "eyebrow": "Nos solutions",
       "title": "Les outils pour chaque étape",
-      "subtitle": "Ce que nous mettons en place, du site internet aux assistants IA."
+      "subtitle": "Ce que nous mettons en place, du site internet aux agents IA."
     },
     "relatedLinks": [
       {

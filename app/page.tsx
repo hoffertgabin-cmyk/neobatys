@@ -5,13 +5,10 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Hero } from "@/components/sections/Hero";
 import { TradesMarquee } from "@/components/sections/TradesMarquee";
 import { PainPoints } from "@/components/sections/PainPoints";
-import { Results } from "@/components/sections/Results";
 import { AiServices } from "@/components/sections/AiServices";
 import { WebsiteOffer } from "@/components/sections/WebsiteOffer";
 import { SoftwareOffer } from "@/components/sections/SoftwareOffer";
-import { ComboPack } from "@/components/sections/ComboPack";
 import { Process } from "@/components/sections/Process";
-import { Stats } from "@/components/sections/Stats";
 import { Projects } from "@/components/sections/Projects";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { PricingTeaser } from "@/components/sections/Pricing";
@@ -26,16 +23,13 @@ export default function HomePage() {
     <>
       <Hero />
       <TradesMarquee />
-      <Projects featured />
       <PainPoints />
-      <WebsiteOffer />
-      <SoftwareOffer />
-      <ComboPack />
-      <PricingTeaser />
       <AiServices />
-      <Results />
+      <SoftwareOffer />
+      <WebsiteOffer />
+      <Projects featured />
       <Process />
-      <Stats />
+      <PricingTeaser />
       <Testimonials />
       <Faq />
       <FinalCta />

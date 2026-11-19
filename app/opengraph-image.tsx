@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { site } from "@/content/site";
 
-export const alt = `${site.name} · Sites internet, logiciel et IA pour artisans`;
+export const alt = `${site.name} · ${site.tagline}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -60,7 +60,7 @@ export default function OpengraphImage() {
         </div>
       </div>
       <div style={{ fontSize: 30, color: "#4D585F" }}>
-        {"Sites internet, logiciel et IA pour artisans du bâtiment"}
+        {"Agents IA, logiciel et sites internet pour le bâtiment"}
       </div>
     </div>,
     size,
