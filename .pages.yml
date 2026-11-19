@@ -410,7 +410,7 @@ content:
         label: Titre
         type: string
     - name: pricing
-      label: Tarifs
+      label: Aperçu des tarifs (la grille complète est sur la page Tarifs)
       type: object
       fields:
       - name: eyebrow
@@ -422,6 +422,12 @@ content:
       - name: subtitle
         label: Sous-titre
         type: text
+      - name: subscriptionFrom
+        label: Phrase avant le prix du premier abonnement
+        type: string
+      - name: cta
+        label: Texte du bouton vers la page Tarifs
+        type: string
     - name: faq
       label: FAQ
       type: object
@@ -582,10 +588,6 @@ content:
     label: Pack site + logiciel
     type: object
     fields:
-    - name: id
-      label: Ancre (ne pas modifier)
-      type: string
-      readonly: true
     - name: eyebrow
       label: Surtitre
       type: string
@@ -919,7 +921,7 @@ content:
     label: Choix « autre » du formulaire
     type: string
 - name: pages
-  label: Pages Sites, Logiciel, IA, Digitalisation et Contact
+  label: Pages Sites, Logiciel, IA, Digitalisation, Contact, Tarifs et Guides
   type: file
   path: content/data/pages.json
   format: json
@@ -1287,6 +1289,145 @@ content:
       - name: text
         label: Texte
         type: text
+  - name: tarifsPage
+    label: Page Tarifs
+    type: object
+    fields:
+    - name: seo
+      label: Référencement Google
+      type: object
+      fields:
+      - name: title
+        label: Titre de l'onglet
+        type: string
+      - name: description
+        label: Description Google
+        type: text
+    - name: hero
+      label: Haut de page
+      type: object
+      fields:
+      - name: eyebrow
+        label: Surtitre
+        type: string
+      - name: title
+        label: Titre
+        type: string
+      - name: subtitle
+        label: Sous-titre
+        type: text
+    - name: faq
+      label: Questions fréquentes
+      type: object
+      list: true
+      fields:
+      - name: question
+        label: Question
+        type: string
+      - name: answer
+        label: Réponse
+        type: text
+  - name: guidesPage
+    label: Page Guides et outils
+    type: object
+    fields:
+    - name: seo
+      label: Référencement Google
+      type: object
+      fields:
+      - name: title
+        label: Titre de l'onglet
+        type: string
+      - name: description
+        label: Description Google
+        type: text
+    - name: hero
+      label: Haut de page
+      type: object
+      fields:
+      - name: eyebrow
+        label: Surtitre
+        type: string
+      - name: title
+        label: Titre
+        type: string
+      - name: subtitle
+        label: Sous-titre
+        type: text
+    - name: tools
+      label: Bloc « Outils gratuits »
+      type: object
+      fields:
+      - name: heading
+        label: Titre du bloc
+        type: object
+        fields:
+        - name: eyebrow
+          label: Surtitre
+          type: string
+        - name: title
+          label: Titre
+          type: string
+        - name: subtitle
+          label: Sous-titre
+          type: text
+      - name: cta
+        label: Texte du lien de chaque carte
+        type: string
+    - name: topics
+      label: Bloc « Guides »
+      type: object
+      fields:
+      - name: heading
+        label: Titre du bloc
+        type: object
+        fields:
+        - name: eyebrow
+          label: Surtitre
+          type: string
+        - name: title
+          label: Titre
+          type: string
+        - name: subtitle
+          label: Sous-titre
+          type: text
+      - name: cta
+        label: Texte du lien de chaque carte
+        type: string
+      - name: extraLinks
+        label: Liens ajoutés aux guides
+        type: object
+        list: true
+        fields:
+        - name: href
+          label: Lien
+          type: string
+        - name: label
+          label: Titre
+          type: string
+        - name: summary
+          label: Résumé
+          type: text
+    - name: trades
+      label: Bloc « Par métier »
+      type: object
+      fields:
+      - name: heading
+        label: Titre du bloc
+        type: object
+        fields:
+        - name: eyebrow
+          label: Surtitre
+          type: string
+        - name: title
+          label: Titre
+          type: string
+        - name: subtitle
+          label: Sous-titre
+          type: text
+      - name: cta
+        label: Texte du lien de chaque carte
+        type: string
 - name: software
   label: Page Logiciel (démo et semaine type)
   type: file
@@ -1713,6 +1854,17 @@ content:
     - name: href
       label: Lien
       type: string
+  - name: cta
+    label: Bouton du menu
+    description: Les menus n'ouvrent que des pages, jamais une section de l'accueil (pas de lien en « /# »).
+    type: object
+    fields:
+    - name: label
+      label: Texte
+      type: string
+    - name: href
+      label: Lien
+      type: string
   - name: footerNav
     label: Pied de page
     type: object
@@ -1728,8 +1880,8 @@ content:
       - name: href
         label: Lien
         type: string
-    - name: entreprise
-      label: Colonne « NEOBATYS »
+    - name: guides
+      label: Colonne « Guides et outils »
       type: object
       list: true
       fields:

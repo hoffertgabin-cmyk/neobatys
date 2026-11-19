@@ -30,7 +30,7 @@ export function OfferSection({ offer, theme, visual, reverse = false, showCta = 
   const dark = theme === "dark";
   const headingId = `${offer.id}-titre`;
   return (
-    <Section id={offer.id} theme={theme} pattern={dark} aria-labelledby={headingId}>
+    <Section theme={theme} pattern={dark} aria-labelledby={headingId}>
       <div className={cn("grid items-center gap-14 lg:gap-16", visual && "lg:grid-cols-2")}>
         <div className={cn(reverse && "lg:order-2")}>
           <SectionHeading

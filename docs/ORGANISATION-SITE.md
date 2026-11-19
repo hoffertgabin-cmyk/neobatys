@@ -14,19 +14,23 @@ Par Ilann, le 19 novembre 2026. Les numéros sont ceux de la liste d'origine et 
 | 2 | Offre mise en avant | Les agents IA en premier, le logiciel en deuxième, les sites internet en troisième |
 | 3 | Cible écrite sur le site | « Artisans et entreprises du bâtiment » |
 | 4 | Premier lot de la refonte | Nouveau menu et pied de page, avec deux pages créées : `/tarifs` et `/guides`. Réponse donnée dans la session d'étude |
+| 5 | Adresse de la page IA | Elle garde `/intelligence-artificielle`, sans redirection |
 | 6 | Bouton du menu | « Demander une démo ». Ce que cela demande de créer est en section 3.6 |
+| 7 | Vocabulaire | « Agents IA » partout. Le mot « assistants » disparaît |
+| 8 | Accueil | Raccourcie en résumé, avec des liens vers les pages |
 
 ## Décisions encore ouvertes
 
-Recommandation en premier à chaque fois.
+- **Les 12 questions de la section 4.4** sur la cible et l'offre. Pour la phrase à retenir et la taille d'entreprise visée, une proposition sera appliquée à titre provisoire dans le lot 3.
+- **Les 3 questions de la section 3.6** sur ce qu'est une démonstration chez NEOBATYS. Une réponse sera proposée dans le lot 2.
 
-- **5. Adresse de la page IA.** Recommandé : garder `/intelligence-artificielle` (aucune redirection, aucun risque). Autre choix : la renommer `/agents-ia` avec une redirection, pour avoir le mot dans l'adresse.
-- **7. Vocabulaire.** Recommandé : « agents IA » partout. Autre choix : « assistants IA » partout. Aujourd'hui les deux coexistent.
-- **8. Accueil.** Recommandé : la raccourcir (résumé et liens vers les pages, section 3.5). Autre choix : la laisser longue et ne changer que le menu.
-- **Les 12 questions de la section 4.4** sur la cible et l'offre, à répondre avant d'écrire les nouveaux textes de l'accueil et des pages à créer.
-- **Les 3 questions de la section 3.6** sur ce qu'est une démonstration chez NEOBATYS, à répondre avant de changer le bouton.
+## Avancement
 
-La refonte ne démarre pas avant ces réponses, la fusion de ce document et le sort de la PR #75 (section 1.4).
+| Lot | Contenu | État |
+|---|---|---|
+| 1 | Menu et pied de page en pages seulement, pages `/tarifs` et `/guides`, bouton « Demander une démo », grille des prix à un seul endroit | Fait dans la PR du lot 1. Le bouton mène à `/contact` en attendant le lot 2 |
+| 2 | Parcours de démonstration (section 3.6) | À faire |
+| 3 | Accueil raccourcie, titres, vocabulaire « agents IA », cible | À faire |
 
 ## En bref
 
@@ -148,6 +152,27 @@ Cette partie tient lieu de veille pour ce sujet (règle de `AGENTS.md`), pour ga
 2. **Des pages par taille d'entreprise** (Obat : micro-entreprise, artisan seul, TPE et PME ; Axonaut : par cible). Apport : répond à la question « est-ce fait pour moi ? », aujourd'hui sans réponse sur le site. Effort : moyen, et seulement après les réponses de la section 4.4.
 3. **Un bouton d'action unique qui dit ce qui se passe ensuite** (« Book a Demo », « Essai gratuit »). Apport : un engagement plus léger que « Demander un devis » pour un logiciel et des agents. Effort : petit. Reprise en décision 6.
 
+### 2.4 Pages Tarifs et pages de ressources chez les autres
+
+Relevé du 19/11/2026, fait avant de créer `/tarifs` et `/guides`. Seuls les titres des pages ont été lus.
+
+| Page | Ce qu'on y trouve |
+|---|---|
+| [Obat, tarifs](https://www.obat.fr/tarifs/) | Titre « Des prix adaptés pour tous », grille, comparaison des offres, « Questions fréquentes sur les prix » |
+| [Tolteck, tarifs](https://www.tolteck.com/fr-fr/tarifs/) | Titre « Toutes les fonctionnalités. Une seule offre. », ce qui est inclus |
+| [Batappli, tarifs](https://www.batappli.fr/tarifs) | Une formule par bloc, « Comparez les versions », questions fréquentes sur les tarifs |
+| [Axonaut, prix](https://axonaut.com/content/prix) | Titre « Nos tarifs, tout compris, et sans engagement », liste des fonctions |
+| [Housecall Pro, pricing](https://www.housecallpro.com/pricing) | Un questionnaire (métier, taille de l'équipe, objectifs) avant la grille, puis ce qui est compris dans toutes les formules |
+| [Lindy, pricing](https://www.lindy.ai/pricing) | Grille, « ce qui est inclus », explication de l'unité de facturation, FAQ |
+| [Obat, ressources](https://www.obat.fr/ressources/) | Rangement par besoin : outils de calcul, outils du quotidien, modèles de documents à télécharger |
+| [Batappli, boîte à outils](https://www.batappli.fr/boite-a-outils) | Une page « boîte à outils des artisans » qui liste tous les outils |
+| [Housecall Pro, resources](https://www.housecallpro.com/resources/) | Un blog rangé par métier |
+
+Retenu pour NEOBATYS :
+
+- **Tarifs** : une page avec un titre simple, la grille entière, puis trois questions sur les prix (engagement, maintenance, coûts d'IA), comme Obat, Batappli et Lindy. La grille n'est plus répétée ailleurs : l'accueil, la page Logiciel et la page Agents IA montrent les prix de départ et renvoient vers `/tarifs`. Écarté : le questionnaire de Housecall Pro (trop lourd pour 7 formules) et le tableau comparatif (à revoir quand les formules seront stables).
+- **Guides** : un rangement par besoin, comme Obat : outils à utiliser tout de suite, guides sur les règles, guides par métier. Écarté : le blog daté de Housecall Pro, qui demande de publier souvent.
+
 ## 3. L'organisation retenue
 
 ### 3.1 La règle
@@ -170,7 +195,7 @@ Cinq entrées, toutes des pages, plus un bouton. L'ordre suit la priorité donn�
 
 | Ordre | Libellé | Destination | État |
 |---|---|---|---|
-| 1 | Agents IA | `/intelligence-artificielle` (adresse à confirmer, décision ouverte 5) | Existe |
+| 1 | Agents IA | `/intelligence-artificielle` | Existe |
 | 2 | Logiciel | `/logiciel` | Existe |
 | 3 | Sites internet | `/sites-internet` | Existe |
 | 4 | Tarifs | `/tarifs` | À créer (la grille existe, il faut lui donner une page) |
@@ -183,7 +208,7 @@ Pied de page cible, tout en pages :
 
 - **Nos offres** : Agents IA, Logiciel de gestion, Sites internet, Tarifs.
 - **Guides et outils** : Facturation électronique, Modèle de devis gratuit, Calculateur de TVA, Aides au numérique (`/digitaliser-son-entreprise`), Tous les guides.
-- **NEOBATYS** : Contact, puis les pages légales.
+- **Contact** : le bouton du menu repris en lien, l'adresse mail et le téléphone, puis les pages légales en bas.
 
 Les liens « Résultats », « Comment ça marche », « Pack Gestion » et « FAQ » du pied de page disparaissent : ce sont des blocs, pas des pages.
 
@@ -205,11 +230,11 @@ Les liens « Résultats », « Comment ça marche », « Pack Gestion » et « F
 /mentions-legales, /politique-de-confidentialite, /conditions-generales-de-vente
 ```
 
-Aucune adresse existante ne change, donc aucune redirection à prévoir, sauf si la page IA est renommée (décision ouverte 5).
+Aucune adresse existante ne change, donc aucune redirection à prévoir.
 
 ### 3.5 L'accueil
 
-Sous réserve de la décision ouverte 8. Elle reste une page qui défile, mais plus courte : une accroche, les trois offres en un bloc chacune avec un lien « En savoir plus » vers la page, un aperçu des prix avec un lien vers `/tarifs`, la preuve (exemples, avis quand il y en aura), le contact. Les blocs détaillés (tour du logiciel, grille complète, FAQ longue) vivent sur leur page.
+Elle reste une page qui défile, mais plus courte : une accroche, les trois offres en un bloc chacune avec un lien « En savoir plus » vers la page, un aperçu des prix avec un lien vers `/tarifs`, la preuve (exemples, avis quand il y en aura), le contact. Les blocs détaillés (tour du logiciel, grille complète, FAQ longue) vivent sur leur page.
 
 ### 3.6 Le bouton « Demander une démo » : ce qui existe et ce qu'il faut créer
 
@@ -343,7 +368,7 @@ Les titres se terminent par « · NEOBATYS », ajouté automatiquement. Les prop
 
 Ces textes suivent les décisions 2, 3 et 6. Ils sont à relire par Ilann avant mise en ligne.
 
-Ils emploient « agents IA » partout, sous réserve de la décision ouverte 7.
+Ils emploient « agents IA » partout (décision 7).
 
 ### 5.3 Pages à créer
 
@@ -358,10 +383,6 @@ Ils emploient « agents IA » partout, sous réserve de la décision ouverte 7.
 
 Règle à tenir : une page par recherche. Avant de créer une page, vérifier qu'aucune page existante ne vise déjà la même recherche (par exemple, `/logiciel` vise « logiciel devis factures artisan » et ne doit pas être doublée).
 
-## 6. La suite, en trois chantiers
+## 6. La suite
 
-Chacun sur sa branche et sa PR, dans cet ordre. Aucun ne démarre avant la fusion de ce document et le sort de la PR #75.
-
-1. **Menu et pied de page, avec `/tarifs` et `/guides`** (décision 4). Demande les réponses de la section 3.6 pour le bouton ; sans elles, le bouton garde son texte actuel le temps du chantier.
-2. **Accueil et titres.** Demande les décisions ouvertes 7 et 8 et les réponses de la section 4.4.
-3. **Pages par agent**, par lots de 3. Demande la décision ouverte 5 (adresse de la page IA, dont dépendent les adresses des pages d'agents).
+Les trois lots et leur état sont dans le tableau « Avancement » en tête de document. Chacun a sa branche et sa PR. Les pages par agent (section 5.3) viennent après le lot 3, par groupes de 3.

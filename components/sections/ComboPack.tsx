@@ -9,7 +9,7 @@ import { DimensionLine } from "@/components/ui/DimensionLine";
 
 export function ComboPack() {
   return (
-    <Section id={comboPack.id} theme="sand" aria-labelledby="pack-titre">
+    <Section theme="sand" aria-labelledby="pack-titre">
       <Reveal>
         <div className="relative overflow-hidden rounded-3xl bg-nuit p-6 text-white shadow-lift sm:p-12 lg:p-16">
           <div aria-hidden="true" className="absolute inset-0 bg-blueprint-dark opacity-80" />

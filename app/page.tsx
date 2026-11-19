@@ -14,7 +14,7 @@ import { Process } from "@/components/sections/Process";
 import { Stats } from "@/components/sections/Stats";
 import { Projects } from "@/components/sections/Projects";
 import { Testimonials } from "@/components/sections/Testimonials";
-import { Pricing } from "@/components/sections/Pricing";
+import { PricingTeaser } from "@/components/sections/Pricing";
 import { Faq } from "@/components/sections/Faq";
 import { FinalCta } from "@/components/sections/FinalCta";
 
@@ -31,7 +31,7 @@ export default function HomePage() {
       <WebsiteOffer />
       <SoftwareOffer />
       <ComboPack />
-      <Pricing />
+      <PricingTeaser />
       <AiServices />
       <Results />
       <Process />

@@ -6,7 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/sections/PageHero";
 import { AgentGroups } from "@/components/sections/AgentGroups";
 import { ProseSections } from "@/components/sections/ProseSections";
-import { Pricing } from "@/components/sections/Pricing";
+import { PricingTeaser } from "@/components/sections/Pricing";
 import { Faq } from "@/components/sections/Faq";
 import { FinalCta } from "@/components/sections/FinalCta";
 
@@ -19,7 +19,7 @@ export default function IntelligenceArtificiellePage() {
         <Button href="/contact?service=ia" size="lg" arrow>
           Parler de mon projet
         </Button>
-        <Button href="#tarifs" size="lg" variant="ghost">
+        <Button href="/tarifs" size="lg" variant="ghost">
           Voir le Pack IA
         </Button>
       </PageHero>
@@ -29,7 +29,7 @@ export default function IntelligenceArtificiellePage() {
         </Container>
       </section>
       <AgentGroups heading={iaPage.agentsIntro} groups={iaPage.agentGroups} />
-      <Pricing />
+      <PricingTeaser />
       <Faq items={iaPage.faq} />
       <FinalCta />
       <JsonLd

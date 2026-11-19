@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
 import { legalInfo } from "@/content/legal";
-import { footerNav } from "@/content/navigation";
+import { footerNav, navCta } from "@/content/navigation";
 import { hasPhone, mailHref, site, telHref } from "@/content/site";
 import { isFilled } from "@/lib/placeholders";
 import { FacebookIcon, InstagramIcon, LinkedinIcon } from "@/components/ui/SocialIcons";
@@ -73,10 +73,15 @@ export function Footer() {
           )}
         </div>
         <FooterColumn title="Nos offres" links={footerNav.offres} />
-        <FooterColumn title="NEOBATYS" links={footerNav.entreprise} />
+        <FooterColumn title="Guides et outils" links={footerNav.guides} />
         <div>
           <h2 className="text-sm font-semibold tracking-wide text-white uppercase">Contact</h2>
           <ul className="mt-4 space-y-3 text-sm text-ardoise-light">
+            <li>
+              <Link href={navCta.href} className="transition-colors hover:text-white">
+                {navCta.label}
+              </Link>
+            </li>
             {hasPhone && (
               <li>
                 <a href={telHref} className="inline-flex items-center gap-2.5 hover:text-white">
