@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useMotionValueEvent, useScroll } from "motion/react";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { mainNav } from "@/content/navigation";
+import { mainNav, navCta } from "@/content/navigation";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "./Logo";
 import { MobileMenu } from "./MobileMenu";
@@ -57,8 +57,8 @@ export function Navbar() {
             ))}
           </ul>
           <div className="flex items-center gap-2">
-            <Button href="/contact" arrow className="hidden sm:inline-flex">
-              Demander un devis
+            <Button href={navCta.href} arrow className="hidden sm:inline-flex">
+              {navCta.label}
             </Button>
             <button
               type="button"

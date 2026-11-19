@@ -13,3 +13,7 @@ export const contactPage = data.contactPage;
 export const iaPage = data.iaPage;
 
 export const digitalisationPage = data.digitalisationPage;
+
+export const tarifsPage = data.tarifsPage;
+
+export const guidesPage = data.guidesPage;

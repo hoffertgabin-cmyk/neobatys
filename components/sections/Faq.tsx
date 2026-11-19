@@ -8,7 +8,7 @@ import { FaqAssistant } from "@/components/sections/FaqAssistant";
 
 export function Faq({ items = faq }: { items?: { question: string; answer: string }[] }) {
   return (
-    <Section id="faq" theme="light" aria-labelledby="faq-titre">
+    <Section theme="light" aria-labelledby="faq-titre">
       <div className="grid gap-12 lg:grid-cols-[1fr_1.6fr]">
         <SectionHeading
           id="faq-titre"

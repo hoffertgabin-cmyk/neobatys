@@ -126,7 +126,7 @@ const cardStyles: Record<string, { Icon: typeof Star; tone: string; visual: Reac
 /** Grille des leviers : clients, IA, coûts, temps, trésorerie. */
 export function Results() {
   return (
-    <Section id="resultats" theme="sand" aria-labelledby="resultats-titre">
+    <Section theme="sand" aria-labelledby="resultats-titre">
       <SectionHeading
         id="resultats-titre"
         align="left"

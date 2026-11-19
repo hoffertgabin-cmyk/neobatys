@@ -11,7 +11,7 @@ import { SoftwareTour } from "@/components/sections/SoftwareTour";
 import { SoftwareOnboarding, SoftwareWeek } from "@/components/sections/SoftwareWeek";
 import { Included } from "@/components/sections/Included";
 import { Stats } from "@/components/sections/Stats";
-import { Pricing } from "@/components/sections/Pricing";
+import { PricingTeaser } from "@/components/sections/Pricing";
 import { Faq } from "@/components/sections/Faq";
 import { LinkCards } from "@/components/sections/LinkCards";
 import { FinalCta } from "@/components/sections/FinalCta";
@@ -38,7 +38,7 @@ export default function LogicielPage() {
       <SoftwareOnboarding />
       <Included {...logicielPage.included} />
       <Stats />
-      <Pricing />
+      <PricingTeaser />
       <Faq items={logicielPage.faq} />
       <LinkCards
         id="guides-titre"

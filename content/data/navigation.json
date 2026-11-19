@@ -1,14 +1,50 @@
 {
+  "mainNav": [
+    {
+      "label": "Agents IA",
+      "href": "/intelligence-artificielle"
+    },
+    {
+      "label": "Logiciel",
+      "href": "/logiciel"
+    },
+    {
+      "label": "Sites internet",
+      "href": "/sites-internet"
+    },
+    {
+      "label": "Tarifs",
+      "href": "/tarifs"
+    },
+    {
+      "label": "Guides",
+      "href": "/guides"
+    }
+  ],
+  "cta": {
+    "label": "Demander une démo",
+    "href": "/contact"
+  },
   "footerNav": {
     "offres": [
       {
-        "label": "Sites internet",
-        "href": "/sites-internet"
+        "label": "Agents IA",
+        "href": "/intelligence-artificielle"
       },
       {
         "label": "Logiciel de gestion",
         "href": "/logiciel"
       },
+      {
+        "label": "Sites internet",
+        "href": "/sites-internet"
+      },
+      {
+        "label": "Tarifs",
+        "href": "/tarifs"
+      }
+    ],
+    "guides": [
       {
         "label": "Facturation électronique",
         "href": "/logiciel/facturation-electronique"
@@ -22,42 +58,12 @@
         "href": "/logiciel/calculateur-tva"
       },
       {
-        "label": "Intelligence artificielle",
-        "href": "/intelligence-artificielle"
-      },
-      {
-        "label": "Pack Gestion",
-        "href": "/#pack"
-      },
-      {
-        "label": "Tarifs",
-        "href": "/#tarifs"
-      }
-    ],
-    "entreprise": [
-      {
-        "label": "Résultats",
-        "href": "/#resultats"
-      },
-      {
-        "label": "Comment ça marche",
-        "href": "/#processus"
-      },
-      {
-        "label": "Digitaliser son entreprise",
+        "label": "Aides au numérique",
         "href": "/digitaliser-son-entreprise"
       },
       {
-        "label": "Exemples de sites",
-        "href": "/#realisations"
-      },
-      {
-        "label": "FAQ",
-        "href": "/#faq"
-      },
-      {
-        "label": "Contact",
-        "href": "/contact"
+        "label": "Tous les guides",
+        "href": "/guides"
       }
     ],
     "legal": [
@@ -74,31 +80,5 @@
         "href": "/conditions-generales-de-vente"
       }
     ]
-  },
-  "mainNav": [
-    {
-      "label": "Services",
-      "href": "/#services"
-    },
-    {
-      "label": "IA",
-      "href": "/intelligence-artificielle"
-    },
-    {
-      "label": "Logiciel",
-      "href": "/#logiciel"
-    },
-    {
-      "label": "Exemples de sites",
-      "href": "/#realisations"
-    },
-    {
-      "label": "Tarifs",
-      "href": "/#tarifs"
-    },
-    {
-      "label": "FAQ",
-      "href": "/#faq"
-    }
-  ]
+  }
 }

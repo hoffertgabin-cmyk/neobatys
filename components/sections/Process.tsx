@@ -40,7 +40,7 @@ export function Process() {
   }, []);
 
   return (
-    <Section id="processus" theme="light" aria-labelledby="processus-titre">
+    <Section theme="light" aria-labelledby="processus-titre">
       <SectionHeading
         id="processus-titre"
         eyebrow={process.eyebrow}

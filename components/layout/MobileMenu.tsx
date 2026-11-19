@@ -5,7 +5,7 @@ import Link from "next/link";
 import { AnimatePresence } from "motion/react";
 import * as m from "motion/react-m";
 import { Phone, X } from "lucide-react";
-import { mainNav } from "@/content/navigation";
+import { mainNav, navCta } from "@/content/navigation";
 import { hasPhone, site, telHref } from "@/content/site";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "./Logo";
@@ -99,8 +99,8 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
               ))}
             </ul>
             <div className="mt-auto flex flex-col gap-3 pt-10">
-              <Button href="/contact" size="lg" arrow onClick={onClose}>
-                Demander un devis
+              <Button href={navCta.href} size="lg" arrow onClick={onClose}>
+                {navCta.label}
               </Button>
               {hasPhone && (
                 <Button

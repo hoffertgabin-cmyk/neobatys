@@ -424,5 +424,72 @@
         "href": "https://entreprendre.service-public.gouv.fr/actualites/A15683"
       }
     ]
+  },
+  "tarifsPage": {
+    "seo": {
+      "title": "Tarifs : agents IA, logiciel et site internet",
+      "description": "Les prix de NEOBATYS, en une fois ou par abonnement : site internet, logiciel de gestion et agents IA pour les artisans et entreprises du bâtiment. Prix hors taxes, affichés."
+    },
+    "hero": {
+      "eyebrow": "Tarifs",
+      "title": "Des prix clairs, sans surprise",
+      "subtitle": "En une fois ou par abonnement, vous savez ce que vous payez."
+    },
+    "faq": [
+      {
+        "question": "Y a-t-il un engagement de durée ?",
+        "answer": "Ça dépend de la formule. Les offres en une fois sont suivies d'une maintenance à 200 € HT par mois sans engagement : vous pouvez l'arrêter quand vous voulez. Les abonnements n'ont pas de frais de départ, en échange d'un engagement de 12 mois."
+      },
+      {
+        "question": "Que couvre la maintenance à 200 € HT par mois ?",
+        "answer": "L'hébergement, le nom de domaine, la licence du logiciel, la relecture des envois des agents, les mises à jour et les modifications sur simple demande. Elle est comprise dans les abonnements."
+      },
+      {
+        "question": "Les coûts d'IA sont-ils compris dans le prix ?",
+        "answer": "Non. Les coûts d'IA des agents sont à votre charge, au prix coûtant et sans marge, en plus du prix de la formule."
+      }
+    ]
+  },
+  "guidesPage": {
+    "seo": {
+      "title": "Guides et outils gratuits pour le bâtiment",
+      "description": "Modèle de devis, calculateur de TVA, facturation électronique, acompte, retenue de garantie, impayés : les guides et outils gratuits de NEOBATYS pour les artisans et entreprises du bâtiment."
+    },
+    "hero": {
+      "eyebrow": "Guides et outils",
+      "title": "Guides et outils gratuits pour les artisans et entreprises du bâtiment",
+      "subtitle": "Des outils à utiliser tout de suite et des guides appuyés sur les textes officiels, sans inscription."
+    },
+    "tools": {
+      "heading": {
+        "eyebrow": "Outils gratuits",
+        "title": "À utiliser tout de suite",
+        "subtitle": "Un modèle à télécharger et un calculateur, sans inscription."
+      },
+      "cta": "Ouvrir l'outil"
+    },
+    "topics": {
+      "heading": {
+        "eyebrow": "Guides",
+        "title": "Devis, factures et règles du bâtiment",
+        "subtitle": "Ce que dit la réglementation, avec les sources officielles."
+      },
+      "cta": "Lire le guide",
+      "extraLinks": [
+        {
+          "href": "/digitaliser-son-entreprise",
+          "label": "Aides au numérique",
+          "summary": "Par où commencer pour s'équiper, et les aides au numérique au Luxembourg et en France."
+        }
+      ]
+    },
+    "trades": {
+      "heading": {
+        "eyebrow": "Par métier",
+        "title": "Le devis et la facture de votre métier",
+        "subtitle": "Les règles propres à chaque métier et la façon dont le logiciel les applique."
+      },
+      "cta": "Lire le guide"
+    }
   }
 }

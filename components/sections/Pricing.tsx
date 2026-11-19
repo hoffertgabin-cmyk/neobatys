@@ -35,11 +35,13 @@ function PlanCard({ plan, unit, sub }: { plan: Plan; unit: string; sub: string }
           {plan.badge}
         </span>
       )}
-      <h4 className="text-xl font-bold">{plan.name}</h4>
+      <h3 className="text-xl font-bold">{plan.name}</h3>
       <p className={cn("mt-2 text-sm", muted)}>{plan.description}</p>
 
       <div className="mt-6">
-        {pricing.pricePrefix && <p className={cn("text-xs font-medium", muted)}>{pricing.pricePrefix}</p>}
+        {pricing.pricePrefix && (
+          <p className={cn("text-xs font-medium", muted)}>{pricing.pricePrefix}</p>
+        )}
         <p className="flex items-baseline gap-1.5">
           <span className="font-display text-4xl font-extrabold whitespace-nowrap tabular-nums">
             {plan.price}
@@ -71,18 +73,14 @@ function PlanCard({ plan, unit, sub }: { plan: Plan; unit: string; sub: string }
   );
 }
 
+/** Grille complète des formules : affichée sur /tarifs seulement. */
 export function Pricing() {
   const { subscriptions } = pricing;
   return (
-    <Section id="tarifs" theme="sand" pattern aria-labelledby="tarifs-titre">
-      <SectionHeading
-        id="tarifs-titre"
-        eyebrow={sectionsCopy.pricing.eyebrow}
-        title={sectionsCopy.pricing.title}
-        subtitle={sectionsCopy.pricing.subtitle}
-      />
-
-      <h3 className="mt-14 text-center text-2xl font-bold text-nuit">{pricing.oneOffTitle}</h3>
+    <Section theme="sand" pattern aria-labelledby="formules-une-fois">
+      <h2 id="formules-une-fois" className="text-center text-2xl font-bold text-nuit">
+        {pricing.oneOffTitle}
+      </h2>
       <Stagger className="mt-10 grid items-stretch gap-6 sm:grid-cols-2 xl:grid-cols-4">
         {pricing.plans.map((plan) => (
           <PlanCard
@@ -94,7 +92,7 @@ export function Pricing() {
         ))}
       </Stagger>
 
-      <h3 className="mt-20 text-center text-2xl font-bold text-nuit">{subscriptions.title}</h3>
+      <h2 className="mt-20 text-center text-2xl font-bold text-nuit">{subscriptions.title}</h2>
       <Stagger className="mx-auto mt-10 grid max-w-5xl items-stretch gap-6 lg:grid-cols-3">
         {subscriptions.plans.map((plan) => (
           <PlanCard
@@ -107,6 +105,47 @@ export function Pricing() {
       </Stagger>
 
       <p className="mt-10 text-center text-sm text-ardoise-dark">{pricing.note}</p>
+    </Section>
+  );
+}
+
+/** Aperçu des prix avec un lien vers /tarifs, pour l'accueil et les pages d'offre. */
+export function PricingTeaser() {
+  const copy = sectionsCopy.pricing;
+  const { subscriptions } = pricing;
+  return (
+    <Section theme="sand" pattern aria-labelledby="tarifs-titre">
+      <SectionHeading
+        id="tarifs-titre"
+        eyebrow={copy.eyebrow}
+        title={copy.title}
+        subtitle={copy.subtitle}
+      />
+      <ul className="mx-auto mt-12 grid max-w-4xl gap-4 sm:grid-cols-2">
+        {pricing.plans.map((plan) => (
+          <li
+            key={plan.id}
+            className="flex items-baseline justify-between gap-4 rounded-2xl bg-white p-6 shadow-soft ring-1 ring-nuit/5"
+          >
+            <span className="font-bold">{plan.name}</span>
+            <span className="text-sm whitespace-nowrap text-ardoise-dark">
+              {pricing.pricePrefix}{" "}
+              <span className="font-display text-xl font-extrabold text-nuit tabular-nums">
+                {plan.price}
+              </span>{" "}
+              HT
+            </span>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-6 text-center text-sm text-ardoise-dark">
+        {copy.subscriptionFrom} {subscriptions.plans[0].price} {subscriptions.priceSuffix}.
+      </p>
+      <div className="mt-8 flex justify-center">
+        <Button href="/tarifs" size="lg" arrow>
+          {copy.cta}
+        </Button>
+      </div>
     </Section>
   );
 }

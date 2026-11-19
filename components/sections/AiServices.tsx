@@ -6,7 +6,7 @@ import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
 /** Cas d'usage de l'IA, en liste comme un sommaire. */
 export function AiServices() {
   return (
-    <Section id="ia" theme="light" aria-labelledby="ia-titre">
+    <Section theme="light" aria-labelledby="ia-titre">
       <Reveal className="grid gap-6 lg:grid-cols-[1.3fr_1fr] lg:items-end">
         <div>
           <p className="mb-5 inline-flex items-center rounded-full bg-nuit/5 px-3 py-1 text-xs font-medium text-ardoise-dark">

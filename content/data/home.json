@@ -194,7 +194,9 @@
     "pricing": {
       "eyebrow": "Tarifs",
       "title": "Des prix clairs, sans surprise",
-      "subtitle": "En une fois ou par abonnement, vous savez ce que vous payez."
+      "subtitle": "En une fois ou par abonnement, vous savez ce que vous payez.",
+      "subscriptionFrom": "Ou par abonnement, à partir de",
+      "cta": "Voir tous les tarifs"
     },
     "faq": {
       "eyebrow": "Questions fréquentes",
