@@ -1,10 +1,16 @@
 import { Phone } from "lucide-react";
 import { finalCta } from "@/content/home";
+import { navCta } from "@/content/navigation";
 import { hasPhone, site, telHref } from "@/content/site";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/motion/Reveal";
 
-export function FinalCta() {
+/**
+ * Bloc de fin de page. Par défaut, le bouton du menu (« Demander une démo ») ;
+ * avec `quote`, sur les pages Sites internet, le bouton de demande de devis.
+ */
+export function FinalCta({ quote = false }: { quote?: boolean }) {
+  const cta = quote ? finalCta.primaryCta : navCta;
   return (
     <section
       aria-labelledby="cta-titre"
@@ -23,8 +29,8 @@ export function FinalCta() {
             {finalCta.subtitle}
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-            <Button href={finalCta.primaryCta.href} size="lg" arrow>
-              {finalCta.primaryCta.label}
+            <Button href={cta.href} size="lg" arrow>
+              {cta.label}
             </Button>
             {hasPhone && (
               <Button

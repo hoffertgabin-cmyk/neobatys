@@ -114,16 +114,6 @@ content:
     - name: subtitle
       label: Sous-titre
       type: text
-    - name: primaryCta
-      label: Bouton principal
-      type: object
-      fields:
-      - name: label
-        label: Texte
-        type: string
-      - name: href
-        label: Lien
-        type: string
     - name: secondaryCta
       label: Bouton secondaire
       type: object
@@ -186,37 +176,6 @@ content:
       - name: text
         label: Texte
         type: string
-  - name: results
-    label: Résultats
-    type: object
-    fields:
-    - name: eyebrow
-      label: Surtitre
-      type: string
-    - name: title
-      label: Titre
-      type: string
-    - name: subtitle
-      label: Sous-titre
-      type: text
-    - name: cards
-      label: Cartes
-      type: object
-      list:
-        collapsible:
-          collapsed: true
-          summary: '{title}'
-      fields:
-      - name: id
-        label: Identifiant (ne pas modifier)
-        type: string
-        readonly: true
-      - name: title
-        label: Titre
-        type: string
-      - name: text
-        label: Texte
-        type: text
   - name: ai
     label: Intelligence artificielle
     type: object
@@ -230,6 +189,16 @@ content:
     - name: subtitle
       label: Sous-titre
       type: text
+    - name: cta
+      label: Lien vers la page Agents IA
+      type: object
+      fields:
+      - name: label
+        label: Texte
+        type: string
+      - name: href
+        label: Lien
+        type: string
     - name: useCases
       label: Cas d'usage
       type: object
@@ -335,7 +304,7 @@ content:
       label: Sous-titre
       type: text
     - name: primaryCta
-      label: Bouton principal
+      label: Bouton des pages Sites internet (ailleurs, le bouton du menu)
       type: object
       fields:
       - name: label
@@ -588,12 +557,6 @@ content:
     label: Pack site + logiciel
     type: object
     fields:
-    - name: eyebrow
-      label: Surtitre
-      type: string
-    - name: title
-      label: Titre
-      type: string
     - name: subtitle
       label: Sous-titre
       type: text
@@ -601,19 +564,6 @@ content:
       label: Points
       type: string
       list: true
-    - name: badge
-      label: Badge
-      type: string
-    - name: cta
-      label: Bouton
-      type: object
-      fields:
-      - name: label
-        label: Texte
-        type: string
-      - name: href
-        label: Lien
-        type: string
 - name: pricing
   label: Tarifs
   type: file

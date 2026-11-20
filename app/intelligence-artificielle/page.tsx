@@ -33,11 +33,7 @@ export default function IntelligenceArtificiellePage() {
       <Faq items={iaPage.faq} />
       <FinalCta />
       <JsonLd
-        data={serviceJsonLd(
-          "Agents IA pour artisans du bâtiment",
-          iaPage.seo.description,
-          "/intelligence-artificielle",
-        )}
+        data={serviceJsonLd(iaPage.seo.title, iaPage.seo.description, "/intelligence-artificielle")}
       />
       <JsonLd
         data={breadcrumbJsonLd([

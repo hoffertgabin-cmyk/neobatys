@@ -17,9 +17,9 @@ const geist = Geist({
   display: "swap",
 });
 
-const defaultTitle = `${site.name} · Sites internet, logiciel et IA pour artisans du bâtiment`;
+const defaultTitle = `${site.name} · Agents IA et logiciel de gestion pour le bâtiment`;
 const description =
-  "Sites internet, logiciel de devis et factures et assistants IA pour les artisans du bâtiment. Plus de clients, moins de coûts, moins de paperasse.";
+  "Des agents IA qui préparent vos devis, vos relances et vos réponses aux clients, un logiciel de gestion et un site internet. Pour les artisans et les entreprises du bâtiment, installé par nous.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),

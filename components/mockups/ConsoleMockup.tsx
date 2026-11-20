@@ -58,7 +58,7 @@ export function ConsoleMockup({ className }: { className?: string }) {
           </span>
         </div>
         <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 text-[11px] font-semibold text-emerald-700 sm:text-xs">
-          <span className="size-1.5 rounded-full bg-emerald-500" />4 assistants IA actifs
+          <span className="size-1.5 rounded-full bg-emerald-500" />4 agents IA actifs
         </span>
       </div>
 
@@ -105,7 +105,7 @@ export function ConsoleMockup({ className }: { className?: string }) {
 
         <div className="rounded-2xl p-3 ring-1 ring-nuit/8 sm:p-4">
           <div className="flex items-center justify-between">
-            <p className="text-xs font-semibold sm:text-sm">Assistants IA</p>
+            <p className="text-xs font-semibold sm:text-sm">Agents IA</p>
             <p className="flex items-center gap-1 text-[10px] text-ardoise">
               <span className="size-1.5 animate-pulse rounded-full bg-emerald-500" />
               en direct
