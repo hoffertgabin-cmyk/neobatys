@@ -66,6 +66,20 @@
         "href": "/guides"
       }
     ],
+    "zones": [
+      {
+        "label": "Artisans au Luxembourg",
+        "href": "/artisans/luxembourg"
+      },
+      {
+        "label": "Artisans en Moselle",
+        "href": "/artisans/moselle"
+      },
+      {
+        "label": "Artisans en France",
+        "href": "/artisans/france"
+      }
+    ],
     "legal": [
       {
         "label": "Mentions légales",

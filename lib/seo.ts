@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { site } from "@/content/site";
+import { legalInfo } from "@/content/legal";
+import { pricing } from "@/content/pricing";
 import { isFilled } from "@/lib/placeholders";
 
 type PageSeo = {
@@ -44,6 +46,58 @@ export function serializeJsonLd(data: unknown) {
 /** Valeur encore à remplacer dans content/data/site.json, ex. « [TÉLÉPHONE] » : omise. */
 const filled = (v: string) => (isFilled(v) ? v : undefined);
 
+type Place = { "@type": string; name: string };
+
+// Société luxembourgeoise : Luxembourg, France, puis toute l'Europe (phrase dans content/data/site.json)
+const areaServedAll: Place[] = [
+  { "@type": "Country", name: "Luxembourg" },
+  { "@type": "Country", name: "France" },
+  { "@type": "Continent", name: "Europe" },
+];
+
+/** « 2 990 € » vers 2990 ; undefined si aucun chiffre. */
+function euros(price: string) {
+  const digits = price.replace(/[^0-9]/g, "");
+  return digits ? Number(digits) : undefined;
+}
+
+type Plan = { id: string; name: string; description: string; price: string };
+
+/** Offre schema.org d'une formule de content/data/pricing.json (prix HT, « à partir de » pour les offres en une fois). */
+function planOffer(plan: Plan, monthly: boolean) {
+  const price = euros(plan.price);
+  return {
+    "@type": "Offer",
+    name: plan.name,
+    description: plan.description,
+    url: `${site.url}/tarifs`,
+    priceCurrency: "EUR",
+    priceSpecification: monthly
+      ? {
+          "@type": "UnitPriceSpecification",
+          price,
+          priceCurrency: "EUR",
+          unitText: "mois",
+          valueAddedTaxIncluded: false,
+        }
+      : {
+          "@type": "PriceSpecification",
+          minPrice: price,
+          priceCurrency: "EUR",
+          valueAddedTaxIncluded: false,
+        },
+    itemOffered: { "@type": "Service", name: plan.name },
+  };
+}
+
+/** Offres des formules demandées par identifiant (« site », « pack », « abonnement-pro »…). */
+export function planOffers(ids: string[]) {
+  return [
+    ...pricing.plans.filter((p) => ids.includes(p.id)).map((p) => planOffer(p, false)),
+    ...pricing.subscriptions.plans.filter((p) => ids.includes(p.id)).map((p) => planOffer(p, true)),
+  ];
+}
+
 export function localBusinessJsonLd() {
   const socials = Object.values(site.socials).filter(isFilled);
   return {
@@ -65,19 +119,35 @@ export function localBusinessJsonLd() {
       addressLocality: filled(site.address.city),
       addressCountry: site.address.country,
     },
-    // Société luxembourgeoise : Luxembourg, France, puis toute l'Europe (phrase dans content/data/site.json)
-    areaServed: [
-      { "@type": "Country", name: "Luxembourg" },
-      { "@type": "Country", name: "France" },
-      { "@type": "Continent", name: "Europe" },
-    ],
+    areaServed: areaServedAll,
     priceRange: "€€",
+    // NEOBATYS est une activité de TAG Delme SARL (mentions légales)
+    parentOrganization: {
+      "@type": "Organization",
+      name: legalInfo.companyName,
+      vatID: filled(legalInfo.vat),
+      address: { "@type": "PostalAddress", addressCountry: site.address.country },
+    },
+    // Toutes les formules et leurs prix de départ HT (content/data/pricing.json)
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Formules NEOBATYS",
+      itemListElement: planOffers([
+        ...pricing.plans.map((p) => p.id),
+        ...pricing.subscriptions.plans.map((p) => p.id),
+      ]),
+    },
     // Profils officiels sur les réseaux, omis tant qu'aucun n'est renseigné
     sameAs: socials.length > 0 ? socials : undefined,
   };
 }
 
-export function serviceJsonLd(name: string, description: string, path: string) {
+export function serviceJsonLd(
+  name: string,
+  description: string,
+  path: string,
+  { areaServed = areaServedAll, offers }: { areaServed?: Place | Place[]; offers?: object[] } = {},
+) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -86,6 +156,8 @@ export function serviceJsonLd(name: string, description: string, path: string) {
     url: new URL(path, site.url).toString(),
     serviceType: name,
     provider: { "@id": `${site.url}/#entreprise` },
+    areaServed,
+    offers: offers && offers.length > 0 ? offers : undefined,
     audience: {
       "@type": "BusinessAudience",
       audienceType: "Artisans du bâtiment",

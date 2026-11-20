@@ -36,6 +36,8 @@ Domaine : `https://www.neobatys.com` (variable `NEXT_PUBLIC_SITE_URL`, réglée 
 | Liste des pages du sitemap | `app/sitemap.ts` | Ajouter chaque nouvelle page ici |
 | robots.txt | `app/robots.ts` | `/api/` est exclu |
 | Image de partage | `app/opengraph-image.tsx` | |
+| Pages par zone | `content/data/zones.json` | Une page `/artisans/<zone>` (Luxembourg, Moselle, France), ajoutée au sitemap automatiquement ; chacune garde un contenu propre |
+| Résumé pour les assistants IA | `app/llms.txt/route.ts` | Généré depuis `content/` : rien à mettre à jour à la main |
 
 Règle du projet : **un texte se modifie dans `content/`, pas dans les composants.** Une fois la PR Pages CMS fusionnée, les textes sont dans `content/data/*.json` (les `.ts` ne font que les lire) : modifier le JSON, et mettre à jour `.pages.yml` si on ajoute ou renomme un champ. Faire `git pull` avant de commencer (l'associé peut avoir modifié des textes).
 
@@ -44,6 +46,7 @@ Règle du projet : **un texte se modifie dans `content/`, pas dans les composant
 - `pageMetadata({ title, description, path })` produit titre, description, URL canonique, Open Graph et carte Twitter. Le titre final devient `<titre de la page> · NEOBATYS` grâce au modèle du layout.
 - `localBusinessJsonLd()` (inséré une fois dans `app/layout.tsx`) décrit l'entreprise en `ProfessionalService`, un sous-type de `LocalBusiness`, avec l'identifiant `<site>/#entreprise`.
 - `serviceJsonLd()` décrit une offre et la rattache à l'entreprise par cet `@id`.
+- `serviceJsonLd()` accepte aussi `areaServed` (une zone précise) et `offers` (`planOffers([...])`, prix lus dans `content/data/pricing.json`). La fiche entreprise contient le catalogue des formules (`hasOfferCatalog`) et la société mère (TAG Delme SARL).
 - `faqJsonLd()` transforme une liste question/réponse en `FAQPage`.
 - **Valeurs entre crochets** (`[TÉLÉPHONE]`, `[ZONE]`…) : `lib/seo.ts` les retire automatiquement du JSON-LD. Une valeur non remplie n'apparaît donc pas chez Google, mais elle peut rester visible sur la page : le signaler à l'utilisateur.
 - `areaServed` déclare, dans `lib/seo.ts`, le Luxembourg, la France puis l'Europe (`Country`, `Continent`). La phrase affichée sur la page contact et connue de l'assistant est `site.zone`. Les deux, et la réponse « Où intervenez-vous ? » de la FAQ, doivent dire la même chose.
