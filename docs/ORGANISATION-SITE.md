@@ -18,12 +18,16 @@ Par Ilann, le 19 novembre 2026. Les numéros sont ceux de la liste d'origine et 
 | 6 | Bouton du menu | « Demander une démo ». Ce que cela demande de créer est en section 3.6 |
 | 7 | Vocabulaire | « Agents IA » partout. Le mot « assistants » disparaît |
 | 8 | Accueil | Raccourcie en résumé, avec des liens vers les pages |
+| Taille visée | Cible | Pas de limite de taille : « Adapté à toutes les tailles, de l'artisan seul au grand groupe » (20/11/2026) |
+| Démonstration | Parcours | Un audit, puis la démonstration (20/11/2026). Détail en section 3.6 |
+| Vocabulaire des conditions générales | Juridique | « Agents » partout, y compris dans les conditions générales de vente (20/11/2026). « L'assistant IA de la FAQ » garde son nom : c'est l'outil de questions du site, pas un agent vendu |
 
 ## Décisions encore ouvertes
 
-- **Les 12 questions de la section 4.4** sur la cible et l'offre. Pour la phrase à retenir et la taille d'entreprise visée, une proposition est appliquée à titre provisoire (section 5.4), à valider par Ilann.
-- **Ce qu'Ilann doit fournir** pour compléter le site : liste en section 5.4.
-- **Les 3 réponses proposées en section 3.6** sur ce qu'est une démonstration chez NEOBATYS : appliquées sur le site, à valider par Ilann.
+- **La phrase d'accroche de l'accueil** (section 5.4), en ligne à titre provisoire.
+- **Ce que recouvre l'audit** : le site dit « un audit de votre façon de travailler : devis, relances, demandes de clients ». C'est une formulation proposée, à corriger si l'audit porte sur autre chose (la présence en ligne, par exemple).
+- **Les questions restantes de la section 4.4** : pays des dix prochains clients, agents IA vendus seuls ou non, sens de « développement » et de « optimisation ».
+- **Exemples réels d'agents IA** : il n'y en a pas encore (20/11/2026). Les pages par agent attendent ces exemples.
 
 ## Avancement
 
@@ -271,11 +275,9 @@ Non vérifié : ce qui se passe après l'envoi de chaque formulaire, et l'existe
 
 Retenu pour NEOBATYS : le formulaire avec un délai et une durée annoncés, comme Batappli et Avoca. C'est la seule forme qui tient avec ce qui existe aujourd'hui : pas d'essai en libre accès comme Obat ou Lindy (l'outil ne s'ouvre pas sans installation), pas de calendrier en ligne (un outil de plus à tenir pour quelques demandes). Les champs du formulaire actuel (métier, créneau de rappel) qualifient déjà la demande, comme chez ServiceTitan.
 
-#### Réponses proposées aux trois questions, à valider par Ilann
+#### Réponses aux trois questions, validées par Ilann le 20/11/2026
 
-Elles sont appliquées sur le site à titre provisoire.
-
-1. **Ce qu'est une démonstration** : 20 minutes, en visio ou sur place, gratuite et sans engagement, faite par l'un des deux associés. C'est ce que la FAQ de la page Logiciel promettait déjà.
+1. **Ce qu'est une démonstration** : validé par Ilann le 20/11/2026, avec un ajout : un audit d'abord, puis la démonstration de 20 minutes, en visio ou sur place, gratuite et sans engagement.
 2. **Ce qu'on montre des agents IA** : l'outil en fonctionnement sur une entreprise d'exemple. Le dépôt de l'admin contient un jeu de démonstration prévu pour cela (une entreprise de plomberie inventée, avec ses agents en test : `lib/demo-en-ligne.ts`). À confirmer par Gabin : qu'il est chargé sur une adresse qu'on peut montrer. Le site dit seulement « le logiciel et les agents IA », sans promettre plus.
 3. **Le délai de rappel** : 24 h ouvrées, pour fixer le créneau. C'est le délai déjà annoncé partout sur le site ; Batappli annonce 48 h.
 
@@ -430,7 +432,7 @@ Le titre proposé en section 5.2 (« Vos devis, vos relances et vos appels prép
 | « De 1 à 50 salariés » | Obat a une page « entreprises de 2 à 50 salariés » ; non vérifié que l'outil NEOBATYS couvre les besoins d'une entreprise de 50 personnes (planning d'équipe, RH) |
 | Pas de chiffre : « artisans et entreprises du bâtiment » | Décision 3, sans risque, mais ne répond pas à « est-ce fait pour moi ? » |
 
-**Recommandé et appliqué, à titre provisoire : la première**, dans une seule phrase sous le titre de l'accueil. Elle se retire en changeant un texte si Ilann préfère une autre borne.
+**Tranché par Ilann le 20/11/2026 : aucune limite de taille.** La phrase sous le titre de l'accueil devient « Adapté à toutes les tailles, de l'artisan seul au grand groupe ». Non vérifié : que l'outil couvre les besoins d'un grand groupe (planning d'équipes, plusieurs sociétés).
 
 #### Ce qui a changé
 
@@ -445,7 +447,6 @@ Vérifié par un parcours automatique des 44 adresses du plan du site : un seul 
 
 #### Laissé tel quel, à décider
 
-- **Conditions générales de vente** : elles disent « assistants » à dix endroits. C'est un texte contractuel : le changer est une décision d'Ilann, de préférence avec le juriste.
 - **Maquettes de sites d'exemple** : le mot « assistant » y désigne une fonction du site d'un client fictif, pas nos agents. Non modifié.
 
 #### Ce qu'Ilann doit fournir
@@ -456,7 +457,7 @@ Rien n'a été inventé : ces emplacements sont absents des pages, pas vides.
 2. **Le numéro de téléphone à afficher** (`content/data/site.json`, champs `phone` et `phoneHref`). Les boutons « Appeler » apparaissent tout seuls dès qu'il est renseigné.
 3. **Un avis client réel**, même un seul, avec l'accord écrit du client : le bloc des avis reste masqué sans cela.
 4. **Les liens des réseaux sociaux**, s'ils existent : les icônes du pied de page sont masquées tant qu'ils sont vides.
-5. **La validation ou la correction** de la phrase d'accroche, de la borne « une vingtaine de salariés » et des trois réponses sur la démonstration (section 3.6).
+5. **La validation ou la correction** de la phrase d'accroche.
 
 ## 6. La suite
 
