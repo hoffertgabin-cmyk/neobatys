@@ -2,7 +2,7 @@
   "contactPage": {
     "seo": {
       "title": "Demander une démo ou un devis",
-      "description": "Demandez une démonstration du logiciel et des agents IA, ou un devis pour votre site internet. Rappel sous 24 h ouvrées, sans engagement."
+      "description": "Demandez un audit gratuit et une démonstration du logiciel et des agents IA, ou un devis pour votre site internet. Rappel sous 24 h ouvrées, sans engagement."
     },
     "hero": {
       "eyebrow": "Contact",
@@ -21,18 +21,18 @@
     ],
     "demo": {
       "hero": {
-        "eyebrow": "Démonstration",
-        "title": "Demander une démonstration",
-        "subtitle": "Remplissez le formulaire, on vous rappelle sous 24 h ouvrées pour fixer un créneau. La démonstration dure 20 minutes, en visio ou sur place. Elle est gratuite et ne vous engage à rien."
+        "eyebrow": "Audit et démonstration",
+        "title": "Demander un audit et une démonstration",
+        "subtitle": "Remplissez le formulaire, on vous rappelle sous 24 h ouvrées pour fixer un créneau. On commence par un audit de votre façon de travailler, puis on vous montre le logiciel et les agents IA en 20 minutes, en visio ou sur place. C'est gratuit et ne vous engage à rien."
       },
       "success": {
-        "title": "Merci, votre demande de démonstration est bien partie !",
+        "title": "Merci, votre demande d'audit et de démonstration est bien partie !",
         "text": "On vous rappelle sous 24 h ouvrées pour fixer le créneau."
       },
       "steps": [
         "On vous rappelle sous 24 h ouvrées pour fixer un créneau.",
-        "Démonstration de 20 minutes, en visio ou sur place : le logiciel et les agents IA.",
-        "Vous posez vos questions. Rien ne vous engage."
+        "Audit de votre façon de travailler : devis, relances, demandes de clients.",
+        "Démonstration de 20 minutes, en visio ou sur place : le logiciel et les agents IA. Rien ne vous engage."
       ]
     }
   },

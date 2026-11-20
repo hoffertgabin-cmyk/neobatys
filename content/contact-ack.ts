@@ -15,7 +15,7 @@ export function contactAck(serviceLabel: string, callbackLabel?: string, demo = 
     text: [
       "Bonjour,",
       `Nous avons bien reçu votre demande (${serviceLabel}). Nous vous rappelons sous 24 h ouvrées${callback}${
-        demo ? " pour fixer le créneau de la démonstration : 20 minutes, en visio ou sur place" : ""
+        demo ? " pour fixer le créneau de l'audit et de la démonstration, en visio ou sur place" : ""
       }.`,
       `Pour ajouter une précision, répondez simplement à ce message${hasPhone ? ` ou appelez-nous au ${site.phone}` : ""}.`,
       "Si vous n'êtes pas à l'origine de cette demande, ignorez ce message : rien ne sera fait sans vous.",
