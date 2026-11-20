@@ -710,12 +710,9 @@ content:
       label: Ville
       type: string
     - name: description
-      label: Description
-      type: text
-    - name: tags
-      label: Étiquettes
+      label: Légende courte
+      description: Quelques mots sur ce que le site apporte au client. Ne pas détailler les fonctions de la maquette.
       type: string
-      list: true
     - name: image
       label: Capture d'écran
       description: Facultatif. Sans image, une maquette dessinée aux couleurs ci-dessous est affichée.

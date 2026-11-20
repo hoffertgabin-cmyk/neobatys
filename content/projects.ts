@@ -50,8 +50,8 @@ export type Project = {
   title: string;
   trade: string;
   city: string;
+  /** Légende courte : ce que le site apporte au client, sans décrire comment il est fait. */
   description: string;
-  tags: string[];
   image?: string;
   mockup: TradeMockup;
   /** Nom d'entreprise fictif affiché dans la maquette. */
