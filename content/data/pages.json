@@ -23,7 +23,7 @@
       "hero": {
         "eyebrow": "Audit et démonstration",
         "title": "Demander un audit et une démonstration",
-        "subtitle": "Remplissez le formulaire, on vous rappelle sous 24 h ouvrées pour fixer un créneau. On commence par un audit de votre façon de travailler, puis on vous montre le logiciel et les agents IA en 20 minutes, en visio ou sur place. C'est gratuit et ne vous engage à rien."
+        "subtitle": "Remplissez le formulaire, on vous rappelle sous 24 h ouvrées pour fixer un créneau. On commence par un audit de votre présence en ligne, puis on vous montre le logiciel et les agents IA en 20 minutes, en visio ou sur place. C'est gratuit et ne vous engage à rien."
       },
       "success": {
         "title": "Merci, votre demande d'audit et de démonstration est bien partie !",
@@ -31,7 +31,7 @@
       },
       "steps": [
         "On vous rappelle sous 24 h ouvrées pour fixer un créneau.",
-        "Audit de votre façon de travailler : devis, relances, demandes de clients.",
+        "Audit de votre présence en ligne : ce que vos clients trouvent quand ils vous cherchent sur internet.",
         "Démonstration de 20 minutes, en visio ou sur place : le logiciel et les agents IA. Rien ne vous engage."
       ]
     }
