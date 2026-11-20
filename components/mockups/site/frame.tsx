@@ -9,7 +9,7 @@ import {
   type ReactNode,
 } from "react";
 import Image from "next/image";
-import { ArrowLeft, Check, Lock, RotateCw, Star } from "lucide-react";
+import { ArrowLeft, Check, CreditCard, Lock, RotateCw, Star } from "lucide-react";
 import type { Project } from "@/content/projects";
 import { cn } from "@/lib/utils";
 import credits from "@/content/maquettes-credits.json";
@@ -346,5 +346,18 @@ export function PhotoCredits({ photos }: { photos: string[] }) {
         );
       })}
     </ul>
+  );
+}
+
+/**
+ * Paiement des factures en ligne, au pied de chaque site d'exemple : l'artisan encaisse sur son propre compte.
+ * En 3 fois : particuliers seulement, de 1 à 3 000 € en France (https://docs.stripe.com/payments/klarna, lu le 20/11/2026).
+ */
+export function PayOnline() {
+  return (
+    <span className="flex items-center gap-1.5 rounded-full border border-current/25 px-3 py-1 font-semibold">
+      <CreditCard className="size-3.5" aria-hidden /> Factures payables en ligne, par carte ou en 3
+      fois sans frais (particuliers, jusqu&apos;à 3 000 €)
+    </span>
   );
 }
