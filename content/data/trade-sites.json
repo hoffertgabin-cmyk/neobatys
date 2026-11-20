@@ -51,16 +51,10 @@
           "title": "La maquette plombier, page par page",
           "paragraphs": [
             "Pour vous montrer le rendu, nous avons dessiné un site de plombier d'exemple. C'est une maquette navigable, avec une entreprise fictive : ce n'est pas le site d'un vrai client.",
-            "Le premier écran donne tout de suite le délai d'intervention, le numéro et la note Google, avec le prochain créneau d'urgence. La maquette comporte sept pages : Accueil, Dépannage, Salle de bain, Réalisations, Avis, Contact et Mentions légales.",
-            "Les outils interactifs de la maquette montrent des idées de parcours : le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos, et nous ajoutons ces outils sur demande."
+            "La maquette comporte sept pages : Accueil, Dépannage, Salle de bain, Réalisations, Avis, Contact et Mentions légales.",
+            "Sur ce site, votre client voit tout de suite comment vous joindre pour un dépannage et sous quel délai. Il découvre vos salles de bain, lit les avis de vos clients et vous envoie sa demande en quelques minutes. Le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos. Le reste s'ajoute selon votre activité."
           ],
-          "items": [
-            "Un choix du problème (fuite, WC bouché, plus d'eau chaude…) qui mène aux bons gestes en attendant le plombier et au délai d'intervention",
-            "Une grille de tarifs de dépannage affichée sans détour",
-            "Une estimation de salle de bain selon l'aménagement, les finitions et la surface",
-            "Des réalisations filtrables, les avis, la zone d'intervention et les horaires",
-            "Sur téléphone, une barre « Appeler / Être rappelé » toujours visible"
-          ]
+          "items": []
         }
       ],
       "faq": [
@@ -124,16 +118,10 @@
           "title": "La maquette électricien, page par page",
           "paragraphs": [
             "Pour vous montrer le rendu, nous avons dessiné un site de électricien d'exemple. C'est une maquette navigable, avec une entreprise fictive : ce n'est pas le site d'un vrai client.",
-            "Le premier écran montre une cuisine éclairée par LED, les qualifications et le délai du devis. La maquette comporte sept pages : Accueil, Prestations, Borne de recharge, Réalisations, Suivre ma demande, Devis et Mentions légales.",
-            "Les outils interactifs de la maquette montrent des idées de parcours : le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos, et nous ajoutons ces outils sur demande."
+            "La maquette comporte sept pages : Accueil, Prestations, Borne de recharge, Réalisations, Suivre ma demande, Devis et Mentions légales.",
+            "Sur ce site, votre client comprend ce que vous faites, de la mise aux normes à la borne de recharge, et voit vos réalisations. Il demande son devis en ligne et sait ensuite où en est sa demande. Le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos. Le reste s'ajoute selon votre activité."
           ],
-          "items": [
-            "Un diagnostic de l'installation à cocher, avec un résultat immédiat",
-            "Une estimation de borne de recharge",
-            "Un devis en trois étapes qui donne un numéro de demande",
-            "Une page « Suivre ma demande » qui montre l'angle Pack Gestion : devis signé en ligne et suivi comme un colis",
-            "Des réalisations, des avis et la zone d'intervention"
-          ]
+          "items": []
         }
       ],
       "faq": [
@@ -197,16 +185,10 @@
           "title": "La maquette maçon, page par page",
           "paragraphs": [
             "Pour vous montrer le rendu, nous avons dessiné un site de maçon d'exemple. C'est une maquette navigable, avec une entreprise fictive : ce n'est pas le site d'un vrai client.",
-            "Le premier écran pose un grand titre et trois photos de pierre et de façades. La maquette comporte cinq pages : Accueil, Savoir-faire, Chantiers, Visite gratuite et Mentions légales.",
-            "Les outils interactifs de la maquette montrent des idées de parcours : le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos, et nous ajoutons ces outils sur demande."
+            "La maquette comporte cinq pages : Accueil, Savoir-faire, Chantiers, Visite gratuite et Mentions légales.",
+            "Sur ce site, votre client voit vos chantiers et votre savoir-faire avant de vous appeler. Il demande une visite gratuite en joignant quelques photos de son projet. Le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos. Le reste s'ajoute selon votre activité."
           ],
-          "items": [
-            "Un chantier montré avant, pendant et après, avec un curseur à faire glisser",
-            "Les savoir-faire : extensions, façades à la chaux, pierre, murets",
-            "Des chantiers filtrables, agrandis au clic",
-            "Une demande de visite gratuite avec ajout de photos",
-            "La méthode en quatre étapes et des avis"
-          ]
+          "items": []
         }
       ],
       "faq": [
@@ -270,16 +252,10 @@
           "title": "La maquette menuisier, page par page",
           "paragraphs": [
             "Pour vous montrer le rendu, nous avons dessiné un site de menuisier d'exemple. C'est une maquette navigable, avec une entreprise fictive : ce n'est pas le site d'un vrai client.",
-            "Le premier écran est une photo d'atelier en plein cadre, avec un titre en serif. La maquette comporte six pages : Accueil, Réalisations, fiche réalisation, L'atelier, Votre projet et Mentions légales.",
-            "Les outils interactifs de la maquette montrent des idées de parcours : le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos, et nous ajoutons ces outils sur demande."
+            "La maquette comporte six pages : Accueil, Réalisations, fiche réalisation, L'atelier, Votre projet et Mentions légales.",
+            "Sur ce site, votre client parcourt vos réalisations une à une et découvre votre atelier. Il vous décrit son projet et repart avec une première idée de budget. Le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos. Le reste s'ajoute selon votre activité."
           ],
-          "items": [
-            "Un catalogue de réalisations sur mesure, chacune avec sa fiche détaillée",
-            "Une estimation de budget selon le meuble, l'essence de bois et la taille",
-            "Une page sur l'atelier et la fabrication",
-            "Un formulaire de projet",
-            "Des avis clients"
-          ]
+          "items": []
         }
       ],
       "faq": [
@@ -343,16 +319,10 @@
           "title": "La maquette couvreur, page par page",
           "paragraphs": [
             "Pour vous montrer le rendu, nous avons dessiné un site de couvreur d'exemple. C'est une maquette navigable, avec une entreprise fictive : ce n'est pas le site d'un vrai client.",
-            "Le premier écran met en avant l'urgence (« Bâché sous 24 h ») et une photo de toiture en chantier. La maquette comporte sept pages : Accueil, Diagnostic, Réalisations, Suivi de chantier, Urgence fuite, Devis gratuit et Mentions légales.",
-            "Les outils interactifs de la maquette montrent des idées de parcours : le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos, et nous ajoutons ces outils sur demande."
+            "La maquette comporte sept pages : Accueil, Diagnostic, Réalisations, Suivi de chantier, Urgence fuite, Devis gratuit et Mentions légales.",
+            "Sur ce site, votre client sait quoi faire en cas de fuite et comment vous joindre en urgence. Il voit vos toitures refaites, demande un devis gratuit et suit l'avancement de son chantier. Le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos. Le reste s'ajoute selon votre activité."
           ],
-          "items": [
-            "Un diagnostic de toiture en trois questions qui oriente vers la bonne intervention",
-            "Les gestes à faire en cas de fuite, en attendant le couvreur",
-            "Des réalisations filtrables par matériau : tuiles, ardoise, zinc",
-            "Une page « Suivi de chantier » qui montre l'angle Pack Gestion : étapes, photos, devis signé et factures",
-            "Un formulaire de devis gratuit"
-          ]
+          "items": []
         }
       ],
       "faq": [
@@ -416,16 +386,10 @@
           "title": "La maquette peintre, page par page",
           "paragraphs": [
             "Pour vous montrer le rendu, nous avons dessiné un site de peintre d'exemple. C'est une maquette navigable, avec une entreprise fictive : ce n'est pas le site d'un vrai client.",
-            "Le premier écran est une photo de pièce au mur bleu profond, avec un échantillon de teinte posé dans le coin. La maquette comporte sept pages : Accueil, Nuancier, Réalisations, Façades, Avis, Devis et Mentions légales.",
-            "Les outils interactifs de la maquette montrent des idées de parcours : le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos, et nous ajoutons ces outils sur demande."
+            "La maquette comporte sept pages : Accueil, Nuancier, Réalisations, Façades, Avis, Devis et Mentions légales.",
+            "Sur ce site, votre client choisit ses teintes en voyant ce qu'elles donnent, puis regarde vos réalisations en intérieur et en façade. Il lit les avis et demande son devis. Le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos. Le reste s'ajoute selon votre activité."
           ],
-          "items": [
-            "Un nuancier qui applique la teinte choisie sur le mur d'une vraie photo de salon",
-            "Des réalisations intérieures filtrables",
-            "Une page Façades avec des prix indicatifs",
-            "Un devis où l'on coche les pièces, avec la teinte reprise",
-            "Des avis clients"
-          ]
+          "items": []
         }
       ],
       "faq": [
@@ -489,16 +453,10 @@
           "title": "La maquette chauffagiste, page par page",
           "paragraphs": [
             "Pour vous montrer le rendu, nous avons dessiné un site de chauffagiste d'exemple. C'est une maquette navigable, avec une entreprise fictive : ce n'est pas le site d'un vrai client.",
-            "Le premier écran montre une pompe à chaleur, les chiffres clés et les prochains créneaux d'entretien. La maquette comporte sept pages : Accueil, Pompe à chaleur, Entretien, Dépannage, Avis, Contact et Mentions légales.",
-            "Les outils interactifs de la maquette montrent des idées de parcours : le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos, et nous ajoutons ces outils sur demande."
+            "La maquette comporte sept pages : Accueil, Pompe à chaleur, Entretien, Dépannage, Avis, Contact et Mentions légales.",
+            "Sur ce site, votre client s'informe sur la pompe à chaleur et sur les aides, sans promesse de montant. Il prend rendez-vous pour son entretien, vous appelle en cas de panne et lit les avis. Le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos. Le reste s'ajoute selon votre activité."
           ],
-          "items": [
-            "Un simulateur de pompe à chaleur : prix posé, aides et économies indicatives",
-            "Une prise de rendez-vous d'entretien : appareil, jour, heure",
-            "Les contrats d'entretien",
-            "Une page Dépannage avec les symptômes et les tarifs",
-            "Des avis et un formulaire de contact"
-          ]
+          "items": []
         }
       ],
       "faq": [
@@ -562,16 +520,10 @@
           "title": "La maquette carreleur, page par page",
           "paragraphs": [
             "Pour vous montrer le rendu, nous avons dessiné un site de carreleur d'exemple. C'est une maquette navigable, avec une entreprise fictive : ce n'est pas le site d'un vrai client.",
-            "Le premier écran pose un grand titre et une mosaïque de photos de carrelage avec de vrais joints. La maquette comporte six pages : Accueil, Réalisations, Estimation, Savoir-faire, Contact et Mentions légales.",
-            "Les outils interactifs de la maquette montrent des idées de parcours : le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos, et nous ajoutons ces outils sur demande."
+            "La maquette comporte six pages : Accueil, Réalisations, Estimation, Savoir-faire, Contact et Mentions légales.",
+            "Sur ce site, votre client voit la qualité de vos poses, pièce par pièce, et découvre votre savoir-faire. Il obtient une première estimation de son projet avant de vous contacter. Le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos. Le reste s'ajoute selon votre activité."
           ],
-          "items": [
-            "Les motifs de pose (droit, décalé, bâtons rompus, point de Hongrie) dessinés en direct",
-            "Une estimation au m² selon la pièce, la surface, le format et le motif",
-            "Des réalisations filtrables",
-            "Une page Savoir-faire",
-            "Un formulaire de contact"
-          ]
+          "items": []
         }
       ],
       "faq": [
@@ -635,16 +587,10 @@
           "title": "La maquette charpentier, page par page",
           "paragraphs": [
             "Pour vous montrer le rendu, nous avons dessiné un site de charpentier d'exemple. C'est une maquette navigable, avec une entreprise fictive : ce n'est pas le site d'un vrai client.",
-            "Le premier écran est une charpente en plein cadre avec trois repères chiffrés. La maquette comporte sept pages : Accueil, Réalisations, Extension, L'atelier, Assistant, Contact et Mentions légales.",
-            "Les outils interactifs de la maquette montrent des idées de parcours : le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos, et nous ajoutons ces outils sur demande."
+            "La maquette comporte sept pages : Accueil, Réalisations, Extension, L'atelier, Assistant, Contact et Mentions légales.",
+            "Sur ce site, votre client découvre vos charpentes, vos extensions en bois et votre atelier. Il trouve la réponse aux questions courantes et vous contacte avec un projet déjà cadré. Le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos. Le reste s'ajoute selon votre activité."
           ],
-          "items": [
-            "Une estimation d'extension avec une fourchette de prix et un calendrier, de l'étude au levage",
-            "Un assistant qui répond aux questions fréquentes, sur sa propre page",
-            "Des réalisations de charpente et d'ossature bois",
-            "Une page sur l'atelier",
-            "Un formulaire de contact"
-          ]
+          "items": []
         }
       ],
       "faq": [
@@ -708,16 +654,10 @@
           "title": "La maquette plâtrier-plaquiste, page par page",
           "paragraphs": [
             "Pour vous montrer le rendu, nous avons dessiné un site de plâtrier-plaquiste d'exemple. C'est une maquette navigable, avec une entreprise fictive : ce n'est pas le site d'un vrai client.",
-            "Le premier écran pose un titre souligné d'un trait de cordeau et une photo de pièce voûtée annotée de cotes. La maquette comporte sept pages : Accueil, Prestations, Réalisations, Professionnels, Devis, Contact et Mentions légales.",
-            "Les outils interactifs de la maquette montrent des idées de parcours : le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos, et nous ajoutons ces outils sur demande."
+            "La maquette comporte sept pages : Accueil, Prestations, Réalisations, Professionnels, Devis, Contact et Mentions légales.",
+            "Sur ce site, votre client voit vos finitions en photos et comprend vos prestations. Les professionnels trouvent une page pour la sous-traitance, et chacun demande son devis en envoyant ses plans. Le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos. Le reste s'ajoute selon votre activité."
           ],
-          "items": [
-            "Des chantiers montrés avant peinture",
-            "Une page pour les professionnels : sous-traitance et documents disponibles",
-            "Un chiffrage selon le type de travaux et les dimensions, avec dépôt de plans",
-            "Des réalisations filtrables",
-            "Un contact au choix particulier ou professionnel"
-          ]
+          "items": []
         }
       ],
       "faq": [
@@ -781,16 +721,10 @@
           "title": "La maquette serrurier-métallier, page par page",
           "paragraphs": [
             "Pour vous montrer le rendu, nous avons dessiné un site de serrurier-métallier d'exemple. C'est une maquette navigable, avec une entreprise fictive : ce n'est pas le site d'un vrai client.",
-            "Le premier écran est coupé en deux : le dépannage avec ses tarifs d'un côté, la métallerie sur mesure de l'autre. La maquette comporte six pages : Accueil, Dépannage et tarifs, Métallerie, L'atelier, Contact et Mentions légales.",
-            "Les outils interactifs de la maquette montrent des idées de parcours : le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos, et nous ajoutons ces outils sur demande."
+            "La maquette comporte six pages : Accueil, Dépannage et tarifs, Métallerie, L'atelier, Contact et Mentions légales.",
+            "Sur ce site, votre client voit vos tarifs de dépannage avant d'appeler, sans mauvaise surprise. Il découvre aussi votre métallerie sur mesure et votre atelier, puis vous contacte. Le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos. Le reste s'ajoute selon votre activité."
           ],
-          "items": [
-            "Les prix de dépannage selon la situation et le moment, avec ce qu'ils comprennent",
-            "Une mise en garde contre les faux serruriers",
-            "Une estimation de portail avec un dessin qui suit les réglages",
-            "Des réalisations de métallerie filtrables",
-            "Un contact au choix : dépannage, portail, escalier ou verrière"
-          ]
+          "items": []
         }
       ],
       "faq": [
@@ -854,16 +788,10 @@
           "title": "La maquette paysagiste, page par page",
           "paragraphs": [
             "Pour vous montrer le rendu, nous avons dessiné un site de paysagiste d'exemple. C'est une maquette navigable, avec une entreprise fictive : ce n'est pas le site d'un vrai client.",
-            "Le premier écran présente le titre à côté d'une photo de jardin en forme d'arche. La maquette comporte six pages : Accueil, Création, Entretien, Réalisations, Visite gratuite et Mentions légales.",
-            "Les outils interactifs de la maquette montrent des idées de parcours : le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos, et nous ajoutons ces outils sur demande."
+            "La maquette comporte six pages : Accueil, Création, Entretien, Réalisations, Visite gratuite et Mentions légales.",
+            "Sur ce site, votre client se projette dans son futur jardin grâce à vos réalisations. Il comprend ce que couvre un contrat d'entretien et demande une visite gratuite en joignant des photos de son terrain. Le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos. Le reste s'ajoute selon votre activité."
           ],
-          "items": [
-            "Un calendrier des quatre saisons avec les travaux de création et d'entretien",
-            "Un calcul de contrat d'entretien selon la pelouse, les haies et le nombre de passages",
-            "Des réalisations filtrables",
-            "Une demande de visite avec la surface et des photos du terrain",
-            "Des avis clients"
-          ]
+          "items": []
         }
       ],
       "faq": [
@@ -927,16 +855,10 @@
           "title": "La maquette terrassier, page par page",
           "paragraphs": [
             "Pour vous montrer le rendu, nous avons dessiné un site de terrassier d'exemple. C'est une maquette navigable, avec une entreprise fictive : ce n'est pas le site d'un vrai client.",
-            "Le premier écran montre une pelle en plein cadre et un panneau de chantier avec la nature des travaux, le secteur et le délai du devis. La maquette comporte six pages : Accueil, Prestations, Matériel, Chantiers, Devis et Mentions légales.",
-            "Les outils interactifs de la maquette montrent des idées de parcours : le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos, et nous ajoutons ces outils sur demande."
+            "La maquette comporte six pages : Accueil, Prestations, Matériel, Chantiers, Devis et Mentions légales.",
+            "Sur ce site, particuliers et professionnels trouvent vos prestations, votre matériel et vos chantiers. Chacun demande son devis en indiquant où se trouve son terrain. Le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos. Le reste s'ajoute selon votre activité."
           ],
-          "items": [
-            "Un bouton « Je fais construire / Je suis un professionnel » qui adapte le texte",
-            "Un calcul du volume de terre : mètres cubes, camions, jours de pelle",
-            "Le parc matériel en photos",
-            "Des chantiers montrés avant, pendant et après",
-            "Un devis avec l'adresse du terrain et le plan de masse"
-          ]
+          "items": []
         }
       ],
       "faq": [
@@ -1000,16 +922,10 @@
           "title": "La maquette isolation, page par page",
           "paragraphs": [
             "Pour vous montrer le rendu, nous avons dessiné un site d'entreprise d'isolation d'exemple. C'est une maquette navigable, avec une entreprise fictive : ce n'est pas le site d'un vrai client.",
-            "Le premier écran présente une maison sous la neige et un bandeau de confiance : pas de démarchage, label RGE vérifiable, entreprise locale. La maquette comporte sept pages : Accueil, Nos isolations, Aides, Réalisations, Visite gratuite, Contact et Mentions légales.",
-            "Les outils interactifs de la maquette montrent des idées de parcours : le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos, et nous ajoutons ces outils sur demande."
+            "La maquette comporte sept pages : Accueil, Nos isolations, Aides, Réalisations, Visite gratuite, Contact et Mentions légales.",
+            "Sur ce site, votre client comprend d'où viennent ses pertes de chaleur et quelles isolations existent. Il s'informe sur les aides, sans promesse de montant, voit vos réalisations et demande une visite gratuite. Le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos. Le reste s'ajoute selon votre activité."
           ],
-          "items": [
-            "Une maison en coupe : on touche le toit, les murs ou les fenêtres pour voir la part des pertes de chaleur et la solution",
-            "Une page Aides sans montant promis, avec un renvoi vers France Rénov'",
-            "Une estimation par type d'isolation et surface",
-            "Des réalisations",
-            "Une demande de visite gratuite"
-          ]
+          "items": []
         }
       ],
       "faq": [
@@ -1073,16 +989,10 @@
           "title": "La maquette étancheur, page par page",
           "paragraphs": [
             "Pour vous montrer le rendu, nous avons dessiné un site de étancheur d'exemple. C'est une maquette navigable, avec une entreprise fictive : ce n'est pas le site d'un vrai client.",
-            "Le premier écran est une toiture végétalisée en photo, avec « Où se trouve le problème ? » pour aller droit au signalement. La maquette comporte six pages : Accueil, Toitures-terrasses, Chantiers, Copropriétés, Signaler une infiltration et Mentions légales.",
-            "Les outils interactifs de la maquette montrent des idées de parcours : le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos, et nous ajoutons ces outils sur demande."
+            "La maquette comporte six pages : Accueil, Toitures-terrasses, Chantiers, Copropriétés, Signaler une infiltration et Mentions légales.",
+            "Sur ce site, votre client, particulier ou copropriété, signale son infiltration en quelques minutes. Il voit vos chantiers de toitures-terrasses et comprend comment vous intervenez. Le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos. Le reste s'ajoute selon votre activité."
           ],
-          "items": [
-            "Une coupe de toiture-terrasse à explorer couche par couche",
-            "Des chantiers documentés étape par étape",
-            "Une page pour les syndics et gestionnaires",
-            "Un signalement d'infiltration avec photos et gestes en attendant",
-            "Des avis clients"
-          ]
+          "items": []
         }
       ],
       "faq": [
@@ -1146,16 +1056,10 @@
           "title": "La maquette constructeur, page par page",
           "paragraphs": [
             "Pour vous montrer le rendu, nous avons dessiné un site de constructeur d'exemple. C'est une maquette navigable, avec une entreprise fictive : ce n'est pas le site d'un vrai client.",
-            "Le premier écran associe une grande photo de maison et le titre « Votre maison, du terrain aux clés. ». La maquette comporte six pages : Accueil, Nos maisons, Rénovation et extension, Méthode et garanties, Votre projet et Mentions légales.",
-            "Les outils interactifs de la maquette montrent des idées de parcours : le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos, et nous ajoutons ces outils sur demande."
+            "La maquette comporte six pages : Accueil, Nos maisons, Rénovation et extension, Méthode et garanties, Votre projet et Mentions légales.",
+            "Sur ce site, votre client découvre vos maisons, votre méthode et vos garanties, du terrain aux clés. Il prépare son projet avant le premier rendez-vous, en construction comme en rénovation. Le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos. Le reste s'ajoute selon votre activité."
           ],
-          "items": [
-            "Une frise des cinq étapes, du terrain aux clés, à cliquer",
-            "Des modèles de maisons avec leur fiche",
-            "Les garanties légales du contrat de construction de maison individuelle",
-            "Une estimation de budget et de calendrier avant le rendez-vous",
-            "Une prise de rendez-vous avec le terrain, la commune et le budget"
-          ]
+          "items": []
         }
       ],
       "faq": [
@@ -1219,16 +1123,10 @@
           "title": "La maquette façadiste, page par page",
           "paragraphs": [
             "Pour vous montrer le rendu, nous avons dessiné un site de façadiste d'exemple. C'est une maquette navigable, avec une entreprise fictive : ce n'est pas le site d'un vrai client.",
-            "Le premier écran pose la promesse, puis une grande photo de façade avec une bande de teintes d'enduit. La maquette comporte sept pages : Accueil, Ravalement, Isolation extérieure, Nuancier, Réalisations, Devis et Mentions légales.",
-            "Les outils interactifs de la maquette montrent des idées de parcours : le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos, et nous ajoutons ces outils sur demande."
+            "La maquette comporte sept pages : Accueil, Ravalement, Isolation extérieure, Nuancier, Réalisations, Devis et Mentions légales.",
+            "Sur ce site, votre client voit ce que donnerait un ravalement ou une isolation par l'extérieur, et choisit sa teinte. Il regarde vos réalisations et demande son devis. Le site de base comprend un formulaire de devis avec le type de travaux, l'adresse et des photos. Le reste s'ajoute selon votre activité."
           ],
-          "items": [
-            "Une bande de teintes qui mène au nuancier",
-            "Un nuancier qui applique la teinte choisie sur de vraies textures d'enduit : gratté, taloché, écrasé",
-            "Une page Ravalement avec ce que comprend le prix et des prix indicatifs au m²",
-            "Une page Isolation extérieure avec les étapes et les aides, sans montant promis",
-            "Une estimation selon les travaux, l'état et la taille de la façade, puis une demande de visite"
-          ]
+          "items": []
         }
       ],
       "faq": [
