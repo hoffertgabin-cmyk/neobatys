@@ -27,6 +27,7 @@ import {
   useSite,
   PhotoCredits,
   type SiteProps,
+  PayOnline,
 } from "./frame";
 
 /*
@@ -337,6 +338,7 @@ function Footer() {
             Mentions légales et crédits photos
           </button>
         </span>
+        <PayOnline />
         <span>Entreprise fictive : site d&apos;exemple réalisé par NEOBATYS</span>
       </div>
     </footer>
@@ -1143,7 +1145,8 @@ function Contact() {
             <div>
               <dt className="font-semibold">Paiement</dt>
               <dd className="mt-1 text-black/60">
-                Carte, virement ou chèque. En 3 fois pour les salles de bain.
+                Carte, virement ou chèque. Facture payable en ligne, par carte ou en 3 fois sans
+                frais jusqu&apos;à 3 000 €.
               </dd>
             </div>
           </dl>

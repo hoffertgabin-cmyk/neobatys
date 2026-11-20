@@ -15,6 +15,7 @@ import {
   Stars,
   useSite,
   type SiteProps,
+  PayOnline,
 } from "./frame";
 
 /*
@@ -368,6 +369,7 @@ function Footer() {
             Mentions légales et crédits photos
           </button>
         </span>
+        <PayOnline />
         <span>Entreprise fictive : site d&apos;exemple réalisé par NEOBATYS</span>
       </div>
     </footer>
