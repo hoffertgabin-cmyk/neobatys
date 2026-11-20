@@ -48,7 +48,7 @@ export function Footer() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-blueprint-dark opacity-60"
       />
-      <div className="relative container-site grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+      <div className="relative container-site grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1.2fr]">
         <div>
           <Logo />
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-ardoise-light">
@@ -74,6 +74,7 @@ export function Footer() {
         </div>
         <FooterColumn title="Nos offres" links={footerNav.offres} />
         <FooterColumn title="Guides et outils" links={footerNav.guides} />
+        <FooterColumn title="Par zone" links={footerNav.zones} />
         <div>
           <h2 className="text-sm font-semibold tracking-wide text-white uppercase">Contact</h2>
           <ul className="mt-4 space-y-3 text-sm text-ardoise-light">

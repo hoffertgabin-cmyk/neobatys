@@ -26,7 +26,7 @@ Ce qui fait citer une page, selon Google et Microsoft (documentation officielle)
 
 Écartés :
 
-- **llms.txt** : simple proposition, aucun éditeur d'assistant ne dit l'utiliser, et Google écrit qu'aucun fichier pour l'IA n'est nécessaire. Non ajouté.
+- **llms.txt** : simple proposition, aucun éditeur d'assistant ne dit l'utiliser, et Google écrit qu'aucun fichier pour l'IA n'est nécessaire. Ajouté quand même le 17/11/2026 (`app/llms.txt/route.ts`) parce qu'il ne coûte rien : il est généré depuis `content/` (offres, prix, zones, pages, FAQ) et reste donc à jour tout seul. Ne pas en attendre d'effet mesurable.
 - **Wikidata, Wikipédia** : NEOBATYS ne remplit pas les critères d'admissibilité ; un élément créé serait supprimé.
 
 ## 2. Canaux où les artisans peuvent nous découvrir
@@ -59,7 +59,7 @@ Ce qui fait citer une page, selon Google et Microsoft (documentation officielle)
 | Modèle de devis, calcul de TVA, acompte, retenue, impayés | `/logiciel/modele-devis`, `calculateur-tva`, `facture-acompte`, `retenue-de-garantie`, `facture-impayee`, `devis-excel-ou-logiciel` | En ligne |
 | Création site internet artisan | `/sites-internet` | En ligne |
 | Site internet plombier, électricien, maçon... | `/sites-internet/<métier>` (9 pages) | En ligne |
-| Agence web Metz, Moselle, Luxembourg | Aucune | Zone fixée dans `content/data/site.json` (Luxembourg, France et Europe, décision d'Ilann du 15/11/2026) ; une page locale seulement avec du contenu propre (chantiers, avis locaux) |
+| Site internet ou logiciel pour artisan au Luxembourg, en Moselle, en France | `/artisans/luxembourg`, `/artisans/moselle`, `/artisans/france` (`content/data/zones.json`) | Ajoutées le 17/11/2026, chacune avec un contenu propre : SME Packages et Peppol (Luxembourg), chantiers des deux côtés de la frontière et TVA du lieu des travaux (Moselle), facture électronique et TVA des travaux (France). Pas de page par ville tant qu'il n'y a pas de chantiers ou d'avis locaux réels |
 | Assistant IA artisan, agent IA, réponse automatique aux demandes de devis, devis à la voix | `/intelligence-artificielle` | En ligne |
 | Conseil IA, automatisation PME bâtiment | `/intelligence-artificielle` | En ligne ; à enrichir si une offre de conseil distincte existe |
 | Digitalisation artisan, aides au numérique, accompagnement | `/digitaliser-son-entreprise` (SME Packages Digital et AI au Luxembourg, France Num) | En ligne après fusion |

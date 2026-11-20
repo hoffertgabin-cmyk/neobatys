@@ -3,7 +3,7 @@
 import { useId, useState } from "react";
 import Link from "next/link";
 import { CircleAlert, LoaderCircle, Send, Sparkles } from "lucide-react";
-import { QUESTION_MAX } from "@/lib/schemas";
+import { QUESTION_MAX } from "@/lib/limits";
 import { Button } from "@/components/ui/Button";
 
 type State =

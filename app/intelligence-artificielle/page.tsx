@@ -1,5 +1,5 @@
 import { iaPage } from "@/content/pages";
-import { breadcrumbJsonLd, faqJsonLd, pageMetadata, serviceJsonLd } from "@/lib/seo";
+import { breadcrumbJsonLd, faqJsonLd, pageMetadata, planOffers, serviceJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
@@ -33,7 +33,12 @@ export default function IntelligenceArtificiellePage() {
       <Faq items={iaPage.faq} />
       <FinalCta />
       <JsonLd
-        data={serviceJsonLd(iaPage.seo.title, iaPage.seo.description, "/intelligence-artificielle")}
+        data={serviceJsonLd(
+          iaPage.seo.title,
+          iaPage.seo.description,
+          "/intelligence-artificielle",
+          { offers: planOffers(["ia", "transformation", "abonnement-pro", "abonnement-premium"]) },
+        )}
       />
       <JsonLd
         data={breadcrumbJsonLd([

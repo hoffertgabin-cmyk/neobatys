@@ -1,0 +1,282 @@
+{
+  "section": {
+    "eyebrow": "Où nous intervenons",
+    "title": "Luxembourg, Moselle, toute la France",
+    "subtitle": "Société luxembourgeoise, nous travaillons au Luxembourg, en France et partout en Europe, sur place ou à distance."
+  },
+  "related": {
+    "eyebrow": "Nos solutions",
+    "title": "Ce que nous mettons en place",
+    "subtitle": "Les mêmes outils pour tous les artisans, réglés sur votre pays, votre métier et vos tarifs."
+  },
+  "relatedLinks": [
+    {
+      "href": "/sites-internet",
+      "label": "Site internet",
+      "summary": "Un site sur mesure, rapide sur mobile, bien placé sur Google dans votre zone, avec votre fiche Google."
+    },
+    {
+      "href": "/logiciel",
+      "label": "Logiciel de devis et factures",
+      "summary": "Devis en 2 minutes, factures, relances automatiques et facturation électronique."
+    },
+    {
+      "href": "/intelligence-artificielle",
+      "label": "Agents IA",
+      "summary": "Réponse aux demandes, relance des devis, appels manqués, avis Google : relus avant l'envoi."
+    }
+  ],
+  "zones": [
+    {
+      "slug": "luxembourg",
+      "label": "Artisans au Luxembourg",
+      "summary": "Siège à Strassen, aides SME Packages (70 %), facture électronique Peppol pour les marchés publics.",
+      "breadcrumb": "Luxembourg",
+      "areaType": "Country",
+      "areaName": "Luxembourg",
+      "updated": "17 novembre 2026",
+      "seo": {
+        "title": "Agents IA, logiciel et site pour artisans au Luxembourg",
+        "description": "Société luxembourgeoise basée à Strassen : site internet, logiciel de devis et factures et agents IA pour artisans, finançables à 70 % par les SME Packages."
+      },
+      "hero": {
+        "eyebrow": "Artisans au Luxembourg",
+        "title": "Agents IA, logiciel et site internet pour les artisans du Luxembourg",
+        "subtitle": "NEOBATYS est une société luxembourgeoise, installée à Strassen. Nous équipons les entreprises artisanales du pays : site internet, devis et factures, agents IA, sur place ou à distance."
+      },
+      "sections": [
+        {
+          "title": "En bref",
+          "paragraphs": [
+            "NEOBATYS crée des sites internet, installe un logiciel de devis et factures et met en place des agents IA pour les artisans du bâtiment au Luxembourg. Le siège est à Strassen. Un site seul est en ligne 7 jours après réception de vos éléments ; avec des agents IA, comptez 3 à 4 semaines. Le projet peut être financé à 70 % par le programme SME Packages Digital si votre entreprise y est éligible."
+          ],
+          "items": []
+        },
+        {
+          "title": "Jusqu'à 70 % financés par les SME Packages",
+          "paragraphs": [
+            "Le ministère de l'Économie finance la digitalisation des PME avec les SME Packages Digital (site web, logiciel propre au secteur, facturation électronique) et les SME Packages AI (outil d'intelligence artificielle). Le projet doit coûter entre 3 000 et 25 000 euros HTVA ; l'aide est de 70 % des coûts éligibles, versée après la mise en place.",
+            "La première étape est une préanalyse avec le service eHandwierk de la Chambre des Métiers. Le programme laisse l'entreprise choisir son prestataire : nous établissons avec vous le devis détaillé pour votre dossier. Le détail des étapes est sur notre page Digitaliser son entreprise."
+          ],
+          "items": [
+            "Pour qui : une PME qui a une autorisation d'établissement et son siège social au Luxembourg.",
+            "Ce qui peut être couvert : le site internet, le logiciel de devis et factures, la facturation électronique, un outil d'IA.",
+            "L'éligibilité de votre projet est confirmée par eHandwierk lors de la préanalyse, pas par nous."
+          ]
+        },
+        {
+          "title": "La facture électronique, déjà obligatoire pour les marchés publics",
+          "paragraphs": [
+            "Depuis le 18 mars 2023, tous les fournisseurs de l'État et des communes doivent transmettre leurs factures au format électronique, par le réseau Peppol ou par MyGuichet. Entre entreprises, rien n'est encore obligatoire : le projet de loi n° 8815, déposé le 30 juillet 2026, prévoit une obligation progressive à partir de 2028.",
+            "Si vous répondez à des marchés publics, ou si vous travaillez aussi pour des clients en France, où l'émission devient obligatoire pour les TPE et PME le 1er septembre 2027, un logiciel qui sait produire ces factures vous évite une double saisie."
+          ],
+          "items": []
+        },
+        {
+          "title": "Sur place ou à distance",
+          "paragraphs": [
+            "Le rendez-vous de départ et la formation peuvent se faire dans vos locaux ou en visio, selon ce qui vous arrange. Ensuite, tout se règle par téléphone, e-mail ou visio : modifications du site, nouveaux tarifs dans le logiciel, réglage des agents IA."
+          ],
+          "items": []
+        }
+      ],
+      "faq": [
+        {
+          "question": "NEOBATYS est-elle une entreprise luxembourgeoise ?",
+          "answer": "Oui. NEOBATYS est une activité de TAG Delme SARL, société à responsabilité limitée de droit luxembourgeois dont le siège est au 44, rue de l'Industrie, L-8069 Strassen."
+        },
+        {
+          "question": "Mon site internet peut-il être financé par l'État au Luxembourg ?",
+          "answer": "Si votre entreprise remplit les conditions, oui : les SME Packages Digital couvrent la création ou l'amélioration du site web, pour un projet de 3 000 à 25 000 euros HTVA, avec une aide de 70 % des coûts éligibles. La préanalyse avec eHandwierk, à la Chambre des Métiers, est la première étape."
+        },
+        {
+          "question": "La facture électronique est-elle obligatoire pour un artisan luxembourgeois ?",
+          "answer": "Elle l'est déjà pour les factures adressées à l'État et aux communes, depuis le 18 mars 2023 (réseau Peppol ou MyGuichet). Entre entreprises, un projet de loi déposé en juillet 2026 prévoit une obligation progressive à partir de 2028."
+        },
+        {
+          "question": "Combien de temps pour être équipé ?",
+          "answer": "Pour un site seul, ou un site avec le logiciel : 7 jours après réception de vos éléments. Avec des agents IA : 3 à 4 semaines."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Guichet.lu : SME Packages Digital",
+          "href": "https://guichet.public.lu/fr/entreprises/financement-aides/regime-sme-packages/soutien-pme/sme-packages-digital.html"
+        },
+        {
+          "label": "Guichet.lu : SME Packages AI",
+          "href": "https://guichet.public.lu/fr/entreprises/financement-aides/regime-sme-packages/soutien-pme/sme-package-ai.html"
+        },
+        {
+          "label": "Guichet.lu : facture électronique dans les marchés publics",
+          "href": "https://guichet.public.lu/fr/entreprises/gestion-juridique-comptabilite/marche-public-concession/facturation/transmission-facture-electronique-marche-public-contrat-concession.html"
+        },
+        {
+          "label": "Chambre des députés du Luxembourg : projet de loi n° 8815",
+          "href": "https://www.chd.lu/en/node/3878"
+        }
+      ]
+    },
+    {
+      "slug": "moselle",
+      "label": "Artisans en Moselle",
+      "summary": "Metz, Thionville, la frontière : un prestataire proche, pour les artisans qui travaillent des deux côtés.",
+      "breadcrumb": "Moselle",
+      "areaType": "AdministrativeArea",
+      "areaName": "Moselle",
+      "updated": "17 novembre 2026",
+      "seo": {
+        "title": "Agents IA, logiciel et site pour artisans en Moselle",
+        "description": "Site internet, logiciel de devis et factures et agents IA pour les artisans de Moselle, de Metz à Thionville, avec un prestataire proche de la frontière."
+      },
+      "hero": {
+        "eyebrow": "Artisans en Moselle",
+        "title": "Agents IA, logiciel et site internet pour les artisans de Moselle",
+        "subtitle": "De Metz à Thionville, beaucoup d'artisans mosellans ont des clients des deux côtés de la frontière. Notre siège est à Strassen, de l'autre côté : nous pouvons venir chez vous, ou tout faire à distance."
+      },
+      "sections": [
+        {
+          "title": "En bref",
+          "paragraphs": [
+            "NEOBATYS équipe les artisans du bâtiment de Moselle : un site internet qui les fait trouver sur Google dans leur secteur, un logiciel de devis et factures prêt pour la facture électronique de septembre 2027, et des agents IA qui répondent aux demandes et relancent les devis. Le rendez-vous de départ et la formation peuvent se faire sur place."
+          ],
+          "items": []
+        },
+        {
+          "title": "Être trouvé dans votre secteur",
+          "paragraphs": [
+            "Un client qui cherche « couvreur Thionville » ou « plombier Metz » regarde d'abord la carte Google et les premiers sites. Votre site met en avant les communes où vous intervenez vraiment, vos chantiers en photos et un formulaire de demande de devis ; votre fiche Google reprend les mêmes informations.",
+            "Nous ne créons pas une page par village au texte identique : Google considère ces pages comme du contenu de faible qualité. Une page par service bien remplie, avec vos vrais chantiers, rapporte davantage."
+          ],
+          "items": []
+        },
+        {
+          "title": "Des chantiers des deux côtés de la frontière",
+          "paragraphs": [
+            "Les travaux sur un bâtiment sont en principe soumis à la TVA du pays où se trouve le bâtiment (article 47 de la directive européenne sur la TVA). Un artisan mosellan qui intervient chez un client au Luxembourg n'applique donc pas forcément la TVA française. Faites valider votre cas par votre expert-comptable : le logiciel applique ensuite le taux et la mention retenus.",
+            "Côté facture électronique, les règles suivent le pays : en France, réception obligatoire depuis le 1er septembre 2026 et émission obligatoire pour les TPE et PME au 1er septembre 2027 ; au Luxembourg, obligation déjà en vigueur pour les marchés publics."
+          ],
+          "items": []
+        },
+        {
+          "title": "Sur place ou à distance",
+          "paragraphs": [
+            "Notre siège de Strassen est proche de la frontière : le rendez-vous de départ et la formation peuvent se faire dans vos locaux ou en visio. Ensuite, tout se règle par téléphone, e-mail ou visio."
+          ],
+          "items": []
+        }
+      ],
+      "faq": [
+        {
+          "question": "Pouvez-vous vous déplacer en Moselle ?",
+          "answer": "Oui. Société luxembourgeoise basée à Strassen, nous travaillons au Luxembourg, en France et partout en Europe, sur place ou à distance. Tout peut aussi se faire par téléphone et en visio."
+        },
+        {
+          "question": "Je travaille en Moselle et au Luxembourg : quelle TVA mettre sur mes devis ?",
+          "answer": "Pour des travaux sur un bâtiment, c'est en principe la TVA du pays où se trouve le bâtiment. Il existe des cas particuliers : faites valider votre situation par votre expert-comptable, puis le logiciel applique le taux et la mention retenus."
+        },
+        {
+          "question": "Quand la facture électronique devient-elle obligatoire pour un artisan mosellan ?",
+          "answer": "Depuis le 1er septembre 2026, toute entreprise assujettie à la TVA en France doit pouvoir recevoir des factures électroniques. Les TPE et PME devront les émettre à partir du 1er septembre 2027."
+        },
+        {
+          "question": "Les SME Packages luxembourgeois s'appliquent-ils à une entreprise mosellane ?",
+          "answer": "Non : ils sont réservés aux entreprises qui ont leur siège social au Luxembourg. En France, le portail France Num recense les aides au numérique et les Activateurs qui accompagnent les TPE."
+        }
+      ],
+      "sources": [
+        {
+          "label": "EUR-Lex : directive 2006/112/CE relative au système commun de TVA (article 47)",
+          "href": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32006L0112"
+        },
+        {
+          "label": "Entreprendre.service-public.fr : calendrier de la facturation électronique",
+          "href": "https://entreprendre.service-public.gouv.fr/actualites/A15683"
+        },
+        {
+          "label": "Guichet.lu : facture électronique dans les marchés publics",
+          "href": "https://guichet.public.lu/fr/entreprises/gestion-juridique-comptabilite/marche-public-concession/facturation/transmission-facture-electronique-marche-public-contrat-concession.html"
+        },
+        {
+          "label": "Guichet.lu : SME Packages Digital",
+          "href": "https://guichet.public.lu/fr/entreprises/financement-aides/regime-sme-packages/soutien-pme/sme-packages-digital.html"
+        }
+      ]
+    },
+    {
+      "slug": "france",
+      "label": "Artisans en France",
+      "summary": "Partout en France, à distance : facture électronique 2026-2027, TVA des travaux, aides France Num.",
+      "breadcrumb": "France",
+      "areaType": "Country",
+      "areaName": "France",
+      "updated": "17 novembre 2026",
+      "seo": {
+        "title": "Agents IA, logiciel et site pour artisans en France",
+        "description": "Site internet, logiciel de devis et factures prêt pour la facture électronique 2027 et agents IA pour artisans du bâtiment, partout en France, à distance."
+      },
+      "hero": {
+        "eyebrow": "Artisans en France",
+        "title": "Agents IA, logiciel et site internet pour les artisans, partout en France",
+        "subtitle": "Où que soit votre entreprise, nous mettons en place votre site, votre logiciel de devis et factures et vos agents IA à distance : visio, téléphone, e-mail. Et sur place quand c'est utile."
+      },
+      "sections": [
+        {
+          "title": "En bref",
+          "paragraphs": [
+            "NEOBATYS équipe les artisans du bâtiment dans toute la France : site internet optimisé pour Google, logiciel de devis et factures conforme à la réforme de la facturation électronique, agents IA relus avant l'envoi. Tout peut se faire à distance ; un site seul est en ligne 7 jours après réception de vos éléments."
+          ],
+          "items": []
+        },
+        {
+          "title": "La facture électronique : septembre 2026 et septembre 2027",
+          "paragraphs": [
+            "Depuis le 1er septembre 2026, toutes les entreprises assujetties à la TVA en France doivent pouvoir recevoir des factures électroniques. Les PME, TPE et micro-entreprises devront les émettre à partir du 1er septembre 2027, par une plateforme agréée. Notre guide Facturation électronique détaille les dates, les formats et les sanctions."
+          ],
+          "items": []
+        },
+        {
+          "title": "Les taux de TVA des travaux",
+          "paragraphs": [
+            "Dans un logement achevé depuis plus de deux ans, les travaux peuvent relever du taux de 5,5 %, 10 % ou 20 % selon leur nature, avec une mention à prévoir sur le devis ou la facture. Notre calculateur de TVA donne le montant HT et TTC et rappelle la règle de chaque taux."
+          ],
+          "items": []
+        },
+        {
+          "title": "Les aides au numérique",
+          "paragraphs": [
+            "France Num, le portail de l'État pour la transformation numérique des entreprises, recense les aides financières, propose des guides et une carte des Activateurs qui accompagnent les TPE près de chez elles."
+          ],
+          "items": []
+        },
+        {
+          "title": "À distance, sans perdre le contact",
+          "paragraphs": [
+            "Le rendez-vous de départ, la formation et le suivi se font en visio et au téléphone. Vous gardez un interlocuteur unique pour le site, le logiciel et les agents IA."
+          ],
+          "items": []
+        }
+      ],
+      "faq": [
+        {
+          "question": "Travaillez-vous avec des artisans partout en France ?",
+          "answer": "Oui. Société luxembourgeoise, nous travaillons au Luxembourg, en France et partout en Europe, sur place ou à distance. Tout peut se faire par téléphone et en visio."
+        },
+        {
+          "question": "Votre logiciel est-il prêt pour la facture électronique obligatoire ?",
+          "answer": "Oui. Le logiciel suit la réforme et ses échéances : réception des factures depuis le 1er septembre 2026, émission obligatoire pour les TPE et PME au 1er septembre 2027."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Entreprendre.service-public.fr : calendrier de la facturation électronique",
+          "href": "https://entreprendre.service-public.gouv.fr/actualites/A15683"
+        },
+        {
+          "label": "France Num : le portail de la transformation numérique des entreprises",
+          "href": "https://www.francenum.gouv.fr/"
+        }
+      ]
+    }
+  ]
+}
