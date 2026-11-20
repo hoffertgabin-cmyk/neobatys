@@ -3,7 +3,7 @@ import { QUESTION_MAX } from "@/lib/limits";
 import { trades, otherTrade } from "@/content/trades";
 
 export const services = [
-  { value: "demo", label: "Démonstration du logiciel et des agents IA" },
+  { value: "demo", label: "Audit et démonstration (logiciel et agents IA)" },
   { value: "site", label: "Création de site internet" },
   { value: "logiciel", label: "Logiciel de gestion (devis, factures)" },
   { value: "pack", label: "Pack Gestion (site + logiciel)" },
