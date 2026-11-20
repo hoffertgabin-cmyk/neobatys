@@ -19,13 +19,12 @@ Par Ilann, le 19 novembre 2026. Les numéros sont ceux de la liste d'origine et 
 | 7 | Vocabulaire | « Agents IA » partout. Le mot « assistants » disparaît |
 | 8 | Accueil | Raccourcie en résumé, avec des liens vers les pages |
 | Taille visée | Cible | Pas de limite de taille : « Adapté à toutes les tailles, de l'artisan seul au grand groupe » (20/11/2026) |
-| Démonstration | Parcours | Un audit, puis la démonstration (20/11/2026). Détail en section 3.6 |
+| Démonstration | Parcours | Un audit de la présence en ligne, puis la démonstration (20 et 21/11/2026). Détail en section 3.6 |
+| Phrase d'accroche | Accueil | « Agents IA pour le bâtiment. Devis, relances, réponses. On installe tout pour vous. » est gardée (21/11/2026) |
 | Vocabulaire des conditions générales | Juridique | « Agents » partout, y compris dans les conditions générales de vente (20/11/2026). « L'assistant IA de la FAQ » garde son nom : c'est l'outil de questions du site, pas un agent vendu |
 
 ## Décisions encore ouvertes
 
-- **La phrase d'accroche de l'accueil** (section 5.4), en ligne à titre provisoire.
-- **Ce que recouvre l'audit** : le site dit « un audit de votre façon de travailler : devis, relances, demandes de clients ». C'est une formulation proposée, à corriger si l'audit porte sur autre chose (la présence en ligne, par exemple).
 - **Les questions restantes de la section 4.4** : pays des dix prochains clients, agents IA vendus seuls ou non, sens de « développement » et de « optimisation ».
 - **Exemples réels d'agents IA** : il n'y en a pas encore (20/11/2026). Les pages par agent attendent ces exemples.
 
@@ -277,7 +276,7 @@ Retenu pour NEOBATYS : le formulaire avec un délai et une durée annoncés, com
 
 #### Réponses aux trois questions, validées par Ilann le 20/11/2026
 
-1. **Ce qu'est une démonstration** : validé par Ilann le 20/11/2026, avec un ajout : un audit d'abord, puis la démonstration de 20 minutes, en visio ou sur place, gratuite et sans engagement.
+1. **Ce qu'est une démonstration** : validé par Ilann le 20/11/2026, avec un ajout : un audit de la présence en ligne d'abord, puis la démonstration de 20 minutes, en visio ou sur place, gratuite et sans engagement.
 2. **Ce qu'on montre des agents IA** : l'outil en fonctionnement sur une entreprise d'exemple. Le dépôt de l'admin contient un jeu de démonstration prévu pour cela (une entreprise de plomberie inventée, avec ses agents en test : `lib/demo-en-ligne.ts`). À confirmer par Gabin : qu'il est chargé sur une adresse qu'on peut montrer. Le site dit seulement « le logiciel et les agents IA », sans promettre plus.
 3. **Le délai de rappel** : 24 h ouvrées, pour fixer le créneau. C'est le délai déjà annoncé partout sur le site ; Batappli annonce 48 h.
 
@@ -420,7 +419,7 @@ Les titres d'accueil relevés chez les autres (section 2.1) suivent trois modèl
 | B. Le bénéfice | Obat : « La solution bâtiment tout-en-un qui vous fait gagner du temps et de l'argent » ; Housecall Pro : « Everything to run and grow your business » | « Le travail de bureau de votre entreprise du bâtiment, préparé à votre place. » |
 | C. L'image de l'employé | Lindy : « Hire an AI Employee That Gets Work Done » | « Embauchez des agents IA pour vos devis et vos relances. » |
 
-**Recommandé et appliqué, à titre provisoire : A.** Raisons : les mots recherchés (« agent IA », « bâtiment ») sont dans le titre, on comprend en une ligne ce qui est vendu et à qui, et la dernière ligne reprend la promesse déjà en ligne (« On installe tout pour vous »). B ne dit pas ce qu'on vend. C promet un employé : trop fort tant qu'une partie des envois est relue par notre équipe.
+**Retenu par Ilann le 21/11/2026 : A.** Raisons : les mots recherchés (« agent IA », « bâtiment ») sont dans le titre, on comprend en une ligne ce qui est vendu et à qui, et la dernière ligne reprend la promesse déjà en ligne (« On installe tout pour vous »). B ne dit pas ce qu'on vend. C promet un employé : trop fort tant qu'une partie des envois est relue par notre équipe.
 
 Le titre proposé en section 5.2 (« Vos devis, vos relances et vos appels préparés par des agents IA. Vous validez. ») n'a pas été retenu : « vos appels » et « vous validez » disaient plus que ce que le site décrit (les envois sont relus par notre équipe), et il tenait sur cinq lignes, ce qui repoussait le bouton hors de l'écran.
 
@@ -457,7 +456,6 @@ Rien n'a été inventé : ces emplacements sont absents des pages, pas vides.
 2. **Le numéro de téléphone à afficher** (`content/data/site.json`, champs `phone` et `phoneHref`). Les boutons « Appeler » apparaissent tout seuls dès qu'il est renseigné.
 3. **Un avis client réel**, même un seul, avec l'accord écrit du client : le bloc des avis reste masqué sans cela.
 4. **Les liens des réseaux sociaux**, s'ils existent : les icônes du pied de page sont masquées tant qu'ils sont vides.
-5. **La validation ou la correction** de la phrase d'accroche.
 
 ## 6. La suite
 
