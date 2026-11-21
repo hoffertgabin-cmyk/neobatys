@@ -15,7 +15,7 @@ export const metadata = pageMetadata({ ...iaPage.seo, path: "/intelligence-artif
 export default function IntelligenceArtificiellePage() {
   return (
     <>
-      <PageHero {...iaPage.hero} breadcrumb="Intelligence artificielle">
+      <PageHero {...iaPage.hero} breadcrumb="Agents IA">
         <Button href="/contact?service=ia" size="lg" arrow>
           Parler de mon projet
         </Button>
@@ -43,7 +43,7 @@ export default function IntelligenceArtificiellePage() {
       <JsonLd
         data={breadcrumbJsonLd([
           { name: "Accueil", path: "/" },
-          { name: "Intelligence artificielle", path: "/intelligence-artificielle" },
+          { name: "Agents IA", path: "/intelligence-artificielle" },
         ])}
       />
       <JsonLd data={faqJsonLd(iaPage.faq)} />

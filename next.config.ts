@@ -3,6 +3,15 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
+  // L'adresse Vercel de production sert une copie complète du site, liée depuis le dépôt GitHub : un seul domaine pour Google
+  redirects: async () => [
+    {
+      source: "/:path*",
+      has: [{ type: "host", value: "neobatys.vercel.app" }],
+      destination: "https://www.neobatys.com/:path*",
+      permanent: true,
+    },
+  ],
   // En-têtes de sécurité sur toutes les réponses (pages, API, fichiers de public/)
   headers: async () => [
     {
